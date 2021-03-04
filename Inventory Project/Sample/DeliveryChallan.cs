@@ -600,7 +600,7 @@ namespace sample
             txtTotal.Text = "0";
             txtReceived.Text = "0";
             txtBallaance.Text = "0";
-            txtrefNo.Text = "";
+          //  txtrefNo.Text = "";
             txtadditional1.Text = "";
             txtadditional2.Text = "";
             ComboBox.Text= "";
@@ -868,6 +868,9 @@ namespace sample
             }
         }
 
-       
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

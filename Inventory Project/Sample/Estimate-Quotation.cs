@@ -81,6 +81,8 @@ namespace sample
             get_id();
             fetchCategory();
             bind_sale_details();
+            comboBox1.Visible = false;
+            comboBox2.Visible = false;
 
         }
         private void fetchCategory()
@@ -203,20 +205,24 @@ namespace sample
         {
             try
             {
-                con.Open();
-                //MemoryStream ms = new MemoryStream();
-                //picImage.Image.Save(ms, picImage.Image.RawFormat);
-                //byte[] arrImage1 = ms.GetBuffer();
 
-                //DataTable dtable = new DataTable();
-                //cmd = new SqlCommand("tbl_QuotationSelect", con);
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@Action", "Insert");
-                string query = string.Format("insert into tblQuotation(PartyName, BillingAddress, Date, StateofSupply, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Status, TableName, Barcode) Values(@PartyName, @BillingAddress, @Date, @StateofSupply, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @ContactNo, @Status, @TableName, @Barcode); SELECT SCOPE_IDENTITY();");
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string query = string.Format("insert into tblQuotation(PartyName, BillingAddress, Date, StateofSupply, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure,ContactNo, Total, Status, TableName,Itemcatgory, Barcode) Values(@PartyName, @BillingAddress, @Date, @StateofSupply, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure,@ContactNo, @Total, @Status, @TableName,@Itemcatgory, @Barcode); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //  cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
-                cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
-                cmd.Parameters.AddWithValue("@BillingName", txtBillingAdd.Text);
+                //cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", comboBox1.Text);
+                }
+                cmd.Parameters.AddWithValue("@BillingAddress", txtBillingAdd.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpInvoice.Text);
                 cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
@@ -228,10 +234,19 @@ namespace sample
                 cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
                 cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                //  cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
 
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@Itemcatgory", cmbCategory.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
+                }
+               
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 // cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 id1 = cmd.ExecuteScalar();
@@ -243,7 +258,7 @@ namespace sample
             }
             finally
             {
-                con.Close();
+                //con.Close();
                 insert_record_inner(id.ToString());
             }
         }
@@ -356,9 +371,10 @@ namespace sample
         }
         private void cleardata()
         {
+            txtcon.Text = "";
             cmbpartyname.Text = "";
             txtBillingAdd.Text = "";
-          txtReturnNo.Text = "";
+           // txtReturnNo.Text = "";
             cmbStatesupply.Text = "";
             txtDescription.Text = "";
             cmbtax.Text = "0";
@@ -367,8 +383,8 @@ namespace sample
             txtTaxAmount.Text = "0";
             txtDiscount.Text = "0";
             txtDisAmount.Text = "0";
-            txtRoundup.Text = "";
-           
+            txtRoundup.Text = "0";
+            cmbCategory.Text = "";
             ComboBox.Text = "";
             Quatation.Text = "";
             textBox1.Text = "";
@@ -435,11 +451,13 @@ namespace sample
                 cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
                 cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+             //   cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
-             //   cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
+                //   cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 cmd.Parameters.AddWithValue("@Action", "Update");
 
             id1 = cmd.ExecuteScalar();
@@ -457,7 +475,12 @@ namespace sample
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
         {
 
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbCategory.Visible = false;
+                comboBox2.Visible = true;
+                cmbpartyname.Visible = false;
+                comboBox1.Visible = true;
                 bind_sale_details();
             }
         }
@@ -467,16 +490,15 @@ namespace sample
                 con.Open();
                 string str = string.Format("SELECT * FROM tblQuotation where RefNo='{0}'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
-
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
 
                     while (dr.Read())
                     {
-                        cmbpartyname.Text = dr["PartyName"].ToString();
-                        txtBillingAdd.Text = dr["BillingName"].ToString();
-                        
+                        comboBox1.Text = dr["PartyName"].ToString();
+                        txtBillingAdd.Text = dr["BillingAddress"].ToString();
+                        txtcon.Text = dr["ContactNo"].ToString();
                         dtpInvoice.Text = dr["Date"].ToString();
                         cmbStatesupply.Text = dr["StateofSupply"].ToString();
                         txtDescription.Text = dr["Description"].ToString();
@@ -491,6 +513,7 @@ namespace sample
                      
                         ComboBox.Text = dr["Status"].ToString();
                         Quatation.Text = dr["TableName"].ToString();
+                        comboBox2.Text = dr["Itemcatgory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
                         id = dr["RefNo"].ToString();
                         //if (ds.Tables[0].Rows.Count > 0) {
@@ -511,7 +534,8 @@ namespace sample
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows) {
                     int i = 0;
-                    while (dr1.Read()) {
+                    while (dr1.Read())
+                    {
                         dgvInnerQuotation.Rows.Add();
                         dgvInnerQuotation.Rows[i].Cells["sr_no"].Value = i + 1;
                         dgvInnerQuotation.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
@@ -650,7 +674,10 @@ namespace sample
         {
             try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
                 string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
@@ -668,7 +695,7 @@ namespace sample
             }
             finally
             {
-                con.Close();
+                //con.Close();
             }
         }
 
@@ -676,7 +703,10 @@ namespace sample
         {
             try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -699,7 +729,37 @@ namespace sample
             }
             finally
             {
-                con.Close();
+              //  con.Close();
+            }
+        }
+
+        private void cmbCategory_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+              //  con.Close();
             }
         }
     }

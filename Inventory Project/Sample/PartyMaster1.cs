@@ -50,7 +50,8 @@ namespace sample
             txtState.Text = "";
             txtOpeningBal.Text = "";
             txtAddRemainder.Text = "";
-            txtShippingAdd.Text = "";           
+            txtShippingAdd.Text = "";
+            comboBox1.Text = "";        
         }
         private void fetchdetails()
         {
@@ -73,6 +74,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@AddRemainder", txtAddRemainder.Text);
             cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
             cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
+            cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
             cmd.Parameters.AddWithValue("@Action", "Select");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
@@ -107,6 +109,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AddRemainder", txtAddRemainder.Text);
                 cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
                 cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
+                cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
                 int num = cmd.ExecuteNonQuery();
                 if (num > 0)
                 {
@@ -156,7 +159,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@AddRemainder", txtAddRemainder.Text);
                     cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
                     cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
-
+                    cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -236,6 +239,7 @@ namespace sample
         private void PartyMaster1_Load(object sender, EventArgs e)
         {
             fetchdetails();
+            fetchgroup();
         }
  
         private void dgvParty_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -252,7 +256,8 @@ namespace sample
             txtAddRemainder.Text = dgvParty.Rows[e.RowIndex].Cells["AddRemainder"].Value.ToString();
             txtPartyType.Text = dgvParty.Rows[e.RowIndex].Cells["PartyType"].Value.ToString();
             txtShippingAdd.Text = dgvParty.Rows[e.RowIndex].Cells["ShippingAddress"].Value.ToString();
-           }
+            comboBox1.Text = dgvParty.Rows[e.RowIndex].Cells["PartyGroup"].Value.ToString();
+        }
 
         private void btnSetting_Click(object sender, EventArgs e)
         {
@@ -377,6 +382,33 @@ namespace sample
         private void Clear_Click(object sender, EventArgs e)
         {
             Cleardata();
+        }
+        private void fetchgroup()
+        {
+            if (comboBox1.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup group by AddPartyGroup");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        comboBox1.Items.Add(ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
