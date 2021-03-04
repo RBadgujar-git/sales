@@ -37,6 +37,8 @@
             this.dgvItemDetails = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvItem = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -49,18 +51,16 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.SalePrice = new System.Windows.Forms.Label();
-            this.PurchasePrice = new System.Windows.Forms.Label();
-            this.StockPrice = new System.Windows.Forms.Label();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.StockPrice = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.PurchasePrice = new System.Windows.Forms.Label();
+            this.SalePrice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemDetails)).BeginInit();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItem)).BeginInit();
@@ -201,6 +201,16 @@
             this.dgvItem.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellClick);
             this.dgvItem.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItem_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item Name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Quantity";
+            this.Column2.Name = "Column2";
             // 
             // guna2TextBox1
             // 
@@ -356,7 +366,7 @@
             this.guna2Button7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button7.ForeColor = System.Drawing.Color.White;
             this.guna2Button7.HoverState.Parent = this.guna2Button7;
-            this.guna2Button7.Location = new System.Drawing.Point(508, 23);
+            this.guna2Button7.Location = new System.Drawing.Point(512, 23);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
             this.guna2Button7.Size = new System.Drawing.Size(121, 29);
@@ -429,59 +439,24 @@
             this.guna2ShadowPanel3.TabIndex = 10;
             this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
-            // SalePrice
+            // lblItemName
             // 
-            this.SalePrice.AutoSize = true;
-            this.SalePrice.Location = new System.Drawing.Point(125, 50);
-            this.SalePrice.Name = "SalePrice";
-            this.SalePrice.Size = new System.Drawing.Size(0, 16);
-            this.SalePrice.TabIndex = 2;
+            this.lblItemName.AutoSize = true;
+            this.lblItemName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemName.Location = new System.Drawing.Point(25, 23);
+            this.lblItemName.Name = "lblItemName";
+            this.lblItemName.Size = new System.Drawing.Size(0, 18);
+            this.lblItemName.TabIndex = 11;
+            this.lblItemName.TextChanged += new System.EventHandler(this.ItemName_TextChanged);
             // 
-            // PurchasePrice
+            // label6
             // 
-            this.PurchasePrice.AutoSize = true;
-            this.PurchasePrice.Location = new System.Drawing.Point(126, 86);
-            this.PurchasePrice.Name = "PurchasePrice";
-            this.PurchasePrice.Size = new System.Drawing.Size(0, 16);
-            this.PurchasePrice.TabIndex = 3;
-            // 
-            // StockPrice
-            // 
-            this.StockPrice.AutoSize = true;
-            this.StockPrice.Location = new System.Drawing.Point(386, 86);
-            this.StockPrice.Name = "StockPrice";
-            this.StockPrice.Size = new System.Drawing.Size(0, 16);
-            this.StockPrice.TabIndex = 5;
-            // 
-            // lblStock
-            // 
-            this.lblStock.AutoSize = true;
-            this.lblStock.Location = new System.Drawing.Point(386, 50);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(0, 16);
-            this.lblStock.TabIndex = 4;
-            this.lblStock.TextChanged += new System.EventHandler(this.Stock_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Sale Price";
-            this.label1.Visible = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Purchase Price";
-            this.label2.Visible = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(125, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 18);
+            this.label6.TabIndex = 10;
             // 
             // label3
             // 
@@ -503,34 +478,59 @@
             this.label4.Text = "Stock";
             this.label4.Visible = false;
             // 
-            // lblItemName
+            // label2
             // 
-            this.lblItemName.AutoSize = true;
-            this.lblItemName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemName.Location = new System.Drawing.Point(25, 23);
-            this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(0, 18);
-            this.lblItemName.TabIndex = 11;
-            this.lblItemName.TextChanged += new System.EventHandler(this.ItemName_TextChanged);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Purchase Price";
+            this.label2.Visible = false;
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(125, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 18);
-            this.label6.TabIndex = 10;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Sale Price";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Column1
+            // StockPrice
             // 
-            this.Column1.HeaderText = "Item Name";
-            this.Column1.Name = "Column1";
+            this.StockPrice.AutoSize = true;
+            this.StockPrice.Location = new System.Drawing.Point(386, 86);
+            this.StockPrice.Name = "StockPrice";
+            this.StockPrice.Size = new System.Drawing.Size(0, 16);
+            this.StockPrice.TabIndex = 5;
             // 
-            // Column2
+            // lblStock
             // 
-            this.Column2.HeaderText = "Quantity";
-            this.Column2.Name = "Column2";
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(386, 50);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(0, 16);
+            this.lblStock.TabIndex = 4;
+            this.lblStock.TextChanged += new System.EventHandler(this.Stock_TextChanged);
+            // 
+            // PurchasePrice
+            // 
+            this.PurchasePrice.AutoSize = true;
+            this.PurchasePrice.Location = new System.Drawing.Point(126, 86);
+            this.PurchasePrice.Name = "PurchasePrice";
+            this.PurchasePrice.Size = new System.Drawing.Size(0, 16);
+            this.PurchasePrice.TabIndex = 3;
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.AutoSize = true;
+            this.SalePrice.Location = new System.Drawing.Point(125, 50);
+            this.SalePrice.Name = "SalePrice";
+            this.SalePrice.Size = new System.Drawing.Size(0, 16);
+            this.SalePrice.TabIndex = 2;
             // 
             // ItemHomepage
             // 
