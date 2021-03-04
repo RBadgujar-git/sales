@@ -399,3 +399,6 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
 C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
