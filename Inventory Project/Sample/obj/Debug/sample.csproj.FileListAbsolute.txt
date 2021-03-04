@@ -1,0 +1,398 @@
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\sample.exe.config
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\sample.exe
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\sample.pdb
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.BonusSkins.v20.1.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Data.v20.1.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Printing.v20.1.Core.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Utils.v20.1.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.XtraEditors.v20.1.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\Guna.UI2.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Data.v20.1.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Utils.v20.1.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.XtraEditors.v20.1.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Printing.v20.1.Core.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Properties.Resources.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.csproj.GenerateResource.cache
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.csproj.CoreCompileInputs.cache
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.csproj.CopyComplete
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.exe
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.pdb
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.csprojAssemblyReference.cache
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Itemmaster.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ItemSevice.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SaleInvoice.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Dashboard.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CreditNote.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Add_Unit.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.BankAccount.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CashInHandAdjust.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.DebitNote.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.DeliveryChallan.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Estimate_Quotation.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Expenses.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Item_Tracking.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.LoanAccount.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OtherIncome.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Party_Group.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PaymentIn.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PaymentOut.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PurchaseBill.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PurchaseOrder.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Reports.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SaleInvoiceReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SaleOrder.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Unit_Conversion.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.AdjustAccount.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.AdjustItem.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.AllParties.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.AllTransactionReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.AllTransactionSearch.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.BalanceSheet.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.BankAccountHomePage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.BankStatement.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Banktobank.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CashFlowReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Category.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CompanyBankAccount.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CompanyList.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CompanyMaste.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CreditNothomePage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.DayBook.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.DebitNotehomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.DiscountReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ExpenseHomePage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ExpenseItemReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ExpensesReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Feedback.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ImportExcel.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ImportParties.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ItemHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ItemReportbyParty.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ItemSetting.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ItemTrackingReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.LoanStatement.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.LowStockSummary.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Makepayment.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.NewCompany.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OnlineStore.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OtherIncomeReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PartyHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PartyReportByItem.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PartySetting.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PartyStatement.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PaymentInHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PaymentOutHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PrintSetting.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ProfitLossReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PurchaseReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ReferandEarn.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ReferEarnPoints.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Referralcode.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.RequestDemo.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SaleAging.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Saleorderhomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.SelectCountry.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Serviceshomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Setting.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.Settings.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.StockDetails.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.StockSummary.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.TaxnGST.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.TaxRateReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.TaxReport.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.TransactionSetting.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.unitHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.CashInHandHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.ExpenseCategory.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.LoanAccountHomepage.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.OtherIncomeCategory.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.login.resources
+C:\Users\Rukmini\source\repos\t\sample\obj\Debug\sample.PartyMaster1.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\bin\Debug\sample.exe.config
+C:\Users\idealtechinfo-8\Downloads\t\sample\bin\Debug\sample.exe
+C:\Users\idealtechinfo-8\Downloads\t\sample\bin\Debug\sample.pdb
+C:\Users\idealtechinfo-8\Downloads\t\sample\bin\Debug\Guna.UI2.dll
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.AddMore.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Add_Unit.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.AdjustAccount.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.AdjustItem.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.AllParties.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.AllTransactionReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.AllTransactionSearch.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.BalanceSheet.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.BankAccount.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.BankAccountHomePage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.BankStatement.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Banktobank.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CashFlowReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CashInHandAdjust.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CashInHandHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Category.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CompanyBankAccount.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CompanyList.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CompanyMaste.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CreditNote.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.CreditNothomePage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Dashboard.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.DayBook.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.DebitNote.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.DebitNotehomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.DeliveryChallan.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.demoaddunit.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.DiscountReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Estimate_Quotation.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ExpenseCategory.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ExpenseHomePage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ExpenseItemReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Expenses.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ExpensesReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Feedback.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ImportExcel.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ImportParties.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ItemHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Itemmaster.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ItemReportbyParty.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ItemSetting.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ItemSevice.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ItemTrackingReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Item_Tracking.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.LoanAccount.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.LoanAccountHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.LoanStatement.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.login.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.LowStockSummary.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Makepayment.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.NewCompany.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OnlineStore.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OtherIncome.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OtherIncomeCategory.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.OtherIncomeReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PartyHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PartyMaster1.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PartyReportByItem.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PartySetting.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PartyStatement.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Party_Group.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PaymentIn.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PaymentInHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PaymentOut.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PaymentOutHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PrintSetting.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ProfitLossReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Properties.Resources.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PurchaseBill.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PurchaseOrder.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.PurchaseReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ReferandEarn.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.ReferEarnPoints.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Referralcode.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Reports.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.RequestDemo.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SaleAging.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SaleInvoice.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SaleInvoiceReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SaleOrder.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Saleorderhomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.SelectCountry.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Serviceshomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Setting.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Settings.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.StockDetails.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.StockSummary.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.TaxnGST.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.TaxRateReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.TaxReport.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.TransactionSetting.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.unitHomepage.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.Unit_Conversion.resources
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.exe
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.pdb
+C:\Users\idealtechinfo-8\Downloads\t\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+D:\workspace\Inventory Project\sample\bin\Debug\sample.exe.config
+D:\workspace\Inventory Project\sample\bin\Debug\sample.exe
+D:\workspace\Inventory Project\sample\bin\Debug\sample.pdb
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.BonusSkins.v20.1.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Data.v20.1.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Printing.v20.1.Core.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.Utils.v20.1.dll
+D:\workspace\Inventory Project\sample\bin\Debug\DevExpress.XtraEditors.v20.1.dll
+D:\workspace\Inventory Project\sample\bin\Debug\Guna.UI2.dll
+D:\workspace\Inventory Project\sample\obj\Debug\sample.AddMore.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.AllParties.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Category.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.DayBook.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Expenses.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Feedback.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.login.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Reports.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Setting.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Settings.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
+D:\workspace\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+D:\workspace\Inventory Project\sample\obj\Debug\sample.exe
+D:\workspace\Inventory Project\sample\obj\Debug\sample.pdb
+D:\workspace\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb

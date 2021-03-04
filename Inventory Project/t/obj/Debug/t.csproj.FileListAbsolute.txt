@@ -1,0 +1,10 @@
+C:\Users\Rukmini\source\repos\t\t\bin\Debug\t.exe.config
+C:\Users\Rukmini\source\repos\t\t\bin\Debug\t.exe
+C:\Users\Rukmini\source\repos\t\t\bin\Debug\t.pdb
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.csprojAssemblyReference.cache
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.Form1.resources
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.Properties.Resources.resources
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.csproj.GenerateResource.cache
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.csproj.CoreCompileInputs.cache
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.exe
+C:\Users\Rukmini\source\repos\t\t\obj\Debug\t.pdb
