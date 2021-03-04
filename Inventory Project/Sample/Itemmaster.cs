@@ -619,5 +619,15 @@ namespace sample
         {
 
         }
+
+        private void dgvItemmaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtBatchNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
