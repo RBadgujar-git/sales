@@ -26,7 +26,7 @@ namespace sample.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-UK7P4M8\\SQLEXPRESS;Initial Catalog=InventoryMgnt;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MCDLANS\\SQLEXPRESS;Initial Catalog=InventoryMgnt;Integrated S" +
             "ecurity=True")]
         public string InventoryMgntConnectionString {
             get {
