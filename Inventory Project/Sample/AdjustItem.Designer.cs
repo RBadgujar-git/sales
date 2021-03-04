@@ -164,6 +164,7 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Controls.Add(this.txtQuantity);
+            this.guna2Panel2.Controls.Add(this.Clear);
             this.guna2Panel2.Controls.Add(this.label7);
             this.guna2Panel2.Controls.Add(this.cmbAdjustmenttype);
             this.guna2Panel2.Controls.Add(this.dtpdaate);
@@ -187,7 +188,6 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.Controls.Add(this.butUpdate);
             this.guna2Panel3.Controls.Add(this.butDelete);
-            this.guna2Panel3.Controls.Add(this.Clear);
             this.guna2Panel3.Controls.Add(this.date);
             this.guna2Panel3.Controls.Add(this.txtName);
             this.guna2Panel3.Controls.Add(this.combotype);
@@ -241,7 +241,7 @@
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(679, 176);
+            this.Clear.Location = new System.Drawing.Point(582, 225);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
             this.Clear.TabIndex = 10;
