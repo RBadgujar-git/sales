@@ -76,6 +76,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -274,6 +275,7 @@
             this.txtbusinesstype.ShadowDecoration.Parent = this.txtbusinesstype;
             this.txtbusinesstype.Size = new System.Drawing.Size(240, 24);
             this.txtbusinesstype.TabIndex = 6;
+            this.txtbusinesstype.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbusinesstype_KeyPress);
             // 
             // label11
             // 
@@ -396,9 +398,56 @@
             // 
             // txtBankName
             // 
-            this.txtBankName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBankName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtBankName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtBankName.FormattingEnabled = true;
+            this.txtBankName.Items.AddRange(new object[] {
+            "Allahabad Bank",
+            "Andhra Bank",
+            "Axis Bank",
+            "Bank of Bahrain and Kuwait",
+            "Bank of Baroda - Corporate Banking",
+            "Bank of Baroda - Retail Banking",
+            "Bank of India",
+            "Bank of Maharashtra",
+            "Canara Bank",
+            "Central Bank of India",
+            "City Union Bank",
+            "Corporation Bank",
+            "Deutsche Bank",
+            "Development Credit Bank",
+            "Dhanlaxmi Bank",
+            "Federal Bank",
+            "ICICI Bank",
+            "IDBI Bank",
+            "Indian Bank",
+            "Indian Overseas Bank",
+            "IndusInd Bank",
+            "ING Vysya Bank",
+            "Jammu and Kashmir Bank",
+            "Karnataka Bank Ltd",
+            "Karur Vysya Bank",
+            "Kotak Bank",
+            "Laxmi Vilas Bank",
+            "Oriental Bank of Commerce",
+            "Punjab National Bank - Corporate Banking",
+            "Punjab National Bank - Retail Banking",
+            "Punjab & Sind Bank",
+            "Shamrao Vitthal Co-operative Bank",
+            "South Indian Bank",
+            "State Bank of Bikaner & Jaipur",
+            "State Bank of Hyderabad",
+            "State Bank of India",
+            "State Bank of Mysore",
+            "State Bank of Patiala",
+            "State Bank of Travancore",
+            "Syndicate Bank",
+            "Tamilnad Mercantile Bank Ltd.",
+            "UCO Bank",
+            "Union Bank of India",
+            "United Bank of India",
+            "Vijaya Bank",
+            "Yes Bank Ltd"});
             this.txtBankName.Location = new System.Drawing.Point(160, 52);
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(240, 24);
@@ -429,6 +478,7 @@
             this.txtIFSCcode.ShadowDecoration.Parent = this.txtIFSCcode;
             this.txtIFSCcode.Size = new System.Drawing.Size(240, 25);
             this.txtIFSCcode.TabIndex = 13;
+            this.txtIFSCcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIFSCcode_KeyPress);
             this.txtIFSCcode.Leave += new System.EventHandler(this.txtIFSCcode_Leave);
             // 
             // label14
@@ -736,7 +786,6 @@
             this.txtcampanyName.ShadowDecoration.Parent = this.txtcampanyName;
             this.txtcampanyName.Size = new System.Drawing.Size(240, 24);
             this.txtcampanyName.TabIndex = 1;
-            this.txtcampanyName.TextChanged += new System.EventHandler(this.txtcampanyName_TextChanged);
             this.txtcampanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcampanyName_KeyPress);
             // 
             // label12
@@ -813,6 +862,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.btnCancel);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -831,7 +881,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(920, 5);
+            this.btnCancel.Location = new System.Drawing.Point(923, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(29, 27);
             this.btnCancel.TabIndex = 58;
@@ -848,6 +898,16 @@
             this.label1.Size = new System.Drawing.Size(156, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Master";
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.Location = new System.Drawing.Point(822, 5);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(33, 32);
+            this.btnminimize.TabIndex = 59;
+            this.btnminimize.UseVisualStyleBackColor = true;
             // 
             // CompanyMaste
             // 
@@ -919,5 +979,6 @@
         private System.Windows.Forms.ComboBox cmbState;
         private System.Windows.Forms.ComboBox txtBankName;
         private System.Windows.Forms.Button butnclear;
+        private System.Windows.Forms.Button btnminimize;
     }
 }
