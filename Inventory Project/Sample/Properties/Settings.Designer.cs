@@ -27,7 +27,7 @@ namespace sample.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Persist Security Info=False;User ID=idealtec_inventory;Password=Mpiti@123;Initial" +
-            " Catalog=idealtec_inventory;Data Source=103.83.81.80")]
+            " Catalog=idealtec_inventory;")]
         public string InventoryMgntConnectionString {
             get {
                 return ((string)(this["InventoryMgntConnectionString"]));

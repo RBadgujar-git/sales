@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemTrackingReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtItemname = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,13 +49,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgvItemTracking = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chkShowOnly = new Guna.UI2.WinForms.Guna2CheckBox();
             this.dtpfrom = new System.Windows.Forms.DateTimePicker();
             this.dtpFromexp = new System.Windows.Forms.DateTimePicker();
@@ -106,6 +104,7 @@
             this.txtItemname.ShadowDecoration.Parent = this.txtItemname;
             this.txtItemname.Size = new System.Drawing.Size(159, 30);
             this.txtItemname.TabIndex = 2;
+            this.txtItemname.TextChanged += new System.EventHandler(this.txtItemname_TextChanged);
             // 
             // btnCancel
             // 
@@ -172,6 +171,7 @@
             this.txtSerialNo.ShadowDecoration.Parent = this.txtSerialNo;
             this.txtSerialNo.Size = new System.Drawing.Size(157, 30);
             this.txtSerialNo.TabIndex = 121;
+            this.txtSerialNo.TextChanged += new System.EventHandler(this.txtSerialNo_TextChanged);
             // 
             // label3
             // 
@@ -205,6 +205,7 @@
             this.txtbatchNo.ShadowDecoration.Parent = this.txtbatchNo;
             this.txtbatchNo.Size = new System.Drawing.Size(160, 30);
             this.txtbatchNo.TabIndex = 123;
+            this.txtbatchNo.TextChanged += new System.EventHandler(this.txtbatchNo_TextChanged);
             // 
             // label4
             // 
@@ -273,39 +274,37 @@
             // 
             // dgvItemTracking
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvItemTracking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvItemTracking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItemTracking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItemTracking.BackgroundColor = System.Drawing.Color.White;
             this.dgvItemTracking.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItemTracking.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvItemTracking.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItemTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItemTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvItemTracking.ColumnHeadersHeight = 34;
             this.dgvItemTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2,
             this.Column5,
             this.Column3,
-            this.Column4,
-            this.Column6,
             this.Column8,
-            this.Column9});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItemTracking.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column4,
+            this.Column6});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItemTracking.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItemTracking.EnableHeadersVisualStyles = false;
             this.dgvItemTracking.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItemTracking.Location = new System.Drawing.Point(15, 197);
@@ -343,11 +342,6 @@
             this.Column1.HeaderText = "Item Name";
             this.Column1.Name = "Column1";
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "MRP";
-            this.Column2.Name = "Column2";
-            // 
             // Column5
             // 
             this.Column5.HeaderText = "Batch No";
@@ -358,6 +352,11 @@
             this.Column3.HeaderText = "Serial No";
             this.Column3.Name = "Column3";
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Size";
+            this.Column8.Name = "Column8";
+            // 
             // Column4
             // 
             this.Column4.HeaderText = "MFG Date";
@@ -367,16 +366,6 @@
             // 
             this.Column6.HeaderText = "EXP Date";
             this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Size";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Current Qty";
-            this.Column9.Name = "Column9";
             // 
             // chkShowOnly
             // 
@@ -421,6 +410,7 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(156, 23);
             this.dtpToDate.TabIndex = 139;
+            this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
             // 
             // dtpToexp
             // 
@@ -430,6 +420,8 @@
             this.dtpToexp.Name = "dtpToexp";
             this.dtpToexp.Size = new System.Drawing.Size(173, 23);
             this.dtpToexp.TabIndex = 140;
+            this.dtpToexp.ValueChanged += new System.EventHandler(this.dtpToexp_ValueChanged);
+            this.dtpToexp.Enter += new System.EventHandler(this.dtpToexp_Enter);
             // 
             // ItemTrackingReport
             // 
@@ -462,6 +454,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ItemTrackingReport";
             this.Size = new System.Drawing.Size(1020, 578);
+            this.Load += new System.EventHandler(this.ItemTrackingReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemTracking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -488,17 +481,15 @@
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2DataGridView dgvItemTracking;
         private Guna.UI2.WinForms.Guna2CheckBox chkShowOnly;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DateTimePicker dtpfrom;
         private System.Windows.Forms.DateTimePicker dtpFromexp;
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpToexp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

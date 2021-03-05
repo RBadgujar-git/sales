@@ -41,7 +41,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.butUpdate = new System.Windows.Forms.Button();
             this.butDelete = new System.Windows.Forms.Button();
-            this.Clear = new System.Windows.Forms.Button();
             this.date = new System.Windows.Forms.DateTimePicker();
             this.txtName = new System.Windows.Forms.ComboBox();
             this.combotype = new System.Windows.Forms.ComboBox();
@@ -57,6 +56,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtQuantity = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Clear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbAdjustmenttype = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpdaate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -164,7 +164,6 @@
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
             this.guna2Panel2.Controls.Add(this.guna2Panel3);
             this.guna2Panel2.Controls.Add(this.txtQuantity);
-            this.guna2Panel2.Controls.Add(this.Clear);
             this.guna2Panel2.Controls.Add(this.label7);
             this.guna2Panel2.Controls.Add(this.cmbAdjustmenttype);
             this.guna2Panel2.Controls.Add(this.dtpdaate);
@@ -188,6 +187,7 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.White;
             this.guna2Panel3.Controls.Add(this.butUpdate);
             this.guna2Panel3.Controls.Add(this.butDelete);
+            this.guna2Panel3.Controls.Add(this.Clear);
             this.guna2Panel3.Controls.Add(this.date);
             this.guna2Panel3.Controls.Add(this.txtName);
             this.guna2Panel3.Controls.Add(this.combotype);
@@ -235,19 +235,6 @@
             this.butDelete.Text = "Delete";
             this.butDelete.UseVisualStyleBackColor = false;
             this.butDelete.Click += new System.EventHandler(this.Delete_Click);
-            // 
-            // Clear
-            // 
-            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(582, 225);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 10;
-            this.Clear.Text = "Clear";
-            this.Clear.UseVisualStyleBackColor = false;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // date
             // 
@@ -506,6 +493,19 @@
             this.txtQuantity.ShadowDecoration.Parent = this.txtQuantity;
             this.txtQuantity.Size = new System.Drawing.Size(250, 30);
             this.txtQuantity.TabIndex = 10;
+            // 
+            // Clear
+            // 
+            this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Clear.Location = new System.Drawing.Point(678, 177);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(90, 42);
+            this.Clear.TabIndex = 10;
+            this.Clear.Text = "Clear";
+            this.Clear.UseVisualStyleBackColor = false;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // label7
             // 

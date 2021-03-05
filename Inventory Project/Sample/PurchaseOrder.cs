@@ -97,17 +97,36 @@ namespace sample
 
         private void PurchaseOrder_Load(object sender, EventArgs e)
         {
-            fetchCategory();
             fetchcustomername();
-            //  fetchitem();
-            bind_sale_details();
+            fetchitem();
             txtReturnNo.Enabled = false;
             get_id();
         }
 
         private void cmbpartyname_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            try {
+                con.Open();
+
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read()) {
+                    txtbillingadd.Text = dr["BillingAddress"].ToString();
+                    txtcon.Text = dr["ContactNo"].ToString();
+
+
+                }
+                dr.Close();
+
+                dtpInvoice.Focus();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            finally {
+                con.Close();
+            }
         }
 
         private void txtItemName_SelectedIndexChanged(object sender, EventArgs e)
@@ -253,36 +272,7 @@ namespace sample
             txtItemTotal.Text = "0";
         }
 
-        private void cleardata()
-        {
-            cmbpartyname.Text = "";
-            txtbillingadd.Text = "";
-            txtcon.Text = "";
-            dtpInvoice.Text = "";
-            dtpDueDate.Text = "";
-            cmbStatesupply.Text = "";
-            cmbPaymentType.Text = "";
-            txtTransportName.Text = "";
-            txtDeliveryLoc.Text = "";
-            txtVehicleNo.Text = "";
-            DtpdeliveryDate.Text = "";
-            txtDescription.Text = "";
-            cmbtax.Text = "";
-            txtcgst.Text = "";
-            txtsgst.Text = "";
-            txtTaxAmount.Text = "";
-            txtDiscount.Text = "";
-            txtDisAmount.Text = "";
-            txtRoundup.Text = "";
-            txtTotal.Text = "";
-            txtReceived.Text = "";
-            txtBallaance.Text = "";
-            txtrefNo.Text = "";
-            txtadditional1.Text = "";
-            txtadditional2.Text = "";
-            ComboBox.Text = "";
-            Order.Text = "";
-        }
+
 
         private void get_id()
         {
@@ -691,8 +681,6 @@ namespace sample
         {
             insertdata();
             bind_sale_details();
-            cleardata();
-            clear_text_data();
         }
 
         private void cmbPaymentType_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -707,82 +695,8 @@ namespace sample
             }
         }
 
-        private void cmbpartyname_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void Order_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                con.Open();
-
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    txtbillingadd.Text = dr["BillingAddress"].ToString();
-                    txtcon.Text = dr["ContactNo"].ToString();
-                }
-                dr.Close();
-
-                dtpInvoice.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        private void fetchCategory()
-        {
-            if (cmbCategory.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbCategory.Items.Add(ds.Tables["Temp"].Rows[i]["ItemCategory"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
-        }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-
-
-                //if (con.State == ConnectionState.Closed)
-                //{
-                //    con.Open();
-                //}
-                con.Close();
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(ds, "Temp");
-                DataTable DT = new DataTable();
-                SDA.Fill(ds);
-                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                {
-                    txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
 
         }
     }

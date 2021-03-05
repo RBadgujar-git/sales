@@ -14,6 +14,10 @@ namespace sample
     public partial class OtherIncomeHomepage1 : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+        // SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+        //  SqlConnection con;
+        SqlCommand cmd;
+        string id = "";
         public OtherIncomeHomepage1()
         {
             InitializeComponent();
@@ -22,6 +26,23 @@ namespace sample
         private void OtherIncomeHomepage1_Load(object sender, EventArgs e)
         {
             bindbankdata();
+        }
+        private void bindbankdata()
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from tbl_otherIncomeCaategory", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con.Close();
+            dgvCategory.AutoGenerateColumns = false;
+            dgvCategory.ColumnCount = 2;
+            dgvCategory.Columns[0].HeaderText = "Category";
+            dgvCategory.Columns[0].DataPropertyName = "OtherIncome";
+           
+
+
+            dgvCategory.DataSource = dt;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -52,22 +73,41 @@ namespace sample
         {
             this.Visible = false;
         }
-        private void bindbankdata()
+
+        private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
         {
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select OtherIncome from tbl_otherIncomeCaategory", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            con.Close();
-            dgvCategory.AutoGenerateColumns = false;
-            dgvCategory.ColumnCount = 1;
-            dgvCategory.Columns[0].HeaderText = "Category";
-            dgvCategory.Columns[0].DataPropertyName = "OtherIncome";
 
-
-            dgvCategory.DataSource = dt;
         }
+
+        private void dgvCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblBankAccount.Text = dgvCategory.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+
+            string Query = string.Format("select Date,IncomeCategory,total,Paid,Balance from tbl_OtherIncome where IncomeCategory='{0}' group by Date,IncomeCategory,total,Paid,Balance", lblBankAccount.Text);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvOtherincome.DataSource = ds;
+            dgvOtherincome.DataMember = "temp";
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select total from tbl_OtherIncome where total like '%{0}%'", txtSearch2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvOtherincome.DataSource = ds;
+                dgvOtherincome.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             try

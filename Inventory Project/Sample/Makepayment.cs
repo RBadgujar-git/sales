@@ -43,12 +43,14 @@ namespace sample
             cmd = new SqlCommand("tbl_MakePaymentSelect", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ID", 0);
+            cmd.Parameters.AddWithValue("@AccountName", "");
             cmd.Parameters.AddWithValue("@PrincipleAmount", "");
             cmd.Parameters.AddWithValue("@InterestAmount", "");
             cmd.Parameters.AddWithValue("@Date", "");
             cmd.Parameters.AddWithValue("@TotalAmount", "");
             cmd.Parameters.AddWithValue("@PaidFrom", "");    
             cmd.Parameters.AddWithValue("@Action", "Select");
+            //AccountName
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);     
             dgvMakePayment.DataSource = dtable;
@@ -72,6 +74,7 @@ namespace sample
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
                 cmd.Parameters.AddWithValue("@ID", id);
+                cmd.Parameters.AddWithValue("@AccountName", cmbCompanyName.Text);
                 cmd.Parameters.AddWithValue("@PrincipleAmount", txtPrincipleAmount.Text);
                 cmd.Parameters.AddWithValue("@InterestAmount", txtinterestAmout.Text);
                 DateTime now1 = DateTime.Today;
@@ -94,6 +97,7 @@ namespace sample
         private void dgvMakePayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvMakePayment.SelectedRows[0].Cells["ID"].Value.ToString();
+            cmbCompanyName.Text = dgvMakePayment.SelectedRows[0].Cells["AccountName"].Value.ToString();
             txtPrincipleAmount.Text = dgvMakePayment.SelectedRows[0].Cells["PrincipleAmount"].Value.ToString();
             txtinterestAmout.Text = dgvMakePayment.SelectedRows[0].Cells["InterestAmount"].Value.ToString();
             dtpDate.Text = dgvMakePayment.SelectedRows[0].Cells["Date"].Value.ToString();
@@ -111,7 +115,32 @@ namespace sample
         private void Makepayment_Load(object sender, EventArgs e)
         {
             fetchdetails();
+            fetchLoanAccount();
         }
+        private void fetchLoanAccount()
+        {
+            if (cmbCompanyName.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank group by AccountName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbCompanyName.Items.Add(ds.Tables["Temp"].Rows[i]["AccountName"].ToString());
+                     }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+
 
         private void txtinterestAmout_TextChanged(object sender, EventArgs e)
         {
@@ -197,6 +226,7 @@ namespace sample
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
                     cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.Parameters.AddWithValue("@AccountName", cmbCompanyName.Text);
                     cmd.Parameters.AddWithValue("@PrincipleAmount", txtPrincipleAmount.Text);
                     cmd.Parameters.AddWithValue("@InterestAmount", txtinterestAmout.Text);
                     DateTime now1 = DateTime.Today;
