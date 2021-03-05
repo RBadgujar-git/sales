@@ -39,6 +39,8 @@
             this.btnMakePayment = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvbankAccount = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -46,11 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvLoanAccount = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBankAccount = new System.Windows.Forms.Label();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
@@ -64,6 +62,7 @@
             this.guna2ShadowPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.lblBankAccount);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button4);
             this.guna2ShadowPanel3.Controls.Add(this.btnMakePayment);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
@@ -136,6 +135,9 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvbankAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvbankAccount.ColumnHeadersHeight = 18;
+            this.dgvbankAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,6 +176,17 @@
             this.dgvbankAccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvbankAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvbankAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvbankAccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankAccount_CellDoubleClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Account";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amount";
+            this.Column2.Name = "Column2";
             // 
             // txtSearch1
             // 
@@ -281,6 +294,7 @@
             this.txtSearch2.ShadowDecoration.Parent = this.txtSearch2;
             this.txtSearch2.Size = new System.Drawing.Size(246, 27);
             this.txtSearch2.TabIndex = 202;
+            this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
             // 
             // dgvLoanAccount
             // 
@@ -303,11 +317,6 @@
             this.dgvLoanAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLoanAccount.ColumnHeadersHeight = 18;
             this.dgvLoanAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column3,
-            this.Column4,
-            this.Column8,
-            this.Column6,
             this.Column7});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -348,30 +357,13 @@
             this.dgvLoanAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLoanAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // Column5
+            // lblBankAccount
             // 
-            this.Column5.HeaderText = "Date";
-            this.Column5.Name = "Column5";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Type";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Principle";
-            this.Column4.Name = "Column4";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Interest";
-            this.Column8.Name = "Column8";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Total Amount";
-            this.Column6.Name = "Column6";
+            this.lblBankAccount.AutoSize = true;
+            this.lblBankAccount.Location = new System.Drawing.Point(103, 48);
+            this.lblBankAccount.Name = "lblBankAccount";
+            this.lblBankAccount.Size = new System.Drawing.Size(0, 16);
+            this.lblBankAccount.TabIndex = 206;
             // 
             // Column7
             // 
@@ -394,6 +386,7 @@
             this.Size = new System.Drawing.Size(1067, 625);
             this.Load += new System.EventHandler(this.LoanAccountHomepage_Load);
             this.guna2ShadowPanel3.ResumeLayout(false);
+            this.guna2ShadowPanel3.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbankAccount)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
@@ -416,12 +409,10 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvLoanAccount;
         private Guna.UI2.WinForms.Guna2Button btnMakePayment;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblBankAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

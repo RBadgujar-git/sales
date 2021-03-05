@@ -369,6 +369,9 @@ namespace sample
         }
 
         byte[] arrImage2 = null;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void picSignature_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -556,9 +559,6 @@ namespace sample
             }
         }
 
-         
-
-
         private void txtAccountNo_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -570,14 +570,6 @@ namespace sample
                 e.Handled = true;
             }
         }
-
-       
-
-        private void txtcampanyName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
        private void validateIFSC()
         { 
             string gst = txtIFSCcode.Text;
@@ -609,6 +601,27 @@ namespace sample
         private void butnclear_Click(object sender, EventArgs e)
         {
             Cleardata();
+        }
+
+        private void txtbusinesstype_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+       private void txtIFSCcode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -103,8 +103,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.txtIGST = new Guna.UI2.WinForms.Guna2TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbPaymentType = new System.Windows.Forms.ComboBox();
             this.cmbStatesupply = new System.Windows.Forms.ComboBox();
@@ -166,7 +164,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(938, 412);
+            this.label37.Location = new System.Drawing.Point(923, 412);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(44, 16);
             this.label37.TabIndex = 106;
@@ -175,7 +173,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(870, 409);
+            this.label35.Location = new System.Drawing.Point(835, 413);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 16);
             this.label35.TabIndex = 105;
@@ -196,13 +194,13 @@
             this.txtsgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsgst.HoverState.Parent = this.txtsgst;
-            this.txtsgst.Location = new System.Drawing.Point(932, 430);
+            this.txtsgst.Location = new System.Drawing.Point(908, 430);
             this.txtsgst.Name = "txtsgst";
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
             this.txtsgst.SelectedText = "";
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
-            this.txtsgst.Size = new System.Drawing.Size(53, 25);
+            this.txtsgst.Size = new System.Drawing.Size(77, 25);
             this.txtsgst.TabIndex = 104;
             // 
             // txtcgst
@@ -220,13 +218,13 @@
             this.txtcgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcgst.HoverState.Parent = this.txtcgst;
-            this.txtcgst.Location = new System.Drawing.Point(865, 428);
+            this.txtcgst.Location = new System.Drawing.Point(811, 430);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
             this.txtcgst.SelectedText = "";
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
-            this.txtcgst.Size = new System.Drawing.Size(53, 25);
+            this.txtcgst.Size = new System.Drawing.Size(84, 25);
             this.txtcgst.TabIndex = 103;
             // 
             // txtcon
@@ -1206,7 +1204,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(728, 407);
+            this.label24.Location = new System.Drawing.Point(736, 407);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 16);
             this.label24.TabIndex = 66;
@@ -1332,8 +1330,6 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label42);
-            this.panel1.Controls.Add(this.label41);
-            this.panel1.Controls.Add(this.txtIGST);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.cmbPaymentType);
             this.panel1.Controls.Add(this.cmbStatesupply);
@@ -1441,39 +1437,6 @@
             this.label42.Size = new System.Drawing.Size(137, 16);
             this.label42.TabIndex = 130;
             this.label42.Text = "Barcode Scanning :";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(799, 408);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(40, 16);
-            this.label41.TabIndex = 129;
-            this.label41.Text = "IGST";
-            // 
-            // txtIGST
-            // 
-            this.txtIGST.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIGST.DefaultText = "";
-            this.txtIGST.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIGST.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIGST.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIGST.DisabledState.Parent = this.txtIGST;
-            this.txtIGST.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIGST.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIGST.FocusedState.Parent = this.txtIGST;
-            this.txtIGST.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIGST.HoverState.Parent = this.txtIGST;
-            this.txtIGST.Location = new System.Drawing.Point(796, 426);
-            this.txtIGST.Name = "txtIGST";
-            this.txtIGST.PasswordChar = '\0';
-            this.txtIGST.PlaceholderText = "";
-            this.txtIGST.SelectedText = "";
-            this.txtIGST.ShadowDecoration.Parent = this.txtIGST;
-            this.txtIGST.Size = new System.Drawing.Size(53, 25);
-            this.txtIGST.TabIndex = 128;
             // 
             // label15
             // 
@@ -1856,7 +1819,7 @@
             this.cmbtax.Location = new System.Drawing.Point(705, 423);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.ShadowDecoration.Parent = this.cmbtax;
-            this.cmbtax.Size = new System.Drawing.Size(76, 36);
+            this.cmbtax.Size = new System.Drawing.Size(100, 36);
             this.cmbtax.StartIndex = 0;
             this.cmbtax.TabIndex = 22;
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged);
@@ -2110,8 +2073,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
-        private Guna.UI2.WinForms.Guna2TextBox txtIGST;
         private System.Windows.Forms.ComboBox cmbPaymentType;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dtpInvoice;

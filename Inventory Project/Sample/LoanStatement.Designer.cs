@@ -35,13 +35,7 @@
             this.cmballFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvLoanStatement = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,8 +46,6 @@
             this.txtOpeningBal = new Guna.UI2.WinForms.Guna2TextBox();
             this.txttBalancedue = new Guna.UI2.WinForms.Guna2TextBox();
             this.txttotalInterest = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dtpfromDate = new System.Windows.Forms.DateTimePicker();
-            this.dtptoDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanStatement)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +70,7 @@
             this.cmbAccount.Size = new System.Drawing.Size(189, 36);
             this.cmbAccount.StartIndex = 0;
             this.cmbAccount.TabIndex = 202;
+            this.cmbAccount.SelectedIndexChanged += new System.EventHandler(this.cmbAccount_SelectedIndexChanged);
             // 
             // cmballFirms
             // 
@@ -111,7 +104,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(800, 26);
+            this.btnCancel.Location = new System.Drawing.Point(817, 31);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 26);
             this.btnCancel.TabIndex = 205;
@@ -132,15 +125,6 @@
             this.btnImport.TabIndex = 203;
             this.btnImport.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(407, 110);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
-            this.label6.TabIndex = 207;
-            this.label6.Text = "From";
-            // 
             // btnPrint
             // 
             this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -154,35 +138,6 @@
             this.btnPrint.Size = new System.Drawing.Size(24, 23);
             this.btnPrint.TabIndex = 204;
             this.btnPrint.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(606, 109);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 16);
-            this.label5.TabIndex = 209;
-            this.label5.Text = "To";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Ending Balance";
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Amount";
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Type";
-            this.Column1.Name = "Column1";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Date";
-            this.Column5.Name = "Column5";
             // 
             // dgvLoanStatement
             // 
@@ -204,11 +159,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvLoanStatement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvLoanStatement.ColumnHeadersHeight = 18;
-            this.dgvLoanStatement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column3});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,11 +169,11 @@
             this.dgvLoanStatement.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLoanStatement.EnableHeadersVisualStyles = false;
             this.dgvLoanStatement.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLoanStatement.Location = new System.Drawing.Point(45, 168);
+            this.dgvLoanStatement.Location = new System.Drawing.Point(3, 168);
             this.dgvLoanStatement.Name = "dgvLoanStatement";
             this.dgvLoanStatement.RowHeadersVisible = false;
             this.dgvLoanStatement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLoanStatement.Size = new System.Drawing.Size(756, 288);
+            this.dgvLoanStatement.Size = new System.Drawing.Size(871, 288);
             this.dgvLoanStatement.TabIndex = 211;
             this.dgvLoanStatement.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvLoanStatement.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -402,31 +352,11 @@
             this.txttotalInterest.TabIndex = 8;
             this.txttotalInterest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // dtpfromDate
-            // 
-            this.dtpfromDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpfromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfromDate.Location = new System.Drawing.Point(453, 107);
-            this.dtpfromDate.Name = "dtpfromDate";
-            this.dtpfromDate.Size = new System.Drawing.Size(147, 23);
-            this.dtpfromDate.TabIndex = 212;
-            // 
-            // dtptoDate
-            // 
-            this.dtptoDate.CustomFormat = "MM/dd/yyyy";
-            this.dtptoDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptoDate.Location = new System.Drawing.Point(636, 105);
-            this.dtptoDate.Name = "dtptoDate";
-            this.dtptoDate.Size = new System.Drawing.Size(151, 23);
-            this.dtptoDate.TabIndex = 213;
-            // 
             // LoanStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dtptoDate);
-            this.Controls.Add(this.dtpfromDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txttotalInterest);
             this.Controls.Add(this.txttBalancedue);
@@ -438,16 +368,15 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbAccount);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoanStatement";
             this.Size = new System.Drawing.Size(877, 582);
+            this.Load += new System.EventHandler(this.LoanStatement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanStatement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -460,13 +389,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmballFirms;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private Guna.UI2.WinForms.Guna2DataGridView dgvLoanStatement;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -477,7 +400,5 @@
         private Guna.UI2.WinForms.Guna2TextBox txtOpeningBal;
         private Guna.UI2.WinForms.Guna2TextBox txttBalancedue;
         private Guna.UI2.WinForms.Guna2TextBox txttotalInterest;
-        private System.Windows.Forms.DateTimePicker dtpfromDate;
-        private System.Windows.Forms.DateTimePicker dtptoDate;
     }
 }

@@ -16,9 +16,6 @@ namespace sample
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         SqlCommand cmd;
         string id = "";
-
-        public String GetSate;
-
         public SaleInvoice()
         {
             InitializeComponent();
@@ -134,17 +131,12 @@ namespace sample
                     con.Open();
                 }
 
-
-
-
-                string query = string.Format("insert into tbl_SaleInvoice(PartyName,BillingName,ContactNo ,PoNumber,PoDate,InvoiceDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3, Status,TableName,Barcode,IGST) Values (@PartyName, @BillingName, @ContactNo, @PoNumber, @PoDate, @InvoiceDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @Status, @TableName,@Barcode,@IGST); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_SaleInvoice( PartyName,BillingName,ContactNo ,PoNumber,PoDate,InvoiceDate,StateofSupply  ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3, Status,TableName,Barcode) Values (@PartyName, @BillingName, @ContactNo, @PoNumber, @PoDate, @InvoiceDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @Status, @TableName,@Barcode); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_SaleInvoiceSelect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@Action", "Insert");
-
-
                 if (cmbpartyname.Visible == true)
                 {
                     cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
@@ -223,9 +215,9 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception e2)
+                catch (Exception e1)
                 {
-                    MessageBox.Show(e2.Message);
+                    //MessageBox.Show(e1.Message);
                 }            
             }
         }
@@ -241,7 +233,6 @@ namespace sample
             bind_sale_details();
             clear_text_data();
             cleardata();
-
         }
         private void bind_sale_details()
         {
@@ -387,10 +378,8 @@ namespace sample
         {
             try
             {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
+                con.Open();
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
                 string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -400,19 +389,22 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
+
                 }
                 dr.Close();
 
-                txtDis.Focus();
+                txtItemCode.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            //finally
-            //{
-            //    con.Close();
-            //}
+            finally
+            {
+                con.Close();
+            }
         }
 
 
@@ -448,14 +440,13 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select BillingAddress, ContactNo ,State from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                     txtbillingadd.Text = dr["BillingAddress"].ToString();
                     txtcon.Text = dr["ContactNo"].ToString();
-                    GetSate = dr["State "].ToString();
                 }
                 dr.Close();
                 txtPoNo.Focus();
@@ -501,14 +492,12 @@ namespace sample
         {
             try
             {
-                
-                float gst = 0, cgst = 0, sgst = 0,igst=0;
+                float gst = 0, cgst = 0, sgst = 0;
                 gst = float.Parse(cmbtax.Text);
                 cgst = gst / 2;
                 sgst = gst / 2;
                 txtsgst.Text = sgst.ToString();
                 txtcgst.Text = cgst.ToString();
-
             }
             catch (Exception e1)
             {
@@ -932,7 +921,7 @@ namespace sample
         {                     
             try
             {
-                txtItemName.Text = "";
+              
 
                 //if (con.State == ConnectionState.Closed)
                 //{
@@ -957,6 +946,11 @@ namespace sample
 
         }
 
+        private void cmbpartyname1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
@@ -976,13 +970,9 @@ namespace sample
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void TxtIGST_TextChanged(object sender, EventArgs e)
         {
-        }
 
-        private void btnSave_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
         }
     }
 }

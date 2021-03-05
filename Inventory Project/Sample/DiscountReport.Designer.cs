@@ -315,6 +315,7 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(140, 23);
             this.dtpToDate.TabIndex = 147;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             // 
             // DiscountReport
             // 

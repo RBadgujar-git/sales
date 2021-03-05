@@ -54,6 +54,8 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.Clear = new System.Windows.Forms.Button();
             this.txtState = new System.Windows.Forms.ComboBox();
@@ -81,7 +83,7 @@
             this.Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Delete.Location = new System.Drawing.Point(560, 287);
+            this.Delete.Location = new System.Drawing.Point(573, 292);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(100, 40);
             this.Delete.TabIndex = 14;
@@ -94,7 +96,7 @@
             this.Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Update.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Update.Location = new System.Drawing.Point(450, 288);
+            this.Update.Location = new System.Drawing.Point(468, 293);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(100, 40);
             this.Update.TabIndex = 13;
@@ -107,7 +109,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(339, 289);
+            this.btnSave.Location = new System.Drawing.Point(364, 294);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 40);
             this.btnSave.TabIndex = 12;
@@ -330,6 +332,8 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.dtpDate);
             this.panel1.Controls.Add(this.Clear);
             this.panel1.Controls.Add(this.txtState);
@@ -368,6 +372,24 @@
             this.panel1.Size = new System.Drawing.Size(813, 577);
             this.panel1.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(147, 281);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 47;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(49, 284);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 16);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Party Group :";
+            // 
             // dtpDate
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
@@ -382,7 +404,7 @@
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(667, 287);
+            this.Clear.Location = new System.Drawing.Point(679, 292);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(100, 40);
             this.Clear.TabIndex = 15;
@@ -718,11 +740,11 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(10, 335);
+            this.dgvParty.Location = new System.Drawing.Point(10, 357);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvParty.Size = new System.Drawing.Size(793, 209);
+            this.dgvParty.Size = new System.Drawing.Size(793, 187);
             this.dgvParty.TabIndex = 9;
             this.dgvParty.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -808,5 +830,7 @@
         private System.Windows.Forms.ComboBox txtState;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label14;
     }
 }

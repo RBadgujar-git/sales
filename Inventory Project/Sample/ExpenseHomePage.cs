@@ -13,13 +13,14 @@ namespace sample
 {
     public partial class ExpenseHomePage : UserControl
     {
-        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+        SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+        SqlConnection con;
         SqlCommand cmd;
         string id = "";
         public ExpenseHomePage()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+            con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
 
         }
 
@@ -55,7 +56,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select CategoryName from tbl_ExpenseCategory", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_ExpenseCategory", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -63,12 +64,33 @@ namespace sample
             dgvcategory.ColumnCount = 1;
             dgvcategory.Columns[0].HeaderText = "Category";
             dgvcategory.Columns[0].DataPropertyName = "CategoryName";
+            
+
             dgvcategory.DataSource = dt;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void dgvcategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+
+
+            string Query = string.Format("select ID,Date,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' group by ID,Date,Total,Paid,Balance", lblCategory.Text);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvExxpenses.DataSource = ds;
+            dgvExxpenses.DataMember = "temp";
+
+        }
+
+        private void ExpenseHomePage_Load(object sender, EventArgs e)
+        {
+            bindbankdata();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -81,6 +103,9 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvcategory.DataSource = ds;
                 dgvcategory.DataMember = "temp";
+
+
+
             }
             catch (Exception ex)
             {
@@ -88,9 +113,21 @@ namespace sample
             }
         }
 
-        private void ExpenseHomePage_Load(object sender, EventArgs e)
+        private void txtSearch1_TextChanged(object sender, EventArgs e)
         {
-            bindbankdata();
+            try
+            {
+                string Query = string.Format("select ID from tbl_Expenses where ID like '%{0}%'", txtSearch1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvExxpenses.DataSource = ds;
+                dgvExxpenses.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

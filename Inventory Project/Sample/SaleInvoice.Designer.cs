@@ -460,6 +460,40 @@
             this.TxtIGST.Size = new System.Drawing.Size(57, 25);
             this.TxtIGST.TabIndex = 204;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(799, 416);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 16);
+            this.label10.TabIndex = 205;
+            this.label10.Text = "IGST";
+            // 
+            // TxtIGST
+            // 
+            this.TxtIGST.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtIGST.DefaultText = "";
+            this.TxtIGST.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtIGST.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtIGST.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIGST.DisabledState.Parent = this.TxtIGST;
+            this.TxtIGST.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIGST.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtIGST.FocusedState.Parent = this.TxtIGST;
+            this.TxtIGST.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtIGST.HoverState.Parent = this.TxtIGST;
+            this.TxtIGST.Location = new System.Drawing.Point(788, 434);
+            this.TxtIGST.Name = "TxtIGST";
+            this.TxtIGST.PasswordChar = '\0';
+            this.TxtIGST.PlaceholderText = "";
+            this.TxtIGST.SelectedText = "";
+            this.TxtIGST.ShadowDecoration.Parent = this.TxtIGST;
+            this.TxtIGST.Size = new System.Drawing.Size(57, 25);
+            this.TxtIGST.TabIndex = 204;
+            this.TxtIGST.TextChanged += new System.EventHandler(this.TxtIGST_TextChanged);
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(519, 129);

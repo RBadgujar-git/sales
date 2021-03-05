@@ -27,16 +27,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryChallanHomepage));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btndeliveryChallan = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvdeliveryChallan = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.dgvdeliveryChallan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.dtptodate = new System.Windows.Forms.DateTimePicker();
+            this.dtpfromdate = new System.Windows.Forms.DateTimePicker();
+            this.txtFilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdeliveryChallan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,65 +71,6 @@
             this.btndeliveryChallan.Text = "+Add Delivery Challan";
             this.btndeliveryChallan.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // dgvdeliveryChallan
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvdeliveryChallan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvdeliveryChallan.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvdeliveryChallan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvdeliveryChallan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvdeliveryChallan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvdeliveryChallan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvdeliveryChallan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdeliveryChallan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvdeliveryChallan.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvdeliveryChallan.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvdeliveryChallan.EnableHeadersVisualStyles = false;
-            this.dgvdeliveryChallan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvdeliveryChallan.Location = new System.Drawing.Point(7, 183);
-            this.dgvdeliveryChallan.Name = "dgvdeliveryChallan";
-            this.dgvdeliveryChallan.RowHeadersVisible = false;
-            this.dgvdeliveryChallan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdeliveryChallan.Size = new System.Drawing.Size(1062, 383);
-            this.dgvdeliveryChallan.TabIndex = 195;
-            this.dgvdeliveryChallan.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvdeliveryChallan.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvdeliveryChallan.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.Height = 18;
-            this.dgvdeliveryChallan.ThemeStyle.ReadOnly = false;
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            // 
             // btncancel
             // 
             this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -125,7 +81,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(998, 9);
+            this.btncancel.Location = new System.Drawing.Point(1031, 3);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 193;
@@ -160,27 +116,235 @@
             this.btnImport.TabIndex = 191;
             this.btnImport.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // dgvdeliveryChallan
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 18);
-            this.label6.TabIndex = 194;
-            this.label6.Text = "Transaction";
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvdeliveryChallan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvdeliveryChallan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvdeliveryChallan.BackgroundColor = System.Drawing.Color.White;
+            this.dgvdeliveryChallan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvdeliveryChallan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvdeliveryChallan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvdeliveryChallan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvdeliveryChallan.ColumnHeadersHeight = 18;
+            this.dgvdeliveryChallan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvdeliveryChallan.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvdeliveryChallan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvdeliveryChallan.EnableHeadersVisualStyles = false;
+            this.dgvdeliveryChallan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvdeliveryChallan.Location = new System.Drawing.Point(0, 188);
+            this.dgvdeliveryChallan.Name = "dgvdeliveryChallan";
+            this.dgvdeliveryChallan.RowHeadersVisible = false;
+            this.dgvdeliveryChallan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvdeliveryChallan.Size = new System.Drawing.Size(1072, 386);
+            this.dgvdeliveryChallan.TabIndex = 202;
+            this.dgvdeliveryChallan.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvdeliveryChallan.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvdeliveryChallan.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvdeliveryChallan.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvdeliveryChallan.ThemeStyle.HeaderStyle.Height = 18;
+            this.dgvdeliveryChallan.ThemeStyle.ReadOnly = false;
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvdeliveryChallan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ref No";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Party";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Paid/Recievd";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Balance ";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // cmbAllfirms
+            // 
+            this.cmbAllfirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbAllfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAllfirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAllfirms.FocusedState.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAllfirms.ForeColor = System.Drawing.Color.Blue;
+            this.cmbAllfirms.HoverState.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.ItemHeight = 30;
+            this.cmbAllfirms.Items.AddRange(new object[] {
+            "All Firms"});
+            this.cmbAllfirms.ItemsAppearance.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.Location = new System.Drawing.Point(36, 31);
+            this.cmbAllfirms.Name = "cmbAllfirms";
+            this.cmbAllfirms.ShadowDecoration.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
+            this.cmbAllfirms.StartIndex = 0;
+            this.cmbAllfirms.TabIndex = 234;
+            // 
+            // dtptodate
+            // 
+            this.dtptodate.CustomFormat = "MM/dd/yyyy";
+            this.dtptodate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtptodate.Location = new System.Drawing.Point(413, 39);
+            this.dtptodate.Name = "dtptodate";
+            this.dtptodate.Size = new System.Drawing.Size(141, 23);
+            this.dtptodate.TabIndex = 233;
+            this.dtptodate.ValueChanged += new System.EventHandler(this.dtptodate_ValueChanged);
+            // 
+            // dtpfromdate
+            // 
+            this.dtpfromdate.CustomFormat = "MM/dd/yyyy";
+            this.dtpfromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfromdate.Location = new System.Drawing.Point(235, 41);
+            this.dtpfromdate.Name = "dtpfromdate";
+            this.dtpfromdate.Size = new System.Drawing.Size(136, 23);
+            this.dtpfromdate.TabIndex = 232;
+            // 
+            // txtFilter
+            // 
+            this.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilter.DefaultText = "";
+            this.txtFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilter.DisabledState.Parent = this.txtFilter;
+            this.txtFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilter.FocusedState.Parent = this.txtFilter;
+            this.txtFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilter.HoverState.Parent = this.txtFilter;
+            this.txtFilter.Location = new System.Drawing.Point(106, 125);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.PasswordChar = '\0';
+            this.txtFilter.PlaceholderText = "";
+            this.txtFilter.SelectedText = "";
+            this.txtFilter.ShadowDecoration.Parent = this.txtFilter;
+            this.txtFilter.Size = new System.Drawing.Size(200, 36);
+            this.txtFilter.TabIndex = 231;
+            this.txtFilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 127);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.TabIndex = 230;
+            this.label3.Text = " Filter by :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(182, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.TabIndex = 228;
+            this.label1.Text = "From";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(383, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 16);
+            this.label5.TabIndex = 229;
+            this.label5.Text = "To";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 18);
+            this.label2.TabIndex = 227;
+            this.label2.Text = "Transaction";
             // 
             // DeliveryChallanHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btndeliveryChallan);
+            this.Controls.Add(this.cmbAllfirms);
+            this.Controls.Add(this.dtptodate);
+            this.Controls.Add(this.dtpfromdate);
+            this.Controls.Add(this.txtFilter);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvdeliveryChallan);
+            this.Controls.Add(this.btndeliveryChallan);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.label6);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DeliveryChallanHomepage";
@@ -195,10 +359,25 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btndeliveryChallan;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvdeliveryChallan;
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvdeliveryChallan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
+        private System.Windows.Forms.DateTimePicker dtptodate;
+        private System.Windows.Forms.DateTimePicker dtpfromdate;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label2;
     }
 }
