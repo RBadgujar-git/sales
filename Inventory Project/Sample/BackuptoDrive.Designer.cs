@@ -109,7 +109,7 @@
             this.Name = "BackuptoDrive";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BackuptoDrive";
-            this.Load += new System.EventHandler(this.BackuptoDrive_Load);
+            //this.Load += new System.EventHandler(this.BackuptoDrive_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
