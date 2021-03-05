@@ -159,6 +159,7 @@
             this.dgvexpenses.ThemeStyle.RowsStyle.Height = 22;
             this.dgvexpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvexpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvexpenses.TabIndexChanged += new System.EventHandler(this.dgvexpenses_TabIndexChanged);
             // 
             // Column5
             // 
@@ -287,6 +288,7 @@
             this.cmbexpenses.ShadowDecoration.Parent = this.cmbexpenses;
             this.cmbexpenses.Size = new System.Drawing.Size(236, 36);
             this.cmbexpenses.TabIndex = 166;
+            this.cmbexpenses.SelectedIndexChanged += new System.EventHandler(this.cmbexpenses_SelectedIndexChanged);
             // 
             // dtpFromDate
             // 
@@ -305,6 +307,8 @@
             this.dtpTodate.Name = "dtpTodate";
             this.dtpTodate.Size = new System.Drawing.Size(137, 23);
             this.dtpTodate.TabIndex = 168;
+            this.dtpTodate.ValueChanged += new System.EventHandler(this.dtpTodate_ValueChanged);
+            this.dtpTodate.Enter += new System.EventHandler(this.dtpTodate_Enter);
             // 
             // ExpensesReport
             // 

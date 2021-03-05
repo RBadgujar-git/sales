@@ -21,5 +21,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void OtherIncomeReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

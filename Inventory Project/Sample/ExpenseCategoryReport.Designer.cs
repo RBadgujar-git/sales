@@ -168,6 +168,7 @@
             this.dgvExpensecategory.ThemeStyle.RowsStyle.Height = 22;
             this.dgvExpensecategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvExpensecategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvExpensecategory.TabIndexChanged += new System.EventHandler(this.dgvExpensecategory_TabIndexChanged);
             // 
             // Column1
             // 
@@ -200,6 +201,7 @@
             this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllfirms.StartIndex = 0;
             this.cmbAllfirms.TabIndex = 175;
+            this.cmbAllfirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllfirms_SelectedIndexChanged);
             // 
             // btnCancel
             // 
@@ -301,6 +303,8 @@
             this.dtptodate.Name = "dtptodate";
             this.dtptodate.Size = new System.Drawing.Size(150, 23);
             this.dtptodate.TabIndex = 180;
+            this.dtptodate.ValueChanged += new System.EventHandler(this.dtptodate_ValueChanged);
+            this.dtptodate.Enter += new System.EventHandler(this.dtptodate_Enter);
             // 
             // ExpenseCategoryReport
             // 

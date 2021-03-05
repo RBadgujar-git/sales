@@ -327,6 +327,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OtherIncomeReport";
             this.Size = new System.Drawing.Size(1008, 574);
+            this.Load += new System.EventHandler(this.OtherIncomeReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherIncome)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

@@ -694,5 +694,10 @@ namespace sample
                 txtrefNo.Visible = false;
             }
         }
+
+        private void Order_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

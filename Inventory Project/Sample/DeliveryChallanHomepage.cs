@@ -14,6 +14,12 @@ namespace sample
     public partial class DeliveryChallanHomepage : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+        // SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+        //  SqlConnection con;
+        SqlCommand cmd;
+        string id = "";
+
+
         public DeliveryChallanHomepage()
         {
             InitializeComponent();
@@ -23,7 +29,7 @@ namespace sample
         {
             DeliveryChallan BA = new DeliveryChallan();
             BA.TopLevel = false;
-           // BA.AutoScroll = true;
+            // BA.AutoScroll = true;
             this.Controls.Add(BA);
             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
@@ -38,14 +44,102 @@ namespace sample
 
         private void DeliveryChallanHomepage_Load(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,ChallanNo,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_DeliveryChallan", con);
-            DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(cmd);
-            SDA.Fill(ds, "temp");
-            dgvdeliveryChallan.DataSource = ds;
-            dgvdeliveryChallan.DataMember = "temp";
-            con.Close();
+            fetchCompany();
+
         }
+        private void fetchCompany()
+        {
+            if (cmbAllfirms.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+        private void bindbankdata()
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from tbl_DeliveryChallan", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con.Close();
+            dgvdeliveryChallan.AutoGenerateColumns = false;
+            dgvdeliveryChallan.ColumnCount = 9;
+            dgvdeliveryChallan.Columns[0].HeaderText = "Type";
+            dgvdeliveryChallan.Columns[0].DataPropertyName = "TableName";
+            dgvdeliveryChallan.Columns[1].HeaderText = "Date";
+            dgvdeliveryChallan.Columns[1].DataPropertyName = "InvoiceDate";
+            dgvdeliveryChallan.Columns[2].HeaderText = "Ref No";
+            dgvdeliveryChallan.Columns[2].DataPropertyName = "ReturnNo";
+            dgvdeliveryChallan.Columns[3].HeaderText = "Party";
+            dgvdeliveryChallan.Columns[3].DataPropertyName = "PartyName";
+            dgvdeliveryChallan.Columns[4].HeaderText = "Total";
+            dgvdeliveryChallan.Columns[4].DataPropertyName = "Total";
+            dgvdeliveryChallan.Columns[5].HeaderText = "Paid/Recieved";
+            dgvdeliveryChallan.Columns[5].DataPropertyName = "Received";
+            dgvdeliveryChallan.Columns[6].HeaderText = "Balance";
+            dgvdeliveryChallan.Columns[6].DataPropertyName = "RemainingBal";
+            dgvdeliveryChallan.Columns[7].HeaderText = "Status";
+            dgvdeliveryChallan.Columns[7].DataPropertyName = "Status";
+
+            dgvdeliveryChallan.Columns[8].HeaderText = "Due Date";
+            dgvdeliveryChallan.Columns[8].DataPropertyName = "DueDate";
+
+
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select PartyName from tbl_DeliveryChallan where PartyName like '%{0}%'", txtFilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvdeliveryChallan.DataSource = ds;
+                dgvdeliveryChallan.DataMember = "temp";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtptodate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvdeliveryChallan.DataSource = ds;
+                dgvdeliveryChallan.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+        }
+    
+
     }
 }

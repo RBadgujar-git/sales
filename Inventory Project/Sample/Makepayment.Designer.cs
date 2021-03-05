@@ -48,6 +48,8 @@
             this.btnclear = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.cmbCompanyName = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMakePayment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 71);
+            this.label2.Location = new System.Drawing.Point(226, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 1;
@@ -85,7 +87,7 @@
             this.txtPrincipleAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrincipleAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrincipleAmount.HoverState.Parent = this.txtPrincipleAmount;
-            this.txtPrincipleAmount.Location = new System.Drawing.Point(353, 65);
+            this.txtPrincipleAmount.Location = new System.Drawing.Point(356, 82);
             this.txtPrincipleAmount.Name = "txtPrincipleAmount";
             this.txtPrincipleAmount.PasswordChar = '\0';
             this.txtPrincipleAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -114,7 +116,7 @@
             this.txtinterestAmout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtinterestAmout.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtinterestAmout.HoverState.Parent = this.txtinterestAmout;
-            this.txtinterestAmout.Location = new System.Drawing.Point(353, 103);
+            this.txtinterestAmout.Location = new System.Drawing.Point(356, 120);
             this.txtinterestAmout.Name = "txtinterestAmout";
             this.txtinterestAmout.PasswordChar = '\0';
             this.txtinterestAmout.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -131,7 +133,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(224, 109);
+            this.label3.Location = new System.Drawing.Point(227, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 16);
             this.label3.TabIndex = 4;
@@ -140,7 +142,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(300, 145);
+            this.label4.Location = new System.Drawing.Point(303, 162);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
@@ -150,7 +152,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(244, 179);
+            this.label5.Location = new System.Drawing.Point(247, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 16);
             this.label5.TabIndex = 10;
@@ -171,7 +173,7 @@
             this.txtTotalAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.HoverState.Parent = this.txtTotalAmount;
-            this.txtTotalAmount.Location = new System.Drawing.Point(353, 173);
+            this.txtTotalAmount.Location = new System.Drawing.Point(356, 190);
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
             this.txtTotalAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -187,7 +189,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(267, 216);
+            this.label6.Location = new System.Drawing.Point(270, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 11;
@@ -256,7 +258,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(337, 254);
+            this.btnSave.Location = new System.Drawing.Point(336, 262);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 6;
@@ -284,7 +286,7 @@
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(353, 142);
+            this.dtpDate.Location = new System.Drawing.Point(356, 159);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 23);
             this.dtpDate.TabIndex = 3;
@@ -298,20 +300,20 @@
             "Cash",
             "Cheque",
             "Online Payment"});
-            this.cmbPaidFrom.Location = new System.Drawing.Point(353, 212);
+            this.cmbPaidFrom.Location = new System.Drawing.Point(356, 229);
             this.cmbPaidFrom.Name = "cmbPaidFrom";
             this.cmbPaidFrom.Size = new System.Drawing.Size(200, 24);
-            this.cmbPaidFrom.TabIndex = 5;
+            this.cmbPaidFrom.TabIndex = 16;
             // 
             // btnclear
             // 
             this.btnclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnclear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnclear.Location = new System.Drawing.Point(623, 254);
+            this.btnclear.Location = new System.Drawing.Point(622, 262);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(90, 42);
-            this.btnclear.TabIndex = 9;
+            this.btnclear.TabIndex = 17;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
             this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
@@ -321,10 +323,10 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(527, 254);
+            this.btnDelete.Location = new System.Drawing.Point(526, 262);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.TabIndex = 18;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -334,19 +336,40 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(431, 254);
+            this.btnUpdate.Location = new System.Drawing.Point(430, 262);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // cmbCompanyName
+            // 
+            this.cmbCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCompanyName.FormattingEnabled = true;
+            this.cmbCompanyName.Location = new System.Drawing.Point(356, 42);
+            this.cmbCompanyName.Name = "cmbCompanyName";
+            this.cmbCompanyName.Size = new System.Drawing.Size(200, 24);
+            this.cmbCompanyName.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(227, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Account Name :";
             // 
             // Makepayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbCompanyName);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnclear);
@@ -395,5 +418,7 @@
         private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.ComboBox cmbCompanyName;
+        private System.Windows.Forms.Label label7;
     }
 }
