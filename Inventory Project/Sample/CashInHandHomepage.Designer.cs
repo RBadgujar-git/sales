@@ -34,15 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvCashInHand = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAdjustcah = new System.Windows.Forms.Button();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashInHand)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +76,8 @@
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(246, 27);
             this.txtSearch.TabIndex = 19;
+            this.txtSearch.WordWrap = false;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvCashInHand
             // 
@@ -100,10 +98,6 @@
             this.dgvCashInHand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCashInHand.ColumnHeadersHeight = 18;
             this.dgvCashInHand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
             this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -143,31 +137,6 @@
             this.dgvCashInHand.ThemeStyle.RowsStyle.Height = 22;
             this.dgvCashInHand.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCashInHand.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Type";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Name";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Date";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Amount";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
             // 
             // guna2ShadowPanel1
             // 
@@ -223,6 +192,11 @@
             this.btnAdjustcah.UseVisualStyleBackColor = false;
             this.btnAdjustcah.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "";
+            this.Column7.Name = "Column7";
+            // 
             // CashInHandHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,6 +211,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CashInHandHomepage";
             this.Size = new System.Drawing.Size(1077, 721);
+            this.Load += new System.EventHandler(this.CashInHandHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashInHand)).EndInit();
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -252,12 +227,8 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvCashInHand;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button btnAdjustcah;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

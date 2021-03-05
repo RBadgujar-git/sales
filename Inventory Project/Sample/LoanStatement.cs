@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace sample
 {
     public partial class LoanStatement : UserControl
     {
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+        // SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+        //  SqlConnection con;
+        SqlCommand cmd;
+        string id = "";
         public LoanStatement()
         {
             InitializeComponent();
@@ -25,6 +32,104 @@ namespace sample
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void LoanStatement_Load(object sender, EventArgs e)
+        {
+            fetchCompany();
+            fetchLoanAccount();
+
+        }
+    private void fetchCompany()
+        {
+            if (cmballFirms.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmballFirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+        private void fetchLoanAccount()
+        {
+            if (cmballFirms.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank group by AccountName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmballFirms.Items.Add(ds.Tables["Temp"].Rows[i]["AccountName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+
+        private void cmbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select BalAsOf,CurrentBal,Interest  from tbl_LoanBank where AccountName='{0}'", cmbAccount.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvLoanStatement.DataSource = ds;
+                dgvLoanStatement.DataMember = "temp";
+
+
+                string Query1 = String.Format("select CurrentBal from tbl_LoanBank where (AccountName='{0}') GROUP BY CurrentBal", cmbAccount.Text);
+                SqlCommand cmd = new SqlCommand(Query1, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtOpeningBal.Text = dr["CurrentBal"].ToString();
+                }
+                dr.Close();
+
+                string Query2 = String.Format("select PrincipleAmount,InterestAmount from tbl_MakePayment where (AccountName='{0}') GROUP BY PrincipleAmount,InterestAmount", cmbAccount.Text);
+                SqlCommand cmd1 = new SqlCommand(Query2, con);
+                SqlDataReader dr1 = cmd1.ExecuteReader();
+                if (dr1.Read())
+                {
+                    txttotalPrinciple.Text = dr1["PrincipleAmount"].ToString();
+                    txttotalInterest.Text = dr1["InterestAmount"].ToString();
+                }
+                dr1.Close();
+                float PA = 0, TA = 0, BalanceDue = 0;
+                PA = float.Parse(txttotalPrinciple.Text.ToString());
+                TA = float.Parse(txttotalInterest.Text.ToString());
+                BalanceDue = PA + TA;
+                txttBalancedue.Text = BalanceDue.ToString();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

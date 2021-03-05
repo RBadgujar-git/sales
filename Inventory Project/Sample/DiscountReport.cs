@@ -36,5 +36,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select AccountName as Account, CurrentBal as Amount from tbl_LoanBank", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_LoanBank", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -76,7 +76,9 @@ namespace sample
             dgvLoanAccount.Columns[0].DataPropertyName = "AccountName";
             dgvLoanAccount.Columns[1].HeaderText = "Amount";
             dgvLoanAccount.Columns[1].DataPropertyName = "CurrentBal";
-            dgvbankAccount.DataSource = dt;
+
+
+            dgvLoanAccount.DataSource = dt;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -88,7 +90,32 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName,CurrentBal from tbl_LoanBank where AccountName like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select AccountName from tbl_LoanBank where AccountName like '%{0}%'", txtSearch1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvbankAccount.DataSource = ds;
+                dgvbankAccount.DataMember = "temp";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void LoanAccountHomepage_Load(object sender, EventArgs e)
+        {
+            bindbankdata();
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select AccountNo from tbl_LoanBank where AccountNo like '%{0}%'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -101,9 +128,16 @@ namespace sample
             }
         }
 
-        private void LoanAccountHomepage_Load(object sender, EventArgs e)
+        private void dgvbankAccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            bindbankdata();
+            lblBankAccount.Text = dgvbankAccount.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+
+            string Query = string.Format("select AccountNo,Date,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where AccountName='{0}' group by AccountNo,Date,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvLoanAccount.DataSource = ds;
+            dgvLoanAccount.DataMember = "temp";
         }
     }
 }

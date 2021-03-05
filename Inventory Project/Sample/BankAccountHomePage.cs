@@ -21,7 +21,7 @@ namespace sample
         public BankAccountHomePage()
         {
             InitializeComponent();
-           // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+            // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
 
         }
 
@@ -34,7 +34,7 @@ namespace sample
         {
             BankAccount BA = new BankAccount();
             BA.TopLevel = false;
-          //  BA.AutoScroll = true;
+            //  BA.AutoScroll = true;
             this.Controls.Add(BA);
             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
@@ -45,8 +45,8 @@ namespace sample
         private void button4_Click(object sender, EventArgs e)
         {
             AdjustAccount BA = new AdjustAccount();
-           // BA.TopLevel = false;
-         //   BA.AutoScroll = true;
+            // BA.TopLevel = false;
+            //   BA.AutoScroll = true;
             this.Controls.Add(BA);
             // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
@@ -57,11 +57,11 @@ namespace sample
         private void button1_Click(object sender, EventArgs e)
         {
             Banktobank BA = new Banktobank();
-          //  BA.TopLevel = false;
+            //  BA.TopLevel = false;
             //BA.AutoScroll = true;
             this.Controls.Add(BA);
             // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-           BA.Dock = DockStyle.Fill;
+            BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();
         }
@@ -71,7 +71,7 @@ namespace sample
             bindbankdata();
         }
         private void bindbankdata()
-        { 
+        {
             con.Open();
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand("select * from tbl_BankAccount", con);
@@ -83,7 +83,9 @@ namespace sample
             dgvBankAccount.Columns[0].HeaderText = "Account";
             dgvBankAccount.Columns[0].DataPropertyName = "AccountName";
             dgvBankAccount.Columns[1].HeaderText = "Amount";
-            dgvBankAccount.Columns[1].DataPropertyName = "OpeningBal";    
+            dgvBankAccount.Columns[1].DataPropertyName = "OpeningBal";
+
+
             dgvBankAccount.DataSource = dt;
         }
 
@@ -92,11 +94,54 @@ namespace sample
             this.Visible = false;
         }
 
+        private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvBankAccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            lblBankAccount.Text = dgvBankAccount.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+
+            string Query = string.Format("select AccountNo,Date,OpeningBal from tbl_BankAccount where AccountName='{0}' group by AccountNo,Date,OpeningBal", lblBankAccount.Text);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvBankAcc.DataSource = ds;
+            dgvBankAcc.DataMember = "temp";
+
+        }
+
         private void txtSearch1_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string Query = string.Format("select AccountName,OpeningBal from tbl_BankAccount where AccountName like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select AccountName from tbl_BankAccount where AccountName like '%{0}%'", txtSearch1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvBankAccount.DataSource = ds;
+                dgvBankAccount.DataMember = "temp";
+
+
+             
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select AccountNo from tbl_BankAccount where AccountNo like '%{0}%'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -108,6 +153,10 @@ namespace sample
                 MessageBox.Show(ex.Message);
             }
         }
-    }
-  }
 
+        private void dgvBankAcc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
+}

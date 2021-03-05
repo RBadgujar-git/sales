@@ -54,5 +54,25 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void cmbAllCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select ItemName,OpeningQty,MinimumStock,atPrice  from tbl_ItemMaster where ItemCategory='{0}'", cmbAllCategory.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvLowstocksummary.DataSource = ds;
+                dgvLowstocksummary.DataMember = "temp";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

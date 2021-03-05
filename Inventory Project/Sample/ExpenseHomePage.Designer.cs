@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblCategory = new System.Windows.Forms.Label();
             this.btnexpenses = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvcategory = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -43,8 +44,6 @@
             this.btnAddcategory = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvExxpenses = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -60,6 +59,7 @@
             // 
             this.guna2ShadowPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.lblCategory);
             this.guna2ShadowPanel3.Controls.Add(this.btnexpenses);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(291, 65);
@@ -67,6 +67,15 @@
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(771, 130);
             this.guna2ShadowPanel3.TabIndex = 7;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.Location = new System.Drawing.Point(62, 36);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(0, 16);
+            this.lblCategory.TabIndex = 198;
             // 
             // btnexpenses
             // 
@@ -157,6 +166,7 @@
             this.dgvcategory.ThemeStyle.RowsStyle.Height = 22;
             this.dgvcategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvcategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvcategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcategory_CellDoubleClick);
             // 
             // Column1
             // 
@@ -229,6 +239,7 @@
             this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
             this.txtSearch1.Size = new System.Drawing.Size(246, 27);
             this.txtSearch1.TabIndex = 9;
+            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
             // 
             // dgvExxpenses
             // 
@@ -250,8 +261,6 @@
             this.dgvExxpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvExxpenses.ColumnHeadersHeight = 18;
             this.dgvExxpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column6,
             this.Column7});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
@@ -291,16 +300,6 @@
             this.dgvExxpenses.ThemeStyle.RowsStyle.Height = 22;
             this.dgvExxpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvExxpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Date";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Amount";
-            this.Column6.Name = "Column6";
             // 
             // Column7
             // 
@@ -363,6 +362,7 @@
             this.Size = new System.Drawing.Size(1065, 605);
             this.Load += new System.EventHandler(this.ExpenseHomePage_Load);
             this.guna2ShadowPanel3.ResumeLayout(false);
+            this.guna2ShadowPanel3.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExxpenses)).EndInit();
@@ -384,10 +384,9 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnexpenses;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Label lblCategory;
     }
 }
