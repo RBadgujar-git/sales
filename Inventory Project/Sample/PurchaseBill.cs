@@ -27,13 +27,15 @@ namespace sample
 
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
-            fetchitem();
+            fetchCategory();
+            //fetchitem();
             fetchcustomername();
             bind_sale_details();
             txtReturnNo.Enabled = false;
             get_id();
             txtsubtotal.Enabled = false;
             txtTotal.Enabled = false;
+            comboBox2.Visible = false;
         }
         private void fetchdetails()
         {
@@ -66,22 +68,6 @@ namespace sample
         }
         private void fetchitem()
         {
-            if (txtItemName.Text != "System.Data.DataRowView") {
-                try {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
-                        txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
-                    }
-                }
-                catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
-                }
-            }
         }
 
         private void fetchcustomername()
@@ -129,31 +115,7 @@ namespace sample
 
         private void cmbpartyname_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read()) {
-                    txtbillingadd.Text = dr["BillingAddress"].ToString();
-                    txtcon.Text = dr["ContactNo"].ToString();
-
-
-                }
-                dr.Close();
-
-                txtPONo.Focus();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-            finally {
-                // con.Close();
-            }
+           
         }
 
         private void txtItemName_SelectedIndexChanged(object sender, EventArgs e)
@@ -399,7 +361,7 @@ namespace sample
             txtTransportName.Text = "";
             txtDeliveryLoc.Text = "";
             txtVehicleNo.Text = "";
-            picImage.Image = null;
+           
             txtrefNo.Text = "";
             txtadditional1.Text = "";
             txtadditional2.Text = "";
@@ -416,6 +378,10 @@ namespace sample
             txtBallaance.Text = "0";
             ComboBox.Text = "";
             Purchase.Text = "";
+            cmbbarcode.Text = "";
+           // comboBox2.Text = "";
+            comboBox1.Text = "";
+            guna2TextBox1.Text = "0";
         }
         private void insertdata()
         {
@@ -427,18 +393,23 @@ namespace sample
                 {
                     con.Open();
                 }
-                MemoryStream ms = new MemoryStream();
-                picImage.Image.Save(ms, picImage.Image.RawFormat);
-                byte[] arrImage1 = ms.GetBuffer();
-
+              
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_PurchaseBillselect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Action", "Insert");
-                cmd.Parameters.AddWithValue("@BillNo", txtReturnNo.Text);
-               // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
+                // cmd.Parameters.AddWithValue("@Action", "Insert");
+                //cmd.Parameters.AddWithValue("@BillNo", txtReturnNo.Text);
+                // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", comboBox2.Text);
+                }
                 cmd.Parameters.AddWithValue("@PONo", txtPONo.Text);
-                cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+               // cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
                 cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
                 cmd.Parameters.AddWithValue("@PODate", dtpPODate.Text);
                 cmd.Parameters.AddWithValue("@BillDate", dtpInvoice.Text);
@@ -470,7 +441,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Purchase.Text);
-                cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
+                cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@IGST", guna2TextBox1.Text);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
                 cleardata();
@@ -488,6 +461,8 @@ namespace sample
         {
             if (e.KeyCode == Keys.Enter)
             {
+                cmbpartyname.Visible = false;
+                comboBox2.Visible = true;
                 bind_sale_details();
             }
         }
@@ -500,10 +475,7 @@ namespace sample
                     con.Open();
                 }
                 string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}'", txtReturnNo.Text);
-                SqlCommand cmd = new SqlCommand(str, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                SqlCommand cmd = new SqlCommand(str, con);             
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 { 
@@ -515,7 +487,7 @@ namespace sample
                         //,VehicleNumber,Deliverydate,Description,TransportCharges,Image,Tax1,TaxAmount1 ,TotalDiscount
                         //,DiscountAmount1 ,RoundFigure ,Total, Paid, RemainingBal, PaymentTerms, Feild1,Feild2,Feild3,Feild4,Feild5
                         //  txtInvoiceNo.Text = dr["InvoiceNo"].ToString();
-                        cmbpartyname.Text = dr["PartyName"].ToString();
+                        comboBox2.Text = dr["PartyName"].ToString();
                         txtbillingadd.Text = dr["BillingName"].ToString();
                         txtcon.Text = dr["ContactNo"].ToString();
                         txtPONo.Text = dr["PONo"].ToString();
@@ -534,13 +506,7 @@ namespace sample
                         DtpdeliveryDate.Text = dr["Deliverydate"].ToString();
                        
                         txtDescription.Text = dr["Description"].ToString();
-                        if (ds.Tables[0].Rows.Count > 0)
-                        {
-                            MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["Image"]);
-                            ms.Seek(0, SeekOrigin.Begin);
-                            picImage.Image = Image.FromStream(ms); ;
-                            picImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                        }
+                       
                         cmbtax.Text = dr["Tax1"].ToString();
                         txtcgst.Text = dr["CGST"].ToString();
                         txtsgst.Text = dr["SGST"].ToString();
@@ -560,7 +526,9 @@ namespace sample
                         txtadditional2.Text = dr["Feild3"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
                         Purchase.Text = dr["TableName"].ToString();
-
+                        cmbpartyname.Text = dr["ItemCategory"].ToString();
+                        guna2TextBox1.Text = dr["IGST"].ToString();
+                        cmbbarcode.Text = dr["Barcode"].ToString();
                         id = dr["id"].ToString();
                        
                     }
@@ -608,10 +576,7 @@ namespace sample
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
         private void update_record_inner(string p)
         {
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
@@ -657,9 +622,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                MemoryStream ms = new MemoryStream();
-                picImage.Image.Save(ms, picImage.Image.RawFormat);
-                byte[] arrImage1 = ms.GetBuffer();
+               
                  DataTable dtable = new DataTable();
                  cmd = new SqlCommand("tbl_PurchaseBillselect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -698,7 +661,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Purchase.Text);
-                cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+               
                 cmd.Parameters.AddWithValue("@Action", "Update");
 
                 id1 = cmd.ExecuteScalar();
@@ -786,11 +749,7 @@ namespace sample
 
         }
 
-        private void btnlinkPayment_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void cmbPaymentType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cmbPaymentType.SelectedItem == "Cheque")
@@ -803,33 +762,7 @@ namespace sample
             }
         }
 
-        byte[] arrImage1;
-        private void picImage_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
-                {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
-                    {
-                        picImage.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        picImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        picImage.Image.Save(ms, picImage.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
-                    }
-                }
-            }
-        }
+      
 
         private void chkenble_CheckedChanged(object sender, EventArgs e)
         {
@@ -852,6 +785,126 @@ namespace sample
         private void Clear_Click(object sender, EventArgs e)
         {
             cleardata();
+        }
+
+        private void cmbpartyname_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtbillingadd.Text = dr["BillingAddress"].ToString();
+                    txtcon.Text = dr["ContactNo"].ToString();
+                }
+                dr.Close();
+                txtPONo.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        //    finally
+        //    {
+        //        //con.Close();
+        //    }
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbPaymentType_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbPaymentType.SelectedItem == "Cheque")
+            {
+                txtrefNo.Visible = true;
+            }
+            else if (cmbPaymentType.SelectedItem == "Cash")
+            {
+                txtrefNo.Visible = false;
+            }
+        }
+
+        private void txtItemName_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+            if (txtItemName.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+        private void fetchCategory()
+        {
+            if (comboBox1.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        comboBox1.Items.Add(ds.Tables["Temp"].Rows[i]["ItemCategory"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {               
+                //if (con.State == ConnectionState.Closed)
+                //{
+                //    con.Open();
+                //}
+                con.Close();
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", comboBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
     }

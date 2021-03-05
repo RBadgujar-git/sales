@@ -188,7 +188,7 @@ namespace sample
                 }
 
 
-                string query = string.Format("insert into tbl_DeliveryChallan(PartyName ,BillingName,BillingAddress,PartyAddress,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, ContactNo,Feild1,Feild2,Feild3,Status,TableName,ItemCategory,Barcode,IGST) Values (@PartyName, @BillingName,  @BillingAddress,@PartyAddress,@InvoiceDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @ItemCategory,@Barcode,@IGST); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_DeliveryChallan(PartyName ,BillingName,BillingAddress,PartyAddress,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, ContactNo,Feild1,Feild2,Feild3,Status,TableName,ItemCategory,Barcode) Values (@PartyName, @BillingName,  @BillingAddress,@PartyAddress,@InvoiceDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @ItemCategory,@Barcode); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
@@ -238,7 +238,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
                 cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-                cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
+               
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
                 
@@ -449,7 +449,7 @@ namespace sample
                         Delivery.Text=dr["TableName"].ToString();
                         cmbCategory.Text= dr["ItemCategory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
-                        txtIGST.Text = dr["IGST"].ToString();
+                       
                         // lblsgst.Text = dr["ContactNo"].ToString();
 
                         id = dr["ChallanNo"].ToString();
@@ -607,7 +607,7 @@ namespace sample
             Delivery.Text= "";
             cmbCategory.Text= "";
             textBox1.Text = "";
-            txtIGST.Text = "0";
+           
         }
         private void update_record_inner(string p)
         {

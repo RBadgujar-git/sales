@@ -54,6 +54,8 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.Clear = new System.Windows.Forms.Button();
             this.txtState = new System.Windows.Forms.ComboBox();
@@ -70,8 +72,6 @@
             this.txtContactNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPartyname = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvParty = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -371,6 +371,24 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(813, 577);
             this.panel1.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(147, 281);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 47;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(49, 284);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 16);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Party Group :";
             // 
             // dtpDate
             // 
@@ -751,24 +769,6 @@
             this.dgvParty.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvParty.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvParty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellDoubleClick);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(49, 284);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(97, 16);
-            this.label14.TabIndex = 46;
-            this.label14.Text = "Party Group :";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(147, 281);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 47;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // PartyMaster1
             // 

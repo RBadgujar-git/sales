@@ -334,7 +334,7 @@ namespace sample
             Credit.Text = "";
             ComboBox.Text = "";
             textBox1.Text = "";
-            txtIGST.Text = "0";
+           
             cmbCategory.Text = "";
     }
 
@@ -386,7 +386,7 @@ namespace sample
                         ComboBox.Text = dr["Status"].ToString();
                         cmbCategory.Text = dr["ItemCategory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
-                        txtIGST.Text = dr["IGST"].ToString();
+                       
                         
                         id = dr["ReturnNo"].ToString();
                     }
@@ -447,7 +447,7 @@ namespace sample
                     }
 
 
-                    string query = string.Format("insert into tbl_CreditNote1( PartyName ,InvoiceNo ,BillingName,PONumber,PODate,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3,ContactNo,TableName,Status,Barcode,IGST) Values (@PartyName,@InvoiceNo,  @BillingName, @PONumber, @PODate,@InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @ContactNo, @TableName, @Status,@Barcode,@IGST); SELECT SCOPE_IDENTITY();");
+                    string query = string.Format("insert into tbl_CreditNote1( PartyName ,InvoiceNo ,BillingName,PONumber,PODate,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3,ContactNo,TableName,Status,Barcode) Values (@PartyName,@InvoiceNo,  @BillingName, @PONumber, @PODate,@InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @ContactNo, @TableName, @Status,@Barcode); SELECT SCOPE_IDENTITY();");
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     //DataTable dtable = new DataTable();
@@ -496,7 +496,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                     cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                     cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
+                  
                     id1 = cmd.ExecuteScalar();
                     MessageBox.Show("Sale Record Added");
                 }
