@@ -82,10 +82,77 @@ namespace sample
             dgvComapnyMaster.DataSource = dtable;
         }
 
+
+        public void validfild()
+        {
+            if (txtcampanyName.Text == "")
+            {
+                MessageBox.Show("Please Insert Name ");
+                txtcampanyName.Focus();
+            }
+            else if (txtAddress.Text == "")
+            {
+                MessageBox.Show("Please Insert Address !");
+                txtAddress.Focus();
+            }
+            else if (txtContactNo.Text == "")
+            {
+                MessageBox.Show("Please Insert Contact No ");
+                txtContactNo.Focus();
+            }
+            else if (txtemail.Text == "")
+            {
+                MessageBox.Show("Please Insert Email Id ");
+                txtemail.Focus();
+            }
+            else if (txtbusinesstype.Text == "")
+            {
+                MessageBox.Show("Please Insert Bussness Type  ");
+                txtbusinesstype.Focus();
+            }
+            else if (txtGSTNo.Text == "")
+            {
+                MessageBox.Show("Please Insert GST NO");
+               txtGSTNo.Focus();
+            }
+            else if (ownerName.Text == "")
+            {
+                MessageBox.Show("Please Insert Owner Name ");
+                ownerName.Focus();
+            }
+            else if (txtCity.Text == "")
+            {
+                MessageBox.Show("Please Insert City ");
+               txtCity.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmbState.SelectedText))
+            {
+                MessageBox.Show("Please Select State !");
+                //txtCity.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtBankName.SelectedText))
+            {
+                MessageBox.Show("Please Select Bank Name !");
+                //txtCity.Focus();
+            }
+            else if (txtAccountNo.Text=="")
+            {
+                MessageBox.Show("Please Insert Account No !");
+                txtAccountNo.Focus();
+            }
+            else if (txtIFSCcode.Text == "")
+            {
+                MessageBox.Show("Please Insert Account  IFSC Code!");
+               txtIFSCcode.Focus();
+            }
+           
+
+        }
         public void Insert1()
         {
             try
             {
+             
                 if (txtcampanyName.Text == "")
                 {
                     MessageBox.Show("Company Name Is Requried");
@@ -145,6 +212,7 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            validfild();
             Insert1();
             fetchdetails();
             Cleardata();
