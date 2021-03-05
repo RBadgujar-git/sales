@@ -145,12 +145,22 @@ namespace sample
         }
 
         private void txtOpeningqty_TextChanged(object sender, EventArgs e)
-        {
-            float gst = 0, gst_amt = 0, TA = 0;
-            TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
-            gst = float.Parse(txtOpeningqty.Text.ToString());
-            gst_amt = TA * gst;
-            txtatPrice.Text = gst_amt.ToString();
+       {
+            try
+            {
+                if (txtOpeningqty.Text != null)
+                {
+                    float gst = 0, gst_amt = 0, TA = 0;
+                    TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
+                    gst = float.Parse(txtOpeningqty.Text.ToString());
+                    gst_amt = TA * gst;
+                    txtatPrice.Text = gst_amt.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void fetchdetails()
         {
@@ -514,6 +524,17 @@ namespace sample
             }
         }
 
+        private void txtItemCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b') // Allowing only any letter OR Digit & Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
         private void txtpurchasseprice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -614,25 +635,50 @@ namespace sample
                 e.Handled = true;
             }
         }
+        private void txtBatchNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b') // Allowing only any letter OR Digit & Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetterOrDigit(e.KeyChar)) // Allowing only any letter OR Digit & Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtsize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void dgvItemmaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void txtBatchNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnminimize_Click(object sender, EventArgs e)
+       private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+       
     }
 }

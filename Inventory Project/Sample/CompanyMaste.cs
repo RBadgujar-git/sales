@@ -553,6 +553,11 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvComapnyMaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
