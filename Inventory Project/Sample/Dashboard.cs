@@ -1104,24 +1104,19 @@ namespace sample
 
         private void backupToDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("www.gmail.com");
+            BackuptoDrive br = new BackuptoDrive();
+            br.Show();
         }
         private void backupToComputerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            openFileDialog1.ShowDialog();
+            backup bk = new backup();
+            bk.Show();
         }
 
         private void restoreBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "DB files (*.DB)|*.DB|All files (*.*)|*.*";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            openFileDialog1.ShowDialog();
+            restore rt = new restore();
+            rt.Show();
         }
 
         private void verifyMyDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1260,6 +1255,18 @@ namespace sample
         private void guna2Button49_MouseHover(object sender, EventArgs e)
         {
             
+        }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            CompanyMaste BA = new CompanyMaste();
+            //BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
     }
 }

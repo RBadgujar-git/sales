@@ -208,26 +208,33 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_ItemAdjustementSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@ItemName", txtName.Text);
-                    cmd.Parameters.AddWithValue("@AdjustmentType", combotype.Text);
-                    cmd.Parameters.AddWithValue("@AdjustmentDate", date.Value);
-                    cmd.Parameters.AddWithValue("@AtPrice", txtatprice.Text);
-                    cmd.Parameters.AddWithValue("@Quantity", txtitemqantity.Text);
-                    cmd.Parameters.AddWithValue("@Details", txtitemdetails.Text);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Update data Successfully");
-                        Cleardata();
-                    }
-                    else
+
+                    if (txtName.SelectedItem == -1)
                     {
                         MessageBox.Show("Please Select Record");
+                    }
+                    else { 
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_ItemAdjustementSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.Parameters.AddWithValue("@ItemName", txtName.Text);
+                        cmd.Parameters.AddWithValue("@AdjustmentType", combotype.Text);
+                        cmd.Parameters.AddWithValue("@AdjustmentDate", date.Value);
+                        cmd.Parameters.AddWithValue("@AtPrice", txtatprice.Text);
+                        cmd.Parameters.AddWithValue("@Quantity", txtitemqantity.Text);
+                        cmd.Parameters.AddWithValue("@Details", txtitemdetails.Text);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -256,21 +263,28 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_ItemAdjustementSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Delete data Successfully");
-                        Cleardata();
-                    }
-                    else
+                    if (txtName.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
+                    }
+                    else { 
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_ItemAdjustementSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -289,7 +303,7 @@ namespace sample
         {
             Delete();
             fetchdetails();
-            Cleardata();
+            tbl_ItemAdjustement();
         }
     }
 }

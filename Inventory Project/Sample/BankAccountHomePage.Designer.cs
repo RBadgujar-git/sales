@@ -45,14 +45,11 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvBankAcc = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblBankAccount = new System.Windows.Forms.Label();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBankAccount)).BeginInit();
@@ -65,6 +62,7 @@
             this.guna2ShadowPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.lblBankAccount);
             this.guna2ShadowPanel3.Controls.Add(this.button1);
             this.guna2ShadowPanel3.Controls.Add(this.button4);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
@@ -115,6 +113,7 @@
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(289, 611);
             this.guna2ShadowPanel2.TabIndex = 11;
+            this.guna2ShadowPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel2_Paint);
             // 
             // dgvBankAccount
             // 
@@ -175,6 +174,7 @@
             this.dgvBankAccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvBankAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBankAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvBankAccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBankAccount_CellDoubleClick);
             // 
             // Column1
             // 
@@ -254,6 +254,7 @@
             this.txtSearch2.ShadowDecoration.Parent = this.txtSearch2;
             this.txtSearch2.Size = new System.Drawing.Size(246, 27);
             this.txtSearch2.TabIndex = 14;
+            this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
             // 
             // dgvBankAcc
             // 
@@ -276,10 +277,6 @@
             this.dgvBankAcc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBankAcc.ColumnHeadersHeight = 18;
             this.dgvBankAcc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
             this.Column7});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
@@ -319,31 +316,7 @@
             this.dgvBankAcc.ThemeStyle.RowsStyle.Height = 22;
             this.dgvBankAcc.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBankAcc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Type";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Number ";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Date";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Amount";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
+            this.dgvBankAcc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBankAcc_CellContentClick);
             // 
             // guna2ShadowPanel1
             // 
@@ -386,6 +359,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Bank Account";
             // 
+            // lblBankAccount
+            // 
+            this.lblBankAccount.AutoSize = true;
+            this.lblBankAccount.Location = new System.Drawing.Point(49, 37);
+            this.lblBankAccount.Name = "lblBankAccount";
+            this.lblBankAccount.Size = new System.Drawing.Size(0, 16);
+            this.lblBankAccount.TabIndex = 15;
+            this.lblBankAccount.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "";
+            this.Column7.Name = "Column7";
+            // 
             // BankAccountHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -402,6 +389,7 @@
             this.Size = new System.Drawing.Size(1068, 670);
             this.Load += new System.EventHandler(this.BankAccountHomePage_Load);
             this.guna2ShadowPanel3.ResumeLayout(false);
+            this.guna2ShadowPanel3.PerformLayout();
             this.guna2ShadowPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBankAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBankAcc)).EndInit();
@@ -424,13 +412,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblBankAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

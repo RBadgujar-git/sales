@@ -63,31 +63,44 @@ namespace sample
         }
         public void Insert()
         {
-            if (cmbaccountname.Text == "")
-            {
-                MessageBox.Show("Account Name Requried");
-            }
-            else
-            {
+            
+           
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Action", "Insert");
-                cmd.Parameters.AddWithValue("@ID", id);
-                cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
-                cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
-                cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
-                cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-                cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
-                //cmd.Parameters.AddWithValue("@Details", txtdescription.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Insert data Successfully");
-              
+
+            if (cmbaccountname.Text == "")
+            {
+                MessageBox.Show("Account Name Requried");
             }
+            else if (cmbEntrytype.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please Select Entry Type");
+                }
+                else if (txtAcoount.Text == "")
+                {
+                    MessageBox.Show("Please Ensert Amount ");
+                }
+                else
+                {
+
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
+                    cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
+                    cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
+                    cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                    cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
+                    //cmd.Parameters.AddWithValue("@Details", txtdescription.Text);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Insert data Successfully");
+                }
+              
+            
         }
         private void label4_Click(object sender, EventArgs e)
         {
@@ -181,26 +194,44 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
-                    cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
-                    cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
-                    cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-                    cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Update data Successfully");
-                        Cleardata();
-                    }
-                    else
+
+                    if (cmbaccountname.SelectedIndex == -1)
                     {
                         MessageBox.Show("Please Select Record");
                     }
+                    else if (cmbEntrytype.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Please Select Entry Type");
+                    }
+                    else if (txtAcoount.Text == "")
+                    {
+                        MessageBox.Show("Please Ensert Amount ");
+                    }
+                    else
+                    {
+
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
+                        cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
+                        cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
+                        cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                        cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -230,21 +261,32 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+
+
+                    if (cmbaccountname.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Delete data Successfully");
-                        Cleardata();
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)

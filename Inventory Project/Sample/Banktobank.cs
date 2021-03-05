@@ -22,7 +22,7 @@ namespace sample
         public Banktobank()
         {
             InitializeComponent();
-           // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+            // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
         private void Cleardata()
@@ -33,7 +33,7 @@ namespace sample
             txtDescription.Text = "";
         }
         private void fetchdetails()
-        {         
+        {
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
@@ -42,7 +42,7 @@ namespace sample
             SqlCommand cmd = new SqlCommand("Banktobank", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "Select");
-            cmd.Parameters.AddWithValue("@ID",0);
+            cmd.Parameters.AddWithValue("@ID", 0);
             cmd.Parameters.AddWithValue("@FromBank", cmbfrombank.Text);
             cmd.Parameters.AddWithValue("@ToBank", txttobank.Text);
             cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
@@ -50,19 +50,41 @@ namespace sample
             cmd.Parameters.AddWithValue("@Descripition", txtDescription.Text);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
-            dgvbanktobank.DataSource = dtable;     
-    }
+            dgvbanktobank.DataSource = dtable;
+        }
+
+
+        public void validdata()
+            {
+
+            
+                if (cmbfrombank.Text == "")
+                {
+                    MessageBox.Show("Bank Name Required");
+                }
+                else if (txttobank.Text == "")
+                {
+
+                    MessageBox.Show("Enter Bank Name For Transfer Amount");
+                }
+                else if (txttobank.Text == "")
+                {
+
+                    MessageBox.Show("Enter Bank Name For Transfer Amount");
+                }
+                else if (txtAmount.Text=="")
+                {
+
+                    MessageBox.Show("Please Insert Amount");
+                }
+          
+            }
 
         public void Insert()
         {
             try
             {
-                if (cmbfrombank.Text == "")
-                {
-                    MessageBox.Show("Bank Name Required");
-                }
-                else
-                {
+                     validdata();
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -77,7 +99,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
                     cmd.Parameters.AddWithValue("@Date", dtpDate.Value);
                     cmd.Parameters.AddWithValue("@Descripition", txtDescription.Text);
-                  
+
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -88,7 +110,7 @@ namespace sample
                     {
                         MessageBox.Show("Please try again");
                     }
-                }
+                
             }
             catch (Exception ex)
             {
@@ -184,6 +206,10 @@ namespace sample
                     {
                         con.Open();
                     }
+
+
+
+                    
                     DataTable dt = new DataTable();
                     SqlCommand cmd = new SqlCommand("Banktobank", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -217,6 +243,7 @@ namespace sample
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
+            validdata();
             Update1();
             fetchdetails();
             Cleardata();
@@ -227,6 +254,7 @@ namespace sample
             {
                 try
                 {
+                    
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -261,6 +289,7 @@ namespace sample
         }
         private void btndelete_Click(object sender, EventArgs e)
         {
+            validdata();
             Delete();
             fetchdetails();
             Cleardata();

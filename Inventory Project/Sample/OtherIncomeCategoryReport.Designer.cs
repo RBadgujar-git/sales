@@ -45,6 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbExpensecategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvincomeCategory)).BeginInit();
             this.SuspendLayout();
@@ -126,11 +128,11 @@
             this.dgvincomeCategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvincomeCategory.EnableHeadersVisualStyles = false;
             this.dgvincomeCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvincomeCategory.Location = new System.Drawing.Point(0, 78);
+            this.dgvincomeCategory.Location = new System.Drawing.Point(0, 131);
             this.dgvincomeCategory.Name = "dgvincomeCategory";
             this.dgvincomeCategory.RowHeadersVisible = false;
             this.dgvincomeCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvincomeCategory.Size = new System.Drawing.Size(1007, 443);
+            this.dgvincomeCategory.Size = new System.Drawing.Size(1007, 390);
             this.dgvincomeCategory.TabIndex = 228;
             this.dgvincomeCategory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvincomeCategory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -154,6 +156,7 @@
             this.dgvincomeCategory.ThemeStyle.RowsStyle.Height = 22;
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvincomeCategory.TabIndexChanged += new System.EventHandler(this.dgvincomeCategory_TabIndexChanged);
             // 
             // Column1
             // 
@@ -264,12 +267,44 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(146, 23);
             this.dtpToDate.TabIndex = 233;
+            this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
+            // 
+            // cmbExpensecategory
+            // 
+            this.cmbExpensecategory.BackColor = System.Drawing.Color.Transparent;
+            this.cmbExpensecategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbExpensecategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbExpensecategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbExpensecategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbExpensecategory.FocusedState.Parent = this.cmbExpensecategory;
+            this.cmbExpensecategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbExpensecategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbExpensecategory.HoverState.Parent = this.cmbExpensecategory;
+            this.cmbExpensecategory.ItemHeight = 30;
+            this.cmbExpensecategory.ItemsAppearance.Parent = this.cmbExpensecategory;
+            this.cmbExpensecategory.Location = new System.Drawing.Point(185, 73);
+            this.cmbExpensecategory.Name = "cmbExpensecategory";
+            this.cmbExpensecategory.ShadowDecoration.Parent = this.cmbExpensecategory;
+            this.cmbExpensecategory.Size = new System.Drawing.Size(236, 36);
+            this.cmbExpensecategory.TabIndex = 235;
+            this.cmbExpensecategory.SelectedIndexChanged += new System.EventHandler(this.cmbExpensecategory_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(100, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.TabIndex = 234;
+            this.label3.Text = "Category :";
             // 
             // OtherIncomeCategoryReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbExpensecategory);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpToDate);
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.guna2Panel1);
@@ -284,6 +319,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OtherIncomeCategoryReport";
             this.Size = new System.Drawing.Size(1007, 580);
+            this.Load += new System.EventHandler(this.OtherIncomeCategoryReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvincomeCategory)).EndInit();
@@ -308,5 +344,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpToDate;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbExpensecategory;
+        private System.Windows.Forms.Label label3;
     }
 }
