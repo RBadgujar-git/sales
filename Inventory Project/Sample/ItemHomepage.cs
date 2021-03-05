@@ -42,7 +42,7 @@ namespace sample
         {
             Itemmaster BA = new Itemmaster();
             BA.TopLevel = false;
-            //  BA.AutoScroll = true;
+              BA.AutoScroll = true;
             this.Controls.Add(BA);
             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
@@ -106,18 +106,15 @@ namespace sample
         private void ItemHomepage_Load(object sender, EventArgs e)
         {
             fetchdetails();
-            fetchdetails1();
+           // fetchdetails1();
         }
         private void fetchdetails()
         {
             con.Open();
             DataTable dtable = new DataTable();
-            cmd = new SqlCommand("tbl_ItemMasterSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ItemID", 0);
-            cmd.Parameters.AddWithValue("@ItemName", "");
-            cmd.Parameters.AddWithValue("@OpeningQty", "");
-            cmd.Parameters.AddWithValue("@Action", "Select");
+            cmd = new SqlCommand("select * from tbl_ItemMaster", con);
+            cmd.Parameters.AddWithValue("@ItemName","");
+            cmd.Parameters.AddWithValue("@OpeningQty","");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             con.Close();
@@ -152,66 +149,88 @@ namespace sample
                 MessageBox.Show(ex.Message);
             }
         }
-        private void fetchdetails1()
+      
+        
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
+           
+        }
 
-            con.Open();
+        private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
 
-            DataTable dtable = new DataTable();
-            cmd = new SqlCommand("tbl_ItemAdjustementSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@ID", 0);
-            cmd.Parameters.AddWithValue("@ItemName", "");
-            cmd.Parameters.AddWithValue("@AdjustmentType", "");
-            cmd.Parameters.AddWithValue("@AdjustmentDate", "");
-            cmd.Parameters.AddWithValue("@AtPrice", "");
-            cmd.Parameters.AddWithValue("@Quantity", "");
-            cmd.Parameters.AddWithValue("@Action", "Select");
-            SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
-
-            sdasql.Fill(dtable);
-            con.Close();
-            guna2DataGridView1.AutoGenerateColumns = false;
-            guna2DataGridView1.ColumnCount = 5;
-            guna2DataGridView1.Columns[0].HeaderText = "Adjustment Type";
-            guna2DataGridView1.Columns[0].DataPropertyName = "AdjustmentType";
-            guna2DataGridView1.Columns[1].HeaderText = "Item Name";
-            guna2DataGridView1.Columns[1].DataPropertyName = "ItemName";
-            guna2DataGridView1.Columns[2].HeaderText = "Adjustment Date";
-            guna2DataGridView1.Columns[2].DataPropertyName = "AdjustmentDate";
-            guna2DataGridView1.Columns[3].HeaderText = "Price";
-            guna2DataGridView1.Columns[3].DataPropertyName = "AtPrice";
-            guna2DataGridView1.Columns[4].HeaderText = "Quantity";
-            guna2DataGridView1.Columns[4].DataPropertyName = "Quantity";
-            guna2DataGridView1.DataSource = dtable;
 
         }
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+
+        private void Stock_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ItemName_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string Query = string.Format("select AdjustmentType,ItemName,AdjustmentDate,Quantity,AtPrice from tbl_ItemAdjustement where AdjustmentType like '%{0}%'", guna2TextBox2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                guna2DataGridView1.DataSource = ds;
-                guna2DataGridView1.DataMember = "temp";
+                 con.Open();
+                string Query = String.Format("select SalePrice,atPrice,PurchasePrice from tbl_ItemMaster where (ItemName='{0}') GROUP BY SalePrice,atPrice,PurchasePrice", lblItemName.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    SalePrice.Text = dr["SalePrice"].ToString();
+                    PurchasePrice.Text = dr["PurchasePrice"].ToString();
+                    StockPrice.Text = dr["atPrice"].ToString();
+                }
+                dr.Close();
+                // txtItemCode.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                con.Close();
+            }
         }
 
-        private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvItem_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("select tbl_ItemMaster.ItemName, tbl_ItemMaster.OpeningQty,tbl_ItemMaster.ItemName,tbl_ItemMaster.AtPrice,tbl_ItemAdjustement.AdjustmentType,tbl_ItemAdjustement.Quantity from tbl_ItemMaster JOIN tbl_ItemAdjustement on tbl_ItemAdjustement.ID=tbl_ItemMaster.ItemID", con);
+            try
+            {
+
+                lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+                lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
+                // lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
+                // lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
+
+                string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where ItemName='{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where ItemName = '{0}')", lblItemName.Text);
             DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(cmd);
-            SDA.Fill(ds);
-            con.Close();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvItemDetails.DataSource = ds;
+            dgvItemDetails.DataMember = "temp";
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
     }
