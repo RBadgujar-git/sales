@@ -920,13 +920,7 @@ namespace sample
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {                     
             try
-            {
-              
-
-                //if (con.State == ConnectionState.Closed)
-                //{
-                //    con.Open();
-                //}
+            {             
                 con.Close();
                 string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
                 DataSet ds = new DataSet();
@@ -971,6 +965,11 @@ namespace sample
         }
 
         private void TxtIGST_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,7 +97,6 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -136,12 +136,18 @@
             this.toolStripMenuItem1,
             this.addNewCompanyToolStripMenuItem,
             this.changeCompanyToolStripMenuItem});
-            this.toolStripMenuItem4.Enabled = false;
             this.toolStripMenuItem4.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(78, 20);
             this.toolStripMenuItem4.Text = "Company";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem1.Text = "Add Company";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // addNewCompanyToolStripMenuItem
             // 
@@ -878,13 +884,6 @@
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.toolStripMenuItem1.Text = "Add Company";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // Dashboard
             // 

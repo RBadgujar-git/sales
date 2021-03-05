@@ -74,9 +74,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -871,6 +871,17 @@
             this.panel3.Size = new System.Drawing.Size(995, 42);
             this.panel3.TabIndex = 16;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.Location = new System.Drawing.Point(888, 5);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(29, 29);
+            this.btnminimize.TabIndex = 59;
+            this.btnminimize.UseVisualStyleBackColor = true;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click_1);
+            // 
             // btnCancel
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -898,16 +909,6 @@
             this.label1.Size = new System.Drawing.Size(156, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Master";
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.Location = new System.Drawing.Point(822, 5);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(33, 32);
-            this.btnminimize.TabIndex = 59;
-            this.btnminimize.UseVisualStyleBackColor = true;
             // 
             // CompanyMaste
             // 
