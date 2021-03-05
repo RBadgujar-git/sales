@@ -27,17 +27,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyMaste));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyMaste));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnminimize = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,7 +45,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.picCompanyLogo = new Guna.UI2.WinForms.Guna2PictureBox();
             this.txtcampanyName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtContactNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -60,15 +57,14 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.picSignature = new Guna.UI2.WinForms.Guna2PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtAccountNo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtIFSCcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtBankName = new System.Windows.Forms.ComboBox();
+            this.txtIFSCcode = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtAccountNo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.txtCity = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvComapnyMaster = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -77,13 +73,17 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.butnclear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picSignature = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.picCompanyLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnminimize = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSignature)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComapnyMaster)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSignature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -108,33 +108,6 @@
             this.label1.Size = new System.Drawing.Size(156, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Company Master";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(923, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(29, 27);
-            this.btnCancel.TabIndex = 58;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.Location = new System.Drawing.Point(884, 4);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(33, 32);
-            this.btnminimize.TabIndex = 59;
-            this.btnminimize.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -263,17 +236,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // picCompanyLogo
-            // 
-            this.picCompanyLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.picCompanyLogo.Location = new System.Drawing.Point(113, 293);
-            this.picCompanyLogo.Name = "picCompanyLogo";
-            this.picCompanyLogo.ShadowDecoration.Parent = this.picCompanyLogo;
-            this.picCompanyLogo.Size = new System.Drawing.Size(146, 120);
-            this.picCompanyLogo.TabIndex = 40;
-            this.picCompanyLogo.TabStop = false;
-            this.picCompanyLogo.Click += new System.EventHandler(this.picCompanyLogo_Click);
             // 
             // txtcampanyName
             // 
@@ -514,17 +476,6 @@
             this.label13.TabIndex = 53;
             this.label13.Text = "Signature :";
             // 
-            // picSignature
-            // 
-            this.picSignature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.picSignature.Location = new System.Drawing.Point(294, 293);
-            this.picSignature.Name = "picSignature";
-            this.picSignature.ShadowDecoration.Parent = this.picSignature;
-            this.picSignature.Size = new System.Drawing.Size(142, 120);
-            this.picSignature.TabIndex = 54;
-            this.picSignature.TabStop = false;
-            this.picSignature.Click += new System.EventHandler(this.picSignature_Click);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -550,87 +501,6 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(471, 171);
             this.guna2GroupBox1.TabIndex = 57;
             this.guna2GroupBox1.Text = "Bank Details";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(66, 60);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 16);
-            this.label16.TabIndex = 57;
-            this.label16.Text = "Bank Name :";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 95);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(128, 16);
-            this.label15.TabIndex = 59;
-            this.label15.Text = "Account Number :";
-            // 
-            // txtAccountNo
-            // 
-            this.txtAccountNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAccountNo.DefaultText = "";
-            this.txtAccountNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtAccountNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtAccountNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAccountNo.DisabledState.Parent = this.txtAccountNo;
-            this.txtAccountNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtAccountNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAccountNo.FocusedState.Parent = this.txtAccountNo;
-            this.txtAccountNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtAccountNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtAccountNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtAccountNo.HoverState.Parent = this.txtAccountNo;
-            this.txtAccountNo.Location = new System.Drawing.Point(160, 90);
-            this.txtAccountNo.MaxLength = 20;
-            this.txtAccountNo.Name = "txtAccountNo";
-            this.txtAccountNo.PasswordChar = '\0';
-            this.txtAccountNo.PlaceholderText = "";
-            this.txtAccountNo.SelectedText = "";
-            this.txtAccountNo.ShadowDecoration.Parent = this.txtAccountNo;
-            this.txtAccountNo.Size = new System.Drawing.Size(240, 25);
-            this.txtAccountNo.TabIndex = 12;
-            this.txtAccountNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNo_KeyPress_1);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(70, 131);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 16);
-            this.label14.TabIndex = 61;
-            this.label14.Text = "IFSC Code :";
-            // 
-            // txtIFSCcode
-            // 
-            this.txtIFSCcode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtIFSCcode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtIFSCcode.DefaultText = "";
-            this.txtIFSCcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtIFSCcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtIFSCcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIFSCcode.DisabledState.Parent = this.txtIFSCcode;
-            this.txtIFSCcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtIFSCcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIFSCcode.FocusedState.Parent = this.txtIFSCcode;
-            this.txtIFSCcode.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtIFSCcode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtIFSCcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtIFSCcode.HoverState.Parent = this.txtIFSCcode;
-            this.txtIFSCcode.Location = new System.Drawing.Point(160, 127);
-            this.txtIFSCcode.MaxLength = 11;
-            this.txtIFSCcode.Name = "txtIFSCcode";
-            this.txtIFSCcode.PasswordChar = '\0';
-            this.txtIFSCcode.PlaceholderText = "";
-            this.txtIFSCcode.SelectedText = "";
-            this.txtIFSCcode.ShadowDecoration.Parent = this.txtIFSCcode;
-            this.txtIFSCcode.Size = new System.Drawing.Size(240, 25);
-            this.txtIFSCcode.TabIndex = 13;
-            this.txtIFSCcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIFSCcode_KeyPress);
-            this.txtIFSCcode.Leave += new System.EventHandler(this.txtIFSCcode_Leave);
             // 
             // txtBankName
             // 
@@ -688,6 +558,87 @@
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(240, 24);
             this.txtBankName.TabIndex = 11;
+            // 
+            // txtIFSCcode
+            // 
+            this.txtIFSCcode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtIFSCcode.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtIFSCcode.DefaultText = "";
+            this.txtIFSCcode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtIFSCcode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtIFSCcode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIFSCcode.DisabledState.Parent = this.txtIFSCcode;
+            this.txtIFSCcode.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtIFSCcode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIFSCcode.FocusedState.Parent = this.txtIFSCcode;
+            this.txtIFSCcode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtIFSCcode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtIFSCcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtIFSCcode.HoverState.Parent = this.txtIFSCcode;
+            this.txtIFSCcode.Location = new System.Drawing.Point(160, 127);
+            this.txtIFSCcode.MaxLength = 11;
+            this.txtIFSCcode.Name = "txtIFSCcode";
+            this.txtIFSCcode.PasswordChar = '\0';
+            this.txtIFSCcode.PlaceholderText = "";
+            this.txtIFSCcode.SelectedText = "";
+            this.txtIFSCcode.ShadowDecoration.Parent = this.txtIFSCcode;
+            this.txtIFSCcode.Size = new System.Drawing.Size(240, 25);
+            this.txtIFSCcode.TabIndex = 13;
+            this.txtIFSCcode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIFSCcode_KeyPress);
+            this.txtIFSCcode.Leave += new System.EventHandler(this.txtIFSCcode_Leave);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(70, 131);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(88, 16);
+            this.label14.TabIndex = 61;
+            this.label14.Text = "IFSC Code :";
+            // 
+            // txtAccountNo
+            // 
+            this.txtAccountNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtAccountNo.DefaultText = "";
+            this.txtAccountNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtAccountNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtAccountNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAccountNo.DisabledState.Parent = this.txtAccountNo;
+            this.txtAccountNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtAccountNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAccountNo.FocusedState.Parent = this.txtAccountNo;
+            this.txtAccountNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAccountNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtAccountNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtAccountNo.HoverState.Parent = this.txtAccountNo;
+            this.txtAccountNo.Location = new System.Drawing.Point(160, 90);
+            this.txtAccountNo.MaxLength = 20;
+            this.txtAccountNo.Name = "txtAccountNo";
+            this.txtAccountNo.PasswordChar = '\0';
+            this.txtAccountNo.PlaceholderText = "";
+            this.txtAccountNo.SelectedText = "";
+            this.txtAccountNo.ShadowDecoration.Parent = this.txtAccountNo;
+            this.txtAccountNo.Size = new System.Drawing.Size(240, 25);
+            this.txtAccountNo.TabIndex = 12;
+            this.txtAccountNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAccountNo_KeyPress_1);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(29, 95);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(128, 16);
+            this.label15.TabIndex = 59;
+            this.label15.Text = "Account Number :";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(66, 60);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(91, 16);
+            this.label16.TabIndex = 57;
+            this.label16.Text = "Bank Name :";
             // 
             // Label
             // 
@@ -916,6 +867,59 @@
             this.panel1.Size = new System.Drawing.Size(995, 677);
             this.panel1.TabIndex = 2;
             // 
+            // picSignature
+            // 
+            this.picSignature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.picSignature.Image = global::sample.Properties.Resources.No_Image_Available;
+            this.picSignature.Location = new System.Drawing.Point(294, 293);
+            this.picSignature.Name = "picSignature";
+            this.picSignature.ShadowDecoration.Parent = this.picSignature;
+            this.picSignature.Size = new System.Drawing.Size(142, 120);
+            this.picSignature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSignature.TabIndex = 54;
+            this.picSignature.TabStop = false;
+            this.picSignature.Click += new System.EventHandler(this.picSignature_Click);
+            // 
+            // picCompanyLogo
+            // 
+            this.picCompanyLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.picCompanyLogo.Image = global::sample.Properties.Resources.No_Image_Available;
+            this.picCompanyLogo.Location = new System.Drawing.Point(113, 293);
+            this.picCompanyLogo.Name = "picCompanyLogo";
+            this.picCompanyLogo.ShadowDecoration.Parent = this.picCompanyLogo;
+            this.picCompanyLogo.Size = new System.Drawing.Size(146, 120);
+            this.picCompanyLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picCompanyLogo.TabIndex = 40;
+            this.picCompanyLogo.TabStop = false;
+            this.picCompanyLogo.Click += new System.EventHandler(this.picCompanyLogo_Click);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.Location = new System.Drawing.Point(884, 4);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(33, 32);
+            this.btnminimize.TabIndex = 59;
+            this.btnminimize.UseVisualStyleBackColor = true;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.Location = new System.Drawing.Point(923, 5);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(29, 27);
+            this.btnCancel.TabIndex = 58;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // CompanyMaste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -930,13 +934,13 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picSignature)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComapnyMaster)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSignature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

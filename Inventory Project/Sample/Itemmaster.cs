@@ -23,6 +23,7 @@ namespace sample
         {
             InitializeComponent();
             con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+            //picturebox.Image = Properties.Resources.No_Image_Available;
             //con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
@@ -124,7 +125,6 @@ namespace sample
             txtsize.Text = "";
             txtDescritption.Text = "";
             txtminimumStock.Text = "";
-            picturebox.Image = null;
         }
         private void cmbSaleTax_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -443,19 +443,22 @@ namespace sample
        
 
         byte[] arrImage1;
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void picturebox_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
             openFileDialog1.Multiselect = true;
             openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
                 int count = 1;
-                foreach (String file in openFileDialog1.FileNames) {
+                foreach (String file in openFileDialog1.FileNames)
+                {
                     PictureBox pb = new PictureBox();
                     Image loadedImage = Image.FromFile(file);
 
-                    if (count == 1) {
+                    if (count == 1)
+                    {
                         picturebox.Image = Image.FromFile(file);
                         //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
                         picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -466,6 +469,7 @@ namespace sample
                 }
             }
         }
+       
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {         
@@ -512,6 +516,17 @@ namespace sample
                 e.Handled = true;
             }
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtItemCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }
@@ -618,6 +633,30 @@ namespace sample
             }
         }
 
+        private void txtBatchNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -627,15 +666,24 @@ namespace sample
         {
 
         }
-
-        private void txtBatchNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void txtsize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        
     }
 }

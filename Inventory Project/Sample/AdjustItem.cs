@@ -209,7 +209,7 @@ namespace sample
                         con.Open();
                     }
 
-                    if (txtName.SelectedItem == -1)
+                    if (txtName.Text =="")
                     {
                         MessageBox.Show("Please Select Record");
                     }
@@ -303,7 +303,7 @@ namespace sample
         {
             Delete();
             fetchdetails();
-            tbl_ItemAdjustement();
+            //tbl_ItemAdjustement();
         }
     }
 }

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,7 +97,6 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -124,7 +124,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1384, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1298, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "Home  ";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -136,12 +136,18 @@
             this.toolStripMenuItem1,
             this.addNewCompanyToolStripMenuItem,
             this.changeCompanyToolStripMenuItem});
-            this.toolStripMenuItem4.Enabled = false;
             this.toolStripMenuItem4.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(78, 20);
             this.toolStripMenuItem4.Text = "Company";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem1.Text = "Add Company";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // addNewCompanyToolStripMenuItem
             // 
@@ -571,7 +577,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1123, 24);
+            this.panel1.Location = new System.Drawing.Point(1037, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 732);
             this.panel1.TabIndex = 4;
@@ -846,7 +852,7 @@
             this.guna2Panel4.Location = new System.Drawing.Point(0, 24);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(1123, 66);
+            this.guna2Panel4.Size = new System.Drawing.Size(1037, 66);
             this.guna2Panel4.TabIndex = 5;
             // 
             // guna2Button1
@@ -879,13 +885,6 @@
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
-            this.toolStripMenuItem1.Text = "Add Company";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
-            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -895,7 +894,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1384, 756);
+            this.ClientSize = new System.Drawing.Size(1298, 756);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
