@@ -1108,20 +1108,14 @@ namespace sample
         }
         private void backupToComputerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            openFileDialog1.ShowDialog();
+            backup bk = new backup();
+            bk.Show();
         }
 
         private void restoreBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "DB files (*.DB)|*.DB|All files (*.*)|*.*";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            openFileDialog1.ShowDialog();
+            restore rt = new restore();
+            rt.Show();
         }
 
         private void verifyMyDataToolStripMenuItem_Click(object sender, EventArgs e)
