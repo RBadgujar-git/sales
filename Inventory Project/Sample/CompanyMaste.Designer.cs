@@ -251,6 +251,7 @@
             this.cmbState.Name = "cmbState";
             this.cmbState.Size = new System.Drawing.Size(260, 24);
             this.cmbState.TabIndex = 10;
+            this.cmbState.Text = "Select ";
             // 
             // txtbusinesstype
             // 
@@ -452,6 +453,7 @@
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(240, 24);
             this.txtBankName.TabIndex = 11;
+            this.txtBankName.Text = "Select ";
             // 
             // txtIFSCcode
             // 

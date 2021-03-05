@@ -368,7 +368,7 @@ namespace sample
             txtsubtotal.Text = "0";
             txtDiscount.Text = "0";
             txtDisAmount.Text = "0";
-            cmbtax.Text = "";
+            cmbtax.Text = "0";
             txtcgst.Text = "0";
             txtsgst.Text = "0";
             txtTaxAmount.Text = "0";
@@ -393,10 +393,12 @@ namespace sample
                 {
                     con.Open();
                 }
-              
-                DataTable dtable = new DataTable();
-                cmd = new SqlCommand("tbl_PurchaseBillselect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
+                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST); SELECT SCOPE_IDENTITY();");
+                SqlCommand cmd = new SqlCommand(query, con);
+            
+                //DataTable dtable = new DataTable();
+                //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
                 // cmd.Parameters.AddWithValue("@Action", "Insert");
                 //cmd.Parameters.AddWithValue("@BillNo", txtReturnNo.Text);
                 // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
@@ -448,7 +450,8 @@ namespace sample
                 MessageBox.Show("Sale Record Added");
                 cleardata();
             }
-            catch (Exception e1) {
+            catch (Exception e1)
+            {
                 MessageBox.Show(e1.Message);
             }
             finally {
@@ -492,21 +495,15 @@ namespace sample
                         txtcon.Text = dr["ContactNo"].ToString();
                         txtPONo.Text = dr["PONo"].ToString();
                         dtpInvoice.Text = dr["BillDate"].ToString();
-                        dtpPODate.Text = dr["PoDate"].ToString();
-
-                       
+                        dtpPODate.Text = dr["PoDate"].ToString();                     
                         dtpDueDate.Text = dr["DueDate"].ToString();
                         cmbStatesupply.Text = dr["StateofSupply"].ToString();
                         cmbPaymentType.Text = dr["PaymentType"].ToString();
                         txtTransportName.Text = dr["TransportName"].ToString();
                         txtDeliveryLoc.Text = dr["DeliveryLocation"].ToString();
-
-
                         txtVehicleNo.Text = dr["VehicleNumber"].ToString();
-                        DtpdeliveryDate.Text = dr["Deliverydate"].ToString();
-                       
-                        txtDescription.Text = dr["Description"].ToString();
-                       
+                        DtpdeliveryDate.Text = dr["Deliverydate"].ToString();                     
+                        txtDescription.Text = dr["Description"].ToString();                      
                         cmbtax.Text = dr["Tax1"].ToString();
                         txtcgst.Text = dr["CGST"].ToString();
                         txtsgst.Text = dr["SGST"].ToString();
@@ -514,8 +511,7 @@ namespace sample
                         txtDiscount.Text = dr["TotalDiscount"].ToString();
                         txtDisAmount.Text = dr["DiscountAmount1"].ToString();
                         txtRoundup.Text = dr["RoundFigure"].ToString();
-                        txtRoundup.Text = dr["Total"].ToString();
-                        
+                        txtRoundup.Text = dr["Total"].ToString();                       
                         //, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
 
                         txtReceived.Text = dr["Paid"].ToString();
@@ -529,7 +525,7 @@ namespace sample
                         cmbpartyname.Text = dr["ItemCategory"].ToString();
                         guna2TextBox1.Text = dr["IGST"].ToString();
                         cmbbarcode.Text = dr["Barcode"].ToString();
-                        id = dr["id"].ToString();
+                        id = dr["BillNo"].ToString();
                        
                     }
                 }
@@ -548,19 +544,19 @@ namespace sample
                     while (dr1.Read())
                     {
                         dgvInnerDebiteNote.Rows.Add();
-                        dgvInnerDebiteNote.Rows[i].Cells["ID"].Value = i + 1;
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemName"].Value = dr1["txtItem"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemCode"].Value = dr1["Item_Code"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["BasicUnit"].Value = dr1["Unit"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["SalePrice"].Value = dr1["MRP"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["TaxForSale"].Value = dr1["Tax"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["SaleTaxAmount"].Value = dr1["Tax_Amount"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["sr_no"].Value = i + 1;
+                        dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value = dr1["ItemCode"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value = dr1["BasicUnit"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value = dr1["SalePrice"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value = dr1["TaxForSale"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value = dr1["SaleTaxAmount"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["DiscountAmount"].Value = dr1["Discount_Amount"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
 
                         dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["freeQty"].Value = dr1["FreeQty"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemAmount"].Value = dr1["Amount"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
 
 
                         i++;
@@ -810,10 +806,6 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
-        //    finally
-        //    {
-        //        //con.Close();
-        //    }
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
@@ -836,25 +828,34 @@ namespace sample
         private void txtItemName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
-            if (txtItemName.Text != "System.Data.DataRowView")
+            try
             {
-                try
+                con.Open();
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
-                    }
+                    txtItemCode.Text = dr["ItemCode"].ToString();
+                    txtUnit.Text = dr["BasicUnit"].ToString();
+                    txtMRP.Text = dr["SalePrice"].ToString();
+                    txtTax1.Text = dr["TaxForSale"].ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
+
                 }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
+                dr.Close();
+
+                txtItemCode.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
         private void fetchCategory()
@@ -904,6 +905,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

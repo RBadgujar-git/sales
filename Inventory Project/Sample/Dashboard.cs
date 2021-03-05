@@ -1256,6 +1256,18 @@ namespace sample
         {
             
         }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            CompanyMaste BA = new CompanyMaste();
+            //BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
+        }
     }
 }
 

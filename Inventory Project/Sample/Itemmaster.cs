@@ -146,11 +146,14 @@ namespace sample
 
         private void txtOpeningqty_TextChanged(object sender, EventArgs e)
         {
-            float gst = 0, gst_amt = 0, TA = 0;
-            TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
-            gst = float.Parse(txtOpeningqty.Text.ToString());
-            gst_amt = TA * gst;
-            txtatPrice.Text = gst_amt.ToString();
+            if (txtOpeningqty.Text != "")
+            {
+                float gst = 0, gst_amt = 0, TA = 0;
+                TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
+                gst = float.Parse(txtOpeningqty.Text.ToString());
+                gst_amt = TA * gst;
+                txtatPrice.Text = gst_amt.ToString();
+            }
         }
         private void fetchdetails()
         {
