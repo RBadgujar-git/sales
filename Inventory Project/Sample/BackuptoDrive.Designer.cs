@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnRestore = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.btnRestore);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -50,6 +50,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(498, 300);
             this.panel1.TabIndex = 0;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRestore.Location = new System.Drawing.Point(187, 129);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(75, 29);
+            this.btnRestore.TabIndex = 15;
+            this.btnRestore.Text = "Upload";
+            this.btnRestore.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -78,26 +91,16 @@
             this.textBox1.Size = new System.Drawing.Size(191, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // btnRestore
-            // 
-            this.btnRestore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestore.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRestore.Location = new System.Drawing.Point(187, 129);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(75, 29);
-            this.btnRestore.TabIndex = 15;
-            this.btnRestore.Text = "Upload";
-            this.btnRestore.UseVisualStyleBackColor = false;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // openFileDialog2
+            // textBox2
             // 
-            this.openFileDialog2.FileName = "openFileDialog2";
+            this.textBox2.Location = new System.Drawing.Point(284, 129);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 16;
             // 
             // BackuptoDrive
             // 
@@ -124,8 +127,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
