@@ -96,6 +96,7 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -132,8 +133,10 @@
             // 
             this.toolStripMenuItem4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
             this.addNewCompanyToolStripMenuItem,
             this.changeCompanyToolStripMenuItem});
+            this.toolStripMenuItem4.Enabled = false;
             this.toolStripMenuItem4.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(78, 20);
@@ -143,14 +146,14 @@
             // addNewCompanyToolStripMenuItem
             // 
             this.addNewCompanyToolStripMenuItem.Name = "addNewCompanyToolStripMenuItem";
-            this.addNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
-            this.addNewCompanyToolStripMenuItem.Text = "Add New Company";
+            this.addNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.addNewCompanyToolStripMenuItem.Text = "Company Login";
             this.addNewCompanyToolStripMenuItem.Click += new System.EventHandler(this.addNewCompanyToolStripMenuItem_Click);
             // 
             // changeCompanyToolStripMenuItem
             // 
             this.changeCompanyToolStripMenuItem.Name = "changeCompanyToolStripMenuItem";
-            this.changeCompanyToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.changeCompanyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.changeCompanyToolStripMenuItem.Text = "Change Company";
             this.changeCompanyToolStripMenuItem.Click += new System.EventHandler(this.changeCompanyToolStripMenuItem_Click);
             // 
@@ -664,7 +667,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(119, 67);
             this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "Home";
+            this.btnHome.Text = "Add Company ";
             this.btnHome.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -876,6 +879,13 @@
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 22);
+            this.toolStripMenuItem1.Text = "Add Company";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
+            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -976,6 +986,7 @@
         private System.Windows.Forms.ToolStripMenuItem loanAccountToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.ToolStripMenuItem estimateQuotationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
