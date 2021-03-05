@@ -209,7 +209,7 @@ namespace sample
                         con.Open();
                     }
 
-                    if (txtName.Text == "")
+                    if (txtName.Text =="")
                     {
                         MessageBox.Show("Please Select Record");
                     }

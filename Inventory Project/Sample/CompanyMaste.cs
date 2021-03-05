@@ -502,8 +502,6 @@ namespace sample
             }
         }
 
-
-
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             id= dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
@@ -620,6 +618,11 @@ namespace sample
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvComapnyMaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
