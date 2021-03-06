@@ -27,14 +27,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expenses));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button3 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Expenses));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.Print = new System.Windows.Forms.Button();
@@ -83,6 +82,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvinnerexpenses)).BeginInit();
@@ -90,22 +90,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(964, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -152,7 +136,7 @@
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(754, 103);
+            this.dtpDate.Location = new System.Drawing.Point(720, 103);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(186, 23);
             this.dtpDate.TabIndex = 118;
@@ -162,9 +146,9 @@
             this.Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Print.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Print.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Print.Location = new System.Drawing.Point(754, 539);
+            this.Print.Location = new System.Drawing.Point(786, 562);
             this.Print.Name = "Print";
-            this.Print.Size = new System.Drawing.Size(107, 42);
+            this.Print.Size = new System.Drawing.Size(90, 42);
             this.Print.TabIndex = 117;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
@@ -174,9 +158,9 @@
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(870, 539);
+            this.Clear.Location = new System.Drawing.Point(885, 560);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(107, 42);
+            this.Clear.Size = new System.Drawing.Size(90, 42);
             this.Clear.TabIndex = 116;
             this.Clear.Text = "CLear";
             this.Clear.UseVisualStyleBackColor = false;
@@ -189,15 +173,15 @@
             "Paid",
             "Partial",
             "Unpaid"});
-            this.ComboBox.Location = new System.Drawing.Point(282, 58);
+            this.ComboBox.Location = new System.Drawing.Point(823, 512);
             this.ComboBox.Name = "ComboBox";
-            this.ComboBox.Size = new System.Drawing.Size(173, 24);
+            this.ComboBox.Size = new System.Drawing.Size(143, 24);
             this.ComboBox.TabIndex = 115;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(215, 64);
+            this.label4.Location = new System.Drawing.Point(756, 518);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 16);
             this.label4.TabIndex = 114;
@@ -206,7 +190,7 @@
             // cmbexpenses
             // 
             this.cmbexpenses.FormattingEnabled = true;
-            this.cmbexpenses.Location = new System.Drawing.Point(282, 92);
+            this.cmbexpenses.Location = new System.Drawing.Point(282, 67);
             this.cmbexpenses.Name = "cmbexpenses";
             this.cmbexpenses.Size = new System.Drawing.Size(173, 24);
             this.cmbexpenses.TabIndex = 113;
@@ -214,7 +198,7 @@
             // chkenble
             // 
             this.chkenble.AutoSize = true;
-            this.chkenble.Location = new System.Drawing.Point(870, 60);
+            this.chkenble.Location = new System.Drawing.Point(836, 60);
             this.chkenble.Name = "chkenble";
             this.chkenble.Size = new System.Drawing.Size(70, 20);
             this.chkenble.TabIndex = 112;
@@ -237,20 +221,20 @@
             this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(754, 58);
+            this.txtReturnNo.Location = new System.Drawing.Point(720, 58);
             this.txtReturnNo.Name = "txtReturnNo";
             this.txtReturnNo.PasswordChar = '\0';
             this.txtReturnNo.PlaceholderText = "";
             this.txtReturnNo.SelectedText = "";
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
-            this.txtReturnNo.Size = new System.Drawing.Size(104, 28);
+            this.txtReturnNo.Size = new System.Drawing.Size(99, 28);
             this.txtReturnNo.TabIndex = 110;
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(705, 63);
+            this.label20.Location = new System.Drawing.Point(671, 63);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(41, 16);
             this.label20.TabIndex = 111;
@@ -568,14 +552,14 @@
             this.txtdescritpition.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtdescritpition.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtdescritpition.HoverState.Parent = this.txtdescritpition;
-            this.txtdescritpition.Location = new System.Drawing.Point(166, 436);
+            this.txtdescritpition.Location = new System.Drawing.Point(149, 426);
             this.txtdescritpition.Multiline = true;
             this.txtdescritpition.Name = "txtdescritpition";
             this.txtdescritpition.PasswordChar = '\0';
             this.txtdescritpition.PlaceholderText = "";
             this.txtdescritpition.SelectedText = "";
             this.txtdescritpition.ShadowDecoration.Parent = this.txtdescritpition;
-            this.txtdescritpition.Size = new System.Drawing.Size(166, 59);
+            this.txtdescritpition.Size = new System.Drawing.Size(166, 70);
             this.txtdescritpition.TabIndex = 84;
             // 
             // label25
@@ -610,9 +594,9 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(512, 541);
+            this.btnSave.Location = new System.Drawing.Point(588, 564);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(107, 42);
+            this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -623,9 +607,9 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(634, 539);
+            this.btnUpdate.Location = new System.Drawing.Point(686, 563);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(107, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(90, 42);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -634,7 +618,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(697, 103);
+            this.label1.Location = new System.Drawing.Point(663, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 16);
             this.label1.TabIndex = 42;
@@ -678,7 +662,7 @@
             this.dgvinnerexpenses.Name = "dgvinnerexpenses";
             this.dgvinnerexpenses.RowHeadersVisible = false;
             this.dgvinnerexpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvinnerexpenses.Size = new System.Drawing.Size(903, 147);
+            this.dgvinnerexpenses.Size = new System.Drawing.Size(903, 128);
             this.dgvinnerexpenses.TabIndex = 46;
             this.dgvinnerexpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -741,7 +725,7 @@
             // picImage
             // 
             this.picImage.BackColor = System.Drawing.Color.Silver;
-            this.picImage.Location = new System.Drawing.Point(370, 433);
+            this.picImage.Location = new System.Drawing.Point(351, 433);
             this.picImage.Name = "picImage";
             this.picImage.ShadowDecoration.Parent = this.picImage;
             this.picImage.Size = new System.Drawing.Size(132, 94);
@@ -818,7 +802,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(72, 454);
+            this.label7.Location = new System.Drawing.Point(54, 430);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 23;
@@ -827,7 +811,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(140, 96);
+            this.label2.Location = new System.Drawing.Point(140, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 16);
             this.label2.TabIndex = 18;
@@ -855,6 +839,7 @@
             this.Expences.Name = "Expences";
             this.Expences.Size = new System.Drawing.Size(100, 23);
             this.Expences.TabIndex = 75;
+            this.Expences.Text = "Expences";
             this.Expences.Visible = false;
             // 
             // label5
@@ -908,6 +893,22 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(964, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(26, 27);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Expenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -939,8 +940,6 @@
 
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtAdditional1;
-        private Guna.UI2.WinForms.Guna2TextBox txtrefNo;
         protected Guna.UI2.WinForms.Guna2TextBox txtBalance;
         protected Guna.UI2.WinForms.Guna2TextBox txtTotal;
         private Guna.UI2.WinForms.Guna2TextBox txtReceived;
@@ -986,5 +985,7 @@
         private System.Windows.Forms.Button Print;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private Guna.UI2.WinForms.Guna2TextBox txtAdditional1;
+        private Guna.UI2.WinForms.Guna2TextBox txtrefNo;
     }
 }
