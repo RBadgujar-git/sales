@@ -112,7 +112,7 @@ namespace sample
         {
             con.Open();
             DataTable dtable = new DataTable();
-            cmd = new SqlCommand("select * from tbl_ItemMaster", con);
+            cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'", con);
             cmd.Parameters.AddWithValue("@ItemName","");
             cmd.Parameters.AddWithValue("@OpeningQty","");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
@@ -230,6 +230,11 @@ namespace sample
 
                 throw;
             }
+        }
+
+        private void dgvItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }

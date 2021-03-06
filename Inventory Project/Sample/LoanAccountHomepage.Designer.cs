@@ -365,6 +365,7 @@
             this.dgvLoanAccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvLoanAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLoanAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvLoanAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoanAccount_CellContentClick);
             // 
             // Column7
             // 

@@ -306,5 +306,10 @@ namespace sample
             fetchdetails();
             //tbl_ItemAdjustement();
         }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
