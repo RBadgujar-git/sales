@@ -168,8 +168,6 @@ namespace sample
                             con.Open();
                         }
 
-
-
                         DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("BankAccountSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
