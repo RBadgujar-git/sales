@@ -70,8 +70,6 @@ namespace sample
                 else
                 {
 
-
-
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();

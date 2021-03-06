@@ -84,7 +84,30 @@ namespace sample
         {
             try
             {
-                     validdata();
+                //   validdata();
+                if (cmbfrombank.Text == "")
+                {
+                    MessageBox.Show("Bank Name Required");
+                }
+                else if (txttobank.Text == "")
+                {
+
+                    MessageBox.Show("Enter Bank Name For Transfer Amount");
+                }
+                else if (txttobank.Text == "")
+                {
+
+                    MessageBox.Show("Enter Bank Name For Transfer Amount");
+                }
+                else if (txtAmount.Text == "")
+                {
+
+                    MessageBox.Show("Please Insert Amount");
+                }
+
+                else
+                {
+
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -110,6 +133,7 @@ namespace sample
                     {
                         MessageBox.Show("Please try again");
                     }
+                }
                 
             }
             catch (Exception ex)
@@ -207,28 +231,49 @@ namespace sample
                         con.Open();
                     }
 
-
-
-                    
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("Banktobank", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@FromBank", cmbfrombank.Text);
-                    cmd.Parameters.AddWithValue("@ToBank", txttobank.Text);
-                    cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
-                    cmd.Parameters.AddWithValue("@Date", dtpDate.Value);
-                    cmd.Parameters.AddWithValue("@Descripition", txtDescription.Text);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    if (cmbfrombank.Text == "")
                     {
-                        MessageBox.Show("Update data Successfully");
-                        Cleardata();
+                        MessageBox.Show("Bank Name Required");
+                    }
+                    else if (txttobank.Text == "")
+                    {
+
+                        MessageBox.Show("Enter Bank Name For Transfer Amount");
+                    }
+                    else if (txttobank.Text == "")
+                    {
+
+                        MessageBox.Show("Enter Bank Name For Transfer Amount");
+                    }
+                    else if (txtAmount.Text == "")
+                    {
+
+                        MessageBox.Show("Please Insert Amount");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+
+
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("Banktobank", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.Parameters.AddWithValue("@FromBank", cmbfrombank.Text);
+                        cmd.Parameters.AddWithValue("@ToBank", txttobank.Text);
+                        cmd.Parameters.AddWithValue("@Amount", txtAmount.Text);
+                        cmd.Parameters.AddWithValue("@Date", dtpDate.Value);
+                        cmd.Parameters.AddWithValue("@Descripition", txtDescription.Text);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -243,7 +288,7 @@ namespace sample
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            validdata();
+           // validdata();
             Update1();
             fetchdetails();
             Cleardata();
@@ -259,22 +304,45 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("Banktobank", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
-
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    if (cmbfrombank.Text == "")
                     {
-                        MessageBox.Show("Delete data Successfully");
-                        Cleardata();
+                        MessageBox.Show("Bank Name Required");
+                    }
+                    else if (txttobank.Text == "")
+                    {
+
+                        MessageBox.Show("Enter Bank Name For Transfer Amount");
+                    }
+                    else if (txttobank.Text == "")
+                    {
+
+                        MessageBox.Show("Enter Bank Name For Transfer Amount");
+                    }
+                    else if (txtAmount.Text == "")
+                    {
+
+                        MessageBox.Show("Please Insert Amount");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("Banktobank", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
+
                 }
                 catch (Exception ex)
                 {
@@ -289,7 +357,7 @@ namespace sample
         }
         private void btndelete_Click(object sender, EventArgs e)
         {
-            validdata();
+          //  validdata();
             Delete();
             fetchdetails();
             Cleardata();
