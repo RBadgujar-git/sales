@@ -118,104 +118,19 @@ namespace sample
             }
         }
 
-
-
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2DataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void DebitNote_Load(object sender, EventArgs e)
         {
-            // fetchdetails();
-            //fetchitem();
+            
+            bind_sale_details();
+            cmbpartyname1.Visible = false;
+            txtTotal.Enabled = false;
+            txtBallaance.Enabled = false;
+            txtsubtotal.Enabled = false;
+            cmbpartyname.Focus(); 
             fetchcustomername();
             fetchCategory();
             txtReturnNo.Enabled = false;
             get_id();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbpartyname_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try {
-                con.Open();
-
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read()) {
-                    txtbillingadd.Text = dr["BillingAddress"].ToString();
-                    txtcon.Text = dr["ContactNo"].ToString();
-
-
-                }
-                dr.Close();
-
-                txtPONo.Focus();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-            finally {
-                con.Close();
-            }
-        }
-
-        private void txtItemName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try 
-                {
-                con.Close();
-                con.Open();
-                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read()) {
-                    txtItemCode.Text = dr["ItemCode"].ToString();
-                    txtUnit.Text = dr["BasicUnit"].ToString();
-                    txtMRP.Text = dr["SalePrice"].ToString();
-                    txtTax1.Text = dr["TaxForSale"].ToString();
-                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
-                    //  txtTaxType.Text = dr["TaxType"].ToString();
-
-                }
-                dr.Close();
-
-                txtItemCode.Focus();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-            finally {
-                con.Close();
-            }
         }
 
         private void txtFreeQty_TextChanged(object sender, EventArgs e)
@@ -226,8 +141,8 @@ namespace sample
         }
         public void cal_ItemTotal()
         {
-            try
-                {
+            if (txtOty.Text !="" && txtFreeQty.Text != "" && txtFreeQty.Text != "" && txtMRP.Text != "" && txtDis.Text != "" && txtTax1.Text != "")
+            {
                 float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
 
                 qty = float.Parse(txtOty.Text.ToString());
@@ -250,10 +165,7 @@ namespace sample
                 txtItemTotal.Text = total.ToString();
 
             }
-            catch (Exception e1) 
-            {
-                //MessageBox.Show(e1.Message);
-            }
+           
         }
 
         private void txtMRP_TextChanged(object sender, EventArgs e)
@@ -301,10 +213,6 @@ namespace sample
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@ID", id1);
-
-                    // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
-                    //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
-
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
@@ -333,33 +241,39 @@ namespace sample
         {
             try {
                 con.Open();
-                MemoryStream ms = new MemoryStream();
-                picImage.Image.Save(ms, picImage.Image.RawFormat);
-                byte[] arrImage1 = ms.GetBuffer();
+                string query = string.Format("insert into tbl_DebitNote(InvoiceNo,PONumber,PartyName, BillingName,  PODate, InvoiceDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Received, RemainingBal, ContactNo, Feild1, Feild2, Feild3, Status, TableName, Barcode,ItemCategory) Values (@InvoiceNo, @PONumber, @PartyName, @BillingName, @PODate, @InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,  @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal,@ContactNo, @Feild1, @Feild2, @Feild3,@Status, @TableName, @Barcode,@ItemCategory);SELECT SCOPE_IDENTITY();");
+                SqlCommand cmd = new SqlCommand(query, con);
 
-                DataTable dtable = new DataTable();
-                cmd = new SqlCommand("tbl_DebitNoteSelect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Action", "Insert");
-                cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
+                //DataTable dtable = new DataTable();
+                //cmd = new SqlCommand("tbl_DebitNoteSelect", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.Parameters.AddWithValue("@Action", "Insert");
+                //   cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname1.Text);
+                }
                 cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
                 cmd.Parameters.AddWithValue("@PONumber", txtPONo.Text);
-                cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+              //  cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
                 cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
-                DateTime now1 = DateTime.Today;
-                cmd.Parameters.AddWithValue("@PODate", now1.ToShortDateString());
+               
+                cmd.Parameters.AddWithValue("@PODate", dtpPODate.Text);
                 //cmd.Parameters.AddWithValue("@PODate", dtpPODate.Text);
-               DateTime now2 = DateTime.Today;
-                cmd.Parameters.AddWithValue("@InvoiceDate", now2.ToShortDateString());
-                DateTime now3 = DateTime.Today;
-                cmd.Parameters.AddWithValue("@DueDate", now3.ToShortDateString());
+               
+                cmd.Parameters.AddWithValue("@InvoiceDate",dtpInvoice.Text);
+                
+                cmd.Parameters.AddWithValue("@DueDate",dtpDueDate.Text);
                 cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
                 cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
                 cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
                 cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
-                cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
-                DateTime now4 = DateTime.Today;
-                cmd.Parameters.AddWithValue("@Deliverydate", now4.ToShortDateString());
+                cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);            
+                cmd.Parameters.AddWithValue("@Deliverydate",DtpdeliveryDate.Text );
                 //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                 // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
@@ -373,15 +287,14 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                 cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
                 cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
-
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
                 cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Debit.Text);
-                cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
-
+                cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
+                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
             }
@@ -480,7 +393,41 @@ namespace sample
             txtDisAmt.Text = "";
             txtItemTotal.Text = "";
         }
-
+        private void cleardata()
+        {
+            txtInvoiceNo.Text = "";
+            cmbpartyname.Text = "";
+            txtbillingadd.Text = "";
+            txtPONo.Text = "";
+            dtpPODate.Text = "";
+            dtpInvoice.Text = "";
+            dtpDueDate.Text = "";
+            cmbStatesupply.Text = "";
+            cmbPaymentType.Text = "";
+            txtTransportName.Text = "";
+            txtDeliveryLoc.Text = "";
+            txtVehicleNo.Text = "";
+            DtpdeliveryDate.Text = "";
+            txtDescription.Text = "";
+            cmbtax.Text = "";
+            txtcgst.Text = "";
+            txtsgst.Text = "";
+            txtTaxAmount.Text = "";
+            txtDiscount.Text = "";
+            txtDisAmount.Text = "";
+            txtRoundup.Text = "";
+            txtTotal.Text = "";
+            txtReceived.Text = "";
+            txtBallaance.Text = "";
+            txtrefNo.Text = "";
+            txtadditional1.Text = "";
+            txtadditional2.Text = "";
+            ComboBox.Text = "";
+            Debit.Text = "";
+            txtcon.Text = "";
+            cmbbarcode.Text = "";
+            cmbCategory.Text = "";
+        }
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
 
@@ -526,9 +473,7 @@ namespace sample
         {
             try {
                 con.Open();
-                MemoryStream ms = new MemoryStream();
-                picImage.Image.Save(ms, picImage.Image.RawFormat);
-                byte[] arrImage1 = ms.GetBuffer();
+               
 
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_DebitNoteSelect", con);
@@ -568,7 +513,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Debit.Text);
-                cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
+                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 cmd.Parameters.AddWithValue("@Action", "Update");
 
                 id1 = cmd.ExecuteScalar();
@@ -587,6 +533,8 @@ namespace sample
         {
             insertdata();
             bind_sale_details();
+            clear_text_data();
+            cleardata();
         }
 
         private void txtDis_TextChanged(object sender, EventArgs e)
@@ -633,19 +581,16 @@ namespace sample
 
 
                         txtInvoiceNo.Text = dr["InvoiceNo"].ToString();
-                        cmbpartyname.Text = dr["PartyName"].ToString();
+                        cmbpartyname1.Text = dr["PartyName"].ToString();
                         txtbillingadd.Text = dr["BillingName"].ToString();
                         txtPONo.Text = dr["PONumber"].ToString();
                         dtpPODate.Text = dr["PODate"].ToString();
-
                         dtpInvoice.Text = dr["InvoiceDate"].ToString();
                         dtpDueDate.Text = dr["DueDate"].ToString();
                         cmbStatesupply.Text = dr["StateofSupply"].ToString();
                         cmbPaymentType.Text = dr["PaymentType"].ToString();
                         txtTransportName.Text = dr["TransportName"].ToString();
                         txtDeliveryLoc.Text = dr["DeliveryLocation"].ToString();
-
-
                         txtVehicleNo.Text = dr["VehicleNumber"].ToString();
                         DtpdeliveryDate.Text = dr["Deliverydate"].ToString();
                         txtDescription.Text = dr["Description"].ToString();
@@ -657,9 +602,7 @@ namespace sample
                         txtDisAmount.Text = dr["DiscountAmount1"].ToString();
                         txtRoundup.Text = dr["RoundFigure"].ToString();
                         txtTotal.Text = dr["Total"].ToString();
-
                         //, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
-
                         txtReceived.Text = dr["Received"].ToString();
                         txtBallaance.Text = dr["RemainingBal"].ToString();
                         txtrefNo.Text = dr["Feild1"].ToString();
@@ -668,21 +611,9 @@ namespace sample
                         ComboBox.Text = dr["Status"].ToString();
                         Debit.Text = dr["TableName"].ToString();
                         txtcon.Text = dr["ContactNo"].ToString();
-
-                        id = dr["id"].ToString();
-
-                      
-                        if (ds.Tables[0].Rows.Count > 0) {
-                            MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["Image"]);
-                            ms.Seek(0, SeekOrigin.Begin);
-                            picImage.Image = Image.FromStream(ms); ;
-                            picImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                        }
-
-
-
-
-
+                        cmbbarcode.Text = dr["Barcode"].ToString();
+                        cmbCategory.Text = dr["ItemCategory"].ToString();
+                        id = dr["ReturnNo"].ToString();
                         dr.Close();
                     }
                 }
@@ -697,19 +628,18 @@ namespace sample
                     int i = 0;
                     while (dr1.Read()) {
                         dgvInnerDebiteNote.Rows.Add();
-                        dgvInnerDebiteNote.Rows[i].Cells["ID"].Value = i + 1;
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemName"].Value = dr1["txtItem"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemCode"].Value = dr1["Item_Code"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["BasicUnit"].Value = dr1["Unit"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["SalePrice"].Value = dr1["MRP"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["TaxForSale"].Value = dr1["Tax"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["SaleTaxAmount"].Value = dr1["Tax_Amount"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["sr_no"].Value = i + 1;
+                        dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value = dr1["ItemCode"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value = dr1["BasicUnit"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value = dr1["SalePrice"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value = dr1["TaxForSale"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value = dr1["SaleTaxAmount"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["DiscountAmount"].Value = dr1["Discount_Amount"].ToString();
-
+                        dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["freeQty"].Value = dr1["FreeQty"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemAmount"].Value = dr1["Amount"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
 
 
                         i++;
@@ -752,7 +682,10 @@ namespace sample
 
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) {
+            if (e.KeyCode == Keys.Enter)
+            {
+                cmbpartyname.Visible = false;
+                cmbpartyname1.Visible = true;
                 bind_sale_details();
             }
         }
@@ -825,50 +758,12 @@ namespace sample
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
-                con.Open();
-
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(ds, "Temp");
-                DataTable DT = new DataTable();
-                SDA.Fill(ds);
-                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
-                    txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
-               }
-               
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-            finally {
-                con.Close();
-            }
+            
         }
 
         private void picImage_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames) {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1) {
-                        picImage.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        picImage.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        picImage.Image.Save(ms, picImage.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
-                    }
-                }
-            }
+         
         }
 
         private void chkenble_CheckedChanged(object sender, EventArgs e)
@@ -882,6 +777,115 @@ namespace sample
         }
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void cmbpartyname_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtbillingadd.Text = dr["BillingAddress"].ToString();
+                    txtcon.Text = dr["ContactNo"].ToString();
+
+
+                }
+                dr.Close();
+
+                txtPONo.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Close();
+                con.Open();
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtItemCode.Text = dr["ItemCode"].ToString();
+                    txtUnit.Text = dr["BasicUnit"].ToString();
+                    txtMRP.Text = dr["SalePrice"].ToString();
+                    txtTax1.Text = dr["TaxForSale"].ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
+
+                }
+                dr.Close();
+
+                txtItemCode.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void cmbPaymentType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbPaymentType.SelectedItem == "Cheque")
+            {
+                txtrefNo.Visible = true;
+            }
+            else if (cmbPaymentType.SelectedItem == "Cash")
+            {
+                txtrefNo.Visible = false;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

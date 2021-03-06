@@ -25,10 +25,12 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+
             DebitNote BA = new DebitNote();
-           BA.TopLevel = false;
-         //   BA.AutoScroll = true;
+            BA.TopLevel = false;
+           // BA.AutoScroll = true;
             this.Controls.Add(BA);
+
             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;

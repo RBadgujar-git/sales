@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Unit_Conversion));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSave = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@
             this.btnSave.Location = new System.Drawing.Point(457, 87);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 42);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button1_Click);
@@ -101,13 +101,15 @@
             this.txtRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRate.HoverState.Parent = this.txtRate;
             this.txtRate.Location = new System.Drawing.Point(133, 128);
+            this.txtRate.MaxLength = 15;
             this.txtRate.Name = "txtRate";
             this.txtRate.PasswordChar = '\0';
             this.txtRate.PlaceholderText = "";
             this.txtRate.SelectedText = "";
             this.txtRate.ShadowDecoration.Parent = this.txtRate;
             this.txtRate.Size = new System.Drawing.Size(200, 29);
-            this.txtRate.TabIndex = 1;
+            this.txtRate.TabIndex = 3;
+            this.txtRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRate_KeyPress);
             // 
             // txtSecondaryunit
             // 
@@ -124,13 +126,15 @@
             this.txtSecondaryunit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSecondaryunit.HoverState.Parent = this.txtSecondaryunit;
             this.txtSecondaryunit.Location = new System.Drawing.Point(133, 93);
+            this.txtSecondaryunit.MaxLength = 15;
             this.txtSecondaryunit.Name = "txtSecondaryunit";
             this.txtSecondaryunit.PasswordChar = '\0';
             this.txtSecondaryunit.PlaceholderText = "";
             this.txtSecondaryunit.SelectedText = "";
             this.txtSecondaryunit.ShadowDecoration.Parent = this.txtSecondaryunit;
             this.txtSecondaryunit.Size = new System.Drawing.Size(200, 29);
-            this.txtSecondaryunit.TabIndex = 1;
+            this.txtSecondaryunit.TabIndex = 2;
+            this.txtSecondaryunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSecondaryunit_KeyPress);
             // 
             // txtBasicUnit
             // 
@@ -147,6 +151,7 @@
             this.txtBasicUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBasicUnit.HoverState.Parent = this.txtBasicUnit;
             this.txtBasicUnit.Location = new System.Drawing.Point(133, 58);
+            this.txtBasicUnit.MaxLength = 15;
             this.txtBasicUnit.Name = "txtBasicUnit";
             this.txtBasicUnit.PasswordChar = '\0';
             this.txtBasicUnit.PlaceholderText = "";
@@ -154,6 +159,7 @@
             this.txtBasicUnit.ShadowDecoration.Parent = this.txtBasicUnit;
             this.txtBasicUnit.Size = new System.Drawing.Size(200, 29);
             this.txtBasicUnit.TabIndex = 1;
+            this.txtBasicUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBasicUnit_KeyPress);
             // 
             // label4
             // 
@@ -177,34 +183,34 @@
             // 
             // dgvUnitConversion
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvUnitConversion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvUnitConversion.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvUnitConversion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUnitConversion.BackgroundColor = System.Drawing.Color.White;
             this.dgvUnitConversion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvUnitConversion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvUnitConversion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUnitConversion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUnitConversion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvUnitConversion.ColumnHeadersHeight = 18;
             this.dgvUnitConversion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Basic_Unit,
             this.Secondary_Unit,
             this.Rate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUnitConversion.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUnitConversion.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvUnitConversion.EnableHeadersVisualStyles = false;
             this.dgvUnitConversion.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvUnitConversion.Location = new System.Drawing.Point(0, 178);

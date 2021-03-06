@@ -1164,7 +1164,7 @@
             this.txtPONo.SelectedText = "";
             this.txtPONo.ShadowDecoration.Parent = this.txtPONo;
             this.txtPONo.Size = new System.Drawing.Size(136, 24);
-            this.txtPONo.TabIndex = 4;
+            this.txtPONo.TabIndex = 2;
             this.txtPONo.TextChanged += new System.EventHandler(this.txtPONo_TextChanged);
             // 
             // txtbillingadd
@@ -1401,7 +1401,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1113, 602);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 1;
             // 
             // dtpInvoice
             // 

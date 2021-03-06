@@ -13,14 +13,14 @@ namespace sample
 {
     public partial class ExpenseHomePage : UserControl
     {
-        SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+        SqlConnection sqlcon = new SqlConnection((Properties.Settings.Default.InventoryMgntConnectionString));
         SqlConnection con;
         SqlCommand cmd;
         string id = "";
         public ExpenseHomePage()
         {
             InitializeComponent();
-            con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+            con = new SqlConnection((Properties.Settings.Default.InventoryMgntConnectionString));
 
         }
 
@@ -128,6 +128,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

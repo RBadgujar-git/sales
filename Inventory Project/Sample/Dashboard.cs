@@ -1104,7 +1104,8 @@ namespace sample
 
         private void backupToDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("www.gmail.com");
+            BackuptoDrive br = new BackuptoDrive();
+            br.Show();
         }
         private void backupToComputerToolStripMenuItem_Click(object sender, EventArgs e)
         {
