@@ -215,6 +215,7 @@
             this.txtSearch1.HoverState.Parent = this.txtSearch1;
             this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
             this.txtSearch1.Location = new System.Drawing.Point(27, 66);
+            this.txtSearch1.MaxLength = 20;
             this.txtSearch1.Name = "txtSearch1";
             this.txtSearch1.PasswordChar = '\0';
             this.txtSearch1.PlaceholderText = "";
@@ -257,6 +258,7 @@
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
             this.txtSearch2.Location = new System.Drawing.Point(303, 203);
+            this.txtSearch2.MaxLength = 20;
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
             this.txtSearch2.PlaceholderText = "";

@@ -42,6 +42,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -259,11 +260,19 @@
             this.guna2Button1.Text = "Clear";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(416, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(133, 26);
+            this.textBox1.TabIndex = 16;
+            // 
             // NewCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.cmbCompanyName);
             this.Controls.Add(this.button3);
@@ -306,5 +315,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
