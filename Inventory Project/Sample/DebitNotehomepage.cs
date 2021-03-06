@@ -28,9 +28,8 @@ namespace sample
 
             DebitNote BA = new DebitNote();
             BA.TopLevel = false;
-           // BA.AutoScroll = true;
+            // BA.AutoScroll = true;
             this.Controls.Add(BA);
-
             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;

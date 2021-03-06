@@ -70,12 +70,12 @@ namespace sample
                     con.Open();
                 }
 
-            if (cmbaccountname.Text == "")
-            {
-                MessageBox.Show("Account Name Requried");
-            }
-            else if (cmbEntrytype.SelectedIndex == -1)
-                {
+                    if (cmbaccountname.Text == "")
+                    {
+                        MessageBox.Show("Account Name Requried");
+                    }
+                    else if (cmbEntrytype.Text=="")
+                        {
                     MessageBox.Show("Please Select Entry Type");
                 }
                 else if (txtAcoount.Text == "")
@@ -195,11 +195,11 @@ namespace sample
                         con.Open();
                     }
 
-                    if (cmbaccountname.SelectedIndex == -1)
+                    if (cmbaccountname.Text=="")
                     {
                         MessageBox.Show("Please Select Record");
                     }
-                    else if (cmbEntrytype.SelectedIndex == -1)
+                    else if (cmbEntrytype.Text== "")
                     {
                         MessageBox.Show("Please Select Entry Type");
                     }
@@ -264,7 +264,11 @@ namespace sample
 
 
 
-                    if (cmbaccountname.SelectedIndex == -1)
+                    if (cmbaccountname.Text=="")
+                    {
+                        MessageBox.Show("Please Select Record");
+                    }
+                    else if (txtAcoount.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
                     }

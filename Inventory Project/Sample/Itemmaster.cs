@@ -211,6 +211,8 @@ namespace sample
                 }
                 else
                 {
+
+
                     MemoryStream ms = new MemoryStream();
                     picturebox.Image.Save(ms, picturebox.Image.RawFormat);
                     byte[] arrImage1 = ms.GetBuffer();

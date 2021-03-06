@@ -145,8 +145,8 @@ namespace sample
                 MessageBox.Show("Please Insert Account  IFSC Code!");
                txtIFSCcode.Focus();
             }
+                     
            
-
         }
         public void Insert1()
         {

@@ -111,6 +111,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
                     cmd.Parameters.AddWithValue("@Discount", txtDiscount.Text);
                     cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                    cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
                     cmd.Parameters.Add("@image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
@@ -163,6 +165,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
                     cmd.Parameters.AddWithValue("@Discount", txtDiscount.Text);
                     cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                    cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
                     cmd.Parameters.Add("@image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
 
                     int num = cmd.ExecuteNonQuery();
@@ -247,7 +251,7 @@ namespace sample
             txtDescription.Text = dgvPaymentIn.SelectedRows[0].Cells["Description"].Value.ToString();
             txtReceived.Text = dgvPaymentIn.SelectedRows[0].Cells["Paid"].Value.ToString();
             txtDiscount.Text = dgvPaymentIn.SelectedRows[0].Cells["Discount"].Value.ToString();
-
+          
             SqlCommand cmd = new SqlCommand("select image from tbl_Paymentout", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -262,8 +266,9 @@ namespace sample
             }
 
             txtTotal.Text = dgvPaymentIn.SelectedRows[0].Cells["Total"].Value.ToString();
+            textBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["TableName"].Value.ToString();
+            comboBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["Status"].Value.ToString();
 
-           
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
@@ -387,6 +392,11 @@ namespace sample
         }
 
         private void Print_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
