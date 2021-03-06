@@ -922,7 +922,7 @@ namespace sample
             try
             {             
                 con.Close();
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'", cmbCategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");

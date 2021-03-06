@@ -191,7 +191,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@Size", txtsize.Text);
             cmd.Parameters.AddWithValue("@Description", txtDescritption.Text);
             cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
-
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlParameter sqlpara = new SqlParameter("@Image1", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
             cmd.Parameters.Add(sqlpara);
@@ -250,6 +250,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Description", txtDescritption.Text);
                     cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
                     cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {

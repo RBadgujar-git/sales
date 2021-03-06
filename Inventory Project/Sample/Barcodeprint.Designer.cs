@@ -303,6 +303,7 @@
             this.btnCancel.TabIndex = 19;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // button1
             // 
@@ -318,6 +319,7 @@
             this.button1.Size = new System.Drawing.Size(33, 27);
             this.button1.TabIndex = 226;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // checkBox1
             // 
