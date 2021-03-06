@@ -121,7 +121,7 @@ namespace sample
         private void DebitNote_Load(object sender, EventArgs e)
         {
             
-            bind_sale_details();
+            //bind_sale_details();
             cmbpartyname1.Visible = false;
             txtTotal.Enabled = false;
             txtBallaance.Enabled = false;
