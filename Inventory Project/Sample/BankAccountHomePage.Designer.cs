@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblBankAccount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -45,11 +46,10 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvBankAcc = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblBankAccount = new System.Windows.Forms.Label();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBankAccount)).BeginInit();
@@ -71,6 +71,15 @@
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(772, 130);
             this.guna2ShadowPanel3.TabIndex = 12;
+            // 
+            // lblBankAccount
+            // 
+            this.lblBankAccount.AutoSize = true;
+            this.lblBankAccount.Location = new System.Drawing.Point(49, 37);
+            this.lblBankAccount.Name = "lblBankAccount";
+            this.lblBankAccount.Size = new System.Drawing.Size(0, 16);
+            this.lblBankAccount.TabIndex = 15;
+            this.lblBankAccount.Click += new System.EventHandler(this.label2_Click);
             // 
             // button1
             // 
@@ -205,6 +214,7 @@
             this.txtSearch1.HoverState.Parent = this.txtSearch1;
             this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
             this.txtSearch1.Location = new System.Drawing.Point(27, 66);
+            this.txtSearch1.MaxLength = 20;
             this.txtSearch1.Name = "txtSearch1";
             this.txtSearch1.PasswordChar = '\0';
             this.txtSearch1.PlaceholderText = "";
@@ -247,6 +257,7 @@
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
             this.txtSearch2.Location = new System.Drawing.Point(303, 203);
+            this.txtSearch2.MaxLength = 20;
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
             this.txtSearch2.PlaceholderText = "";
@@ -318,6 +329,11 @@
             this.dgvBankAcc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvBankAcc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBankAcc_CellContentClick);
             // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "";
+            this.Column7.Name = "Column7";
+            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -358,20 +374,6 @@
             this.label1.Size = new System.Drawing.Size(127, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bank Account";
-            // 
-            // lblBankAccount
-            // 
-            this.lblBankAccount.AutoSize = true;
-            this.lblBankAccount.Location = new System.Drawing.Point(49, 37);
-            this.lblBankAccount.Name = "lblBankAccount";
-            this.lblBankAccount.Size = new System.Drawing.Size(0, 16);
-            this.lblBankAccount.TabIndex = 15;
-            this.lblBankAccount.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
             // 
             // BankAccountHomePage
             // 
