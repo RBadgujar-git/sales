@@ -124,6 +124,7 @@
             this.txtSubunit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSubunit.HoverState.Parent = this.txtSubunit;
             this.txtSubunit.Location = new System.Drawing.Point(249, 111);
+            this.txtSubunit.MaxLength = 15;
             this.txtSubunit.Name = "txtSubunit";
             this.txtSubunit.PasswordChar = '\0';
             this.txtSubunit.PlaceholderText = "";
@@ -131,6 +132,7 @@
             this.txtSubunit.ShadowDecoration.Parent = this.txtSubunit;
             this.txtSubunit.Size = new System.Drawing.Size(200, 30);
             this.txtSubunit.TabIndex = 2;
+            this.txtSubunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubunit_KeyPress);
             // 
             // label3
             // 
@@ -158,7 +160,7 @@
             this.txtAddUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddUnit.HoverState.Parent = this.txtAddUnit;
             this.txtAddUnit.Location = new System.Drawing.Point(249, 67);
-            this.txtAddUnit.MaxLength = 10;
+            this.txtAddUnit.MaxLength = 15;
             this.txtAddUnit.Name = "txtAddUnit";
             this.txtAddUnit.PasswordChar = '\0';
             this.txtAddUnit.PlaceholderText = "";
@@ -166,6 +168,7 @@
             this.txtAddUnit.ShadowDecoration.Parent = this.txtAddUnit;
             this.txtAddUnit.Size = new System.Drawing.Size(200, 30);
             this.txtAddUnit.TabIndex = 1;
+            this.txtAddUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddUnit_KeyPress);
             // 
             // btnSave
             // 
