@@ -40,8 +40,8 @@ namespace sample
             cmbState.Text = "";
             txtGSTNo.Text = "";
             ownerName.Text = "";
-            picSignature.Image = null;
-            picCompanyLogo.Image = null;
+            picSignature.Image = Properties.Resources.No_Image_Available;
+            picCompanyLogo.Image = Properties.Resources.No_Image_Available;
             txtBankName.Text = "";
             txtAccountNo.Text = "";
             txtIFSCcode.Text = "";
@@ -82,7 +82,7 @@ namespace sample
             dgvComapnyMaster.DataSource = dtable;
         }
 
-        public int veryify = 0;
+
         public void validfild()
         {
             if (txtcampanyName.Text == "")
@@ -144,10 +144,6 @@ namespace sample
             {
                 MessageBox.Show("Please Insert Account  IFSC Code!");
                txtIFSCcode.Focus();
-            }
-            else
-            {
-                veryify = 1;
             }
                      
            
@@ -217,13 +213,8 @@ namespace sample
         private void btnsave_Click(object sender, EventArgs e)
         {
             validfild();
-            if (veryify == 1)
-            {
-                Insert1();
-                fetchdetails();
-                Cleardata();
-            }
-
+            Insert1();
+            fetchdetails();
         }
 
         public void Update1()
@@ -288,14 +279,9 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            validfild();
-            if (veryify == 1)
-            {
-                Update1();
-                fetchdetails();
-                Cleardata();
-            }
+            Update1();
+            fetchdetails();
+            Cleardata();
         }
 
         public void Delete1()
@@ -337,16 +323,9 @@ namespace sample
 
         private void delete_Click(object sender, EventArgs e)
         {
-            if (txtcampanyName.Text == "")
-            {
-                MessageBox.Show("Please Select Records !");
-            }
-            else
-            {
-                Delete1();
-                fetchdetails();
-                Cleardata();
-            }
+            Delete1();
+            fetchdetails();
+            Cleardata();
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
@@ -647,7 +626,20 @@ namespace sample
 
         }
 
-       
+        private void btnminimize_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {      
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 
 }

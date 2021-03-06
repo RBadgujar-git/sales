@@ -72,6 +72,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerCareNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendMailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barcodePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
@@ -97,7 +98,6 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.barcodePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -460,6 +460,13 @@
             this.sendMailToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.sendMailToolStripMenuItem.Text = "send Mail";
             this.sendMailToolStripMenuItem.Click += new System.EventHandler(this.sendMailToolStripMenuItem_Click);
+            // 
+            // barcodePrintToolStripMenuItem
+            // 
+            this.barcodePrintToolStripMenuItem.Name = "barcodePrintToolStripMenuItem";
+            this.barcodePrintToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.barcodePrintToolStripMenuItem.Text = "Barcode Print";
+            this.barcodePrintToolStripMenuItem.Click += new System.EventHandler(this.barcodePrintToolStripMenuItem_Click);
             // 
             // guna2TextBox2
             // 
@@ -879,20 +886,14 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoSize = true;
-            this.panel3.Location = new System.Drawing.Point(0, 96);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.MaximumSize = new System.Drawing.Size(1117, 660);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1117, 660);
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
-            // 
-            // barcodePrintToolStripMenuItem
-            // 
-            this.barcodePrintToolStripMenuItem.Name = "barcodePrintToolStripMenuItem";
-            this.barcodePrintToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
-            this.barcodePrintToolStripMenuItem.Text = "Barcode Print";
-            this.barcodePrintToolStripMenuItem.Click += new System.EventHandler(this.barcodePrintToolStripMenuItem_Click);
             // 
             // Dashboard
             // 

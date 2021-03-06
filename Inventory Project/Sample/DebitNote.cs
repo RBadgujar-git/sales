@@ -963,6 +963,11 @@ namespace sample
         {
 
         }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

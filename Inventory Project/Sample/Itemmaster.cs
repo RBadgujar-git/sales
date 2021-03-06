@@ -110,43 +110,50 @@ namespace sample
             txtsubunit.Text = "";
             txtItemCode.Text = "";
             cmbCategry.Text= "";
-            txtSalePrice.Text = "0";
-            cmbSaleTax.Text = "0";
-            txtTaxAmountSale.Text = "0";
-            txtpurchasseprice.Text = "0";
-            cmbPurchasetax.Text = "0";
-            txtTaxAmountPurchase.Text = "0";
-            txtOpeningqty.Text = "0";
-            txtatPrice.Text = "0";
+            txtSalePrice.Text = "";
+            cmbSaleTax.Text = "";
+            txtTaxAmountSale.Text = "";
+            txtpurchasseprice.Text = "";
+            cmbPurchasetax.Text = "";
+            txtTaxAmountPurchase.Text = "";
+            txtOpeningqty.Text = "";
+            txtatPrice.Text = "";
             cmbItemLocation.Text = "";
-            txtMRP.Text = "0";
+            txtMRP.Text = "";
             txtBatchNo.Text = "";
             txtSerialNo.Text = "";
             txtsize.Text = "";
             txtDescritption.Text = "";
             txtminimumStock.Text = "";
+            picturebox.Image = Properties.Resources.No_Image_Available;
         }
         private void cmbSaleTax_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            float gst = 0, gst_amt = 0, TA = 0;
-            TA = float.Parse(txtSalePrice.Text.ToString());
-            gst = float.Parse(cmbSaleTax.Text.ToString());
-            gst_amt = (TA * gst / 100) + TA;
-            txtTaxAmountSale.Text = gst_amt.ToString();
+            if (txtSalePrice.Text != "" && cmbSaleTax.Text != "" && txtTaxAmountSale.Text != "")
+            {
+                float gst = 0, gst_amt = 0, TA = 0;
+                TA = float.Parse(txtSalePrice.Text.ToString());
+                gst = float.Parse(cmbSaleTax.Text.ToString());
+                gst_amt = (TA * gst / 100) + TA;
+                txtTaxAmountSale.Text = gst_amt.ToString();
+            }
         }
         
         private void cmbPurchasetax_SelectedIndexChanged(object sender, EventArgs e)
         {
-            float gst = 0, gst_amt = 0, TA = 0;
-            TA = float.Parse(txtpurchasseprice.Text.ToString());
-            gst = float.Parse(cmbPurchasetax.Text.ToString());
-            gst_amt = (TA * gst / 100) + TA;
-            txtTaxAmountPurchase.Text = gst_amt.ToString();
+            if (txtpurchasseprice.Text != "" && cmbPurchasetax.Text != "" && txtTaxAmountPurchase.Text != "")
+            {
+                float gst = 0, gst_amt = 0, TA = 0;
+                TA = float.Parse(txtpurchasseprice.Text.ToString());
+                gst = float.Parse(cmbPurchasetax.Text.ToString());
+                gst_amt = (TA * gst / 100) + TA;
+                txtTaxAmountPurchase.Text = gst_amt.ToString();
+            }
         }
 
         private void txtOpeningqty_TextChanged(object sender, EventArgs e)
         {
-            if (txtOpeningqty.Text != "")
+            if (txtOpeningqty.Text != "" && txtOpeningqty.Text != "" && txtatPrice.Text != "")
             {
                 float gst = 0, gst_amt = 0, TA = 0;
                 TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
@@ -274,7 +281,7 @@ namespace sample
         {
             InsertData();
             fetchdetails();
-            Cleardata();
+           
         }
 
 
@@ -353,7 +360,7 @@ namespace sample
         {
             Update1();
             fetchdetails();
-            Cleardata();
+           
         }
 
      private void Delete()
@@ -400,7 +407,7 @@ namespace sample
         {
             Delete();
             fetchdetails();
-            Cleardata();
+           
         }
 
         private void dgvItemmaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
