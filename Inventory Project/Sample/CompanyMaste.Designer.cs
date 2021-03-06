@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyMaste));
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,8 +74,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSignature = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picCompanyLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnminimize = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -89,8 +89,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnminimize);
-            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -165,7 +166,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(110, 267);
+            this.label10.Location = new System.Drawing.Point(114, 277);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(115, 16);
             this.label10.TabIndex = 26;
@@ -174,7 +175,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(567, 46);
+            this.label12.Location = new System.Drawing.Point(567, 49);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(102, 16);
             this.label12.TabIndex = 26;
@@ -381,7 +382,7 @@
             this.ownerName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ownerName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ownerName.HoverState.Parent = this.ownerName;
-            this.ownerName.Location = new System.Drawing.Point(672, 42);
+            this.ownerName.Location = new System.Drawing.Point(672, 45);
             this.ownerName.MaxLength = 50;
             this.ownerName.Name = "ownerName";
             this.ownerName.PasswordChar = '\0';
@@ -406,10 +407,10 @@
             this.delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.delete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.delete.Location = new System.Drawing.Point(759, 375);
+            this.delete.Location = new System.Drawing.Point(753, 381);
             this.delete.Name = "delete";
             this.delete.Size = new System.Drawing.Size(107, 42);
-            this.delete.TabIndex = 17;
+            this.delete.TabIndex = 16;
             this.delete.Text = "Delete";
             this.delete.UseVisualStyleBackColor = false;
             this.delete.Click += new System.EventHandler(this.delete_Click);
@@ -446,10 +447,10 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(645, 375);
+            this.btnUpdate.Location = new System.Drawing.Point(639, 381);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(107, 42);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -459,10 +460,10 @@
             this.btnsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnsave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnsave.Location = new System.Drawing.Point(532, 375);
+            this.btnsave.Location = new System.Drawing.Point(526, 381);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(107, 42);
-            this.btnsave.TabIndex = 15;
+            this.btnsave.TabIndex = 14;
             this.btnsave.Text = "Save ";
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
@@ -470,7 +471,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(291, 267);
+            this.label13.Location = new System.Drawing.Point(294, 279);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(82, 16);
             this.label13.TabIndex = 53;
@@ -495,10 +496,10 @@
             this.guna2GroupBox1.Controls.Add(this.label16);
             this.guna2GroupBox1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2GroupBox1.Location = new System.Drawing.Point(521, 183);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(553, 187);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(471, 171);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(417, 171);
             this.guna2GroupBox1.TabIndex = 57;
             this.guna2GroupBox1.Text = "Bank Details";
             // 
@@ -554,7 +555,7 @@
             "United Bank of India",
             "Vijaya Bank",
             "Yes Bank Ltd"});
-            this.txtBankName.Location = new System.Drawing.Point(160, 52);
+            this.txtBankName.Location = new System.Drawing.Point(149, 52);
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(240, 24);
             this.txtBankName.TabIndex = 11;
@@ -575,7 +576,7 @@
             this.txtIFSCcode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtIFSCcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIFSCcode.HoverState.Parent = this.txtIFSCcode;
-            this.txtIFSCcode.Location = new System.Drawing.Point(160, 127);
+            this.txtIFSCcode.Location = new System.Drawing.Point(149, 127);
             this.txtIFSCcode.MaxLength = 11;
             this.txtIFSCcode.Name = "txtIFSCcode";
             this.txtIFSCcode.PasswordChar = '\0';
@@ -590,7 +591,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(70, 131);
+            this.label14.Location = new System.Drawing.Point(59, 131);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(88, 16);
             this.label14.TabIndex = 61;
@@ -611,7 +612,7 @@
             this.txtAccountNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAccountNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAccountNo.HoverState.Parent = this.txtAccountNo;
-            this.txtAccountNo.Location = new System.Drawing.Point(160, 90);
+            this.txtAccountNo.Location = new System.Drawing.Point(149, 90);
             this.txtAccountNo.MaxLength = 20;
             this.txtAccountNo.Name = "txtAccountNo";
             this.txtAccountNo.PasswordChar = '\0';
@@ -625,7 +626,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(29, 95);
+            this.label15.Location = new System.Drawing.Point(18, 95);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(128, 16);
             this.label15.TabIndex = 59;
@@ -634,7 +635,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(66, 60);
+            this.label16.Location = new System.Drawing.Point(55, 60);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(91, 16);
             this.label16.TabIndex = 57;
@@ -703,12 +704,12 @@
             this.dgvComapnyMaster.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvComapnyMaster.EnableHeadersVisualStyles = false;
             this.dgvComapnyMaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvComapnyMaster.Location = new System.Drawing.Point(0, 484);
+            this.dgvComapnyMaster.Location = new System.Drawing.Point(0, 502);
             this.dgvComapnyMaster.Name = "dgvComapnyMaster";
             this.dgvComapnyMaster.RowHeadersVisible = false;
             this.dgvComapnyMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvComapnyMaster.Size = new System.Drawing.Size(995, 193);
-            this.dgvComapnyMaster.TabIndex = 63;
+            this.dgvComapnyMaster.Size = new System.Drawing.Size(995, 175);
+            this.dgvComapnyMaster.TabIndex = 18;
             this.dgvComapnyMaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -815,10 +816,10 @@
             this.butnclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.butnclear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butnclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.butnclear.Location = new System.Drawing.Point(873, 375);
+            this.butnclear.Location = new System.Drawing.Point(867, 381);
             this.butnclear.Name = "butnclear";
             this.butnclear.Size = new System.Drawing.Size(107, 42);
-            this.butnclear.TabIndex = 18;
+            this.butnclear.TabIndex = 17;
             this.butnclear.Text = "Clear";
             this.butnclear.UseVisualStyleBackColor = false;
             this.butnclear.Click += new System.EventHandler(this.butnclear_Click);
@@ -871,7 +872,7 @@
             // 
             this.picSignature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.picSignature.Image = global::sample.Properties.Resources.No_Image_Available;
-            this.picSignature.Location = new System.Drawing.Point(294, 293);
+            this.picSignature.Location = new System.Drawing.Point(294, 304);
             this.picSignature.Name = "picSignature";
             this.picSignature.ShadowDecoration.Parent = this.picSignature;
             this.picSignature.Size = new System.Drawing.Size(142, 120);
@@ -884,7 +885,7 @@
             // 
             this.picCompanyLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.picCompanyLogo.Image = global::sample.Properties.Resources.No_Image_Available;
-            this.picCompanyLogo.Location = new System.Drawing.Point(113, 293);
+            this.picCompanyLogo.Location = new System.Drawing.Point(113, 303);
             this.picCompanyLogo.Name = "picCompanyLogo";
             this.picCompanyLogo.ShadowDecoration.Parent = this.picCompanyLogo;
             this.picCompanyLogo.Size = new System.Drawing.Size(146, 120);
@@ -893,32 +894,48 @@
             this.picCompanyLogo.TabStop = false;
             this.picCompanyLogo.Click += new System.EventHandler(this.picCompanyLogo_Click);
             // 
-            // btnminimize
+            // button1
             // 
-            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.Location = new System.Drawing.Point(884, 4);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(33, 32);
-            this.btnminimize.TabIndex = 59;
-            this.btnminimize.UseVisualStyleBackColor = true;
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(711, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 27);
+            this.button1.TabIndex = 101;
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // btnCancel
+            // button2
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(923, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(29, 27);
-            this.btnCancel.TabIndex = 58;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(905, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(27, 24);
+            this.button2.TabIndex = 102;
+            this.button2.Text = "__";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(943, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(27, 24);
+            this.button3.TabIndex = 103;
+            this.button3.Text = "X";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // CompanyMaste
             // 
@@ -949,8 +966,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnminimize;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -991,5 +1006,8 @@
         private System.Windows.Forms.ComboBox cmbState;
         private System.Windows.Forms.Button butnclear;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

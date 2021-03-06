@@ -877,7 +877,8 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoSize = true;
-            this.panel3.Location = new System.Drawing.Point(0, 96);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.MaximumSize = new System.Drawing.Size(1117, 660);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1117, 660);

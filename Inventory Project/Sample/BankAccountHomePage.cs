@@ -158,5 +158,10 @@ namespace sample
         {
 
         }
+
+        private void dgvBankAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

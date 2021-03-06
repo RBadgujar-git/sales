@@ -40,8 +40,8 @@ namespace sample
             cmbState.Text = "";
             txtGSTNo.Text = "";
             ownerName.Text = "";
-            picSignature.Image = null;
-            picCompanyLogo.Image = null;
+            picSignature.Image = Properties.Resources.No_Image_Available;
+            picCompanyLogo.Image = Properties.Resources.No_Image_Available;
             txtBankName.Text = "";
             txtAccountNo.Text = "";
             txtIFSCcode.Text = "";
@@ -215,7 +215,6 @@ namespace sample
             validfild();
             Insert1();
             fetchdetails();
-            Cleardata();
         }
 
         public void Update1()
@@ -630,6 +629,16 @@ namespace sample
         private void btnminimize_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {      
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 

@@ -139,5 +139,10 @@ namespace sample
             dgvLoanAccount.DataSource = ds;
             dgvLoanAccount.DataMember = "temp";
         }
+
+        private void dgvbankAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
