@@ -145,8 +145,8 @@ namespace sample
                 MessageBox.Show("Please Insert Account  IFSC Code!");
                txtIFSCcode.Focus();
             }
+                     
            
-
         }
         public void Insert1()
         {
@@ -623,6 +623,11 @@ namespace sample
         }
 
         private void dgvComapnyMaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click_1(object sender, EventArgs e)
         {
 
         }

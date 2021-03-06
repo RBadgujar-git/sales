@@ -300,6 +300,7 @@
             this.txtitemamount.ShadowDecoration.Parent = this.txtitemamount;
             this.txtitemamount.Size = new System.Drawing.Size(150, 26);
             this.txtitemamount.TabIndex = 10;
+           // this.txtitemamount.TextChanged += new System.EventHandler(this.txtitemamount_TextChanged);
             this.txtitemamount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtitemamount_KeyDown);
             this.txtitemamount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemamount_KeyPress);
             // 
