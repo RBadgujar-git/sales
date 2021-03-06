@@ -175,7 +175,26 @@ namespace sample
             }
         }
 
-     
+    /* public void verify()
+        {
+            if(cmbpartyname.Text=="")
+            {
+                MessageBox.Show("Party Name Is Reguerd !");
+            }
+            else if (txtPartyAdd.Text == "")
+            {
+                MessageBox.Show("Party Addresss Is Reguerd !");
+            }
+
+
+
+        }
+        */
+
+
+
+
+
        
         object id1;
         private void insertdata()
