@@ -276,15 +276,15 @@ namespace sample
                         cmd.Parameters.AddWithValue("@ID", id);
 
                         int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
+                        //if (num > 0)
+                        //{
                             MessageBox.Show("Delete data Successfully");
                             Cleardata();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
+                       // }
+                        //else
+                        //{
+                        //    MessageBox.Show("Please Select Record");
+                        //}
                     }
                 }
                 catch (Exception ex)

@@ -179,15 +179,15 @@ namespace sample
                         cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
                         cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                         int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
+                        //if (num > 0)
+                        //{
                             MessageBox.Show("Update data Successfully");
                             clearData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Please Select Record");
+                        //}
                     }
                 }
                 catch (Exception ex)
