@@ -51,7 +51,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@AtPrice", txtatprice.Text);
             cmd.Parameters.AddWithValue("@Quantity", txtitemqantity.Text);
             cmd.Parameters.AddWithValue("@Details", txtitemdetails.Text);
-           
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
              dgvItemAdjustment.DataSource = dtable;
@@ -87,6 +87,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@AtPrice", txtatprice.Text);
                     cmd.Parameters.AddWithValue("@Quantity", txtitemqantity.Text);
                     cmd.Parameters.AddWithValue("@Details", txtitemdetails.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {

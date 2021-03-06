@@ -807,3 +807,4 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TransactionSettin
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
