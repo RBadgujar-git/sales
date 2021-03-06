@@ -416,7 +416,7 @@ namespace sample
             cmbPurchasetax.Text = dgvItemmaster.Rows[e.RowIndex].Cells["TaxForPurchase"].Value.ToString();
             txtTaxAmountPurchase.Text = dgvItemmaster.Rows[e.RowIndex].Cells["PurchaseTaxAmount"].Value.ToString();
             txtOpeningqty.Text = dgvItemmaster.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
-            txtatPrice.Text = dgvItemmaster.Rows[0].Cells["atPrice"].Value.ToString();
+            txtatPrice.Text = dgvItemmaster.Rows[e.RowIndex].Cells["atPrice"].Value.ToString();
             cmbItemLocation.Text = dgvItemmaster.Rows[e.RowIndex].Cells["ItemLocation"].Value.ToString();
             dtpdate.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Date"].Value.ToString();
             txtMRP.Text = dgvItemmaster.Rows[e.RowIndex].Cells["TrackingMRP"].Value.ToString();
