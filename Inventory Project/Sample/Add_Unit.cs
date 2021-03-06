@@ -51,7 +51,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@UnitID", 0);
             cmd.Parameters.AddWithValue("@UnitName", "");
-            cmd.Parameters.AddWithValue("@SubUnitName", "");         
+            cmd.Parameters.AddWithValue("@SubUnitName", "");
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
             sqlSda.Fill(dtable);
             dgvAddunit.DataSource = dtable;
@@ -79,6 +80,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@UnitID", id);
                     cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
                     cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -255,6 +257,11 @@ namespace sample
         private void txtSubunit_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void dgvAddunit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
