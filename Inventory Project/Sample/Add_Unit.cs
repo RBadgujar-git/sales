@@ -130,36 +130,23 @@ namespace sample
                     {
                         con.Open();
                     }
-
-
-                    if (txtSubunit.Text == "")
+                    DataTable dtable = new DataTable();
+                    SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@UnitID", id);
+                    cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
+                    cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
+                  
+                    int num = cmd.ExecuteNonQuery();
+                    if (num > 0)
                     {
-                        MessageBox.Show("Please Select Record");
-                    }
-                    else if (txtAddUnit.Text == "")
-                    {
-                        MessageBox.Show("Please Select Record");
+                        MessageBox.Show("Update data Successfully");
+                        cleardata();
                     }
                     else
                     {
-                        DataTable dtable = new DataTable();
-                        SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Action", "Update");
-                        cmd.Parameters.AddWithValue("@UnitID", id);
-                        cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
-                        cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
-
-                        int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
-                            MessageBox.Show("Update data Successfully");
-                            cleardata();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
+                        MessageBox.Show("Please Select Record");
                     }
                 }
                 catch (Exception ex)
@@ -190,32 +177,21 @@ namespace sample
                     {
                         con.Open();
                     }
-                    if (txtSubunit.Text == "")
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Delete");
+                    cmd.Parameters.AddWithValue("@UnitID", id);
+
+                    int num = cmd.ExecuteNonQuery();
+                    if (num > 0)
                     {
-                        MessageBox.Show("Please Select Record");
-                    }
-                    else if (txtAddUnit.Text == "")
-                    {
-                        MessageBox.Show("Please Select Record");
+                        MessageBox.Show("Delete data Successfully");
+                        cleardata();
                     }
                     else
                     {
-                        DataTable dt = new DataTable();
-                        SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Action", "Delete");
-                        cmd.Parameters.AddWithValue("@UnitID", id);
-
-                        int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
-                            MessageBox.Show("Delete data Successfully");
-                            cleardata();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
+                        MessageBox.Show("Please Select Record");
                     }
                 }
                 catch (Exception ex)
@@ -235,16 +211,6 @@ namespace sample
             Delete();
             fetchdetails();
             cleardata();
-        }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
