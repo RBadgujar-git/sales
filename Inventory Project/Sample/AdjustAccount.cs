@@ -268,6 +268,10 @@ namespace sample
                     {
                         MessageBox.Show("Please Select Record");
                     }
+                    else if (txtAcoount.Text == "")
+                    {
+                        MessageBox.Show("Please Select Record");
+                    }
                     else
                     {
 

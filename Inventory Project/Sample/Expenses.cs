@@ -184,6 +184,18 @@ namespace sample
         object id1;
         private void insert_record_inner(string id)
         {
+
+
+
+
+
+
+
+
+
+
+
+
             for (int i = 0; i < dgvinnerexpenses.Rows.Count; i++)
             {
                 try
@@ -203,7 +215,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-
+                    MessageBox.Show(e1.Message);
                 }
                 finally
                 {
@@ -565,6 +577,11 @@ namespace sample
             txtMRP.Text = dgvinnerexpenses.SelectedRows[0].Cells["SalePrice"].Value.ToString();
             txtOty.Text = dgvinnerexpenses.SelectedRows[0].Cells["Qty"].Value.ToString();
             txtitemamount.Text = dgvinnerexpenses.SelectedRows[0].Cells["ItemAmount"].Value.ToString();
+        }
+
+        private void txtitemamount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
