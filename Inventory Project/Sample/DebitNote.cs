@@ -121,7 +121,7 @@ namespace sample
         private void DebitNote_Load(object sender, EventArgs e)
         {
             
-            bind_sale_details();
+            //bind_sale_details();
             cmbpartyname1.Visible = false;
             txtTotal.Enabled = false;
             txtBallaance.Enabled = false;
@@ -433,7 +433,71 @@ namespace sample
 
         }
 
+        public int verfy = 0;
 
+        public void verfydata()
+        {
+            if (cmbpartyname.Text == "")
+            {
+                MessageBox.Show("Party Name Is Requried");
+                cmbpartyname.Focus();
+            }
+            else if (txtbillingadd.Text == "")
+            {
+                MessageBox.Show("Party Addrtess Is Requueird !");
+                txtbillingadd.Focus();
+            }
+            else if (txtcon.Text == "")
+            {
+                MessageBox.Show("Party Contact no Is Requueird !");
+                txtcon.Focus();
+            }
+            else if (txtPONo.Text == "")
+            {
+                MessageBox.Show("Party PONO Is Requueird !");
+                txtcon.Focus();
+            }
+            else if (txtrefNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtrefNo.Focus();
+            }
+            else if (txtrefNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtrefNo.Focus();
+            }
+            else if (cmbStatesupply.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+
+            }
+            else if (txtInvoiceNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtInvoiceNo.Focus();
+            }
+            else if (cmbCategory.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type !");
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type !");
+            }
+            else if (cmbtax.Text == "")
+            {
+                MessageBox.Show("Please Select Tax !");
+            }
+            else
+            {
+                verfy = 1;
+            }
+        }
         private void update_record_inner(string p)
         {
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
@@ -472,53 +536,57 @@ namespace sample
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try {
-                con.Open();
-               
 
-                DataTable dtable = new DataTable();
-                cmd = new SqlCommand("tbl_DebitNoteSelect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
-                cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
-                cmd.Parameters.AddWithValue("@PONumber", txtPONo.Text);
-                cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
-                cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
-                DateTime now1 = DateTime.Today;
-                cmd.Parameters.AddWithValue("@PODate", now1.ToShortDateString());
-                cmd.Parameters.AddWithValue("@InvoiceDate", now1.ToShortDateString());
-                cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
-                cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
-                cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
-                cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
-                cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
-                cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
-                cmd.Parameters.AddWithValue("@Deliverydate", now1.ToShortDateString());
-                //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
-                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
-                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
-                cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
-                cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
-                cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
-                cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
-                cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
-                cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
-                cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
-                cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
+                verfydata();
+                if (verfy == 1)
+                {
 
-                cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-                cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
-                cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
-                cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                cmd.Parameters.AddWithValue("@TableName", Debit.Text);
-                cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
-                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
-                cmd.Parameters.AddWithValue("@Action", "Update");
+                    con.Open();
+                    DataTable dtable = new DataTable();
+                    cmd = new SqlCommand("tbl_DebitNoteSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
+                    cmd.Parameters.AddWithValue("@PONumber", txtPONo.Text);
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                    cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
+                    DateTime now1 = DateTime.Today;
+                    cmd.Parameters.AddWithValue("@PODate", now1.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@InvoiceDate", now1.ToShortDateString());
+                    cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
+                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
+                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                    cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
+                    cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
+                    cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
+                    cmd.Parameters.AddWithValue("@Deliverydate", now1.ToShortDateString());
+                    //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
+                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                    // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
+                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
+                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
+                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
+                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
+                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
+                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
+                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                    cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
+                    cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
 
-                id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Update");
+                    cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                    cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
+                    cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
+                    cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
+                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                    cmd.Parameters.AddWithValue("@TableName", Debit.Text);
+                    cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
+                    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+
+                    id1 = cmd.ExecuteScalar();
+                    MessageBox.Show("Sale Record Update");
+                }
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
@@ -529,12 +597,18 @@ namespace sample
             }
         }
 
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
-            insertdata();
-            bind_sale_details();
-            clear_text_data();
-            cleardata();
+
+            verfydata();
+            if (verfy == 1)
+            {
+                insertdata();
+                bind_sale_details();
+                clear_text_data();
+                cleardata();
+            }
         }
 
         private void txtDis_TextChanged(object sender, EventArgs e)

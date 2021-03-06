@@ -82,7 +82,7 @@ namespace sample
             dgvComapnyMaster.DataSource = dtable;
         }
 
-
+        public int veryify = 0;
         public void validfild()
         {
             if (txtcampanyName.Text == "")
@@ -144,6 +144,10 @@ namespace sample
             {
                 MessageBox.Show("Please Insert Account  IFSC Code!");
                txtIFSCcode.Focus();
+            }
+            else
+            {
+                veryify = 1;
             }
                      
            
@@ -213,9 +217,13 @@ namespace sample
         private void btnsave_Click(object sender, EventArgs e)
         {
             validfild();
-            Insert1();
-            fetchdetails();
-            Cleardata();
+            if (veryify == 1)
+            {
+                Insert1();
+                fetchdetails();
+                Cleardata();
+            }
+
         }
 
         public void Update1()
@@ -280,9 +288,14 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();
-            Cleardata();
+
+            validfild();
+            if (veryify == 1)
+            {
+                Update1();
+                fetchdetails();
+                Cleardata();
+            }
         }
 
         public void Delete1()
@@ -324,9 +337,16 @@ namespace sample
 
         private void delete_Click(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
-            Cleardata();
+            if (txtcampanyName.Text == "")
+            {
+                MessageBox.Show("Please Select Records !");
+            }
+            else
+            {
+                Delete1();
+                fetchdetails();
+                Cleardata();
+            }
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
@@ -627,10 +647,7 @@ namespace sample
 
         }
 
-        private void btnminimize_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 
 }

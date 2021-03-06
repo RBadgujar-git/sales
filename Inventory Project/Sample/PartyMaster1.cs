@@ -39,7 +39,7 @@ namespace sample
             con.Close();
         }
 
-       private void Cleardata()
+        private void Cleardata()
         {
             txtPartyname.Text = "";
             txtBillingAdd.Text = "";
@@ -51,7 +51,7 @@ namespace sample
             txtOpeningBal.Text = "";
             txtAddRemainder.Text = "";
             txtShippingAdd.Text = "";
-            comboBox1.Text = "";        
+            comboBox1.Text = "";
         }
         private void fetchdetails()
         {
@@ -125,7 +125,7 @@ namespace sample
             {
                 MessageBox.Show("error" + ex.Message);
             }
-     }
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -138,7 +138,7 @@ namespace sample
             if (!string.IsNullOrEmpty(id))
             {
                 try
-                {               
+                {
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -171,12 +171,12 @@ namespace sample
                         MessageBox.Show("Please Select Record");
                     }
                 }
-            
-            catch (Exception ex)
-            {
-                MessageBox.Show("error" + ex.Message);
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("error" + ex.Message);
+                }
             }
-           }
             else
             {
                 MessageBox.Show("Please Select Record");
@@ -203,15 +203,15 @@ namespace sample
                         con.Open();
                     }
                     DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("tbl_PartyMasterSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Delete");
-            cmd.Parameters.AddWithValue("@PartiesID", id);
+                    SqlCommand cmd = new SqlCommand("tbl_PartyMasterSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Delete");
+                    cmd.Parameters.AddWithValue("@PartiesID", id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
                         MessageBox.Show("Delete data Successfully");
-                         Cleardata();
+                        Cleardata();
                     }
                     else
                     {
@@ -241,7 +241,7 @@ namespace sample
             fetchdetails();
             fetchgroup();
         }
- 
+
         private void dgvParty_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvParty.Rows[e.RowIndex].Cells["PartiesID"].Value.ToString();
@@ -278,14 +278,15 @@ namespace sample
 
         private void txtPartyname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)|| e.KeyChar == (char)Keys.Back);
         }
 
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -356,14 +357,15 @@ namespace sample
 
         private void txtPartyType_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtOpeningBal_KeyPress(object sender, KeyPressEventArgs e)
@@ -409,6 +411,16 @@ namespace sample
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtState_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

@@ -92,6 +92,10 @@ namespace sample
             var file = request.ResponseBody;
 
         }
-        
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
