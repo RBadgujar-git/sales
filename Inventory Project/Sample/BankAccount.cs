@@ -62,6 +62,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
 
             cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+            cmd.Parameters.AddWithValue("@compid",NewCompany.company_id);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
 
             sdasql.Fill(dtable);
@@ -105,6 +106,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
 
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -179,15 +181,15 @@ namespace sample
                         cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
                         cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                         int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
+                        //if (num > 0)
+                        //{
                             MessageBox.Show("Update data Successfully");
                             clearData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
+                        //}
+                        //else
+                        //{
+                        //    MessageBox.Show("Please Select Record");
+                        //}
                     }
                 }
                 catch (Exception ex)
@@ -331,6 +333,11 @@ namespace sample
         private void btn_Click(object sender, EventArgs e)
         {
             Cleardata();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

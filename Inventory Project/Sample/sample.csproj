@@ -197,6 +197,12 @@
     <Compile Include="Banktobank.Designer.cs">
       <DependentUpon>Banktobank.cs</DependentUpon>
     </Compile>
+    <Compile Include="Barcodeprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Barcodeprint.Designer.cs">
+      <DependentUpon>Barcodeprint.cs</DependentUpon>
+    </Compile>
     <Compile Include="CashFlowReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -816,6 +822,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Banktobank.resx">
       <DependentUpon>Banktobank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Barcodeprint.resx">
+      <DependentUpon>Barcodeprint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CashFlowReport.resx">
       <DependentUpon>CashFlowReport.cs</DependentUpon>

@@ -97,6 +97,7 @@
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.barcodePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -120,7 +121,8 @@
             this.utilityToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.settingToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.barcodePrintToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -886,6 +888,13 @@
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
+            // barcodePrintToolStripMenuItem
+            // 
+            this.barcodePrintToolStripMenuItem.Name = "barcodePrintToolStripMenuItem";
+            this.barcodePrintToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.barcodePrintToolStripMenuItem.Text = "Barcode Print";
+            this.barcodePrintToolStripMenuItem.Click += new System.EventHandler(this.barcodePrintToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -987,6 +996,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.ToolStripMenuItem estimateQuotationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem barcodePrintToolStripMenuItem;
     }
 }
 

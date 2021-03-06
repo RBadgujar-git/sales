@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
             this.label26 = new System.Windows.Forms.Label();
             this.txtVehicleNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -37,7 +37,6 @@
             this.txtTransportName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPoNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtbillingadd = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -132,7 +131,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -144,6 +142,7 @@
             this.btnCalculator = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.txtPoNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
@@ -286,31 +285,6 @@
             this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
             // 
-            // txtPoNo
-            // 
-            this.txtPoNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPoNo.DefaultText = "";
-            this.txtPoNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPoNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPoNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPoNo.DisabledState.Parent = this.txtPoNo;
-            this.txtPoNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPoNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPoNo.FocusedState.Parent = this.txtPoNo;
-            this.txtPoNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPoNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtPoNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPoNo.HoverState.Parent = this.txtPoNo;
-            this.txtPoNo.Location = new System.Drawing.Point(519, 44);
-            this.txtPoNo.Name = "txtPoNo";
-            this.txtPoNo.PasswordChar = '\0';
-            this.txtPoNo.PlaceholderText = "";
-            this.txtPoNo.SelectedText = "";
-            this.txtPoNo.ShadowDecoration.Parent = this.txtPoNo;
-            this.txtPoNo.Size = new System.Drawing.Size(200, 24);
-            this.txtPoNo.TabIndex = 2;
-            this.txtPoNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPoNo_KeyPress);
-            // 
             // txtbillingadd
             // 
             this.txtbillingadd.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -416,7 +390,6 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
@@ -537,6 +510,7 @@
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(63, 24);
             this.cmbtax.TabIndex = 20;
+            this.cmbtax.Text = "0";
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
             // 
             // cmbPaymentType
@@ -715,7 +689,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.label39);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(14, 159);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(14, 155);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1074, 87);
@@ -763,7 +737,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(976, 24);
+            this.label34.Location = new System.Drawing.Point(987, 19);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(46, 14);
             this.label34.TabIndex = 98;
@@ -799,7 +773,7 @@
             // txtDis
             // 
             this.txtDis.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDis.DefaultText = "";
+            this.txtDis.DefaultText = "0";
             this.txtDis.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDis.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDis.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -817,6 +791,7 @@
             this.txtDis.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtDis.PlaceholderText = "";
             this.txtDis.SelectedText = "";
+            this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(90, 28);
             this.txtDis.TabIndex = 8;
@@ -826,7 +801,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(411, 21);
+            this.label32.Location = new System.Drawing.Point(415, 14);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(66, 14);
             this.label32.TabIndex = 94;
@@ -835,7 +810,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(784, 24);
+            this.label33.Location = new System.Drawing.Point(784, 17);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(87, 14);
             this.label33.TabIndex = 96;
@@ -871,7 +846,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(879, 24);
+            this.label31.Location = new System.Drawing.Point(880, 19);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(85, 14);
             this.label31.TabIndex = 92;
@@ -908,7 +883,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(505, 21);
+            this.label30.Location = new System.Drawing.Point(522, 15);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 14);
             this.label30.TabIndex = 90;
@@ -943,7 +918,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(317, 21);
+            this.label29.Location = new System.Drawing.Point(335, 14);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(42, 14);
             this.label29.TabIndex = 88;
@@ -976,7 +951,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(223, 22);
+            this.label28.Location = new System.Drawing.Point(244, 14);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -985,7 +960,7 @@
             // txtFreeQty
             // 
             this.txtFreeQty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFreeQty.DefaultText = "";
+            this.txtFreeQty.DefaultText = "0";
             this.txtFreeQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtFreeQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtFreeQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1003,6 +978,7 @@
             this.txtFreeQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtFreeQty.PlaceholderText = "";
             this.txtFreeQty.SelectedText = "";
+            this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(90, 28);
             this.txtFreeQty.TabIndex = 10;
@@ -1012,7 +988,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(693, 23);
+            this.label27.Location = new System.Drawing.Point(698, 15);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(70, 14);
             this.label27.TabIndex = 84;
@@ -1045,7 +1021,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(128, 22);
+            this.label23.Location = new System.Drawing.Point(129, 14);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(78, 14);
             this.label23.TabIndex = 80;
@@ -1054,7 +1030,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(19, 21);
+            this.label38.Location = new System.Drawing.Point(36, 14);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(45, 14);
             this.label38.TabIndex = 78;
@@ -1063,7 +1039,7 @@
             // txtOty
             // 
             this.txtOty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOty.DefaultText = "";
+            this.txtOty.DefaultText = "0";
             this.txtOty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtOty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtOty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1081,6 +1057,7 @@
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtOty.PlaceholderText = "";
             this.txtOty.SelectedText = "";
+            this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(90, 28);
             this.txtOty.TabIndex = 9;
@@ -1090,7 +1067,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(600, 22);
+            this.label39.Location = new System.Drawing.Point(622, 15);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(38, 14);
             this.label39.TabIndex = 82;
@@ -1098,20 +1075,20 @@
             // 
             // dgvInnerDebiteNote
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInnerDebiteNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDebiteNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDebiteNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDebiteNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
             this.dgvInnerDebiteNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1126,14 +1103,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInnerDebiteNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDebiteNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDebiteNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1262,7 +1239,7 @@
             // txtsubtotal
             // 
             this.txtsubtotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsubtotal.DefaultText = "";
+            this.txtsubtotal.DefaultText = "0";
             this.txtsubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsubtotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1279,6 +1256,7 @@
             this.txtsubtotal.PasswordChar = '\0';
             this.txtsubtotal.PlaceholderText = "";
             this.txtsubtotal.SelectedText = "";
+            this.txtsubtotal.SelectionStart = 1;
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(91, 24);
             this.txtsubtotal.TabIndex = 131;
@@ -1425,7 +1403,7 @@
             this.txtTotal.BorderRadius = 1;
             this.txtTotal.BorderThickness = 0;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotal.DefaultText = "";
+            this.txtTotal.DefaultText = "00";
             this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1443,6 +1421,7 @@
             this.txtTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTotal.PlaceholderText = "";
             this.txtTotal.SelectedText = "";
+            this.txtTotal.SelectionStart = 2;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
             this.txtTotal.Size = new System.Drawing.Size(100, 24);
             this.txtTotal.TabIndex = 124;
@@ -1475,7 +1454,7 @@
             // txtReceived
             // 
             this.txtReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReceived.DefaultText = "";
+            this.txtReceived.DefaultText = "0";
             this.txtReceived.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtReceived.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtReceived.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1493,6 +1472,7 @@
             this.txtReceived.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtReceived.PlaceholderText = "";
             this.txtReceived.SelectedText = "";
+            this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(100, 24);
             this.txtReceived.TabIndex = 21;
@@ -1502,7 +1482,7 @@
             // txtTaxAmount
             // 
             this.txtTaxAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTaxAmount.DefaultText = "";
+            this.txtTaxAmount.DefaultText = "0";
             this.txtTaxAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTaxAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtTaxAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1520,6 +1500,7 @@
             this.txtTaxAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTaxAmount.PlaceholderText = "";
             this.txtTaxAmount.SelectedText = "";
+            this.txtTaxAmount.SelectionStart = 1;
             this.txtTaxAmount.ShadowDecoration.Parent = this.txtTaxAmount;
             this.txtTaxAmount.Size = new System.Drawing.Size(100, 24);
             this.txtTaxAmount.TabIndex = 111;
@@ -1527,7 +1508,7 @@
             // txtDisAmount
             // 
             this.txtDisAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDisAmount.DefaultText = "";
+            this.txtDisAmount.DefaultText = "0";
             this.txtDisAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDisAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDisAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1545,6 +1526,7 @@
             this.txtDisAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtDisAmount.PlaceholderText = "";
             this.txtDisAmount.SelectedText = "";
+            this.txtDisAmount.SelectionStart = 1;
             this.txtDisAmount.ShadowDecoration.Parent = this.txtDisAmount;
             this.txtDisAmount.Size = new System.Drawing.Size(100, 24);
             this.txtDisAmount.TabIndex = 123;
@@ -1552,7 +1534,7 @@
             // txtDiscount
             // 
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.DefaultText = "";
+            this.txtDiscount.DefaultText = "0";
             this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1569,6 +1551,7 @@
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
             this.txtDiscount.SelectedText = "";
+            this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(100, 24);
             this.txtDiscount.TabIndex = 19;
@@ -1829,15 +1812,6 @@
             this.label6.TabIndex = 22;
             this.label6.Text = "Payment Type :";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(457, 47);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "PO No :";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -1981,6 +1955,31 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // txtPoNo
+            // 
+            this.txtPoNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPoNo.DefaultText = "";
+            this.txtPoNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPoNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPoNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPoNo.DisabledState.Parent = this.txtPoNo;
+            this.txtPoNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPoNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPoNo.FocusedState.Parent = this.txtPoNo;
+            this.txtPoNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPoNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtPoNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPoNo.HoverState.Parent = this.txtPoNo;
+            this.txtPoNo.Location = new System.Drawing.Point(519, 44);
+            this.txtPoNo.Name = "txtPoNo";
+            this.txtPoNo.PasswordChar = '\0';
+            this.txtPoNo.PlaceholderText = "";
+            this.txtPoNo.SelectedText = "";
+            this.txtPoNo.ShadowDecoration.Parent = this.txtPoNo;
+            this.txtPoNo.Size = new System.Drawing.Size(200, 24);
+            this.txtPoNo.TabIndex = 2;
+            this.txtPoNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPoNo_KeyPress);
+            // 
             // SaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2015,7 +2014,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTransportName;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2TextBox txtReturnNo;
-        private Guna.UI2.WinForms.Guna2TextBox txtPoNo;
         private Guna.UI2.WinForms.Guna2TextBox txtbillingadd;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel1;
@@ -2027,7 +2025,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
@@ -2122,5 +2119,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox TxtIGST;
+        private Guna.UI2.WinForms.Guna2TextBox txtPoNo;
     }
 }

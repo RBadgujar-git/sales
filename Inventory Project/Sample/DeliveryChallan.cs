@@ -174,8 +174,8 @@ namespace sample
                 MessageBox.Show(e1.Message);
             }
         }
-
-    /* public void verify()
+        public int verifyid = 0;
+     public void verifydata()
         {
             if(cmbpartyname.Text=="")
             {
@@ -184,18 +184,62 @@ namespace sample
             else if (txtPartyAdd.Text == "")
             {
                 MessageBox.Show("Party Addresss Is Reguerd !");
+                txtPartyAdd.Focus();
+            }
+            else if (txtcon.Text == "")
+            {
+                MessageBox.Show("Party Contact No Is Reguerd !");
+                txtcon.Focus();
+            }
+            else if (txtBillingName.Text == "")
+            {
+                MessageBox.Show("Party Billing Name  Is Reguerd !");
+                txtBillingName.Focus();
+            }
+            else if (txtBillingadd.Text == "")
+            {
+                MessageBox.Show("Party Billing Address Is Reguerd !");
+                txtBillingadd.Focus();
+            }
+            else if (cmbStatesupply.Text == "")
+            {
+                MessageBox.Show("Party Supplay State  Is Reguerd !");
+                //txtBillingadd.Focus();
+            }
+            else if (cmbStatesupply.Text == "")
+            {
+                MessageBox.Show("Please Select Supplay State !");
+                //txtBillingadd.Focus();
+            }
+            else if (cmbCategory.Text == "")
+            {
+                MessageBox.Show(" Please Select Item Categoery!");
+                //txtBillingadd.Focus();
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show(" Please Select Payment Type !");
+                //txtBillingadd.Focus();
+            }
+            else if (cmbtax.Text == "")
+            {
+                MessageBox.Show(" Please Select TaxType !");
+                //txtBillingadd.Focus();
+            }
+            else
+            {
+                verifyid = 1;
             }
 
 
-
         }
-        */
 
 
 
 
 
-       
+
+
         object id1;
         private void insertdata()
         {
@@ -668,49 +712,52 @@ namespace sample
         {
             try {
                 con.Open();
-               
-                DataTable dtable = new DataTable();
-                cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
-               // cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
-                cmd.Parameters.AddWithValue("@BillingName", txtBillingName.Text);
-                cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
-                cmd.Parameters.AddWithValue("@BillingAddress", txtPartyAdd.Text);
-                cmd.Parameters.AddWithValue("@PartyAddress", txtBillingadd.Text);
-                cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
-                cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
-                cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
-                cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
-                cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
-                cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
-                cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
-                cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
-                //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
-                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
-                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
-                cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
-                cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
-                cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
-                cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
-                cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
-                cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
-                cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
-                cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
+                verifydata();
+                if (verifyid == 1)
+                {
+                    DataTable dtable = new DataTable();
+                    cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
+                    // cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
+                    cmd.Parameters.AddWithValue("@BillingName", txtBillingName.Text);
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                    cmd.Parameters.AddWithValue("@BillingAddress", txtPartyAdd.Text);
+                    cmd.Parameters.AddWithValue("@PartyAddress", txtBillingadd.Text);
+                    cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
+                    cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
+                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
+                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                    cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
+                    cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
+                    cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
+                    cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
+                    //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
+                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                    // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
+                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
+                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
+                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
+                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
+                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
+                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
+                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                    cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
+                    cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
 
-                cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-                cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
-                cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
-                cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
-              
-                cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                    cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
+                    cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
+                    cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
+                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                    cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
 
-                id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Update");
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+
+                    id1 = cmd.ExecuteScalar();
+                    MessageBox.Show("Sale Record Update");
+                }
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
@@ -723,10 +770,14 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            insertdata();
-            bind_sale_details();
-            clear_text_data();
-            cleardata();
+            verifydata();
+            if (verifyid == 1)
+            {
+                insertdata();
+                bind_sale_details();
+                clear_text_data();
+                cleardata();
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -890,6 +941,24 @@ namespace sample
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBillingName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }
