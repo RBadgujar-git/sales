@@ -29,7 +29,7 @@ namespace sample
             fetchCategory();
             txtReturnNo.Enabled = false;
             get_id();
-            bind_sale_details();
+          //  bind_sale_details();
 
             cmbpartyname1.Visible = false;
 
@@ -951,7 +951,7 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-
+            gst_devide();
         }
 
         private void TxtIGST_TextChanged(object sender, EventArgs e)
@@ -960,6 +960,11 @@ namespace sample
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsgst_TextChanged(object sender, EventArgs e)
         {
 
         }
