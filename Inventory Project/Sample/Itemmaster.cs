@@ -23,6 +23,7 @@ namespace sample
         {
             InitializeComponent();
             con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+            //picturebox.Image = Properties.Resources.No_Image_Available;
             //con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
@@ -124,7 +125,6 @@ namespace sample
             txtsize.Text = "";
             txtDescritption.Text = "";
             txtminimumStock.Text = "";
-            picturebox.Image = null;
         }
         private void cmbSaleTax_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -146,11 +146,14 @@ namespace sample
 
         private void txtOpeningqty_TextChanged(object sender, EventArgs e)
         {
-            float gst = 0, gst_amt = 0, TA = 0;
-            TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
-            gst = float.Parse(txtOpeningqty.Text.ToString());
-            gst_amt = TA * gst;
-            txtatPrice.Text = gst_amt.ToString();
+            if (txtOpeningqty.Text != "")
+            {
+                float gst = 0, gst_amt = 0, TA = 0;
+                TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
+                gst = float.Parse(txtOpeningqty.Text.ToString());
+                gst_amt = TA * gst;
+                txtatPrice.Text = gst_amt.ToString();
+            }
         }
         private void fetchdetails()
         {
@@ -208,6 +211,8 @@ namespace sample
                 }
                 else
                 {
+
+
                     MemoryStream ms = new MemoryStream();
                     picturebox.Image.Save(ms, picturebox.Image.RawFormat);
                     byte[] arrImage1 = ms.GetBuffer();
@@ -413,7 +418,7 @@ namespace sample
             cmbPurchasetax.Text = dgvItemmaster.Rows[e.RowIndex].Cells["TaxForPurchase"].Value.ToString();
             txtTaxAmountPurchase.Text = dgvItemmaster.Rows[e.RowIndex].Cells["PurchaseTaxAmount"].Value.ToString();
             txtOpeningqty.Text = dgvItemmaster.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
-            txtatPrice.Text = dgvItemmaster.Rows[0].Cells["atPrice"].Value.ToString();
+            txtatPrice.Text = dgvItemmaster.Rows[e.RowIndex].Cells["atPrice"].Value.ToString();
             cmbItemLocation.Text = dgvItemmaster.Rows[e.RowIndex].Cells["ItemLocation"].Value.ToString();
             dtpdate.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Date"].Value.ToString();
             txtMRP.Text = dgvItemmaster.Rows[e.RowIndex].Cells["TrackingMRP"].Value.ToString();
@@ -440,19 +445,22 @@ namespace sample
        
 
         byte[] arrImage1;
-        private void guna2PictureBox1_Click(object sender, EventArgs e)
+        private void picturebox_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
             openFileDialog1.Multiselect = true;
             openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK) {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
                 int count = 1;
-                foreach (String file in openFileDialog1.FileNames) {
+                foreach (String file in openFileDialog1.FileNames)
+                {
                     PictureBox pb = new PictureBox();
                     Image loadedImage = Image.FromFile(file);
 
-                    if (count == 1) {
+                    if (count == 1)
+                    {
                         picturebox.Image = Image.FromFile(file);
                         //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
                         picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -463,6 +471,7 @@ namespace sample
                 }
             }
         }
+       
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {         
@@ -492,14 +501,15 @@ namespace sample
 
         private void txtItemName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtHSNcode_KeyPress(object sender, KeyPressEventArgs e)
@@ -509,6 +519,17 @@ namespace sample
                 e.Handled = true;
             }
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtItemCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
             {
                 e.Handled = true;
             }
@@ -615,6 +636,30 @@ namespace sample
             }
         }
 
+        private void txtBatchNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -624,15 +669,24 @@ namespace sample
         {
 
         }
-
-        private void txtBatchNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void txtsize_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        
     }
 }

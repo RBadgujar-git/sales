@@ -105,25 +105,34 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_CategoryMasterSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@CategoryID", id);
-                    cmd.Parameters.AddWithValue("@CategoryName", txtCategory.Text);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Update data Successfully");
-                        cleardata();
+
+
+                    if (txtCategory.Text == "") {
+
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_CategoryMasterSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@CategoryID", id);
+                        cmd.Parameters.AddWithValue("@CategoryName", txtCategory.Text);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -148,25 +157,33 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
-                    DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("tbl_CategoryMasterSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Delete");
-            cmd.Parameters.AddWithValue("@CategoryID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    if (txtCategory.Text == "")
                     {
-                        MessageBox.Show("Delete data Successfully");
-                        cleardata();
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_CategoryMasterSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@CategoryID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -200,14 +217,15 @@ namespace sample
 
         private void txtCategory_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void Clear_Click(object sender, EventArgs e)

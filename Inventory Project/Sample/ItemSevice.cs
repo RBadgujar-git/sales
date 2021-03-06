@@ -123,11 +123,74 @@ namespace sample
                 MessageBox.Show("error" + ex.Message);
             }
         }
+        public int veryfi = 0;
 
+        public void validdata()
+        {
+            if (txtItemName.Text == "")
+            {
+                MessageBox.Show("Item Name Required");
+                txtItemName.Focus();
+
+            }
+            else if (txtHSNCode.Text == "")
+            {
+                MessageBox.Show("Item HSN Required");
+                txtHSNCode.Focus();
+
+            }
+            else if (cmbUnit.Text == "")
+            {
+                MessageBox.Show("Item Unit Required");
+                cmbUnit.Focus();
+            }        
+            else if (txtitemcode.Text == "")
+            {
+                MessageBox.Show("Item unit code Required");
+                txtitemcode.Focus();
+            }
+            else if (cmbItemCategory.Text == "")
+            {
+                MessageBox.Show("Please Select Item Category");
+                cmbItemCategory.Focus();
+            }
+            else if (txtSaleCoategory.Text == "")
+            {
+                MessageBox.Show("Insert Salling  Prize !");
+                txtSaleCoategory.Focus();
+
+            }
+            else if (cmbTaxType.Text == "")
+            {
+                MessageBox.Show(" select Tax Type !");              
+             }
+            else if (cmbTaxRate.Text == "")
+            {
+                MessageBox.Show(" select Tax Rate !");
+
+            }
+            else if (cmbTaxRate.Text == "")
+            {
+                MessageBox.Show(" select Tax Rate !");
+
+            }
+            else
+            {
+                veryfi = 1;
+            }
+
+
+
+        }
+       
         private void btnsave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
+            validdata();
+            if (veryfi == 1)
+            {
+                InsertData();
+                fetchdetails();
+            }
         }
 
         private void Update1()
@@ -188,8 +251,12 @@ namespace sample
 
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();
+            validdata();
+            if (veryfi == 1)
+            {
+                Update1();
+                fetchdetails();
+            }
         }
 
         public void Delete()
@@ -198,25 +265,35 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
+
+                    if (txtItemName.Text == "")
                     {
-                        con.Open();
-                    }
-                    DataTable dtable = new DataTable();
+
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dtable = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_ItemServicemasterSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Delete");
                         cmd.Parameters.AddWithValue("@ServiceID", id);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Delete Data Successfully");
-                        Cleardata();
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete Data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Please Select Record");
                     }
+
                 }
                 catch (Exception ex)
                 {

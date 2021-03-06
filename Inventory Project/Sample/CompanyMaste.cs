@@ -82,10 +82,81 @@ namespace sample
             dgvComapnyMaster.DataSource = dtable;
         }
 
+        public int veryify = 0;
+        public void validfild()
+        {
+            if (txtcampanyName.Text == "")
+            {
+                MessageBox.Show("Please Insert Name ");
+                txtcampanyName.Focus();
+            }
+            else if (txtAddress.Text == "")
+            {
+                MessageBox.Show("Please Insert Address !");
+                txtAddress.Focus();
+            }
+            else if (txtContactNo.Text == "")
+            {
+                MessageBox.Show("Please Insert Contact No ");
+                txtContactNo.Focus();
+            }
+            else if (txtemail.Text == "")
+            {
+                MessageBox.Show("Please Insert Email Id ");
+                txtemail.Focus();
+            }
+            else if (txtbusinesstype.Text == "")
+            {
+                MessageBox.Show("Please Insert Bussness Type  ");
+                txtbusinesstype.Focus();
+            }
+            else if (txtGSTNo.Text == "")
+            {
+                MessageBox.Show("Please Insert GST NO");
+               txtGSTNo.Focus();
+            }
+            else if (ownerName.Text == "")
+            {
+                MessageBox.Show("Please Insert Owner Name ");
+                ownerName.Focus();
+            }
+            else if (txtCity.Text == "")
+            {
+                MessageBox.Show("Please Insert City ");
+               txtCity.Focus();
+            }
+            else if (string.IsNullOrEmpty(cmbState.SelectedText))
+            {
+                MessageBox.Show("Please Select State !");
+                //txtCity.Focus();
+            }
+            else if (string.IsNullOrEmpty(txtBankName.SelectedText))
+            {
+                MessageBox.Show("Please Select Bank Name !");
+                //txtCity.Focus();
+            }
+            else if (txtAccountNo.Text=="")
+            {
+                MessageBox.Show("Please Insert Account No !");
+                txtAccountNo.Focus();
+            }
+            else if (txtIFSCcode.Text == "")
+            {
+                MessageBox.Show("Please Insert Account  IFSC Code!");
+               txtIFSCcode.Focus();
+            }
+            else
+            {
+                veryify = 1;
+            }
+                     
+           
+        }
         public void Insert1()
         {
             try
             {
+             
                 if (txtcampanyName.Text == "")
                 {
                     MessageBox.Show("Company Name Is Requried");
@@ -145,9 +216,14 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            Insert1();
-            fetchdetails();
-            Cleardata();
+            validfild();
+            if (veryify == 1)
+            {
+                Insert1();
+                fetchdetails();
+                Cleardata();
+            }
+
         }
 
         public void Update1()
@@ -212,9 +288,14 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();
-            Cleardata();
+
+            validfild();
+            if (veryify == 1)
+            {
+                Update1();
+                fetchdetails();
+                Cleardata();
+            }
         }
 
         public void Delete1()
@@ -256,9 +337,16 @@ namespace sample
 
         private void delete_Click(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
-            Cleardata();
+            if (txtcampanyName.Text == "")
+            {
+                MessageBox.Show("Please Select Records !");
+            }
+            else
+            {
+                Delete1();
+                fetchdetails();
+                Cleardata();
+            }
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
@@ -434,8 +522,6 @@ namespace sample
             }
         }
 
-
-
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             id= dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
@@ -553,8 +639,15 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvComapnyMaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
+
+       
     }
 
 }

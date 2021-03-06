@@ -1104,7 +1104,8 @@ namespace sample
 
         private void backupToDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("www.gmail.com");
+            BackuptoDrive br = new BackuptoDrive();
+            br.Show();
         }
         private void backupToComputerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1254,6 +1255,18 @@ namespace sample
         private void guna2Button49_MouseHover(object sender, EventArgs e)
         {
             
+        }
+
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            CompanyMaste BA = new CompanyMaste();
+            //BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
     }
 }

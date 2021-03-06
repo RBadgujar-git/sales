@@ -378,10 +378,8 @@ namespace sample
         {
             try
             {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
+                con.Open();
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
                 string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -391,19 +389,22 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
+
                 }
                 dr.Close();
 
-                txtDis.Focus();
+                txtItemCode.Focus();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            //finally
-            //{
-            //    con.Close();
-            //}
+            finally
+            {
+                con.Close();
+            }
         }
 
 
@@ -919,13 +920,7 @@ namespace sample
         private void cmbCategory_SelectedIndexChanged(object sender, EventArgs e)
         {                     
             try
-            {
-                txtItemName.Text = "";
-
-                //if (con.State == ConnectionState.Closed)
-                //{
-                //    con.Open();
-                //}
+            {             
                 con.Close();
                 string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
                 DataSet ds = new DataSet();
@@ -965,6 +960,16 @@ namespace sample
         }
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtIGST_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
 
         }

@@ -18,6 +18,7 @@ namespace sample
        // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+        public string companyid;
         public AdjustAccount()
         {
             InitializeComponent();
@@ -44,50 +45,82 @@ namespace sample
 
             cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
             cmd.CommandType = CommandType.StoredProcedure;
-           cmd.Parameters.AddWithValue("@ID", 0);
+            cmd.Parameters.AddWithValue("@ID", 0);
             cmd.Parameters.AddWithValue("@BankAccount", "");
             cmd.Parameters.AddWithValue("@EntryType", "");
             cmd.Parameters.AddWithValue("@Amount", "");
             cmd.Parameters.AddWithValue("@Date", "");
             cmd.Parameters.AddWithValue("@Description", "");
+            cmd.Parameters.AddWithValue("@compid", companyid);
             cmd.Parameters.AddWithValue("@Action", "Select");
 
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
 
             sdasql.Fill(dtable);
-           
-            dgvAdjustaccount.DataSource = dtable;
-          
-            // dgvAdjustaccount.DataBind();
 
+            dgvAdjustaccount.DataSource = dtable;
+
+            ////dgvAdjustaccount.DataBind();
+            //try
+            //{
+            //    String Str = string.Format("select * from tbl_BankAdjustment where Company_ID='" + companyid + "'");
+            //    DataSet Ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(Str, con);
+            //    SDA.Fill(Ds, "Temp");
+            //    dgvAdjustaccount.DataSource = Ds;
+            //    dgvAdjustaccount.DataMember = "Temp";
+            //}
+            //catch (Exception e1)
+            //{
+            //    MessageBox.Show(e1.Message);
+            //}
+            //finally
+            //{
+            //    con.Close();
+
+
+            //}
         }
         public void Insert()
         {
-            if (cmbaccountname.Text == "")
-            {
-                MessageBox.Show("Account Name Requried");
-            }
-            else
-            {
+            
+           
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Action", "Insert");
-                cmd.Parameters.AddWithValue("@ID", id);
-                cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
-                cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
-                cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
-                cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-                cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
-                //cmd.Parameters.AddWithValue("@Details", txtdescription.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Insert data Successfully");
+
+                    if (cmbaccountname.Text == "")
+                    {
+                        MessageBox.Show("Account Name Requried");
+                    }
+                    else if (cmbEntrytype.Text=="")
+                        {
+                    MessageBox.Show("Please Select Entry Type");
+                }
+                else if (txtAcoount.Text == "")
+                {
+                    MessageBox.Show("Please Ensert Amount ");
+                }
+                else
+                {
+
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
+                    cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
+                    cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
+                    cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                    cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
+                    cmd.Parameters.AddWithValue("@compid", companyid);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Insert data Successfully");
+                }
               
-            }
+            
         }
         private void label4_Click(object sender, EventArgs e)
         {
@@ -101,8 +134,10 @@ namespace sample
 
         private void AdjustAccount_Load(object sender, EventArgs e)
         {
+           
             fetchdetails();
             fetchAccountname();
+            companyid = NewCompany.company_id;
         }
 
         private void fetchAccountname()
@@ -132,7 +167,7 @@ namespace sample
 
         private void dgvAdjustaccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           id = dgvAdjustaccount.SelectedRows[0].Cells["ID"].Value.ToString();
+            id = dgvAdjustaccount.SelectedRows[0].Cells["ID"].Value.ToString();
             cmbaccountname.Text = dgvAdjustaccount.SelectedRows[0].Cells["BankAccount"].Value.ToString();
             cmbEntrytype.Text = dgvAdjustaccount.SelectedRows[0].Cells["EntryType"].Value.ToString();
             txtAcoount.Text = dgvAdjustaccount.SelectedRows[0].Cells["Amount"].Value.ToString();
@@ -181,26 +216,44 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
-                    cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
-                    cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
-                    cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-                    cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Update data Successfully");
-                        Cleardata();
-                    }
-                    else
+
+                    if (cmbaccountname.Text=="")
                     {
                         MessageBox.Show("Please Select Record");
                     }
+                    else if (cmbEntrytype.Text== "")
+                    {
+                        MessageBox.Show("Please Select Entry Type");
+                    }
+                    else if (txtAcoount.Text == "")
+                    {
+                        MessageBox.Show("Please Ensert Amount ");
+                    }
+                    else
+                    {
+
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.Parameters.AddWithValue("@BankAccount", cmbaccountname.Text);
+                        cmd.Parameters.AddWithValue("@EntryType", cmbEntrytype.Text);
+                        cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
+                        cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                        cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -230,21 +283,36 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+
+
+                    if (cmbaccountname.Text=="")
                     {
-                        MessageBox.Show("Delete data Successfully");
-                        Cleardata();
+                        MessageBox.Show("Please Select Record");
+                    }
+                    else if (txtAcoount.Text == "")
+                    {
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)

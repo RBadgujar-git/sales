@@ -9,112 +9,93 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Google.Apis.Drive.v3;
 using Google.Apis.Drive.v3.Data;
-
+using System.IO;
 using Google.Apis.Auth.OAuth2;
 using System.Threading;
 using Google.Apis.Util.Store;
 using Google.Apis.Services;
-
+using System.Threading;
 
 
 
 namespace sample
 {
+    
     public partial class BackuptoDrive : Form
     {
-        
+       
         public BackuptoDrive()
         {
             InitializeComponent();
         }
 
+
+
         private void BackuptoDrive_Load(object sender, EventArgs e)
         {
-
-        }
-        private void Authorize()
-        {
-            string[] scopes = new string[] { DriveService.Scope.Drive,
-                               DriveService.Scope.DriveFile,};
-            var clientId = "12345678-kiwwjelkrklsjdkljklaflkjsdjasdkhw.apps.googleusercontent.com";      // From https://console.developers.google.com  
-            var clientSecret = "ksdklfklas2lskj_asdklfjaskla-";          // From https://console.developers.google.com  
-                                                                         // here is where we Request the user to give us access, or use the Refresh Token that was previously stored in %AppData%  
-            var credential = GoogleWebAuthorizationBroker.AuthorizeAsync(new ClientSecrets
+            string[] scope = { DriveService.Scope.Drive };
+            string ApplicationName = "Google Drive Api.net  ";
+            UserCredential credincial;
+            using (var stream =
+                new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
             {
-                ClientId = clientId,
-                ClientSecret = clientSecret
-            }, scopes,
-            Environment.UserName, CancellationToken.None, new FileDataStore("MyAppsToken")).Result;
-            //Once consent is recieved, your token will be stored locally on the AppData directory, so that next time you wont be prompted for consent.   
-
-            DriveService service = new DriveService(new BaseClientService.Initializer()
+                string credPath = "token.json";
+                credincial = GoogleWebAuthorizationBroker.AuthorizeAsync(GoogleClientSecrets.Load(stream).Secrets, scope, "user", CancellationToken.None, new FileDataStore(credPath, true)).Result;
+                textBox1.Text += "Credencial file saved to " + credPath + "\r\n";
+            }
+            var driveService = new DriveService(new BaseClientService.Initializer()
             {
-                HttpClientInitializer = credential,
-                ApplicationName = "MyAppName",
-
+                HttpClientInitializer = credincial,
+                 ApplicationName = ApplicationName,
             });
-            service.HttpClient.Timeout = TimeSpan.FromMinutes(100);
-            //Long Operations like file uploads might timeout. 100 is just precautionary value, can be set to any reasonable value depending on what you use your service for  
-
-            // team drive root https://drive.google.com/drive/folders/0AAE83zjNwK-GUk9PVA   
-
-            var respocne = uploadFile(service, textBox1.Text, "");
-            // Third parameter is empty it means it would upload to root directory, if you want to upload under a folder, pass folder's id here.
-            MessageBox.Show("Process completed--- Response--" + respocne);
-        }
-        public Google.Apis.Drive.v3.Data.File uploadFile(DriveService _service, string _uploadFile, string _parent, string _descrp = "Uploaded with .NET!")
-        {
-            if (System.IO.File.Exists(_uploadFile))
+            var filemetadata = new Google.Apis.Drive.v3.Data.File()
             {
-                Google.Apis.Drive.v3.Data.File body = new Google.Apis.Drive.v3.Data.File();
-                body.Name = System.IO.Path.GetFileName(_uploadFile);
-                body.Description = _descrp;
-                body.MimeType = GetMimeType(_uploadFile);
-                // body.Parents = new List<string> { _parent };// UN comment if you want to upload to a folder(ID of parent folder need to be send as paramter in above method)
-                byte[] byteArray = System.IO.File.ReadAllBytes(_uploadFile);
-                System.IO.MemoryStream stream = new System.IO.MemoryStream(byteArray);
-                try
+                Name = textBox2.Text,
+                MimeType="application/vnd.google-apps.folder",
+            };
+            var request = driveService.Files.Create(filemetadata);
+            request.Fields = "id";
+
+            var file = request.Execute();
+
+            string folderID = file.Id;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                textBox1.Text = "Upload File folder"+textBox2.Text+"\r\n";
+                foreach(string filename in openFileDialog1.FileNames)
                 {
-                    FilesResource.CreateMediaUpload request = _service.Files.Create(body, stream, GetMimeType(_uploadFile));
-                    request.SupportsTeamDrives = true;
-                    // You can bind event handler with progress changed event and response recieved(completed event)
-                    request.ProgressChanged += Request_ProgressChanged;
-                    request.ResponseReceived += Request_ResponseReceived;
-                    request.Upload();
-                    return request.ResponseBody;
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message, "Error Occured");
-                    return null;
+
+                    UploadImage(filename, driveService, folderID);
+                    textBox1.Text += filename + "=>upload" + "\r\n";
+                    textBox1.ScrollToCaret();
                 }
             }
-            else
-            {
-                MessageBox.Show("The file does not exist.", "404");
-                return null;
-            }
+            textBox1.Text = "File upload\r\n";
         }
-        private void Request_ProgressChanged(Google.Apis.Upload.IUploadProgress obj)
+        private void UploadImage(string path, DriveService serice, string folderUpload)
         {
-            textBox1.Text += obj.Status + " " + obj.BytesSent;
+            var fileMetadata = new Google.Apis.Drive.v3.Data.File();
+            fileMetadata.Name = Path.GetFileName(path);
+            fileMetadata.MimeType = "image/*";
+            fileMetadata.Parents = new List<string>
+            {
+                folderUpload
+            };
+            FilesResource.CreateMediaUpload request;
+            using (var stream = new System.IO.FileStream(path, System.IO.FileMode.Open))
+            {
+                request = serice.Files.Create(fileMetadata, stream, "image/*");
+                request.Fields = "id";
+                request.Upload();
+            }
+            var file = request.ResponseBody;
+
         }
 
-        private void Request_ResponseReceived(Google.Apis.Drive.v3.Data.File obj)
+        private void btnRestore_Click(object sender, EventArgs e)
         {
-            if (obj != null)
-            {
-                MessageBox.Show("File was uploaded sucessfully--" + obj.Id);
-            }
-        }
-        private static string GetMimeType(string fileName)
-        {
-            string mimeType = "application/unknown";
-            string ext = System.IO.Path.GetExtension(fileName).ToLower();
-            Microsoft.Win32.RegistryKey regKey = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(ext);
-            if (regKey != null && regKey.GetValue("Content Type") != null)
-                mimeType = regKey.GetValue("Content Type").ToString();
-            return mimeType;
+
         }
     }
 }

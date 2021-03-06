@@ -430,6 +430,72 @@ namespace sample
             }
         }
 
+        public int verfy = 0;
+        public void verfydata()
+        {
+            if (cmbpartyname.Text == "")
+            {
+                MessageBox.Show("Party Name Is Requried");
+                cmbpartyname.Focus();
+            }
+            else if (txtbillingadd.Text == "")
+            {
+                MessageBox.Show("Party Addrtess Is Requueird !");
+                txtbillingadd.Focus();
+            }
+            else if (txtcon.Text == "")
+            {
+                MessageBox.Show("Party Contact no Is Requueird !");
+                txtcon.Focus();
+            }
+            else if (txtPONo.Text == "")
+            {
+                MessageBox.Show("Party PONO Is Requueird !");
+                txtcon.Focus();
+            }
+            else if (txtrefNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtrefNo.Focus();
+            }
+            else if (txtrefNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtrefNo.Focus();
+            }
+            else if (cmbStatesupply.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+
+            }
+            else if (txtInvoiceNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtInvoiceNo.Focus();
+            }
+            else if (cmbCategory.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type !");
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type !");
+            }
+            else if (cmbtax.Text == "")
+            {
+                MessageBox.Show("Please Select Tax !");
+            }
+            else {
+                verfy = 1;
+            }
+
+        }
+
+
         object id1;
         private void insertdata()
         {
@@ -476,8 +542,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
                     cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
                     cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Value.Date);
-                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                
+                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);              
                     cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
                     cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
                     cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
@@ -495,8 +560,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@TableName", Credit.Text);
                     cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                     cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
-                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-                  
+                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);                  
                     id1 = cmd.ExecuteScalar();
                     MessageBox.Show("Sale Record Added");
                 }
@@ -555,12 +619,19 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            insertdata();
-          //  insert_record_inner();
-            bind_sale_details();
-            get_id();
-            cleardata();
-            clear_text_data();
+            verfydata();
+
+            if (verfy == 1)
+            {
+
+                insertdata();
+                //  insert_record_inner();
+                bind_sale_details();
+                get_id();
+                cleardata();
+                clear_text_data();
+            }
+
         }
 
 
@@ -760,6 +831,20 @@ namespace sample
             {
                 txtrefNo.Visible = false;
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            verfydata();
+            if(verfy==1)
+            {
+
+            }
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

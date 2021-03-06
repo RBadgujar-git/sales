@@ -76,6 +76,17 @@ namespace sample
                 if (txtbankname.Text == "")
                 {
                     MessageBox.Show("Bank Name Is Requried");
+                    txtbankname.Focus();
+                }
+                else if (txtaccountname.Text == "")
+                {
+                    MessageBox.Show("Bank Holder Name Is Requried");
+                    txtaccountname.Focus();
+                }
+                else if (txtaccountno.Text == "")
+                {
+                    MessageBox.Show("Account NO Is Requried");
+                    txtaccountno.Focus();
                 }
                 else
                 {
@@ -134,29 +145,49 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
+
+                    if (txtbankname.Text == "")
                     {
-                        con.Open();
+                        MessageBox.Show("Bank Name Is Requried");
+                        txtbankname.Focus();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("BankAccountSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@BankName", txtbankname.Text);
-                    cmd.Parameters.AddWithValue("@AccountName", txtaccountname.Text);
-                    cmd.Parameters.AddWithValue("@AccountNo", txtaccountno.Text);
-                    cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
-                    cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    else if (txtaccountname.Text == "")
                     {
-                        MessageBox.Show("Update data Successfully");
-                        clearData();
+                        MessageBox.Show("Bank Holder Name Is Requried");
+                        txtaccountname.Focus();
+                    }
+                    else if (txtaccountno.Text == "")
+                    {
+                        MessageBox.Show("Account NO Is Requried");
+                        txtaccountno.Focus();
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("BankAccountSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.Parameters.AddWithValue("@BankName", txtbankname.Text);
+                        cmd.Parameters.AddWithValue("@AccountName", txtaccountname.Text);
+                        cmd.Parameters.AddWithValue("@AccountNo", txtaccountno.Text);
+                        cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
+                        cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            clearData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -181,26 +212,43 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
-                    DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("BankAccountSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Delete");
-             cmd.Parameters.AddWithValue("@ID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Delete data Successfully");
-                        Cleardata();
-                    }
-                    else
+                    if (txtbankname.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
                     }
+                    else if (txtaccountname.Text == "")
+                    {
+                        MessageBox.Show("Please Select Record");
+                    }
+                    else if (txtaccountno.Text == "")
+                    {
+                        MessageBox.Show("Please Select Record");
+                    }
+                    else
+                    {
+
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("BankAccountSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
+                    }
+                
                 }
                 catch (Exception ex)
                 {

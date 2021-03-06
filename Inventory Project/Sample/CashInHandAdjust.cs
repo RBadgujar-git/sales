@@ -63,8 +63,13 @@ namespace sample
                 {
                     MessageBox.Show("Cash adjustmnt Requird");
                 }
+                else if (txtenterAmount.Text == "")
+                {
+                    MessageBox.Show("Amount Requird");
+                }
                 else
                 {
+
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -151,25 +156,37 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
+                    if (txtCashadjustment.Text == "")
                     {
-                        con.Open();
+                        MessageBox.Show("Please Select Record");
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_CashAdjustmentselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
-
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    else if (txtenterAmount.Text == "")
                     {
-                        MessageBox.Show("Delete data Successfully");
-                        Cleardata();
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_CashAdjustmentselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -195,28 +212,40 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
+
+                    if (txtCashadjustment.Text == "")
                     {
-                        con.Open();
+                        MessageBox.Show("Cash adjustmnt Requird");
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_CashAdjustmentselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@CashAdjustment", txtCashadjustment.Text);
-                    cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
-                    cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    else if (txtenterAmount.Text == "")
                     {
-                        MessageBox.Show("Update data Successfully");
-                        Cleardata();
-}
+                        MessageBox.Show("Amount Requird");
+                    }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_CashAdjustmentselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        cmd.Parameters.AddWithValue("@CashAdjustment", txtCashadjustment.Text);
+                        cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
+                        cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+                        cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)

@@ -24,6 +24,7 @@ namespace sample
            // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
 
         }
+        public int verify;
         private void fetchitem()
         {
             if (txtItemName.Text != "System.Data.DataRowView") {
@@ -200,6 +201,75 @@ namespace sample
             }
         }
 
+
+        public void validdata()
+        {
+            if (comboBox1.Text == "" || cmbpartyname.Text == "")
+            {
+                MessageBox.Show("Please Insert Party Name");
+                
+            }
+            else if(txtBillingAdd.Text=="")
+            {
+                MessageBox.Show("Please Insert Address Of Party");
+                txtBillingAdd.Focus();
+            }
+            else if (txtcon.Text == "")
+            {
+                MessageBox.Show("Please Insert Contact no");
+                txtcon.Focus();
+            }
+            else if (txtcon.Text == "")
+            {
+                MessageBox.Show("Please Insert Contact no");
+                txtcon.Focus();
+
+            }
+            else if (txtReturnNo.Text == "")
+            {
+                MessageBox.Show("Please Insert Contact no");
+                txtReturnNo.Focus();
+
+            }
+            else if (comboBox2.Text == "")
+            {
+                MessageBox.Show("Please Select Item Category ");
+               
+            }
+              else if (cmbStatesupply.Text == "")
+            {
+                MessageBox.Show("Please Select State ");
+            }
+            else if (cmbtax.Text == "")
+            {
+                MessageBox.Show("Please Select Tax !");
+            }
+            else if (ComboBox.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Status !");
+            }
+            else
+            {
+                verify = 1;
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         object id1;
         private void insertdata()
         {
@@ -210,6 +280,7 @@ namespace sample
                 {
                     con.Open();
                 }
+             
                 string query = string.Format("insert into tblQuotation(PartyName, BillingAddress, Date, StateofSupply, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure,ContactNo, Total, Status, TableName,Itemcatgory, Barcode) Values(@PartyName, @BillingAddress, @Date, @StateofSupply, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure,@ContactNo, @Total, @Status, @TableName,@Itemcatgory, @Barcode); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //  cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
@@ -235,7 +306,6 @@ namespace sample
                 cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
                 if (cmbpartyname.Visible == true)
@@ -428,40 +498,47 @@ namespace sample
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             try {
-                con.Open();
-                //MemoryStream ms = new MemoryStream();
-                //picImage.Image.Save(ms, picImage.Image.RawFormat);
-                //byte[] arrImage1 = ms.GetBuffer();
 
-                DataTable dtable = new DataTable();
-                cmd = new SqlCommand("tbl_QuotationSelect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-               
-                cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
-                cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
-                cmd.Parameters.AddWithValue("@BillingName", txtBillingAdd.Text);
-                cmd.Parameters.AddWithValue("@Date", dtpInvoice.Text);
-                cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
-                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
-                cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
-                cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
-                cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
-                cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
-                cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
-                cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
-                cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-             //   cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-               
-                cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
-                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
-                cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-                //   cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
-                cmd.Parameters.AddWithValue("@Action", "Update");
 
-            id1 = cmd.ExecuteScalar();
-            MessageBox.Show("Sale Record Update");
+                validdata();
+                if (verify == 1)
+                {
+
+                    con.Open();
+                    //MemoryStream ms = new MemoryStream();
+                    //picImage.Image.Save(ms, picImage.Image.RawFormat);
+                    //byte[] arrImage1 = ms.GetBuffer();
+
+                    DataTable dtable = new DataTable();
+                    cmd = new SqlCommand("tbl_QuotationSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                    cmd.Parameters.AddWithValue("@BillingName", txtBillingAdd.Text);
+                    cmd.Parameters.AddWithValue("@Date", dtpInvoice.Text);
+                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
+                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
+                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
+                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
+                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
+                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
+                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
+                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                    //   cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+
+                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                    cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
+                    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
+                    //   cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+
+                    id1 = cmd.ExecuteScalar();
+                    MessageBox.Show("Sale Record Update");
+                }
         }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
@@ -611,10 +688,14 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            insertdata();
-            bind_sale_details();
-            clear_text_data();
-            cleardata();
+            validdata();
+            if (verify == 1)
+            {
+                insertdata();
+                bind_sale_details();
+                clear_text_data();
+                cleardata();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -761,6 +842,11 @@ namespace sample
             {
               //  con.Close();
             }
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
     
