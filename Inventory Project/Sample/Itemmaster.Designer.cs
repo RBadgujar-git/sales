@@ -584,7 +584,7 @@
             this.txtSerialNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSerialNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSerialNo.HoverState.Parent = this.txtSerialNo;
-            this.txtSerialNo.Location = new System.Drawing.Point(151, 158);
+            this.txtSerialNo.Location = new System.Drawing.Point(151, 161);
             this.txtSerialNo.MaxLength = 20;
             this.txtSerialNo.Name = "txtSerialNo";
             this.txtSerialNo.PasswordChar = '\0';
@@ -610,7 +610,7 @@
             this.txtBatchNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBatchNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBatchNo.HoverState.Parent = this.txtBatchNo;
-            this.txtBatchNo.Location = new System.Drawing.Point(151, 120);
+            this.txtBatchNo.Location = new System.Drawing.Point(151, 121);
             this.txtBatchNo.MaxLength = 30;
             this.txtBatchNo.Name = "txtBatchNo";
             this.txtBatchNo.PasswordChar = '\0';

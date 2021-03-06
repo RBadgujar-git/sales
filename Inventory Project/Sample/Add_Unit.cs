@@ -105,7 +105,7 @@ namespace sample
 
         private void dgvAddunit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgvAddunit.SelectedRows[0].Cells["UnitID"].Value.ToString();
+            //id = dgvAddunit.SelectedRows[0].Cells["UnitID"].Value.ToString();
             txtAddUnit.Text = dgvAddunit.SelectedRows[0].Cells["UnitName"].Value.ToString();
             txtSubunit.Text = dgvAddunit.SelectedRows[0].Cells["SubunitName"].Value.ToString();
         }
@@ -256,5 +256,7 @@ namespace sample
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+
+       
     }
 }
