@@ -128,5 +128,49 @@ namespace sample
         {
             fetchdetails();
         }
+
+        private void dgvCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                lblItemName.Text = dgvCategory.Rows[e.RowIndex].Cells["Party"].Value.ToString();
+                lblbal.Text = dgvCategory.Rows[e.RowIndex].Cells["Opening"].Value.ToString();
+                // lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
+                // lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
+
+                string Query = string.Format("(select TableName as Type,ReturnNo as Number,DueDate,Total,RemainingBal,Status from tbl_CreditNote1 where PartyName='{0}' union all select TableName as Type, ReturnNo as Number, DueDate, Total, RemainingBal, Status from tbl_DebitNote where PartyName = '{0}' union all select TableName as Type, ChallanNo as Number, DueDate, Total, RemainingBal, Status from tbl_DeliveryChallan where PartyName = '{0}' union all select TableName as Type, BillNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseBill where PartyName = '{0}' union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseOrder where PartyName = '{0}' union all select TableName as Type, InvoiceID as Number, InvoiceDate as DueDate, Total, RemainingBal, Status from tbl_SaleInvoice where PartyName = '{0}' union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_SaleOrder where PartyName = '{0}' union all select TableName as Type, RefNo as Number, Date as DueDate, Total, Total asRemainingBal, Status from tblQuotation where PartyName = '{0}')", lblItemName.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvParty.DataSource = ds;
+                dgvParty.DataMember = "temp";
+                label2.Visible = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void txtSearch2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("(select TableName as Type,ReturnNo as Number,DueDate,Total,RemainingBal,Status from tbl_CreditNote1 where TableName like '%{0}%' union all select TableName as Type, ReturnNo as Number, DueDate, Total, RemainingBal, Status from tbl_DebitNote where TableName like '%{0}%'  union all select TableName as Type, ChallanNo as Number, DueDate, Total, RemainingBal, Status from tbl_DeliveryChallan where  TableName like '%{0}%' union all select TableName as Type, BillNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseBill where TableName like '%{0}%'  union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseOrder where TableName like '%{0}%'  union all select TableName as Type, InvoiceID as Number, InvoiceDate as DueDate, Total, RemainingBal, Status from tbl_SaleInvoice where TableName like '%{0}%'  union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_SaleOrder where TableName like '%{0}%'  union all select TableName as Type, RefNo as Number, Date as DueDate, Total, Total asRemainingBal, Status from tblQuotation where TableName like '%{0}%' ", txtSearch2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvParty.DataSource = ds;
+                dgvParty.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

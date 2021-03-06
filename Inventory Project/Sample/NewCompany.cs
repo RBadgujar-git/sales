@@ -19,6 +19,7 @@ namespace sample
       //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+        public static string company_id;
         public NewCompany()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace sample
             DataTable dtable = new DataTable();
             cmd = new SqlCommand("addcompany", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID", 0);
+            cmd.Parameters.AddWithValue("@ID", id);
             cmd.Parameters.AddWithValue("@CompanyName", "");
             cmd.Parameters.AddWithValue("@ContactNo", "");
             cmd.Parameters.AddWithValue("@EmailId", "");
@@ -219,14 +220,16 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = String.Format("select PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') GROUP BY PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
+                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                   company_id = dr["CompanyID"].ToString();
                     txtContactNo.Text = dr["PhoneNo"].ToString();
                     txtEmailID.Text = dr["EmailID"].ToString();
                     txtReferralCode.Text = dr["ReferaleCode"].ToString();
+
                     dr.Close();
 
                     SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster", con);

@@ -86,7 +86,7 @@
             this.Delete.Location = new System.Drawing.Point(573, 292);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(100, 40);
-            this.Delete.TabIndex = 14;
+            this.Delete.TabIndex = 17;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = false;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
@@ -99,7 +99,7 @@
             this.Update.Location = new System.Drawing.Point(468, 293);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(100, 40);
-            this.Update.TabIndex = 13;
+            this.Update.TabIndex = 16;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = false;
             this.Update.Click += new System.EventHandler(this.Update_Click);
@@ -112,7 +112,7 @@
             this.btnSave.Location = new System.Drawing.Point(364, 294);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -376,10 +376,12 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(147, 281);
+            this.comboBox1.MaxLength = 50;
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 47;
+            this.comboBox1.TabIndex = 7;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label14
             // 
@@ -397,7 +399,7 @@
             this.dtpDate.Location = new System.Drawing.Point(559, 149);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 23);
-            this.dtpDate.TabIndex = 9;
+            this.dtpDate.TabIndex = 12;
             // 
             // Clear
             // 
@@ -407,7 +409,7 @@
             this.Clear.Location = new System.Drawing.Point(679, 292);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(100, 40);
-            this.Clear.TabIndex = 15;
+            this.Clear.TabIndex = 18;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -449,7 +451,8 @@
             this.txtState.Location = new System.Drawing.Point(559, 50);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(200, 24);
-            this.txtState.TabIndex = 7;
+            this.txtState.TabIndex = 8;
+            this.txtState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtState_KeyPress);
             // 
             // txtGSTType
             // 
@@ -494,6 +497,7 @@
             this.txtPartyType.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPartyType.HoverState.Parent = this.txtPartyType;
             this.txtPartyType.Location = new System.Drawing.Point(147, 241);
+            this.txtPartyType.MaxLength = 30;
             this.txtPartyType.Name = "txtPartyType";
             this.txtPartyType.PasswordChar = '\0';
             this.txtPartyType.PlaceholderText = "";
@@ -519,7 +523,7 @@
             this.radReceive.Location = new System.Drawing.Point(661, 120);
             this.radReceive.Name = "radReceive";
             this.radReceive.Size = new System.Drawing.Size(98, 20);
-            this.radReceive.TabIndex = 44;
+            this.radReceive.TabIndex = 11;
             this.radReceive.TabStop = true;
             this.radReceive.Text = "To Receive";
             this.radReceive.UseVisualStyleBackColor = true;
@@ -531,7 +535,7 @@
             this.radTopay.Location = new System.Drawing.Point(559, 119);
             this.radTopay.Name = "radTopay";
             this.radTopay.Size = new System.Drawing.Size(71, 20);
-            this.radTopay.TabIndex = 43;
+            this.radTopay.TabIndex = 10;
             this.radTopay.TabStop = true;
             this.radTopay.Text = "To Pay";
             this.radTopay.UseVisualStyleBackColor = true;
@@ -552,6 +556,7 @@
             this.txtAddRemainder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddRemainder.HoverState.Parent = this.txtAddRemainder;
             this.txtAddRemainder.Location = new System.Drawing.Point(559, 231);
+            this.txtAddRemainder.MaxLength = 150;
             this.txtAddRemainder.Multiline = true;
             this.txtAddRemainder.Name = "txtAddRemainder";
             this.txtAddRemainder.PasswordChar = '\0';
@@ -559,7 +564,7 @@
             this.txtAddRemainder.SelectedText = "";
             this.txtAddRemainder.ShadowDecoration.Parent = this.txtAddRemainder;
             this.txtAddRemainder.Size = new System.Drawing.Size(200, 40);
-            this.txtAddRemainder.TabIndex = 11;
+            this.txtAddRemainder.TabIndex = 14;
             // 
             // txtShippingAdd
             // 
@@ -577,6 +582,7 @@
             this.txtShippingAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtShippingAdd.HoverState.Parent = this.txtShippingAdd;
             this.txtShippingAdd.Location = new System.Drawing.Point(559, 185);
+            this.txtShippingAdd.MaxLength = 200;
             this.txtShippingAdd.Multiline = true;
             this.txtShippingAdd.Name = "txtShippingAdd";
             this.txtShippingAdd.PasswordChar = '\0';
@@ -584,7 +590,7 @@
             this.txtShippingAdd.SelectedText = "";
             this.txtShippingAdd.ShadowDecoration.Parent = this.txtShippingAdd;
             this.txtShippingAdd.Size = new System.Drawing.Size(200, 40);
-            this.txtShippingAdd.TabIndex = 10;
+            this.txtShippingAdd.TabIndex = 13;
             // 
             // txtBillingAdd
             // 
@@ -602,6 +608,7 @@
             this.txtBillingAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingAdd.HoverState.Parent = this.txtBillingAdd;
             this.txtBillingAdd.Location = new System.Drawing.Point(147, 79);
+            this.txtBillingAdd.MaxLength = 200;
             this.txtBillingAdd.Name = "txtBillingAdd";
             this.txtBillingAdd.PasswordChar = '\0';
             this.txtBillingAdd.PlaceholderText = "";
@@ -626,6 +633,7 @@
             this.txtOpeningBal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOpeningBal.HoverState.Parent = this.txtOpeningBal;
             this.txtOpeningBal.Location = new System.Drawing.Point(559, 88);
+            this.txtOpeningBal.MaxLength = 1000;
             this.txtOpeningBal.Name = "txtOpeningBal";
             this.txtOpeningBal.PasswordChar = '\0';
             this.txtOpeningBal.PlaceholderText = "";
@@ -633,7 +641,7 @@
             this.txtOpeningBal.SelectionStart = 1;
             this.txtOpeningBal.ShadowDecoration.Parent = this.txtOpeningBal;
             this.txtOpeningBal.Size = new System.Drawing.Size(200, 24);
-            this.txtOpeningBal.TabIndex = 8;
+            this.txtOpeningBal.TabIndex = 9;
             this.txtOpeningBal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOpeningBal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOpeningBal_KeyPress);
             // 
@@ -653,6 +661,7 @@
             this.txtEmailID.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmailID.HoverState.Parent = this.txtEmailID;
             this.txtEmailID.Location = new System.Drawing.Point(147, 167);
+            this.txtEmailID.MaxLength = 50;
             this.txtEmailID.Name = "txtEmailID";
             this.txtEmailID.PasswordChar = '\0';
             this.txtEmailID.PlaceholderText = "";
@@ -704,6 +713,7 @@
             this.txtPartyname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPartyname.HoverState.Parent = this.txtPartyname;
             this.txtPartyname.Location = new System.Drawing.Point(147, 46);
+            this.txtPartyname.MaxLength = 30;
             this.txtPartyname.Name = "txtPartyname";
             this.txtPartyname.PasswordChar = '\0';
             this.txtPartyname.PlaceholderText = "";
@@ -740,12 +750,12 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(10, 357);
+            this.dgvParty.Location = new System.Drawing.Point(12, 360);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParty.Size = new System.Drawing.Size(793, 187);
-            this.dgvParty.TabIndex = 9;
+            this.dgvParty.TabIndex = 19;
             this.dgvParty.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.Font = null;

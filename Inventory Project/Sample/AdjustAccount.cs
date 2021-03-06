@@ -18,6 +18,7 @@ namespace sample
        // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+        public string companyid;
         public AdjustAccount()
         {
             InitializeComponent();
@@ -44,22 +45,41 @@ namespace sample
 
             cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
             cmd.CommandType = CommandType.StoredProcedure;
-           cmd.Parameters.AddWithValue("@ID", 0);
+            cmd.Parameters.AddWithValue("@ID", 0);
             cmd.Parameters.AddWithValue("@BankAccount", "");
             cmd.Parameters.AddWithValue("@EntryType", "");
             cmd.Parameters.AddWithValue("@Amount", "");
             cmd.Parameters.AddWithValue("@Date", "");
             cmd.Parameters.AddWithValue("@Description", "");
+            cmd.Parameters.AddWithValue("@compid", companyid);
             cmd.Parameters.AddWithValue("@Action", "Select");
 
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
 
             sdasql.Fill(dtable);
-           
-            dgvAdjustaccount.DataSource = dtable;
-          
-            // dgvAdjustaccount.DataBind();
 
+            dgvAdjustaccount.DataSource = dtable;
+
+            ////dgvAdjustaccount.DataBind();
+            //try
+            //{
+            //    String Str = string.Format("select * from tbl_BankAdjustment where Company_ID='" + companyid + "'");
+            //    DataSet Ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(Str, con);
+            //    SDA.Fill(Ds, "Temp");
+            //    dgvAdjustaccount.DataSource = Ds;
+            //    dgvAdjustaccount.DataMember = "Temp";
+            //}
+            //catch (Exception e1)
+            //{
+            //    MessageBox.Show(e1.Message);
+            //}
+            //finally
+            //{
+            //    con.Close();
+
+
+            //}
         }
         public void Insert()
         {
@@ -95,7 +115,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Amount", txtAcoount.Text);
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@Description", txtdescription.Text);
-                    //cmd.Parameters.AddWithValue("@Details", txtdescription.Text);
+                    cmd.Parameters.AddWithValue("@compid", companyid);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data Successfully");
                 }
@@ -114,8 +134,10 @@ namespace sample
 
         private void AdjustAccount_Load(object sender, EventArgs e)
         {
+           
             fetchdetails();
             fetchAccountname();
+            companyid = NewCompany.company_id;
         }
 
         private void fetchAccountname()
@@ -145,7 +167,7 @@ namespace sample
 
         private void dgvAdjustaccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           id = dgvAdjustaccount.SelectedRows[0].Cells["ID"].Value.ToString();
+            id = dgvAdjustaccount.SelectedRows[0].Cells["ID"].Value.ToString();
             cmbaccountname.Text = dgvAdjustaccount.SelectedRows[0].Cells["BankAccount"].Value.ToString();
             cmbEntrytype.Text = dgvAdjustaccount.SelectedRows[0].Cells["EntryType"].Value.ToString();
             txtAcoount.Text = dgvAdjustaccount.SelectedRows[0].Cells["Amount"].Value.ToString();
