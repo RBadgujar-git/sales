@@ -27,12 +27,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentOutHomepage));
             this.btnaddPaymennt = new Guna.UI2.WinForms.Guna2Button();
-            this.cmbPaymentOut = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPaymentOut = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -61,28 +60,6 @@
             this.btnaddPaymennt.Text = "+Add Payment Out";
             this.btnaddPaymennt.Click += new System.EventHandler(this.btnaddPaymennt_Click);
             // 
-            // cmbPaymentOut
-            // 
-            this.cmbPaymentOut.BackColor = System.Drawing.Color.Transparent;
-            this.cmbPaymentOut.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbPaymentOut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPaymentOut.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPaymentOut.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbPaymentOut.FocusedState.Parent = this.cmbPaymentOut;
-            this.cmbPaymentOut.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbPaymentOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbPaymentOut.HoverState.Parent = this.cmbPaymentOut;
-            this.cmbPaymentOut.ItemHeight = 30;
-            this.cmbPaymentOut.Items.AddRange(new object[] {
-            "Payment out"});
-            this.cmbPaymentOut.ItemsAppearance.Parent = this.cmbPaymentOut;
-            this.cmbPaymentOut.Location = new System.Drawing.Point(360, 105);
-            this.cmbPaymentOut.Name = "cmbPaymentOut";
-            this.cmbPaymentOut.ShadowDecoration.Parent = this.cmbPaymentOut;
-            this.cmbPaymentOut.Size = new System.Drawing.Size(204, 36);
-            this.cmbPaymentOut.StartIndex = 0;
-            this.cmbPaymentOut.TabIndex = 189;
-            // 
             // txtFilterBy
             // 
             this.txtFilterBy.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -98,20 +75,21 @@
             this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Location = new System.Drawing.Point(140, 107);
+            this.txtFilterBy.Location = new System.Drawing.Point(140, 96);
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.PasswordChar = '\0';
             this.txtFilterBy.PlaceholderText = "";
             this.txtFilterBy.SelectedText = "";
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
-            this.txtFilterBy.Size = new System.Drawing.Size(200, 36);
+            this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
             this.txtFilterBy.TabIndex = 180;
             this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 109);
+            this.label3.Location = new System.Drawing.Point(56, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 179;
@@ -119,30 +97,30 @@
             // 
             // dgvPaymentOut
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPaymentOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvPaymentOut.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPaymentOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaymentOut.BackgroundColor = System.Drawing.Color.White;
             this.dgvPaymentOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPaymentOut.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPaymentOut.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaymentOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentOut.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPaymentOut.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentOut.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentOut.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPaymentOut.EnableHeadersVisualStyles = false;
             this.dgvPaymentOut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPaymentOut.Location = new System.Drawing.Point(16, 178);
@@ -261,7 +239,6 @@
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.btnaddPaymennt);
-            this.Controls.Add(this.cmbPaymentOut);
             this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvPaymentOut);
@@ -284,7 +261,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btnaddPaymennt;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbPaymentOut;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPaymentOut;
