@@ -154,7 +154,7 @@ namespace sample
                 cmd = new SqlCommand("tbl_ExpensesSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
-                   cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+                 cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
              //   cmd.Parameters.AddWithValue("@ID", id);
                 cmd.Parameters.AddWithValue("@ExpenseCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
@@ -180,6 +180,20 @@ namespace sample
                 insert_record_inner(id.ToString());
             }
         }   
+
+
+
+
+        public void verifydata()
+        {
+          if(Expences.Text=="")
+            {
+                MessageBox.Show("Please Select Expences");
+                Expences.Focus();
+           
+           }
+        
+        }
 
         object id1;
         private void insert_record_inner(string id)
@@ -214,6 +228,7 @@ namespace sample
 
         private void button5_Click(object sender, EventArgs e)
         {
+
             insertdata();
             bind_sale_details();
             cleardata();

@@ -670,7 +670,7 @@
             // 
             this.dtpToDate.CustomFormat = "MM/dd/yyyy";
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(419, 22);
+            this.dtpToDate.Location = new System.Drawing.Point(419, 24);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(159, 22);
             this.dtpToDate.TabIndex = 93;

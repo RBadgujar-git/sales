@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryChallan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlinkPayment = new System.Windows.Forms.Button();
             this.txtadditional2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -315,6 +315,7 @@
             this.txtBallaance.PasswordChar = '\0';
             this.txtBallaance.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtBallaance.PlaceholderText = "";
+            this.txtBallaance.ReadOnly = true;
             this.txtBallaance.SelectedText = "";
             this.txtBallaance.SelectionStart = 1;
             this.txtBallaance.ShadowDecoration.Parent = this.txtBallaance;
@@ -381,6 +382,7 @@
             this.txtReceived.PasswordChar = '\0';
             this.txtReceived.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtReceived.PlaceholderText = "";
+            this.txtReceived.ReadOnly = true;
             this.txtReceived.SelectedText = "";
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
@@ -561,6 +563,7 @@
             this.txtTaxAmount.PasswordChar = '\0';
             this.txtTaxAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTaxAmount.PlaceholderText = "";
+            this.txtTaxAmount.ReadOnly = true;
             this.txtTaxAmount.SelectedText = "";
             this.txtTaxAmount.SelectionStart = 1;
             this.txtTaxAmount.ShadowDecoration.Parent = this.txtTaxAmount;
@@ -675,6 +678,7 @@
             this.txtsgst.Name = "txtsgst";
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
+            this.txtsgst.ReadOnly = true;
             this.txtsgst.SelectedText = "";
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
             this.txtsgst.Size = new System.Drawing.Size(75, 25);
@@ -699,6 +703,7 @@
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
+            this.txtcgst.ReadOnly = true;
             this.txtcgst.SelectedText = "";
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
             this.txtcgst.Size = new System.Drawing.Size(74, 25);
@@ -720,7 +725,6 @@
             this.txtcon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcon.HoverState.Parent = this.txtcon;
             this.txtcon.Location = new System.Drawing.Point(114, 137);
-            this.txtcon.MaxLength = 10;
             this.txtcon.Name = "txtcon";
             this.txtcon.PasswordChar = '\0';
             this.txtcon.PlaceholderText = "";
@@ -728,7 +732,6 @@
             this.txtcon.ShadowDecoration.Parent = this.txtcon;
             this.txtcon.Size = new System.Drawing.Size(181, 24);
             this.txtcon.TabIndex = 2;
-            this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress);
             // 
             // label36
             // 
@@ -760,6 +763,7 @@
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTotal.PlaceholderText = "";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.SelectedText = "";
             this.txtTotal.SelectionStart = 1;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
@@ -859,7 +863,7 @@
             this.txtItemName.Location = new System.Drawing.Point(10, 45);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(95, 22);
-            this.txtItemName.TabIndex = 6;
+            this.txtItemName.TabIndex = 99;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             // 
             // txtItemTotal
@@ -882,6 +886,7 @@
             this.txtItemTotal.PasswordChar = '\0';
             this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtItemTotal.PlaceholderText = "";
+            this.txtItemTotal.ReadOnly = true;
             this.txtItemTotal.SelectedText = "";
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
@@ -922,7 +927,7 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(90, 28);
-            this.txtDisAmt.TabIndex = 844;
+            this.txtDisAmt.TabIndex = 8;
             // 
             // txtDis
             // 
@@ -948,7 +953,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(90, 28);
-            this.txtDis.TabIndex = 7;
+            this.txtDis.TabIndex = 4;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             // 
             // label32
@@ -989,11 +994,12 @@
             this.txtTaxAMount1.PasswordChar = '\0';
             this.txtTaxAMount1.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTaxAMount1.PlaceholderText = "";
+            this.txtTaxAMount1.ReadOnly = true;
             this.txtTaxAMount1.SelectedText = "";
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(90, 28);
-            this.txtTaxAMount1.TabIndex = 966;
+            this.txtTaxAMount1.TabIndex = 9;
             // 
             // label31
             // 
@@ -1058,10 +1064,11 @@
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.PasswordChar = '\0';
             this.txtMRP.PlaceholderText = "";
+            this.txtMRP.ReadOnly = true;
             this.txtMRP.SelectedText = "";
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(90, 28);
-            this.txtMRP.TabIndex = 377;
+            this.txtMRP.TabIndex = 3;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             // 
             // label29
@@ -1095,7 +1102,7 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(90, 28);
-            this.txtUnit.TabIndex = 889;
+            this.txtUnit.TabIndex = 2;
             // 
             // label28
             // 
@@ -1130,7 +1137,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(90, 28);
-            this.txtFreeQty.TabIndex = 9;
+            this.txtFreeQty.TabIndex = 7;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             // 
             // label27
@@ -1161,10 +1168,11 @@
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.PasswordChar = '\0';
             this.txtItemCode.PlaceholderText = "";
+            this.txtItemCode.ReadOnly = true;
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(90, 28);
-            this.txtItemCode.TabIndex = 888;
+            this.txtItemCode.TabIndex = 1;
             // 
             // label21
             // 
@@ -1208,7 +1216,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(90, 28);
-            this.txtOty.TabIndex = 8;
+            this.txtOty.TabIndex = 6;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             // 
             // label23
@@ -1229,20 +1237,20 @@
             // 
             // dgvInnerDeliveryChallanNote
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDeliveryChallanNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDeliveryChallanNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInnerDeliveryChallanNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDeliveryChallanNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDeliveryChallanNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDeliveryChallanNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDeliveryChallanNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDeliveryChallanNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInnerDeliveryChallanNote.ColumnHeadersHeight = 37;
             this.dgvInnerDeliveryChallanNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1257,14 +1265,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDeliveryChallanNote.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDeliveryChallanNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInnerDeliveryChallanNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDeliveryChallanNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDeliveryChallanNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1410,13 +1418,12 @@
             this.comboBox1.Location = new System.Drawing.Point(114, 48);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(182, 24);
-            this.comboBox1.TabIndex = 1;
+            this.comboBox1.TabIndex = 132;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(470, 152);
-            this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 23);
             this.textBox1.TabIndex = 129;
@@ -1499,7 +1506,7 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(139, 381);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(180, 24);
-            this.cmbPaymentType.TabIndex = 11;
+            this.cmbPaymentType.TabIndex = 122;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             // 
             // cmbCategory
@@ -1657,7 +1664,7 @@
             this.txtReturnNo.SelectedText = "";
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
             this.txtReturnNo.Size = new System.Drawing.Size(81, 28);
-            this.txtReturnNo.TabIndex = 5;
+            this.txtReturnNo.TabIndex = 6;
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
             // 
             // txtBillingName
@@ -1676,7 +1683,6 @@
             this.txtBillingName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingName.HoverState.Parent = this.txtBillingName;
             this.txtBillingName.Location = new System.Drawing.Point(470, 43);
-            this.txtBillingName.MaxLength = 50;
             this.txtBillingName.Name = "txtBillingName";
             this.txtBillingName.PasswordChar = '\0';
             this.txtBillingName.PlaceholderText = "";
@@ -1684,7 +1690,6 @@
             this.txtBillingName.ShadowDecoration.Parent = this.txtBillingName;
             this.txtBillingName.Size = new System.Drawing.Size(182, 25);
             this.txtBillingName.TabIndex = 3;
-            this.txtBillingName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBillingName_KeyPress);
             // 
             // txtPartyAdd
             // 
@@ -1702,7 +1707,6 @@
             this.txtPartyAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPartyAdd.HoverState.Parent = this.txtPartyAdd;
             this.txtPartyAdd.Location = new System.Drawing.Point(113, 82);
-            this.txtPartyAdd.Multiline = true;
             this.txtPartyAdd.Name = "txtPartyAdd";
             this.txtPartyAdd.PasswordChar = '\0';
             this.txtPartyAdd.PlaceholderText = "";
@@ -1873,9 +1877,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(2, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 16);
+            this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Party Address :";
+            this.label3.Text = "Billing Address :";
             // 
             // label2
             // 
