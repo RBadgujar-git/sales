@@ -163,6 +163,11 @@ namespace sample
                 //    txtTotalQty.Text = total.ToString();
             }
         }
+
+        private void cmbAllFirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

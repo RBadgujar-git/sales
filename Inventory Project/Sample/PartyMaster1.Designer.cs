@@ -374,6 +374,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(147, 281);
             this.comboBox1.MaxLength = 50;
@@ -416,7 +418,7 @@
             // 
             // txtState
             // 
-            this.txtState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtState.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtState.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtState.FormattingEnabled = true;
             this.txtState.Items.AddRange(new object[] {
