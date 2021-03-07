@@ -55,7 +55,7 @@
             this.btnSave.Location = new System.Drawing.Point(271, 147);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 21;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -88,7 +88,7 @@
             this.btnDelete.Location = new System.Drawing.Point(463, 148);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
-            this.btnDelete.TabIndex = 25;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -101,7 +101,7 @@
             this.btnClear.Location = new System.Drawing.Point(367, 195);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(90, 42);
-            this.btnClear.TabIndex = 24;
+            this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -114,7 +114,7 @@
             this.btnupdate.Location = new System.Drawing.Point(367, 147);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(90, 42);
-            this.btnupdate.TabIndex = 23;
+            this.btnupdate.TabIndex = 3;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);

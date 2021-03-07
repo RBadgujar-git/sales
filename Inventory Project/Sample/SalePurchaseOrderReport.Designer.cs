@@ -35,27 +35,16 @@
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvSaleorder = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAlllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbSaleorder = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.cmbAllorder = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtFilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDaate = new System.Windows.Forms.DateTimePicker();
+            this.cmbtable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleorder)).BeginInit();
             this.SuspendLayout();
@@ -124,16 +113,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSaleorder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSaleorder.ColumnHeadersHeight = 18;
-            this.dgvSaleorder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column6,
-            this.Column3,
-            this.Column7,
-            this.Column8,
-            this.Column9});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,51 +152,6 @@
             this.dgvSaleorder.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSaleorder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Date";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Order No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Name";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Due Date";
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Status";
-            this.Column6.Name = "Column6";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Type";
-            this.Column3.Name = "Column3";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Total";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Advance";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Balance";
-            this.Column9.Name = "Column9";
-            // 
             // cmbAlllFirms
             // 
             this.cmbAlllFirms.BackColor = System.Drawing.Color.Transparent;
@@ -226,7 +160,7 @@
             this.cmbAlllFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbAlllFirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbAlllFirms.FocusedState.Parent = this.cmbAlllFirms;
-            this.cmbAlllFirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAlllFirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmbAlllFirms.ForeColor = System.Drawing.Color.Blue;
             this.cmbAlllFirms.HoverState.Parent = this.cmbAlllFirms;
             this.cmbAlllFirms.ItemHeight = 30;
@@ -300,77 +234,6 @@
             this.label5.TabIndex = 184;
             this.label5.Text = "To";
             // 
-            // cmbSaleorder
-            // 
-            this.cmbSaleorder.BackColor = System.Drawing.Color.Transparent;
-            this.cmbSaleorder.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbSaleorder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSaleorder.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbSaleorder.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbSaleorder.FocusedState.Parent = this.cmbSaleorder;
-            this.cmbSaleorder.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSaleorder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbSaleorder.HoverState.Parent = this.cmbSaleorder;
-            this.cmbSaleorder.ItemHeight = 30;
-            this.cmbSaleorder.Items.AddRange(new object[] {
-            "Sale Order",
-            "Purchase Oder"});
-            this.cmbSaleorder.ItemsAppearance.Parent = this.cmbSaleorder;
-            this.cmbSaleorder.Location = new System.Drawing.Point(350, 91);
-            this.cmbSaleorder.Name = "cmbSaleorder";
-            this.cmbSaleorder.ShadowDecoration.Parent = this.cmbSaleorder;
-            this.cmbSaleorder.Size = new System.Drawing.Size(181, 36);
-            this.cmbSaleorder.StartIndex = 0;
-            this.cmbSaleorder.TabIndex = 188;
-            // 
-            // cmbAllorder
-            // 
-            this.cmbAllorder.BackColor = System.Drawing.Color.Transparent;
-            this.cmbAllorder.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbAllorder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAllorder.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllorder.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllorder.FocusedState.Parent = this.cmbAllorder;
-            this.cmbAllorder.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbAllorder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbAllorder.HoverState.Parent = this.cmbAllorder;
-            this.cmbAllorder.ItemHeight = 30;
-            this.cmbAllorder.Items.AddRange(new object[] {
-            "All Order",
-            "Close Order",
-            "Open Order"});
-            this.cmbAllorder.ItemsAppearance.Parent = this.cmbAllorder;
-            this.cmbAllorder.Location = new System.Drawing.Point(568, 91);
-            this.cmbAllorder.Name = "cmbAllorder";
-            this.cmbAllorder.ShadowDecoration.Parent = this.cmbAllorder;
-            this.cmbAllorder.Size = new System.Drawing.Size(181, 36);
-            this.cmbAllorder.StartIndex = 0;
-            this.cmbAllorder.TabIndex = 189;
-            // 
-            // txtFilter
-            // 
-            this.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFilter.DefaultText = "";
-            this.txtFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFilter.DisabledState.Parent = this.txtFilter;
-            this.txtFilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilter.FocusedState.Parent = this.txtFilter;
-            this.txtFilter.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilter.HoverState.Parent = this.txtFilter;
-            this.txtFilter.Location = new System.Drawing.Point(95, 91);
-            this.txtFilter.Name = "txtFilter";
-            this.txtFilter.PasswordChar = '\0';
-            this.txtFilter.PlaceholderText = "";
-            this.txtFilter.SelectedText = "";
-            this.txtFilter.ShadowDecoration.Parent = this.txtFilter;
-            this.txtFilter.Size = new System.Drawing.Size(200, 36);
-            this.txtFilter.TabIndex = 190;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -397,18 +260,42 @@
             this.dtpToDaate.Name = "dtpToDaate";
             this.dtpToDaate.Size = new System.Drawing.Size(140, 23);
             this.dtpToDaate.TabIndex = 193;
+            this.dtpToDaate.ValueChanged += new System.EventHandler(this.dtpToDaate_ValueChanged);
+            this.dtpToDaate.Enter += new System.EventHandler(this.dtpToDaate_Enter);
+            // 
+            // cmbtable
+            // 
+            this.cmbtable.BackColor = System.Drawing.Color.Transparent;
+            this.cmbtable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbtable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbtable.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbtable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbtable.FocusedState.Parent = this.cmbtable;
+            this.cmbtable.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbtable.ForeColor = System.Drawing.Color.Blue;
+            this.cmbtable.HoverState.Parent = this.cmbtable;
+            this.cmbtable.ItemHeight = 30;
+            this.cmbtable.Items.AddRange(new object[] {
+            "Sale Order",
+            "Purchase Order"});
+            this.cmbtable.ItemsAppearance.Parent = this.cmbtable;
+            this.cmbtable.Location = new System.Drawing.Point(95, 87);
+            this.cmbtable.Name = "cmbtable";
+            this.cmbtable.ShadowDecoration.Parent = this.cmbtable;
+            this.cmbtable.Size = new System.Drawing.Size(193, 36);
+            this.cmbtable.StartIndex = 0;
+            this.cmbtable.TabIndex = 194;
+            this.cmbtable.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 
             // SalePurchaseOrderReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbtable);
             this.Controls.Add(this.dtpToDaate);
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtFilter);
-            this.Controls.Add(this.cmbAllorder);
-            this.Controls.Add(this.cmbSaleorder);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgvSaleorder);
             this.Controls.Add(this.cmbAlllFirms);
@@ -421,6 +308,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalePurchaseOrderReport";
             this.Size = new System.Drawing.Size(1007, 569);
+            this.Load += new System.EventHandler(this.SalePurchaseOrderReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleorder)).EndInit();
@@ -441,20 +329,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbSaleorder;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbAllorder;
-        private Guna.UI2.WinForms.Guna2TextBox txtFilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpToDaate;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbtable;
     }
 }

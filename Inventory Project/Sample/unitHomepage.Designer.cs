@@ -311,6 +311,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "unitHomepage";
             this.Size = new System.Drawing.Size(1026, 569);
+            this.Load += new System.EventHandler(this.unitHomepage_Load);
             this.guna2ShadowPanel3.ResumeLayout(false);
             this.guna2ShadowPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddunit)).EndInit();

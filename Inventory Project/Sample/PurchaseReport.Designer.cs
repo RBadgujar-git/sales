@@ -28,35 +28,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvPurchaseBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnaddPurchase = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btncancel = new System.Windows.Forms.Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtOverDue = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtUnpaid = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -75,10 +62,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cmbFirm = new System.Windows.Forms.ComboBox();
+            this.BillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BillNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PartyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemainingBal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseBill)).BeginInit();
             this.guna2Panel4.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -120,39 +114,38 @@
             // 
             // dgvPurchaseBill
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvPurchaseBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPurchaseBill.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPurchaseBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPurchaseBill.BackgroundColor = System.Drawing.Color.White;
             this.dgvPurchaseBill.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPurchaseBill.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPurchaseBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchaseBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPurchaseBill.ColumnHeadersHeight = 37;
             this.dgvPurchaseBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
-            this.Column6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.Column7,
-            this.Column8,
-            this.Column1,
-            this.Column2});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPurchaseBill.DefaultCellStyle = dataGridViewCellStyle9;
+            this.BillDate,
+            this.BillNo,
+            this.PartyName,
+            this.PaymentType,
+            this.Total,
+            this.Paid,
+            this.RemainingBal,
+            this.Status});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPurchaseBill.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPurchaseBill.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPurchaseBill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvPurchaseBill.EnableHeadersVisualStyles = false;
@@ -187,54 +180,6 @@
             this.dgvPurchaseBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPurchaseBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Date";
-            this.Column10.Name = "Column10";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Invoice No";
-            this.Column6.Name = "Column6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Party Name";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Transaction Type";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Payment Type";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Amount";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Balance";
-            this.Column8.Name = "Column8";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Due Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Status";
-            this.Column2.Name = "Column2";
-            // 
             // btnaddPurchase
             // 
             this.btnaddPurchase.BorderRadius = 20;
@@ -244,11 +189,11 @@
             this.btnaddPurchase.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddPurchase.ForeColor = System.Drawing.Color.White;
             this.btnaddPurchase.HoverState.Parent = this.btnaddPurchase;
-            this.btnaddPurchase.Location = new System.Drawing.Point(934, 14);
+            this.btnaddPurchase.Location = new System.Drawing.Point(922, 14);
             this.btnaddPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.btnaddPurchase.Name = "btnaddPurchase";
             this.btnaddPurchase.ShadowDecoration.Parent = this.btnaddPurchase;
-            this.btnaddPurchase.Size = new System.Drawing.Size(131, 48);
+            this.btnaddPurchase.Size = new System.Drawing.Size(143, 48);
             this.btnaddPurchase.TabIndex = 2;
             this.btnaddPurchase.Text = "+ Add Purchase";
             this.btnaddPurchase.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -294,23 +239,12 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(703, 121);
+            this.label12.Location = new System.Drawing.Point(503, 121);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 25);
             this.label12.TabIndex = 33;
             this.label12.Text = "=";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(485, 121);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 23);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "+";
             // 
             // label11
             // 
@@ -369,7 +303,7 @@
             this.guna2Panel4.BorderThickness = 1;
             this.guna2Panel4.Controls.Add(this.txtTotal);
             this.guna2Panel4.Controls.Add(this.label8);
-            this.guna2Panel4.Location = new System.Drawing.Point(744, 89);
+            this.guna2Panel4.Location = new System.Drawing.Point(544, 89);
             this.guna2Panel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
@@ -393,7 +327,7 @@
             this.txtTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(4, 33);
+            this.txtTotal.Location = new System.Drawing.Point(3, 30);
             this.txtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
@@ -404,60 +338,6 @@
             this.txtTotal.Size = new System.Drawing.Size(169, 43);
             this.txtTotal.TabIndex = 3;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.guna2Panel3.BorderRadius = 15;
-            this.guna2Panel3.BorderThickness = 1;
-            this.guna2Panel3.Controls.Add(this.txtOverDue);
-            this.guna2Panel3.Controls.Add(this.label6);
-            this.guna2Panel3.Location = new System.Drawing.Point(522, 89);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
-            this.guna2Panel3.Size = new System.Drawing.Size(180, 84);
-            this.guna2Panel3.TabIndex = 29;
-            // 
-            // txtOverDue
-            // 
-            this.txtOverDue.BorderThickness = 0;
-            this.txtOverDue.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOverDue.DefaultText = "";
-            this.txtOverDue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtOverDue.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtOverDue.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOverDue.DisabledState.Parent = this.txtOverDue;
-            this.txtOverDue.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtOverDue.FillColor = System.Drawing.Color.PaleTurquoise;
-            this.txtOverDue.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOverDue.FocusedState.Parent = this.txtOverDue;
-            this.txtOverDue.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOverDue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtOverDue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtOverDue.HoverState.Parent = this.txtOverDue;
-            this.txtOverDue.Location = new System.Drawing.Point(5, 33);
-            this.txtOverDue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtOverDue.Name = "txtOverDue";
-            this.txtOverDue.PasswordChar = '\0';
-            this.txtOverDue.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtOverDue.PlaceholderText = "0";
-            this.txtOverDue.SelectedText = "";
-            this.txtOverDue.ShadowDecoration.Parent = this.txtOverDue;
-            this.txtOverDue.Size = new System.Drawing.Size(169, 43);
-            this.txtOverDue.TabIndex = 2;
-            this.txtOverDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(58, 10);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 16);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "OverDue";
             // 
             // guna2Panel2
             // 
@@ -698,6 +578,7 @@
             this.dtpTodate.Name = "dtpTodate";
             this.dtpTodate.Size = new System.Drawing.Size(128, 23);
             this.dtpTodate.TabIndex = 38;
+            this.dtpTodate.ValueChanged += new System.EventHandler(this.dtpTodate_ValueChanged);
             this.dtpTodate.Enter += new System.EventHandler(this.dtpTodate_Enter);
             // 
             // label2
@@ -731,6 +612,46 @@
             this.cmbFirm.TabIndex = 60;
             this.cmbFirm.SelectedIndexChanged += new System.EventHandler(this.cmbFirm_SelectedIndexChanged);
             // 
+            // BillDate
+            // 
+            this.BillDate.HeaderText = "Date";
+            this.BillDate.Name = "BillDate";
+            // 
+            // BillNo
+            // 
+            this.BillNo.HeaderText = "Bill No";
+            this.BillNo.Name = "BillNo";
+            // 
+            // PartyName
+            // 
+            this.PartyName.HeaderText = "Party Name";
+            this.PartyName.Name = "PartyName";
+            // 
+            // PaymentType
+            // 
+            this.PaymentType.HeaderText = "Payment Type";
+            this.PaymentType.Name = "PaymentType";
+            // 
+            // Total
+            // 
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // Paid
+            // 
+            this.Paid.HeaderText = "Paid";
+            this.Paid.Name = "Paid";
+            // 
+            // RemainingBal
+            // 
+            this.RemainingBal.HeaderText = "Remaining Bal";
+            this.RemainingBal.Name = "RemainingBal";
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            // 
             // PurchaseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -745,11 +666,9 @@
             this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.label5);
@@ -770,8 +689,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseBill)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -790,14 +707,11 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btncancel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -810,22 +724,20 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbMonth;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtTotal;
-        private Guna.UI2.WinForms.Guna2TextBox txtOverDue;
         private Guna.UI2.WinForms.Guna2TextBox txtUnpaid;
         private Guna.UI2.WinForms.Guna2TextBox txtPaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.DateTimePicker dtpTodate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmbFirm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PartyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RemainingBal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }
