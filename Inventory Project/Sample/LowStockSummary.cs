@@ -28,6 +28,30 @@ namespace sample
         private void LowStockSummary_Load(object sender, EventArgs e)
         {
             fetchcategory();
+            binddata();
+        }
+        private void binddata()
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con.Close();
+            dgvLowstocksummary.AutoGenerateColumns = false;
+            dgvLowstocksummary.ColumnCount = 5;
+            dgvLowstocksummary.Columns[0].HeaderText = "Item Name";
+            dgvLowstocksummary.Columns[0].DataPropertyName = "ItemName";
+            dgvLowstocksummary.Columns[1].HeaderText = " Opening Qty";
+            dgvLowstocksummary.Columns[1].DataPropertyName = "OpeningQty";
+            dgvLowstocksummary.Columns[2].HeaderText = "Minimum Stock";
+            dgvLowstocksummary.Columns[2].DataPropertyName = "MinimumStock";
+            dgvLowstocksummary.Columns[3].HeaderText = " Opening Qty";
+            dgvLowstocksummary.Columns[3].DataPropertyName = "OpeningQty";
+            dgvLowstocksummary.Columns[4].HeaderText = " atPrice";
+            dgvLowstocksummary.Columns[4].DataPropertyName = "atPrice";
+            dgvLowstocksummary.DataSource = dt;
+
         }
         private void fetchcategory()
         {

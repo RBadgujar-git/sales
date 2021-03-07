@@ -38,7 +38,7 @@ namespace sample
         {
             if (cmbPartyName.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster Company_ID='"+NewCompany.company_id+"' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

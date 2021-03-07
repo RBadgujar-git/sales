@@ -32,13 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StockSummaryreportbyItemCategory));
             this.dgvStockSummary = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
+            this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockSummary)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,10 +60,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvStockSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvStockSummary.ColumnHeadersHeight = 34;
-            this.dgvStockSummary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column5});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,11 +71,11 @@
             this.dgvStockSummary.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvStockSummary.EnableHeadersVisualStyles = false;
             this.dgvStockSummary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvStockSummary.Location = new System.Drawing.Point(0, 95);
+            this.dgvStockSummary.Location = new System.Drawing.Point(0, 128);
             this.dgvStockSummary.Name = "dgvStockSummary";
             this.dgvStockSummary.RowHeadersVisible = false;
             this.dgvStockSummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStockSummary.Size = new System.Drawing.Size(1007, 431);
+            this.dgvStockSummary.Size = new System.Drawing.Size(1007, 398);
             this.dgvStockSummary.TabIndex = 113;
             this.dgvStockSummary.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvStockSummary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -103,27 +99,13 @@
             this.dgvStockSummary.ThemeStyle.RowsStyle.Height = 22;
             this.dgvStockSummary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStockSummary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item Category";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Stock Qty";
-            this.Column2.Name = "Column2";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Stock Value";
-            this.Column5.Name = "Column5";
+            this.dgvStockSummary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockSummary_CellContentClick);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 66);
+            this.label3.Location = new System.Drawing.Point(3, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(352, 18);
             this.label3.TabIndex = 117;
@@ -171,11 +153,65 @@
             this.btnImport.TabIndex = 114;
             this.btnImport.UseVisualStyleBackColor = false;
             // 
+            // cmbAllFirms
+            // 
+            this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbAllFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAllFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAllFirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAllFirms.FocusedState.Parent = this.cmbAllFirms;
+            this.cmbAllFirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAllFirms.ForeColor = System.Drawing.Color.Blue;
+            this.cmbAllFirms.HoverState.Parent = this.cmbAllFirms;
+            this.cmbAllFirms.ItemHeight = 30;
+            this.cmbAllFirms.Items.AddRange(new object[] {
+            "All Firms"});
+            this.cmbAllFirms.ItemsAppearance.Parent = this.cmbAllFirms;
+            this.cmbAllFirms.Location = new System.Drawing.Point(24, 9);
+            this.cmbAllFirms.Name = "cmbAllFirms";
+            this.cmbAllFirms.ShadowDecoration.Parent = this.cmbAllFirms;
+            this.cmbAllFirms.Size = new System.Drawing.Size(140, 36);
+            this.cmbAllFirms.StartIndex = 0;
+            this.cmbAllFirms.TabIndex = 210;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(44, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 16);
+            this.label1.TabIndex = 209;
+            this.label1.Text = "Item Category :";
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCategory.FocusedState.Parent = this.cmbCategory;
+            this.cmbCategory.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbCategory.ForeColor = System.Drawing.Color.Blue;
+            this.cmbCategory.HoverState.Parent = this.cmbCategory;
+            this.cmbCategory.ItemHeight = 30;
+            this.cmbCategory.ItemsAppearance.Parent = this.cmbCategory;
+            this.cmbCategory.Location = new System.Drawing.Point(164, 62);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.ShadowDecoration.Parent = this.cmbCategory;
+            this.cmbCategory.Size = new System.Drawing.Size(230, 36);
+            this.cmbCategory.TabIndex = 211;
+            this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
+            // 
             // StockSummaryreportbyItemCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbCategory);
+            this.Controls.Add(this.cmbAllFirms);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrint);
@@ -185,6 +221,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StockSummaryreportbyItemCategory";
             this.Size = new System.Drawing.Size(1007, 526);
+            this.Load += new System.EventHandler(this.StockSummaryreportbyItemCategory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockSummary)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,12 +231,12 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvStockSummary;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnImport;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbAllFirms;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbCategory;
     }
 }
