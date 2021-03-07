@@ -56,7 +56,7 @@ namespace sample
         {
             con.Open();
             DataTable dtable = new DataTable();
-            cmd = new SqlCommand("select PartyName,OpeningBal from tbl_PartyMaster", con);
+            cmd = new SqlCommand("select PartyName,OpeningBal from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"'", con);
             //cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@PartiesID", 0);
             cmd.Parameters.AddWithValue("@PartyName", "");

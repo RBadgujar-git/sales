@@ -53,7 +53,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -93,6 +93,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
             cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
             cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
             SqlParameter sqlpara = new SqlParameter("@image", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
             cmd.Parameters.Add(sqlpara);
@@ -144,6 +146,8 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                         cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
                         cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
+                        cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                         cmd.Parameters.Add("@image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
@@ -390,6 +394,11 @@ namespace sample
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvPaymentIn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -251,7 +251,7 @@ namespace sample
                 }
 
 
-                string query = string.Format("insert into tbl_DeliveryChallan(PartyName ,BillingName,BillingAddress,PartyAddress,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, ContactNo,Feild1,Feild2,Feild3,Status,TableName,ItemCategory,Barcode) Values (@PartyName, @BillingName,  @BillingAddress,@PartyAddress,@InvoiceDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @ItemCategory,@Barcode); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_DeliveryChallan(PartyName ,BillingName,BillingAddress,PartyAddress,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, ContactNo,Feild1,Feild2,Feild3,Status,TableName,ItemCategory,Barcode,Company_ID) Values (@PartyName, @BillingName,  @BillingAddress,@PartyAddress,@InvoiceDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @ItemCategory,@Barcode,@compid); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
@@ -301,7 +301,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
                 cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-               
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
                 
@@ -347,6 +348,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -467,7 +469,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string str = string.Format("SELECT * FROM tbl_DeliveryChallan where ChallanNo='{0}'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_DeliveryChallan where ChallanNo='{0}' and Company_ID='"+NewCompany.company_id+"'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);                           
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -814,7 +816,7 @@ namespace sample
                     con.Open();
                 }
 
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and Company_ID='"+NewCompany.company_id+"' GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -843,7 +845,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -868,7 +870,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}' and Company_ID='" + NewCompany.company_id + "' group by ItemName", cmbCategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");
@@ -899,7 +901,7 @@ namespace sample
                     con.Open();
                 }
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -959,6 +961,11 @@ namespace sample
         private void txtBillingName_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

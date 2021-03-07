@@ -463,6 +463,7 @@
             this.dgvPaymentIn.ThemeStyle.RowsStyle.Height = 22;
             this.dgvPaymentIn.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPaymentIn.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvPaymentIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentClick);
             this.dgvPaymentIn.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentDoubleClick);
             // 
             // PaymentIn

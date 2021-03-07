@@ -64,7 +64,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='"+NewCompany.company_id+"' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -166,7 +166,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditionalFeild2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Expences.Text);
+
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
                 cleardata();
@@ -212,7 +214,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["SalePrice"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvinnerexpenses.Rows[i].Cells["ItemAmount"].Value.ToString());
-
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1)
@@ -340,7 +342,7 @@ namespace sample
         {
             try {
                    con.Open();
-                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}'", txtReturnNo.Text);
+                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                     SqlCommand cmd = new SqlCommand(str, con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
@@ -374,7 +376,7 @@ namespace sample
                     }
                     // dr.Close();
 
-                    string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_ExpensesInner where ID='{0}'", txtReturnNo.Text);
+                    string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_ExpensesInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                     SqlCommand cmd1 = new SqlCommand(str1, con);
                     dr.Close();
 
