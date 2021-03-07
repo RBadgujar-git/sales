@@ -640,7 +640,10 @@ namespace sample
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

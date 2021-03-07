@@ -1315,7 +1315,7 @@
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
             this.txtsgst.Size = new System.Drawing.Size(53, 25);
             this.txtsgst.TabIndex = 128;
-            this.txtsgst.TextChanged += new System.EventHandler(this.txtsgst_TextChanged);
+           // this.txtsgst.TextChanged += new System.EventHandler(this.txtsgst_TextChanged);
             // 
             // txtcgst
             // 
