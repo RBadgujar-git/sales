@@ -142,6 +142,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
@@ -168,6 +169,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.cmbpartyname1);
             this.panel1.Controls.Add(this.cmbPaymentType);
             this.panel1.Controls.Add(this.cmbCategory);
@@ -1929,6 +1931,16 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(940, 129);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(137, 24);
+            this.comboBox1.TabIndex = 126;
+            // 
             // DebitNote
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2067,5 +2079,6 @@
         private System.Windows.Forms.ComboBox txtItemName;
         private System.Windows.Forms.ComboBox cmbPaymentType;
         private System.Windows.Forms.ComboBox cmbpartyname1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

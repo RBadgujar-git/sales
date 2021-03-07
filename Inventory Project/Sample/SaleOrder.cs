@@ -842,5 +842,17 @@ namespace sample
         {
 
         }
+
+        private void chkenble_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkenble.Checked == true)
+            {
+                txtReturnNo.Enabled = true;
+            }
+            else
+            {
+                txtReturnNo.Enabled = false;
+            }
         }
+    }
     }
