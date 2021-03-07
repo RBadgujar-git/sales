@@ -65,7 +65,7 @@ namespace sample
         {
             if (cmbexpenses.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory group by OtherIncome");
+                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' group by OtherIncome");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -117,7 +117,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price/Unit"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvinnerexpenses.Rows[i].Cells["Amount"].Value.ToString());
-
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) {
@@ -150,6 +150,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status",ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Income.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
             }
@@ -239,7 +240,7 @@ namespace sample
         {
             try {
                 con.Open();
-                string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}' and where Company_ID='"+NewCompany.company_id+"'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -275,7 +276,7 @@ namespace sample
                 }
              
 
-                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner where ID='{0}'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner where ID='{0}' Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();

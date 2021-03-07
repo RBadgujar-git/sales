@@ -145,7 +145,7 @@
             this.btnClose.Location = new System.Drawing.Point(770, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 28);
-            this.btnClose.TabIndex = 3;
+            this.btnClose.TabIndex = 334;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -298,7 +298,7 @@
             this.txtitemqantity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtitemqantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtitemqantity.HoverState.Parent = this.txtitemqantity;
-            this.txtitemqantity.Location = new System.Drawing.Point(566, 62);
+            this.txtitemqantity.Location = new System.Drawing.Point(569, 63);
             this.txtitemqantity.MaxLength = 10;
             this.txtitemqantity.Name = "txtitemqantity";
             this.txtitemqantity.PasswordChar = '\0';
