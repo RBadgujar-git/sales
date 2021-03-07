@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanAccount));
             this.btnSave = new System.Windows.Forms.Button();
             this.txtAccountname = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,7 +57,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtTermDuration = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtintereat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtinterest = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtCurrentBal = new Guna.UI2.WinForms.Guna2TextBox();
@@ -101,6 +101,7 @@
             this.txtAccountname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAccountname.HoverState.Parent = this.txtAccountname;
             this.txtAccountname.Location = new System.Drawing.Point(152, 63);
+            this.txtAccountname.MaxLength = 50;
             this.txtAccountname.Name = "txtAccountname";
             this.txtAccountname.PasswordChar = '\0';
             this.txtAccountname.PlaceholderText = "";
@@ -196,30 +197,30 @@
             // 
             // dgvDescription
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDescription.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dgvDescription.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvDescription.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDescription.BackgroundColor = System.Drawing.Color.White;
             this.dgvDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDescription.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDescription.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDescription.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDescription.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvDescription.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDescription.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDescription.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvDescription.EnableHeadersVisualStyles = false;
             this.dgvDescription.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvDescription.Location = new System.Drawing.Point(3, 333);
@@ -265,7 +266,7 @@
             this.btnCancel.Location = new System.Drawing.Point(740, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 28);
-            this.btnCancel.TabIndex = 3;
+            this.btnCancel.TabIndex = 344;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -307,7 +308,7 @@
             this.guna2Panel2.Controls.Add(this.label14);
             this.guna2Panel2.Controls.Add(this.txtTermDuration);
             this.guna2Panel2.Controls.Add(this.label13);
-            this.guna2Panel2.Controls.Add(this.txtintereat);
+            this.guna2Panel2.Controls.Add(this.txtinterest);
             this.guna2Panel2.Controls.Add(this.label11);
             this.guna2Panel2.Controls.Add(this.label10);
             this.guna2Panel2.Controls.Add(this.txtCurrentBal);
@@ -376,7 +377,7 @@
             // 
             // cmbfees
             // 
-            this.cmbfees.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbfees.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbfees.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbfees.FormattingEnabled = true;
             this.cmbfees.ItemHeight = 16;
@@ -391,7 +392,7 @@
             // 
             // cmbLoanReceive
             // 
-            this.cmbLoanReceive.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbLoanReceive.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbLoanReceive.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbLoanReceive.FormattingEnabled = true;
             this.cmbLoanReceive.Items.AddRange(new object[] {
@@ -414,7 +415,7 @@
             // 
             // cmbCompanyName
             // 
-            this.cmbCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCompanyName.FormattingEnabled = true;
             this.cmbCompanyName.Location = new System.Drawing.Point(152, 129);
@@ -491,6 +492,7 @@
             this.txtTermDuration.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTermDuration.HoverState.Parent = this.txtTermDuration;
             this.txtTermDuration.Location = new System.Drawing.Point(542, 161);
+            this.txtTermDuration.MaxLength = 1000;
             this.txtTermDuration.Name = "txtTermDuration";
             this.txtTermDuration.PasswordChar = '\0';
             this.txtTermDuration.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -510,31 +512,32 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Term Duration :";
             // 
-            // txtintereat
+            // txtinterest
             // 
-            this.txtintereat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtintereat.DefaultText = "%";
-            this.txtintereat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtintereat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtintereat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtintereat.DisabledState.Parent = this.txtintereat;
-            this.txtintereat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtintereat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtintereat.FocusedState.Parent = this.txtintereat;
-            this.txtintereat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtintereat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtintereat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtintereat.HoverState.Parent = this.txtintereat;
-            this.txtintereat.Location = new System.Drawing.Point(152, 233);
-            this.txtintereat.Name = "txtintereat";
-            this.txtintereat.PasswordChar = '\0';
-            this.txtintereat.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtintereat.PlaceholderText = "";
-            this.txtintereat.SelectedText = "";
-            this.txtintereat.SelectionStart = 1;
-            this.txtintereat.ShadowDecoration.Parent = this.txtintereat;
-            this.txtintereat.Size = new System.Drawing.Size(200, 25);
-            this.txtintereat.TabIndex = 6;
+            this.txtinterest.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtinterest.DefaultText = "";
+            this.txtinterest.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtinterest.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtinterest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtinterest.DisabledState.Parent = this.txtinterest;
+            this.txtinterest.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtinterest.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtinterest.FocusedState.Parent = this.txtinterest;
+            this.txtinterest.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtinterest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtinterest.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtinterest.HoverState.Parent = this.txtinterest;
+            this.txtinterest.Location = new System.Drawing.Point(152, 233);
+            this.txtinterest.MaxLength = 20;
+            this.txtinterest.Name = "txtinterest";
+            this.txtinterest.PasswordChar = '\0';
+            this.txtinterest.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtinterest.PlaceholderText = "";
+            this.txtinterest.SelectedText = "";
+            this.txtinterest.ShadowDecoration.Parent = this.txtinterest;
+            this.txtinterest.Size = new System.Drawing.Size(200, 25);
+            this.txtinterest.TabIndex = 6;
+            this.txtinterest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtinterest_KeyPress);
             // 
             // label11
             // 
@@ -570,6 +573,7 @@
             this.txtCurrentBal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCurrentBal.HoverState.Parent = this.txtCurrentBal;
             this.txtCurrentBal.Location = new System.Drawing.Point(152, 161);
+            this.txtCurrentBal.MaxLength = 1000;
             this.txtCurrentBal.Name = "txtCurrentBal";
             this.txtCurrentBal.PasswordChar = '\0';
             this.txtCurrentBal.PlaceholderText = "";
@@ -648,6 +652,7 @@
             this.txtLenderBank.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLenderBank.HoverState.Parent = this.txtLenderBank;
             this.txtLenderBank.Location = new System.Drawing.Point(152, 266);
+            this.txtLenderBank.MaxLength = 50;
             this.txtLenderBank.Name = "txtLenderBank";
             this.txtLenderBank.PasswordChar = '\0';
             this.txtLenderBank.PlaceholderText = "";
@@ -664,7 +669,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 16);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Lender bank :";
+            this.label6.Text = "Lender Bank :";
             // 
             // LoanAccount
             // 
@@ -713,7 +718,7 @@
         private System.Windows.Forms.Label label14;
         private Guna.UI2.WinForms.Guna2TextBox txtTermDuration;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2TextBox txtintereat;
+        private Guna.UI2.WinForms.Guna2TextBox txtinterest;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtpdate;
         private System.Windows.Forms.ComboBox cmbCompanyName;

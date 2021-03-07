@@ -94,7 +94,7 @@ namespace sample
             cmbCompanyName.Text = "";
             txtCurrentBal.Text = "";
             cmbLoanReceive.Text = "";
-            txtintereat.Text = "";
+            txtinterest.Text = "";
             txtTermDuration.Text = "";
             txtProcessingFees.Text = "";
             cmbfees.Text = "";
@@ -128,7 +128,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@FirmName", cmbCompanyName.Text);
                     cmd.Parameters.AddWithValue("@CurrentBal", txtCurrentBal.Text);
                     cmd.Parameters.AddWithValue("@LoanReceive", cmbLoanReceive.Text);
-                    cmd.Parameters.AddWithValue("@Interest", txtintereat.Text);
+                    cmd.Parameters.AddWithValue("@Interest", txtinterest.Text);
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);
                     cmd.Parameters.AddWithValue("@ProcessingFees", txtProcessingFees.Text);
                     cmd.Parameters.AddWithValue("@PaidBy", cmbfees.Text);
@@ -155,7 +155,7 @@ namespace sample
             txtCurrentBal.Text= dgvDescription.SelectedRows[0].Cells["CurrentBal"].Value.ToString();
             dtpdate.Text= dgvDescription.SelectedRows[0].Cells["BalAsOf"].Value.ToString();
             cmbLoanReceive.Text = dgvDescription.SelectedRows[0].Cells["LoanReceive"].Value.ToString();
-            txtintereat.Text= dgvDescription.SelectedRows[0].Cells["Interest"].Value.ToString();        
+            txtinterest.Text= dgvDescription.SelectedRows[0].Cells["Interest"].Value.ToString();        
             txtTermDuration.Text= dgvDescription.SelectedRows[0].Cells["Duration"].Value.ToString();
             txtProcessingFees.Text= dgvDescription.SelectedRows[0].Cells["ProcessingFees"].Value.ToString();
             cmbfees.Text= dgvDescription.SelectedRows[0].Cells["PaidBy"].Value.ToString();
@@ -182,7 +182,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@FirmName", cmbCompanyName.Text);
                     cmd.Parameters.AddWithValue("@CurrentBal", txtCurrentBal.Text);
                     cmd.Parameters.AddWithValue("@LoanReceive", cmbLoanReceive.Text);
-                    cmd.Parameters.AddWithValue("@Interest", txtintereat.Text);
+                    cmd.Parameters.AddWithValue("@Interest", txtinterest.Text);
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);
                     cmd.Parameters.AddWithValue("@ProcessingFees", txtProcessingFees.Text);
                     cmd.Parameters.AddWithValue("@PaidBy", cmbfees.Text);
@@ -267,14 +267,15 @@ namespace sample
 
         private void txtAccountname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtAccountNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -303,23 +304,24 @@ namespace sample
 
         private void txtLenderBank_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtTermDuration_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
             {
-                e.Handled = true;
+                e.Handled = false;
             }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            else
             {
                 e.Handled = true;
             }
@@ -372,6 +374,18 @@ namespace sample
         private void dgvDescription_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtinterest_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

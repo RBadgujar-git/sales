@@ -218,15 +218,65 @@ namespace sample
         {
             
             fetchCampanyame();
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice", con);
-            DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(cmd);
-            SDA.Fill(ds, "temp");
-            dgvsaleInvoice.DataSource = ds;
-            dgvsaleInvoice.DataMember = "temp";
-            con.Close();
+            Bindadata();
+            //con.Open();
+            //SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice", con);
+            //DataSet ds = new DataSet();
+            //SqlDataAdapter SDA = new SqlDataAdapter(cmd);
+            //SDA.Fill(ds, "temp");
+            //dgvsaleInvoice.DataSource = ds;
+            //dgvsaleInvoice.DataMember = "temp";
+            //con.Close();
         }
+        private void Data()
+        {
+            float TA = 0, TD = 0, total = 0, TG = 0, qty = 0, rate = 0;
+            //dgvexpense.Rows.Add();
+            //row = dgvexpense.Rows.Count - 2;
+            ////dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
+            //dgvexpense.CurrentCell = dgvexpense[1, row];
+            //e.SuppressKeyPress = true;
+            for (int i = 0; i < dgvsaleInvoice.Rows.Count; i++)
+            {
+                TA += float.Parse(dgvsaleInvoice.Rows[i].Cells["Paid"].Value?.ToString());
+                txtPaid.Text = TA.ToString();
+                TD += float.Parse(dgvsaleInvoice.Rows[i].Cells["RemainingBal"].Value?.ToString());
+                txtUnpaid.Text = TD.ToString();
+
+                qty = float.Parse(txtPaid.Text.ToString());
+                rate = float.Parse(txtUnpaid.Text.ToString());
+                total = qty + rate;
+                txtTotal.Text = total.ToString();
+            }
+        }
+        private void Bindadata()
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            con.Close();
+            dgvsaleInvoice.AutoGenerateColumns = false;
+            dgvsaleInvoice.ColumnCount = 8;
+            dgvsaleInvoice.Columns[0].HeaderText = "Date";
+            dgvsaleInvoice.Columns[0].DataPropertyName = "InvoiceDate";
+            dgvsaleInvoice.Columns[1].HeaderText = " Invoice No";
+            dgvsaleInvoice.Columns[1].DataPropertyName = "InvoiceID";
+            dgvsaleInvoice.Columns[2].HeaderText = "Party Name";
+            dgvsaleInvoice.Columns[2].DataPropertyName = "PartyName";
+            dgvsaleInvoice.Columns[3].HeaderText = " PaymentType";
+            dgvsaleInvoice.Columns[3].DataPropertyName = "PaymentType";
+            dgvsaleInvoice.Columns[4].HeaderText = "Total";
+            dgvsaleInvoice.Columns[4].DataPropertyName = "Total";
+            dgvsaleInvoice.Columns[5].HeaderText = " Received";
+            dgvsaleInvoice.Columns[5].DataPropertyName = "Received";
+            dgvsaleInvoice.Columns[6].HeaderText = "Remaining Bal";
+            dgvsaleInvoice.Columns[6].DataPropertyName = "RemainingBal";
+            dgvsaleInvoice.Columns[7].HeaderText = " Status";
+            dgvsaleInvoice.Columns[7].DataPropertyName = "Status";
+            dgvsaleInvoice.DataSource = dt;
+        }//BillDate,BillNo,PartyName,PaymentType,Total,Paid,Rema
 
         private void dtpTodate_ValueChanged_1(object sender, EventArgs e)
         {

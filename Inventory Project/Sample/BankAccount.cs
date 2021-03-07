@@ -294,14 +294,15 @@ namespace sample
 
         private void txtaccountname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtaccountno_KeyPress(object sender, KeyPressEventArgs e)
@@ -340,9 +341,9 @@ namespace sample
 
         }
 
-        private void dgvbankaccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtbankname_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

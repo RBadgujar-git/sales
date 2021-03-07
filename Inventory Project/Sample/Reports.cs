@@ -298,14 +298,14 @@ namespace sample
 
         private void guna2Button27_Click(object sender, EventArgs e)
         {
-            SalePurchaseReportbyItemCategory BA = new SalePurchaseReportbyItemCategory();
-            // BA.TopLevel = false;
-          //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+          //  SalePurchaseReportbyItemCategory BA = new SalePurchaseReportbyItemCategory();
+          //  // BA.TopLevel = false;
+          ////  BA.AutoScroll = true;
+          //  this.Controls.Add(BA);
+          //  //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+          //  BA.Dock = DockStyle.Fill;
+          //  BA.Visible = true;
+          //  BA.BringToFront();
         }
 
         private void guna2Button28_Click(object sender, EventArgs e)

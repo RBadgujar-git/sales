@@ -41,5 +41,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void SalePurchaseReportbyItemCategory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

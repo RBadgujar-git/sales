@@ -61,6 +61,7 @@ namespace sample
                 dgvPaymentOut.Columns[4].DataPropertyName = "Discount";
                 dgvPaymentOut.Columns[5].HeaderText = "Total";
                 dgvPaymentOut.Columns[5].DataPropertyName = "Total";
+                
             }
             catch (Exception ex)
             {
@@ -100,6 +101,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
