@@ -371,7 +371,7 @@
             this.dgvbankaccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvbankaccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvbankaccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvbankaccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankaccount_CellContentClick);
+            //this.dgvbankaccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankaccount_CellContentClick);
             this.dgvbankaccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankaccount_CellDoubleClick);
             // 
             // guna2Panel2

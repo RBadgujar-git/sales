@@ -257,7 +257,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 24);
             this.comboBox1.TabIndex = 126;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+//            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // cmbpartyname1
             // 
@@ -268,7 +268,7 @@
             this.cmbpartyname1.Name = "cmbpartyname1";
             this.cmbpartyname1.Size = new System.Drawing.Size(140, 24);
             this.cmbpartyname1.TabIndex = 125;
-            this.cmbpartyname1.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname1_SelectedIndexChanged);
+      //      this.cmbpartyname1.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname1_SelectedIndexChanged);
             // 
             // cmbPaymentType
             // 

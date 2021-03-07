@@ -93,7 +93,7 @@
             this.btnupdate.Location = new System.Drawing.Point(467, 246);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(103, 42);
-            this.btnupdate.TabIndex = 3;
+            this.btnupdate.TabIndex = 11;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
@@ -107,7 +107,7 @@
             this.btnDelete.Location = new System.Drawing.Point(590, 244);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 42);
-            this.btnDelete.TabIndex = 1;
+            this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
@@ -121,7 +121,7 @@
             this.btnsave.Location = new System.Drawing.Point(354, 246);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(102, 42);
-            this.btnsave.TabIndex = 0;
+            this.btnsave.TabIndex = 10;
             this.btnsave.Text = "Save ";
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
@@ -242,7 +242,7 @@
             this.Clear.Location = new System.Drawing.Point(700, 245);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(106, 42);
-            this.Clear.TabIndex = 59;
+            this.Clear.TabIndex = 13;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -262,7 +262,7 @@
             // 
             // cmbItemCategory
             // 
-            this.cmbItemCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbItemCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbItemCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbItemCategory.FormattingEnabled = true;
             this.cmbItemCategory.Location = new System.Drawing.Point(103, 250);
@@ -364,11 +364,13 @@
             // picturebox
             // 
             this.picturebox.BackColor = System.Drawing.SystemColors.Menu;
+            this.picturebox.Image = global::sample.Properties.Resources.No_Image_Available;
             this.picturebox.Location = new System.Drawing.Point(644, 96);
             this.picturebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picturebox.Name = "picturebox";
             this.picturebox.ShadowDecoration.Parent = this.picturebox;
             this.picturebox.Size = new System.Drawing.Size(153, 109);
+            this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturebox.TabIndex = 53;
             this.picturebox.TabStop = false;
             this.picturebox.Click += new System.EventHandler(this.picturebox_Click);
@@ -515,6 +517,7 @@
             this.txtItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemName.HoverState.Parent = this.txtItemName;
             this.txtItemName.Location = new System.Drawing.Point(103, 50);
+            this.txtItemName.MaxLength = 100;
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.PasswordChar = '\0';
             this.txtItemName.PlaceholderText = "";
@@ -637,7 +640,7 @@
             this.btnCancel.Location = new System.Drawing.Point(768, 1);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(29, 26);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 56;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
