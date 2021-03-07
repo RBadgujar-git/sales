@@ -42,6 +42,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@ID", 0);
             cmd.Parameters.AddWithValue("@ReferralCode", txtReferralcode.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvReferral.DataSource = dtable;
@@ -67,6 +69,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Parameters.AddWithValue("@ReferralCode", txtReferralcode.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -145,6 +149,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Action", "Update");
                     cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Parameters.AddWithValue("@ReferralCode", txtReferralcode.Text);
+
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -237,6 +242,11 @@ namespace sample
         private void btnclear_Click(object sender, EventArgs e)
         {
             cleardata();
+        }
+
+        private void dgvReferral_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

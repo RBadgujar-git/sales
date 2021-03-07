@@ -38,6 +38,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@ID", id);
             cmd.Parameters.AddWithValue("@OtherIncome", txtOtherIncome.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dt);
             dgvcategory.DataSource = dt;
@@ -66,6 +67,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Action", "Insert");
                 cmd.Parameters.AddWithValue("@ID", id);
                 cmd.Parameters.AddWithValue("@OtherIncome", txtOtherIncome.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Insert data Successfully");
                 

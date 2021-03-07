@@ -393,9 +393,6 @@ D:\workspace\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.C
 D:\workspace\Inventory Project\sample\obj\Debug\sample.exe
 D:\workspace\Inventory Project\sample\obj\Debug\sample.pdb
 D:\workspace\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
-D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe.config
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
 C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
@@ -673,6 +670,7 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\G
 C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
 C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.pdb
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
@@ -710,6 +708,7 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccount.resou
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
@@ -807,203 +806,5 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TransactionSettin
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Data.v20.1.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Utils.v20.1.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.XtraEditors.v20.1.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\DevExpress.Printing.v20.1.Core.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.pdb
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Guna.UI2.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Data.v20.1.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Utils.v20.1.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.XtraEditors.v20.1.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Printing.v20.1.Core.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.pdb
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AddMore.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AllParties.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.backup.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Category.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DayBook.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Expenses.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Feedback.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.login.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Reports.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.restore.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Setting.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Settings.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
-C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb

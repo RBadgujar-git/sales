@@ -38,7 +38,7 @@ namespace sample
         {
             if (cmbPartyName.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster Company_ID='"+NewCompany.company_id+"' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -114,6 +114,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
                     cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
                     cmd.Parameters.Add("@image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -397,6 +399,11 @@ namespace sample
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvPaymentIn_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
