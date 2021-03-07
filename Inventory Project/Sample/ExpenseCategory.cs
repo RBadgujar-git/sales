@@ -31,7 +31,7 @@ namespace sample
         public void Binddata()
         {
 
-            string selectquery = string.Format("select * from tbl_UnitMaster ");
+            string selectquery = string.Format("select * from tbl_UnitMaster where Company_ID='"+NewCompany.company_id+"'");
             DataSet ds = new DataSet();
 
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
@@ -56,6 +56,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@CategoryID", 0);
             cmd.Parameters.AddWithValue("@CategoryName", txtaddcategory.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
 
             sdasql.Fill(dtable);
@@ -84,6 +85,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@CategoryID", id);
                     cmd.Parameters.AddWithValue("@CategoryName", txtaddcategory.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -258,6 +260,11 @@ namespace sample
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvExpenseCaategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

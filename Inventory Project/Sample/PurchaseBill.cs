@@ -60,6 +60,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value?.ToString());
                 cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                 cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                 cmd.Parameters.AddWithValue("@Action", "Select");
                // con.Close();
 
@@ -74,7 +76,7 @@ namespace sample
         {
             if (cmbpartyname.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -126,7 +128,7 @@ namespace sample
                     con.Open();
                 }
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and  Company_ID='" + NewCompany.company_id + "'GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read()) {
@@ -152,27 +154,30 @@ namespace sample
 
         public void cal_ItemTotal()
         {
-            float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
+            if (txtOty.Text != "")
+            {
+                float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
 
-            qty = float.Parse(txtOty.Text.ToString());
-            freeqty = float.Parse(txtFreeQty.Text.ToString());
-            rate = float.Parse(txtMRP.Text.ToString());
-            //  sub_total = float.Parse(txtsub_total.Text.ToString());
-            dis = float.Parse(txtDis.Text.ToString());
-            gst = float.Parse(txtTax1.Text.ToString());
+                qty = float.Parse(txtOty.Text.ToString());
+                freeqty = float.Parse(txtFreeQty.Text.ToString());
+                rate = float.Parse(txtMRP.Text.ToString());
+                //  sub_total = float.Parse(txtsub_total.Text.ToString());
+                dis = float.Parse(txtDis.Text.ToString());
+                gst = float.Parse(txtTax1.Text.ToString());
 
-            sub_total = (qty + freeqty) * rate;
-            //txtsub_total.Text = sub_total.ToString();
+                sub_total = (qty + freeqty) * rate;
+                //txtsub_total.Text = sub_total.ToString();
 
-            dis_amt = sub_total * dis / 100;
-            txtDisAmt.Text = dis_amt.ToString();
+                dis_amt = sub_total * dis / 100;
+                txtDisAmt.Text = dis_amt.ToString();
 
-            gst_amt = sub_total * gst / 100;
-            txtTaxAMount1.Text = gst_amt.ToString();
+                gst_amt = sub_total * gst / 100;
+                txtTaxAMount1.Text = gst_amt.ToString();
 
-            total = (sub_total + gst_amt) - dis_amt;
-            txtItemTotal.Text = total.ToString();
-            txtsubtotal.Text= total.ToString();
+                total = (sub_total + gst_amt) - dis_amt;
+                txtItemTotal.Text = total.ToString();
+                txtsubtotal.Text = total.ToString();
+            }
         }
 
         private void txtDis_TextChanged(object sender, EventArgs e)
@@ -319,6 +324,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -393,7 +399,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
             
                 //DataTable dtable = new DataTable();
@@ -446,6 +452,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
                 cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", guna2TextBox1.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
                 cleardata();
@@ -477,7 +485,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);             
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -534,7 +542,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseBillInner where ID='{0}'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseBillInner where ID='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -791,7 +799,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and  Company_ID='" + NewCompany.company_id + "' GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -832,7 +840,7 @@ namespace sample
             {
                 con.Open();
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and  Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -864,7 +872,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -890,7 +898,7 @@ namespace sample
                 //    con.Open();
                 //}
                 con.Close();
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", comboBox1.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}' and  Company_ID='" + NewCompany.company_id + "'group by ItemName", comboBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");

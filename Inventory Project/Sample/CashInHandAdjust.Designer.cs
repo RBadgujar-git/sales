@@ -170,7 +170,7 @@
             this.txtCashadjustment.AutoCompleteCustomSource.AddRange(new string[] {
             "Add Cash",
             "Reduce Cash"});
-            this.txtCashadjustment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtCashadjustment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtCashadjustment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtCashadjustment.FormattingEnabled = true;
             this.txtCashadjustment.Items.AddRange(new object[] {
@@ -211,6 +211,7 @@
             this.txtenterAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtenterAmount.HoverState.Parent = this.txtenterAmount;
             this.txtenterAmount.Location = new System.Drawing.Point(331, 40);
+            this.txtenterAmount.MaxLength = 1000;
             this.txtenterAmount.Name = "txtenterAmount";
             this.txtenterAmount.PasswordChar = '\0';
             this.txtenterAmount.PlaceholderText = "";
@@ -338,6 +339,7 @@
             this.dgvCashAdjustment.ThemeStyle.RowsStyle.Height = 22;
             this.dgvCashAdjustment.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCashAdjustment.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvCashAdjustment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashAdjustment_CellContentClick);
             this.dgvCashAdjustment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashAdjustment_CellDoubleClick);
             // 
             // CashInHandAdjust

@@ -45,5 +45,10 @@ namespace sample
         {
 
         }
+
+        private void unitHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -780,6 +780,7 @@
             this.dgvParty.ThemeStyle.RowsStyle.Height = 22;
             this.dgvParty.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvParty.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvParty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellContentClick);
             this.dgvParty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellDoubleClick);
             // 
             // PartyMaster1

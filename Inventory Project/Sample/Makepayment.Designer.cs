@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Makepayment));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -88,6 +88,7 @@
             this.txtPrincipleAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrincipleAmount.HoverState.Parent = this.txtPrincipleAmount;
             this.txtPrincipleAmount.Location = new System.Drawing.Point(356, 82);
+            this.txtPrincipleAmount.MaxLength = 1000;
             this.txtPrincipleAmount.Name = "txtPrincipleAmount";
             this.txtPrincipleAmount.PasswordChar = '\0';
             this.txtPrincipleAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -96,7 +97,7 @@
             this.txtPrincipleAmount.SelectionStart = 1;
             this.txtPrincipleAmount.ShadowDecoration.Parent = this.txtPrincipleAmount;
             this.txtPrincipleAmount.Size = new System.Drawing.Size(200, 30);
-            this.txtPrincipleAmount.TabIndex = 1;
+            this.txtPrincipleAmount.TabIndex = 2;
             this.txtPrincipleAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPrincipleAmount.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.txtPrincipleAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrincipleAmount_KeyPress);
@@ -117,6 +118,7 @@
             this.txtinterestAmout.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtinterestAmout.HoverState.Parent = this.txtinterestAmout;
             this.txtinterestAmout.Location = new System.Drawing.Point(356, 120);
+            this.txtinterestAmout.MaxLength = 1000;
             this.txtinterestAmout.Name = "txtinterestAmout";
             this.txtinterestAmout.PasswordChar = '\0';
             this.txtinterestAmout.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -125,7 +127,7 @@
             this.txtinterestAmout.SelectionStart = 1;
             this.txtinterestAmout.ShadowDecoration.Parent = this.txtinterestAmout;
             this.txtinterestAmout.Size = new System.Drawing.Size(200, 30);
-            this.txtinterestAmout.TabIndex = 2;
+            this.txtinterestAmout.TabIndex = 3;
             this.txtinterestAmout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtinterestAmout.TextChanged += new System.EventHandler(this.txtinterestAmout_TextChanged);
             this.txtinterestAmout.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtinterestAmout_KeyPress);
@@ -174,6 +176,7 @@
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.HoverState.Parent = this.txtTotalAmount;
             this.txtTotalAmount.Location = new System.Drawing.Point(356, 190);
+            this.txtTotalAmount.MaxLength = 1000;
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
             this.txtTotalAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -182,7 +185,7 @@
             this.txtTotalAmount.SelectionStart = 1;
             this.txtTotalAmount.ShadowDecoration.Parent = this.txtTotalAmount;
             this.txtTotalAmount.Size = new System.Drawing.Size(200, 30);
-            this.txtTotalAmount.TabIndex = 4;
+            this.txtTotalAmount.TabIndex = 5;
             this.txtTotalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotalAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalAmount_KeyPress);
             // 
@@ -197,30 +200,30 @@
             // 
             // dgvMakePayment
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvMakePayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvMakePayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvMakePayment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMakePayment.BackgroundColor = System.Drawing.Color.White;
             this.dgvMakePayment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMakePayment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvMakePayment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMakePayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMakePayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvMakePayment.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMakePayment.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMakePayment.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvMakePayment.EnableHeadersVisualStyles = false;
             this.dgvMakePayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvMakePayment.Location = new System.Drawing.Point(86, 310);
@@ -261,7 +264,7 @@
             this.btnSave.Location = new System.Drawing.Point(336, 262);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -278,7 +281,7 @@
             this.btncancel.Location = new System.Drawing.Point(741, 7);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(30, 27);
-            this.btncancel.TabIndex = 15;
+            this.btncancel.TabIndex = 156;
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
@@ -289,11 +292,11 @@
             this.dtpDate.Location = new System.Drawing.Point(356, 159);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 23);
-            this.dtpDate.TabIndex = 3;
+            this.dtpDate.TabIndex = 4;
             // 
             // cmbPaidFrom
             // 
-            this.cmbPaidFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPaidFrom.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbPaidFrom.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPaidFrom.FormattingEnabled = true;
             this.cmbPaidFrom.Items.AddRange(new object[] {
@@ -303,7 +306,7 @@
             this.cmbPaidFrom.Location = new System.Drawing.Point(356, 229);
             this.cmbPaidFrom.Name = "cmbPaidFrom";
             this.cmbPaidFrom.Size = new System.Drawing.Size(200, 24);
-            this.cmbPaidFrom.TabIndex = 5;
+            this.cmbPaidFrom.TabIndex = 6;
             // 
             // btnclear
             // 
@@ -313,7 +316,7 @@
             this.btnclear.Location = new System.Drawing.Point(622, 262);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(90, 42);
-            this.btnclear.TabIndex = 9;
+            this.btnclear.TabIndex = 10;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
             this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
@@ -326,7 +329,7 @@
             this.btnDelete.Location = new System.Drawing.Point(526, 262);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -339,7 +342,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(430, 262);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -352,7 +355,7 @@
             this.cmbCompanyName.Location = new System.Drawing.Point(356, 42);
             this.cmbCompanyName.Name = "cmbCompanyName";
             this.cmbCompanyName.Size = new System.Drawing.Size(200, 24);
-            this.cmbCompanyName.TabIndex = 154;
+            this.cmbCompanyName.TabIndex = 1;
             // 
             // label7
             // 
