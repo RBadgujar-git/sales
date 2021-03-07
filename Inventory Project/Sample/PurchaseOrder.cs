@@ -112,7 +112,7 @@ namespace sample
         {
             if (txtDis.Text != "" && txtOty.Text != "" && txtFreeQty.Text !="")
             { 
-                    
+                 
                 float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
 
                 qty = float.Parse(txtOty.Text.ToString());
@@ -121,7 +121,6 @@ namespace sample
                 //  sub_total = float.Parse(txtsub_total.Text.ToString());
                 dis = float.Parse(txtDis.Text.ToString());
                 gst = float.Parse(txtTax1.Text.ToString());
-
                 sub_total = (qty + freeqty) * rate;
                 //txtsub_total.Text = sub_total.ToString();
 

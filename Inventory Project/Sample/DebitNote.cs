@@ -863,7 +863,7 @@ namespace sample
                     con.Open();
                 }
 
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName And DeleteData='1'", cmbCategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");
@@ -891,7 +891,7 @@ namespace sample
             {
                 con.Open();
 
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo And DeleteData='1'", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -967,6 +967,16 @@ namespace sample
         }
 
         private void txtcgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbpartyname1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

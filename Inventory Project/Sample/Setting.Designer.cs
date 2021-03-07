@@ -319,6 +319,7 @@
             this.chkEnablePassword.UncheckedState.BorderRadius = 0;
             this.chkEnablePassword.UncheckedState.BorderThickness = 0;
             this.chkEnablePassword.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEnablePassword.CheckedChanged += new System.EventHandler(this.chkEnablePassword_CheckedChanged);
             // 
             // guna2Button3
             // 
@@ -334,6 +335,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(124, 29);
             this.guna2Button3.TabIndex = 227;
             this.guna2Button3.Text = "Change Password";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // label3
             // 

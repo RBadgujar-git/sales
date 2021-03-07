@@ -36,5 +36,15 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void chkEnablePassword_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

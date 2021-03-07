@@ -86,7 +86,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_PartyMaster", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_PartyMaster where  DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -142,6 +142,11 @@ namespace sample
             finally {
                 con.Close();
             }
+        }
+
+        private void dgvAllparties_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
