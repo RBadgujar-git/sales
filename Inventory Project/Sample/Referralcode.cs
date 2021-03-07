@@ -112,9 +112,16 @@ namespace sample
 
         private void btnDone_Click_2(object sender, EventArgs e)
         {
-            Insert1();
-            fetchdtails();
-            cleardata();
+            if (txtReferralcode.Text == "")
+            {
+                MessageBox.Show("Please Insert Contact No");
+           }
+            else
+            {
+                Insert1();
+                fetchdtails();
+                cleardata();
+            }
         }
 
         private void dgvReferral_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -161,9 +168,16 @@ namespace sample
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdtails();
-            cleardata();
+            if (txtReferralcode.Text == "")
+            {
+                MessageBox.Show("Please Select Record");
+            }
+            else
+            {
+                Update1();
+                fetchdtails();
+                cleardata();
+            }
         }
 
         public void Delete()
@@ -207,9 +221,17 @@ namespace sample
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdtails();
-            cleardata();
+            if (txtReferralcode.Text == "")
+            {
+                MessageBox.Show("Please Select Record");
+            }
+            else
+            {
+                Delete();
+                fetchdtails();
+                cleardata();
+            }
+
         }
 
         private void btnclear_Click(object sender, EventArgs e)

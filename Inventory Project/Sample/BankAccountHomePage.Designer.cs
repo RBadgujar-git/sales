@@ -183,6 +183,7 @@
             this.dgvBankAccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvBankAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvBankAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvBankAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBankAccount_CellContentClick);
             this.dgvBankAccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBankAccount_CellDoubleClick);
             // 
             // Column1

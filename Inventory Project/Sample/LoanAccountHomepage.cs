@@ -66,7 +66,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_LoanBank", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_LoanBank where Company_ID='"+NewCompany.company_id+"'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -138,6 +138,16 @@ namespace sample
             da.Fill(ds, "temp");
             dgvLoanAccount.DataSource = ds;
             dgvLoanAccount.DataMember = "temp";
+        }
+
+        private void dgvbankAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvLoanAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

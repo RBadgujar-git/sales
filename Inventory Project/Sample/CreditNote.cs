@@ -385,9 +385,7 @@ namespace sample
                         Credit.Text = dr["TableName"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
                         cmbCategory.Text = dr["ItemCategory"].ToString();
-                        textBox1.Text = dr["Barcode"].ToString();
-                       
-                        
+                        textBox1.Text = dr["Barcode"].ToString();                                           
                         id = dr["ReturnNo"].ToString();
                     }
                 }

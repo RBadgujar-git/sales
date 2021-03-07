@@ -59,8 +59,10 @@ namespace sample
         }
         private void fetchCategory()
         {
-            if (cmbCategory.Text != "System.Data.DataRowView") {
-                try {
+            if (cmbCategory.Text != "System.Data.DataRowView")
+            {
+                try
+                {
                     string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -123,6 +125,7 @@ namespace sample
             
             //bind_sale_details();
             cmbpartyname1.Visible = false;
+            comboBox1.Visible = false;
             txtTotal.Enabled = false;
             txtBallaance.Enabled = false;
             txtsubtotal.Enabled = false;
@@ -141,7 +144,7 @@ namespace sample
         }
         public void cal_ItemTotal()
         {
-            if (txtOty.Text !="" && txtFreeQty.Text != "" && txtFreeQty.Text != "" && txtMRP.Text != "" && txtDis.Text != "" && txtTax1.Text != "")
+            if (txtOty.Text !="" && txtFreeQty.Text != "" && txtFreeQty.Text != "" && txtMRP.Text != "" && txtDis.Text != "" && txtDisAmt.Text != "" && txtTax1.Text != "")
             {
                 float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
 
@@ -294,7 +297,15 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Debit.Text);
                 cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
-                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
+                }
+                //cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
             }
@@ -642,18 +653,17 @@ namespace sample
         private void bind_sale_details()
         {
             try {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 string str = string.Format("SELECT * FROM tbl_DebitNote where ReturnNo='{0}'", txtReturnNo.Text);
-                SqlCommand cmd = new SqlCommand(str, con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                SqlCommand cmd = new SqlCommand(str, con);               
                 SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows) {
-
-                    while (dr.Read()) {
-
-
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
                         txtInvoiceNo.Text = dr["InvoiceNo"].ToString();
                         cmbpartyname1.Text = dr["PartyName"].ToString();
                         txtbillingadd.Text = dr["BillingName"].ToString();
@@ -686,21 +696,22 @@ namespace sample
                         Debit.Text = dr["TableName"].ToString();
                         txtcon.Text = dr["ContactNo"].ToString();
                         cmbbarcode.Text = dr["Barcode"].ToString();
-                        cmbCategory.Text = dr["ItemCategory"].ToString();
+                        comboBox1.Text = dr["ItemCategory"].ToString();
                         id = dr["ReturnNo"].ToString();
-                        dr.Close();
+                       
                     }
                 }
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
-
+                dr.Close();
 
                 string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_DebitNoteInner where ID='{0}'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows) {
                     int i = 0;
-                    while (dr1.Read()) {
+                    while (dr1.Read())
+                    {
                         dgvInnerDebiteNote.Rows.Add();
                         dgvInnerDebiteNote.Rows[i].Cells["sr_no"].Value = i + 1;
                         dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
@@ -714,8 +725,6 @@ namespace sample
                         dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
-
-
                         i++;
                     }
                     dr1.Close();
@@ -760,6 +769,8 @@ namespace sample
             {
                 cmbpartyname.Visible = false;
                 cmbpartyname1.Visible = true;
+                cmbCategory.Visible = false;
+                comboBox1.Visible = true;
                 bind_sale_details();
             }
         }
@@ -793,7 +804,8 @@ namespace sample
         }
         public void cal_Total()
         {
-            try {
+  if(cmbtax.Text != "" && txtTaxAmount.Text != "")
+            { 
                 float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
 
 
@@ -815,9 +827,7 @@ namespace sample
                 total = (TA + gst_amt) - dis_amt;
                 txtTotal.Text = total.ToString();
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
@@ -859,7 +869,10 @@ namespace sample
         {
             try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
                 string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName", cmbCategory.Text);
                 DataSet ds = new DataSet();
@@ -877,10 +890,10 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                con.Close();
-            }
+            //finally
+            //{
+            //    con.Close();
+            //}
         }
 
         private void cmbpartyname_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -960,6 +973,11 @@ namespace sample
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
         {
 
         }

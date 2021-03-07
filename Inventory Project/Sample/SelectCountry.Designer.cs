@@ -110,6 +110,7 @@
             this.btnSave.Size = new System.Drawing.Size(140, 45);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // SelectCountry
             // 

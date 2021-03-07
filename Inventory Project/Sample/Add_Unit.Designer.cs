@@ -209,6 +209,7 @@
             this.dgvAddunit.ThemeStyle.RowsStyle.Height = 22;
             this.dgvAddunit.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAddunit.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvAddunit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddunit_CellContentClick);
             this.dgvAddunit.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddunit_CellDoubleClick);
             // 
             // label2

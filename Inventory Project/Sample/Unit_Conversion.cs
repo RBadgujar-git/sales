@@ -59,17 +59,34 @@ namespace sample
         {
             //PrincipleAmount,InterestAmount,Date,	TotalAmount,PaidFrom
 
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("tbl_UnitConversionSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Insert");
-            cmd.Parameters.AddWithValue("@UnitConversionID", id);
-            cmd.Parameters.AddWithValue("@BasicUnit", txtBasicUnit.Text);
-            cmd.Parameters.AddWithValue("@SecondaryUnit", txtSecondaryunit.Text);
-            cmd.Parameters.AddWithValue("@Rate", txtRate.Text);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Insert data Successfully");
+
+            if (txtBasicUnit.Text == "")
+            {
+                MessageBox.Show("Please Insert The Unit ");
+            }
+            else if (txtSecondaryunit.Text == "")
+            {
+
+                MessageBox.Show("Please Insert Secondary Unit !");
+            }
+               else if (txtRate.Text == "")
+            {
+                MessageBox.Show("Please Insert Rate !");
+            }
+            else
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("tbl_UnitConversionSelect", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Action", "Insert");
+                cmd.Parameters.AddWithValue("@UnitConversionID", id);
+                cmd.Parameters.AddWithValue("@BasicUnit", txtBasicUnit.Text);
+                cmd.Parameters.AddWithValue("@SecondaryUnit", txtSecondaryunit.Text);
+                cmd.Parameters.AddWithValue("@Rate", txtRate.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Insert data Successfully");
+            }
 
 
         }

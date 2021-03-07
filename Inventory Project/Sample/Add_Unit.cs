@@ -51,7 +51,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@UnitID", 0);
             cmd.Parameters.AddWithValue("@UnitName", "");
-            cmd.Parameters.AddWithValue("@SubUnitName", "");         
+            cmd.Parameters.AddWithValue("@SubUnitName", "");
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
             sqlSda.Fill(dtable);
             dgvAddunit.DataSource = dtable;
@@ -79,6 +80,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@UnitID", id);
                     cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
                     cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -130,23 +132,36 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dtable = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@UnitID", id);
-                    cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
-                    cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
-                  
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+
+
+                    if (txtSubunit.Text == "")
                     {
-                        MessageBox.Show("Update data Successfully");
-                        cleardata();
+                        MessageBox.Show("Please Select Record");
+                    }
+                    else if (txtAddUnit.Text == "")
+                    {
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        DataTable dtable = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+                        cmd.Parameters.AddWithValue("@UnitID", id);
+                        cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
+                        cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Update data Successfully");
+                            cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -177,21 +192,32 @@ namespace sample
                     {
                         con.Open();
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@UnitID", id);
-
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    if (txtSubunit.Text == "")
                     {
-                        MessageBox.Show("Delete data Successfully");
-                        cleardata();
+                        MessageBox.Show("Please Select Record");
+                    }
+                    else if (txtAddUnit.Text == "")
+                    {
+                        MessageBox.Show("Please Select Record");
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Record");
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_UnitMasterUnit", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@UnitID", id);
+
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -211,6 +237,31 @@ namespace sample
             Delete();
             fetchdetails();
             cleardata();
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtAddUnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtSubunit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void dgvAddunit_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -48,7 +48,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@InterestAmount", "");
             cmd.Parameters.AddWithValue("@Date", "");
             cmd.Parameters.AddWithValue("@TotalAmount", "");
-            cmd.Parameters.AddWithValue("@PaidFrom", "");    
+            cmd.Parameters.AddWithValue("@PaidFrom", "");
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             cmd.Parameters.AddWithValue("@Action", "Select");
             //AccountName
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
@@ -81,6 +82,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Date", now1.ToShortDateString());
                 cmd.Parameters.AddWithValue("@TotalAmount", txtTotalAmount.Text);
                 cmd.Parameters.AddWithValue("@PaidFrom", cmbPaidFrom.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Insert data Successfully");
                 
