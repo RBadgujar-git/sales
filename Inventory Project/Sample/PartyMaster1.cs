@@ -30,7 +30,7 @@ namespace sample
         public void Binddata()
         {
             con.Open();
-            string selectquery = string.Format("Select * from tbl_PartyMaste");
+            string selectquery = string.Format("Select * from tbl_PartyMaste where CompanyID='" + NewCompany.company_id + "'");
             DataSet ds = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
             sda.Fill(ds, "temp");
@@ -75,6 +75,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
             cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
             cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
             cmd.Parameters.AddWithValue("@Action", "Select");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
@@ -110,6 +112,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
                 cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
                 cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                 int num = cmd.ExecuteNonQuery();
                 if (num > 0)
                 {
@@ -391,7 +395,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup group by AddPartyGroup");
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where CompanyID='"+NewCompany.company_id+"'group by AddPartyGroup");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -421,6 +425,11 @@ namespace sample
         private void txtState_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void dgvParty_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
