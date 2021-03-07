@@ -26,5 +26,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void dgvSalepurchhase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

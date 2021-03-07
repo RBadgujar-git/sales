@@ -41,5 +41,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void btnprinnt_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

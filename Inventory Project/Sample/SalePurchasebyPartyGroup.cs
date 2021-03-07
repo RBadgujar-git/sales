@@ -21,5 +21,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void SalePurchasebyPartyGroup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

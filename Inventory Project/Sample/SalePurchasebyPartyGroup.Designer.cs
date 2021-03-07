@@ -272,6 +272,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalePurchasebyPartyGroup";
             this.Size = new System.Drawing.Size(982, 563);
+            this.Load += new System.EventHandler(this.SalePurchasebyPartyGroup_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalepurchaseReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
