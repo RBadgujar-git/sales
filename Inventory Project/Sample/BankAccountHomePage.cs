@@ -74,7 +74,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' And DeleteData='1'  ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();

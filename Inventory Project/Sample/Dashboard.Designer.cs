@@ -286,6 +286,7 @@
             this.cashAndBankToolStripMenuItem.Name = "cashAndBankToolStripMenuItem";
             this.cashAndBankToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.cashAndBankToolStripMenuItem.Text = "Cash and Bank";
+            this.cashAndBankToolStripMenuItem.Click += new System.EventHandler(this.cashAndBankToolStripMenuItem_Click);
             // 
             // cashInHandToolStripMenuItem
             // 
