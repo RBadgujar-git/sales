@@ -1271,20 +1271,8 @@ namespace sample
 
         private void barcodePrintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Barcodeprint br = new Barcodeprint();
-            RequestDemo PH= new RequestDemo();
-           /// PartyHomepage PH = new PartyHomepage();
-            //ex.TopLevel = false;
-            PH.AutoScroll = true;
-            this.Controls.Add(PH);
-            // PH.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            PH.Dock = DockStyle.Fill;
-            PH.BringToFront();
-        }
-
-        private void cashAndBankToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            Barcodeprint br = new Barcodeprint();
+            br.Show();
         }
     }
 }

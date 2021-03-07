@@ -971,5 +971,11 @@ namespace sample
         {
 
         }
+
+        private void btnCalculator_Click(object sender, EventArgs e)
+        {
+            Calculator cs = new Calculator();
+            cs.Show();
+        }
     }
 }
