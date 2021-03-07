@@ -462,33 +462,22 @@ namespace sample
                 MessageBox.Show("Party Refrence No Is Requueird !");
                 txtrefNo.Focus();
             }
-            else if (txtrefNo.Text == "")
-            {
-                MessageBox.Show("Party Refrence No Is Requueird !");
-                txtrefNo.Focus();
-            }
+           
             else if (cmbStatesupply.Text == "")
             {
-                MessageBox.Show("Party Refrence No Is Requueird !");
+                MessageBox.Show("Please Select State !");
 
             }
             else if (txtInvoiceNo.Text == "")
             {
-                MessageBox.Show("Party Refrence No Is Requueird !");
+                MessageBox.Show("Invoise No iS Requueird");
                 txtInvoiceNo.Focus();
             }
-            else if (cmbCategory.Text == "")
-            {
-                MessageBox.Show("Party Refrence No Is Requueird !");
-            }
+           
             else if (cmbPaymentType.Text == "")
             {
                 MessageBox.Show("Please Select Payment Type !");
-            }
-            else if (cmbPaymentType.Text == "")
-            {
-                MessageBox.Show("Please Select Payment Type !");
-            }
+            }          
             else if (cmbtax.Text == "")
             {
                 MessageBox.Show("Please Select Tax !");

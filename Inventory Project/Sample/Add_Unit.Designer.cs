@@ -132,7 +132,7 @@
             this.txtSubunit.ShadowDecoration.Parent = this.txtSubunit;
             this.txtSubunit.Size = new System.Drawing.Size(200, 30);
             this.txtSubunit.TabIndex = 2;
-            this.txtSubunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubunit_KeyPress);
+           // this.txtSubunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubunit_KeyPress);
             // 
             // label3
             // 
@@ -168,7 +168,7 @@
             this.txtAddUnit.ShadowDecoration.Parent = this.txtAddUnit;
             this.txtAddUnit.Size = new System.Drawing.Size(200, 30);
             this.txtAddUnit.TabIndex = 1;
-            this.txtAddUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddUnit_KeyPress);
+          //  this.txtAddUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddUnit_KeyPress);
             // 
             // btnSave
             // 

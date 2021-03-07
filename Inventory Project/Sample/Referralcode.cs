@@ -196,16 +196,10 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Action", "Delete");
                     cmd.Parameters.AddWithValue("@ID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
+                   
                         MessageBox.Show("Delete data Successfully");
                         cleardata();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please Select Record");
-                    }
+                    
                 }
                 catch (Exception ex)
                 {

@@ -152,27 +152,30 @@ namespace sample
 
         public void cal_ItemTotal()
         {
-            float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
+            if (txtOty.Text != "")
+            {
+                float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
 
-            qty = float.Parse(txtOty.Text.ToString());
-            freeqty = float.Parse(txtFreeQty.Text.ToString());
-            rate = float.Parse(txtMRP.Text.ToString());
-            //  sub_total = float.Parse(txtsub_total.Text.ToString());
-            dis = float.Parse(txtDis.Text.ToString());
-            gst = float.Parse(txtTax1.Text.ToString());
+                qty = float.Parse(txtOty.Text.ToString());
+                freeqty = float.Parse(txtFreeQty.Text.ToString());
+                rate = float.Parse(txtMRP.Text.ToString());
+                //  sub_total = float.Parse(txtsub_total.Text.ToString());
+                dis = float.Parse(txtDis.Text.ToString());
+                gst = float.Parse(txtTax1.Text.ToString());
 
-            sub_total = (qty + freeqty) * rate;
-            //txtsub_total.Text = sub_total.ToString();
+                sub_total = (qty + freeqty) * rate;
+                //txtsub_total.Text = sub_total.ToString();
 
-            dis_amt = sub_total * dis / 100;
-            txtDisAmt.Text = dis_amt.ToString();
+                dis_amt = sub_total * dis / 100;
+                txtDisAmt.Text = dis_amt.ToString();
 
-            gst_amt = sub_total * gst / 100;
-            txtTaxAMount1.Text = gst_amt.ToString();
+                gst_amt = sub_total * gst / 100;
+                txtTaxAMount1.Text = gst_amt.ToString();
 
-            total = (sub_total + gst_amt) - dis_amt;
-            txtItemTotal.Text = total.ToString();
-            txtsubtotal.Text= total.ToString();
+                total = (sub_total + gst_amt) - dis_amt;
+                txtItemTotal.Text = total.ToString();
+                txtsubtotal.Text = total.ToString();
+            }
         }
 
         private void txtDis_TextChanged(object sender, EventArgs e)

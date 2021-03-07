@@ -591,7 +591,6 @@ namespace sample
         public void cal_ItemTotal()
         {
             float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
-
             qty = float.Parse(txtOty.Text);
             freeqty = float.Parse(txtFreeQty.Text.ToString());
             rate = float.Parse(txtMRP.Text.ToString());
@@ -966,7 +965,7 @@ namespace sample
 
         private void TxtIGST_TextChanged(object sender, EventArgs e)
         {
-
+            gst_devide();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
