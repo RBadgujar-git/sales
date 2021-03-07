@@ -99,6 +99,7 @@
             this.dgvStockSummary.ThemeStyle.RowsStyle.Height = 22;
             this.dgvStockSummary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStockSummary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvStockSummary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockSummary_CellContentClick);
             // 
             // label3
             // 
@@ -200,7 +201,6 @@
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.ShadowDecoration.Parent = this.cmbCategory;
             this.cmbCategory.Size = new System.Drawing.Size(230, 36);
-            this.cmbCategory.StartIndex = 0;
             this.cmbCategory.TabIndex = 211;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.guna2ComboBox1_SelectedIndexChanged);
             // 

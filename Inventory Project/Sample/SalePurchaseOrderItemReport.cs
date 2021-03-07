@@ -72,6 +72,10 @@ namespace sample
         {
         }
 
+        private void dgvSalepurchhase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
         {
 

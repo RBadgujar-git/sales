@@ -88,5 +88,10 @@ namespace sample
            
             
         }
+
+        private void dgvStockSummary_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
