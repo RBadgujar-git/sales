@@ -172,7 +172,7 @@
             this.dgvExpenseCaategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpenseCaategory.EnableHeadersVisualStyles = false;
             this.dgvExpenseCaategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvExpenseCaategory.Location = new System.Drawing.Point(97, 208);
+            this.dgvExpenseCaategory.Location = new System.Drawing.Point(73, 243);
             this.dgvExpenseCaategory.Name = "dgvExpenseCaategory";
             this.dgvExpenseCaategory.RowHeadersVisible = false;
             this.dgvExpenseCaategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -200,6 +200,7 @@
             this.dgvExpenseCaategory.ThemeStyle.RowsStyle.Height = 22;
             this.dgvExpenseCaategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvExpenseCaategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvExpenseCaategory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenseCaategory_CellContentClick);
             this.dgvExpenseCaategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExpenseCaategory_CellDoubleClick);
             // 
             // label2
