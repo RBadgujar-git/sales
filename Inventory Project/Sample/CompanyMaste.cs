@@ -640,9 +640,10 @@ namespace sample
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void txtBankName_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Properties.Settings.Default["AdditinalFeild1"] = txtBankName.Text;
+            Properties.Settings.Default.Save();
         }
     }
 

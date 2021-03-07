@@ -603,6 +603,7 @@
             this.txtBankName.Name = "txtBankName";
             this.txtBankName.Size = new System.Drawing.Size(240, 24);
             this.txtBankName.TabIndex = 12;
+            this.txtBankName.SelectedIndexChanged += new System.EventHandler(this.txtBankName_SelectedIndexChanged);
             // 
             // txtIFSCcode
             // 

@@ -229,6 +229,7 @@
             this.dgvReferral.ThemeStyle.RowsStyle.Height = 22;
             this.dgvReferral.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvReferral.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvReferral.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReferral_CellContentClick);
             this.dgvReferral.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReferral_CellContentDoubleClick);
             // 
             // Referralcode

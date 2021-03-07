@@ -281,5 +281,10 @@ namespace sample
         {
             Cleardata();
         }
+
+        private void dgvCashAdjustment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

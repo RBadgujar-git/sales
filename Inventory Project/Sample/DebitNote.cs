@@ -227,6 +227,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -244,7 +245,7 @@ namespace sample
         {
             try {
                 con.Open();
-                string query = string.Format("insert into tbl_DebitNote(InvoiceNo,PONumber,PartyName, BillingName,  PODate, InvoiceDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Received, RemainingBal, ContactNo, Feild1, Feild2, Feild3, Status, TableName, Barcode,ItemCategory) Values (@InvoiceNo, @PONumber, @PartyName, @BillingName, @PODate, @InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,  @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal,@ContactNo, @Feild1, @Feild2, @Feild3,@Status, @TableName, @Barcode,@ItemCategory);SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_DebitNote(InvoiceNo,PONumber,PartyName, BillingName,  PODate, InvoiceDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Received, RemainingBal, ContactNo, Feild1, Feild2, Feild3, Status, TableName, Barcode,ItemCategory,Company_ID) Values (@InvoiceNo, @PONumber, @PartyName, @BillingName, @PODate, @InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,  @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal,@ContactNo, @Feild1, @Feild2, @Feild3,@Status, @TableName, @Barcode,@ItemCategory,@compid);SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 //DataTable dtable = new DataTable();
@@ -306,6 +307,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
                 }
                 //cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
             }
@@ -473,22 +476,33 @@ namespace sample
                 MessageBox.Show("Party Refrence No Is Requueird !");
                 txtrefNo.Focus();
             }
-           
+            else if (txtrefNo.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+                txtrefNo.Focus();
+            }
             else if (cmbStatesupply.Text == "")
             {
-                MessageBox.Show("Please Select State !");
+                MessageBox.Show("Party Refrence No Is Requueird !");
 
             }
             else if (txtInvoiceNo.Text == "")
             {
-                MessageBox.Show("Invoise No iS Requueird");
+                MessageBox.Show("Party Refrence No Is Requueird !");
                 txtInvoiceNo.Focus();
             }
-           
+            else if (cmbCategory.Text == "")
+            {
+                MessageBox.Show("Party Refrence No Is Requueird !");
+            }
             else if (cmbPaymentType.Text == "")
             {
                 MessageBox.Show("Please Select Payment Type !");
-            }          
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type !");
+            }
             else if (cmbtax.Text == "")
             {
                 MessageBox.Show("Please Select Tax !");
@@ -646,7 +660,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string str = string.Format("SELECT * FROM tbl_DebitNote where ReturnNo='{0}'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_DebitNote where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);               
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -694,7 +708,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
                 dr.Close();
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_DebitNoteInner where ID='{0}'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_DebitNoteInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows) {
@@ -863,7 +877,7 @@ namespace sample
                     con.Open();
                 }
 
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName And DeleteData='1'", cmbCategory.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}' and Company_ID='" + NewCompany.company_id + "' group by ItemName", cmbCategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");
@@ -891,7 +905,7 @@ namespace sample
             {
                 con.Open();
 
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo And DeleteData='1'", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and Company_ID='" + NewCompany.company_id + "' GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -922,7 +936,7 @@ namespace sample
                 con.Close();
                 con.Open();
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='"+NewCompany.company_id+"' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -967,16 +981,6 @@ namespace sample
         }
 
         private void txtcgst_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbpartyname1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

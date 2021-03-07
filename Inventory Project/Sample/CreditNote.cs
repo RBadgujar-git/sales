@@ -40,7 +40,7 @@ namespace sample
             if (cmbCategory.Text != "System.Data.DataRowView") {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -62,7 +62,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -88,7 +88,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -118,7 +118,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -144,7 +144,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and Company_ID='" + NewCompany.company_id + "' GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -347,7 +347,7 @@ namespace sample
                     con.Open();
                 }
                 // con.Open();
-                string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}'and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);             
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -391,7 +391,7 @@ namespace sample
                 }
                 dr.Close();
                 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ID='{0}'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                // dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -511,7 +511,7 @@ namespace sample
                     }
 
 
-                    string query = string.Format("insert into tbl_CreditNote1( PartyName ,InvoiceNo ,BillingName,PONumber,PODate,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3,ContactNo,TableName,Status,Barcode) Values (@PartyName,@InvoiceNo,  @BillingName, @PONumber, @PODate,@InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @ContactNo, @TableName, @Status,@Barcode); SELECT SCOPE_IDENTITY();");
+                    string query = string.Format("insert into tbl_CreditNote1( PartyName ,InvoiceNo ,BillingName,PONumber,PODate,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3,ContactNo,TableName,Status,Barcode,Company_ID) Values (@PartyName,@InvoiceNo,  @BillingName, @PONumber, @PODate,@InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @ContactNo, @TableName, @Status,@Barcode,@compid); SELECT SCOPE_IDENTITY();");
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     //DataTable dtable = new DataTable();
@@ -558,7 +558,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@TableName", Credit.Text);
                     cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                     cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
-                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);                  
+                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     id1 = cmd.ExecuteScalar();
                     MessageBox.Show("Sale Record Added");
                 }
@@ -602,6 +603,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerCreditNote.Rows[i].Cells["Discount"].Value?.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerCreditNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerCreditNote.Rows[i].Cells["Amount"].Value?.ToString());
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1)
@@ -786,7 +789,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}'group by ItemName and And DeleteData='1' ", cmbCategory.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}' and Company_ID='"+NewCompany.company_id+"' group by ItemName", cmbCategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");
@@ -841,6 +844,11 @@ namespace sample
         }
 
         private void Print_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

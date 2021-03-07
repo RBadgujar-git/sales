@@ -43,6 +43,8 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@PartyGroupID", 0);
             cmd.Parameters.AddWithValue("@AddPartyGroup", txtPartyGroupName.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvPartyGroup.DataSource = dtable;
@@ -68,6 +70,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@PartyGroupID", id);
                     cmd.Parameters.AddWithValue("@AddPartyGroup", txtPartyGroupName.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
