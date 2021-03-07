@@ -44,6 +44,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@CategoryID", 0);
             cmd.Parameters.AddWithValue("@CategoryName", txtCategory.Text);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvCategory.DataSource = dtable;
@@ -74,6 +75,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@CategoryID", id);
                     cmd.Parameters.AddWithValue("@CategoryName", txtCategory.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -233,6 +235,9 @@ namespace sample
             cleardata();
         }
 
-       
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

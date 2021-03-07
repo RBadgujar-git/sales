@@ -62,8 +62,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@TaxType", cmbTaxType.Text);
                 cmd.Parameters.AddWithValue("@TaxRate", cmbTaxRate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                
-                SqlParameter sqlpara = new SqlParameter("@Image", SqlDbType.Image);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+            SqlParameter sqlpara = new SqlParameter("@Image", SqlDbType.Image);
                 sqlpara.Value = DBNull.Value;
                 cmd.Parameters.Add(sqlpara);
 
@@ -106,6 +106,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@TaxRate", cmbTaxRate.Text);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                     cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -514,6 +515,11 @@ namespace sample
         }
 
         private void txtitemcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

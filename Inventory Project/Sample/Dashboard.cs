@@ -1268,6 +1268,12 @@ namespace sample
             BA.Visible = true;
             BA.BringToFront();
         }
+
+        private void barcodePrintToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Barcodeprint br = new Barcodeprint();
+            br.Show();
+        }
     }
 }
 

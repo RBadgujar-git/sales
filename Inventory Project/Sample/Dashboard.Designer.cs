@@ -72,6 +72,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerCareNumberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sendMailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.barcodePrintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
@@ -120,7 +121,8 @@
             this.utilityToolStripMenuItem,
             this.reportToolStripMenuItem,
             this.settingToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.barcodePrintToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
@@ -458,6 +460,13 @@
             this.sendMailToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
             this.sendMailToolStripMenuItem.Text = "send Mail";
             this.sendMailToolStripMenuItem.Click += new System.EventHandler(this.sendMailToolStripMenuItem_Click);
+            // 
+            // barcodePrintToolStripMenuItem
+            // 
+            this.barcodePrintToolStripMenuItem.Name = "barcodePrintToolStripMenuItem";
+            this.barcodePrintToolStripMenuItem.Size = new System.Drawing.Size(103, 20);
+            this.barcodePrintToolStripMenuItem.Text = "Barcode Print";
+            this.barcodePrintToolStripMenuItem.Click += new System.EventHandler(this.barcodePrintToolStripMenuItem_Click);
             // 
             // guna2TextBox2
             // 
@@ -877,7 +886,8 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoSize = true;
-            this.panel3.Location = new System.Drawing.Point(0, 96);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.MaximumSize = new System.Drawing.Size(1117, 660);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1117, 660);
@@ -986,6 +996,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private System.Windows.Forms.ToolStripMenuItem estimateQuotationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem barcodePrintToolStripMenuItem;
     }
 }
 

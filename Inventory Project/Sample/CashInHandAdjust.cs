@@ -49,6 +49,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
             cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
             cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+            cmd.Parameters.AddWithValue("@compid",NewCompany.company_id);
 
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
@@ -83,6 +84,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                    cmd.Parameters.AddWithValue("@compid",NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {

@@ -76,6 +76,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@Duration", "");
             cmd.Parameters.AddWithValue("@ProcessingFees", "");
             cmd.Parameters.AddWithValue("@PaidBy", "");
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             cmd.Parameters.AddWithValue("@Action", "Select");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
@@ -131,6 +132,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);
                     cmd.Parameters.AddWithValue("@ProcessingFees", txtProcessingFees.Text);
                     cmd.Parameters.AddWithValue("@PaidBy", cmbfees.Text);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data Successfully");
                    
@@ -365,6 +367,11 @@ namespace sample
         private void btnclear_Click(object sender, EventArgs e)
         {
             cleardata();
+        }
+
+        private void dgvDescription_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

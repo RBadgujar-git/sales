@@ -132,7 +132,6 @@
             this.txtSubunit.ShadowDecoration.Parent = this.txtSubunit;
             this.txtSubunit.Size = new System.Drawing.Size(200, 30);
             this.txtSubunit.TabIndex = 2;
-           // this.txtSubunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubunit_KeyPress);
             // 
             // label3
             // 
@@ -168,7 +167,6 @@
             this.txtAddUnit.ShadowDecoration.Parent = this.txtAddUnit;
             this.txtAddUnit.Size = new System.Drawing.Size(200, 30);
             this.txtAddUnit.TabIndex = 1;
-          //  this.txtAddUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddUnit_KeyPress);
             // 
             // btnSave
             // 
@@ -240,6 +238,7 @@
             this.dgvAddunit.ThemeStyle.RowsStyle.Height = 22;
             this.dgvAddunit.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAddunit.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvAddunit.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddunit_CellContentClick);
             this.dgvAddunit.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddunit_CellDoubleClick);
             // 
             // label2
