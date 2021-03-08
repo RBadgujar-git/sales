@@ -31,5 +31,10 @@ namespace sample
         {
 
         }
+
+        private void BalanceSheet_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

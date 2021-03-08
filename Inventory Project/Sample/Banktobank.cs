@@ -162,7 +162,7 @@ namespace sample
         {
             if (cmbfrombank.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select BankName from tbl_BankAccount group by BankName");
+                    string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

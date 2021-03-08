@@ -160,6 +160,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BalanceSheet";
             this.Size = new System.Drawing.Size(1020, 567);
+            this.Load += new System.EventHandler(this.BalanceSheet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

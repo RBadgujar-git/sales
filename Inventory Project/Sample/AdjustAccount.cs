@@ -144,7 +144,7 @@ namespace sample
         {
             if (cmbaccountname.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select AccountName from tbl_BankAccount group by AccountName");
+                    string SelectQuery = string.Format("select AccountName from tbl_BankAccount where Company_ID='"+NewCompany.company_id+"' group by AccountName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

@@ -34,7 +34,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select CategoryName,Paid  from tbl_Expense where CategoryName='{0}'", cmbExpensecategory.Text);
+                string Query = string.Format("select CategoryName,Paid  from tbl_Expense where CategoryName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbExpensecategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -53,7 +53,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Expenses where DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_Expenses where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -79,7 +79,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -100,7 +100,7 @@ namespace sample
         {
             if (cmbExpensecategory.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory group by CategoryName where DeleteData='1' ");
+                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory group by CategoryName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -135,7 +135,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select CategoryName,Paid from tbl_Expenses  where Date between '" + dtpFromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "'");
+                string SelectQuery = string.Format("select CategoryName,Paid from tbl_Expenses  where Date between '" + dtpFromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

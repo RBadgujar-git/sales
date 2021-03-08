@@ -42,7 +42,7 @@ namespace sample
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Paymentout where DeleteData='1' ", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                 SDA.Fill(ds, "temp");
@@ -73,7 +73,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ReceiptNo,CustomerName,PaymentType,Total,Paid,Discount from tbl_Paymentout where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "'");
+                string SelectQuery = string.Format("select ReceiptNo,CustomerName,PaymentType,Total,Paid,Discount from tbl_Paymentout where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -90,7 +90,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ReceiptNo, CustomerName, PaymentType, Paid,Discount,Total from tbl_Paymentout where  CustomerName like '%{0}%'  and DeleteData = '1'", txtFilterBy.Text);
+                string Query = string.Format("select ReceiptNo, CustomerName, PaymentType, Paid,Discount,Total from tbl_Paymentout where  CustomerName like '%{0}%'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

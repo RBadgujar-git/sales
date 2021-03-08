@@ -79,7 +79,7 @@ namespace sample
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            string Query = string.Format("select ItemName,OpeningQty as Stock,atPrice as stock value from tbl_ItemMaster where ItemCategory='{0}'", cmbCategory.Text);
+            string Query = string.Format("select ItemName,OpeningQty as Stock,atPrice as stock value from tbl_ItemMaster where ItemCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbCategory.Text);
                 DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
