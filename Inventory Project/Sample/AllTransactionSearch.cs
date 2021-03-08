@@ -38,5 +38,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void AllTransactionSearch_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

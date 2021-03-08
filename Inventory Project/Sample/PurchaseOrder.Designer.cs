@@ -435,6 +435,7 @@
             this.button4.Size = new System.Drawing.Size(31, 34);
             this.button4.TabIndex = 445;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // MRP
             // 
