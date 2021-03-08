@@ -278,7 +278,7 @@ namespace sample
         {
             try
             {
-                float gst = 0, cgst = 0, sgst = 0,;
+                float gst = 0, cgst = 0, sgst = 0;
                 gst = float.Parse(cmbtax.Text);
                 cgst = gst / 2;
                 sgst = gst / 2;
