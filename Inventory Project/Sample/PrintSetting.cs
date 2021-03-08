@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class PrintSetting : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public PrintSetting()
         {
             InitializeComponent();
@@ -20,6 +22,11 @@ namespace sample
         private void button3_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

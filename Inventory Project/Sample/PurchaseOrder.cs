@@ -905,5 +905,10 @@ namespace sample
                 e.Handled = true;
             }
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
