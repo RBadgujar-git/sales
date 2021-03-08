@@ -30,13 +30,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BalanceSheet));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.btnprint = new System.Windows.Forms.Button();
-            this.btnimprt = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dtpdatefrom = new System.Windows.Forms.DateTimePicker();
             this.dtpdateto = new System.Windows.Forms.DateTimePicker();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnprint = new System.Windows.Forms.Button();
+            this.btnimprt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -56,6 +56,46 @@
             this.label2.Size = new System.Drawing.Size(24, 16);
             this.label2.TabIndex = 59;
             this.label2.Text = "To";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(397, 97);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(193, 16);
+            this.label13.TabIndex = 73;
+            this.label13.Text = "Balance Sheet as on Date";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(22, 133);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1004, 436);
+            this.guna2ShadowPanel1.TabIndex = 74;
+            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
+            // 
+            // dtpdatefrom
+            // 
+            this.dtpdatefrom.CustomFormat = "MM/dd/yyyy";
+            this.dtpdatefrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpdatefrom.Location = new System.Drawing.Point(166, 40);
+            this.dtpdatefrom.Name = "dtpdatefrom";
+            this.dtpdatefrom.Size = new System.Drawing.Size(145, 23);
+            this.dtpdatefrom.TabIndex = 75;
+            // 
+            // dtpdateto
+            // 
+            this.dtpdateto.CustomFormat = "MM/dd/yyyy";
+            this.dtpdateto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpdateto.Location = new System.Drawing.Point(375, 40);
+            this.dtpdateto.Name = "dtpdateto";
+            this.dtpdateto.Size = new System.Drawing.Size(156, 23);
+            this.dtpdateto.TabIndex = 76;
             // 
             // btncancel
             // 
@@ -101,45 +141,6 @@
             this.btnimprt.Size = new System.Drawing.Size(25, 21);
             this.btnimprt.TabIndex = 70;
             this.btnimprt.UseVisualStyleBackColor = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(397, 97);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(193, 16);
-            this.label13.TabIndex = 73;
-            this.label13.Text = "Balance Sheet as on Date";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(22, 133);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1004, 436);
-            this.guna2ShadowPanel1.TabIndex = 74;
-            // 
-            // dtpdatefrom
-            // 
-            this.dtpdatefrom.CustomFormat = "MM/dd/yyyy";
-            this.dtpdatefrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpdatefrom.Location = new System.Drawing.Point(166, 40);
-            this.dtpdatefrom.Name = "dtpdatefrom";
-            this.dtpdatefrom.Size = new System.Drawing.Size(145, 23);
-            this.dtpdatefrom.TabIndex = 75;
-            // 
-            // dtpdateto
-            // 
-            this.dtpdateto.CustomFormat = "MM/dd/yyyy";
-            this.dtpdateto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpdateto.Location = new System.Drawing.Point(375, 40);
-            this.dtpdateto.Name = "dtpdateto";
-            this.dtpdateto.Size = new System.Drawing.Size(156, 23);
-            this.dtpdateto.TabIndex = 76;
             // 
             // BalanceSheet
             // 
