@@ -176,6 +176,7 @@
             this.txtReceiptNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReceiptNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReceiptNo.HoverState.Parent = this.txtReceiptNo;
+            this.txtReceiptNo.MaxLength = 100;
             this.txtReceiptNo.Name = "txtReceiptNo";
             this.txtReceiptNo.PasswordChar = '\0';
             this.txtReceiptNo.PlaceholderText = "";
@@ -252,6 +253,7 @@
             // PictureBox1
             // 
             this.PictureBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.PictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
             resources.ApplyResources(this.PictureBox1, "PictureBox1");
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.ShadowDecoration.Parent = this.PictureBox1;
@@ -320,7 +322,6 @@
             this.guna2Panel2.ForeColor = System.Drawing.Color.White;
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // btnCancel
             // 
