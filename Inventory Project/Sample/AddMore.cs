@@ -288,14 +288,7 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
+            this.WindowState = FormWindowState.Minimized;
         }
     }
  }
