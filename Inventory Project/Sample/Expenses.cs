@@ -594,9 +594,10 @@ namespace sample
 
         }
 
-        private void btnminimize_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            Calculator cr = new Calculator();
+            cr.Show();
         }
     }
 }
