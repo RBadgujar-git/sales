@@ -19,6 +19,9 @@ namespace sample
         SqlCommand cmd;
         string id = "";
         public string companyid;
+
+        public FormWindowState WindowState { get; private set; }
+
         public AdjustAccount()
         {
             InitializeComponent();
@@ -332,6 +335,11 @@ namespace sample
             Delete();
             fetchdetails();
             Cleardata();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

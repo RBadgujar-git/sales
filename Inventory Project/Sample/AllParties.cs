@@ -19,6 +19,8 @@ namespace sample
         SqlCommand cmd;
         string id = "";
 
+        public FormWindowState WindowState { get; private set; }
+
         public AllParties()
         {
             InitializeComponent();
@@ -147,6 +149,11 @@ namespace sample
         private void dgvAllparties_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
