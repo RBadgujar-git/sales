@@ -56,7 +56,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ExpenseCategory where DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -79,7 +79,7 @@ namespace sample
             lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
 
-            string Query = string.Format("select ID,Date,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' group by ID,Date,Total,Paid,Balance", lblCategory.Text);
+            string Query = string.Format("select ID,Date,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ID,Date,Total,Paid,Balance", lblCategory.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -97,7 +97,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%' where DeleteData='1'", txtSearch.Text);
+                string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -117,7 +117,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ID from tbl_Expenses where ID like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select ID from tbl_Expenses where ID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -131,6 +131,11 @@ namespace sample
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -125,7 +125,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank group by AccountName");
+                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by AccountName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

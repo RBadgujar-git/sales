@@ -30,7 +30,7 @@ namespace sample
         public void Binddata()
         {
             con.Open();
-            string selectquery = string.Format("Select * from tbl_PartyMaste where CompanyID='" + NewCompany.company_id + "'");
+            string selectquery = string.Format("Select * from tbl_PartyMaste where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
             DataSet ds = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
             sda.Fill(ds, "temp");

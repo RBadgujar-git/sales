@@ -38,7 +38,7 @@ namespace sample
         {
             if (cmbPartyName.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -72,7 +72,7 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmd = new SqlCommand("select * from tbl_Paymentout", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sdasql.Fill(ds);

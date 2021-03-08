@@ -23,7 +23,7 @@ namespace sample
         {
             fetchCompany();
             con.Open();
-            SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseBillInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleInvoiceInner ", con);
+            SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseBillInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleInvoiceInner where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             DataSet ds = new DataSet();
             SqlDataAdapter SDA = new SqlDataAdapter(cmd);
             SDA.Fill(ds, "temp");
@@ -37,7 +37,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -80,7 +80,7 @@ namespace sample
             try
             {
 
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseBillInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleInvoiceInner where ItemName like '%{0}%'", txtFilterBy);
+                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseBillInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleInvoiceInner where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

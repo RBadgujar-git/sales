@@ -317,6 +317,7 @@
             this.dgvOtherincome.ThemeStyle.RowsStyle.Height = 22;
             this.dgvOtherincome.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOtherincome.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvOtherincome.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOtherincome_CellContentClick);
             // 
             // dataGridViewTextBoxColumn2
             // 

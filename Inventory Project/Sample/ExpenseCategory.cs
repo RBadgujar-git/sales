@@ -31,7 +31,7 @@ namespace sample
         public void Binddata()
         {
 
-            string selectquery = string.Format("select * from tbl_UnitMaster where Company_ID='"+NewCompany.company_id+"'");
+            string selectquery = string.Format("select * from tbl_UnitMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
             DataSet ds = new DataSet();
 
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
