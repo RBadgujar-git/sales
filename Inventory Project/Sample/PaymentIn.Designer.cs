@@ -132,7 +132,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
-            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
+//            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // label9
             // 
@@ -161,7 +161,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
-            this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
+            //this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
             // txtReceiptNo
             // 
@@ -185,7 +185,7 @@
             this.txtReceiptNo.SelectedText = "";
             this.txtReceiptNo.ShadowDecoration.Parent = this.txtReceiptNo;
             this.txtReceiptNo.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
-            this.txtReceiptNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceiptNo_KeyPress);
+            //this.txtReceiptNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceiptNo_KeyPress);
             // 
             // txtDescription
             // 
@@ -325,7 +325,7 @@
             this.guna2Panel2.ForeColor = System.Drawing.Color.White;
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
-            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
+//            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // btnCancel
             // 
