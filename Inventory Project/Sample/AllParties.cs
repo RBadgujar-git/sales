@@ -39,7 +39,7 @@ namespace sample
         {
             if (cmballparties.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster  where DeleteData ='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -47,7 +47,6 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
                         cmballparties.Items.Add(ds.Tables["Temp"].Rows[i]["PartyName"].ToString());
-
                     }
                 }
                 catch (Exception e1) {

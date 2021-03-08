@@ -493,15 +493,29 @@ namespace sample
         }
         private void gst_devide()
         {
-            if (cmbtax.Text != "" && txtsgst.Text != "" && txtcgst.Text != "")
+
+
+            SqlCommand cmd = new SqlCommand("Select State from tbl_CompanyMaster where  Company_ID='" + NewCompany.company_id + "' ",con);
+            String State = cmd.ExecuteScalar().ToString();
+            MessageBox.Show("compant Sata"+State+"DSatya"+cmbStatesupply.Text);
+            if (State == cmbStatesupply.Text)
             {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+                if (cmbtax.Text != "" && txtsgst.Text != "" && txtcgst.Text != "")
+                {
+                    float gst = 0, cgst = 0, sgst = 0, igst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
             }
+            else {
+
+                float gst = 0;
+                gst = float.Parse(cmbtax.Text);
+                TxtIGST.Text = gst.ToString();   
+               }
         
        }
 
@@ -954,7 +968,7 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-
+            gst_devide();
         }
 
         private void TxtIGST_TextChanged(object sender, EventArgs e)
@@ -976,6 +990,11 @@ namespace sample
         {
             Calculator cs = new Calculator();
             cs.Show();
+        }
+
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

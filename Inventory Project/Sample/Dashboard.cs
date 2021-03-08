@@ -1273,6 +1273,7 @@ namespace sample
         {
             Barcodeprint br = new Barcodeprint();
             br.Show();
+
         }
     }
 }

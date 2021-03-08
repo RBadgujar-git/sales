@@ -278,10 +278,11 @@ namespace sample
         {
             try
             {
-                float gst = 0, cgst = 0, sgst = 0;
+                float gst = 0, cgst = 0, sgst = 0,;
                 gst = float.Parse(cmbtax.Text);
                 cgst = gst / 2;
                 sgst = gst / 2;
+
                 txtsgst.Text = sgst.ToString();
                 txtcgst.Text = cgst.ToString();
             }
@@ -849,6 +850,21 @@ namespace sample
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvInnerCreditNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

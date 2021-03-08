@@ -57,7 +57,7 @@ namespace sample
             cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "Select");
-            cmd.Parameters.AddWithValue("@CompanyID", 0);
+            cmd.Parameters.AddWithValue("@CompanyID",0);
             cmd.Parameters.AddWithValue("@CompanyName", txtcampanyName.Text);
             cmd.Parameters.AddWithValue("@PhoneNo", txtContactNo.Text);
             cmd.Parameters.AddWithValue("@EmailID", txtemail.Text);
