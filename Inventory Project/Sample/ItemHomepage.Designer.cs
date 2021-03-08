@@ -94,7 +94,6 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItemDetails.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvItemDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvItemDetails.EnableHeadersVisualStyles = false;
             this.dgvItemDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItemDetails.Location = new System.Drawing.Point(289, 245);
@@ -406,7 +405,6 @@
             this.guna2ShadowPanel3.Controls.Add(this.SalePrice);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button7);
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button2);
-            this.guna2ShadowPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(289, 51);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";

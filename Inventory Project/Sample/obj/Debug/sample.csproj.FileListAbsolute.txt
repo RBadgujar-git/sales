@@ -952,3 +952,4 @@ C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
