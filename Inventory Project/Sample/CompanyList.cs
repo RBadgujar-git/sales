@@ -14,20 +14,20 @@ namespace sample
     public partial class CompanyList : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-        SqlCommand cmd;
         public CompanyList()
         {
             InitializeComponent();
         }
-       
+
         private void button4_Click(object sender, EventArgs e)
         {
-            
-            NewCompany BA = new NewCompany();        
-           this.Controls.Add(BA);
-
-            BA.Location = new Point(230, 55);
-
+            NewCompany BA = new NewCompany();
+           // BA.TopLevel = false;
+         //   BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
             BA.BringToFront();
         }
 
@@ -35,22 +35,7 @@ namespace sample
         {
 
         }
-        public void Binddata()
-        {
-           
 
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            DataTable dtable = new DataTable();
-            cmd = new SqlCommand("Select CompanyName as Company_Name from tbl_CompanyMaster where DeleteData = 1", con);           
-            SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
-            sdasql.Fill(dtable);
-            dgvCompanylist.DataSource = dtable;
-
-
-        }
         private void dgvCompanylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -65,7 +50,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select CompanyName from tbl_CompanyMaster where CompanyName like'%{0}%' ", txtSearch.Text);
+                string Query = string.Format("select CompanyName from tbl_CompanyMaster where CompanyName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -80,7 +65,7 @@ namespace sample
 
         private void CompanyList_Load(object sender, EventArgs e)
         {
-            Binddata();
+
         }
     }
 }

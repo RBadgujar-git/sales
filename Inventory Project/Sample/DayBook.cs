@@ -31,5 +31,10 @@ namespace sample
         {
 
         }
+
+        private void DayBook_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

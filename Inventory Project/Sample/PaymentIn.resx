@@ -394,7 +394,7 @@
     <value>190, 24</value>
   </data>
   <data name="txtDiscount.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtDiscount.Name" xml:space="preserve">
     <value>txtDiscount</value>
@@ -451,7 +451,7 @@
     <value>190, 24</value>
   </data>
   <data name="txtReceived.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtReceived.Name" xml:space="preserve">
     <value>txtReceived</value>
@@ -523,7 +523,7 @@
     <value>189, 24</value>
   </data>
   <data name="txtTotal.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;txtTotal.Name" xml:space="preserve">
     <value>txtTotal</value>
@@ -775,7 +775,7 @@
     <value>190, 23</value>
   </data>
   <data name="dtpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;dtpdate.Name" xml:space="preserve">
     <value>dtpdate</value>
@@ -836,7 +836,7 @@
     <value>33, 27</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>348</value>
   </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
@@ -892,7 +892,7 @@
     <value>27, 25</value>
   </data>
   <data name="btnSetting.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>456</value>
   </data>
   <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
     <value>btnSetting</value>
@@ -972,11 +972,14 @@
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 242</value>
   </data>
+  <data name="textBox1.MaxLength" type="System.Int32, mscorlib">
+    <value>1000</value>
+  </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 23</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
+    <value>5</value>
   </data>
   <data name="textBox1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1042,7 +1045,7 @@
     <value>190, 24</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
     <value>comboBox1</value>

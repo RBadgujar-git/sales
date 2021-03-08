@@ -50,6 +50,7 @@
             this.dgvbankaccount = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btncancel = new System.Windows.Forms.Button();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbankaccount)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -371,12 +372,12 @@
             this.dgvbankaccount.ThemeStyle.RowsStyle.Height = 22;
             this.dgvbankaccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvbankaccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvbankaccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankaccount_CellContentClick);
             this.dgvbankaccount.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankaccount_CellDoubleClick);
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.btnminimize);
             this.guna2Panel2.Controls.Add(this.btncancel);
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -404,6 +405,22 @@
             this.btncancel.TabIndex = 45;
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(732, 6);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 441;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // BankAccount
             // 
@@ -448,5 +465,6 @@
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.DateTimePicker dtpdate;
         private System.Windows.Forms.Button btnclick;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

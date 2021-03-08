@@ -30,7 +30,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -54,7 +54,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster  where DeleteData='1'group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -271,20 +271,36 @@ namespace sample
 
         private void gst_devide()
         {
+
             try
             {
-                float gst = 0, cgst = 0, sgst = 0, igst = 0;
-                gst = float.Parse(cmbtax.Text);
 
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
+                if (State1 == cmbStatesupply.Text)
+                {
 
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    txtIGST.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
 
+                }
 
-                cgst = gst / 2;
-                sgst = gst / 2;
-
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
             }
             catch (Exception e1)
             {
@@ -457,7 +473,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleOrderInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleOrderInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
@@ -566,12 +582,9 @@ namespace sample
             float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
 
 
-
             TA = float.Parse(txtsubtotal.Text.ToString());
             dis = float.Parse(txtDiscount.Text.ToString());
             gst = float.Parse(cmbtax.Text.ToString());
-
-
 
 
             dis_amt = TA * dis / 100;
@@ -741,7 +754,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"' group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -767,7 +780,7 @@ namespace sample
                 //    con.Open();
                 //}
                 con.Close();
-                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}' and Company_Id='"+NewCompany.company_id+"'group by ItemName", comboBox1.Text);
+                string Query = String.Format("select ItemName from tbl_ItemMaster where ItemCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ItemName", comboBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "Temp");
@@ -790,7 +803,7 @@ namespace sample
             {
                 con.Open();
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='"+NewCompany.company_id+"' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())

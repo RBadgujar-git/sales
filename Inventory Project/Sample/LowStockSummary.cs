@@ -57,7 +57,7 @@ namespace sample
         {
             if (cmbAllCategory.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster where DeleteData='1' group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -83,7 +83,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,OpeningQty,MinimumStock,atPrice  from tbl_ItemMaster where ItemCategory='{0}'and DeleteData='1'", cmbAllCategory.Text);
+                string Query = string.Format("select ItemName,OpeningQty,MinimumStock,atPrice  from tbl_ItemMaster where ItemCategory='{0}'and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbAllCategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

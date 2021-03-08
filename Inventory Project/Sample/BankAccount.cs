@@ -28,7 +28,7 @@ namespace sample
         public void Binddata()
         {
             con.Open();
-            string selectquery = string.Format("Select * from tbl_BankAccount");
+            string selectquery = string.Format("Select * from tbl_BankAccount where Company_ID='"+NewCompany.company_id+"' and DeleteData='1'");
             DataSet ds = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
             sda.Fill(ds, "temp");
@@ -346,9 +346,9 @@ namespace sample
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
-        private void dgvbankaccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnminimize_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

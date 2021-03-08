@@ -284,16 +284,36 @@ namespace sample
         private void gst_devide()
         {
             try {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (State1 == cmbStatesupply.Text)
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    guna2TextBox1.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
+
+                }
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
             }
+
         }
         object id1;
         private void insert_record_inner(string id)
@@ -919,6 +939,57 @@ namespace sample
         {
 
         }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPONo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTransportName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    }
+}
 

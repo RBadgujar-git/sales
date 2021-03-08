@@ -40,7 +40,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_OtherIncome where DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_OtherIncome where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -58,7 +58,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory group by OtherIncome");
+                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by OtherIncome");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -81,7 +81,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -103,7 +103,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select IncomeCategory,Paid from tbl_OtherIncome  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "'");
+                string SelectQuery = string.Format("select IncomeCategory,Paid from tbl_OtherIncome  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -120,7 +120,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select IncomeCategory,Paid  from tbl_OtherIncome where IncomeCategory='{0}'", cmbExpensecategory.Text);
+                string Query = string.Format("select IncomeCategory,Paid  from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbExpensecategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

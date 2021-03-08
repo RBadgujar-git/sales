@@ -35,7 +35,7 @@ namespace sample
         {
             if (cmbCompanyName.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

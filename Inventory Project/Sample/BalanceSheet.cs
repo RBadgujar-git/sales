@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class BalanceSheet : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public BalanceSheet()
         {
             InitializeComponent();
@@ -25,6 +27,21 @@ namespace sample
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BalanceSheet_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

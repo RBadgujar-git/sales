@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreditNote));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -143,6 +143,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.Credit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TxtIGST = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerCreditNote)).BeginInit();
@@ -174,7 +176,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(835, 413);
+            this.label35.Location = new System.Drawing.Point(861, 413);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 16);
             this.label35.TabIndex = 105;
@@ -195,14 +197,14 @@
             this.txtsgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsgst.HoverState.Parent = this.txtsgst;
-            this.txtsgst.Location = new System.Drawing.Point(908, 430);
+            this.txtsgst.Location = new System.Drawing.Point(929, 430);
             this.txtsgst.Name = "txtsgst";
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
             this.txtsgst.ReadOnly = true;
             this.txtsgst.SelectedText = "";
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
-            this.txtsgst.Size = new System.Drawing.Size(77, 25);
+            this.txtsgst.Size = new System.Drawing.Size(59, 25);
             this.txtsgst.TabIndex = 104;
             // 
             // txtcgst
@@ -220,14 +222,14 @@
             this.txtcgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcgst.HoverState.Parent = this.txtcgst;
-            this.txtcgst.Location = new System.Drawing.Point(811, 430);
+            this.txtcgst.Location = new System.Drawing.Point(869, 430);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
             this.txtcgst.ReadOnly = true;
             this.txtcgst.SelectedText = "";
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
-            this.txtcgst.Size = new System.Drawing.Size(84, 25);
+            this.txtcgst.Size = new System.Drawing.Size(57, 25);
             this.txtcgst.TabIndex = 103;
             // 
             // txtcon
@@ -1332,6 +1334,8 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.TxtIGST);
             this.panel1.Controls.Add(this.dtpInvoice);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textBox1);
@@ -1627,20 +1631,20 @@
             // 
             // dgvInnerCreditNote
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvInnerCreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvInnerCreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInnerCreditNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerCreditNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerCreditNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerCreditNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerCreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerCreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInnerCreditNote.ColumnHeadersHeight = 37;
             this.dgvInnerCreditNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1655,14 +1659,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerCreditNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerCreditNote.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInnerCreditNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerCreditNote.EnableHeadersVisualStyles = false;
             this.dgvInnerCreditNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1945,6 +1949,39 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(816, 412);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 16);
+            this.label10.TabIndex = 207;
+            this.label10.Text = "IGST";
+            // 
+            // TxtIGST
+            // 
+            this.TxtIGST.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtIGST.DefaultText = "";
+            this.TxtIGST.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtIGST.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtIGST.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIGST.DisabledState.Parent = this.TxtIGST;
+            this.TxtIGST.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIGST.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtIGST.FocusedState.Parent = this.TxtIGST;
+            this.TxtIGST.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtIGST.HoverState.Parent = this.TxtIGST;
+            this.TxtIGST.Location = new System.Drawing.Point(808, 430);
+            this.TxtIGST.Name = "TxtIGST";
+            this.TxtIGST.PasswordChar = '\0';
+            this.TxtIGST.PlaceholderText = "";
+            this.TxtIGST.SelectedText = "";
+            this.TxtIGST.ShadowDecoration.Parent = this.TxtIGST;
+            this.TxtIGST.Size = new System.Drawing.Size(57, 25);
+            this.TxtIGST.TabIndex = 206;
+            // 
             // CreditNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2084,5 +2121,7 @@
         private System.Windows.Forms.ComboBox cmbPaymentType;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DateTimePicker dtpInvoice;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2TextBox TxtIGST;
     }
 }
