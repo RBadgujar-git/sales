@@ -59,6 +59,9 @@ namespace sample
            }
 
         int i = 0;
+
+        public FormWindowState WindowState { get; private set; }
+
         public void Insertdata()
         {
             try
@@ -267,6 +270,16 @@ namespace sample
         private void guna2Panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
