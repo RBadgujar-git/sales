@@ -28,5 +28,10 @@ namespace sample
             BA.Visible = true;
             BA.Show();
         }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

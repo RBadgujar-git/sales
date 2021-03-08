@@ -448,7 +448,7 @@
             this.cmbpartyname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbpartyname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbpartyname.FormattingEnabled = true;
-            this.cmbpartyname.Location = new System.Drawing.Point(162, 46);
+            this.cmbpartyname.Location = new System.Drawing.Point(166, 46);
             this.cmbpartyname.Name = "cmbpartyname";
             this.cmbpartyname.Size = new System.Drawing.Size(200, 24);
             this.cmbpartyname.TabIndex = 76;

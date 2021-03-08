@@ -31,7 +31,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_otherIncomeCaategory", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_otherIncomeCaategory where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -112,7 +112,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%'", txtSearch.Text);
+                string Query = string.Format("select OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%' where DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -123,6 +123,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -642,8 +642,35 @@ namespace sample
 
         private void txtBankName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default["AdditinalFeild1"] = txtBankName.Text;
-            Properties.Settings.Default.Save();
+           
+        }
+
+        private void txtBankName_KeyUp(object sender, EventArgs  e)
+        {
+            
+
+            
+        }
+
+        private void txtBankName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //don't add text if it's empty
+                if (txtBankName.Text != "")
+                {
+                    for (int i = 0; i < txtBankName.Items.Count; i++)
+                    {
+                        //exit event if text already exists
+                        if (txtBankName.Text == txtBankName.Items[i].ToString())
+                        {
+                            return;
+                        }
+                    }
+                    //add item to comboBox1
+                    txtBankName.Items.Add(txtBankName.Text);
+                }
+            }
         }
     }
 

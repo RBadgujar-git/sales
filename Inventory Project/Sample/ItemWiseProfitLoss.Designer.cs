@@ -327,6 +327,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ItemWiseProfitLoss";
             this.Size = new System.Drawing.Size(986, 569);
+            this.Load += new System.EventHandler(this.ItemWiseProfitLoss_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvitemWiseProfitLoss)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

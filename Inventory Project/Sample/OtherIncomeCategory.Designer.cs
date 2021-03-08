@@ -69,7 +69,7 @@
             this.button3.Location = new System.Drawing.Point(755, 8);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 354;
+            this.button3.TabIndex = 3;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -109,7 +109,6 @@
             this.txtOtherIncome.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOtherIncome.HoverState.Parent = this.txtOtherIncome;
             this.txtOtherIncome.Location = new System.Drawing.Point(328, 79);
-            this.txtOtherIncome.MaxLength = 100;
             this.txtOtherIncome.Name = "txtOtherIncome";
             this.txtOtherIncome.PasswordChar = '\0';
             this.txtOtherIncome.PlaceholderText = "";

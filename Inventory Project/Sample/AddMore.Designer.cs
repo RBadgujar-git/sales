@@ -56,7 +56,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(25, 18);
+            this.label1.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label1.Location = new System.Drawing.Point(32, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 22);
             this.label1.TabIndex = 0;
@@ -66,7 +67,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(347, 18);
+            this.label2.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label2.Location = new System.Drawing.Point(325, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 22);
             this.label2.TabIndex = 4;
@@ -76,7 +78,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(676, 18);
+            this.label3.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.label3.Location = new System.Drawing.Point(635, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 22);
             this.label3.TabIndex = 5;
@@ -91,11 +94,11 @@
             this.guna2Button3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(-29, 60);
+            this.guna2Button3.Location = new System.Drawing.Point(6, 61);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.PressedDepth = 0;
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
-            this.guna2Button3.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button3.Size = new System.Drawing.Size(280, 36);
             this.guna2Button3.TabIndex = 210;
             this.guna2Button3.Text = "Sale Invoice                      ALT + S";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
@@ -112,11 +115,11 @@
             this.guna2Button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
             this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(-17, 268);
+            this.guna2Button1.Location = new System.Drawing.Point(5, 266);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.PressedDepth = 0;
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(319, 36);
+            this.guna2Button1.Size = new System.Drawing.Size(280, 36);
             this.guna2Button1.TabIndex = 211;
             this.guna2Button1.Text = "Delivery Challan                ALT + D";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
@@ -133,11 +136,11 @@
             this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(-11, 225);
+            this.guna2Button2.Location = new System.Drawing.Point(5, 224);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.PressedDepth = 0;
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(305, 36);
+            this.guna2Button2.Size = new System.Drawing.Size(280, 36);
             this.guna2Button2.TabIndex = 212;
             this.guna2Button2.Text = "Estimate/Quotation          ALT + Q";
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
@@ -154,11 +157,11 @@
             this.guna2Button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(-37, 182);
+            this.guna2Button4.Location = new System.Drawing.Point(5, 182);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.PressedDepth = 0;
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(361, 36);
+            this.guna2Button4.Size = new System.Drawing.Size(280, 36);
             this.guna2Button4.TabIndex = 213;
             this.guna2Button4.Text = "Sale Order                         ALT + F";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
@@ -175,11 +178,11 @@
             this.guna2Button5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(-12, 140);
+            this.guna2Button5.Location = new System.Drawing.Point(0, 140);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.PressedDepth = 0;
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(313, 36);
+            this.guna2Button5.Size = new System.Drawing.Size(287, 36);
             this.guna2Button5.TabIndex = 214;
             this.guna2Button5.Text = "Sale Return                       ALT + R      ";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);
@@ -196,11 +199,11 @@
             this.guna2Button7.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button7.ForeColor = System.Drawing.Color.Black;
             this.guna2Button7.HoverState.Parent = this.guna2Button7;
-            this.guna2Button7.Location = new System.Drawing.Point(-29, 99);
+            this.guna2Button7.Location = new System.Drawing.Point(5, 99);
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.PressedDepth = 0;
             this.guna2Button7.ShadowDecoration.Parent = this.guna2Button7;
-            this.guna2Button7.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button7.Size = new System.Drawing.Size(280, 36);
             this.guna2Button7.TabIndex = 216;
             this.guna2Button7.Text = "Payment In                       ALT + I";
             this.guna2Button7.Click += new System.EventHandler(this.guna2Button7_Click);
@@ -217,11 +220,11 @@
             this.guna2Button6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button6.ForeColor = System.Drawing.Color.Black;
             this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Location = new System.Drawing.Point(300, 60);
+            this.guna2Button6.Location = new System.Drawing.Point(307, 57);
             this.guna2Button6.Name = "guna2Button6";
             this.guna2Button6.PressedDepth = 0;
             this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button6.Size = new System.Drawing.Size(280, 36);
             this.guna2Button6.TabIndex = 217;
             this.guna2Button6.Text = "Purchase Bill                      ALT + B";
             this.guna2Button6.Click += new System.EventHandler(this.guna2Button6_Click);
@@ -238,11 +241,11 @@
             this.guna2Button8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button8.ForeColor = System.Drawing.Color.Black;
             this.guna2Button8.HoverState.Parent = this.guna2Button8;
-            this.guna2Button8.Location = new System.Drawing.Point(299, 99);
+            this.guna2Button8.Location = new System.Drawing.Point(306, 99);
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.PressedDepth = 0;
             this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button8.Size = new System.Drawing.Size(280, 36);
             this.guna2Button8.TabIndex = 218;
             this.guna2Button8.Text = "Payment Out                      ALT + O";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
@@ -259,11 +262,11 @@
             this.guna2Button9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button9.ForeColor = System.Drawing.Color.Black;
             this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Location = new System.Drawing.Point(297, 140);
+            this.guna2Button9.Location = new System.Drawing.Point(306, 140);
             this.guna2Button9.Name = "guna2Button9";
             this.guna2Button9.PressedDepth = 0;
             this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button9.Size = new System.Drawing.Size(280, 36);
             this.guna2Button9.TabIndex = 219;
             this.guna2Button9.Text = "Purchase Return                ALT + P";
             this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
@@ -280,11 +283,11 @@
             this.guna2Button10.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button10.ForeColor = System.Drawing.Color.Black;
             this.guna2Button10.HoverState.Parent = this.guna2Button10;
-            this.guna2Button10.Location = new System.Drawing.Point(298, 181);
+            this.guna2Button10.Location = new System.Drawing.Point(307, 182);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.PressedDepth = 0;
             this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
-            this.guna2Button10.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button10.Size = new System.Drawing.Size(280, 36);
             this.guna2Button10.TabIndex = 220;
             this.guna2Button10.Text = "Purchase Order                  ALT + U";
             this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
@@ -301,11 +304,11 @@
             this.guna2Button11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button11.ForeColor = System.Drawing.Color.Black;
             this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Location = new System.Drawing.Point(609, 61);
+            this.guna2Button11.Location = new System.Drawing.Point(587, 61);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.PressedDepth = 0;
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
-            this.guna2Button11.Size = new System.Drawing.Size(350, 36);
+            this.guna2Button11.Size = new System.Drawing.Size(280, 36);
             this.guna2Button11.TabIndex = 221;
             this.guna2Button11.Text = "Expenses                    ALT + E";
             this.guna2Button11.Click += new System.EventHandler(this.guna2Button11_Click);
@@ -315,15 +318,16 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel1.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 313);
+            this.panel1.ForeColor = System.Drawing.Color.LightSeaGreen;
+            this.panel1.Location = new System.Drawing.Point(0, 327);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 68);
+            this.panel1.Size = new System.Drawing.Size(860, 41);
             this.panel1.TabIndex = 224;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -332,7 +336,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(277, 22);
+            this.label7.Location = new System.Drawing.Point(277, 14);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(19, 19);
             this.label7.TabIndex = 3;
@@ -343,7 +347,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(303, 22);
+            this.label6.Location = new System.Drawing.Point(303, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 19);
             this.label6.TabIndex = 2;
@@ -354,7 +358,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(238, 22);
+            this.label5.Location = new System.Drawing.Point(238, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 19);
             this.label5.TabIndex = 1;
@@ -365,7 +369,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(13, 22);
+            this.label4.Location = new System.Drawing.Point(13, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(223, 19);
             this.label4.TabIndex = 0;
@@ -380,7 +384,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(875, 0);
+            this.btnCancel.Location = new System.Drawing.Point(808, 15);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(33, 27);
             this.btnCancel.TabIndex = 225;
@@ -392,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(908, 381);
+            this.ClientSize = new System.Drawing.Size(860, 368);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Button11);
@@ -410,7 +414,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(50, 50);
             this.Name = "AddMore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddMore";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

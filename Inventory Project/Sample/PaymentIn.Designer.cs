@@ -325,6 +325,7 @@
             this.guna2Panel2.ForeColor = System.Drawing.Color.White;
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // btnCancel
             // 

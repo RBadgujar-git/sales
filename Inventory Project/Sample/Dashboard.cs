@@ -1030,7 +1030,7 @@ namespace sample
            // PB.AutoScroll = true;
             this.Controls.Add(PB);
              //PB.FormBorderStyle = FormBorderStyle.None;
-            PB.Dock = DockStyle.Fill;
+            //PB.Dock = DockStyle.Fill;
             PB.BringToFront();
         }
 

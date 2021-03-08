@@ -810,5 +810,7 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
 C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
-C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+G:\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+G:\sales\Inventory Project\sample\obj\Debug\sample.exe
+G:\sales\Inventory Project\sample\obj\Debug\sample.pdb

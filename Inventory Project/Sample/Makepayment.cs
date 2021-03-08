@@ -55,8 +55,8 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);     
             dgvMakePayment.DataSource = dtable;
-        }
 
+        }
         private void InsertData()
         {
             //PrincipleAmount,InterestAmount,Date,	TotalAmount,PaidFrom

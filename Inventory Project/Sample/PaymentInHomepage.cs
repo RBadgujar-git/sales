@@ -50,7 +50,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_PaymentIn", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_PaymentIn where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();

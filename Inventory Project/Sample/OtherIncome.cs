@@ -65,7 +65,7 @@ namespace sample
         {
             if (cmbexpenses.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' group by OtherIncome");
+                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by OtherIncome");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -240,7 +240,7 @@ namespace sample
         {
             try {
                 con.Open();
-                string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}' and where Company_ID='"+NewCompany.company_id+"'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}' and  Company_ID='"+NewCompany.company_id+ "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -276,7 +276,7 @@ namespace sample
                 }
              
 
-                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner where ID='{0}' Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -442,15 +442,14 @@ namespace sample
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            //{
-            //    e.Handled = true;
-            //}
-            //else
-            //{
-            //    e.Handled = false;
-            //}
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
@@ -541,17 +540,9 @@ namespace sample
 
         }
 
-        private void txtrefNo_KeyPress(object sender, KeyPressEventArgs e)
+        private void cmbexpenses_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-         (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+
         }
     }
 }
