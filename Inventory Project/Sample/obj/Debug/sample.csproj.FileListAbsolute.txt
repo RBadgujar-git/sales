@@ -929,4 +929,26 @@ C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\sample.exe
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\sample.pdb
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Guna.UI2.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.pdb
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.xml
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml

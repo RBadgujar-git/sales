@@ -412,6 +412,15 @@
             this.label4.TabIndex = 206;
             this.label4.Text = "PO No :";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(451, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.TabIndex = 206;
+            this.label4.Text = "PO No :";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -519,7 +528,7 @@
             "18",
             "24",
             "30"});
-            this.cmbtax.Location = new System.Drawing.Point(715, 436);
+            this.cmbtax.Location = new System.Drawing.Point(716, 435);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(63, 24);
             this.cmbtax.TabIndex = 17;
