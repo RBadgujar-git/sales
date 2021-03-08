@@ -63,6 +63,7 @@
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(785, 130);
             this.guna2ShadowPanel3.TabIndex = 6;
+            this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
             // guna2ShadowPanel2
             // 

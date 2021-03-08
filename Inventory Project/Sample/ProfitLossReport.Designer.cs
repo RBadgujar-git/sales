@@ -148,6 +148,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ProfitLossReport";
             this.Size = new System.Drawing.Size(1027, 569);
+            this.Load += new System.EventHandler(this.ProfitLossReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

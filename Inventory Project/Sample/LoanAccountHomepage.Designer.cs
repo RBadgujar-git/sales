@@ -124,6 +124,7 @@
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel2.Size = new System.Drawing.Size(289, 566);
             this.guna2ShadowPanel2.TabIndex = 199;
+            this.guna2ShadowPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel2_Paint);
             // 
             // dgvbankAccount
             // 

@@ -26,5 +26,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void ProfitLossReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

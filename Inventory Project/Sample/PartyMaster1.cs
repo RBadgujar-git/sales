@@ -395,7 +395,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where CompanyID='"+NewCompany.company_id+"'group by AddPartyGroup");
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where CompanyID='"+NewCompany.company_id+ "' and DeleteData='1' group by AddPartyGroup");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -405,6 +405,7 @@ namespace sample
                     {
                         comboBox1.Items.Add(ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString());
                     }
+
                 }
                 catch (Exception e1)
                 {
@@ -428,6 +429,11 @@ namespace sample
         }
 
         private void dgvParty_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

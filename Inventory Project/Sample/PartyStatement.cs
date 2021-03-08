@@ -46,5 +46,10 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void PartyStatement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
