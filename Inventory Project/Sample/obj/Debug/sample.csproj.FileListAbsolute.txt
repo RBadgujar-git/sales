@@ -817,3 +817,5 @@ G:\sales\Inventory Project\sample\obj\Debug\sample.pdb
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
+C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
