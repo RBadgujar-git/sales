@@ -10,11 +10,13 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Threading;
 
 namespace sample
 {
     public partial class NewCompany : UserControl
     {
+        Thread th;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
       //  SqlConnection con;
         SqlCommand cmd;
@@ -97,10 +99,19 @@ namespace sample
             {
                 InsertData();
                 this.Visible = false;
+                th = new Thread(openingform);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
             }
-        }  
+        }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void openingform(object obj)
+        {
+            Application.Run(new Dashboard());
+        }
+
+
+    private void button3_Click(object sender, EventArgs e)
         {
             this.Visible = false;
         }
@@ -277,26 +288,26 @@ namespace sample
                 }
             }
             }
-        // Convert borderStyle to Style and ExStyle values for Win32
-        protected override void OnPaint(PaintEventArgs e)
+      //  // Convert borderStyle to Style and ExStyle values for Win32
+        //protected override void OnPaint(PaintEventArgs e)
 
-        {
+        //{
 
-            base.OnPaint(e);
+        //    base.OnPaint(e);
 
-            int borderWidth = 5;
+        //    int borderWidth = 5;
 
-            Color borderColor = SystemColors.AppWorkspace;
+        //    Color borderColor = SystemColors.AppWorkspace;
 
-            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+        //    ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
 
-            borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
+        //    borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
 
-            ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid,
+        //    ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid,
 
-            borderColor, borderWidth, ButtonBorderStyle.Solid);
+        //    borderColor, borderWidth, ButtonBorderStyle.Solid);
 
-        }
+        //}
     }
     
 }

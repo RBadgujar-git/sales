@@ -1025,24 +1025,18 @@ namespace sample
 
         private void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewCompany PB = new NewCompany();
-            // ex.TopLevel = false;
-           // PB.AutoScroll = true;
+            //NewCompany PB = new NewCompany();           
+            //this.Controls.Add(PB);       
+            //PB.BringToFront();
+            CompanyList PB = new CompanyList();
             this.Controls.Add(PB);
-             //PB.FormBorderStyle = FormBorderStyle.None;
-            //PB.Dock = DockStyle.Fill;
+            PB.Dock = DockStyle.Fill;
             PB.BringToFront();
         }
 
         private void changeCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CompanyList PB = new CompanyList();
-            // ex.TopLevel = false;
-          //  PB.AutoScroll = true;
-            this.Controls.Add(PB);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            PB.Dock = DockStyle.Fill;
-            PB.BringToFront();
+           
         }
 
         private void button6_Click_1(object sender, EventArgs e)
@@ -1287,6 +1281,11 @@ namespace sample
                 panel1.Hide();
             else
                 panel1.Show();
+        }
+
+        private void menuStrip1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

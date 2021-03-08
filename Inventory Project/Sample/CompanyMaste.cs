@@ -233,10 +233,6 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
                     MemoryStream ms = new MemoryStream();
                     picSignature.Image.Save(ms, picSignature.Image.RawFormat);
                     byte[] arrImage2 = ms.GetBuffer();
@@ -245,6 +241,12 @@ namespace sample
                     picCompanyLogo.Image.Save(po, picCompanyLogo.Image.RawFormat);
                     byte[] arrImage1 = po.GetBuffer();
                     DataTable dt = new DataTable();
+
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                  
                     cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");

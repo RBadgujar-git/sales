@@ -184,7 +184,7 @@
             this.btnlogin.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
             this.btnlogin.HoverState.Parent = this.btnlogin;
-            this.btnlogin.Location = new System.Drawing.Point(143, 453);
+            this.btnlogin.Location = new System.Drawing.Point(164, 458);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.ShadowDecoration.Parent = this.btnlogin;
             this.btnlogin.Size = new System.Drawing.Size(123, 41);
