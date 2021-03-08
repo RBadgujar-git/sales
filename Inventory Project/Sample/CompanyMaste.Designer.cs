@@ -919,7 +919,6 @@
             // picSignature
             // 
             this.picSignature.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.picSignature.Image = global::sample.Properties.Resources.No_Image_Available;
             this.picSignature.Location = new System.Drawing.Point(294, 304);
             this.picSignature.Name = "picSignature";
             this.picSignature.ShadowDecoration.Parent = this.picSignature;
@@ -932,7 +931,6 @@
             // picCompanyLogo
             // 
             this.picCompanyLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.picCompanyLogo.Image = global::sample.Properties.Resources.No_Image_Available;
             this.picCompanyLogo.Location = new System.Drawing.Point(113, 303);
             this.picCompanyLogo.Name = "picCompanyLogo";
             this.picCompanyLogo.ShadowDecoration.Parent = this.picCompanyLogo;
