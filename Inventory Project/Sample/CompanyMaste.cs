@@ -81,7 +81,7 @@ namespace sample
             sda.Fill(dtable);
             dgvComapnyMaster.DataSource = dtable;
         }
-
+        public  int verify = 0;
 
         public void validfild()
         {
@@ -145,9 +145,15 @@ namespace sample
                 MessageBox.Show("Please Insert Account  IFSC Code!");
                txtIFSCcode.Focus();
             }
+            else
+            {
+                verify = 1;
+
+            }
                      
            
         }
+      
         public void Insert1()
         {
             try
@@ -213,8 +219,12 @@ namespace sample
         private void btnsave_Click(object sender, EventArgs e)
         {
             validfild();
-            Insert1();
-            fetchdetails();
+            if (verify == 1)
+            {
+                Insert1();
+                fetchdetails();
+            }
+
         }
 
         public void Update1()

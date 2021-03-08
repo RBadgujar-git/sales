@@ -1694,7 +1694,7 @@
             this.dgvInnerCreditNote.ThemeStyle.RowsStyle.Height = 22;
             this.dgvInnerCreditNote.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerCreditNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvInnerCreditNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerCreditNote_CellContentClick);
+       //     this.dgvInnerCreditNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerCreditNote_CellContentClick);
             // 
             // sr_no
             // 
