@@ -908,5 +908,10 @@ namespace sample
                 e.Handled = true;
             }
         }
+
+        private void dgvInnerCreditNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
