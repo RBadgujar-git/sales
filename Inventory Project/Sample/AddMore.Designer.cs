@@ -157,7 +157,7 @@
             this.guna2Button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button4.ForeColor = System.Drawing.Color.Black;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(5, 182);
+            this.guna2Button4.Location = new System.Drawing.Point(6, 182);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.PressedDepth = 0;
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
@@ -178,7 +178,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.Black;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(0, 140);
+            this.guna2Button5.Location = new System.Drawing.Point(6, 140);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.PressedDepth = 0;
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
@@ -304,7 +304,7 @@
             this.guna2Button11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button11.ForeColor = System.Drawing.Color.Black;
             this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Location = new System.Drawing.Point(587, 61);
+            this.guna2Button11.Location = new System.Drawing.Point(573, 61);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.PressedDepth = 0;
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
@@ -325,9 +325,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.ForeColor = System.Drawing.Color.LightSeaGreen;
-            this.panel1.Location = new System.Drawing.Point(0, 327);
+            this.panel1.Location = new System.Drawing.Point(0, 324);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 41);
+            this.panel1.Size = new System.Drawing.Size(860, 60);
             this.panel1.TabIndex = 224;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -396,7 +396,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(860, 368);
+            this.ClientSize = new System.Drawing.Size(860, 384);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Button11);
@@ -414,10 +414,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(50, 50);
+            this.Location = new System.Drawing.Point(100, 200);
             this.Name = "AddMore";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "AddMore";
+            this.Load += new System.EventHandler(this.AddMore_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

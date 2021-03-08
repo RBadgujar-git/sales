@@ -19,7 +19,19 @@ namespace sample
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+            base.OnPaint(e);
 
+            int borderWidth = 5;
+
+            Color borderColor = SystemColors.AppWorkspace;
+
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+
+            borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
+
+            ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid,
+
+            borderColor, borderWidth, ButtonBorderStyle.Solid);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -284,6 +296,29 @@ namespace sample
         {
             Expenses si = new Expenses();
             si.Show();
+        }
+
+        private void AddMore_Load(object sender, EventArgs e)
+        {
+
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+
+            base.OnPaint(e);
+
+           int borderWidth = 5;
+
+            Color borderColor = SystemColors.AppWorkspace;
+
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+
+            borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
+
+            ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid,
+
+            borderColor, borderWidth, ButtonBorderStyle.Solid);
+            // ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.Red, ButtonBorderStyle.Solid);
         }
     }
  }

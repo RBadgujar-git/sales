@@ -18,16 +18,15 @@ namespace sample
         {
             InitializeComponent();
         }
-
+       
         private void button4_Click(object sender, EventArgs e)
         {
-            NewCompany BA = new NewCompany();
-           // BA.TopLevel = false;
-         //   BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
+            
+            NewCompany BA = new NewCompany();        
+           this.Controls.Add(BA);
+
+            BA.Location = new Point(230, 55);
+
             BA.BringToFront();
         }
 

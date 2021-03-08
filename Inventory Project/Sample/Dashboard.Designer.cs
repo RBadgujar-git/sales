@@ -588,7 +588,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(1037, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 732);
+            this.panel1.Size = new System.Drawing.Size(261, 634);
             this.panel1.TabIndex = 4;
             // 
             // button6
@@ -890,7 +890,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.MaximumSize = new System.Drawing.Size(1117, 660);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1117, 660);
+            this.panel3.Size = new System.Drawing.Size(1117, 658);
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
@@ -904,7 +904,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1298, 756);
+            this.ClientSize = new System.Drawing.Size(1298, 658);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
