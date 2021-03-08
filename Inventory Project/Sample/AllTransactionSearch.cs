@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class AllTransactionSearch : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public AllTransactionSearch()
         {
             InitializeComponent();
@@ -23,6 +25,21 @@ namespace sample
         }
 
         private void dgvalltransactionserach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void closebtn_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void AllTransactionSearch_Load(object sender, EventArgs e)
         {
 
         }

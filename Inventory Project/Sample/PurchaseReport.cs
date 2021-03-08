@@ -22,6 +22,8 @@ namespace sample
         }
         string date;
 
+        public FormWindowState WindowState { get; private set; }
+
         private void fetchCampanyame()
         {
             if (cmbFirm.Text != "System.Data.DataRowView")
@@ -339,6 +341,11 @@ namespace sample
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

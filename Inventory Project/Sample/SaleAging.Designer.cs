@@ -41,6 +41,7 @@
             this.txtUnusedPayment = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTotalReceivable = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // guna2ShadowPanel1
@@ -235,11 +236,28 @@
             this.dtpDate.Size = new System.Drawing.Size(155, 23);
             this.dtpDate.TabIndex = 66;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(944, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 447;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // SaleAging
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.txtTotalReceivable);
             this.Controls.Add(this.txtUnusedPayment);
@@ -278,5 +296,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtUnusedPayment;
         private Guna.UI2.WinForms.Guna2TextBox txtTotalReceivable;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

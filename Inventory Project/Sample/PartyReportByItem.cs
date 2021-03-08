@@ -16,6 +16,9 @@ namespace sample
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         SqlCommand cmd;
+
+        public FormWindowState WindowState { get; private set; }
+
         public PartyReportByItem()
         {
             InitializeComponent();
@@ -124,6 +127,11 @@ namespace sample
             //        MessageBox.Show("Data not" + ex);
             //    }
             //}
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

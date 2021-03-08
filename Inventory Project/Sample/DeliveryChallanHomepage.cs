@@ -19,6 +19,7 @@ namespace sample
         SqlCommand cmd;
         string id = "";
 
+        public FormWindowState WindowState { get; private set; }
 
         public DeliveryChallanHomepage()
         {
@@ -53,7 +54,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by CompanyName ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -139,7 +140,10 @@ namespace sample
                 MessageBox.Show("Data not" + ex);
             }
         }
-    
 
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

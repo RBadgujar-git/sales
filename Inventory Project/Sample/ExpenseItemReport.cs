@@ -143,6 +143,9 @@ namespace sample
 
         }
         int row = 0;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void Data()
             {
             float TA = 0, TD = 0, total = 0,TG=0,qty=0,rate=0;
@@ -180,5 +183,10 @@ namespace sample
         {
 
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
-    }
+  }

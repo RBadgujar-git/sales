@@ -31,5 +31,10 @@ namespace sample
         {
 
         }
+
+        private void TaxRateReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

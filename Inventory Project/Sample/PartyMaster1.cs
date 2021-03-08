@@ -395,7 +395,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where CompanyID='"+NewCompany.company_id+ "' and DeleteData='1' group by AddPartyGroup");
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where Company_ID='"+NewCompany.company_id+ "' and DeleteData='1' group by AddPartyGroup");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -436,6 +436,11 @@ namespace sample
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

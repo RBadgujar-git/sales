@@ -1036,7 +1036,7 @@ namespace sample
             }
         }
 
-        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

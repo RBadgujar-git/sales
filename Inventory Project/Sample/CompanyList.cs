@@ -14,6 +14,9 @@ namespace sample
     public partial class CompanyList : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public CompanyList()
         {
             InitializeComponent();
@@ -21,13 +24,9 @@ namespace sample
 
         private void button4_Click(object sender, EventArgs e)
         {
-            NewCompany BA = new NewCompany();
-           // BA.TopLevel = false;
-         //   BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
+            NewCompany BA = new NewCompany();        
+            this.Controls.Add(BA);        
+           // BA.Visible = true;
             BA.BringToFront();
         }
 
@@ -66,6 +65,11 @@ namespace sample
         private void CompanyList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

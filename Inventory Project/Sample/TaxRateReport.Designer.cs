@@ -352,6 +352,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaxRateReport";
             this.Size = new System.Drawing.Size(1005, 557);
+            this.Load += new System.EventHandler(this.TaxRateReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxRate)).EndInit();

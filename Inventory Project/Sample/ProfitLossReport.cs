@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class ProfitLossReport : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public ProfitLossReport()
         {
             InitializeComponent();
@@ -30,6 +32,11 @@ namespace sample
         private void ProfitLossReport_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
