@@ -905,5 +905,11 @@ namespace sample
                 e.Handled = true;
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Calculator cr = new Calculator();
+            cr.Show();
+        }
     }
 }

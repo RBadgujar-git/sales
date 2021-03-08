@@ -17,6 +17,9 @@ namespace sample
         SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public ExpenseHomePage()
         {
             InitializeComponent();
@@ -138,6 +141,11 @@ namespace sample
         private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

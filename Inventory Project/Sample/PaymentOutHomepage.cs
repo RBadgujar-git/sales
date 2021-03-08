@@ -14,6 +14,9 @@ namespace sample
     public partial class PaymentOutHomepage : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public PaymentOutHomepage()
         {
             InitializeComponent();
@@ -106,6 +109,11 @@ namespace sample
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

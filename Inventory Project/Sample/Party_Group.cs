@@ -19,6 +19,9 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public Party_Group()
         {
             InitializeComponent();
@@ -233,6 +236,16 @@ namespace sample
             Delete();
             fetchdetails();
             Cleardata();
+        }
+
+        private void btncancel_Click_1(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

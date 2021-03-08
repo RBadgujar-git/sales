@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class SalePurchaseReportbyItemCategory : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public SalePurchaseReportbyItemCategory()
         {
             InitializeComponent();
@@ -45,6 +47,11 @@ namespace sample
         private void SalePurchaseReportbyItemCategory_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
