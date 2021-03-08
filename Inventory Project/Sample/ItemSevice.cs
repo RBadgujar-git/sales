@@ -324,7 +324,7 @@ namespace sample
         {
             if (cmbItemCategory.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -344,7 +344,7 @@ namespace sample
         {
             if (cmbUnit.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select UnitName from tbl_UnitMaster group by UnitName");
+                    string SelectQuery = string.Format("select UnitName from tbl_UnitMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by UnitName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -368,7 +368,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select SubUnitName from tbl_UnitMaster where (UnitName='{0}') GROUP BY SubUnitName", cmbUnit.Text);
+                string Query = String.Format("select SubUnitName from tbl_UnitMaster where (UnitName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SubUnitName", cmbUnit.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())

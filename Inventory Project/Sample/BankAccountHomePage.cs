@@ -108,7 +108,7 @@ namespace sample
         {
             lblBankAccount.Text = dgvBankAccount.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
-            string Query = string.Format("select AccountNo,Date,OpeningBal from tbl_BankAccount where AccountName='{0}' group by AccountNo,Date,OpeningBal", lblBankAccount.Text);
+            string Query = string.Format("select AccountNo,Date,OpeningBal from tbl_BankAccount where AccountName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by AccountNo,Date,OpeningBal", lblBankAccount.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -121,7 +121,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName from tbl_BankAccount where AccountName like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select AccountName from tbl_BankAccount where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -141,7 +141,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountNo from tbl_BankAccount where AccountNo like '%{0}%'", txtSearch2.Text);
+                string Query = string.Format("select AccountNo from tbl_BankAccount where AccountNo like '%{0}%' and Company_ID='"+NewCompany.company_id+"' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -160,6 +160,11 @@ namespace sample
         }
 
         private void dgvBankAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
