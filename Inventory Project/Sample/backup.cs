@@ -105,7 +105,7 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btncancel_Click_1(object sender, EventArgs e)
