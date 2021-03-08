@@ -53,7 +53,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -74,7 +74,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_DeliveryChallan where DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_DeliveryChallan where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -107,7 +107,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select PartyName from tbl_DeliveryChallan where PartyName like '%{0}%'", txtFilter.Text);
+                string Query = string.Format("select PartyName from tbl_DeliveryChallan where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -127,7 +127,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "'");
+                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

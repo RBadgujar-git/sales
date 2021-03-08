@@ -493,6 +493,7 @@ namespace sample
         }
         private void gst_devide()
         {
+
             if (cmbtax.Text != "" && txtsgst.Text != "" && txtcgst.Text != "")
             {
                 float gst = 0, cgst = 0, sgst = 0;
