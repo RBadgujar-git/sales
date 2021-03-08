@@ -158,6 +158,9 @@ namespace sample
         }
 
         byte[] arrImage1;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
           
@@ -288,7 +291,12 @@ namespace sample
                 }
             }
             }
-      //  // Convert borderStyle to Style and ExStyle values for Win32
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+        //  // Convert borderStyle to Style and ExStyle values for Win32
         //protected override void OnPaint(PaintEventArgs e)
 
         //{

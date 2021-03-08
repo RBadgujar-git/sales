@@ -18,6 +18,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public OtherIncomeItemReport()
         {
             InitializeComponent();
@@ -125,6 +128,11 @@ namespace sample
         private void cmbAlllFirms_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
