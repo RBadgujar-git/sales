@@ -64,7 +64,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='"+NewCompany.company_id+"' group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where DeleteData='1' and Company_ID='" + NewCompany.company_id+"' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -342,7 +342,7 @@ namespace sample
         {
             try {
                    con.Open();
-                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                     SqlCommand cmd = new SqlCommand(str, con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
@@ -474,15 +474,14 @@ namespace sample
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            //{
-            //    e.Handled = true;
-            //}
-            //else
-            //{
-            //    e.Handled = false;
-            //}
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)

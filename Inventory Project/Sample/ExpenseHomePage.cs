@@ -56,7 +56,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ExpenseCategory", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_ExpenseCategory where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -97,7 +97,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%'", txtSearch.Text);
+                string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%' where DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

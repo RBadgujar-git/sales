@@ -68,7 +68,7 @@ namespace sample
             if (cmbpartyname.Text != "System.Data.DataRowView") {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName where DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -467,7 +467,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string str = string.Format("SELECT * FROM tbl_DeliveryChallan where ChallanNo='{0}'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_DeliveryChallan where DeleteData='1' and  ChallanNo='{0}'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);                           
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -843,7 +843,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory where DeleteData='1' ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -976,6 +976,11 @@ namespace sample
             {
                 e.Handled = true;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

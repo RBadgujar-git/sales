@@ -35,7 +35,7 @@ namespace sample
 
           
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner ", con);
+                SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where DeleteData='1'", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                 SDA.Fill(ds, "temp");

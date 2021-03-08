@@ -53,7 +53,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_Expenses", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_Expenses where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -79,7 +79,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -100,7 +100,7 @@ namespace sample
         {
             if (cmbExpensecategory.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory group by CategoryName where DeleteData='1' ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

@@ -112,7 +112,7 @@ namespace sample
         {
             con.Open();
             DataTable dtable = new DataTable();
-            cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'", con);
+            cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+ "' and DeleteData='1'", con);
             cmd.Parameters.AddWithValue("@ItemName","");
             cmd.Parameters.AddWithValue("@OpeningQty","");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
@@ -136,7 +136,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,OpeningQty from tbl_ItemMaster where ItemName like '%{0}%'", guna2TextBox1.Text);
+                string Query = string.Format("select ItemName,OpeningQty from tbl_ItemMaster where ItemName like '%{0}%' where DeleteData='1'", guna2TextBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

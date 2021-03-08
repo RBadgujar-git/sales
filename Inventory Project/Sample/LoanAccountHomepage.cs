@@ -90,7 +90,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName from tbl_LoanBank where AccountName like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select AccountName from tbl_LoanBank where AccountName like '%{0}%' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -132,7 +132,7 @@ namespace sample
         {
             lblBankAccount.Text = dgvbankAccount.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
-            string Query = string.Format("select AccountNo,Date,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where AccountName='{0}' group by AccountNo,Date,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
+            string Query = string.Format("select AccountNo,Date,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where DeleteData='1' and AccountName='{0}' group by AccountNo,Date,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -146,6 +146,11 @@ namespace sample
         }
 
         private void dgvLoanAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

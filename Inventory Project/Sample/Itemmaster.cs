@@ -39,7 +39,7 @@ namespace sample
             if (cmbCategry.Text != "System.Data.DataRowView")
             {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster where DeleteData='1' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -61,7 +61,7 @@ namespace sample
         {
             if (cmbUnit.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select UnitName from tbl_UnitMaster group by UnitName");
+                    string SelectQuery = string.Format("select UnitName from tbl_UnitMaster  where DeleteData='1' group by UnitName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -695,6 +695,9 @@ namespace sample
             }
         }
 
-        
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -699,6 +699,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "PartyStatement";
             this.Size = new System.Drawing.Size(984, 609);
+            this.Load += new System.EventHandler(this.PartyStatement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSofware)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounting)).EndInit();
             this.guna2Panel1.ResumeLayout(false);

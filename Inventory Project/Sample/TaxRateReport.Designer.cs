@@ -201,6 +201,7 @@
             this.dgvTaxRate.ThemeStyle.RowsStyle.Height = 22;
             this.dgvTaxRate.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTaxRate.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvTaxRate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaxRate_CellContentClick);
             // 
             // Column1
             // 
