@@ -26,5 +26,10 @@ namespace sample
         {
 
         }
+
+        private void TaxReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

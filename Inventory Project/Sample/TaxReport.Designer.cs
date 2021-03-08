@@ -330,6 +330,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaxReport";
             this.Size = new System.Drawing.Size(989, 568);
+            this.Load += new System.EventHandler(this.TaxReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxReport)).EndInit();

@@ -75,9 +75,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(936, 10);
+            this.button3.Location = new System.Drawing.Point(949, 10);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 29);
+            this.button3.Size = new System.Drawing.Size(34, 29);
             this.button3.TabIndex = 13;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);

@@ -1012,5 +1012,10 @@ namespace sample
                 e.Handled = true;
             }
         }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

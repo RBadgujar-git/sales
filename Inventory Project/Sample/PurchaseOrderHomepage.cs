@@ -38,5 +38,10 @@ namespace sample
         {
 
         }
+
+        private void PurchaseOrderHomepage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
