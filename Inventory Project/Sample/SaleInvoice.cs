@@ -502,7 +502,7 @@ namespace sample
                 SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='"+NewCompany.company_id+"'", con);
                 string State1 = cd.ExecuteScalar().ToString();
                 con.Close();
-                MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+               // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
                 if (State1 == cmbStatesupply.Text)
                 {
