@@ -814,3 +814,6 @@ C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\s
 G:\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 G:\sales\Inventory Project\sample\obj\Debug\sample.exe
 G:\sales\Inventory Project\sample\obj\Debug\sample.pdb
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
