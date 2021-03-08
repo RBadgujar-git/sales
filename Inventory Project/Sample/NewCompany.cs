@@ -55,16 +55,10 @@ namespace sample
             con.Close();
         } 
         private void InsertData()
-        {        
-              
+        {             
             try
-            {
-                if (cmbCompanyName.Text == "")
-                {
-                    MessageBox.Show("Company Name Is Requried");
-                }
-                else
-                {
+
+            { 
                     MemoryStream ms = new MemoryStream();
                     guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
                     byte[] arrImage1 = ms.GetBuffer();
@@ -81,10 +75,10 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ReferralCode", txtReferralCode.Text);
                     cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Insert data Successfully");
+                    MessageBox.Show("Login Company Successfully !!!");
                     con.Close();
                     ClearData();
-                }
+                
             }
             catch (Exception ex)
             {
@@ -95,8 +89,15 @@ namespace sample
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            InsertData();
-            ClearData();
+            if (cmbCompanyName.Text == "")
+            {
+                MessageBox.Show("Company Name Is Requried");
+            }
+            else
+            {
+                InsertData();
+                this.Visible = false;
+            }
         }  
 
         private void button3_Click(object sender, EventArgs e)
@@ -148,29 +149,8 @@ namespace sample
         byte[] arrImage1;
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
-                {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
-                    {
-                        guna2CirclePictureBox1.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
-                    }
-                }
-            }
+          
+            
         }
 
         private void txtCompanyName_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -270,5 +250,53 @@ namespace sample
         {
             ClearData();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.RestoreDirectory = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                int count = 1;
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    PictureBox pb = new PictureBox();
+                    Image loadedImage = Image.FromFile(file);
+
+                    if (count == 1)
+                    {
+                        guna2CirclePictureBox1.Image = Image.FromFile(file);
+                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                        guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        MemoryStream ms = new MemoryStream();
+                        guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
+                        arrImage1 = ms.GetBuffer();
+                    }
+                }
+            }
+            }
+        // Convert borderStyle to Style and ExStyle values for Win32
+        protected override void OnPaint(PaintEventArgs e)
+
+        {
+
+            base.OnPaint(e);
+
+            int borderWidth = 5;
+
+            Color borderColor = SystemColors.AppWorkspace;
+
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+
+            borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
+
+            ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid,
+
+            borderColor, borderWidth, ButtonBorderStyle.Solid);
+
+        }
     }
+    
 }
