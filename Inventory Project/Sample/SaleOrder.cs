@@ -271,20 +271,36 @@ namespace sample
 
         private void gst_devide()
         {
+
             try
             {
-                float gst = 0, cgst = 0, sgst = 0, igst = 0;
-                gst = float.Parse(cmbtax.Text);
 
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
+                if (State1 == cmbStatesupply.Text)
+                {
 
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    txtIGST.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
 
+                }
 
-                cgst = gst / 2;
-                sgst = gst / 2;
-
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
             }
             catch (Exception e1)
             {
@@ -566,12 +582,9 @@ namespace sample
             float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
 
 
-
             TA = float.Parse(txtsubtotal.Text.ToString());
             dis = float.Parse(txtDiscount.Text.ToString());
             gst = float.Parse(cmbtax.Text.ToString());
-
-
 
 
             dis_amt = TA * dis / 100;

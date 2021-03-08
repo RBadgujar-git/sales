@@ -30,7 +30,7 @@ namespace sample
 
         private void Form1_Load(object sender, EventArgs e)
         {
-             
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1273,6 +1273,7 @@ namespace sample
         {
             Barcodeprint br = new Barcodeprint();
             br.Show();
+
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
