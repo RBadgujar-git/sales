@@ -21,6 +21,9 @@ namespace sample
 
         private void Saleorderhomepage_Load(object sender, EventArgs e)
         {
+
+
+
             try
             {
                 con.Open();

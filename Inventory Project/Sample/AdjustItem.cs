@@ -177,7 +177,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where DeleteData='1' and Company_ID='"+NewCompany.company_id+"'group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -308,6 +308,11 @@ namespace sample
         }
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
