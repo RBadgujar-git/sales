@@ -155,7 +155,7 @@
             // 
             this.addNewCompanyToolStripMenuItem.Name = "addNewCompanyToolStripMenuItem";
             this.addNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.addNewCompanyToolStripMenuItem.Text = "Company Login";
+            this.addNewCompanyToolStripMenuItem.Text = "Change Company";
             this.addNewCompanyToolStripMenuItem.Click += new System.EventHandler(this.addNewCompanyToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3

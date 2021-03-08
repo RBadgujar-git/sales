@@ -41,7 +41,6 @@
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2CirclePictureBox1 = new System.Windows.Forms.PictureBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,7 +184,7 @@
             this.btnlogin.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
             this.btnlogin.HoverState.Parent = this.btnlogin;
-            this.btnlogin.Location = new System.Drawing.Point(269, 463);
+            this.btnlogin.Location = new System.Drawing.Point(164, 458);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.ShadowDecoration.Parent = this.btnlogin;
             this.btnlogin.Size = new System.Drawing.Size(123, 41);
@@ -243,28 +242,12 @@
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.Purple;
-            this.guna2Button1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(115, 463);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(127, 41);
-            this.guna2Button1.TabIndex = 18;
-            this.guna2Button1.Text = "Restore Backup";
-            // 
             // NewCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmbCompanyName);
@@ -306,6 +289,5 @@
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
