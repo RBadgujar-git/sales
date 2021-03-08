@@ -176,6 +176,7 @@
             this.dgvalltransactionserach.ThemeStyle.RowsStyle.Height = 22;
             this.dgvalltransactionserach.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvalltransactionserach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvalltransactionserach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvalltransactionserach_CellContentClick);
             // 
             // Column3
             // 

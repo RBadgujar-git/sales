@@ -670,6 +670,11 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\G
 C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
 C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+G:\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+G:\sales\Inventory Project\sample\obj\Debug\sample.exe
+G:\sales\Inventory Project\sample\obj\Debug\sample.pdb
 D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.pdb
@@ -693,7 +698,6 @@ D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AddMore.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
@@ -709,6 +713,7 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccountHomePa
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
@@ -808,14 +813,3 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.r
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
-C:\Users\Idealtechinfo-7\source\repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
-G:\sales\Inventory Project\sample\bin\Debug\sample.exe.config
-G:\sales\Inventory Project\sample\obj\Debug\sample.exe
-G:\sales\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-C:\Users\Idealtechinfo-9\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources

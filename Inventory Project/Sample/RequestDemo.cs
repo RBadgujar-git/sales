@@ -69,7 +69,9 @@ namespace sample
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(txtcontactNo.Text=="")
+
+
+            if (txtcontactNo.Text=="")
             {
                 MessageBox.Show("Please Enter Mobile No ");
 

@@ -21,5 +21,10 @@ namespace sample
         {
 
         }
+
+        private void dgvalltransactionserach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
