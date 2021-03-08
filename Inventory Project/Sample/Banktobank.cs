@@ -19,6 +19,8 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+        private FormWindowState WindowState;
+
         public Banktobank()
         {
             InitializeComponent();
@@ -369,6 +371,11 @@ namespace sample
         private void btnclear_Click(object sender, EventArgs e)
         {
             Cleardata();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

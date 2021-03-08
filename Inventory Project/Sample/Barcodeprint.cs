@@ -31,5 +31,10 @@ namespace sample
         {
             this.Close();
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace sample
             InitializeComponent();
         }
 
+        public FormWindowState WindowState { get; private set; }
+
         private void BankStatement_Load(object sender, EventArgs e)
         {
 
@@ -25,6 +27,11 @@ namespace sample
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

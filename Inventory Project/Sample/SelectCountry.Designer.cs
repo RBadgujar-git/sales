@@ -126,6 +126,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SelectCountry";
             this.Size = new System.Drawing.Size(565, 290);
+            this.Load += new System.EventHandler(this.SelectCountry_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.ResumeLayout(false);

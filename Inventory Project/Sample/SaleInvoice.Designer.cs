@@ -401,6 +401,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 589);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(451, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.TabIndex = 206;
+            this.label4.Text = "PO No :";
             // 
             // label4
             // 

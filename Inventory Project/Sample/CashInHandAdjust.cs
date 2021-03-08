@@ -18,6 +18,9 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public CashInHandAdjust()
         {
             InitializeComponent();
@@ -285,6 +288,16 @@ namespace sample
         private void dgvCashAdjustment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

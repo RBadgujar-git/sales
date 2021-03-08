@@ -244,6 +244,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PurchaseOrderHomepage";
             this.Size = new System.Drawing.Size(1071, 584);
+            this.Load += new System.EventHandler(this.PurchaseOrderHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPurchaseOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
