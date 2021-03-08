@@ -36,7 +36,7 @@ namespace sample
                         con.Open();
                     }
                 //  DataTable dtable = new DataTable();
-                int ID=1;
+                      int ID=1;
                    SqlCommand cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
@@ -58,8 +58,15 @@ namespace sample
                     cmd.Parameters.AddWithValue("@AdditinalFeild3", "SBIN001234");
                     int num = cmd.ExecuteNonQuery();
                    MessageBox.Show("Insert data Successfully");
-                             
-                
+
+
+                SqlCommand cmd1 = new SqlCommand("Select CompanyID from tbl_CompanyMaster where PhoneNo='"+txtcontactNo.Text+"'",con);
+               int CompanyIDD=Convert.ToInt32(cmd1.ExecuteScalar());
+
+
+                NewCompany.company_id = CompanyIDD.ToString();
+              //  MessageBox.Show("Id "+NewCompany.company_id);
+
             }
             catch (Exception ex)
             {

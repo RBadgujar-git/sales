@@ -1273,6 +1273,7 @@ namespace sample
         {
             Barcodeprint br = new Barcodeprint();
             br.Show();
+
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)

@@ -178,7 +178,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -187,7 +187,7 @@ namespace sample
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
                         cmbCompanyName.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                   }
+                    }
                 }
                 catch (Exception e1)
                 {
