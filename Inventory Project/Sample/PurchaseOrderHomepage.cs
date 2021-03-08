@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class PurchaseOrderHomepage : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public PurchaseOrderHomepage()
         {
             InitializeComponent();
@@ -42,6 +44,11 @@ namespace sample
         private void PurchaseOrderHomepage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

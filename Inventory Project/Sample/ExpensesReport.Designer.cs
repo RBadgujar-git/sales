@@ -48,6 +48,7 @@
             this.cmbexpenses = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTodate = new System.Windows.Forms.DateTimePicker();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvexpenses)).BeginInit();
             this.SuspendLayout();
@@ -310,11 +311,28 @@
             this.dtpTodate.ValueChanged += new System.EventHandler(this.dtpTodate_ValueChanged);
             this.dtpTodate.Enter += new System.EventHandler(this.dtpTodate_Enter);
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(941, 0);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 446;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // ExpensesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTodate);
             this.Controls.Add(this.dtpFromDate);
             this.Controls.Add(this.cmbexpenses);
@@ -358,5 +376,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbexpenses;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpTodate;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

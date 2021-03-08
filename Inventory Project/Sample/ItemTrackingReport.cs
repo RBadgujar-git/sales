@@ -19,6 +19,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public ItemTrackingReport()
         {
             InitializeComponent();
@@ -177,6 +180,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

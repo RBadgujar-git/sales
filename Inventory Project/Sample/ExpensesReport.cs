@@ -19,6 +19,9 @@ namespace sample
         //SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public ExpensesReport()
         {
             InitializeComponent();
@@ -144,5 +147,10 @@ namespace sample
                 //    txtTotalQty.Text = total.ToString();
                 }
             }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
+    }
 }

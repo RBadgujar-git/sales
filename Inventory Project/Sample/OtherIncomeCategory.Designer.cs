@@ -41,12 +41,14 @@
             this.btnupdate = new Guna.UI2.WinForms.Guna2Button();
             this.btndelete = new Guna.UI2.WinForms.Guna2Button();
             this.dgvcategory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategory)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel1
             // 
+            this.guna2Panel1.Controls.Add(this.btnminimize);
             this.guna2Panel1.Controls.Add(this.button3);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -252,6 +254,22 @@
             this.dgvcategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvcategory.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcategory_CellContentDoubleClick);
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(723, 9);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 447;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // OtherIncomeCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -291,5 +309,6 @@
         private Guna.UI2.WinForms.Guna2Button btnupdate;
         private Guna.UI2.WinForms.Guna2Button btndelete;
         private Guna.UI2.WinForms.Guna2DataGridView dgvcategory;
+        private System.Windows.Forms.Button btnminimize;
     }
 }
