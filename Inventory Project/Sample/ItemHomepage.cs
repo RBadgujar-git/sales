@@ -17,6 +17,9 @@ namespace sample
         // SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-UK7P4M8\\SQLEXPRESS;Initial Catalog=InventoryMgnt;Integrated Security=True");
         // SqlConnection con;
         SqlCommand cmd;
+
+        public FormWindowState WindowState { get; private set; }
+
         // string id = "";
         public ItemHomepage()
         {
@@ -241,6 +244,11 @@ namespace sample
         {
 
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
-    }
+}
 

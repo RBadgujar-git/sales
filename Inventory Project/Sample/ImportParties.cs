@@ -17,9 +17,16 @@ namespace sample
             InitializeComponent();
         }
 
+        public FormWindowState WindowState { get; private set; }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

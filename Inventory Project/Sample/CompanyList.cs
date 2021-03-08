@@ -14,6 +14,9 @@ namespace sample
     public partial class CompanyList : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public CompanyList()
         {
             InitializeComponent();
@@ -66,6 +69,11 @@ namespace sample
         private void CompanyList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

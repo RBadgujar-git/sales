@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class DayBook : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public DayBook()
         {
             InitializeComponent();
@@ -35,6 +37,11 @@ namespace sample
         private void DayBook_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
