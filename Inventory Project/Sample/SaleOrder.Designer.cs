@@ -1396,6 +1396,7 @@
             this.txtTransportName.ShadowDecoration.Parent = this.txtTransportName;
             this.txtTransportName.Size = new System.Drawing.Size(180, 24);
             this.txtTransportName.TabIndex = 14;
+            this.txtTransportName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransportName_KeyPress);
             // 
             // txtDescription
             // 

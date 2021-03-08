@@ -41,10 +41,7 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnimport = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btncancel = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txttotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtmoneyIn = new Guna.UI2.WinForms.Guna2TextBox();
@@ -54,6 +51,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnimport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdaybook)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -193,34 +193,6 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Print";
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(880, 31);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(25, 26);
-            this.btnPrint.TabIndex = 28;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            // 
-            // btnimport
-            // 
-            this.btnimport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnimport.BackColor = System.Drawing.Color.Transparent;
-            this.btnimport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnimport.BackgroundImage")));
-            this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnimport.FlatAppearance.BorderSize = 0;
-            this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimport.Location = new System.Drawing.Point(837, 33);
-            this.btnimport.Name = "btnimport";
-            this.btnimport.Size = new System.Drawing.Size(24, 21);
-            this.btnimport.TabIndex = 27;
-            this.btnimport.UseVisualStyleBackColor = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -230,23 +202,6 @@
             this.label3.Size = new System.Drawing.Size(45, 26);
             this.label3.TabIndex = 30;
             this.label3.Text = "Excel\r\nReport";
-            // 
-            // btncancel
-            // 
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancel.BackColor = System.Drawing.Color.White;
-            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
-            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(939, 8);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(29, 26);
-            this.btncancel.TabIndex = 36;
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // guna2Panel1
             // 
@@ -396,6 +351,51 @@
             this.dtpdate.Size = new System.Drawing.Size(170, 23);
             this.dtpdate.TabIndex = 39;
             // 
+            // btncancel
+            // 
+            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(939, 8);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(29, 26);
+            this.btncancel.TabIndex = 36;
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Location = new System.Drawing.Point(880, 31);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(25, 26);
+            this.btnPrint.TabIndex = 28;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // btnimport
+            // 
+            this.btnimport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnimport.BackColor = System.Drawing.Color.Transparent;
+            this.btnimport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnimport.BackgroundImage")));
+            this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnimport.FlatAppearance.BorderSize = 0;
+            this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimport.Location = new System.Drawing.Point(837, 33);
+            this.btnimport.Name = "btnimport";
+            this.btnimport.Size = new System.Drawing.Size(24, 21);
+            this.btnimport.TabIndex = 27;
+            this.btnimport.UseVisualStyleBackColor = false;
+            // 
             // DayBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -415,6 +415,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DayBook";
             this.Size = new System.Drawing.Size(981, 577);
+            this.Load += new System.EventHandler(this.DayBook_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvdaybook)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();

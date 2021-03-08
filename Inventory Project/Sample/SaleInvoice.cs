@@ -493,29 +493,15 @@ namespace sample
         }
         private void gst_devide()
         {
-
-
-            SqlCommand cmd = new SqlCommand("Select State from tbl_CompanyMaster where  Company_ID='" + NewCompany.company_id + "' ",con);
-            String State = cmd.ExecuteScalar().ToString();
-            MessageBox.Show("compant Sata"+State+"DSatya"+cmbStatesupply.Text);
-            if (State == cmbStatesupply.Text)
+            if (cmbtax.Text != "" && txtsgst.Text != "" && txtcgst.Text != "")
             {
-                if (cmbtax.Text != "" && txtsgst.Text != "" && txtcgst.Text != "")
-                {
-                    float gst = 0, cgst = 0, sgst = 0, igst = 0;
-                    gst = float.Parse(cmbtax.Text);
-                    cgst = gst / 2;
-                    sgst = gst / 2;
-                    txtsgst.Text = sgst.ToString();
-                    txtcgst.Text = cgst.ToString();
-                }
-            }
-            else {
-
-                float gst = 0;
+                float gst = 0, cgst = 0, sgst = 0;
                 gst = float.Parse(cmbtax.Text);
-                TxtIGST.Text = gst.ToString();   
-               }
+                cgst = gst / 2;
+                sgst = gst / 2;
+                txtsgst.Text = sgst.ToString();
+                txtcgst.Text = cgst.ToString();
+            }
         
        }
 
@@ -728,7 +714,15 @@ namespace sample
 
         private void txtPoNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
@@ -885,14 +879,15 @@ namespace sample
 
         private void txtTransportName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtDeliveryLoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -968,7 +963,7 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-            gst_devide();
+
         }
 
         private void TxtIGST_TextChanged(object sender, EventArgs e)
@@ -992,9 +987,29 @@ namespace sample
             cs.Show();
         }
 
-        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtsubtotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -1275,6 +1275,19 @@ namespace sample
             br.Show();
 
         }
+
+        private void guna2Panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            if (panel1.Visible)
+                panel1.Hide();
+            else
+                panel1.Show();
+        }
     }
 }
 

@@ -27,7 +27,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebitNote));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -152,7 +151,6 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -257,7 +255,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 24);
             this.comboBox1.TabIndex = 126;
-//            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // cmbpartyname1
             // 
@@ -268,7 +265,6 @@
             this.cmbpartyname1.Name = "cmbpartyname1";
             this.cmbpartyname1.Size = new System.Drawing.Size(140, 24);
             this.cmbpartyname1.TabIndex = 125;
-        //    this.cmbpartyname1.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname1_SelectedIndexChanged);
             // 
             // cmbPaymentType
             // 
@@ -1669,6 +1665,7 @@
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.Height = 22;
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvInnerDebiteNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDebiteNote_CellContentClick);
             // 
             // sr_no
             // 
@@ -1905,7 +1902,6 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1930,7 +1926,6 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
