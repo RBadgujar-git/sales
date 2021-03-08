@@ -1036,13 +1036,10 @@ namespace sample
 
         private void changeCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CompanyList PB = new CompanyList();
-            // ex.TopLevel = false;
-          //  PB.AutoScroll = true;
-            this.Controls.Add(PB);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            PB.Dock = DockStyle.Fill;
-            PB.BringToFront();
+            //CompanyList PB = new CompanyList();    
+            //this.Controls.Add(PB);     
+            //PB.Dock = DockStyle.Fill;
+            //PB.BringToFront();
         }
 
         private void button6_Click_1(object sender, EventArgs e)
@@ -1273,6 +1270,11 @@ namespace sample
         {
             Barcodeprint br = new Barcodeprint();
             br.Show();
+        }
+
+        private void menuStrip1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

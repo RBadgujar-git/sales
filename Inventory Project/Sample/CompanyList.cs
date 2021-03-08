@@ -14,6 +14,7 @@ namespace sample
     public partial class CompanyList : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+        SqlCommand cmd;
         public CompanyList()
         {
             InitializeComponent();
@@ -34,7 +35,22 @@ namespace sample
         {
 
         }
+        public void Binddata()
+        {
+           
 
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            DataTable dtable = new DataTable();
+            cmd = new SqlCommand("Select CompanyName as Company_Name from tbl_CompanyMaster where DeleteData = 1", con);           
+            SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
+            sdasql.Fill(dtable);
+            dgvCompanylist.DataSource = dtable;
+
+
+        }
         private void dgvCompanylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -60,6 +76,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void CompanyList_Load(object sender, EventArgs e)
+        {
+            Binddata();
         }
     }
 }

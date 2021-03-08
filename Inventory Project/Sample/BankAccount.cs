@@ -345,5 +345,10 @@ namespace sample
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+
+        private void dgvbankaccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

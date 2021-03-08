@@ -33,7 +33,6 @@
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.saleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,14 +129,14 @@
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "Home  ";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.menuStrip1.Click += new System.EventHandler(this.menuStrip1_Click);
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
-            this.addNewCompanyToolStripMenuItem,
-            this.changeCompanyToolStripMenuItem});
+            this.addNewCompanyToolStripMenuItem});
             this.toolStripMenuItem4.ForeColor = System.Drawing.Color.Black;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(78, 20);
@@ -157,13 +156,6 @@
             this.addNewCompanyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.addNewCompanyToolStripMenuItem.Text = "Company Login";
             this.addNewCompanyToolStripMenuItem.Click += new System.EventHandler(this.addNewCompanyToolStripMenuItem_Click);
-            // 
-            // changeCompanyToolStripMenuItem
-            // 
-            this.changeCompanyToolStripMenuItem.Name = "changeCompanyToolStripMenuItem";
-            this.changeCompanyToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.changeCompanyToolStripMenuItem.Text = "Change Company";
-            this.changeCompanyToolStripMenuItem.Click += new System.EventHandler(this.changeCompanyToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -988,7 +980,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ToolStripMenuItem addNewCompanyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeCompanyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerCareNumberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sendMailToolStripMenuItem;
