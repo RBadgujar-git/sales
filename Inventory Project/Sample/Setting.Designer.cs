@@ -65,6 +65,7 @@
             this.NumericUpDown3 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
@@ -575,11 +576,28 @@
             this.label10.TabIndex = 248;
             this.label10.Text = "Manual Backup Remainder";
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(980, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 448;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.NumericUpDown3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -668,5 +686,6 @@
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericUpDown3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

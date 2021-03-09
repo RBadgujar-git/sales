@@ -14,6 +14,9 @@ namespace sample
     public partial class SalePurchaseOrderReport : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public SalePurchaseOrderReport()
         {
             InitializeComponent();
@@ -168,6 +171,11 @@ namespace sample
         private void btnPrint_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
