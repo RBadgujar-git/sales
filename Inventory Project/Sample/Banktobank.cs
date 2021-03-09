@@ -150,9 +150,11 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            
+            calopenbal();
             update_opening_bal();
             Insert();
-            
+           
             fetchdetails();
             Cleardata();
         }
@@ -169,11 +171,11 @@ namespace sample
         {
             try
             {
-              
+                con.Open();
                 String query = string.Format("update tbl_BankAccount set OpeningBal='"+textBox1.Text+"' where (BankName='{0}') and Company_ID='"+NewCompany.company_id+"' and DeleteData='1'", cmbfrombank.Text);
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
-               
+                con.Close();
             }
             catch (Exception e1)
             {
@@ -432,22 +434,11 @@ namespace sample
 
         private void txtAmount_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                float opening_bal = 0, amount = 0, total = 0;
-                opening_bal = float.Parse(textBox1.Text);
-                amount = float.Parse(txtAmount.Text);
-                total = opening_bal - amount;
-                textBox1.Text = total.ToString();
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
+           
         }
         public void cal()
         {
-           
+            
         }
 
         private void txtAmount_MouseEnter(object sender, EventArgs e)
@@ -457,6 +448,7 @@ namespace sample
 
         private void txtAmount_KeyDown(object sender, KeyEventArgs e)
         {
+           
             //try
             //{
             //    float opening_bal=0, amount=0, remain_opening=0;
@@ -471,6 +463,28 @@ namespace sample
             //{
             //    MessageBox.Show(e1.Message);
             //}
+        }
+        public void calopenbal()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
+
+            opening_bal = float.Parse(textBox1.Text);
+            amount = float.Parse(txtAmount.Text);
+
+            remain_opening = opening_bal - amount;
+            textBox1.Text = remain_opening.ToString();
+        }
+        public int bankamount;
+            
+       public void DisplayLowQuantityItems()
+        {
+            con.Open();
+            string Query = String.Format("select OpeningBal from tbl_BankAccount where Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY OpeningBal ", cmbfrombank.Text);
+            SqlCommand cmd = new SqlCommand(Query, con);
+            cmd.ExecuteScalar();
+          
+            con.Close();
+            MessageBox.Show("Is not Available\n");
         }
     }
 }

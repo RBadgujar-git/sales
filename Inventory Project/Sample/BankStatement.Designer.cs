@@ -250,7 +250,7 @@
             // 
             // btncancel
             // 
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btncancel.BackColor = System.Drawing.Color.White;
             this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
             this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
