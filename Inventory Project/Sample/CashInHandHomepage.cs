@@ -60,10 +60,6 @@ namespace sample
             //{
             //    MessageBox.Show(ex.Message);
             //}
-
-
-
-
         }
 
         private void CashInHandHomepage_Load(object sender, EventArgs e)
@@ -78,11 +74,7 @@ namespace sample
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
-
-
-
             dgvCashInHand.DataSource = dt;
-
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

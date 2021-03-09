@@ -49,6 +49,7 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbanktobank)).BeginInit();
             this.SuspendLayout();
             // 
@@ -346,11 +347,21 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(610, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 16);
+            this.label7.TabIndex = 441;
+            this.label7.Text = "label7";
+            // 
             // Banktobank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.btnclear);
             this.Controls.Add(this.btndelete);
@@ -400,5 +411,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label7;
     }
 }
