@@ -451,7 +451,7 @@ namespace sample
         {
             PartyHomepage PH = new PartyHomepage();
             //ex.TopLevel = false;
-            PH.AutoScroll = true;
+           // PH.AutoScroll = true;
             this.Controls.Add(PH);
            // PH.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             PH.Dock = DockStyle.Fill;

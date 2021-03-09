@@ -40,8 +40,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.guna2CirclePictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.guna2CirclePictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,11 +49,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 17);
+            this.label1.Location = new System.Drawing.Point(234, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 23);
+            this.label1.Size = new System.Drawing.Size(213, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ADD COMPANY";
+            this.label1.Text = "CHANGE COMPANY";
             // 
             // guna2Panel1
             // 
@@ -202,7 +202,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(600, 17);
+            this.button3.Location = new System.Drawing.Point(621, 11);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(29, 29);
             this.button3.TabIndex = 12;
@@ -231,18 +231,6 @@
             this.textBox1.TabIndex = 16;
             this.textBox1.Visible = false;
             // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.CadetBlue;
-            this.guna2CirclePictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(474, 135);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(155, 134);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox1.TabIndex = 17;
-            this.guna2CirclePictureBox1.TabStop = false;
-            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // btnminimize
             // 
             this.btnminimize.BackColor = System.Drawing.Color.White;
@@ -252,12 +240,23 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(568, 19);
+            this.btnminimize.Location = new System.Drawing.Point(590, 11);
             this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.Size = new System.Drawing.Size(29, 29);
             this.btnminimize.TabIndex = 440;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(467, 135);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(170, 136);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox1.TabIndex = 441;
+            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // NewCompany
             // 
@@ -265,8 +264,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.guna2CirclePictureBox1);
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmbCompanyName);
             this.Controls.Add(this.button3);
@@ -306,7 +305,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.PictureBox guna2CirclePictureBox1;
     }
 }

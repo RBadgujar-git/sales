@@ -202,7 +202,8 @@ namespace sample
                     cmd = new SqlCommand("tbl_SaleInvoiceInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    cmd.Parameters.AddWithValue("@ID", id1);
+                    //cmd.Parameters.AddWithValue("@ID", id1);
+                    cmd.Parameters.AddWithValue("@InvoiceID", id1);
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
@@ -234,6 +235,7 @@ namespace sample
         {
             insertdata();
             bind_sale_details();
+            get_id();
             clear_text_data();
             cleardata();
         }
@@ -292,7 +294,7 @@ namespace sample
                     }
                 }
               dr.Close();
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleInvoiceInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleInvoiceInner where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                //r.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -494,25 +496,23 @@ namespace sample
         private void gst_devide()
         {
 
-            if (cmbtax.Text != "")
+            try
             {
-
-
                 con.Open();
-                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='"+NewCompany.company_id+"'", con);
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
                 string State1 = cd.ExecuteScalar().ToString();
                 con.Close();
-               // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
                 if (State1 == cmbStatesupply.Text)
                 {
+
                     float gst = 0, cgst = 0, sgst = 0;
                     gst = float.Parse(cmbtax.Text);
                     cgst = gst / 2;
                     sgst = gst / 2;
                     txtsgst.Text = sgst.ToString();
                     txtcgst.Text = cgst.ToString();
-                    TxtIGST.Text = 0.ToString();
                 }
                 else
                 {
@@ -525,10 +525,12 @@ namespace sample
                 }
 
             }
-        
-       }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
 
-     
         private void btnSetting_Click(object sender, EventArgs e)
         {
             Settings BA = new Settings();

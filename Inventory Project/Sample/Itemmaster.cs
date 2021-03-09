@@ -47,7 +47,6 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
                         cmbCategry.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
-
                     }
                 }
                 catch (Exception e1) {
@@ -482,9 +481,10 @@ namespace sample
        
 
         private void guna2Button2_Click(object sender, EventArgs e)
-        {         
+        {
+            //  itemtracking.Visible = true;
             itemtracking.Visible = true;
-         }
+        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {

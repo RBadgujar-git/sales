@@ -477,6 +477,11 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Clear_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

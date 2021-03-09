@@ -42,9 +42,9 @@
             this.dgvAddunit = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddunit)).BeginInit();
             this.panel3.SuspendLayout();
@@ -63,13 +63,14 @@
             this.guna2Panel1.Controls.Add(this.dgvAddunit);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.panel3);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(636, 457);
-            this.guna2Panel1.TabIndex = 2;
+            this.guna2Panel1.Size = new System.Drawing.Size(636, 458);
+            this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint_1);
             // 
             // btndelete
@@ -77,10 +78,10 @@
             this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btndelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btndelete.Location = new System.Drawing.Point(372, 161);
+            this.btndelete.Location = new System.Drawing.Point(322, 122);
             this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(81, 30);
-            this.btndelete.TabIndex = 27;
+            this.btndelete.Size = new System.Drawing.Size(65, 35);
+            this.btndelete.TabIndex = 5;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
@@ -90,10 +91,10 @@
             this.btnupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnupdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnupdate.Location = new System.Drawing.Point(288, 161);
+            this.btnupdate.Location = new System.Drawing.Point(251, 122);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(81, 30);
-            this.btnupdate.TabIndex = 26;
+            this.btnupdate.Size = new System.Drawing.Size(65, 35);
+            this.btnupdate.TabIndex = 4;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
@@ -103,16 +104,17 @@
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(457, 161);
+            this.Clear.Location = new System.Drawing.Point(391, 122);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(74, 30);
-            this.Clear.TabIndex = 25;
+            this.Clear.Size = new System.Drawing.Size(65, 35);
+            this.Clear.TabIndex = 6;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // txtSubunit
             // 
+            this.txtSubunit.BorderColor = System.Drawing.Color.Gray;
             this.txtSubunit.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSubunit.DefaultText = "";
             this.txtSubunit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -126,19 +128,19 @@
             this.txtSubunit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSubunit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSubunit.HoverState.Parent = this.txtSubunit;
-            this.txtSubunit.Location = new System.Drawing.Point(249, 111);
+            this.txtSubunit.Location = new System.Drawing.Point(262, 81);
             this.txtSubunit.Name = "txtSubunit";
             this.txtSubunit.PasswordChar = '\0';
             this.txtSubunit.PlaceholderText = "";
             this.txtSubunit.SelectedText = "";
             this.txtSubunit.ShadowDecoration.Parent = this.txtSubunit;
-            this.txtSubunit.Size = new System.Drawing.Size(200, 30);
+            this.txtSubunit.Size = new System.Drawing.Size(150, 21);
             this.txtSubunit.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(156, 117);
+            this.label3.Location = new System.Drawing.Point(183, 85);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 16);
@@ -147,6 +149,7 @@
             // 
             // txtAddUnit
             // 
+            this.txtAddUnit.BorderColor = System.Drawing.Color.Gray;
             this.txtAddUnit.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAddUnit.DefaultText = "";
             this.txtAddUnit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -160,13 +163,13 @@
             this.txtAddUnit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAddUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddUnit.HoverState.Parent = this.txtAddUnit;
-            this.txtAddUnit.Location = new System.Drawing.Point(249, 67);
+            this.txtAddUnit.Location = new System.Drawing.Point(262, 49);
             this.txtAddUnit.Name = "txtAddUnit";
             this.txtAddUnit.PasswordChar = '\0';
             this.txtAddUnit.PlaceholderText = "";
             this.txtAddUnit.SelectedText = "";
             this.txtAddUnit.ShadowDecoration.Parent = this.txtAddUnit;
-            this.txtAddUnit.Size = new System.Drawing.Size(200, 30);
+            this.txtAddUnit.Size = new System.Drawing.Size(150, 21);
             this.txtAddUnit.TabIndex = 1;
             // 
             // btnSave
@@ -174,10 +177,10 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(204, 161);
+            this.btnSave.Location = new System.Drawing.Point(180, 122);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(81, 30);
-            this.btnSave.TabIndex = 21;
+            this.btnSave.Size = new System.Drawing.Size(65, 35);
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -211,12 +214,12 @@
             this.dgvAddunit.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvAddunit.EnableHeadersVisualStyles = false;
             this.dgvAddunit.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAddunit.Location = new System.Drawing.Point(80, 213);
+            this.dgvAddunit.Location = new System.Drawing.Point(72, 178);
             this.dgvAddunit.Name = "dgvAddunit";
             this.dgvAddunit.RowHeadersVisible = false;
             this.dgvAddunit.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAddunit.Size = new System.Drawing.Size(451, 222);
-            this.dgvAddunit.TabIndex = 20;
+            this.dgvAddunit.Size = new System.Drawing.Size(451, 268);
+            this.dgvAddunit.TabIndex = 7;
             this.dgvAddunit.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvAddunit.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvAddunit.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -245,7 +248,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(181, 74);
+            this.label2.Location = new System.Drawing.Point(204, 52);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 16);
@@ -262,20 +265,8 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(636, 52);
-            this.panel3.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(276, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add Unit";
+            this.panel3.Size = new System.Drawing.Size(636, 35);
+            this.panel3.TabIndex = 8;
             // 
             // btnminimize
             // 
@@ -286,10 +277,10 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(566, 13);
+            this.btnminimize.Location = new System.Drawing.Point(553, 7);
             this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 434;
+            this.btnminimize.Size = new System.Drawing.Size(22, 22);
+            this.btnminimize.TabIndex = 0;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
@@ -302,12 +293,24 @@
             this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closebtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.closebtn.Location = new System.Drawing.Point(598, 13);
+            this.closebtn.Location = new System.Drawing.Point(582, 7);
             this.closebtn.Name = "closebtn";
-            this.closebtn.Size = new System.Drawing.Size(26, 27);
-            this.closebtn.TabIndex = 433;
+            this.closebtn.Size = new System.Drawing.Size(22, 22);
+            this.closebtn.TabIndex = 0;
             this.closebtn.UseVisualStyleBackColor = false;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(299, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add Unit";
             // 
             // Add_Unit
             // 

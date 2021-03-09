@@ -387,7 +387,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_SaleOrderInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    cmd.Parameters.AddWithValue("@ID", id1);
+                    cmd.Parameters.AddWithValue("@OrderNo", id1);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -645,7 +645,9 @@ namespace sample
             {
                 insertdata();
                 bind_sale_details();
+                get_id();
                 clear_text_data();
+                cleardata();
             }
         }
 

@@ -33,7 +33,7 @@ namespace sample
             txtContactNo.Text = "";
             txtEmailID.Text = "";
             txtReferralCode.Text = "";
-            guna2CirclePictureBox1.Image = null;
+            guna2CirclePictureBox1.Image = Properties.Resources.No_Image_Available;
         }
 
 
@@ -55,7 +55,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             con.Close();
-        } 
+        }
         private void InsertData()
         {             
             try
@@ -182,7 +182,8 @@ namespace sample
 
         private void NewCompany_Load(object sender, EventArgs e)
         {
-            fetchCampanyame();           
+            fetchCampanyame();       
+            
         }
 
        
@@ -192,7 +193,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' ");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -214,7 +215,7 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
+                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where(CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -226,7 +227,7 @@ namespace sample
 
                     dr.Close();
 
-                    SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster", con);
+                    SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData = '1' and CompanyName ='" + cmbCompanyName.Text  + "'", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                     DataSet dds = new DataSet();
                     sda.Fill(dds);
@@ -267,6 +268,16 @@ namespace sample
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+          
+            }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
             openFileDialog1.Multiselect = true;
@@ -290,11 +301,6 @@ namespace sample
                     }
                 }
             }
-            }
-
-        private void btnminimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
         //  // Convert borderStyle to Style and ExStyle values for Win32
         //protected override void OnPaint(PaintEventArgs e)

@@ -125,6 +125,7 @@
             // 
             // btnclose
             // 
+            this.btnclose.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnclose.BackColor = System.Drawing.Color.White;
             this.btnclose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnclose.BackgroundImage")));
             this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -141,6 +142,7 @@
             // 
             // txtdescription
             // 
+            this.txtdescription.BorderColor = System.Drawing.Color.Gray;
             this.txtdescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdescription.DefaultText = "";
             this.txtdescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -168,6 +170,7 @@
             // 
             // txtAcoount
             // 
+            this.txtAcoount.BorderColor = System.Drawing.Color.Gray;
             this.txtAcoount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAcoount.DefaultText = "";
             this.txtAcoount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -242,7 +245,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(327, 46);
+            this.label1.Location = new System.Drawing.Point(317, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(158, 18);
             this.label1.TabIndex = 138;

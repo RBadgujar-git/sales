@@ -49,6 +49,7 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbanktobank)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +110,7 @@
             // 
             // txttobank
             // 
+            this.txttobank.BorderColor = System.Drawing.Color.Gray;
             this.txttobank.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttobank.DefaultText = "";
             this.txttobank.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -135,8 +137,9 @@
             // 
             // txtAmount
             // 
+            this.txtAmount.BorderColor = System.Drawing.Color.Gray;
             this.txtAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAmount.DefaultText = "";
+            this.txtAmount.DefaultText = "0";
             this.txtAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtAmount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtAmount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -154,13 +157,18 @@
             this.txtAmount.PasswordChar = '\0';
             this.txtAmount.PlaceholderText = "";
             this.txtAmount.SelectedText = "";
+            this.txtAmount.SelectionStart = 1;
             this.txtAmount.ShadowDecoration.Parent = this.txtAmount;
             this.txtAmount.Size = new System.Drawing.Size(250, 25);
             this.txtAmount.TabIndex = 3;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
+            this.txtAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAmount_KeyDown);
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
+            this.txtAmount.MouseEnter += new System.EventHandler(this.txtAmount_MouseEnter);
             // 
             // txtDescription
             // 
+            this.txtDescription.BorderColor = System.Drawing.Color.Gray;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescription.DefaultText = "";
             this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -186,7 +194,7 @@
             // 
             // btncancel
             // 
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btncancel.BackColor = System.Drawing.Color.White;
             this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
             this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -290,6 +298,7 @@
             this.cmbfrombank.Name = "cmbfrombank";
             this.cmbfrombank.Size = new System.Drawing.Size(247, 24);
             this.cmbfrombank.TabIndex = 1;
+            this.cmbfrombank.SelectedIndexChanged += new System.EventHandler(this.cmbfrombank_SelectedIndexChanged);
             // 
             // btnupdate
             // 
@@ -346,11 +355,19 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(602, 134);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 441;
+            // 
             // Banktobank
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.btnclear);
             this.Controls.Add(this.btndelete);
@@ -400,5 +417,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
