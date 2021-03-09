@@ -79,7 +79,7 @@ namespace sample
                 }
             }
         }
-
+        public int ItemId;
         private void txtItemName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
@@ -88,11 +88,12 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemID ,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY ItemID ,ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    ItemId =Convert.ToInt32(dr["ItemID"]);
                     txtItemCode.Text = dr["ItemCode"].ToString();
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
@@ -224,7 +225,8 @@ namespace sample
         {
             try
             {
-                float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
+                float qty = 0, freeqty = 0, rate = 0, 
+                     sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
                 qty = float.Parse(txtOty.Text.ToString());
                 freeqty = float.Parse(txtFreeQty.Text.ToString());
                 rate = float.Parse(txtMRP.Text.ToString());
@@ -259,13 +261,39 @@ namespace sample
             cal_ItemTotal();
         }
 
+
+
+
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
+          
             cal_ItemTotal();
+        }
+        public void quantitcheek()
+        {
+            //   con.Open();
+            if (txtOty.Text != "")
+            {
+                SqlCommand cmd = new SqlCommand("Select MinimumStock from tbl_ItemMaster where ItemID=" + ItemId + " ", con);
+                int maxmimum = Convert.ToInt32(cmd.ExecuteScalar());
+                float qty = float.Parse(txtOty.Text);
+                if (maxmimum >= qty)
+                {
+
+                }
+                else
+                {
+
+                }
+
+            }
+
+                 
         }
 
         private void txtOty_TextChanged(object sender, EventArgs e)
         {
+            quantitcheek();
             cal_ItemTotal();
         }
 
@@ -931,6 +959,16 @@ namespace sample
         }
 
         private void dgvInnerCreditNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOty_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

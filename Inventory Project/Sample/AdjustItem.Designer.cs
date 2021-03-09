@@ -253,6 +253,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 24);
             this.txtName.TabIndex = 1;
+         //   this.txtName.SelectedIndexChanged += new System.EventHandler(this.txtName_SelectedIndexChanged);
             // 
             // combotype
             // 
