@@ -65,7 +65,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_PurchaseBill", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -346,6 +346,16 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvPurchaseBill_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
