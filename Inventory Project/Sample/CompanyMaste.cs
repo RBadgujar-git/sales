@@ -87,71 +87,69 @@ namespace sample
         {
             if (txtcampanyName.Text == "")
             {
-                MessageBox.Show("Please Insert Name ");
+                MessageBox.Show("Company Name Is Requried ");
                 txtcampanyName.Focus();
             }
             else if (txtAddress.Text == "")
             {
-                MessageBox.Show("Please Insert Address !");
+                MessageBox.Show("Address Is Requried ");
                 txtAddress.Focus();
             }
             else if (txtContactNo.Text == "")
             {
-                MessageBox.Show("Please Insert Contact No ");
+                MessageBox.Show(" Contact No. Is Requried ");
                 txtContactNo.Focus();
             }
             else if (txtemail.Text == "")
             {
-                MessageBox.Show("Please Insert Email Id ");
+                MessageBox.Show("Email Id Is Requried ");
                 txtemail.Focus();
             }
             else if (txtbusinesstype.Text == "")
             {
-                MessageBox.Show("Please Insert Bussness Type  ");
+                MessageBox.Show("Bussness Type Is Requried ");
                 txtbusinesstype.Focus();
             }
             else if (txtGSTNo.Text == "")
             {
-                MessageBox.Show("Please Insert GST NO");
+                MessageBox.Show("GST NO. Is Requried ");
                txtGSTNo.Focus();
-            }
-            else if (ownerName.Text == "")
-            {
-                MessageBox.Show("Please Insert Owner Name ");
-                ownerName.Focus();
             }
             else if (txtCity.Text == "")
             {
-                MessageBox.Show("Please Insert City ");
-               txtCity.Focus();
+                MessageBox.Show("City Is Requried ");
+                txtGSTNo.Focus();
             }
-            else if (cmbState.Text=="")
+            else if (ownerName.Text == "")
             {
-                MessageBox.Show("Please Select State !");
+                MessageBox.Show("Owner Name Is Requried ");
+                ownerName.Focus();
+            }        
+            else if (cmbState.Text == "")
+            {
+                MessageBox.Show(" Please Select State ");
                 //txtCity.Focus();
             }
-            else if (txtBankName.Text=="")
+            else if (txtBankName.Text == "")
             {
-                MessageBox.Show("Please Select Bank Name !");
+                MessageBox.Show("Bank Name Is Requried ");
                 //txtCity.Focus();
             }
-            else if (txtAccountNo.Text=="")
+            else if (txtAccountNo.Text == "")
             {
-                MessageBox.Show("Please Insert Account No !");
+                MessageBox.Show("Account No Is Requried");
                 txtAccountNo.Focus();
             }
             else if (txtIFSCcode.Text == "")
             {
-                MessageBox.Show("Please Insert Account  IFSC Code!");
+                MessageBox.Show("IFSC Code Is Requried ");
                txtIFSCcode.Focus();
             }
             else
             {
                 verify = 1;
 
-            }
-                     
-           
+            }                      
         }
       
         public void Insert1()
@@ -516,7 +514,7 @@ namespace sample
 
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            id= dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
+            id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
             txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
             txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["PhoneNo"].Value.ToString();
             txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
@@ -691,17 +689,9 @@ namespace sample
         {
 
         }
-        CompanyMaste cm = new CompanyMaste();
+
         private void btnminimize_Click_2(object sender, EventArgs e)
         {
-           //if(cm.WindowState == FormWindowState.Minimized)
-           // {
-           //     cm.WindowState = FormWindowState.Maximized;
-           // }
-           //else
-           // {
-           //     cm.Show();
-           // }
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
