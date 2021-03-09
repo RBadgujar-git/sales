@@ -15,6 +15,9 @@ namespace sample
     {
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public SalePurchasebyPartyGroup()
         {
             InitializeComponent();
@@ -96,6 +99,11 @@ namespace sample
                 MessageBox.Show(ex.Message);
             }
            
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
     }
