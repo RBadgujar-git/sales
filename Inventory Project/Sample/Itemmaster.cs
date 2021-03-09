@@ -47,7 +47,6 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
                         cmbCategry.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
-
                     }
                 }
                 catch (Exception e1) {
