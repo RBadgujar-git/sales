@@ -718,6 +718,7 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1074, 87);
             this.guna2ShadowPanel1.TabIndex = 5;
+           // this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // txtItemName
             // 

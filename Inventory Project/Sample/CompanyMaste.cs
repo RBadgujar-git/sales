@@ -125,12 +125,12 @@ namespace sample
                 MessageBox.Show("Please Insert City ");
                txtCity.Focus();
             }
-            else if (string.IsNullOrEmpty(cmbState.SelectedText))
+            else if (cmbState.Text=="")
             {
                 MessageBox.Show("Please Select State !");
                 //txtCity.Focus();
             }
-            else if (string.IsNullOrEmpty(txtBankName.SelectedText))
+            else if (txtBankName.Text=="")
             {
                 MessageBox.Show("Please Select Bank Name !");
                 //txtCity.Focus();
@@ -293,7 +293,8 @@ namespace sample
         {
             Update1();
             fetchdetails();
-            Cleardata();
+           
+       
         }
 
         public void Delete1()
@@ -337,11 +338,12 @@ namespace sample
         {
             Delete1();
             fetchdetails();
-            Cleardata();
+            
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
         {
+           
             fetchdetails();
         }
 
@@ -526,7 +528,7 @@ namespace sample
             txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
             ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
 
-            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster", con);
+            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -538,7 +540,7 @@ namespace sample
                 picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster", con);
+            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData='1'", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd2);
             DataSet dds = new DataSet();
             sda.Fill(dds);
@@ -689,15 +691,36 @@ namespace sample
         {
 
         }
-
+        CompanyMaste cm = new CompanyMaste();
         private void btnminimize_Click_2(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+           //if(cm.WindowState == FormWindowState.Minimized)
+           // {
+           //     cm.WindowState = FormWindowState.Maximized;
+           // }
+           //else
+           // {
+           //     cm.Show();
+           // }
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+             this.Visible = false;
+            
+        }
+
+        private void btnminimize_Resize(object sender, EventArgs e)
+        {
+           
+                
+            
+        }
+       
+    
+        private void btnminimize_SizeChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 
