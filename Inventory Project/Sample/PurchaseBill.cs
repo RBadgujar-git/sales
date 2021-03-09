@@ -1069,6 +1069,23 @@ namespace sample
         {
 
         }
+
+        private void dgvInnerDebiteNote_DoubleClick(object sender, EventArgs e)
+        {
+
+          // // id = dgvItemmaster.Rows[e.RowIndex].Cells["ItemID"].Value.ToString();
+          //  txtItemName.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Item"].Value.ToString();
+          // txtItemCode.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Item Code"].Value.ToString();
+          // txtUnit.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Unit"].Value.ToString();
+          //  txtMRP.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["MRP"].Value.ToString();
+          //txtDis.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Tax%"].Value.ToString();
+          //  txtTax1.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
+          // txtOty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Qty"].Value.ToString();
+          //  txtFreeQty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["FreeQty"].Value.ToString();
+          // txtDis.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Tax Amount"].Value.ToString();
+          // txtTaxAMount1.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount Amount"].Value.ToString();
+          //  txtTotal.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount Amount"].Value.ToString();
+        }
     }
 }
 
