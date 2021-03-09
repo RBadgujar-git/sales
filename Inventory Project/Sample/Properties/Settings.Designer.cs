@@ -26,7 +26,7 @@ namespace sample.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=103.83.81.80;Initial Catalog=idealtec_inventory;User ID=idealtec_inve" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=103.83.81.80;Initial Catalog=idealtec_inventory;User ID=idealtec_inve"+
             "ntory;Password=Mpiti@123")]
         public string InventoryMgntConnectionString {
             get {
