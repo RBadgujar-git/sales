@@ -21,6 +21,7 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+      
         public CompanyMaste()
         {
             InitializeComponent();
@@ -335,8 +336,7 @@ namespace sample
         private void delete_Click(object sender, EventArgs e)
         {
             Delete1();
-            fetchdetails();
-            
+            fetchdetails();    
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)

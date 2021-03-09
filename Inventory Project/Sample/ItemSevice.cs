@@ -38,7 +38,7 @@ namespace sample
             cmbTaxType.Text = "";
             cmbTaxRate.Text = "";
             txtDescription.Text = "";
-            picturebox.Image = null;
+            picturebox.Image = Properties.Resources.No_Image_Available;
         }
 
         private void fetchdetails()
@@ -63,7 +63,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@TaxRate", cmbTaxRate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-            SqlParameter sqlpara = new SqlParameter("@Image", SqlDbType.Image);
+                SqlParameter sqlpara = new SqlParameter("@Image", SqlDbType.Image);
                 sqlpara.Value = DBNull.Value;
                 cmd.Parameters.Add(sqlpara);
 
@@ -483,30 +483,7 @@ namespace sample
 
         private void dgvItemServices_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgvItemServices.Rows[e.RowIndex].Cells["ServiceID"].Value.ToString();
-            txtItemName.Text = dgvItemServices.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
-            txtHSNCode.Text = dgvItemServices.Rows[e.RowIndex].Cells["ItemHSNCOde"].Value.ToString();
-            cmbUnit.Text = dgvItemServices.Rows[e.RowIndex].Cells["Unit"].Value.ToString();
-            txtSubunit.Text = dgvItemServices.Rows[e.RowIndex].Cells["Subunit"].Value.ToString();
-            txtitemcode.Text = dgvItemServices.Rows[e.RowIndex].Cells["ItemCode"].Value.ToString();
-            cmbItemCategory.Text = dgvItemServices.Rows[e.RowIndex].Cells["Category"].Value.ToString();
-            txtSaleCoategory.Text = dgvItemServices.Rows[e.RowIndex].Cells["SalePrice"].Value.ToString();
-            cmbTaxType.Text = dgvItemServices.Rows[e.RowIndex].Cells["TaxType"].Value.ToString();
-            cmbTaxRate.Text = dgvItemServices.Rows[e.RowIndex].Cells["TaxRate"].Value.ToString();
-            txtDescription.Text = dgvItemServices.Rows[e.RowIndex].Cells["Description"].Value.ToString();
-
-            SqlCommand cmd = new SqlCommand("select Image from tbl_ItemServicemaster", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Image"]);
-                ms.Seek(0, SeekOrigin.Begin);
-                picturebox.Image = Image.FromStream(ms);
-                picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
+           
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -527,6 +504,39 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvItemServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvItemServices_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = dgvItemServices.Rows[e.RowIndex].Cells["ServiceID"].Value.ToString();
+            txtItemName.Text = dgvItemServices.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
+            txtHSNCode.Text = dgvItemServices.Rows[e.RowIndex].Cells["ItemHSNCOde"].Value.ToString();
+            cmbUnit.Text = dgvItemServices.Rows[e.RowIndex].Cells["Unit"].Value.ToString();
+            txtSubunit.Text = dgvItemServices.Rows[e.RowIndex].Cells["Subunit"].Value.ToString();
+            txtitemcode.Text = dgvItemServices.Rows[e.RowIndex].Cells["ItemCode"].Value.ToString();
+            cmbItemCategory.Text = dgvItemServices.Rows[e.RowIndex].Cells["Category"].Value.ToString();
+            txtSaleCoategory.Text = dgvItemServices.Rows[e.RowIndex].Cells["SalePrice"].Value.ToString();
+            cmbTaxType.Text = dgvItemServices.Rows[e.RowIndex].Cells["TaxType"].Value.ToString();
+            cmbTaxRate.Text = dgvItemServices.Rows[e.RowIndex].Cells["TaxRate"].Value.ToString();
+            txtDescription.Text = dgvItemServices.Rows[e.RowIndex].Cells["Description"].Value.ToString();
+
+            SqlCommand cmd = new SqlCommand("select Image from tbl_ItemServicemaster where DeleteData = '1'", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+
+                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Image"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                picturebox.Image = Image.FromStream(ms);
+                picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }
