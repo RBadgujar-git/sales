@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSevice));
-            this.label1 = new System.Windows.Forms.Label();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnsave = new System.Windows.Forms.Button();
@@ -64,9 +63,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemServices)).BeginInit();
@@ -74,24 +74,13 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(389, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Item Services";
-            // 
             // btnupdate
             // 
             this.btnupdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnupdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnupdate.Location = new System.Drawing.Point(575, 248);
+            this.btnupdate.Location = new System.Drawing.Point(501, 240);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(90, 42);
             this.btnupdate.TabIndex = 11;
@@ -105,7 +94,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(675, 246);
+            this.btnDelete.Location = new System.Drawing.Point(600, 238);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
             this.btnDelete.TabIndex = 12;
@@ -119,7 +108,7 @@
             this.btnsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnsave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnsave.Location = new System.Drawing.Point(477, 248);
+            this.btnsave.Location = new System.Drawing.Point(403, 240);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(90, 42);
             this.btnsave.TabIndex = 10;
@@ -138,7 +127,7 @@
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -147,8 +136,8 @@
             this.guna2DataGridView1.ColumnHeadersHeight = 4;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -171,15 +160,15 @@
             this.guna2DataGridView1.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
             this.guna2DataGridView1.ThemeStyle.ReadOnly = false;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
@@ -187,7 +176,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(403, 132);
+            this.label11.Location = new System.Drawing.Point(329, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 17);
             this.label11.TabIndex = 36;
@@ -230,7 +219,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(928, 585);
+            this.panel1.Size = new System.Drawing.Size(930, 585);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -240,7 +229,7 @@
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(774, 247);
+            this.Clear.Location = new System.Drawing.Point(696, 238);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
             this.Clear.TabIndex = 13;
@@ -256,9 +245,9 @@
             this.cmbTaxType.Items.AddRange(new object[] {
             "Excluded",
             "Included"});
-            this.cmbTaxType.Location = new System.Drawing.Point(470, 92);
+            this.cmbTaxType.Location = new System.Drawing.Point(396, 89);
             this.cmbTaxType.Name = "cmbTaxType";
-            this.cmbTaxType.Size = new System.Drawing.Size(200, 25);
+            this.cmbTaxType.Size = new System.Drawing.Size(174, 25);
             this.cmbTaxType.TabIndex = 7;
             // 
             // cmbItemCategory
@@ -266,9 +255,9 @@
             this.cmbItemCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbItemCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbItemCategory.FormattingEnabled = true;
-            this.cmbItemCategory.Location = new System.Drawing.Point(143, 243);
+            this.cmbItemCategory.Location = new System.Drawing.Point(111, 243);
             this.cmbItemCategory.Name = "cmbItemCategory";
-            this.cmbItemCategory.Size = new System.Drawing.Size(200, 25);
+            this.cmbItemCategory.Size = new System.Drawing.Size(174, 25);
             this.cmbItemCategory.TabIndex = 5;
             // 
             // cmbTaxRate
@@ -287,9 +276,9 @@
             "18",
             "21",
             "29"});
-            this.cmbTaxRate.Location = new System.Drawing.Point(470, 129);
+            this.cmbTaxRate.Location = new System.Drawing.Point(396, 126);
             this.cmbTaxRate.Name = "cmbTaxRate";
-            this.cmbTaxRate.Size = new System.Drawing.Size(200, 25);
+            this.cmbTaxRate.Size = new System.Drawing.Size(174, 25);
             this.cmbTaxRate.TabIndex = 8;
             this.cmbTaxRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTaxRate_KeyPress);
             // 
@@ -298,9 +287,9 @@
             this.cmbUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(143, 130);
+            this.cmbUnit.Location = new System.Drawing.Point(111, 130);
             this.cmbUnit.Name = "cmbUnit";
-            this.cmbUnit.Size = new System.Drawing.Size(200, 25);
+            this.cmbUnit.Size = new System.Drawing.Size(174, 25);
             this.cmbUnit.TabIndex = 3;
             this.cmbUnit.SelectedIndexChanged += new System.EventHandler(this.cmbUnit_SelectedIndexChanged);
             // 
@@ -314,7 +303,7 @@
             this.dgvItemServices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -323,20 +312,20 @@
             this.dgvItemServices.ColumnHeadersHeight = 53;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvItemServices.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItemServices.EnableHeadersVisualStyles = false;
             this.dgvItemServices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemServices.Location = new System.Drawing.Point(15, 317);
+            this.dgvItemServices.Location = new System.Drawing.Point(1, 297);
             this.dgvItemServices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvItemServices.Name = "dgvItemServices";
             this.dgvItemServices.RowHeadersVisible = false;
             this.dgvItemServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemServices.Size = new System.Drawing.Size(891, 241);
+            this.dgvItemServices.Size = new System.Drawing.Size(809, 264);
             this.dgvItemServices.TabIndex = 15;
             this.dgvItemServices.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvItemServices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -348,15 +337,15 @@
             this.dgvItemServices.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItemServices.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dgvItemServices.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.dgvItemServices.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvItemServices.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvItemServices.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvItemServices.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvItemServices.ThemeStyle.HeaderStyle.Height = 53;
             this.dgvItemServices.ThemeStyle.ReadOnly = false;
             this.dgvItemServices.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvItemServices.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvItemServices.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvItemServices.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvItemServices.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvItemServices.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvItemServices.ThemeStyle.RowsStyle.Height = 22;
             this.dgvItemServices.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItemServices.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
@@ -368,7 +357,7 @@
             // 
             this.picturebox.BackColor = System.Drawing.SystemColors.Menu;
             this.picturebox.Image = global::sample.Properties.Resources.No_Image_Available;
-            this.picturebox.Location = new System.Drawing.Point(711, 92);
+            this.picturebox.Location = new System.Drawing.Point(628, 92);
             this.picturebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picturebox.Name = "picturebox";
             this.picturebox.ShadowDecoration.Parent = this.picturebox;
@@ -394,13 +383,13 @@
             this.txtSubunit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSubunit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSubunit.HoverState.Parent = this.txtSubunit;
-            this.txtSubunit.Location = new System.Drawing.Point(143, 165);
+            this.txtSubunit.Location = new System.Drawing.Point(111, 165);
             this.txtSubunit.Name = "txtSubunit";
             this.txtSubunit.PasswordChar = '\0';
             this.txtSubunit.PlaceholderText = "";
             this.txtSubunit.SelectedText = "";
             this.txtSubunit.ShadowDecoration.Parent = this.txtSubunit;
-            this.txtSubunit.Size = new System.Drawing.Size(200, 30);
+            this.txtSubunit.Size = new System.Drawing.Size(174, 30);
             this.txtSubunit.TabIndex = 0;
             // 
             // txtDescription
@@ -419,14 +408,14 @@
             this.txtDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(470, 165);
+            this.txtDescription.Location = new System.Drawing.Point(396, 162);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(200, 62);
+            this.txtDescription.Size = new System.Drawing.Size(174, 62);
             this.txtDescription.TabIndex = 9;
             // 
             // txtSaleCoategory
@@ -445,13 +434,13 @@
             this.txtSaleCoategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSaleCoategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSaleCoategory.HoverState.Parent = this.txtSaleCoategory;
-            this.txtSaleCoategory.Location = new System.Drawing.Point(470, 52);
+            this.txtSaleCoategory.Location = new System.Drawing.Point(396, 49);
             this.txtSaleCoategory.Name = "txtSaleCoategory";
             this.txtSaleCoategory.PasswordChar = '\0';
             this.txtSaleCoategory.PlaceholderText = "";
             this.txtSaleCoategory.SelectedText = "";
             this.txtSaleCoategory.ShadowDecoration.Parent = this.txtSaleCoategory;
-            this.txtSaleCoategory.Size = new System.Drawing.Size(200, 30);
+            this.txtSaleCoategory.Size = new System.Drawing.Size(174, 30);
             this.txtSaleCoategory.TabIndex = 6;
             this.txtSaleCoategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSaleCoategory_KeyPress);
             // 
@@ -471,13 +460,13 @@
             this.txtitemcode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtitemcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtitemcode.HoverState.Parent = this.txtitemcode;
-            this.txtitemcode.Location = new System.Drawing.Point(143, 202);
+            this.txtitemcode.Location = new System.Drawing.Point(111, 202);
             this.txtitemcode.Name = "txtitemcode";
             this.txtitemcode.PasswordChar = '\0';
             this.txtitemcode.PlaceholderText = "";
             this.txtitemcode.SelectedText = "";
             this.txtitemcode.ShadowDecoration.Parent = this.txtitemcode;
-            this.txtitemcode.Size = new System.Drawing.Size(200, 30);
+            this.txtitemcode.Size = new System.Drawing.Size(174, 30);
             this.txtitemcode.TabIndex = 4;
             this.txtitemcode.TextChanged += new System.EventHandler(this.txtitemcode_TextChanged);
             // 
@@ -497,14 +486,14 @@
             this.txtHSNCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtHSNCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHSNCode.HoverState.Parent = this.txtHSNCode;
-            this.txtHSNCode.Location = new System.Drawing.Point(143, 90);
+            this.txtHSNCode.Location = new System.Drawing.Point(111, 90);
             this.txtHSNCode.MaxLength = 11;
             this.txtHSNCode.Name = "txtHSNCode";
             this.txtHSNCode.PasswordChar = '\0';
             this.txtHSNCode.PlaceholderText = "";
             this.txtHSNCode.SelectedText = "";
             this.txtHSNCode.ShadowDecoration.Parent = this.txtHSNCode;
-            this.txtHSNCode.Size = new System.Drawing.Size(200, 30);
+            this.txtHSNCode.Size = new System.Drawing.Size(174, 30);
             this.txtHSNCode.TabIndex = 2;
             this.txtHSNCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHSNCode_KeyPress);
             // 
@@ -524,20 +513,20 @@
             this.txtItemName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemName.HoverState.Parent = this.txtItemName;
-            this.txtItemName.Location = new System.Drawing.Point(143, 51);
+            this.txtItemName.Location = new System.Drawing.Point(111, 51);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.PasswordChar = '\0';
             this.txtItemName.PlaceholderText = "";
             this.txtItemName.SelectedText = "";
             this.txtItemName.ShadowDecoration.Parent = this.txtItemName;
-            this.txtItemName.Size = new System.Drawing.Size(200, 30);
+            this.txtItemName.Size = new System.Drawing.Size(174, 30);
             this.txtItemName.TabIndex = 1;
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(386, 168);
+            this.label12.Location = new System.Drawing.Point(312, 165);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 17);
             this.label12.TabIndex = 26;
@@ -546,7 +535,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(762, 64);
+            this.label10.Location = new System.Drawing.Point(679, 64);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 17);
             this.label10.TabIndex = 26;
@@ -563,7 +552,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(402, 95);
+            this.label8.Location = new System.Drawing.Point(328, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 17);
             this.label8.TabIndex = 24;
@@ -572,7 +561,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(396, 58);
+            this.label7.Location = new System.Drawing.Point(322, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 23;
@@ -581,7 +570,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 247);
+            this.label6.Location = new System.Drawing.Point(11, 247);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 17);
             this.label6.TabIndex = 22;
@@ -590,7 +579,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 207);
+            this.label5.Location = new System.Drawing.Point(29, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 21;
@@ -599,7 +588,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(102, 133);
+            this.label4.Location = new System.Drawing.Point(70, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 20;
@@ -608,7 +597,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(64, 96);
+            this.label3.Location = new System.Drawing.Point(32, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 19;
@@ -617,23 +606,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(57, 56);
+            this.label2.Location = new System.Drawing.Point(25, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 18;
             this.label2.Text = " Item Name :";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnminimize);
-            this.panel3.Controls.Add(this.btnCancel);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(928, 44);
-            this.panel3.TabIndex = 16;
             // 
             // btnminimize
             // 
@@ -644,7 +621,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(853, 2);
+            this.btnminimize.Location = new System.Drawing.Point(728, 7);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(29, 29);
             this.btnminimize.TabIndex = 0;
@@ -661,12 +638,35 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(885, 2);
+            this.btnCancel.Location = new System.Drawing.Point(757, 7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(29, 29);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(367, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Item Services";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(930, 44);
+            this.panel3.TabIndex = 16;
             // 
             // ItemSevice
             // 
@@ -693,8 +693,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnsave;
@@ -711,7 +709,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel3;
         private Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private Guna.UI2.WinForms.Guna2TextBox txtSaleCoategory;
         private Guna.UI2.WinForms.Guna2TextBox txtitemcode;
@@ -727,5 +724,7 @@
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.ComboBox cmbTaxType;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
     }
 }

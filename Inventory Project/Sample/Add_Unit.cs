@@ -50,13 +50,17 @@ namespace sample
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@UnitID", 0);
-            cmd.Parameters.AddWithValue("@UnitName", "");
-            cmd.Parameters.AddWithValue("@SubUnitName", "");
+            cmd.Parameters.AddWithValue("@UnitName", txtAddUnit.Text);
+            cmd.Parameters.AddWithValue("@SubUnitName", txtSubunit.Text);
             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
             sqlSda.Fill(dtable);
             dgvAddunit.DataSource = dtable;
-           }
+
+        }
+
+
+
 
         int i = 0;
 
@@ -274,7 +278,7 @@ namespace sample
 
         private void closebtn_Click(object sender, EventArgs e)
         {
-            this.Visible = false;
+            this.Visible=false;
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

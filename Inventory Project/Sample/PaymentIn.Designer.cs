@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentIn));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -55,6 +55,7 @@
             this.Print = new System.Windows.Forms.Button();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPaymentIn = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.guna2Panel2.SuspendLayout();
             this.Clear.SuspendLayout();
@@ -331,6 +331,17 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            resources.ApplyResources(this.btnminimize, "btnminimize");
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
@@ -392,6 +403,7 @@
             resources.ApplyResources(this.Clear, "Clear");
             this.Clear.Name = "Clear";
             this.Clear.ShadowDecoration.Parent = this.Clear;
+            this.Clear.Paint += new System.Windows.Forms.PaintEventHandler(this.Clear_Paint);
             // 
             // textBox1
             // 
@@ -425,29 +437,29 @@
             // 
             // dgvPaymentIn
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvPaymentIn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvPaymentIn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPaymentIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaymentIn.BackgroundColor = System.Drawing.Color.White;
             this.dgvPaymentIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPaymentIn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPaymentIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentIn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvPaymentIn, "dgvPaymentIn");
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentIn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentIn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPaymentIn.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvPaymentIn.EnableHeadersVisualStyles = false;
             this.dgvPaymentIn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -478,17 +490,6 @@
             this.dgvPaymentIn.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvPaymentIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentClick);
             this.dgvPaymentIn.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentDoubleClick);
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            resources.ApplyResources(this.btnminimize, "btnminimize");
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // PaymentIn
             // 

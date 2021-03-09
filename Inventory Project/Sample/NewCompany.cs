@@ -193,7 +193,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster  where DeleteData='1'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -227,7 +227,7 @@ namespace sample
 
                     dr.Close();
 
-                    SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData = '1'", con);
+                    SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData = '1' and CompanyName ='" + cmbCompanyName.Text  + "'", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                     DataSet dds = new DataSet();
                     sda.Fill(dds);
