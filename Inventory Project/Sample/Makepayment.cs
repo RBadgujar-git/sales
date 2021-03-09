@@ -20,6 +20,9 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public Makepayment()
         {
             InitializeComponent();
@@ -55,8 +58,8 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);     
             dgvMakePayment.DataSource = dtable;
-        }
 
+        }
         private void InsertData()
         {
             //PrincipleAmount,InterestAmount,Date,	TotalAmount,PaidFrom
@@ -125,7 +128,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank group by AccountName");
+                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by AccountName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -312,6 +315,11 @@ namespace sample
         private void btnclear_Click(object sender, EventArgs e)
         {
             Cleardata();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

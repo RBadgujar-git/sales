@@ -19,6 +19,8 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+        private FormWindowState WindowState;
+
         public Banktobank()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace sample
         {
             cmbfrombank.Text = "";
             txttobank.Text = "";
-            txtAmount.Text = "";
+            txtAmount.Text = "0";
             txtDescription.Text = "";
         }
         private void fetchdetails()
@@ -53,34 +55,35 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvbanktobank.DataSource = dtable;
+            con.Close();
         }
 
 
         public void validdata()
+        {
+
+
+            if (cmbfrombank.Text == "")
+            {
+                MessageBox.Show("Bank Name Required");
+            }
+            else if (txttobank.Text == "")
             {
 
-            
-                if (cmbfrombank.Text == "")
-                {
-                    MessageBox.Show("Bank Name Required");
-                }
-                else if (txttobank.Text == "")
-                {
-
-                    MessageBox.Show("Enter Bank Name For Transfer Amount");
-                }
-                else if (txttobank.Text == "")
-                {
-
-                    MessageBox.Show("Enter Bank Name For Transfer Amount");
-                }
-                else if (txtAmount.Text=="")
-                {
-
-                    MessageBox.Show("Please Insert Amount");
-                }
-          
+                MessageBox.Show("Enter Bank Name For Transfer Amount");
             }
+            else if (txttobank.Text == "")
+            {
+
+                MessageBox.Show("Enter Bank Name For Transfer Amount");
+            }
+            else if (txtAmount.Text == "")
+            {
+
+                MessageBox.Show("Please Insert Amount");
+            }
+
+        }
 
         public void Insert()
         {
@@ -135,34 +138,59 @@ namespace sample
                     {
                         MessageBox.Show("Please try again");
                     }
+                    con.Close();
                 }
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("error" + ex.Message);
             }
-}
+        }
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            
+            calopenbal();
+            update_opening_bal();
             Insert();
+           
             fetchdetails();
             Cleardata();
         }
 
-       
+
         private void Banktobank_Load(object sender, EventArgs e)
         {
 
             fetchdetails();
             bankfetch();
+           
+        }
+        public void update_opening_bal()
+        {
+            try
+            {
+                con.Open();
+                String query = string.Format("update tbl_BankAccount set OpeningBal='"+textBox1.Text+"' where (BankName='{0}') and Company_ID='"+NewCompany.company_id+"' and DeleteData='1'", cmbfrombank.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+
+            }
         }
         private void bankfetch()
         {
             if (cmbfrombank.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select BankName from tbl_BankAccount group by BankName");
+                    string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -177,10 +205,10 @@ namespace sample
                 }
             }
         }
-       
 
 
-       
+
+
 
         private void dgvbanktobank_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -195,7 +223,7 @@ namespace sample
 
         private void btncancel_Click(object sender, EventArgs e)
         {
-            this.Visible = false;        }
+            this.Visible = false; }
 
         private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -283,6 +311,8 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally
+                { con.Close(); }
             }
             else
             {
@@ -291,7 +321,7 @@ namespace sample
         }
         private void btnupdate_Click(object sender, EventArgs e)
         {
-           // validdata();
+            // validdata();
             Update1();
             fetchdetails();
             Cleardata();
@@ -302,7 +332,7 @@ namespace sample
             {
                 try
                 {
-                    
+
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -351,6 +381,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -360,7 +391,7 @@ namespace sample
         }
         private void btndelete_Click(object sender, EventArgs e)
         {
-          //  validdata();
+            //  validdata();
             Delete();
             fetchdetails();
             Cleardata();
@@ -369,6 +400,91 @@ namespace sample
         private void btnclear_Click(object sender, EventArgs e)
         {
             Cleardata();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cmbfrombank_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string Query = String.Format("select OpeningBal from tbl_BankAccount where (BankName='{0}') and Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY OpeningBal ", cmbfrombank.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    textBox1.Text = dr["OpeningBal"].ToString();
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+        public void cal()
+        {
+            
+        }
+
+        private void txtAmount_MouseEnter(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+            //try
+            //{
+            //    float opening_bal=0, amount=0, remain_opening=0;
+
+            //    opening_bal = float.Parse(textBox1.Text);
+            //    amount = float.Parse(txtAmount.Text);
+
+            //    remain_opening = opening_bal - amount;
+            //    textBox1.Text = remain_opening.ToString();
+            //}
+            //catch (Exception e1)
+            //{
+            //    MessageBox.Show(e1.Message);
+            //}
+        }
+        public void calopenbal()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
+
+            opening_bal = float.Parse(textBox1.Text);
+            amount = float.Parse(txtAmount.Text);
+
+            remain_opening = opening_bal - amount;
+            textBox1.Text = remain_opening.ToString();
+        }
+        public int bankamount;
+            
+       public void DisplayLowQuantityItems()
+        {
+            con.Open();
+            string Query = String.Format("select OpeningBal from tbl_BankAccount where Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY OpeningBal ", cmbfrombank.Text);
+            SqlCommand cmd = new SqlCommand(Query, con);
+            cmd.ExecuteScalar();
+          
+            con.Close();
+            MessageBox.Show("Is not Available\n");
         }
     }
 }

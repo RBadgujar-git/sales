@@ -27,30 +27,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpenseItemReport));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtTotalQty = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtfreeqty = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txttotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtqty = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvexpense = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtfreeqty = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTotalQty = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvexpense)).BeginInit();
             this.SuspendLayout();
@@ -71,6 +72,77 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(1004, 53);
             this.guna2Panel1.TabIndex = 177;
+            // 
+            // txtTotalQty
+            // 
+            this.txtTotalQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTotalQty.DefaultText = "";
+            this.txtTotalQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTotalQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTotalQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalQty.DisabledState.Parent = this.txtTotalQty;
+            this.txtTotalQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTotalQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalQty.FocusedState.Parent = this.txtTotalQty;
+            this.txtTotalQty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTotalQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTotalQty.HoverState.Parent = this.txtTotalQty;
+            this.txtTotalQty.Location = new System.Drawing.Point(577, 8);
+            this.txtTotalQty.Name = "txtTotalQty";
+            this.txtTotalQty.PasswordChar = '\0';
+            this.txtTotalQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtTotalQty.PlaceholderText = "0";
+            this.txtTotalQty.SelectedText = "";
+            this.txtTotalQty.ShadowDecoration.Parent = this.txtTotalQty;
+            this.txtTotalQty.Size = new System.Drawing.Size(123, 36);
+            this.txtTotalQty.TabIndex = 142;
+            this.txtTotalQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(479, 17);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 16);
+            this.label5.TabIndex = 141;
+            this.label5.Text = " Total  Qty :";
+            // 
+            // txtfreeqty
+            // 
+            this.txtfreeqty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtfreeqty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfreeqty.DefaultText = "";
+            this.txtfreeqty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfreeqty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfreeqty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfreeqty.DisabledState.Parent = this.txtfreeqty;
+            this.txtfreeqty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfreeqty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfreeqty.FocusedState.Parent = this.txtfreeqty;
+            this.txtfreeqty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfreeqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfreeqty.HoverState.Parent = this.txtfreeqty;
+            this.txtfreeqty.Location = new System.Drawing.Point(112, 12);
+            this.txtfreeqty.Name = "txtfreeqty";
+            this.txtfreeqty.PasswordChar = '\0';
+            this.txtfreeqty.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtfreeqty.PlaceholderText = "0";
+            this.txtfreeqty.SelectedText = "";
+            this.txtfreeqty.ShadowDecoration.Parent = this.txtfreeqty;
+            this.txtfreeqty.Size = new System.Drawing.Size(124, 36);
+            this.txtfreeqty.TabIndex = 140;
+            this.txtfreeqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtfreeqty.TextChanged += new System.EventHandler(this.txtfreeqty_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 139;
+            this.label4.Text = "Free Qty :";
             // 
             // txttotal
             // 
@@ -147,8 +219,8 @@
             // 
             // dgvexpense
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvexpense.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvexpense.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvexpense.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvexpense.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -156,28 +228,28 @@
             this.dgvexpense.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvexpense.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvexpense.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvexpense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvexpense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvexpense.ColumnHeadersHeight = 18;
             this.dgvexpense.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column1,
             this.FreeQty,
             this.Column2});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvexpense.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvexpense.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvexpense.EnableHeadersVisualStyles = false;
             this.dgvexpense.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvexpense.Location = new System.Drawing.Point(5, 74);
@@ -209,6 +281,26 @@
             this.dgvexpense.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvexpense.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvexpense.TabIndexChanged += new System.EventHandler(this.dgvexpense_TabIndexChanged);
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Expense Item";
+            this.Column5.Name = "Column5";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Quantity";
+            this.Column1.Name = "Column1";
+            // 
+            // FreeQty
+            // 
+            this.FreeQty.HeaderText = "Free Qty";
+            this.FreeQty.Name = "FreeQty";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amount";
+            this.Column2.Name = "Column2";
             // 
             // cmbAllfirms
             // 
@@ -313,102 +405,28 @@
             this.txtfilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
             // 
-            // Column5
+            // btnminimize
             // 
-            this.Column5.HeaderText = "Expense Item";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Quantity";
-            this.Column1.Name = "Column1";
-            // 
-            // FreeQty
-            // 
-            this.FreeQty.HeaderText = "Free Qty";
-            this.FreeQty.Name = "FreeQty";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Amount";
-            this.Column2.Name = "Column2";
-            // 
-            // txtfreeqty
-            // 
-            this.txtfreeqty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtfreeqty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtfreeqty.DefaultText = "";
-            this.txtfreeqty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtfreeqty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtfreeqty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfreeqty.DisabledState.Parent = this.txtfreeqty;
-            this.txtfreeqty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtfreeqty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfreeqty.FocusedState.Parent = this.txtfreeqty;
-            this.txtfreeqty.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtfreeqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtfreeqty.HoverState.Parent = this.txtfreeqty;
-            this.txtfreeqty.Location = new System.Drawing.Point(112, 12);
-            this.txtfreeqty.Name = "txtfreeqty";
-            this.txtfreeqty.PasswordChar = '\0';
-            this.txtfreeqty.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtfreeqty.PlaceholderText = "0";
-            this.txtfreeqty.SelectedText = "";
-            this.txtfreeqty.ShadowDecoration.Parent = this.txtfreeqty;
-            this.txtfreeqty.Size = new System.Drawing.Size(124, 36);
-            this.txtfreeqty.TabIndex = 140;
-            this.txtfreeqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtfreeqty.TextChanged += new System.EventHandler(this.txtfreeqty_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
-            this.label4.TabIndex = 139;
-            this.label4.Text = "Free Qty :";
-            // 
-            // txtTotalQty
-            // 
-            this.txtTotalQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotalQty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotalQty.DefaultText = "";
-            this.txtTotalQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTotalQty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTotalQty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalQty.DisabledState.Parent = this.txtTotalQty;
-            this.txtTotalQty.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTotalQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalQty.FocusedState.Parent = this.txtTotalQty;
-            this.txtTotalQty.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTotalQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTotalQty.HoverState.Parent = this.txtTotalQty;
-            this.txtTotalQty.Location = new System.Drawing.Point(577, 8);
-            this.txtTotalQty.Name = "txtTotalQty";
-            this.txtTotalQty.PasswordChar = '\0';
-            this.txtTotalQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtTotalQty.PlaceholderText = "0";
-            this.txtTotalQty.SelectedText = "";
-            this.txtTotalQty.ShadowDecoration.Parent = this.txtTotalQty;
-            this.txtTotalQty.Size = new System.Drawing.Size(123, 36);
-            this.txtTotalQty.TabIndex = 142;
-            this.txtTotalQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(479, 17);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 16);
-            this.label5.TabIndex = 141;
-            this.label5.Text = " Total  Qty :";
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(941, 5);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 444;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // ExpenseItemReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2Panel1);
@@ -451,5 +469,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FreeQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

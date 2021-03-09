@@ -18,6 +18,9 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public CashInHandHomepage()
         {
             InitializeComponent();
@@ -57,10 +60,6 @@ namespace sample
             //{
             //    MessageBox.Show(ex.Message);
             //}
-
-
-
-
         }
 
         private void CashInHandHomepage_Load(object sender, EventArgs e)
@@ -71,15 +70,16 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("(select TableName as Type,PartyName,InvoiceDate as Date,Total from tbl_SaleInvoice)union all(select TableName as Type,PartyName,OrderDate as Date,Total from tbl_SaleOrder )Union all(select TableName as Type,PartyName,BillDate as Date,Total from tbl_PurchaseBill )Union all(select TableName as Type,PartyName,OrderDate as Date,Total from tbl_PurchaseOrder)union all(select TableName as Type,CustomerName as PartyName,Date as Date,TOTAL as Total from tbl_PaymentIn )union all(select TableName as Type,CustomerName as PartyName,Date as Date,TOTAL as Total  from tbl_Paymentout)Union all(select CashAdjustment as Type,Description as PartyName,Date as Date,CashAmount from tbl_CashAdjustment)", con);
+            SqlCommand cmd = new SqlCommand("(select TableName as Type,PartyName,InvoiceDate as Date,Total from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName as Type,PartyName,OrderDate as Date,Total from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName as Type,PartyName,BillDate as Date,Total from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName as Type,PartyName,OrderDate as Date,Total from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName as Type,CustomerName as PartyName,Date as Date,TOTAL as Total from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' )union all(select TableName as Type,CustomerName as PartyName,Date as Date,TOTAL as Total  from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select CashAdjustment as Type,Description as PartyName,Date as Date,CashAmount from tbl_CashAdjustment where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
-
-
-
             dgvCashInHand.DataSource = dt;
+        }
 
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

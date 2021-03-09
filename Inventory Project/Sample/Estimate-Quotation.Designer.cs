@@ -118,6 +118,7 @@
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerQuotation)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -148,7 +149,7 @@
             this.txtItemTotal.SelectionStart = 1;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(80, 24);
-            this.txtItemTotal.TabIndex = 10;
+            this.txtItemTotal.TabIndex = 12;
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
             // txtDisAmt
@@ -175,7 +176,7 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(80, 24);
-            this.txtDisAmt.TabIndex = 8;
+            this.txtDisAmt.TabIndex = 832;
             // 
             // txtDis
             // 
@@ -201,7 +202,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(80, 24);
-            this.txtDis.TabIndex = 4;
+            this.txtDis.TabIndex = 464;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             // 
             // label32
@@ -246,7 +247,7 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(80, 24);
-            this.txtTaxAMount1.TabIndex = 9;
+            this.txtTaxAMount1.TabIndex = 922;
             // 
             // Unit
             // 
@@ -264,10 +265,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(966, 3);
+            this.button3.Location = new System.Drawing.Point(966, 9);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 0;
+            this.button3.TabIndex = 345;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -302,7 +303,7 @@
             this.txtReturnNo.SelectedText = "";
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
             this.txtReturnNo.Size = new System.Drawing.Size(87, 29);
-            this.txtReturnNo.TabIndex = 4;
+            this.txtReturnNo.TabIndex = 454;
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
             // 
             // txtBillingAdd
@@ -321,6 +322,7 @@
             this.txtBillingAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingAdd.HoverState.Parent = this.txtBillingAdd;
             this.txtBillingAdd.Location = new System.Drawing.Point(135, 81);
+            this.txtBillingAdd.MaxLength = 300;
             this.txtBillingAdd.Multiline = true;
             this.txtBillingAdd.Name = "txtBillingAdd";
             this.txtBillingAdd.PasswordChar = '\0';
@@ -365,7 +367,7 @@
             this.btnSave.Location = new System.Drawing.Point(599, 558);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -571,6 +573,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.button2);
@@ -582,6 +585,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1013, 41);
             this.panel3.TabIndex = 0;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // button4
             // 
@@ -592,10 +596,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(889, 1);
+            this.button4.Location = new System.Drawing.Point(851, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 34);
-            this.button4.TabIndex = 4;
+            this.button4.TabIndex = 456;
             this.button4.UseVisualStyleBackColor = false;
             // 
             // label26
@@ -617,10 +621,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(930, 5);
+            this.button2.Location = new System.Drawing.Point(888, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 789;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -629,7 +633,7 @@
             this.Quatation.Location = new System.Drawing.Point(119, 7);
             this.Quatation.Name = "Quatation";
             this.Quatation.Size = new System.Drawing.Size(210, 23);
-            this.Quatation.TabIndex = 116;
+            this.Quatation.TabIndex = 646;
             this.Quatation.Text = "Estimate";
             this.Quatation.Visible = false;
             // 
@@ -717,7 +721,7 @@
             this.comboBox2.Location = new System.Drawing.Point(786, 130);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(163, 24);
-            this.comboBox2.TabIndex = 128;
+            this.comboBox2.TabIndex = 7;
             // 
             // label8
             // 
@@ -736,7 +740,7 @@
             this.comboBox1.Location = new System.Drawing.Point(135, 49);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(163, 24);
-            this.comboBox1.TabIndex = 100;
+            this.comboBox1.TabIndex = 1;
             // 
             // label6
             // 
@@ -752,7 +756,7 @@
             this.textBox1.Location = new System.Drawing.Point(457, 115);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 23);
-            this.textBox1.TabIndex = 125;
+            this.textBox1.TabIndex = 4;
             // 
             // cmbCategory
             // 
@@ -787,7 +791,7 @@
             this.ComboBox.Location = new System.Drawing.Point(135, 487);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(163, 24);
-            this.ComboBox.TabIndex = 122;
+            this.ComboBox.TabIndex = 14;
             // 
             // cmbStatesupply
             // 
@@ -826,7 +830,7 @@
             this.cmbStatesupply.Location = new System.Drawing.Point(785, 93);
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(163, 24);
-            this.cmbStatesupply.TabIndex = 120;
+            this.cmbStatesupply.TabIndex = 6;
             // 
             // dtpInvoice
             // 
@@ -835,7 +839,7 @@
             this.dtpInvoice.Location = new System.Drawing.Point(785, 56);
             this.dtpInvoice.Name = "dtpInvoice";
             this.dtpInvoice.Size = new System.Drawing.Size(163, 23);
-            this.dtpInvoice.TabIndex = 119;
+            this.dtpInvoice.TabIndex = 5;
             // 
             // Print
             // 
@@ -845,7 +849,7 @@
             this.Print.Location = new System.Drawing.Point(803, 557);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 118;
+            this.Print.TabIndex = 21;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -858,7 +862,7 @@
             this.Clear.Location = new System.Drawing.Point(904, 556);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 117;
+            this.Clear.TabIndex = 22;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             // 
@@ -916,7 +920,7 @@
             this.txtsubtotal.SelectedText = "";
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(90, 24);
-            this.txtsubtotal.TabIndex = 108;
+            this.txtsubtotal.TabIndex = 15;
             // 
             // btnUpdate
             // 
@@ -926,7 +930,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(701, 557);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 18;
+            this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -973,7 +977,7 @@
             this.txtsgst.SelectionStart = 1;
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
             this.txtsgst.Size = new System.Drawing.Size(80, 24);
-            this.txtsgst.TabIndex = 104;
+            this.txtsgst.TabIndex = 544;
             // 
             // txtcgst
             // 
@@ -999,7 +1003,7 @@
             this.txtcgst.SelectionStart = 1;
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
             this.txtcgst.Size = new System.Drawing.Size(80, 24);
-            this.txtcgst.TabIndex = 103;
+            this.txtcgst.TabIndex = 543;
             // 
             // txtcon
             // 
@@ -1017,6 +1021,7 @@
             this.txtcon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcon.HoverState.Parent = this.txtcon;
             this.txtcon.Location = new System.Drawing.Point(135, 132);
+            this.txtcon.MaxLength = 10;
             this.txtcon.Name = "txtcon";
             this.txtcon.PasswordChar = '\0';
             this.txtcon.PlaceholderText = "";
@@ -1024,6 +1029,7 @@
             this.txtcon.ShadowDecoration.Parent = this.txtcon;
             this.txtcon.Size = new System.Drawing.Size(163, 25);
             this.txtcon.TabIndex = 3;
+            this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress);
             // 
             // label36
             // 
@@ -1065,7 +1071,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(990, 88);
-            this.guna2ShadowPanel1.TabIndex = 7;
+            this.guna2ShadowPanel1.TabIndex = 8;
             // 
             // txtItemName
             // 
@@ -1075,7 +1081,7 @@
             this.txtItemName.Location = new System.Drawing.Point(19, 48);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(99, 22);
-            this.txtItemName.TabIndex = 99;
+            this.txtItemName.TabIndex = 9;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             // 
             // txtTax1
@@ -1102,7 +1108,7 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(80, 24);
-            this.txtTax1.TabIndex = 5;
+            this.txtTax1.TabIndex = 765;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             // 
             // label30
@@ -1137,7 +1143,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(80, 24);
-            this.txtMRP.TabIndex = 3;
+            this.txtMRP.TabIndex = 763;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             // 
             // label29
@@ -1171,7 +1177,7 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(80, 24);
-            this.txtUnit.TabIndex = 2;
+            this.txtUnit.TabIndex = 782;
             // 
             // label28
             // 
@@ -1206,7 +1212,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(80, 24);
-            this.txtFreeQty.TabIndex = 7;
+            this.txtFreeQty.TabIndex = 11;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             // 
             // label27
@@ -1240,7 +1246,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(80, 24);
-            this.txtItemCode.TabIndex = 1;
+            this.txtItemCode.TabIndex = 436;
             // 
             // label21
             // 
@@ -1284,7 +1290,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(80, 24);
-            this.txtOty.TabIndex = 6;
+            this.txtOty.TabIndex = 10;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             // 
             // label23
@@ -1325,7 +1331,7 @@
             this.cmbtax.ShadowDecoration.Parent = this.cmbtax;
             this.cmbtax.Size = new System.Drawing.Size(90, 36);
             this.cmbtax.StartIndex = 0;
-            this.cmbtax.TabIndex = 14;
+            this.cmbtax.TabIndex = 17;
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged);
             // 
             // chkRoundOff
@@ -1395,7 +1401,7 @@
             this.txtRoundup.SelectedText = "";
             this.txtRoundup.ShadowDecoration.Parent = this.txtRoundup;
             this.txtRoundup.Size = new System.Drawing.Size(80, 24);
-            this.txtRoundup.TabIndex = 16;
+            this.txtRoundup.TabIndex = 18;
             this.txtRoundup.TextChanged += new System.EventHandler(this.txtRoundup_TextChanged);
             // 
             // txtTaxAmount
@@ -1423,7 +1429,7 @@
             this.txtTaxAmount.SelectionStart = 1;
             this.txtTaxAmount.ShadowDecoration.Parent = this.txtTaxAmount;
             this.txtTaxAmount.Size = new System.Drawing.Size(90, 24);
-            this.txtTaxAmount.TabIndex = 15;
+            this.txtTaxAmount.TabIndex = 843;
             // 
             // txtDisAmount
             // 
@@ -1449,7 +1455,7 @@
             this.txtDisAmount.SelectionStart = 1;
             this.txtDisAmount.ShadowDecoration.Parent = this.txtDisAmount;
             this.txtDisAmount.Size = new System.Drawing.Size(90, 24);
-            this.txtDisAmount.TabIndex = 13;
+            this.txtDisAmount.TabIndex = 78;
             // 
             // txtDiscount
             // 
@@ -1474,7 +1480,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(90, 24);
-            this.txtDiscount.TabIndex = 12;
+            this.txtDiscount.TabIndex = 16;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtDescription
@@ -1500,7 +1506,23 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(163, 54);
-            this.txtDescription.TabIndex = 8;
+            this.txtDescription.TabIndex = 13;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(934, 11);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 790;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // Estimate_Quotation
             // 
@@ -1616,5 +1638,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

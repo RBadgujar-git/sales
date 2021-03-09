@@ -39,7 +39,7 @@ namespace sample
             if (cmbCategry.Text != "System.Data.DataRowView")
             {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -47,7 +47,6 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
                         cmbCategry.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
-
                     }
                 }
                 catch (Exception e1) {
@@ -61,7 +60,7 @@ namespace sample
         {
             if (cmbUnit.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select UnitName from tbl_UnitMaster group by UnitName");
+                    string SelectQuery = string.Format("select UnitName from tbl_UnitMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by UnitName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -82,7 +81,7 @@ namespace sample
             try
             {
                 // con.Open();
-                string Query = String.Format("select SubUnitName from tbl_UnitMaster where (UnitName='{0}') GROUP BY SubUnitName", cmbUnit.Text);
+                string Query = String.Format("select SubUnitName from tbl_UnitMaster where (UnitName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SubUnitName", cmbUnit.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -482,9 +481,10 @@ namespace sample
        
 
         private void guna2Button2_Click(object sender, EventArgs e)
-        {         
+        {
+            //  itemtracking.Visible = true;
             itemtracking.Visible = true;
-         }
+        }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -695,6 +695,14 @@ namespace sample
             }
         }
 
-        
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

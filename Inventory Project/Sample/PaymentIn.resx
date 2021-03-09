@@ -394,7 +394,7 @@
     <value>190, 24</value>
   </data>
   <data name="txtDiscount.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;txtDiscount.Name" xml:space="preserve">
     <value>txtDiscount</value>
@@ -451,7 +451,7 @@
     <value>190, 24</value>
   </data>
   <data name="txtReceived.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;txtReceived.Name" xml:space="preserve">
     <value>txtReceived</value>
@@ -520,10 +520,10 @@
     <value>524, 175</value>
   </data>
   <data name="txtTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>190, 24</value>
+    <value>189, 24</value>
   </data>
   <data name="txtTotal.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;txtTotal.Name" xml:space="preserve">
     <value>txtTotal</value>
@@ -605,6 +605,9 @@
   </data>
   <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 88</value>
+  </data>
+  <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -772,7 +775,7 @@
     <value>190, 23</value>
   </data>
   <data name="dtpdate.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;dtpdate.Name" xml:space="preserve">
     <value>dtpdate</value>
@@ -785,6 +788,36 @@
   </data>
   <data name="&gt;&gt;dtpdate.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="btnminimize.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Stretch</value>
+  </data>
+  <data name="btnminimize.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnminimize.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnminimize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>881, 12</value>
+  </data>
+  <data name="btnminimize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>26, 27</value>
+  </data>
+  <data name="btnminimize.TabIndex" type="System.Int32, mscorlib">
+    <value>457</value>
+  </data>
+  <data name="&gt;&gt;btnminimize.Name" xml:space="preserve">
+    <value>btnminimize</value>
+  </data>
+  <data name="&gt;&gt;btnminimize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnminimize.Parent" xml:space="preserve">
+    <value>guna2Panel2</value>
+  </data>
+  <data name="&gt;&gt;btnminimize.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -833,7 +866,7 @@
     <value>33, 27</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>348</value>
   </data>
   <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
     <value>btnCancel</value>
@@ -845,7 +878,7 @@
     <value>guna2Panel2</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnSetting.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -883,13 +916,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>870, 11</value>
+    <value>848, 11</value>
   </data>
   <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 25</value>
   </data>
   <data name="btnSetting.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>456</value>
   </data>
   <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
     <value>btnSetting</value>
@@ -901,7 +934,7 @@
     <value>guna2Panel2</value>
   </data>
   <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -937,7 +970,7 @@
     <value>guna2Panel2</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="guna2Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -969,11 +1002,14 @@
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>155, 242</value>
   </data>
+  <data name="textBox1.MaxLength" type="System.Int32, mscorlib">
+    <value>1000</value>
+  </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 23</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>68</value>
+    <value>5</value>
   </data>
   <data name="textBox1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1039,7 +1075,7 @@
     <value>190, 24</value>
   </data>
   <data name="comboBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;comboBox1.Name" xml:space="preserve">
     <value>comboBox1</value>

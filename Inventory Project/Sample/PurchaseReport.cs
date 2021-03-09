@@ -22,13 +22,15 @@ namespace sample
         }
         string date;
 
+        public FormWindowState WindowState { get; private set; }
+
         private void fetchCampanyame()
         {
             if (cmbFirm.Text != "System.Data.DataRowView")
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -177,7 +179,7 @@ namespace sample
                     date = DateTime.Now.Month.ToString();
                     //MessageBox.Show("moth o" + date);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where month(BillDate)=" + date + " ", con);
+                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where month(BillDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -199,7 +201,7 @@ namespace sample
                     date = DateTime.Now.Year.ToString();
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where year(BillDate)=" + date + " ", con);
+                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where year(BillDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -220,7 +222,7 @@ namespace sample
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill WHERE DATEPART(m, BillDate) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yy, BillDate) = DATEPART(yy, DATEADD(m, -1, getdate()))", con);
+                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill WHERE DATEPART(m, BillDate) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yy, BillDate) = DATEPART(yy, DATEADD(m, -1, getdate())) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -241,7 +243,7 @@ namespace sample
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill WHERE BillDate>= DATEADD(M, -3, GETDATE())", con);
+                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill WHERE BillDate>= DATEADD(M, -3, GETDATE()) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -260,7 +262,7 @@ namespace sample
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill", con);
+                    SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -300,7 +302,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "'");
+                string SelectQuery = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -323,7 +325,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where PartyName like '%{0}%' or BillNo like '%{0}%'", txtSearch.Text);
+                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where PartyName like '%{0}%' or BillNo like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -339,6 +341,11 @@ namespace sample
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Party_Group));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btndelete = new System.Windows.Forms.Button();
@@ -40,7 +40,8 @@
             this.dgvPartyGroup = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartyGroup)).BeginInit();
@@ -51,6 +52,7 @@
             // 
             this.guna2Panel1.AutoScroll = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.Gray;
             this.guna2Panel1.Controls.Add(this.btndelete);
             this.guna2Panel1.Controls.Add(this.btnupdate);
             this.guna2Panel1.Controls.Add(this.Clear);
@@ -59,7 +61,6 @@
             this.guna2Panel1.Controls.Add(this.dgvPartyGroup);
             this.guna2Panel1.Controls.Add(this.label2);
             this.guna2Panel1.Controls.Add(this.panel3);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -77,7 +78,7 @@
             this.btndelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(70, 30);
-            this.btndelete.TabIndex = 24;
+            this.btndelete.TabIndex = 5;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
@@ -91,7 +92,7 @@
             this.btnupdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(70, 30);
-            this.btnupdate.TabIndex = 23;
+            this.btnupdate.TabIndex = 4;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
@@ -105,7 +106,7 @@
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(70, 30);
-            this.Clear.TabIndex = 22;
+            this.Clear.TabIndex = 6;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -132,7 +133,7 @@
             this.txtPartyGroupName.SelectedText = "";
             this.txtPartyGroupName.ShadowDecoration.Parent = this.txtPartyGroupName;
             this.txtPartyGroupName.Size = new System.Drawing.Size(192, 31);
-            this.txtPartyGroupName.TabIndex = 1;
+            this.txtPartyGroupName.TabIndex = 2;
             this.txtPartyGroupName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartyGroupName_KeyPress);
             // 
             // btnSave
@@ -144,37 +145,37 @@
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(70, 30);
-            this.btnSave.TabIndex = 21;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dgvPartyGroup
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPartyGroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dgvPartyGroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvPartyGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartyGroup.BackgroundColor = System.Drawing.Color.White;
             this.dgvPartyGroup.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPartyGroup.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPartyGroup.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartyGroup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartyGroup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvPartyGroup.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartyGroup.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartyGroup.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvPartyGroup.EnableHeadersVisualStyles = false;
             this.dgvPartyGroup.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvPartyGroup.Location = new System.Drawing.Point(109, 169);
@@ -182,7 +183,7 @@
             this.dgvPartyGroup.RowHeadersVisible = false;
             this.dgvPartyGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPartyGroup.Size = new System.Drawing.Size(430, 238);
-            this.dgvPartyGroup.TabIndex = 20;
+            this.dgvPartyGroup.TabIndex = 0;
             this.dgvPartyGroup.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPartyGroup.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPartyGroup.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -216,13 +217,14 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Party Group Name :";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Controls.Add(this.btncancel);
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -231,22 +233,37 @@
             this.panel3.Size = new System.Drawing.Size(663, 50);
             this.panel3.TabIndex = 17;
             // 
-            // btnCancel
+            // btncancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(547, 10);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnCancel.Size = new System.Drawing.Size(22, 22);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(547, 8);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(28, 26);
+            this.btncancel.TabIndex = 1;
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click_1);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(515, 8);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 0;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // label1
             // 
@@ -284,11 +301,12 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPartyGroup;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Button btncancel;
     }
 }

@@ -17,6 +17,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public ItemReportbyParty()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -60,7 +63,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName from tbl_ItemMaster where ItemName like '%{0}%'", guna2TextBox1.Text);
+                string Query = string.Format("select ItemName from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -76,6 +79,16 @@ namespace sample
         private void cmbAllFirms_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

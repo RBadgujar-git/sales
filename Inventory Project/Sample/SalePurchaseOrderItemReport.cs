@@ -14,6 +14,9 @@ namespace sample
     public partial class SalePurchaseOrderItemReport : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public SalePurchaseOrderItemReport()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace sample
 
           
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner ", con);
+                SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                 SDA.Fill(ds, "temp");
@@ -50,7 +53,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -82,7 +85,7 @@ namespace sample
             try
             {
                
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where ItemName like '%{0}%'", txtFilterBy);
+                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -94,6 +97,11 @@ namespace sample
                 MessageBox.Show("Data not" + ex);
             }
            
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

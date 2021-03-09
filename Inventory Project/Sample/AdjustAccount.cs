@@ -19,6 +19,9 @@ namespace sample
         SqlCommand cmd;
         string id = "";
         public string companyid;
+
+        public FormWindowState WindowState { get; private set; }
+
         public AdjustAccount()
         {
             InitializeComponent();
@@ -144,7 +147,7 @@ namespace sample
         {
             if (cmbaccountname.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select AccountName from tbl_BankAccount group by AccountName");
+                    string SelectQuery = string.Format("select AccountName from tbl_BankAccount where Company_ID='"+NewCompany.company_id+"' group by AccountName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -332,6 +335,11 @@ namespace sample
             Delete();
             fetchdetails();
             Cleardata();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

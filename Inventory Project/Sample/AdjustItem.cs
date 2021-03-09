@@ -18,6 +18,9 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public AdjustItem()
         {
             InitializeComponent();
@@ -177,7 +180,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -310,6 +313,11 @@ namespace sample
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

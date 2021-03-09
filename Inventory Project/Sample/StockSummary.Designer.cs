@@ -50,6 +50,7 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.cmbAAllCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2DateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStockSummary)).BeginInit();
             this.SuspendLayout();
@@ -190,6 +191,7 @@
             this.dgvStockSummary.ThemeStyle.RowsStyle.Height = 22;
             this.dgvStockSummary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvStockSummary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvStockSummary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStockSummary_CellContentClick);
             // 
             // Column1
             // 
@@ -337,11 +339,28 @@
             this.guna2DateTimePicker2.Size = new System.Drawing.Size(165, 23);
             this.guna2DateTimePicker2.TabIndex = 101;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(932, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 446;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // StockSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.guna2DateTimePicker2);
             this.Controls.Add(this.cmbAAllCategory);
             this.Controls.Add(this.guna2Panel1);
@@ -386,5 +405,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StockValue;
         private Guna.UI2.WinForms.Guna2ComboBox cmbAAllCategory;
         private System.Windows.Forms.DateTimePicker guna2DateTimePicker2;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

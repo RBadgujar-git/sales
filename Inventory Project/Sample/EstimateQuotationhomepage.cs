@@ -19,6 +19,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public EstimateQuotationhomepage()
         {
             InitializeComponent();
@@ -50,7 +53,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select PartyName from tblQuotation where PartyName like '%{0}%'", txtfilter.Text);
+                string Query = string.Format("select PartyName from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -78,7 +81,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  group by CompanyName ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -99,7 +102,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tblQuotation", con);
+            SqlCommand cmd = new SqlCommand("select * from tblQuotation where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -126,7 +129,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select Date,PartyName,ReturnNo,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "'");
+                string SelectQuery = string.Format("select Date,PartyName,ReturnNo,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -137,6 +140,11 @@ namespace sample
             {
                 MessageBox.Show("Data not" + ex);
             }
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
     

@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class Setting : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public Setting()
         {
             InitializeComponent();
@@ -45,6 +47,11 @@ namespace sample
         private void guna2Button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

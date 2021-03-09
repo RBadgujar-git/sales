@@ -48,7 +48,7 @@ namespace sample
             if (cmbpartyname.Text != "System.Data.DataRowView")
             {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -145,6 +145,7 @@ namespace sample
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide();
         }
 
         private void txtOty_TextChanged(object sender, EventArgs e)
@@ -287,12 +288,32 @@ namespace sample
         private void gst_devide()
         {
             try {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (State1 == cmbStatesupply.Text)
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    txtIGST.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
+
+                }
+
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
@@ -406,7 +427,7 @@ namespace sample
         {
             try {
                 con.Open();
-                string str = string.Format("SELECT * FROM tbl_PurchaseOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_PurchaseOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows) {
@@ -766,7 +787,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster  where DeleteData='1' group by ItemCategory ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -866,6 +887,29 @@ namespace sample
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtTransportName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Calculator cr = new Calculator();
+            cr.Show();
         }
     }
 }

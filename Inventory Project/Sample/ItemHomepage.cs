@@ -17,6 +17,9 @@ namespace sample
         // SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-UK7P4M8\\SQLEXPRESS;Initial Catalog=InventoryMgnt;Integrated Security=True");
         // SqlConnection con;
         SqlCommand cmd;
+
+        public FormWindowState WindowState { get; private set; }
+
         // string id = "";
         public ItemHomepage()
         {
@@ -112,7 +115,7 @@ namespace sample
         {
             con.Open();
             DataTable dtable = new DataTable();
-            cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'", con);
+            cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+ "' and DeleteData='1'", con);
             cmd.Parameters.AddWithValue("@ItemName","");
             cmd.Parameters.AddWithValue("@OpeningQty","");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
@@ -136,7 +139,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,OpeningQty from tbl_ItemMaster where ItemName like '%{0}%'", guna2TextBox1.Text);
+                string Query = string.Format("select ItemName,OpeningQty from tbl_ItemMaster where ItemName like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -182,7 +185,7 @@ namespace sample
             try
             {
                  con.Open();
-                string Query = String.Format("select SalePrice,atPrice,PurchasePrice from tbl_ItemMaster where (ItemName='{0}') GROUP BY SalePrice,atPrice,PurchasePrice", lblItemName.Text);
+                string Query = String.Format("select SalePrice,atPrice,PurchasePrice from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SalePrice,atPrice,PurchasePrice", lblItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -214,7 +217,7 @@ namespace sample
                 // lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
                 // lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
 
-                string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where ItemName='{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where ItemName = '{0}')", lblItemName.Text);
+                string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where ItemName='{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where ItemName = '{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", lblItemName.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -236,6 +239,16 @@ namespace sample
         {
 
         }
+
+        private void dgvItemDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
-    }
+}
 

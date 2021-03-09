@@ -48,7 +48,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -70,7 +70,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ExpensesInner", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_ExpensesInner where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -92,7 +92,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -124,7 +124,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%'", txtfilter.Text);
+                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -143,6 +143,9 @@ namespace sample
 
         }
         int row = 0;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void Data()
             {
             float TA = 0, TD = 0, total = 0,TG=0,qty=0,rate=0;
@@ -180,5 +183,10 @@ namespace sample
         {
 
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
-    }
+  }

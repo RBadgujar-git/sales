@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class SaleAging : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public SaleAging()
         {
             InitializeComponent();
@@ -45,6 +47,11 @@ namespace sample
         private void btnprinnt_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

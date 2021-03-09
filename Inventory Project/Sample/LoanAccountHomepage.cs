@@ -18,6 +18,9 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public LoanAccountHomepage()
         {
             InitializeComponent();
@@ -66,7 +69,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_LoanBank where Company_ID='"+NewCompany.company_id+"'", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -90,7 +93,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName from tbl_LoanBank where AccountName like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select AccountName from tbl_LoanBank where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -115,7 +118,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountNo from tbl_LoanBank where AccountNo like '%{0}%'", txtSearch2.Text);
+                string Query = string.Format("select AccountNo from tbl_LoanBank where AccountNo like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -132,7 +135,7 @@ namespace sample
         {
             lblBankAccount.Text = dgvbankAccount.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
-            string Query = string.Format("select AccountNo,Date,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where AccountName='{0}' group by AccountNo,Date,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
+            string Query = string.Format("select AccountNo,Date,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AccountName='{0}' group by AccountNo,Date,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -148,6 +151,16 @@ namespace sample
         private void dgvLoanAccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

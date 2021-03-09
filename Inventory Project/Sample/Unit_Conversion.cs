@@ -36,6 +36,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@SecondaryUnit", "");
             cmd.Parameters.AddWithValue("@Rate", "");
 
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
             cmd.Parameters.AddWithValue("@Action", "Select");
 
@@ -83,7 +84,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@UnitConversionID", id);
                 cmd.Parameters.AddWithValue("@BasicUnit", txtBasicUnit.Text);
                 cmd.Parameters.AddWithValue("@SecondaryUnit", txtSecondaryunit.Text);
+
                 cmd.Parameters.AddWithValue("@Rate", txtRate.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Insert data Successfully");
             }

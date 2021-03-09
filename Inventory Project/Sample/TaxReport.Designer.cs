@@ -48,6 +48,7 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTodate = new System.Windows.Forms.DateTimePicker();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxReport)).BeginInit();
             this.SuspendLayout();
@@ -194,6 +195,7 @@
             this.dgvTaxReport.ThemeStyle.RowsStyle.Height = 22;
             this.dgvTaxReport.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTaxReport.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvTaxReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaxReport_CellContentClick);
             // 
             // Column1
             // 
@@ -310,11 +312,28 @@
             this.dtpTodate.Size = new System.Drawing.Size(145, 23);
             this.dtpTodate.TabIndex = 157;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(923, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 446;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // TaxReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTodate);
             this.Controls.Add(this.dtpDateFrom);
             this.Controls.Add(this.guna2Panel1);
@@ -329,6 +348,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaxReport";
             this.Size = new System.Drawing.Size(989, 568);
+            this.Load += new System.EventHandler(this.TaxReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxReport)).EndInit();
@@ -356,5 +376,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DateTimePicker dtpDateFrom;
         private System.Windows.Forms.DateTimePicker dtpTodate;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

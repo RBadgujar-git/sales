@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class DiscountReport : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public DiscountReport()
         {
             InitializeComponent();
@@ -40,6 +42,11 @@ namespace sample
         private void dtpToDate_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

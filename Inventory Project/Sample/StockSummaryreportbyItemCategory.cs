@@ -14,6 +14,9 @@ namespace sample
     public partial class StockSummaryreportbyItemCategory : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public StockSummaryreportbyItemCategory()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where  DeleteData='1' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -58,7 +61,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -79,7 +82,7 @@ namespace sample
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
-            string Query = string.Format("select ItemName,OpeningQty as Stock,atPrice as stock value from tbl_ItemMaster where ItemCategory='{0}'", cmbCategory.Text);
+            string Query = string.Format("select ItemName,OpeningQty as Stock,atPrice as stock value from tbl_ItemMaster where ItemCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbCategory.Text);
                 DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -92,6 +95,11 @@ namespace sample
         private void dgvStockSummary_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

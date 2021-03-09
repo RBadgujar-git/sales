@@ -20,6 +20,9 @@ namespace sample
         //SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public ExpenseCategory()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace sample
         public void Binddata()
         {
 
-            string selectquery = string.Format("select * from tbl_UnitMaster where Company_ID='"+NewCompany.company_id+"'");
+            string selectquery = string.Format("select * from tbl_UnitMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
             DataSet ds = new DataSet();
 
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
@@ -267,6 +270,11 @@ namespace sample
         private void dgvExpenseCaategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

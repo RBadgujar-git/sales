@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class AllTransactionReport : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public AllTransactionReport()
         {
             InitializeComponent();
@@ -35,6 +37,11 @@ namespace sample
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

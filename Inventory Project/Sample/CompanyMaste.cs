@@ -21,6 +21,7 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+      
         public CompanyMaste()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace sample
             cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "Select");
-            cmd.Parameters.AddWithValue("@CompanyID", 0);
+            cmd.Parameters.AddWithValue("@CompanyID",0);
             cmd.Parameters.AddWithValue("@CompanyName", txtcampanyName.Text);
             cmd.Parameters.AddWithValue("@PhoneNo", txtContactNo.Text);
             cmd.Parameters.AddWithValue("@EmailID", txtemail.Text);
@@ -81,73 +82,77 @@ namespace sample
             sda.Fill(dtable);
             dgvComapnyMaster.DataSource = dtable;
         }
-
+        public  int verify = 0;
 
         public void validfild()
         {
             if (txtcampanyName.Text == "")
             {
-                MessageBox.Show("Please Insert Name ");
+                MessageBox.Show("Company Name Is Requried ");
                 txtcampanyName.Focus();
             }
             else if (txtAddress.Text == "")
             {
-                MessageBox.Show("Please Insert Address !");
+                MessageBox.Show("Address Is Requried ");
                 txtAddress.Focus();
             }
             else if (txtContactNo.Text == "")
             {
-                MessageBox.Show("Please Insert Contact No ");
+                MessageBox.Show(" Contact No. Is Requried ");
                 txtContactNo.Focus();
             }
             else if (txtemail.Text == "")
             {
-                MessageBox.Show("Please Insert Email Id ");
+                MessageBox.Show("Email Id Is Requried ");
                 txtemail.Focus();
             }
             else if (txtbusinesstype.Text == "")
             {
-                MessageBox.Show("Please Insert Bussness Type  ");
+                MessageBox.Show("Bussness Type Is Requried ");
                 txtbusinesstype.Focus();
             }
             else if (txtGSTNo.Text == "")
             {
-                MessageBox.Show("Please Insert GST NO");
+                MessageBox.Show("GST NO. Is Requried ");
                txtGSTNo.Focus();
-            }
-            else if (ownerName.Text == "")
-            {
-                MessageBox.Show("Please Insert Owner Name ");
-                ownerName.Focus();
             }
             else if (txtCity.Text == "")
             {
-                MessageBox.Show("Please Insert City ");
-               txtCity.Focus();
+                MessageBox.Show("City Is Requried ");
+                txtGSTNo.Focus();
             }
-            else if (string.IsNullOrEmpty(cmbState.SelectedText))
+            else if (ownerName.Text == "")
             {
-                MessageBox.Show("Please Select State !");
+                MessageBox.Show("Owner Name Is Requried ");
+                ownerName.Focus();
+            }        
+            else if (cmbState.Text == "")
+            {
+                MessageBox.Show(" Please Select State ");
                 //txtCity.Focus();
             }
-            else if (string.IsNullOrEmpty(txtBankName.SelectedText))
+            else if (txtBankName.Text == "")
             {
-                MessageBox.Show("Please Select Bank Name !");
+                MessageBox.Show("Bank Name Is Requried ");
                 //txtCity.Focus();
             }
-            else if (txtAccountNo.Text=="")
+            else if (txtAccountNo.Text == "")
             {
-                MessageBox.Show("Please Insert Account No !");
+                MessageBox.Show("Account No Is Requried");
                 txtAccountNo.Focus();
             }
             else if (txtIFSCcode.Text == "")
             {
-                MessageBox.Show("Please Insert Account  IFSC Code!");
+                MessageBox.Show("IFSC Code Is Requried ");
                txtIFSCcode.Focus();
             }
-                     
-           
+            else
+            {
+                verify = 1;
+
+            }                      
         }
+      
         public void Insert1()
         {
             try
@@ -213,8 +218,12 @@ namespace sample
         private void btnsave_Click(object sender, EventArgs e)
         {
             validfild();
-            Insert1();
-            fetchdetails();
+            if (verify == 1)
+            {
+                Insert1();
+                fetchdetails();
+            }
+
         }
 
         public void Update1()
@@ -223,10 +232,6 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
-                    {
-                        con.Open();
-                    }
                     MemoryStream ms = new MemoryStream();
                     picSignature.Image.Save(ms, picSignature.Image.RawFormat);
                     byte[] arrImage2 = ms.GetBuffer();
@@ -235,6 +240,12 @@ namespace sample
                     picCompanyLogo.Image.Save(po, picCompanyLogo.Image.RawFormat);
                     byte[] arrImage1 = po.GetBuffer();
                     DataTable dt = new DataTable();
+
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                  
                     cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
@@ -281,7 +292,8 @@ namespace sample
         {
             Update1();
             fetchdetails();
-            Cleardata();
+           
+       
         }
 
         public void Delete1()
@@ -324,12 +336,12 @@ namespace sample
         private void delete_Click(object sender, EventArgs e)
         {
             Delete1();
-            fetchdetails();
-            Cleardata();
+            fetchdetails();    
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
         {
+           
             fetchdetails();
         }
 
@@ -502,7 +514,7 @@ namespace sample
 
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            id= dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
+            id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
             txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
             txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["PhoneNo"].Value.ToString();
             txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
@@ -514,7 +526,7 @@ namespace sample
             txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
             ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
 
-            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster", con);
+            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -526,7 +538,7 @@ namespace sample
                 picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster", con);
+            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData='1'", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd2);
             DataSet dds = new DataSet();
             sda.Fill(dds);
@@ -642,8 +654,63 @@ namespace sample
 
         private void txtBankName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default["AdditinalFeild1"] = txtBankName.Text;
-            Properties.Settings.Default.Save();
+           
+        }
+
+        private void txtBankName_KeyUp(object sender, EventArgs  e)
+        {
+            
+
+            
+        }
+
+        private void txtBankName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                //don't add text if it's empty
+                if (txtBankName.Text != "")
+                {
+                    for (int i = 0; i < txtBankName.Items.Count; i++)
+                    {
+                        //exit event if text already exists
+                        if (txtBankName.Text == txtBankName.Items[i].ToString())
+                        {
+                            return;
+                        }
+                    }
+                    //add item to comboBox1
+                    txtBankName.Items.Add(txtBankName.Text);
+                }
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click_2(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+             this.Visible = false;
+            
+        }
+
+        private void btnminimize_Resize(object sender, EventArgs e)
+        {
+           
+                
+            
+        }
+       
+    
+        private void btnminimize_SizeChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 

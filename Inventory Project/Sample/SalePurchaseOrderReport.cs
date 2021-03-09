@@ -14,6 +14,9 @@ namespace sample
     public partial class SalePurchaseOrderReport : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public SalePurchaseOrderReport()
         {
             InitializeComponent();
@@ -33,7 +36,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_SaleOrder union all select * from tbl_PurchaseOrder", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_SaleOrder union all select * from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -75,7 +78,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -103,7 +106,7 @@ namespace sample
             try
             {
                 //TableName
-                string SelectQuery = string.Format("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' union all select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' ");
+                string SelectQuery = string.Format("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' union all select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -126,7 +129,7 @@ namespace sample
                     //date = DateTime.Now.Month.ToString();
                     //MessageBox.Show("moth o" + date);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where  Sale Order(TableName)=" + Tablename + " ", con);
+                    SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where  Sale Order(TableName)=" + Tablename + "  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -148,7 +151,7 @@ namespace sample
                     //date = DateTime.Now.Year.ToString();
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Purchase(TableName)=" + Tablename + " ", con);
+                    SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Purchase(TableName)=" + Tablename + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -163,6 +166,16 @@ namespace sample
                 }
             }
 
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

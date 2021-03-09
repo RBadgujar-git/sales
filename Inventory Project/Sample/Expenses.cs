@@ -64,7 +64,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='"+NewCompany.company_id+"' group by CategoryName");
+                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where DeleteData='1' and Company_ID='" + NewCompany.company_id+"' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -342,7 +342,7 @@ namespace sample
         {
             try {
                    con.Open();
-                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                     SqlCommand cmd = new SqlCommand(str, con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
@@ -376,7 +376,7 @@ namespace sample
                     }
                     // dr.Close();
 
-                    string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_ExpensesInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                    string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_ExpensesInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                     SqlCommand cmd1 = new SqlCommand(str1, con);
                     dr.Close();
 
@@ -587,6 +587,17 @@ namespace sample
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Calculator cr = new Calculator();
+            cr.Show();
         }
     }
 }

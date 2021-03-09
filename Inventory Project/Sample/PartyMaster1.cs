@@ -30,7 +30,7 @@ namespace sample
         public void Binddata()
         {
             con.Open();
-            string selectquery = string.Format("Select * from tbl_PartyMaste where CompanyID='" + NewCompany.company_id + "'");
+            string selectquery = string.Format("Select * from tbl_PartyMaste where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
             DataSet ds = new DataSet();
             SqlDataAdapter sda = new SqlDataAdapter(selectquery, con);
             sda.Fill(ds, "temp");
@@ -113,6 +113,14 @@ namespace sample
                 cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
                 cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                if (radTopay.Checked == true)
+                {
+                    cmd.Parameters.AddWithValue("@paidstatus", radTopay.Text);
+                }
+                else if (radReceive.Checked == true)
+                {
+                    cmd.Parameters.AddWithValue("@paidstatus", radReceive.Text);
+                }
 
                 int num = cmd.ExecuteNonQuery();
                 if (num > 0)
@@ -164,6 +172,14 @@ namespace sample
                     cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
                     cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
                     cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
+                    if (radTopay.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@paidstatus", radTopay.Text);
+                    }
+                    else if (radReceive.Checked == true)
+                    {
+                        cmd.Parameters.AddWithValue("@paidstatus", radReceive.Text);
+                    }
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -261,6 +277,7 @@ namespace sample
             txtPartyType.Text = dgvParty.Rows[e.RowIndex].Cells["PartyType"].Value.ToString();
             txtShippingAdd.Text = dgvParty.Rows[e.RowIndex].Cells["ShippingAddress"].Value.ToString();
             comboBox1.Text = dgvParty.Rows[e.RowIndex].Cells["PartyGroup"].Value.ToString();
+
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -395,7 +412,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where CompanyID='"+NewCompany.company_id+"'group by AddPartyGroup");
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where Company_ID='"+NewCompany.company_id+ "' and DeleteData='1' group by AddPartyGroup");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -405,6 +422,7 @@ namespace sample
                     {
                         comboBox1.Items.Add(ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString());
                     }
+
                 }
                 catch (Exception e1)
                 {
@@ -430,6 +448,16 @@ namespace sample
         private void dgvParty_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

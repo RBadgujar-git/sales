@@ -83,6 +83,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvinnerexpenses)).BeginInit();
@@ -688,6 +689,7 @@
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.Height = 22;
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvinnerexpenses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellContentClick);
             this.dgvinnerexpenses.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellDoubleClick);
             // 
             // sr_no
@@ -822,6 +824,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.Expences);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.button4);
@@ -863,11 +866,12 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(887, 9);
+            this.button4.Location = new System.Drawing.Point(865, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 34);
             this.button4.TabIndex = 4;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label26
             // 
@@ -888,7 +892,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(928, 14);
+            this.button2.Location = new System.Drawing.Point(902, 17);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
             this.button2.TabIndex = 3;
@@ -910,6 +914,22 @@
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(933, 12);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 445;
+            this.btnminimize.UseVisualStyleBackColor = false;
+          //  this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // Expenses
             // 
@@ -989,5 +1009,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private Guna.UI2.WinForms.Guna2TextBox txtAdditional1;
         private Guna.UI2.WinForms.Guna2TextBox txtrefNo;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

@@ -30,6 +30,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTransactionSearch));
             this.btnsearch = new System.Windows.Forms.Button();
             this.dtpdatefrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.closebtn = new System.Windows.Forms.Button();
+            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvalltransactionserach)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,6 +179,7 @@
             this.dgvalltransactionserach.ThemeStyle.RowsStyle.Height = 22;
             this.dgvalltransactionserach.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvalltransactionserach.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvalltransactionserach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvalltransactionserach_CellContentClick);
             // 
             // Column3
             // 
@@ -207,11 +211,45 @@
             this.Column6.HeaderText = "Balance";
             this.Column6.Name = "Column6";
             // 
+            // closebtn
+            // 
+            this.closebtn.BackColor = System.Drawing.Color.White;
+            this.closebtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("closebtn.BackgroundImage")));
+            this.closebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.closebtn.FlatAppearance.BorderSize = 0;
+            this.closebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closebtn.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closebtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.closebtn.Location = new System.Drawing.Point(807, 12);
+            this.closebtn.Name = "closebtn";
+            this.closebtn.Size = new System.Drawing.Size(26, 27);
+            this.closebtn.TabIndex = 434;
+            this.closebtn.UseVisualStyleBackColor = false;
+            this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(775, 12);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 435;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // AllTransactionSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
+            this.Controls.Add(this.closebtn);
             this.Controls.Add(this.dgvalltransactionserach);
             this.Controls.Add(this.dtpdateto);
             this.Controls.Add(this.dtpdatefrom);
@@ -222,6 +260,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AllTransactionSearch";
             this.Size = new System.Drawing.Size(845, 559);
+            this.Load += new System.EventHandler(this.AllTransactionSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvalltransactionserach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,5 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button closebtn;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

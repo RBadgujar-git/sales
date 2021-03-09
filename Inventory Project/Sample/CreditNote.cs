@@ -42,7 +42,7 @@ namespace sample
             if (cmbCategory.Text != "System.Data.DataRowView") {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -64,7 +64,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -81,7 +81,7 @@ namespace sample
                 }
             }
         }
-
+        public int ItemId;
         private void txtItemName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
@@ -90,11 +90,12 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemID ,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY ItemID ,ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    ItemId =Convert.ToInt32(dr["ItemID"]);
                     txtItemCode.Text = dr["ItemCode"].ToString();
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
@@ -120,7 +121,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -146,7 +147,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and Company_ID='" + NewCompany.company_id + "' GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY BillingAddress, ContactNo", cmbpartyname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -226,7 +227,8 @@ namespace sample
         {
             try
             {
-                float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
+                float qty = 0, freeqty = 0, rate = 0, 
+                     sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
                 qty = float.Parse(txtOty.Text.ToString());
                 freeqty = float.Parse(txtFreeQty.Text.ToString());
                 rate = float.Parse(txtMRP.Text.ToString());
@@ -261,13 +263,39 @@ namespace sample
             cal_ItemTotal();
         }
 
+
+
+
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
+          
             cal_ItemTotal();
+        }
+        public void quantitcheek()
+        {
+            //   con.Open();
+            if (txtOty.Text != "")
+            {
+                SqlCommand cmd = new SqlCommand("Select MinimumStock from tbl_ItemMaster where ItemID=" + ItemId + " ", con);
+                int maxmimum = Convert.ToInt32(cmd.ExecuteScalar());
+                float qty = float.Parse(txtOty.Text);
+                if (maxmimum >= qty)
+                {
+
+                }
+                else
+                {
+
+                }
+
+            }
+
+                 
         }
 
         private void txtOty_TextChanged(object sender, EventArgs e)
         {
+            quantitcheek();
             cal_ItemTotal();
         }
 
@@ -280,12 +308,33 @@ namespace sample
         {
             try
             {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+               // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (State1 == cmbStatesupply.Text)
+                {
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    TxtIGST.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
+
+                }
+
+
+
             }
             catch (Exception e1)
             {
@@ -349,7 +398,7 @@ namespace sample
                     con.Open();
                 }
                 // con.Open();
-                string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}'and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);             
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -393,7 +442,7 @@ namespace sample
                 }
                 dr.Close();
                 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                // dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -865,6 +914,77 @@ namespace sample
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPONo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTransportName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+       (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvInnerCreditNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOty_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

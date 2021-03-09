@@ -10,11 +10,13 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Threading;
 
 namespace sample
 {
     public partial class NewCompany : UserControl
     {
+        Thread th;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
       //  SqlConnection con;
         SqlCommand cmd;
@@ -31,7 +33,7 @@ namespace sample
             txtContactNo.Text = "";
             txtEmailID.Text = "";
             txtReferralCode.Text = "";
-            guna2CirclePictureBox1.Image = null;
+            guna2CirclePictureBox1.Image = Properties.Resources.No_Image_Available;
         }
 
 
@@ -53,18 +55,12 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             con.Close();
-        } 
+        }
         private void InsertData()
-        {        
-              
+        {             
             try
-            {
-                if (cmbCompanyName.Text == "")
-                {
-                    MessageBox.Show("Company Name Is Requried");
-                }
-                else
-                {
+
+            { 
                     MemoryStream ms = new MemoryStream();
                     guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
                     byte[] arrImage1 = ms.GetBuffer();
@@ -81,10 +77,10 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ReferralCode", txtReferralCode.Text);
                     cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Insert data Successfully");
+                    MessageBox.Show("Login Company Successfully !!!");
                     con.Close();
                     ClearData();
-                }
+                
             }
             catch (Exception ex)
             {
@@ -95,11 +91,27 @@ namespace sample
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            InsertData();
-            ClearData();
-        }  
+            if (cmbCompanyName.Text == "")
+            {
+                MessageBox.Show("Company Name Is Requried");
+            }
+            else
+            {
+                InsertData();
+                this.Visible = false;
+                th = new Thread(openingform);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+            }
+        }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void openingform(object obj)
+        {
+            Application.Run(new Dashboard());
+        }
+
+
+    private void button3_Click(object sender, EventArgs e)
         {
             this.Visible = false;
         }
@@ -146,31 +158,13 @@ namespace sample
         }
 
         byte[] arrImage1;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void guna2CirclePictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
-                {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
-                    {
-                        guna2CirclePictureBox1.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
-                    }
-                }
-            }
+          
+            
         }
 
         private void txtCompanyName_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -188,7 +182,8 @@ namespace sample
 
         private void NewCompany_Load(object sender, EventArgs e)
         {
-            fetchCampanyame();           
+            fetchCampanyame();       
+            
         }
 
        
@@ -198,7 +193,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -207,7 +202,7 @@ namespace sample
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
                         cmbCompanyName.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                   }
+                    }
                 }
                 catch (Exception e1)
                 {
@@ -220,7 +215,7 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
+                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where(CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -232,7 +227,7 @@ namespace sample
 
                     dr.Close();
 
-                    SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster", con);
+                    SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData = '1' and CompanyName ='" + cmbCompanyName.Text  + "'", con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                     DataSet dds = new DataSet();
                     sda.Fill(dds);
@@ -270,5 +265,63 @@ namespace sample
         {
             ClearData();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+          
+            }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.RestoreDirectory = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                int count = 1;
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    PictureBox pb = new PictureBox();
+                    Image loadedImage = Image.FromFile(file);
+
+                    if (count == 1)
+                    {
+                        guna2CirclePictureBox1.Image = Image.FromFile(file);
+                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                        guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        MemoryStream ms = new MemoryStream();
+                        guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
+                        arrImage1 = ms.GetBuffer();
+                    }
+                }
+            }
+        }
+        //  // Convert borderStyle to Style and ExStyle values for Win32
+        //protected override void OnPaint(PaintEventArgs e)
+
+        //{
+
+        //    base.OnPaint(e);
+
+        //    int borderWidth = 5;
+
+        //    Color borderColor = SystemColors.AppWorkspace;
+
+        //    ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, borderColor,
+
+        //    borderWidth, ButtonBorderStyle.Solid, borderColor, borderWidth,
+
+        //    ButtonBorderStyle.Solid, borderColor, borderWidth, ButtonBorderStyle.Solid,
+
+        //    borderColor, borderWidth, ButtonBorderStyle.Solid);
+
+        //}
     }
+    
 }

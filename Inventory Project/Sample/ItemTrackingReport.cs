@@ -19,6 +19,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public ItemTrackingReport()
         {
             InitializeComponent();
@@ -63,7 +66,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -89,7 +92,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where ItemName like '%{0}%'", txtItemname.Text);
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -107,7 +110,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,BatchNo,SerialNo,Size ,MFgdate,Expdate from tbl_ItemMaster  where MFgdate between '" + dtpfrom.Value.ToString() + "' and '" + dtpfrom.Value.ToString() + "'");
+                string SelectQuery = string.Format("select ItemName,BatchNo,SerialNo,Size ,MFgdate,Expdate from tbl_ItemMaster  where MFgdate between '" + dtpfrom.Value.ToString() + "' and '" + dtpfrom.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -148,7 +151,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where SerialNo like '%{0}%'", txtSerialNo.Text);
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where SerialNo like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSerialNo.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -166,7 +169,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where BatchNo like '%{0}%'", txtbatchNo.Text);
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where BatchNo like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtbatchNo.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -177,6 +180,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

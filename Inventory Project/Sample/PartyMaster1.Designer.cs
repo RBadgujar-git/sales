@@ -50,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,10 +73,13 @@
             this.txtContactNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPartyname = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvParty = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label15 = new System.Windows.Forms.Label();
+            this.grpboxpaidsatus = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParty)).BeginInit();
+            this.grpboxpaidsatus.SuspendLayout();
             this.SuspendLayout();
             // 
             // Delete
@@ -86,7 +90,7 @@
             this.Delete.Location = new System.Drawing.Point(573, 292);
             this.Delete.Name = "Delete";
             this.Delete.Size = new System.Drawing.Size(100, 40);
-            this.Delete.TabIndex = 17;
+            this.Delete.TabIndex = 16;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = false;
             this.Delete.Click += new System.EventHandler(this.Delete_Click);
@@ -99,7 +103,7 @@
             this.Update.Location = new System.Drawing.Point(468, 293);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(100, 40);
-            this.Update.TabIndex = 16;
+            this.Update.TabIndex = 15;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = false;
             this.Update.Click += new System.EventHandler(this.Update_Click);
@@ -112,7 +116,7 @@
             this.btnSave.Location = new System.Drawing.Point(364, 294);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 40);
-            this.btnSave.TabIndex = 15;
+            this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -177,7 +181,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(425, 196);
+            this.label11.Location = new System.Drawing.Point(425, 194);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(131, 16);
             this.label11.TabIndex = 36;
@@ -186,11 +190,11 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(378, 241);
+            this.label12.Location = new System.Drawing.Point(378, 244);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(178, 16);
+            this.label12.Size = new System.Drawing.Size(170, 16);
             this.label12.TabIndex = 26;
-            this.label12.Text = "Add Remainder Message :";
+            this.label12.Text = "Add Reminder Message :";
             // 
             // label10
             // 
@@ -203,7 +207,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(464, 159);
+            this.label9.Location = new System.Drawing.Point(464, 157);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 16);
             this.label9.TabIndex = 25;
@@ -212,7 +216,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(460, 91);
+            this.label8.Location = new System.Drawing.Point(460, 89);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 24;
@@ -269,20 +273,37 @@
             this.label2.Location = new System.Drawing.Point(49, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Party Name :";
             // 
             // panel3
             // 
+            this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.btnCancel);
             this.panel3.Controls.Add(this.btnSetting);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(813, 38);
-            this.panel3.TabIndex = 16;
+            this.panel3.TabIndex = 0;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(698, 4);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 0;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnCancel
             // 
@@ -296,7 +317,7 @@
             this.btnCancel.Location = new System.Drawing.Point(730, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 28);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 0;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -309,10 +330,10 @@
             this.btnSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetting.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSetting.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSetting.Location = new System.Drawing.Point(692, 4);
+            this.btnSetting.Location = new System.Drawing.Point(661, 5);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(27, 25);
-            this.btnSetting.TabIndex = 4;
+            this.btnSetting.TabIndex = 0;
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
@@ -332,6 +353,8 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.grpboxpaidsatus);
+            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.dtpDate);
@@ -342,8 +365,6 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.Delete);
             this.panel1.Controls.Add(this.Update);
-            this.panel1.Controls.Add(this.radReceive);
-            this.panel1.Controls.Add(this.radTopay);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.txtAddRemainder);
             this.panel1.Controls.Add(this.txtShippingAdd);
@@ -366,11 +387,14 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(813, 577);
-            this.panel1.TabIndex = 1;
+            this.panel1.Size = new System.Drawing.Size(813, 559);
+            this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // comboBox1
             // 
@@ -398,10 +422,10 @@
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(559, 149);
+            this.dtpDate.Location = new System.Drawing.Point(559, 154);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 23);
-            this.dtpDate.TabIndex = 12;
+            this.dtpDate.TabIndex = 11;
             // 
             // Clear
             // 
@@ -411,7 +435,7 @@
             this.Clear.Location = new System.Drawing.Point(679, 292);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(100, 40);
-            this.Clear.TabIndex = 18;
+            this.Clear.TabIndex = 17;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -522,7 +546,7 @@
             // 
             this.radReceive.AutoSize = true;
             this.radReceive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radReceive.Location = new System.Drawing.Point(661, 120);
+            this.radReceive.Location = new System.Drawing.Point(83, 11);
             this.radReceive.Name = "radReceive";
             this.radReceive.Size = new System.Drawing.Size(98, 20);
             this.radReceive.TabIndex = 11;
@@ -534,10 +558,10 @@
             // 
             this.radTopay.AutoSize = true;
             this.radTopay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radTopay.Location = new System.Drawing.Point(559, 119);
+            this.radTopay.Location = new System.Drawing.Point(6, 11);
             this.radTopay.Name = "radTopay";
             this.radTopay.Size = new System.Drawing.Size(71, 20);
-            this.radTopay.TabIndex = 10;
+            this.radTopay.TabIndex = 0;
             this.radTopay.TabStop = true;
             this.radTopay.Text = "To Pay";
             this.radTopay.UseVisualStyleBackColor = true;
@@ -557,7 +581,7 @@
             this.txtAddRemainder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtAddRemainder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAddRemainder.HoverState.Parent = this.txtAddRemainder;
-            this.txtAddRemainder.Location = new System.Drawing.Point(559, 231);
+            this.txtAddRemainder.Location = new System.Drawing.Point(559, 236);
             this.txtAddRemainder.MaxLength = 150;
             this.txtAddRemainder.Multiline = true;
             this.txtAddRemainder.Name = "txtAddRemainder";
@@ -566,7 +590,7 @@
             this.txtAddRemainder.SelectedText = "";
             this.txtAddRemainder.ShadowDecoration.Parent = this.txtAddRemainder;
             this.txtAddRemainder.Size = new System.Drawing.Size(200, 40);
-            this.txtAddRemainder.TabIndex = 14;
+            this.txtAddRemainder.TabIndex = 13;
             // 
             // txtShippingAdd
             // 
@@ -583,7 +607,7 @@
             this.txtShippingAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtShippingAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtShippingAdd.HoverState.Parent = this.txtShippingAdd;
-            this.txtShippingAdd.Location = new System.Drawing.Point(559, 185);
+            this.txtShippingAdd.Location = new System.Drawing.Point(559, 186);
             this.txtShippingAdd.MaxLength = 200;
             this.txtShippingAdd.Multiline = true;
             this.txtShippingAdd.Name = "txtShippingAdd";
@@ -592,7 +616,7 @@
             this.txtShippingAdd.SelectedText = "";
             this.txtShippingAdd.ShadowDecoration.Parent = this.txtShippingAdd;
             this.txtShippingAdd.Size = new System.Drawing.Size(200, 40);
-            this.txtShippingAdd.TabIndex = 13;
+            this.txtShippingAdd.TabIndex = 12;
             // 
             // txtBillingAdd
             // 
@@ -611,6 +635,7 @@
             this.txtBillingAdd.HoverState.Parent = this.txtBillingAdd;
             this.txtBillingAdd.Location = new System.Drawing.Point(147, 79);
             this.txtBillingAdd.MaxLength = 200;
+            this.txtBillingAdd.Multiline = true;
             this.txtBillingAdd.Name = "txtBillingAdd";
             this.txtBillingAdd.PasswordChar = '\0';
             this.txtBillingAdd.PlaceholderText = "";
@@ -634,7 +659,7 @@
             this.txtOpeningBal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOpeningBal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOpeningBal.HoverState.Parent = this.txtOpeningBal;
-            this.txtOpeningBal.Location = new System.Drawing.Point(559, 88);
+            this.txtOpeningBal.Location = new System.Drawing.Point(559, 84);
             this.txtOpeningBal.MaxLength = 1000;
             this.txtOpeningBal.Name = "txtOpeningBal";
             this.txtOpeningBal.PasswordChar = '\0';
@@ -752,12 +777,12 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(12, 360);
+            this.dgvParty.Location = new System.Drawing.Point(23, 360);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParty.Size = new System.Drawing.Size(793, 187);
-            this.dgvParty.TabIndex = 19;
+            this.dgvParty.TabIndex = 24;
             this.dgvParty.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -783,6 +808,25 @@
             this.dgvParty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellContentClick);
             this.dgvParty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellDoubleClick);
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(457, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 16);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Paid Status :";
+            // 
+            // grpboxpaidsatus
+            // 
+            this.grpboxpaidsatus.Controls.Add(this.radTopay);
+            this.grpboxpaidsatus.Controls.Add(this.radReceive);
+            this.grpboxpaidsatus.Location = new System.Drawing.Point(559, 108);
+            this.grpboxpaidsatus.Name = "grpboxpaidsatus";
+            this.grpboxpaidsatus.Size = new System.Drawing.Size(200, 37);
+            this.grpboxpaidsatus.TabIndex = 10;
+            this.grpboxpaidsatus.TabStop = false;
+            // 
             // PartyMaster1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -793,7 +837,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartyMaster1";
-            this.Text = "PartyMaster1";
             this.Load += new System.EventHandler(this.PartyMaster1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -801,6 +844,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParty)).EndInit();
+            this.grpboxpaidsatus.ResumeLayout(false);
+            this.grpboxpaidsatus.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -845,5 +890,8 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox grpboxpaidsatus;
     }
 }

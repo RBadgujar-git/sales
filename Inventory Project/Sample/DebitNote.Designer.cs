@@ -27,12 +27,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebitNote));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebitNote));
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.TxtIGST = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cmbpartyname1 = new System.Windows.Forms.ComboBox();
             this.cmbPaymentType = new System.Windows.Forms.ComboBox();
@@ -143,6 +145,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnminimize = new System.Windows.Forms.Button();
+            this.btncancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
@@ -152,7 +156,6 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -169,6 +172,8 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.TxtIGST);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.cmbpartyname1);
             this.panel1.Controls.Add(this.cmbPaymentType);
@@ -248,6 +253,39 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(794, 407);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 16);
+            this.label10.TabIndex = 209;
+            this.label10.Text = "IGST";
+            // 
+            // TxtIGST
+            // 
+            this.TxtIGST.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TxtIGST.DefaultText = "";
+            this.TxtIGST.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TxtIGST.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TxtIGST.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIGST.DisabledState.Parent = this.TxtIGST;
+            this.TxtIGST.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TxtIGST.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtIGST.FocusedState.Parent = this.TxtIGST;
+            this.TxtIGST.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.TxtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TxtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TxtIGST.HoverState.Parent = this.TxtIGST;
+            this.TxtIGST.Location = new System.Drawing.Point(786, 425);
+            this.TxtIGST.Name = "TxtIGST";
+            this.TxtIGST.PasswordChar = '\0';
+            this.TxtIGST.PlaceholderText = "";
+            this.TxtIGST.SelectedText = "";
+            this.TxtIGST.ShadowDecoration.Parent = this.TxtIGST;
+            this.TxtIGST.Size = new System.Drawing.Size(57, 25);
+            this.TxtIGST.TabIndex = 208;
+            // 
             // comboBox1
             // 
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -257,7 +295,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 24);
             this.comboBox1.TabIndex = 126;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             // 
             // cmbpartyname1
             // 
@@ -268,7 +305,6 @@
             this.cmbpartyname1.Name = "cmbpartyname1";
             this.cmbpartyname1.Size = new System.Drawing.Size(140, 24);
             this.cmbpartyname1.TabIndex = 125;
-            this.cmbpartyname1.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname1_SelectedIndexChanged);
             // 
             // cmbPaymentType
             // 
@@ -505,7 +541,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(829, 408);
+            this.label35.Location = new System.Drawing.Point(840, 408);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 16);
             this.label35.TabIndex = 105;
@@ -526,14 +562,14 @@
             this.txtsgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsgst.HoverState.Parent = this.txtsgst;
-            this.txtsgst.Location = new System.Drawing.Point(891, 426);
+            this.txtsgst.Location = new System.Drawing.Point(905, 426);
             this.txtsgst.Name = "txtsgst";
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
             this.txtsgst.ReadOnly = true;
             this.txtsgst.SelectedText = "";
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
-            this.txtsgst.Size = new System.Drawing.Size(70, 24);
+            this.txtsgst.Size = new System.Drawing.Size(59, 24);
             this.txtsgst.TabIndex = 104;
             this.txtsgst.TextChanged += new System.EventHandler(this.txtsgst_TextChanged);
             // 
@@ -552,14 +588,14 @@
             this.txtcgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcgst.HoverState.Parent = this.txtcgst;
-            this.txtcgst.Location = new System.Drawing.Point(815, 426);
+            this.txtcgst.Location = new System.Drawing.Point(844, 426);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
             this.txtcgst.ReadOnly = true;
             this.txtcgst.SelectedText = "";
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
-            this.txtcgst.Size = new System.Drawing.Size(70, 24);
+            this.txtcgst.Size = new System.Drawing.Size(53, 24);
             this.txtcgst.TabIndex = 103;
             this.txtcgst.TextChanged += new System.EventHandler(this.txtcgst_TextChanged);
             // 
@@ -628,6 +664,7 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1084, 87);
             this.guna2ShadowPanel1.TabIndex = 11;
+            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // txtItemName
             // 
@@ -1111,10 +1148,10 @@
             "24",
             "30"});
             this.cmbtax.ItemsAppearance.Parent = this.cmbtax;
-            this.cmbtax.Location = new System.Drawing.Point(719, 426);
+            this.cmbtax.Location = new System.Drawing.Point(706, 426);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.ShadowDecoration.Parent = this.cmbtax;
-            this.cmbtax.Size = new System.Drawing.Size(90, 36);
+            this.cmbtax.Size = new System.Drawing.Size(74, 36);
             this.cmbtax.StartIndex = 0;
             this.cmbtax.TabIndex = 23;
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged);
@@ -1536,7 +1573,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(739, 407);
+            this.label24.Location = new System.Drawing.Point(725, 407);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 16);
             this.label24.TabIndex = 66;
@@ -1669,6 +1706,7 @@
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.Height = 22;
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvInnerDebiteNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDebiteNote_CellContentClick);
             // 
             // sr_no
             // 
@@ -1871,6 +1909,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btncancel);
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.Debit);
             this.panel3.Controls.Add(this.label40);
             this.panel3.Controls.Add(this.button4);
@@ -1905,7 +1945,6 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1930,7 +1969,6 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1942,6 +1980,39 @@
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(1018, 8);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 438;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
+            // btncancel
+            // 
+            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(1050, 9);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(29, 26);
+            this.btncancel.TabIndex = 439;
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // DebitNote
             // 
@@ -2082,5 +2153,9 @@
         private System.Windows.Forms.ComboBox cmbPaymentType;
         private System.Windows.Forms.ComboBox cmbpartyname1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
+        private Guna.UI2.WinForms.Guna2TextBox TxtIGST;
+        private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Button btncancel;
     }
 }

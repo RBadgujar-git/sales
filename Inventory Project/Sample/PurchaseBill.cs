@@ -76,7 +76,7 @@ namespace sample
         {
             if (cmbpartyname.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where DeleteData='1' and Company_ID='" + NewCompany.company_id+"' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -284,16 +284,36 @@ namespace sample
         private void gst_devide()
         {
             try {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (State1 == cmbStatesupply.Text)
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    guna2TextBox1.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
+
+                }
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
             }
+
         }
         object id1;
         private void insert_record_inner(string id)
@@ -840,7 +860,7 @@ namespace sample
             {
                 con.Open();
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and  Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and DeleteData='1' and  Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -851,7 +871,6 @@ namespace sample
                     txtTax1.Text = dr["TaxForSale"].ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
-
                 }
                 dr.Close();
 
@@ -872,7 +891,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where DeleteData='1' and  Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -920,6 +939,68 @@ namespace sample
         {
 
         }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPONo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTransportName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar) || e.KeyChar == '\b')           // Allowing only any letter OR Digit      // Allowing BackSpace character
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Calculator cr = new Calculator();
+            cr.Show();
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
-    }
+}
 

@@ -26,5 +26,15 @@ namespace sample
         {
             this.Visible = false;
         }
+
+        private void dgvTaxRate_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TaxRateReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,6 +55,7 @@
             this.Print = new System.Windows.Forms.Button();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -125,6 +126,7 @@
             this.txtDiscount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscount.HoverState.Parent = this.txtDiscount;
+            this.txtDiscount.MaxLength = 1000;
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
@@ -132,6 +134,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // label9
             // 
@@ -153,6 +156,7 @@
             this.txtReceived.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReceived.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReceived.HoverState.Parent = this.txtReceived;
+            this.txtReceived.MaxLength = 1000;
             this.txtReceived.Name = "txtReceived";
             this.txtReceived.PasswordChar = '\0';
             this.txtReceived.PlaceholderText = "";
@@ -160,6 +164,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
             // txtReceiptNo
             // 
@@ -176,12 +181,14 @@
             this.txtReceiptNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReceiptNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReceiptNo.HoverState.Parent = this.txtReceiptNo;
+            this.txtReceiptNo.MaxLength = 20;
             this.txtReceiptNo.Name = "txtReceiptNo";
             this.txtReceiptNo.PasswordChar = '\0';
             this.txtReceiptNo.PlaceholderText = "";
             this.txtReceiptNo.SelectedText = "";
             this.txtReceiptNo.ShadowDecoration.Parent = this.txtReceiptNo;
             this.txtReceiptNo.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtReceiptNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceiptNo_KeyPress);
             // 
             // txtDescription
             // 
@@ -230,6 +237,7 @@
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotal.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // btnSave
             // 
@@ -252,6 +260,7 @@
             // PictureBox1
             // 
             this.PictureBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.PictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
             resources.ApplyResources(this.PictureBox1, "PictureBox1");
             this.PictureBox1.Name = "PictureBox1";
             this.PictureBox1.ShadowDecoration.Parent = this.PictureBox1;
@@ -313,6 +322,7 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.btnminimize);
             this.guna2Panel2.Controls.Add(this.btnCancel);
             this.guna2Panel2.Controls.Add(this.btnSetting);
             this.guna2Panel2.Controls.Add(this.label1);
@@ -320,6 +330,17 @@
             this.guna2Panel2.ForeColor = System.Drawing.Color.White;
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            resources.ApplyResources(this.btnminimize, "btnminimize");
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnCancel
             // 
@@ -382,11 +403,13 @@
             resources.ApplyResources(this.Clear, "Clear");
             this.Clear.Name = "Clear";
             this.Clear.ShadowDecoration.Parent = this.Clear;
+            this.Clear.Paint += new System.Windows.Forms.PaintEventHandler(this.Clear_Paint);
             // 
             // textBox1
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label12
             // 
@@ -396,6 +419,8 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             resources.GetString("comboBox1.Items"),
@@ -520,5 +545,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

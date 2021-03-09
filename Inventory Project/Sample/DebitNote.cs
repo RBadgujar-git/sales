@@ -63,7 +63,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster group by ItemCategory");
+                    string SelectQuery = string.Format("select ItemCategory from tbl_ItemMaster where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by ItemCategory");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -83,7 +83,7 @@ namespace sample
         {
             if (txtItemName.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -103,7 +103,7 @@ namespace sample
         {
             if (cmbpartyname.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -193,12 +193,33 @@ namespace sample
         private void gst_devide()
         {
             try {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+
+                con.Open();
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (State1 == cmbStatesupply.Text)
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    TxtIGST.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
+
+                }
+
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
@@ -936,7 +957,7 @@ namespace sample
                 con.Close();
                 con.Open();
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='"+NewCompany.company_id+"' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
+                string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}')  GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale and Company_ID='" + NewCompany.company_id + "'", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -983,6 +1004,31 @@ namespace sample
         private void txtcgst_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DebitNote_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
     

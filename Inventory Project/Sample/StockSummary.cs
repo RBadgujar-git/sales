@@ -12,6 +12,8 @@ namespace sample
 {
     public partial class StockSummary : UserControl
     {
+        public FormWindowState WindowState { get; private set; }
+
         public StockSummary()
         {
             InitializeComponent();
@@ -25,6 +27,16 @@ namespace sample
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void dgvStockSummary_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

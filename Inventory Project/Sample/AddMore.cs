@@ -285,6 +285,11 @@ namespace sample
             Expenses si = new Expenses();
             si.Show();
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
  }
 

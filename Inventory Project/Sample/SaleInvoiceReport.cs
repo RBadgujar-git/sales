@@ -21,13 +21,16 @@ namespace sample
 
         }
         string date;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void fetchCampanyame()
         {
             if (cmbFirm.Text != "System.Data.DataRowView")
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -97,7 +100,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where PartyName like '%{0}%' or InvoiceID like '%{0}%'", txtSearch.Text);
+                string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where PartyName like '%{0}%' or InvoiceID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -120,7 +123,7 @@ namespace sample
                     date = DateTime.Now.Month.ToString();
                     //MessageBox.Show("moth o" + date);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where month(InvoiceDate)=" + date + " ", con);
+                    SqlCommand cmd = new SqlCommand("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where month(InvoiceDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -141,7 +144,7 @@ namespace sample
                     date = DateTime.Now.Year.ToString();
 
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where year(InvoiceDate)=" + date + " ", con);
+                    SqlCommand cmd = new SqlCommand("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where year(InvoiceDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -161,7 +164,7 @@ namespace sample
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice WHERE DATEPART(m, InvoiceDate) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yy, InvoiceDate) = DATEPART(yy, DATEADD(m, -1, getdate()))", con);
+                    SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice WHERE DATEPART(m, InvoiceDate) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yy, InvoiceDate) = DATEPART(yy, DATEADD(m, -1, getdate())) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -181,7 +184,7 @@ namespace sample
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice WHERE InvoiceDate>= DATEADD(M, -3, GETDATE())", con);
+                    SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice WHERE InvoiceDate>= DATEADD(M, -3, GETDATE()) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -199,7 +202,7 @@ namespace sample
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice", con);
+                    SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
@@ -253,7 +256,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -287,7 +290,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "'");
+                string SelectQuery = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -308,6 +311,21 @@ namespace sample
         private void dgvsaleInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void guna2Panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvsaleInvoice_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

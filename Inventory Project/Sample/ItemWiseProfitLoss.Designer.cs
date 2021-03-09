@@ -52,6 +52,7 @@
             this.txtClosingCashinhand = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvitemWiseProfitLoss)).BeginInit();
             this.SuspendLayout();
             // 
@@ -307,11 +308,28 @@
             this.dtpTo.Size = new System.Drawing.Size(136, 23);
             this.dtpTo.TabIndex = 111;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(921, 5);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 438;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // ItemWiseProfitLoss
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.txtClosingCashinhand);
@@ -327,6 +345,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ItemWiseProfitLoss";
             this.Size = new System.Drawing.Size(986, 569);
+            this.Load += new System.EventHandler(this.ItemWiseProfitLoss_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvitemWiseProfitLoss)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,5 +375,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtClosingCashinhand;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.DateTimePicker dtpTo;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

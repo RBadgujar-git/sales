@@ -18,6 +18,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public OtherIncomeHomepage1()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_otherIncomeCaategory", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -83,7 +86,7 @@ namespace sample
         {
             lblBankAccount.Text = dgvCategory.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
-            string Query = string.Format("select Date,IncomeCategory,total,Paid,Balance from tbl_OtherIncome where IncomeCategory='{0}' group by Date,IncomeCategory,total,Paid,Balance", lblBankAccount.Text);
+            string Query = string.Format("select Date,IncomeCategory,total,Paid,Balance from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by Date,IncomeCategory,total,Paid,Balance", lblBankAccount.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -95,7 +98,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select total from tbl_OtherIncome where total like '%{0}%'", txtSearch2.Text);
+                string Query = string.Format("select total from tbl_OtherIncome where total like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -112,7 +115,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%'", txtSearch.Text);
+                string Query = string.Format("select OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -123,6 +126,21 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvOtherincome_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -18,6 +18,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public DebitNotehomepage()
         {
             InitializeComponent();
@@ -47,7 +50,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -68,7 +71,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_DebitNote", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_DebitNote where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -106,7 +109,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select PartyName from tbl_DebitNote where PartyName like '%{0}%'", txtFilter.Text);
+                string Query = string.Format("select PartyName from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -126,7 +129,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "'");
+                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -138,7 +141,16 @@ namespace sample
                 MessageBox.Show("Data not" + ex);
             }
         }
-    
+
+        private void cmbAllfirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }
 

@@ -19,6 +19,9 @@ namespace sample
         //  SqlConnection con;
         SqlCommand cmd;
         string id = "";
+
+        public FormWindowState WindowState { get; private set; }
+
         public LoanStatement()
         {
             InitializeComponent();
@@ -46,7 +49,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -69,7 +72,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank group by AccountName");
+                    string SelectQuery = string.Format("select AccountName from tbl_LoanBank group by AccountName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -91,7 +94,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select BalAsOf,CurrentBal,Interest  from tbl_LoanBank where AccountName='{0}'", cmbAccount.Text);
+                string Query = string.Format("select BalAsOf,CurrentBal,Interest  from tbl_LoanBank where AccountName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbAccount.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -99,7 +102,7 @@ namespace sample
                 dgvLoanStatement.DataMember = "temp";
 
 
-                string Query1 = String.Format("select CurrentBal from tbl_LoanBank where (AccountName='{0}') GROUP BY CurrentBal", cmbAccount.Text);
+                string Query1 = String.Format("select CurrentBal from tbl_LoanBank where (AccountName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY CurrentBal", cmbAccount.Text);
                 SqlCommand cmd = new SqlCommand(Query1, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -108,7 +111,7 @@ namespace sample
                 }
                 dr.Close();
 
-                string Query2 = String.Format("select PrincipleAmount,InterestAmount from tbl_MakePayment where (AccountName='{0}') GROUP BY PrincipleAmount,InterestAmount", cmbAccount.Text);
+                string Query2 = String.Format("select PrincipleAmount,InterestAmount from tbl_MakePayment where (AccountName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY PrincipleAmount,InterestAmount", cmbAccount.Text);
                 SqlCommand cmd1 = new SqlCommand(Query2, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.Read())
@@ -178,6 +181,16 @@ namespace sample
             {
                 e.Handled = true;
             }
+        }
+
+        private void dgvLoanStatement_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

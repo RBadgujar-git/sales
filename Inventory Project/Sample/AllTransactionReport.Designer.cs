@@ -27,13 +27,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTransactionReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.btnprint = new System.Windows.Forms.Button();
-            this.btnimport = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllTransactionReport));
             this.dgvalltransactions = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,53 +48,12 @@
             this.cmballtransaction = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnprint = new System.Windows.Forms.Button();
+            this.btnimport = new System.Windows.Forms.Button();
+            this.btnminimize = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvalltransactions)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btncancel
-            // 
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancel.BackColor = System.Drawing.Color.White;
-            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
-            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(981, 5);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(29, 26);
-            this.btncancel.TabIndex = 44;
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // btnprint
-            // 
-            this.btnprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnprint.BackColor = System.Drawing.Color.Transparent;
-            this.btnprint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprint.BackgroundImage")));
-            this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnprint.FlatAppearance.BorderSize = 0;
-            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Location = new System.Drawing.Point(945, 37);
-            this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(25, 22);
-            this.btnprint.TabIndex = 41;
-            this.btnprint.UseVisualStyleBackColor = false;
-            // 
-            // btnimport
-            // 
-            this.btnimport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnimport.BackColor = System.Drawing.Color.Transparent;
-            this.btnimport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnimport.BackgroundImage")));
-            this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnimport.FlatAppearance.BorderSize = 0;
-            this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimport.Location = new System.Drawing.Point(900, 40);
-            this.btnimport.Name = "btnimport";
-            this.btnimport.Size = new System.Drawing.Size(26, 19);
-            this.btnimport.TabIndex = 40;
-            this.btnimport.UseVisualStyleBackColor = false;
             // 
             // dgvalltransactions
             // 
@@ -346,11 +302,73 @@
             this.dtpdate.Size = new System.Drawing.Size(153, 23);
             this.dtpdate.TabIndex = 50;
             // 
+            // btncancel
+            // 
+            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(981, 5);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(29, 26);
+            this.btncancel.TabIndex = 44;
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
+            // btnprint
+            // 
+            this.btnprint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnprint.BackColor = System.Drawing.Color.Transparent;
+            this.btnprint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnprint.BackgroundImage")));
+            this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnprint.FlatAppearance.BorderSize = 0;
+            this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprint.Location = new System.Drawing.Point(945, 37);
+            this.btnprint.Name = "btnprint";
+            this.btnprint.Size = new System.Drawing.Size(25, 22);
+            this.btnprint.TabIndex = 41;
+            this.btnprint.UseVisualStyleBackColor = false;
+            // 
+            // btnimport
+            // 
+            this.btnimport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnimport.BackColor = System.Drawing.Color.Transparent;
+            this.btnimport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnimport.BackgroundImage")));
+            this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnimport.FlatAppearance.BorderSize = 0;
+            this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnimport.Location = new System.Drawing.Point(900, 40);
+            this.btnimport.Name = "btnimport";
+            this.btnimport.Size = new System.Drawing.Size(26, 19);
+            this.btnimport.TabIndex = 40;
+            this.btnimport.UseVisualStyleBackColor = false;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(949, 5);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 437;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
             // AllTransactionReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpdate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmballtransaction);
@@ -395,5 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DateTimePicker dtpdate;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

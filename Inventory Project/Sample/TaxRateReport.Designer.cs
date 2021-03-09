@@ -201,6 +201,7 @@
             this.dgvTaxRate.ThemeStyle.RowsStyle.Height = 22;
             this.dgvTaxRate.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTaxRate.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvTaxRate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaxRate_CellContentClick);
             // 
             // Column1
             // 
@@ -351,6 +352,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaxRateReport";
             this.Size = new System.Drawing.Size(1005, 557);
+            this.Load += new System.EventHandler(this.TaxRateReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxRate)).EndInit();
