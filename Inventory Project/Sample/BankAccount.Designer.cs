@@ -49,8 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvbankaccount = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btncancel = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.btncancel = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbankaccount)).BeginInit();
             this.guna2Panel2.SuspendLayout();
@@ -161,6 +161,7 @@
             // txtopeningbal
             // 
             this.txtopeningbal.BackColor = System.Drawing.Color.LightGray;
+            this.txtopeningbal.BorderColor = System.Drawing.Color.Gray;
             this.txtopeningbal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtopeningbal.DefaultText = "0";
             this.txtopeningbal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -189,6 +190,7 @@
             // 
             // txtaccountno
             // 
+            this.txtaccountno.BorderColor = System.Drawing.Color.Gray;
             this.txtaccountno.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtaccountno.DefaultText = "";
             this.txtaccountno.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -215,6 +217,7 @@
             // 
             // txtbankname
             // 
+            this.txtbankname.BorderColor = System.Drawing.Color.Gray;
             this.txtbankname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbankname.DefaultText = "";
             this.txtbankname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -241,6 +244,7 @@
             // 
             // txtaccountname
             // 
+            this.txtaccountname.BorderColor = System.Drawing.Color.Gray;
             this.txtaccountname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtaccountname.DefaultText = "";
             this.txtaccountname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -389,23 +393,6 @@
             this.guna2Panel2.Size = new System.Drawing.Size(840, 44);
             this.guna2Panel2.TabIndex = 0;
             // 
-            // btncancel
-            // 
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancel.BackColor = System.Drawing.Color.White;
-            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
-            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(764, 6);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(29, 26);
-            this.btncancel.TabIndex = 45;
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
             // btnminimize
             // 
             this.btnminimize.BackColor = System.Drawing.Color.White;
@@ -421,6 +408,23 @@
             this.btnminimize.TabIndex = 441;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
+            // btncancel
+            // 
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(764, 6);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(29, 26);
+            this.btncancel.TabIndex = 45;
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // BankAccount
             // 
