@@ -25,14 +25,16 @@ namespace sample
         private void button4_Click(object sender, EventArgs e)
         {
             NewCompany BA = new NewCompany();        
-            this.Controls.Add(BA);        
-           // BA.Visible = true;
+            this.Controls.Add(BA);
+            BA.Location= new Point(200,50);
+            BA.Visible = true;
             BA.BringToFront();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            restore rt = new restore();
+            rt.Show();
         }
 
         private void dgvCompanylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -49,12 +51,12 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select CompanyName from tbl_CompanyMaster where CompanyName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtSearch.Text);
+                string Query = string.Format("select CompanyName from tbl_CompanyMaster where CompanyName like'%{0}%' and DeleteData='1' ", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvCompanylist.DataSource = ds;
-                dgvCompanylist.DataMember = "temp";
+              dgvCompanylist.DataMember = "temp";
             }
             catch (Exception ex)
             {
@@ -62,9 +64,21 @@ namespace sample
             }
         }
 
+        public void Binddata()
+        {
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("Select CompanyName from tbl_CompanyMaster where DeleteData = '1'", con);
+           // DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvCompanylist.DataSource = dt;                   
+            con.Close();           
+        }
+
         private void CompanyList_Load(object sender, EventArgs e)
         {
-
+            Binddata();
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

@@ -1002,6 +1002,11 @@ namespace sample
             Calculator cr = new Calculator();
             cr.Show();
         }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }
 

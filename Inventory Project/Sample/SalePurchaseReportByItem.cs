@@ -14,6 +14,9 @@ namespace sample
     public partial class SalePurchaseReportByItem : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public SalePurchaseReportByItem()
         {
             InitializeComponent();
@@ -91,6 +94,12 @@ namespace sample
             {
                 MessageBox.Show("Data not" + ex);
             }
+
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
 
         }
     }

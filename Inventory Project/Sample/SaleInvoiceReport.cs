@@ -21,6 +21,9 @@ namespace sample
 
         }
         string date;
+
+        public FormWindowState WindowState { get; private set; }
+
         private void fetchCampanyame()
         {
             if (cmbFirm.Text != "System.Data.DataRowView")
@@ -318,6 +321,11 @@ namespace sample
         private void dgvsaleInvoice_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

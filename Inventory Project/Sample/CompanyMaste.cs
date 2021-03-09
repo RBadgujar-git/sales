@@ -293,6 +293,7 @@ namespace sample
         {
             Update1();
             fetchdetails();
+           
        
         }
 
@@ -342,6 +343,7 @@ namespace sample
 
         private void CompanyMaste_Load(object sender, EventArgs e)
         {
+           
             fetchdetails();
         }
 
@@ -689,15 +691,36 @@ namespace sample
         {
 
         }
-
+        CompanyMaste cm = new CompanyMaste();
         private void btnminimize_Click_2(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+           //if(cm.WindowState == FormWindowState.Minimized)
+           // {
+           //     cm.WindowState = FormWindowState.Maximized;
+           // }
+           //else
+           // {
+           //     cm.Show();
+           // }
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+             this.Visible = false;
+            
+        }
+
+        private void btnminimize_Resize(object sender, EventArgs e)
+        {
+           
+                
+            
+        }
+       
+    
+        private void btnminimize_SizeChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 
