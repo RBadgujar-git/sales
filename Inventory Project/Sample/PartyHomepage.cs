@@ -96,19 +96,21 @@ namespace sample
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void btnPartyGroup_Click(object sender, EventArgs e)
         {
             Party_Group BA = new Party_Group();
             //  BA.TopLevel = false;
-            BA.AutoScroll = true;
+          //  BA.AutoScroll = true;
             this.Controls.Add(BA);
             //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
              BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();
+            guna2ShadowPanel3.Visible = false;
+
          //   BA.Show();
         }
 
@@ -162,7 +164,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("(select TableName as Type,ReturnNo as Number,DueDate,Total,RemainingBal,Status from tbl_CreditNote1 where TableName like '%{0}%' union all select TableName as Type, ReturnNo as Number, DueDate, Total, RemainingBal, Status from tbl_DebitNote where TableName like '%{0}%'  union all select TableName as Type, ChallanNo as Number, DueDate, Total, RemainingBal, Status from tbl_DeliveryChallan where  TableName like '%{0}%' union all select TableName as Type, BillNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseBill where TableName like '%{0}%'  union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseOrder where TableName like '%{0}%'  union all select TableName as Type, InvoiceID as Number, InvoiceDate as DueDate, Total, RemainingBal, Status from tbl_SaleInvoice where TableName like '%{0}%'  union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_SaleOrder where TableName like '%{0}%'  union all select TableName as Type, RefNo as Number, Date as DueDate, Total, Total asRemainingBal, Status from tblQuotation where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtSearch2.Text);
+                string Query = string.Format("(select TableName as Type,ReturnNo as Number,DueDate,Total,RemainingBal,Status from tbl_CreditNote1 where TableName like '%{0}%' union all select TableName as Type, ReturnNo as Number, DueDate, Total, RemainingBal, Status from tbl_DebitNote where TableName like '%{0}%'  union all select TableName as Type, ChallanNo as Number, DueDate, Total, RemainingBal, Status from tbl_DeliveryChallan where  TableName like '%{0}%' union all select TableName as Type, BillNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseBill where TableName like '%{0}%'  union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_PurchaseOrder where TableName like '%{0}%'  union all select TableName as Type, InvoiceID as Number, InvoiceDate as DueDate, Total, RemainingBal, Status from tbl_SaleInvoice where TableName like '%{0}%'  union all select TableName as Type, OrderNo as Number, DueDate, Total, RemainingBal, Status from tbl_SaleOrder where TableName like '%{0}%'  union all select TableName as Type, RefNo as Number, Date as DueDate, Total, Total asRemainingBal, Status from tblQuotation where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') " , txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

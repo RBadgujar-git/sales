@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -51,7 +52,6 @@
             this.dgvParty = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
@@ -71,8 +71,24 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1064, 53);
-            this.guna2ShadowPanel1.TabIndex = 0;
+            this.guna2ShadowPanel1.TabIndex = 1;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(1000, 14);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 0;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnCancel
             // 
@@ -87,7 +103,7 @@
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(27, 27);
-            this.btnCancel.TabIndex = 56;
+            this.btnCancel.TabIndex = 0;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -213,7 +229,7 @@
             this.txtSearch1.SelectedText = "";
             this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
             this.txtSearch1.Size = new System.Drawing.Size(246, 25);
-            this.txtSearch1.TabIndex = 2;
+            this.txtSearch1.TabIndex = 1;
             this.txtSearch1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // guna2Button1
@@ -228,7 +244,7 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
             this.guna2Button1.Size = new System.Drawing.Size(146, 34);
-            this.guna2Button1.TabIndex = 2;
+            this.guna2Button1.TabIndex = 0;
             this.guna2Button1.Text = "+Add Party";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
@@ -255,7 +271,7 @@
             this.lblItemName.Location = new System.Drawing.Point(19, 49);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(0, 18);
-            this.lblItemName.TabIndex = 15;
+            this.lblItemName.TabIndex = 0;
             // 
             // label2
             // 
@@ -263,7 +279,7 @@
             this.label2.Location = new System.Drawing.Point(4, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 16);
-            this.label2.TabIndex = 13;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Opening Balance";
             this.label2.Visible = false;
             // 
@@ -273,7 +289,7 @@
             this.lblbal.Location = new System.Drawing.Point(127, 89);
             this.lblbal.Name = "lblbal";
             this.lblbal.Size = new System.Drawing.Size(0, 16);
-            this.lblbal.TabIndex = 12;
+            this.lblbal.TabIndex = 2;
             // 
             // btnPartyGroup
             // 
@@ -287,7 +303,7 @@
             this.btnPartyGroup.Name = "btnPartyGroup";
             this.btnPartyGroup.ShadowDecoration.Parent = this.btnPartyGroup;
             this.btnPartyGroup.Size = new System.Drawing.Size(146, 34);
-            this.btnPartyGroup.TabIndex = 5;
+            this.btnPartyGroup.TabIndex = 3;
             this.btnPartyGroup.Text = "+Add Party Group";
             this.btnPartyGroup.Click += new System.EventHandler(this.btnPartyGroup_Click);
             // 
@@ -321,12 +337,12 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(295, 245);
+            this.dgvParty.Location = new System.Drawing.Point(311, 236);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvParty.Size = new System.Drawing.Size(794, 347);
-            this.dgvParty.TabIndex = 3;
+            this.dgvParty.TabIndex = 4;
             this.dgvParty.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -379,24 +395,8 @@
             this.txtSearch2.SelectedText = "";
             this.txtSearch2.ShadowDecoration.Parent = this.txtSearch2;
             this.txtSearch2.Size = new System.Drawing.Size(246, 27);
-            this.txtSearch2.TabIndex = 4;
+            this.txtSearch2.TabIndex = 2;
             this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(1000, 14);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 444;
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // PartyHomepage
             // 
