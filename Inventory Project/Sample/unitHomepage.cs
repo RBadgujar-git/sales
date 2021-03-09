@@ -50,5 +50,10 @@ namespace sample
         {
 
         }
+
+        private void dgvConversion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,6 +14,9 @@ namespace sample
     public partial class Saleorderhomepage : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public Saleorderhomepage()
         {
             InitializeComponent();
@@ -110,6 +113,11 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

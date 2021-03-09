@@ -14,6 +14,9 @@ namespace sample
     public partial class StockSummaryreportbyItemCategory : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+
+        public FormWindowState WindowState { get; private set; }
+
         public StockSummaryreportbyItemCategory()
         {
             InitializeComponent();
@@ -92,6 +95,11 @@ namespace sample
         private void dgvStockSummary_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

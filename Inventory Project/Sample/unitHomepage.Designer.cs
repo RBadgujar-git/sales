@@ -263,6 +263,7 @@
             this.dgvConversion.ThemeStyle.RowsStyle.Height = 22;
             this.dgvConversion.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvConversion.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvConversion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConversion_CellContentClick);
             // 
             // Column2
             // 
