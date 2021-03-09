@@ -1834,7 +1834,7 @@
             this.txtPONo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPONo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPONo.HoverState.Parent = this.txtPONo;
-            this.txtPONo.Location = new System.Drawing.Point(478, 55);
+            this.txtPONo.Location = new System.Drawing.Point(479, 55);
             this.txtPONo.Name = "txtPONo";
             this.txtPONo.PasswordChar = '\0';
             this.txtPONo.PlaceholderText = "";

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 
 namespace sample
 {
@@ -845,7 +847,21 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            string Query = string.Format("SELECT a.id, a.CompanyName, a.withdraw_from, a.withdraw_by, a.amount, a.inwords, a.description, c.name, c.company_address, c.mobile, c.email FROM ComapnyMaster  as a, company as c");
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds);
 
+            StiReport report = new StiReport();
+            report.Load(@"CreditNote.mrt"); 
+
+            report.Compile();
+            StiPage page = report.Pages[0];
+            report.RegData("credit_note", "credit_note", ds.Tables[0]);
+
+            report.Dictionary.Synchronize();
+            report.Render();
+            report.Show(false);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
