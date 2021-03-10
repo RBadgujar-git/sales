@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 
 namespace sample
 {
@@ -271,7 +273,7 @@ namespace sample
         }
         public void quantitcheek()
         {
-            //   con.Open();
+               con.Open();
             if (txtOty.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("Select MinimumStock from tbl_ItemMaster where ItemID=" + ItemId + " ", con);
@@ -287,6 +289,7 @@ namespace sample
                 }
 
             }
+            con.Close();
 
                  
         }
@@ -894,7 +897,21 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
+            DataSet ds = new DataSet();
+            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID, b.ReturnNo, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_CreditNote1 as b,tbl_CreditNoteInner as c where b.ReturnNo='{0}' and c.ReturnNo='{1}' and CompanyID='" + NewCompany.company_id + "' ",txtReturnNo.Text,txtReturnNo.Text);
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds);
 
+            StiReport report = new StiReport();
+            report.Load(@"CreditNote.mrt"); 
+
+            report.Compile();
+            StiPage page = report.Pages[0];
+            report.RegData("credit_note", "credit_note", ds.Tables[0]);
+
+            report.Dictionary.Synchronize();
+            report.Render();
+            report.Show(false);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -707,7 +707,8 @@ namespace sample
 
         private void chequeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Cheque ch = new Cheque();
+            ch.Show();
         }
 
         private void bankAccountToolStripMenuItem_Click(object sender, EventArgs e)

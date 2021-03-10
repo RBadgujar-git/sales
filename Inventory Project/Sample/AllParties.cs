@@ -41,7 +41,7 @@ namespace sample
         {
             if (cmballparties.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster and Company_ID='" + NewCompany.company_id + "' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -92,20 +92,13 @@ namespace sample
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
-            dgvAllparties.AutoGenerateColumns = false;
-            dgvAllparties.ColumnCount = 3;
-            dgvAllparties.Columns[0].HeaderText = "Name";
-            dgvAllparties.Columns[0].DataPropertyName = "PartyName";
-            dgvAllparties.Columns[1].HeaderText = "Email";
-            dgvAllparties.Columns[1].DataPropertyName = "EmailID";
-            dgvAllparties.Columns[0].HeaderText = "Phone No";
-            dgvAllparties.Columns[0].DataPropertyName = "ContactNo";
+           //
             //dgvAllparties.Columns[1].HeaderText = "Received";
             //dgvAllparties.Columns[1].DataPropertyName = "productname";
             //dgvAllparties.Columns[0].HeaderText = "Payable";
             //dgvAllparties.Columns[0].DataPropertyName = "productid";
             
-            dgvAllparties.DataSource = dt;
+            //dgvAllparties.DataSource = dt;
         }
 
         private void btnimport_Click(object sender, EventArgs e)
@@ -130,9 +123,7 @@ namespace sample
             try {
                 con.Open();
                 DataTable dt = new DataTable();
-                string Query = String.Format("select P.PartyName, P.EmailID, P.ContactNo, concat(S.Received, SO.Received) as Recived, concat(PB.Paid, PO.Paid) as Payable  " +
-                    " from tbl_PartyMaster as P, tbl_SaleInvoice as S, tbl_SaleOrder as SO, tbl_PurchaseBill as PB, tbl_PurchaseOrder as PO where(P.PartyName = '{0}')AND(S.PartyName = '{0}')AND(SO.PartyName = '{0}')" +
-                    "AND(PB.PartyName = '{0}')AND(PO.PartyName = '{0}' and Company_ID='"+NewCompany.company_id+"') GROUP BY  P.PartyName, P.EmailID, P.ContactNo, S.Received, SO.Received, PB.Paid, PO.Paid ", cmballparties.Text);
+                string Query = String.Format("select TableName,PartyName, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}'union all select TableName,PartyName, ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName = '{0}'  AND Company_ID='" + NewCompany.company_id + "'", cmballparties.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
                 sqlSda.Fill(dt);
