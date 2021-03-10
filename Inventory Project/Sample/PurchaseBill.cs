@@ -350,7 +350,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
+                   cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@freeQty", dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value.ToString());
                     cmd.Parameters.AddWithValue("@TaxForSale", dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value.ToString());
@@ -360,28 +360,30 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.Parameters.AddWithValue("@BillNo",id1);
-                    
+
                     cmd.ExecuteNonQuery();
 
-
-
+                    float ItemCode = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+                    float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
+                    MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
                     SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
-                    cmd1.Parameters.AddWithValue("@Action", "backget");
-                    cmd1.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
-                    float cureentstock =Convert.ToInt32(cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value).ToString());
+                    cmd1.Parameters.AddWithValue("@Action","backget");
+                    cmd1.Parameters.AddWithValue("@Itemcode", ItemCode);
                     float prestock =Convert.ToInt32(cmd1.ExecuteScalar());
+
                     float stockmangee = prestock + cureentstock;
 
                     SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
                     cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
                     cmd2.Parameters.AddWithValue("@stock",stockmangee);
-                    cmd1.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
-
+                    cmd2.Parameters.AddWithValue("@Itemcode",ItemCode);
+                  
                     cmd2.ExecuteNonQuery();
-                
+                   
+
                 }
                 catch (Exception e1) {
                     MessageBox.Show(e1.Message);
@@ -443,6 +445,7 @@ namespace sample
            // comboBox2.Text = "";
             comboBox1.Text = "";
             guna2TextBox1.Text = "0";
+            txtTax1.Text = "0";
             dgvInnerDebiteNote.Rows.Clear();
         }
         private void insertdata()
@@ -665,8 +668,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@id", id1);
-
+                    cmd.Parameters.AddWithValue("@BillNo", id1);
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
@@ -1111,6 +1113,11 @@ namespace sample
         }
 
         private void txtrefNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtadditional1_TextChanged(object sender, EventArgs e)
         {
 
         }
