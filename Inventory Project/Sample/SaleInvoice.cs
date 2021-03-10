@@ -29,7 +29,7 @@ namespace sample
             fetchCategory();
             txtReturnNo.Enabled = false;
             get_id();
-            bind_sale_details();
+           // bind_sale_details();
 
             cmbpartyname1.Visible = false;
 
@@ -202,7 +202,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_SaleInvoiceInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    //cmd.Parameters.AddWithValue("@ID", id1);
+                 
                     cmd.Parameters.AddWithValue("@InvoiceID", id1);
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
@@ -249,7 +249,7 @@ namespace sample
                     con.Open();
                 }
 
-                string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
