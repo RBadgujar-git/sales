@@ -1288,6 +1288,15 @@ namespace sample
         {
             
         }
+
+        private void companyBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompanyBankAccount cb = new CompanyBankAccount();
+            this.Controls.Add(cb);
+            cb.Dock = DockStyle.Fill;
+            cb.Visible = true;
+            cb.BringToFront();
+        }
     }
 }
 

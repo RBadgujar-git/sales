@@ -996,6 +996,7 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.re
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Category.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
@@ -1091,4 +1092,3 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.r
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources

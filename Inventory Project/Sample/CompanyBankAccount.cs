@@ -16,5 +16,14 @@ namespace sample
         {
             InitializeComponent();
         }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+       
+        private void btnminimize_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

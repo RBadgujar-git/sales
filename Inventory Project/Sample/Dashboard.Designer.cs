@@ -98,6 +98,7 @@
             this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.companyBankAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -275,7 +276,8 @@
             this.cashInHandToolStripMenuItem,
             this.chequeToolStripMenuItem,
             this.bankAccountToolStripMenuItem,
-            this.loanAccountToolStripMenuItem});
+            this.loanAccountToolStripMenuItem,
+            this.companyBankAccountToolStripMenuItem});
             this.cashAndBankToolStripMenuItem.Name = "cashAndBankToolStripMenuItem";
             this.cashAndBankToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.cashAndBankToolStripMenuItem.Text = "Cash and Bank";
@@ -902,6 +904,13 @@
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
+            // companyBankAccountToolStripMenuItem
+            // 
+            this.companyBankAccountToolStripMenuItem.Name = "companyBankAccountToolStripMenuItem";
+            this.companyBankAccountToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.companyBankAccountToolStripMenuItem.Text = "Company Bank Account";
+            this.companyBankAccountToolStripMenuItem.Click += new System.EventHandler(this.companyBankAccountToolStripMenuItem_Click);
+            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -1004,6 +1013,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem barcodePrintToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem companyBankAccountToolStripMenuItem;
     }
 }
 

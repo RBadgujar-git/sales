@@ -80,7 +80,7 @@
             this.btncancel.Location = new System.Drawing.Point(635, 10);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(29, 26);
-            this.btncancel.TabIndex = 443;
+            this.btncancel.TabIndex = 0;
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
@@ -96,7 +96,7 @@
             this.btnminimize.Location = new System.Drawing.Point(603, 10);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 442;
+            this.btnminimize.TabIndex = 0;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
@@ -104,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(245, 18);
+            this.label1.Location = new System.Drawing.Point(261, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 18);
             this.label1.TabIndex = 0;
@@ -143,7 +143,7 @@
             this.btnclear.Location = new System.Drawing.Point(573, 177);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(80, 30);
-            this.btnclear.TabIndex = 10;
+            this.btnclear.TabIndex = 8;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
             this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
@@ -156,7 +156,7 @@
             this.btndelete.Location = new System.Drawing.Point(485, 177);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(80, 30);
-            this.btndelete.TabIndex = 9;
+            this.btndelete.TabIndex = 7;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
             this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
@@ -169,7 +169,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(397, 177);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(80, 30);
-            this.btnUpdate.TabIndex = 8;
+            this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -215,6 +215,7 @@
             // 
             // txtenterAmount
             // 
+            this.txtenterAmount.BorderColor = System.Drawing.Color.Gray;
             this.txtenterAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtenterAmount.DefaultText = "";
             this.txtenterAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -242,6 +243,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.BorderColor = System.Drawing.Color.Gray;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescription.DefaultText = "";
             this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -289,7 +291,7 @@
             this.label5.Location = new System.Drawing.Point(236, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 16);
-            this.label5.TabIndex = 1;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Description :";
             // 
             // label2
@@ -298,7 +300,7 @@
             this.label2.Location = new System.Drawing.Point(276, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 16);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 7;
             this.label2.Text = "Date :";
             // 
             // dgvCashAdjustment
