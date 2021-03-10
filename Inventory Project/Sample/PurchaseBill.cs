@@ -283,8 +283,7 @@ namespace sample
                     }
                     else {
                         txtReturnNo.Text = rd[0].ToString();
-                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
-                        txtReturnNo.ReadOnly = true;
+                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();                 
                     }
                 }
                 rd.Close();
@@ -1104,6 +1103,16 @@ namespace sample
           // txtDis.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Tax Amount"].Value.ToString();
           // txtTaxAMount1.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount Amount"].Value.ToString();
           //  txtTotal.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount Amount"].Value.ToString();
+        }
+
+        private void txtMRP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtrefNo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
