@@ -130,7 +130,7 @@ namespace sample
         }
 
         private void insertdata()
-        {
+            {
             //ID,ExpenseCategory,Date,Description,Image,Total,Paid,Balance,AdditinalFeild1,AdditionalFeild2
             try {
                 con.Open();
@@ -146,10 +146,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
-                cmd.Parameters.AddWithValue("@AdditionalFeild1", txtrefNo.Text);
-                cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
+                //cmd.Parameters.AddWithValue("@AdditionalFeild1", txtrefNo.Text);
+                //cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status",ComboBox.Text);
-                cmd.Parameters.AddWithValue("@TableName", Income.Text);
+                //cmd.Parameters.AddWithValue("@TableName", Income.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Sale Record Added");
@@ -157,10 +157,9 @@ namespace sample
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
             }
-            finally {
-                
-              
-                con.Close();
+            finally
+            {
+                 con.Close();
                 insert_record_inner(id1.ToString());
             }
         }
@@ -260,10 +259,10 @@ namespace sample
                         txtTotal.Text = dr["Total"].ToString();
                         txtReceived.Text = dr["Paid"].ToString();
                         txtBalance.Text = dr["Balance"].ToString();
-                        txtrefNo.Text = dr["AdditionalFeild1"].ToString();
-                        txtAdditional1.Text = dr["Additional2"].ToString();
+                        //txtrefNo.Text = dr["AdditionalFeild1"].ToString();
+                        //txtAdditional1.Text = dr["Additional2"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
-                        Income.Text = dr["TableName"].ToString();
+                        //Income.Text = dr["TableName"].ToString();
                         id = dr["id"].ToString();
                         if (ds.Tables[0].Rows.Count > 0)
                         {
@@ -354,7 +353,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditionalFeild1", txtrefNo.Text);
                 cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                cmd.Parameters.AddWithValue("@TableNmae", Income.Text);
+                cmd.Parameters.AddWithValue("@TableName", Income.Text);
                 cmd.Parameters.AddWithValue("@Action", "Update");
 
                 id1 = cmd.ExecuteScalar();
@@ -437,7 +436,7 @@ namespace sample
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace sample
 {
@@ -161,53 +162,63 @@ namespace sample
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
         {
             try {
-                if (e.KeyCode == Keys.Enter) {
-                    float TA = 0, TD = 0, TGST = 0;
-                    dgvInnerDebiteNote.Rows.Add();
-                    row = dgvInnerDebiteNote.Rows.Count - 2;
-                    dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
-                    dgvInnerDebiteNote.CurrentCell = dgvInnerDebiteNote[1, row];
 
-                    e.SuppressKeyPress = true;
-                    string txtItem = txtItemName.Text;
+                if (txtOty.Text == "0")
+                {
+                    MessageBox.Show("PleaseSelect the Item Qty !");
+                }
+                else
+                {
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        float TA = 0, TD = 0, TGST = 0;
+                        dgvInnerDebiteNote.Rows.Add();
+                        row = dgvInnerDebiteNote.Rows.Count - 2;
+                        dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
+                        dgvInnerDebiteNote.CurrentCell = dgvInnerDebiteNote[1, row];
 
-                    string Item_code = txtItemCode.Text;
-                    string Unit = txtUnit.Text;
-                    string MRP = txtMRP.Text;
-                    string qty = txtOty.Text;
-                    string freeqty = txtFreeQty.Text;
-                    string gst = txtTax1.Text;
-                    string gst_amt = txtTaxAMount1.Text;
-                    string dis = txtDis.Text;
-                    string dis_amt = txtDisAmt.Text;
-                    string Total = txtItemTotal.Text;
+                        e.SuppressKeyPress = true;
+                        string txtItem = txtItemName.Text;
 
-                    dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
-                    dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
-                    dgvInnerDebiteNote.Rows[row].Cells[3].Value = Unit;
+                        string Item_code = txtItemCode.Text;
+                        string Unit = txtUnit.Text;
+                        string MRP = txtMRP.Text;
+                        string qty = txtOty.Text;
+                        string freeqty = txtFreeQty.Text;
+                        string gst = txtTax1.Text;
+                        string gst_amt = txtTaxAMount1.Text;
+                        string dis = txtDis.Text;
+                        string dis_amt = txtDisAmt.Text;
+                        string Total = txtItemTotal.Text;
 
-                    dgvInnerDebiteNote.Rows[row].Cells[4].Value = MRP;
-                    dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
-                    dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
-                    dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
-                    dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
-                    dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
-                    dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
-                    dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+                        dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
+                        dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
+                        dgvInnerDebiteNote.Rows[row].Cells[3].Value = Unit;
 
-                    txtItemName.Focus();
+                        dgvInnerDebiteNote.Rows[row].Cells[4].Value = MRP;
+                        dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
+                        dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
+                        dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
+                        dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
+                        dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
+                        dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
+                        dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
 
-                    for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
-                        TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
-                        //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
-                        //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                        txtItemName.Focus();
 
-                        txtsubtotal.Text = TA.ToString();
-                        //    txtTotal.Text = TA.ToString();
-                        //  //  txtDisAmt.Text = TD.ToString();
-                        //   // txtTaxAMount1.Text = TGST.ToString();
+                        for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+                        {
+                            TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                            //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                            //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+
+                            txtsubtotal.Text = TA.ToString();
+                            //    txtTotal.Text = TA.ToString();
+                            //  //  txtDisAmt.Text = TD.ToString();
+                            //   // txtTaxAMount1.Text = TGST.ToString();
+                        }
+                        clear_text_data();
                     }
-                    clear_text_data();
                 }
             }
             catch (Exception e1) {
@@ -218,7 +229,7 @@ namespace sample
         {
             txtItemName.Text = "";
             txtItemCode.Text = "";
-            txtUnit.Text = "";
+            txtUnit.Text = "0";
             txtMRP.Text = "0";
             txtOty.Text = "0";
             txtFreeQty.Text = "0";
@@ -231,6 +242,7 @@ namespace sample
 
         private void cleardata()
         {
+            txtTax1.Text = "0";
             cmbpartyname.Text = "";
             txtbillingadd.Text = "";
             txtcon.Text = "";
@@ -681,6 +693,9 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+           
+
+
             verfydata();
             if (verify == 1)
             {
@@ -910,6 +925,36 @@ namespace sample
         {
             Calculator cr = new Calculator();
             cr.Show();
+        }
+
+        private void cmbpartyname1_Validated(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbpartyname1_Validating(object sender, CancelEventArgs e)
+        {
+        }
+
+        private void txtbillingadd_Validating(object sender, CancelEventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtbillingadd.Text))
+            {
+                e.Cancel = true;
+               
+                errorProvider1.SetError(txtbillingadd, "Name should not be left blank!");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider1.SetError(txtbillingadd, "");
+            }
+        }
+
+        private void txtItemTotal_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
