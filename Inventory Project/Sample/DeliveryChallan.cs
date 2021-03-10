@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 
 using System.Data.SqlClient;
 
@@ -1011,6 +1013,25 @@ namespace sample
         {
             Calculator cr = new Calculator();
             cr.Show();
+        }
+
+        private void buttprint_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.PartyAddress,b.ContactNo, b.ChallanNo, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_DeliveryChallan as b,tbl_DeliveryChallanInner as c where b.ChallanNo='{0}' and c.ChallanNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds);
+
+            StiReport report = new StiReport();
+            report.Load(@"DeliveryChallanmrt.mrt");
+
+            report.Compile();
+            StiPage page = report.Pages[0];
+            report.RegData("DeliveryChallan", "DeliveryChallan", ds.Tables[0]);
+
+            report.Dictionary.Synchronize();
+            report.Render();
+            report.Show(false);
         }
     }
 }

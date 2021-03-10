@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
+
 
 namespace sample
 {
@@ -910,6 +914,26 @@ namespace sample
         {
             Calculator cr = new Calculator();
             cr.Show();
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,b.PartyName,b.BillingName,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Paid,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_PurchaseOrder as b,tbl_PurchaseOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds);
+
+            StiReport report = new StiReport();
+            report.Load(@"PurchaseOrder.mrt");
+
+            report.Compile();
+            StiPage page = report.Pages[0];
+            report.RegData("PurchaseOrder", "PurchaseOrder", ds.Tables[0]);
+
+            report.Dictionary.Synchronize();
+            report.Render();
+            report.Show(false);
+
         }
     }
 }
