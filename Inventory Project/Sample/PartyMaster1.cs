@@ -459,5 +459,6 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        
     }
 }

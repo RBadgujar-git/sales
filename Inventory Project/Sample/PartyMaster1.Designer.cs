@@ -55,6 +55,10 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.grpboxpaidsatus = new System.Windows.Forms.GroupBox();
+            this.radTopay = new System.Windows.Forms.RadioButton();
+            this.radReceive = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -63,8 +67,6 @@
             this.txtGSTType = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPartyType = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.radReceive = new System.Windows.Forms.RadioButton();
-            this.radTopay = new System.Windows.Forms.RadioButton();
             this.txtAddRemainder = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtShippingAdd = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtBillingAdd = new Guna.UI2.WinForms.Guna2TextBox();
@@ -73,13 +75,11 @@
             this.txtContactNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPartyname = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvParty = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.label15 = new System.Windows.Forms.Label();
-            this.grpboxpaidsatus = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvParty)).BeginInit();
             this.grpboxpaidsatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParty)).BeginInit();
             this.SuspendLayout();
             // 
             // Delete
@@ -396,6 +396,49 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // grpboxpaidsatus
+            // 
+            this.grpboxpaidsatus.Controls.Add(this.radTopay);
+            this.grpboxpaidsatus.Controls.Add(this.radReceive);
+            this.grpboxpaidsatus.Location = new System.Drawing.Point(559, 108);
+            this.grpboxpaidsatus.Name = "grpboxpaidsatus";
+            this.grpboxpaidsatus.Size = new System.Drawing.Size(200, 37);
+            this.grpboxpaidsatus.TabIndex = 10;
+            this.grpboxpaidsatus.TabStop = false;
+            // 
+            // radTopay
+            // 
+            this.radTopay.AutoSize = true;
+            this.radTopay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radTopay.Location = new System.Drawing.Point(6, 11);
+            this.radTopay.Name = "radTopay";
+            this.radTopay.Size = new System.Drawing.Size(71, 20);
+            this.radTopay.TabIndex = 0;
+            this.radTopay.TabStop = true;
+            this.radTopay.Text = "To Pay";
+            this.radTopay.UseVisualStyleBackColor = true;
+            // 
+            // radReceive
+            // 
+            this.radReceive.AutoSize = true;
+            this.radReceive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.radReceive.Location = new System.Drawing.Point(83, 11);
+            this.radReceive.Name = "radReceive";
+            this.radReceive.Size = new System.Drawing.Size(98, 20);
+            this.radReceive.TabIndex = 11;
+            this.radReceive.TabStop = true;
+            this.radReceive.Text = "To Receive";
+            this.radReceive.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(457, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 16);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Paid Status :";
+            // 
             // comboBox1
             // 
             this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -541,30 +584,6 @@
             this.label13.Size = new System.Drawing.Size(91, 16);
             this.label13.TabIndex = 45;
             this.label13.Text = "Party Type :";
-            // 
-            // radReceive
-            // 
-            this.radReceive.AutoSize = true;
-            this.radReceive.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radReceive.Location = new System.Drawing.Point(83, 11);
-            this.radReceive.Name = "radReceive";
-            this.radReceive.Size = new System.Drawing.Size(98, 20);
-            this.radReceive.TabIndex = 11;
-            this.radReceive.TabStop = true;
-            this.radReceive.Text = "To Receive";
-            this.radReceive.UseVisualStyleBackColor = true;
-            // 
-            // radTopay
-            // 
-            this.radTopay.AutoSize = true;
-            this.radTopay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radTopay.Location = new System.Drawing.Point(6, 11);
-            this.radTopay.Name = "radTopay";
-            this.radTopay.Size = new System.Drawing.Size(71, 20);
-            this.radTopay.TabIndex = 0;
-            this.radTopay.TabStop = true;
-            this.radTopay.Text = "To Pay";
-            this.radTopay.UseVisualStyleBackColor = true;
             // 
             // txtAddRemainder
             // 
@@ -808,25 +827,6 @@
             this.dgvParty.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellContentClick);
             this.dgvParty.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParty_CellDoubleClick);
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(457, 122);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(95, 16);
-            this.label15.TabIndex = 47;
-            this.label15.Text = "Paid Status :";
-            // 
-            // grpboxpaidsatus
-            // 
-            this.grpboxpaidsatus.Controls.Add(this.radTopay);
-            this.grpboxpaidsatus.Controls.Add(this.radReceive);
-            this.grpboxpaidsatus.Location = new System.Drawing.Point(559, 108);
-            this.grpboxpaidsatus.Name = "grpboxpaidsatus";
-            this.grpboxpaidsatus.Size = new System.Drawing.Size(200, 37);
-            this.grpboxpaidsatus.TabIndex = 10;
-            this.grpboxpaidsatus.TabStop = false;
-            // 
             // PartyMaster1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -843,9 +843,9 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvParty)).EndInit();
             this.grpboxpaidsatus.ResumeLayout(false);
             this.grpboxpaidsatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvParty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
