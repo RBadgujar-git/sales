@@ -273,7 +273,7 @@ namespace sample
         }
         public void quantitcheek()
         {
-            //   con.Open();
+               con.Open();
             if (txtOty.Text != "")
             {
                 SqlCommand cmd = new SqlCommand("Select MinimumStock from tbl_ItemMaster where ItemID=" + ItemId + " ", con);
@@ -289,6 +289,7 @@ namespace sample
                 }
 
             }
+            con.Close();
 
                  
         }
@@ -897,7 +898,7 @@ namespace sample
         private void Print_Click(object sender, EventArgs e)
         {
             DataSet ds = new DataSet();
-            string Query = string.Format("SELECT a.id, a.CompanyName, a.withdraw_from, a.withdraw_by, a.amount, a.inwords, a.description, c.name, c.company_address, c.mobile, c.email FROM ComapnyMaster  as a, company as c");
+            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID, b.ReturnNo, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_CreditNote1 as b,tbl_CreditNoteInner as c where b.ReturnNo='{0}' and c.ReturnNo='{1}' and CompanyID='" + NewCompany.company_id + "' ",txtReturnNo.Text,txtReturnNo.Text);
             SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
             SDA.Fill(ds);
 
