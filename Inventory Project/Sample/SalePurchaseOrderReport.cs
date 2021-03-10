@@ -177,5 +177,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void cmbAlllFirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

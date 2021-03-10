@@ -124,7 +124,7 @@
             this.dgvSaleorder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleorder.EnableHeadersVisualStyles = false;
             this.dgvSaleorder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSaleorder.Location = new System.Drawing.Point(5, 139);
+            this.dgvSaleorder.Location = new System.Drawing.Point(-110, -61);
             this.dgvSaleorder.Name = "dgvSaleorder";
             this.dgvSaleorder.RowHeadersVisible = false;
             this.dgvSaleorder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -174,6 +174,7 @@
             this.cmbAlllFirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAlllFirms.StartIndex = 0;
             this.cmbAlllFirms.TabIndex = 185;
+            this.cmbAlllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAlllFirms_SelectedIndexChanged);
             // 
             // btnCancel
             // 
