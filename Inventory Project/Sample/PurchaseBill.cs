@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-using System.IO;
-using Stimulsoft.Report;
-using Stimulsoft.Report.Components;
 
+using System.IO;
 namespace sample
 {
     public partial class PurchaseBill : Form
@@ -285,8 +283,7 @@ namespace sample
                     }
                     else {
                         txtReturnNo.Text = rd[0].ToString();
-                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
-                        txtReturnNo.ReadOnly = true;
+                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();                 
                     }
                 }
                 rd.Close();
@@ -345,7 +342,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                  cmd.Parameters.AddWithValue("@ID", id1);
+                     cmd.Parameters.AddWithValue("@ID", id1);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -365,7 +362,26 @@ namespace sample
                     cmd.Parameters.AddWithValue("@BillNo",id1);
                     
                     cmd.ExecuteNonQuery();
-                   
+
+
+
+
+                    SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.Parameters.AddWithValue("@Action", "backget");
+                    cmd1.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+                    float cureentstock =Convert.ToInt32(cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value).ToString());
+                    float prestock =Convert.ToInt32(cmd1.ExecuteScalar());
+                    float stockmangee = prestock + cureentstock;
+
+                    SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    cmd2.Parameters.AddWithValue("@stock",stockmangee);
+                    cmd1.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+
+                    cmd2.ExecuteNonQuery();
+                
                 }
                 catch (Exception e1) {
                     MessageBox.Show(e1.Message);
@@ -1089,23 +1105,14 @@ namespace sample
           //  txtTotal.Text= dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount Amount"].Value.ToString();
         }
 
-        private void Print_Click(object sender, EventArgs e)
+        private void txtMRP_TextChanged(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,b.PartyName,b.BillingName,b.ContactNo, b.BillNo,b.PONo,b.PoDate,b.BillDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Paid,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_PurchaseBill as b,tbl_PurchaseBillInner as c where b.BillNo='{0}' and c.BillNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.Fill(ds);
 
-            StiReport report = new StiReport();
-            report.Load(@"PurchaseBill.mrt");
+        }
 
-            report.Compile();
-            StiPage page = report.Pages[0];
-            report.RegData("PurchaseBill", "PurchaseBill", ds.Tables[0]);
+        private void txtrefNo_TextChanged(object sender, EventArgs e)
+        {
 
-            report.Dictionary.Synchronize();
-            report.Render();
-            report.Show(false);
         }
     }
 }
