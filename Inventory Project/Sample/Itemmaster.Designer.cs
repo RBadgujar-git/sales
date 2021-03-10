@@ -50,7 +50,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvItemmaster = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
@@ -71,22 +70,6 @@
             this.txtTaxAmountPurchase = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.itemtracking = new Guna.UI2.WinForms.Guna2Panel();
-            this.dtpexpdate = new System.Windows.Forms.DateTimePicker();
-            this.dtpmfgDate = new System.Windows.Forms.DateTimePicker();
-            this.txtSerialNo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtBatchNo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMRP = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtsize = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
             this.txtpurchasseprice = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbItemLocation = new System.Windows.Forms.ComboBox();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
@@ -99,13 +82,30 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.picturebox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvItemmaster = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtsize = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtMRP = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtBatchNo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSerialNo = new Guna.UI2.WinForms.Guna2TextBox();
+            this.dtpmfgDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpexpdate = new System.Windows.Forms.DateTimePicker();
+            this.itemtracking = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItemmaster)).BeginInit();
-            this.itemtracking.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemmaster)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.itemtracking.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -118,7 +118,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1047, 41);
+            this.panel3.Size = new System.Drawing.Size(1050, 41);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -148,7 +148,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnCancel.Location = new System.Drawing.Point(949, 6);
+            this.btnCancel.Location = new System.Drawing.Point(952, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(29, 29);
             this.btnCancel.TabIndex = 0;
@@ -322,65 +322,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 22;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // dgvItemmaster
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvItemmaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvItemmaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvItemmaster.BackgroundColor = System.Drawing.Color.White;
-            this.dgvItemmaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItemmaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItemmaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvItemmaster.ColumnHeadersHeight = 53;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItemmaster.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvItemmaster.EnableHeadersVisualStyles = false;
-            this.dgvItemmaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemmaster.Location = new System.Drawing.Point(3, 615);
-            this.dgvItemmaster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvItemmaster.Name = "dgvItemmaster";
-            this.dgvItemmaster.RowHeadersVisible = false;
-            this.dgvItemmaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemmaster.Size = new System.Drawing.Size(1041, 209);
-            this.dgvItemmaster.TabIndex = 39;
-            this.dgvItemmaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvItemmaster.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvItemmaster.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemmaster.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvItemmaster.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.dgvItemmaster.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvItemmaster.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvItemmaster.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvItemmaster.ThemeStyle.HeaderStyle.Height = 53;
-            this.dgvItemmaster.ThemeStyle.ReadOnly = false;
-            this.dgvItemmaster.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvItemmaster.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvItemmaster.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvItemmaster.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvItemmaster.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvItemmaster.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemmaster.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvItemmaster.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemmaster_CellContentClick);
-            this.dgvItemmaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemmaster_CellDoubleClick);
             // 
             // label16
             // 
@@ -692,7 +633,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(425, 369);
+            this.btnSave.Location = new System.Drawing.Point(428, 369);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
@@ -759,7 +700,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(553, 369);
+            this.btnUpdate.Location = new System.Drawing.Point(556, 369);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
@@ -774,7 +715,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(680, 369);
+            this.btnDelete.Location = new System.Drawing.Point(683, 369);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
@@ -782,244 +723,6 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // itemtracking
-            // 
-            this.itemtracking.BorderThickness = 1;
-            this.itemtracking.Controls.Add(this.dtpexpdate);
-            this.itemtracking.Controls.Add(this.dtpmfgDate);
-            this.itemtracking.Controls.Add(this.txtSerialNo);
-            this.itemtracking.Controls.Add(this.txtBatchNo);
-            this.itemtracking.Controls.Add(this.txtMRP);
-            this.itemtracking.Controls.Add(this.txtsize);
-            this.itemtracking.Controls.Add(this.label14);
-            this.itemtracking.Controls.Add(this.label20);
-            this.itemtracking.Controls.Add(this.label21);
-            this.itemtracking.Controls.Add(this.label22);
-            this.itemtracking.Controls.Add(this.label23);
-            this.itemtracking.Controls.Add(this.label24);
-            this.itemtracking.Controls.Add(this.panel2);
-            this.itemtracking.Location = new System.Drawing.Point(37, 413);
-            this.itemtracking.Name = "itemtracking";
-            this.itemtracking.ShadowDecoration.Parent = this.itemtracking;
-            this.itemtracking.Size = new System.Drawing.Size(608, 195);
-            this.itemtracking.TabIndex = 64;
-            this.itemtracking.Visible = false;
-            // 
-            // dtpexpdate
-            // 
-            this.dtpexpdate.CustomFormat = "MM/dd/yyyy";
-            this.dtpexpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpexpdate.Location = new System.Drawing.Point(407, 103);
-            this.dtpexpdate.Name = "dtpexpdate";
-            this.dtpexpdate.Size = new System.Drawing.Size(160, 23);
-            this.dtpexpdate.TabIndex = 23;
-            // 
-            // dtpmfgDate
-            // 
-            this.dtpmfgDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpmfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpmfgDate.Location = new System.Drawing.Point(407, 60);
-            this.dtpmfgDate.Name = "dtpmfgDate";
-            this.dtpmfgDate.Size = new System.Drawing.Size(160, 23);
-            this.dtpmfgDate.TabIndex = 22;
-            // 
-            // txtSerialNo
-            // 
-            this.txtSerialNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSerialNo.DefaultText = "";
-            this.txtSerialNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSerialNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSerialNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSerialNo.DisabledState.Parent = this.txtSerialNo;
-            this.txtSerialNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSerialNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSerialNo.FocusedState.Parent = this.txtSerialNo;
-            this.txtSerialNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSerialNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSerialNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSerialNo.HoverState.Parent = this.txtSerialNo;
-            this.txtSerialNo.Location = new System.Drawing.Point(105, 142);
-            this.txtSerialNo.MaxLength = 20;
-            this.txtSerialNo.Name = "txtSerialNo";
-            this.txtSerialNo.PasswordChar = '\0';
-            this.txtSerialNo.PlaceholderText = "";
-            this.txtSerialNo.SelectedText = "";
-            this.txtSerialNo.ShadowDecoration.Parent = this.txtSerialNo;
-            this.txtSerialNo.Size = new System.Drawing.Size(161, 24);
-            this.txtSerialNo.TabIndex = 21;
-            this.txtSerialNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNo_KeyPress);
-            // 
-            // txtBatchNo
-            // 
-            this.txtBatchNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBatchNo.DefaultText = "";
-            this.txtBatchNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBatchNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBatchNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBatchNo.DisabledState.Parent = this.txtBatchNo;
-            this.txtBatchNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBatchNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBatchNo.FocusedState.Parent = this.txtBatchNo;
-            this.txtBatchNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBatchNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtBatchNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBatchNo.HoverState.Parent = this.txtBatchNo;
-            this.txtBatchNo.Location = new System.Drawing.Point(105, 102);
-            this.txtBatchNo.MaxLength = 30;
-            this.txtBatchNo.Name = "txtBatchNo";
-            this.txtBatchNo.PasswordChar = '\0';
-            this.txtBatchNo.PlaceholderText = "";
-            this.txtBatchNo.SelectedText = "";
-            this.txtBatchNo.ShadowDecoration.Parent = this.txtBatchNo;
-            this.txtBatchNo.Size = new System.Drawing.Size(163, 24);
-            this.txtBatchNo.TabIndex = 20;
-            this.txtBatchNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBatchNo_KeyPress);
-            // 
-            // txtMRP
-            // 
-            this.txtMRP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMRP.DefaultText = "";
-            this.txtMRP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMRP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMRP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMRP.DisabledState.Parent = this.txtMRP;
-            this.txtMRP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMRP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMRP.FocusedState.Parent = this.txtMRP;
-            this.txtMRP.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMRP.HoverState.Parent = this.txtMRP;
-            this.txtMRP.Location = new System.Drawing.Point(105, 61);
-            this.txtMRP.MaxLength = 10000;
-            this.txtMRP.Name = "txtMRP";
-            this.txtMRP.PasswordChar = '\0';
-            this.txtMRP.PlaceholderText = "";
-            this.txtMRP.SelectedText = "";
-            this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
-            this.txtMRP.Size = new System.Drawing.Size(163, 24);
-            this.txtMRP.TabIndex = 19;
-            this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
-            // 
-            // txtsize
-            // 
-            this.txtsize.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsize.DefaultText = "";
-            this.txtsize.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtsize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtsize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsize.DisabledState.Parent = this.txtsize;
-            this.txtsize.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtsize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsize.FocusedState.Parent = this.txtsize;
-            this.txtsize.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtsize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtsize.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtsize.HoverState.Parent = this.txtsize;
-            this.txtsize.Location = new System.Drawing.Point(407, 146);
-            this.txtsize.MaxLength = 8;
-            this.txtsize.Name = "txtsize";
-            this.txtsize.PasswordChar = '\0';
-            this.txtsize.PlaceholderText = "";
-            this.txtsize.SelectedText = "";
-            this.txtsize.ShadowDecoration.Parent = this.txtsize;
-            this.txtsize.Size = new System.Drawing.Size(160, 24);
-            this.txtsize.TabIndex = 24;
-            this.txtsize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsize_KeyPress);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(324, 107);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(80, 16);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "EXP Date :";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(321, 64);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(83, 16);
-            this.label20.TabIndex = 49;
-            this.label20.Text = "MFG Date :";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(358, 150);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 16);
-            this.label21.TabIndex = 48;
-            this.label21.Text = "Size :";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(25, 146);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(77, 16);
-            this.label22.TabIndex = 47;
-            this.label22.Text = "Serial No :";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(23, 105);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(79, 16);
-            this.label23.TabIndex = 46;
-            this.label23.Text = "Batch No :";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(56, 65);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(46, 16);
-            this.label24.TabIndex = 45;
-            this.label24.Text = "MRP :";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label25);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(608, 41);
-            this.panel2.TabIndex = 44;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(541, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 27);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(237, 11);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(136, 18);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Item Tracking ";
             // 
             // txtpurchasseprice
             // 
@@ -1073,7 +776,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(802, 369);
+            this.button2.Location = new System.Drawing.Point(805, 369);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 42);
@@ -1200,11 +903,11 @@
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.picturebox);
             this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.dgvItemmaster);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.cmbSaleTax);
             this.panel1.Controls.Add(this.cmbPurchasetax);
@@ -1235,7 +938,6 @@
             this.panel1.Controls.Add(this.guna2Button2);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.dgvItemmaster);
             this.panel1.Controls.Add(this.guna2DataGridView1);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label12);
@@ -1253,15 +955,312 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1047, 828);
+            this.panel1.Size = new System.Drawing.Size(1050, 828);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // dgvItemmaster
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvItemmaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvItemmaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvItemmaster.BackgroundColor = System.Drawing.Color.White;
+            this.dgvItemmaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItemmaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItemmaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvItemmaster.ColumnHeadersHeight = 53;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItemmaster.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvItemmaster.EnableHeadersVisualStyles = false;
+            this.dgvItemmaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvItemmaster.Location = new System.Drawing.Point(3, 617);
+            this.dgvItemmaster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvItemmaster.Name = "dgvItemmaster";
+            this.dgvItemmaster.RowHeadersVisible = false;
+            this.dgvItemmaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItemmaster.Size = new System.Drawing.Size(1041, 158);
+            this.dgvItemmaster.TabIndex = 39;
+            this.dgvItemmaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvItemmaster.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvItemmaster.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvItemmaster.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvItemmaster.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.dgvItemmaster.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvItemmaster.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvItemmaster.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvItemmaster.ThemeStyle.HeaderStyle.Height = 53;
+            this.dgvItemmaster.ThemeStyle.ReadOnly = false;
+            this.dgvItemmaster.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvItemmaster.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvItemmaster.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvItemmaster.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvItemmaster.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvItemmaster.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvItemmaster.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvItemmaster.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemmaster_CellContentClick);
+            this.dgvItemmaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItemmaster_CellDoubleClick);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.label25);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(603, 41);
+            this.panel2.TabIndex = 44;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(237, 11);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(136, 18);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "Item Tracking ";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(541, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 27);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(56, 65);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(46, 16);
+            this.label24.TabIndex = 45;
+            this.label24.Text = "MRP :";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(23, 105);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(79, 16);
+            this.label23.TabIndex = 46;
+            this.label23.Text = "Batch No :";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(25, 146);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(77, 16);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "Serial No :";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(358, 150);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 16);
+            this.label21.TabIndex = 48;
+            this.label21.Text = "Size :";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(321, 64);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 16);
+            this.label20.TabIndex = 49;
+            this.label20.Text = "MFG Date :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(324, 107);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 16);
+            this.label14.TabIndex = 50;
+            this.label14.Text = "EXP Date :";
+            // 
+            // txtsize
+            // 
+            this.txtsize.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsize.DefaultText = "";
+            this.txtsize.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtsize.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtsize.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsize.DisabledState.Parent = this.txtsize;
+            this.txtsize.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtsize.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsize.FocusedState.Parent = this.txtsize;
+            this.txtsize.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtsize.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtsize.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtsize.HoverState.Parent = this.txtsize;
+            this.txtsize.Location = new System.Drawing.Point(407, 146);
+            this.txtsize.MaxLength = 8;
+            this.txtsize.Name = "txtsize";
+            this.txtsize.PasswordChar = '\0';
+            this.txtsize.PlaceholderText = "";
+            this.txtsize.SelectedText = "";
+            this.txtsize.ShadowDecoration.Parent = this.txtsize;
+            this.txtsize.Size = new System.Drawing.Size(160, 24);
+            this.txtsize.TabIndex = 24;
+            this.txtsize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsize_KeyPress);
+            // 
+            // txtMRP
+            // 
+            this.txtMRP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtMRP.DefaultText = "";
+            this.txtMRP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtMRP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtMRP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMRP.DisabledState.Parent = this.txtMRP;
+            this.txtMRP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtMRP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMRP.FocusedState.Parent = this.txtMRP;
+            this.txtMRP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtMRP.HoverState.Parent = this.txtMRP;
+            this.txtMRP.Location = new System.Drawing.Point(105, 61);
+            this.txtMRP.MaxLength = 10000;
+            this.txtMRP.Name = "txtMRP";
+            this.txtMRP.PasswordChar = '\0';
+            this.txtMRP.PlaceholderText = "";
+            this.txtMRP.SelectedText = "";
+            this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
+            this.txtMRP.Size = new System.Drawing.Size(163, 24);
+            this.txtMRP.TabIndex = 19;
+            this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
+            // 
+            // txtBatchNo
+            // 
+            this.txtBatchNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBatchNo.DefaultText = "";
+            this.txtBatchNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBatchNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBatchNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBatchNo.DisabledState.Parent = this.txtBatchNo;
+            this.txtBatchNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBatchNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBatchNo.FocusedState.Parent = this.txtBatchNo;
+            this.txtBatchNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBatchNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtBatchNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBatchNo.HoverState.Parent = this.txtBatchNo;
+            this.txtBatchNo.Location = new System.Drawing.Point(105, 102);
+            this.txtBatchNo.MaxLength = 30;
+            this.txtBatchNo.Name = "txtBatchNo";
+            this.txtBatchNo.PasswordChar = '\0';
+            this.txtBatchNo.PlaceholderText = "";
+            this.txtBatchNo.SelectedText = "";
+            this.txtBatchNo.ShadowDecoration.Parent = this.txtBatchNo;
+            this.txtBatchNo.Size = new System.Drawing.Size(163, 24);
+            this.txtBatchNo.TabIndex = 20;
+            this.txtBatchNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBatchNo_KeyPress);
+            // 
+            // txtSerialNo
+            // 
+            this.txtSerialNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSerialNo.DefaultText = "";
+            this.txtSerialNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSerialNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSerialNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSerialNo.DisabledState.Parent = this.txtSerialNo;
+            this.txtSerialNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSerialNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSerialNo.FocusedState.Parent = this.txtSerialNo;
+            this.txtSerialNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSerialNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSerialNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSerialNo.HoverState.Parent = this.txtSerialNo;
+            this.txtSerialNo.Location = new System.Drawing.Point(105, 142);
+            this.txtSerialNo.MaxLength = 20;
+            this.txtSerialNo.Name = "txtSerialNo";
+            this.txtSerialNo.PasswordChar = '\0';
+            this.txtSerialNo.PlaceholderText = "";
+            this.txtSerialNo.SelectedText = "";
+            this.txtSerialNo.ShadowDecoration.Parent = this.txtSerialNo;
+            this.txtSerialNo.Size = new System.Drawing.Size(161, 24);
+            this.txtSerialNo.TabIndex = 21;
+            this.txtSerialNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSerialNo_KeyPress);
+            // 
+            // dtpmfgDate
+            // 
+            this.dtpmfgDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpmfgDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpmfgDate.Location = new System.Drawing.Point(407, 65);
+            this.dtpmfgDate.Name = "dtpmfgDate";
+            this.dtpmfgDate.Size = new System.Drawing.Size(160, 23);
+            this.dtpmfgDate.TabIndex = 22;
+            // 
+            // dtpexpdate
+            // 
+            this.dtpexpdate.CustomFormat = "MM/dd/yyyy";
+            this.dtpexpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpexpdate.Location = new System.Drawing.Point(407, 103);
+            this.dtpexpdate.Name = "dtpexpdate";
+            this.dtpexpdate.Size = new System.Drawing.Size(160, 23);
+            this.dtpexpdate.TabIndex = 23;
+            // 
+            // itemtracking
+            // 
+            this.itemtracking.BorderThickness = 1;
+            this.itemtracking.Controls.Add(this.dtpexpdate);
+            this.itemtracking.Controls.Add(this.dtpmfgDate);
+            this.itemtracking.Controls.Add(this.txtSerialNo);
+            this.itemtracking.Controls.Add(this.txtBatchNo);
+            this.itemtracking.Controls.Add(this.txtMRP);
+            this.itemtracking.Controls.Add(this.txtsize);
+            this.itemtracking.Controls.Add(this.label14);
+            this.itemtracking.Controls.Add(this.label20);
+            this.itemtracking.Controls.Add(this.label21);
+            this.itemtracking.Controls.Add(this.label22);
+            this.itemtracking.Controls.Add(this.label23);
+            this.itemtracking.Controls.Add(this.label24);
+            this.itemtracking.Controls.Add(this.panel2);
+            this.itemtracking.Location = new System.Drawing.Point(66, 418);
+            this.itemtracking.Name = "itemtracking";
+            this.itemtracking.ShadowDecoration.Parent = this.itemtracking;
+            this.itemtracking.Size = new System.Drawing.Size(603, 192);
+            this.itemtracking.TabIndex = 64;
+            this.itemtracking.Visible = false;
             // 
             // Itemmaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 788);
+            this.ClientSize = new System.Drawing.Size(1047, 749);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1275,14 +1274,14 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItemmaster)).EndInit();
-            this.itemtracking.ResumeLayout(false);
-            this.itemtracking.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItemmaster)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.itemtracking.ResumeLayout(false);
+            this.itemtracking.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1305,7 +1304,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvItemmaster;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
@@ -1326,6 +1324,20 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTaxAmountPurchase;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
+        private Guna.UI2.WinForms.Guna2TextBox txtpurchasseprice;
+        private System.Windows.Forms.ComboBox cmbItemLocation;
+        private System.Windows.Forms.DateTimePicker dtpdate;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbUnit;
+        private System.Windows.Forms.ComboBox cmbCategry;
+        private System.Windows.Forms.ComboBox cmbPurchasetax;
+        private System.Windows.Forms.ComboBox cmbSaleTax;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox picturebox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvItemmaster;
         private Guna.UI2.WinForms.Guna2Panel itemtracking;
         private System.Windows.Forms.DateTimePicker dtpexpdate;
         private System.Windows.Forms.DateTimePicker dtpmfgDate;
@@ -1342,18 +1354,5 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label25;
-        private Guna.UI2.WinForms.Guna2TextBox txtpurchasseprice;
-        private System.Windows.Forms.ComboBox cmbItemLocation;
-        private System.Windows.Forms.DateTimePicker dtpdate;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cmbUnit;
-        private System.Windows.Forms.ComboBox cmbCategry;
-        private System.Windows.Forms.ComboBox cmbPurchasetax;
-        private System.Windows.Forms.ComboBox cmbSaleTax;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox picturebox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnminimize;
     }
 }

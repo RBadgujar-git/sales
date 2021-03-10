@@ -478,13 +478,22 @@ namespace sample
                 }
             }
         }
-       
+
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            //  itemtracking.Visible = true;
-            itemtracking.Visible = true;
-        }
+              itemtracking.Visible = true;
+
+           
+            //    if (dgvItemmaster.)
+            //{
+            //    itemtracking.Visible = true;
+            //}
+                   
+            //    else
+            //        dgvItemmaster.Show();
+            }
+        
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {

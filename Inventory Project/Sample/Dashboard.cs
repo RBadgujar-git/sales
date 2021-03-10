@@ -1288,6 +1288,11 @@ namespace sample
         {
             
         }
+
+        private void panel1_Paint_3(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 

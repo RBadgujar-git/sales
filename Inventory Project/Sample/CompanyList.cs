@@ -39,7 +39,7 @@ namespace sample
 
         private void dgvCompanylist_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -84,6 +84,20 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvCompanylist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCompanylist.SelectedCells.Count > 0)
+            {
+              //  int i = dgvCompanylist.SelectedCells[0].RowIndex;
+              
+                NewCompany BA = new NewCompany();
+                this.Controls.Add(BA);
+                BA.Location = new Point(200, 50);
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
     }
 }
