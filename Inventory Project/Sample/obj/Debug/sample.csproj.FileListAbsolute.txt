@@ -1092,3 +1092,4 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateRe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Cheque.resources

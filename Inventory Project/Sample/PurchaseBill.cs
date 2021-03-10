@@ -343,7 +343,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                  cmd.Parameters.AddWithValue("@ID", id1);
+                     cmd.Parameters.AddWithValue("@ID", id1);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -363,7 +363,26 @@ namespace sample
                     cmd.Parameters.AddWithValue("@BillNo",id1);
                     
                     cmd.ExecuteNonQuery();
-                   
+
+
+
+
+                    SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.Parameters.AddWithValue("@Action", "backget");
+                    cmd1.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+                    float cureentstock =Convert.ToInt32(cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value).ToString());
+                    float prestock =Convert.ToInt32(cmd1.ExecuteScalar());
+                    float stockmangee = prestock + cureentstock;
+
+                    SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    cmd2.Parameters.AddWithValue("@stock",stockmangee);
+                    cmd1.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+
+                    cmd2.ExecuteNonQuery();
+                
                 }
                 catch (Exception e1) {
                     MessageBox.Show(e1.Message);
