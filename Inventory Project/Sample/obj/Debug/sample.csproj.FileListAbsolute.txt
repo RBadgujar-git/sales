@@ -1091,6 +1091,4 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.r
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
-C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\obj\Debug\sample.exe
-C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
