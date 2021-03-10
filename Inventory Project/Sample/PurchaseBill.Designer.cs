@@ -1781,6 +1781,7 @@
             this.Print.TabIndex = 31;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
+            this.Print.Click += new System.EventHandler(this.Print_Click);
             // 
             // label39
             // 
