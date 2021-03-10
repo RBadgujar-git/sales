@@ -10,10 +10,12 @@ using DevExpress.XtraReports.Parameters;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Diagnostics;
+
 namespace sample
 {
     public partial class Dashboard : DevExpress.XtraEditors.XtraForm
     {
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         public Dashboard()
         {
             InitializeComponent();
@@ -30,7 +32,27 @@ namespace sample
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            try
+            {
+                con.Open();
+                string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY CompanyName ");
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    label1.Text = dr["CompanyName"].ToString();
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1287,6 +1309,15 @@ namespace sample
         private void menuStrip1_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void companyBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompanyBankAccount cb = new CompanyBankAccount();
+            this.Controls.Add(cb);
+            cb.Dock = DockStyle.Fill;
+            cb.Visible = true;
+            cb.BringToFront();
         }
     }
 }
