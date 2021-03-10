@@ -72,6 +72,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.Income = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@
             this.ComboBox = new System.Windows.Forms.ComboBox();
             this.cmbexpenses = new System.Windows.Forms.ComboBox();
             this.chkenble = new System.Windows.Forms.CheckBox();
-            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvinnerexpenses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox1)).BeginInit();
@@ -275,7 +275,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(150, 25);
-            this.txtOty.TabIndex = 6;
+            this.txtOty.TabIndex = 1;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -618,10 +618,12 @@
             // picturebox1
             // 
             this.picturebox1.BackColor = System.Drawing.Color.Silver;
+            this.picturebox1.Image = global::sample.Properties.Resources.No_Image_Available;
             this.picturebox1.Location = new System.Drawing.Point(406, 442);
             this.picturebox1.Name = "picturebox1";
             this.picturebox1.ShadowDecoration.Parent = this.picturebox1;
             this.picturebox1.Size = new System.Drawing.Size(132, 94);
+            this.picturebox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturebox1.TabIndex = 40;
             this.picturebox1.TabStop = false;
             this.picturebox1.Click += new System.EventHandler(this.picturebox1_Click);
@@ -732,7 +734,7 @@
             this.label26.Location = new System.Drawing.Point(420, 16);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(130, 18);
-            this.label26.TabIndex = 73;
+            this.label26.TabIndex = 2;
             this.label26.Text = "Other Income";
             // 
             // button2
@@ -747,7 +749,7 @@
             this.button2.Location = new System.Drawing.Point(923, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 3;
+            this.button2.TabIndex = 2;
             this.button2.UseVisualStyleBackColor = false;
             // 
             // panel3
@@ -764,15 +766,31 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 48);
-            this.panel3.TabIndex = 16;
+            this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(959, 8);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 3;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // Income
             // 
             this.Income.Location = new System.Drawing.Point(130, 13);
             this.Income.Name = "Income";
             this.Income.Size = new System.Drawing.Size(119, 23);
-            this.Income.TabIndex = 75;
+            this.Income.TabIndex = 4;
             this.Income.Visible = false;
             // 
             // label5
@@ -781,7 +799,7 @@
             this.label5.Location = new System.Drawing.Point(57, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 16);
-            this.label5.TabIndex = 74;
+            this.label5.TabIndex = 3;
             this.label5.Text = "Income :";
             this.label5.Visible = false;
             // 
@@ -797,7 +815,7 @@
             this.button3.Location = new System.Drawing.Point(991, 7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 2;
+            this.button3.TabIndex = 362;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -880,7 +898,7 @@
             this.label4.Location = new System.Drawing.Point(241, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 16);
-            this.label4.TabIndex = 119;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Status :";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
@@ -895,7 +913,7 @@
             this.ComboBox.Location = new System.Drawing.Point(310, 66);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(170, 24);
-            this.ComboBox.TabIndex = 118;
+            this.ComboBox.TabIndex = 3;
             // 
             // cmbexpenses
             // 
@@ -903,7 +921,7 @@
             this.cmbexpenses.Location = new System.Drawing.Point(310, 100);
             this.cmbexpenses.Name = "cmbexpenses";
             this.cmbexpenses.Size = new System.Drawing.Size(170, 24);
-            this.cmbexpenses.TabIndex = 117;
+            this.cmbexpenses.TabIndex = 2;
             this.cmbexpenses.SelectedIndexChanged += new System.EventHandler(this.cmbexpenses_SelectedIndexChanged_1);
             // 
             // chkenble
@@ -916,22 +934,6 @@
             this.chkenble.Text = "Enable";
             this.chkenble.UseVisualStyleBackColor = true;
             this.chkenble.CheckedChanged += new System.EventHandler(this.chkenble_CheckedChanged);
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(959, 8);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 441;
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // OtherIncome
             // 

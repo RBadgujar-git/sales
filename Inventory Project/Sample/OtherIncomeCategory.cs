@@ -72,7 +72,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@OtherIncome", txtOtherIncome.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Insert data Successfully");
+                MessageBox.Show("Insert Data Successfully");
                 
             }
 
@@ -102,14 +102,15 @@ namespace sample
 
         private void txtOtherIncome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         public void Update1()
@@ -118,7 +119,11 @@ namespace sample
             {
                 try
                 {
-                    if (con.State == ConnectionState.Closed)
+                    if (txtOtherIncome.Text == "")
+                    {
+                         MessageBox.Show("Other Income requried");
+                    }
+                    else if(con.State == ConnectionState.Closed)
                     {
                         con.Open();
                     }
