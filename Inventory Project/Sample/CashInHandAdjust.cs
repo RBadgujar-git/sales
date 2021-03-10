@@ -33,8 +33,9 @@ namespace sample
         private void Cleardata()
         {
             txtCashadjustment.Text = "";
-            txtenterAmount.Text = "";
+            txtenterAmount.Text = "0";
             txtDescription.Text = "";
+            cmbbankaccount.Text = "";
         }
 
         private void fetchdetails()
@@ -52,11 +53,14 @@ namespace sample
             cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
             cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
             cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+            cmd.Parameters.AddWithValue("@BankName", cmbbankaccount.Text);
+
             cmd.Parameters.AddWithValue("@compid",NewCompany.company_id);
 
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvCashAdjustment.DataSource = dtable;
+            con.Close();
         }
 
         public void Insert()
@@ -87,7 +91,9 @@ namespace sample
                     cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@compid",NewCompany.company_id);
+                    cmd.Parameters.AddWithValue("@BankName", cmbbankaccount.Text);
+
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -104,24 +110,74 @@ namespace sample
             {
                 MessageBox.Show("error" + ex.Message);
             }
+            finally { con.Close(); }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtCashadjustment.SelectedItem == "Cash In")
+            {
+                Caladd();
+
+            }
+            else if (txtCashadjustment.SelectedItem == "Cash Out")
+            {
+                calminus();
+            }
+            update_opening_bal();
             Insert();
+           
+           
             fetchdetails();
         }
 
+        public void Caladd()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
 
+            opening_bal = float.Parse(textBox1.Text);
+            amount = float.Parse(txtenterAmount.Text);
+
+            remain_opening = opening_bal + amount;
+            textBox1.Text = remain_opening.ToString();
+        }
+        public void calminus()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
+
+            opening_bal = float.Parse(textBox1.Text);
+            amount = float.Parse(txtenterAmount.Text);
+
+            remain_opening = opening_bal - amount;
+            textBox1.Text = remain_opening.ToString();
+        }
 
 
         private void CashInHandAdjust_Load(object sender, EventArgs e)
         {
             fetchdetails();
-            
+            bankfetch();
         }
 
+        public void update_opening_bal()
+        {
+            try
+            {
+                con.Open();
+                String query = string.Format("update tbl_BankAccount set OpeningBal='" + textBox1.Text + "' where (BankName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbbankaccount.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
 
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -134,7 +190,9 @@ namespace sample
             txtenterAmount.Text = dgvCashAdjustment.SelectedRows[0].Cells["CashAmount"].Value.ToString();
             dtpdate.Text = dgvCashAdjustment.SelectedRows[0].Cells["Date"].Value.ToString();
             txtDescription.Text = dgvCashAdjustment.SelectedRows[0].Cells["Description"].Value.ToString();
-           // txtDescription.Text = dgvbanktobank.SelectedRows[0].Cells["Description"].Value.ToString();
+            cmbbankaccount.Text = dgvCashAdjustment.SelectedRows[0].Cells["BankName"].Value.ToString();
+
+            // txtDescription.Text = dgvbanktobank.SelectedRows[0].Cells["Description"].Value.ToString();
         }
 
         private void txtenterAmount_TextChanged(object sender, EventArgs e)
@@ -198,6 +256,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -241,6 +300,8 @@ namespace sample
                         cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
                         cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                         cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                        cmd.Parameters.AddWithValue("@BankName", cmbbankaccount.Text);
+
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
@@ -257,6 +318,8 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
+
             }
             else
             {
@@ -298,6 +361,54 @@ namespace sample
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void cmbbankaccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string Query = String.Format("select OpeningBal from tbl_BankAccount where (BankName='{0}') and Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY OpeningBal ", cmbbankaccount.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    textBox1.Text = dr["OpeningBal"].ToString();
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+            }
+        }
+        private void bankfetch()
+        {
+            if (cmbbankaccount.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbbankaccount.Items.Add(ds.Tables["Temp"].Rows[i]["BankName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
         }
     }
 }

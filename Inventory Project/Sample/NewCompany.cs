@@ -215,7 +215,7 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where(CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
+                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())

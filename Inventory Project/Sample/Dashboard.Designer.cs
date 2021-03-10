@@ -52,6 +52,7 @@
             this.chequeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bankAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loanAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.companyBankAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.otherIncomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myOnlineStoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -98,6 +99,7 @@
             this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -275,7 +277,8 @@
             this.cashInHandToolStripMenuItem,
             this.chequeToolStripMenuItem,
             this.bankAccountToolStripMenuItem,
-            this.loanAccountToolStripMenuItem});
+            this.loanAccountToolStripMenuItem,
+            this.companyBankAccountToolStripMenuItem});
             this.cashAndBankToolStripMenuItem.Name = "cashAndBankToolStripMenuItem";
             this.cashAndBankToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.cashAndBankToolStripMenuItem.Text = "Cash and Bank";
@@ -283,30 +286,37 @@
             // cashInHandToolStripMenuItem
             // 
             this.cashInHandToolStripMenuItem.Name = "cashInHandToolStripMenuItem";
-            this.cashInHandToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.cashInHandToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.cashInHandToolStripMenuItem.Text = "Cash In Hand";
             this.cashInHandToolStripMenuItem.Click += new System.EventHandler(this.cashInHandToolStripMenuItem_Click);
             // 
             // chequeToolStripMenuItem
             // 
             this.chequeToolStripMenuItem.Name = "chequeToolStripMenuItem";
-            this.chequeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.chequeToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.chequeToolStripMenuItem.Text = "Cheque";
             this.chequeToolStripMenuItem.Click += new System.EventHandler(this.chequeToolStripMenuItem_Click);
             // 
             // bankAccountToolStripMenuItem
             // 
             this.bankAccountToolStripMenuItem.Name = "bankAccountToolStripMenuItem";
-            this.bankAccountToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.bankAccountToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.bankAccountToolStripMenuItem.Text = "Bank Account";
             this.bankAccountToolStripMenuItem.Click += new System.EventHandler(this.bankAccountToolStripMenuItem_Click);
             // 
             // loanAccountToolStripMenuItem
             // 
             this.loanAccountToolStripMenuItem.Name = "loanAccountToolStripMenuItem";
-            this.loanAccountToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.loanAccountToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.loanAccountToolStripMenuItem.Text = "Loan Account";
             this.loanAccountToolStripMenuItem.Click += new System.EventHandler(this.loanAccountToolStripMenuItem_Click);
+            // 
+            // companyBankAccountToolStripMenuItem
+            // 
+            this.companyBankAccountToolStripMenuItem.Name = "companyBankAccountToolStripMenuItem";
+            this.companyBankAccountToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.companyBankAccountToolStripMenuItem.Text = "Company Bank Account";
+            this.companyBankAccountToolStripMenuItem.Click += new System.EventHandler(this.companyBankAccountToolStripMenuItem_Click);
             // 
             // otherIncomeToolStripMenuItem
             // 
@@ -785,6 +795,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel4.Controls.Add(this.label1);
             this.guna2Panel4.Controls.Add(this.button1);
             this.guna2Panel4.Controls.Add(this.guna2Button1);
             this.guna2Panel4.Controls.Add(this.guna2TextBox2);
@@ -903,6 +914,15 @@
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(789, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -929,6 +949,7 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
+            this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1005,6 +1026,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem barcodePrintToolStripMenuItem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem companyBankAccountToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 
