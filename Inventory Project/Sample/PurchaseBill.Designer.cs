@@ -111,6 +111,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.Purchase = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -149,7 +150,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvInnerDebiteNote = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnminimize = new System.Windows.Forms.Button();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -553,7 +553,7 @@
             // txtDiscount
             // 
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.DefaultText = "";
+            this.txtDiscount.DefaultText = "0";
             this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -570,6 +570,7 @@
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
             this.txtDiscount.SelectedText = "";
+            this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(90, 24);
             this.txtDiscount.TabIndex = 24;
@@ -586,7 +587,7 @@
             // txtsubtotal
             // 
             this.txtsubtotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsubtotal.DefaultText = "";
+            this.txtsubtotal.DefaultText = "0";
             this.txtsubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsubtotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -603,6 +604,7 @@
             this.txtsubtotal.PasswordChar = '\0';
             this.txtsubtotal.PlaceholderText = "";
             this.txtsubtotal.SelectedText = "";
+            this.txtsubtotal.SelectionStart = 1;
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(90, 24);
             this.txtsubtotal.TabIndex = 23;
@@ -651,7 +653,7 @@
             // txtsgst
             // 
             this.txtsgst.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsgst.DefaultText = "";
+            this.txtsgst.DefaultText = "0";
             this.txtsgst.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsgst.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsgst.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -668,6 +670,7 @@
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
             this.txtsgst.SelectedText = "";
+            this.txtsgst.SelectionStart = 1;
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
             this.txtsgst.Size = new System.Drawing.Size(59, 24);
             this.txtsgst.TabIndex = 104;
@@ -675,7 +678,7 @@
             // txtcgst
             // 
             this.txtcgst.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtcgst.DefaultText = "";
+            this.txtcgst.DefaultText = "0";
             this.txtcgst.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtcgst.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtcgst.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -693,6 +696,7 @@
             this.txtcgst.PlaceholderText = "";
             this.txtcgst.ReadOnly = true;
             this.txtcgst.SelectedText = "";
+            this.txtcgst.SelectionStart = 1;
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
             this.txtcgst.Size = new System.Drawing.Size(61, 24);
             this.txtcgst.TabIndex = 103;
@@ -804,11 +808,13 @@
             this.txtItemTotal.PasswordChar = '\0';
             this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtItemTotal.PlaceholderText = "";
+            this.txtItemTotal.ReadOnly = true;
             this.txtItemTotal.SelectedText = "";
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(85, 24);
             this.txtItemTotal.TabIndex = 16;
+            this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
             // label34
@@ -911,6 +917,7 @@
             this.txtTaxAMount1.PasswordChar = '\0';
             this.txtTaxAMount1.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTaxAMount1.PlaceholderText = "";
+            this.txtTaxAMount1.ReadOnly = true;
             this.txtTaxAMount1.SelectedText = "";
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
@@ -1240,7 +1247,9 @@
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
             this.txtReturnNo.Size = new System.Drawing.Size(85, 19);
             this.txtReturnNo.TabIndex = 667;
+            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
+            this.txtReturnNo.ImeModeChanged += new System.EventHandler(this.txtReturnNo_ImeModeChanged);
             // 
             // label20
             // 
@@ -1423,6 +1432,22 @@
             this.panel3.Size = new System.Drawing.Size(1082, 38);
             this.panel3.TabIndex = 16;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnminimize.Location = new System.Drawing.Point(1019, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 757;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            // 
             // Purchase
             // 
             this.Purchase.Location = new System.Drawing.Point(118, 8);
@@ -1451,7 +1476,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(1051, 4);
+            this.button3.Location = new System.Drawing.Point(1051, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
             this.button3.TabIndex = 432;
@@ -1548,7 +1573,7 @@
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(118, 51);
+            this.comboBox2.Location = new System.Drawing.Point(119, 51);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(180, 24);
             this.comboBox2.TabIndex = 1;
@@ -1563,6 +1588,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(180, 24);
             this.comboBox1.TabIndex = 11;
+            this.comboBox1.Text = "Select ";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label41
@@ -1586,7 +1612,7 @@
             // guna2TextBox1
             // 
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DefaultText = "0";
             this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1603,6 +1629,7 @@
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.SelectionStart = 1;
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(63, 24);
             this.guna2TextBox1.TabIndex = 128;
@@ -1653,6 +1680,7 @@
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(180, 24);
             this.cmbStatesupply.TabIndex = 10;
+            this.cmbStatesupply.Text = "Select ";
             // 
             // dtpPODate
             // 
@@ -1683,6 +1711,17 @@
             this.cmbPaymentTrems.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbPaymentTrems.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPaymentTrems.FormattingEnabled = true;
+            this.cmbPaymentTrems.Items.AddRange(new object[] {
+            "",
+            "Cash in advance",
+            "Payment in advance",
+            "End of month",
+            "Cash on delivery",
+            "Cash next delivery",
+            "Payment seven days after invoice date",
+            "Payment 30 days after invoice date",
+            "Payment 10 days after invoice date",
+            "Payment 60 days after invoice date"});
             this.cmbPaymentTrems.Location = new System.Drawing.Point(480, 121);
             this.cmbPaymentTrems.Name = "cmbPaymentTrems";
             this.cmbPaymentTrems.Size = new System.Drawing.Size(180, 24);
@@ -1881,6 +1920,8 @@
             this.txtbillingadd.ShadowDecoration.Parent = this.txtbillingadd;
             this.txtbillingadd.Size = new System.Drawing.Size(180, 53);
             this.txtbillingadd.TabIndex = 2;
+            this.txtbillingadd.TextChanged += new System.EventHandler(this.txtbillingadd_TextChanged);
+            this.txtbillingadd.Validating += new System.ComponentModel.CancelEventHandler(this.txtbillingadd_Validating);
             // 
             // label25
             // 
@@ -2028,6 +2069,7 @@
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvInnerDebiteNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDebiteNote_CellContentClick);
+            this.dgvInnerDebiteNote.DoubleClick += new System.EventHandler(this.dgvInnerDebiteNote_DoubleClick);
             // 
             // label12
             // 
@@ -2037,23 +2079,6 @@
             this.label12.Size = new System.Drawing.Size(87, 16);
             this.label12.TabIndex = 26;
             this.label12.Text = "Vehicle No :";
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnminimize.Location = new System.Drawing.Point(1019, 6);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 757;
-            this.btnminimize.UseVisualStyleBackColor = false;
-        //    this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // PurchaseBill
             // 
