@@ -108,7 +108,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_OtherIncomeInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    cmd.Parameters.AddWithValue("@ID", id1);
+                cmd.Parameters.AddWithValue("@ID2", id);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -117,11 +117,11 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price/Unit"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvinnerexpenses.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                    //cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) {
-                    //MessageBox.Show(e1.Message);
+                   MessageBox.Show(e1.Message);
                 }
                 finally {
                     con.Close();
@@ -151,7 +151,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Status",ComboBox.Text);
                 //cmd.Parameters.AddWithValue("@TableName", Income.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                id1 = cmd.ExecuteScalar();
+                id1 = cmd.ExecuteNonQuery();
                 MessageBox.Show("Sale Record Added");
             }
             catch (Exception e1) {
@@ -160,11 +160,11 @@ namespace sample
             finally
             {
                  con.Close();
-                insert_record_inner(id1.ToString());
+                insert_record_inner(id.ToString());
             }
         }
         int row = 0;
-
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
             insertdata();
@@ -275,7 +275,7 @@ namespace sample
                 }
              
 
-                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner1 where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -441,14 +441,15 @@ namespace sample
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
@@ -552,6 +553,11 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

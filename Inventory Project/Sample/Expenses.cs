@@ -230,7 +230,6 @@ namespace sample
 
         private void button5_Click(object sender, EventArgs e)
         {
-
             insertdata();
             bind_sale_details();
             cleardata();
@@ -361,8 +360,8 @@ namespace sample
                             txtBalance.Text = dr["Balance"].ToString();
                             txtrefNo.Text = dr["AdditinalFeild1"].ToString();
                             txtAdditional1.Text = dr["AdditionalFeild2"].ToString();
-                        ComboBox.Text = dr["Status"].ToString();
-                        Expences.Text = dr["TableName"].ToString();
+                            ComboBox.Text = dr["Status"].ToString();
+                            Expences.Text = dr["TableName"].ToString();
                             id = dr["id"].ToString();
                             if (ds.Tables[0].Rows.Count > 0)
                             {
@@ -474,14 +473,15 @@ namespace sample
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
@@ -577,7 +577,7 @@ namespace sample
 
         private void dgvinnerexpenses_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-        //   id1 =dgvinnerexpenses.SelectedRows[0].Cells["ID"].Value.ToString();
+            id1 =dgvinnerexpenses.SelectedRows[0].Cells["ID"].Value.ToString();
             txtItem.Text = dgvinnerexpenses.SelectedRows[0].Cells["ItemName"].Value.ToString();
             txtMRP.Text = dgvinnerexpenses.SelectedRows[0].Cells["SalePrice"].Value.ToString();
             txtOty.Text = dgvinnerexpenses.SelectedRows[0].Cells["Qty"].Value.ToString();
@@ -598,6 +598,31 @@ namespace sample
         {
             Calculator cr = new Calculator();
             cr.Show();
+        }
+
+        private void txtReturnNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            cmbexpenses.Text = "";
+            txtReturnNo.Text = "";
+            txtitemamount.Text = "0";
+            txtMRP.Text = "0";
+            txtOty.Text = "0";
+            txtdescritpition.Text = "";
+            txtTotal.Text = "0";
+            txtReceived.Text = "0";
+            txtBalance.Text = "0";
+            ComboBox.Text = "";
+
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
