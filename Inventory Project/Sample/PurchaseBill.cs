@@ -29,6 +29,7 @@ namespace sample
 
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
+            cleardata();
             fetchCategory();
             //fetchitem();
             fetchcustomername();
@@ -112,6 +113,7 @@ namespace sample
         {
 
         }
+      
 
         private void guna2TextBox16_TextChanged(object sender, EventArgs e)
         {
@@ -633,7 +635,8 @@ namespace sample
 
                 string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseBillInner where BillNo='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
-                dr.Close();
+                
+dr.Close(); 
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
                 {
@@ -714,7 +717,9 @@ namespace sample
                     //MessageBox.Show(e1.Message);
                 }
                 finally {
-                  //  con.Close();
+                    //  con.Close();
+                    cleardata();
+                    
                 }
             }
         }
@@ -885,7 +890,7 @@ namespace sample
             if (valid == 1)
             {
                 insertdata();
-                bind_sale_details();
+              //  bind_sale_details();
                 Clear_Text_data();
                 cleardata();
                 get_id();
@@ -961,6 +966,7 @@ namespace sample
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
+
 
         }
 
@@ -1225,48 +1231,17 @@ namespace sample
         private void txtcon_Validating(object sender, CancelEventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtcon.Text))
-            {
-                e.Cancel = true;
-              //  txtcon.Focus();
-                errorProvider1.SetError(txtcon, "Name should not be left blank!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txtcon, "");
-            }
         }
 
         private void txtPONo_Validating(object sender, CancelEventArgs e)
         {
 
-            if (string.IsNullOrWhiteSpace(txtPONo.Text))
-            {
-                e.Cancel = true;
-              //  txtPONo.Focus();
-                errorProvider1.SetError(txtPONo, "Name should not be left blank!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txtPONo, "");
-            }
+           
         }
 
         private void cmbStatesupply_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbStatesupply.Text))
-            {
-                e.Cancel = true;
-              //  cmbStatesupply.Focus();
-                errorProvider1.SetError(cmbStatesupply, "Name should not be left blank!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(cmbStatesupply, "");
-            }
+            
         }
 
         private void dgvInnerDebiteNote_Validating(object sender, CancelEventArgs e)
@@ -1284,17 +1259,7 @@ namespace sample
 
         private void ComboBox_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(ComboBox.Text))
-            {
-                e.Cancel = true;
-                //ComboBox.Focus();
-                errorProvider1.SetError(ComboBox, "Name should not be left blank!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(ComboBox, "");
-            }
+            
         }
 
         private void comboBox2_Validating(object sender, CancelEventArgs e)
@@ -1304,20 +1269,20 @@ namespace sample
 
         private void cmbpartyname_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cmbpartyname.Text))
-            {
-                e.Cancel = true;
-             //   cmbpartyname.Focus();
-                errorProvider1.SetError(cmbpartyname, "Name should not be left blank!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(cmbpartyname, "");
-            }
+          
         }
 
         private void panel1_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void txtTax1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsubtotal_TextChanged(object sender, EventArgs e)
         {
 
         }
