@@ -113,6 +113,7 @@ namespace sample
         {
 
         }
+      
 
         private void guna2TextBox16_TextChanged(object sender, EventArgs e)
         {
@@ -634,7 +635,8 @@ namespace sample
 
                 string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseBillInner where BillNo='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
-                dr.Close();
+                
+dr.Close(); 
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
                 {
