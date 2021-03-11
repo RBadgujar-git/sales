@@ -29,6 +29,7 @@ namespace sample
 
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
+            cleardata();
             fetchCategory();
             //fetchitem();
             fetchcustomername();
