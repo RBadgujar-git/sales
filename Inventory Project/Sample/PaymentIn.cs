@@ -43,7 +43,7 @@ namespace sample
             txtReceived.Text = "0";
             txtDiscount.Text = "0";
             txtTotal.Text = "0";
-            PictureBox1.Image = null;
+            PictureBox1.Image = Properties.Resources.No_Image_Available;
             comboBox1.Text = "";
         }
 
@@ -94,10 +94,10 @@ namespace sample
             cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
             cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-
             SqlParameter sqlpara = new SqlParameter("@image", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
             cmd.Parameters.Add(sqlpara);
+
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);                      
             dgvPaymentIn.DataSource = dtable;
@@ -107,26 +107,23 @@ namespace sample
         private void InsertData()
         {
            
+                   
             var controls = new[] { cmbPartyName.Text };
             if (controls.All(x => string.IsNullOrEmpty(x)))
             {
                 MessageBox.Show("Requried All Feilds");
+                
             }
-
+          
             else
             {
 
                 try
                 {
-                    if (PictureBox1.Image == null )
-                    {
-                        MessageBox.Show("Please Insert Image");
-                    }
-                    else
-                    {
                         MemoryStream ms = new MemoryStream();
                         PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat);
                         byte[] arrImage2 = ms.GetBuffer();
+
                         if (con.State == ConnectionState.Closed)
                         {
                             con.Open();
@@ -143,12 +140,12 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                         cmd.Parameters.AddWithValue("@ReceivedAmount", txtReceived.Text);
                         cmd.Parameters.AddWithValue("@UnusedAmount", txtDiscount.Text);
+                        cmd.Parameters.Add("@image", SqlDbType.Image, arrImage2.Length).Value = arrImage2;
                         cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                         cmd.Parameters.AddWithValue("@Status", comboBox1.Text);
                         cmd.Parameters.AddWithValue("@TableName", textBox1.Text);
                         cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-
-                        cmd.Parameters.Add("@image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                     
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
@@ -159,7 +156,7 @@ namespace sample
                         {
                             MessageBox.Show("Please try again");
                         }
-                    }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -227,11 +224,14 @@ namespace sample
         {
             try
             {
-                float receive_cash = 0, amt = 0, TP = 0, GT = 0;
-                receive_cash = float.Parse(txtReceived.Text.ToString());
-                amt = float.Parse(txtDiscount.Text.ToString());
-                TP = amt + receive_cash;
-                txtTotal.Text = TP.ToString();
+                if (txtReceived.Text != "" && txtDiscount.Text != "" && txtTotal.Text != "")
+                {
+                    float receive_cash = 0, amt = 0, TP = 0, GT = 0;
+                    receive_cash = float.Parse(txtReceived.Text.ToString());
+                    amt = float.Parse(txtDiscount.Text.ToString());
+                    TP = amt + receive_cash;
+                    txtTotal.Text = TP.ToString();
+                }
             }
             catch (Exception e1)
             {
@@ -340,29 +340,7 @@ namespace sample
         byte[] arrImage1 = null;
         private void PictureBox1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
-                {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
-                    {
-                        PictureBox1.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
-                    }
-                }
-            }
+          
         }
 
         private void dgvPaymentIn_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -377,7 +355,7 @@ namespace sample
             txtReceived.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["ReceivedAmount"].Value.ToString();
             txtDiscount.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["UnusedAmount"].Value.ToString();
 
-            SqlCommand cmd = new SqlCommand("select image from tbl_PaymentIn", con);
+            SqlCommand cmd = new SqlCommand("select image from tbl_PaymentIn where DeleteData = '1' and CompanyID = '" + NewCompany.company_id  + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -479,6 +457,38 @@ namespace sample
         }
 
         private void Clear_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
+            openFileDialog1.Multiselect = true;
+            openFileDialog1.RestoreDirectory = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                int count = 1;
+                foreach (String file in openFileDialog1.FileNames)
+                {
+                    PictureBox pb = new PictureBox();
+                    Image loadedImage = Image.FromFile(file);
+
+                    if (count == 1)
+                    {
+                        PictureBox1.Image = Image.FromFile(file);
+                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        MemoryStream ms = new MemoryStream();
+                        PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat);
+                        arrImage1 = ms.GetBuffer();
+                    }
+                }
+            }
+        }
+
+        private void Print_Click(object sender, EventArgs e)
         {
 
         }
