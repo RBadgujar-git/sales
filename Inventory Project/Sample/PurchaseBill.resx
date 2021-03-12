@@ -208,6 +208,18 @@
   <metadata name="Unit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnminimize.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFiSURBVGhD7ZlBasJQGIRzD+3aMxRfxW1pouesFNyIHqgNdlHFeIH2vXZWZoRRScbC++Bb/h+j
+        iAEtMplM5n6p55OHbTl+25bhGP3u2eNnGZb1bDzCnMv4Gx92J1GH+7QFs3TwzrNg/1ZhgVk68dDxsTln
+        g1k6JGIVs3RYxClm6bCIU8zSYRGnmKXDIk4xS4dFnGKWDos4xSwdFnGKWTos4hSzdFjEKWbpsIhTzNJh
+        EaeYpcMiTjFLh0WcYpYOizjFLB0WcYpZOiziFLN0WMQpZumwiFPM0mERp5ilwyLUKqzey8cBzmQ+nqfD
+        eL9u9c6IMx0WYaYhOLkY/PZEu6fiRIdFmP/+BUTX17yI3/FV2JAeFWc6LOIUs3RYxClm6bCIU8zSYRGn
+        mKUTj+7nx90qHDBLJ/25QGMOX8IrZumkf0bi8b4V692nr6ufNfiuXsRQ0w53bpPe+VselJlMJtM1RfED
+        Byiy8dpYfbkAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAABGdBTUEAALGPC/xhBQAABJJJREFUeF7t
