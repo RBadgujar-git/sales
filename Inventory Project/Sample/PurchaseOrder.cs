@@ -409,7 +409,7 @@ namespace sample
                 //cmd = new SqlCommand("tbl_PurchaseOrderSelect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@Action", "Insert");
-                string query = string.Format("insert into tbl_PurchaseOrder(PartyName, BillingName, OrderDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Paid, RemainingBal, ContactNo, Feild1, Feild2, Feild3, Status, TableName, Barcode,ItemCategory,IGST,Company_ID) Values (@PartyName, @BillingName,  @OrderDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal,@ContactNo,  @Feild1, @Feild2, @Feild3,  @Status, @TableName, @Barcode,@ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_PurchaseOrder(PartyName, BillingName, OrderDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Paid, RemainingBal, ContactNo, Feild1, Feild2, Feild3,Feild4, Status, TableName, Barcode,ItemCategory,IGST,Company_ID) Values (@PartyName, @BillingName,  @OrderDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal,@ContactNo,  @Feild1, @Feild2, @Feild3,@fild4,@Status, @TableName, @Barcode,@ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 // cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);       
@@ -441,6 +441,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                 cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
+                cmd.Parameters.AddWithValue("@fild4", txtsubtotal.Text);
                 cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text); 
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
@@ -519,7 +520,12 @@ namespace sample
                     ///    comboBox1.Text = dr["ItemCategory"].ToString();
                       //  textBarcode.Text = dr["Barcode"].ToString();
                         txtIGST.Text = dr["IGST"].ToString();
+                        txtsubtotal.Text = dr["Feild4"].ToString();
+
                         id = dr["OrderNo"].ToString();
+
+
+
                     }
 
                 }
@@ -573,15 +579,30 @@ namespace sample
         }
         private void update_record_inner(string p)
         {
+            SqlCommand cmdn = new SqlCommand("tbl_PurchaseOrderInnersp", con);
+            cmdn.CommandType = CommandType.StoredProcedure;
+            cmdn.Parameters.AddWithValue("@Action","inserdelete");
+            cmdn.Parameters.AddWithValue("@ID", txtReturnNo.Text);           
+            cmdn.ExecuteNonQuery();
+                 
+
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
-                try {
-                  //  con.Open();
+
+                try
+                {
+
+
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    //  con.Open();
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_PurchaseOrderInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@id", id1);
-      
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@ID", id1);
+                    cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
@@ -593,21 +614,60 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
-                    cmd.Parameters.AddWithValue("@Action", "Update");
                     cmd.ExecuteNonQuery();
-
-
+                }
+                catch (Exception e1)
+                {
+                    //MessageBox.Show(e1.Message);
+                }
+                finally
+                {
+                    // con.Close();
+                    clear_text_data();
+                    cleardata();
+                    get_id();
                 }
 
 
-                catch (Exception e1) {
-                   MessageBox.Show(e1.Message);
-                }
-                finally {
-                //    con.Close();
-                }
+                //try {
+                //  //  con.Open();
+                //    DataTable dtable = new DataTable();
+                //    cmd = new SqlCommand("tbl_PurchaseOrderInnersp", con);
+                //    cmd.CommandType = CommandType.StoredProcedure;
+
+                //    cmd.Parameters.AddWithValue("@id", id1);
+
+                //    cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@freeQty", dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@SalePrice", dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@TaxForSale", dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@SaleTaxAmount", dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
+                //    cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+
+                //    cmd.Parameters.AddWithValue("@Action", "Update");
+                //    cmd.ExecuteNonQuery();
+
+
+
+                //}
+
+
+                //catch (Exception e1) {
+                //   MessageBox.Show(e1.Message);
+                //}
+                //finally {
+                //    //    con.Close();
+                //    comboBox1.Visible = false;
+                //    cmbpartyname.Visible = true;                
+                //}
             }
         }
 
@@ -630,7 +690,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
                     // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
                     // cmd.Parameters.AddWithValue("@PONo", txtPONo.Text);
-                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                    cmd.Parameters.AddWithValue("@PartyName",comboBox1.Text);
                     cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
                     cmd.Parameters.AddWithValue("@OrderDate", dtpInvoice.Text);
                     //  cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
@@ -655,7 +715,6 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
                     cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
                     //  cmd.Parameters.AddWithValue("@PaymentTerms", .Text);
-
                     cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                     cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
                     cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
@@ -668,7 +727,6 @@ namespace sample
                     MessageBox.Show("Sale Record Update");
 
 
-
                 }
                 catch (Exception e1)
                 {
@@ -678,6 +736,7 @@ namespace sample
                 {
                     //  con.Close();
                     update_record_inner(txtReturnNo.ToString());
+                
                 }
             
         }
@@ -750,9 +809,7 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-           
-
-
+       
             verfydata();
             if (verify == 1)
             {
@@ -1064,6 +1121,25 @@ namespace sample
         private void txtsubtotal_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            cleardata();
+            clear_text_data();
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            verfydata();
+            if (verify == 1)
+            {
+                insertdata();
+                //  bind_sale_details();
+                clear_text_data();
+                cleardata();
+                get_id();
+            }
         }
     }
 }
