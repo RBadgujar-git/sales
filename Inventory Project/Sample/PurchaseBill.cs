@@ -455,6 +455,7 @@ namespace sample
             txtTotal.Text = "0";
             txtReceived.Text = "0";
             txtBallaance.Text = "0";
+            txtsubtotal.Text = "";
             ComboBox.Text = "";
             Purchase.Text = "";
             cmbbarcode.Text = "";
@@ -1320,6 +1321,21 @@ dr.Close();
         }
 
         private void panel1_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btnminimize_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsgst_TextChanged(object sender, EventArgs e)
         {
 
         }

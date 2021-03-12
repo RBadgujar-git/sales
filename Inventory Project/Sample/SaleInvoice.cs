@@ -194,7 +194,8 @@ namespace sample
 
         private void insert_record_inner(string id)
         {
-            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
+            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+            {
                 try
                 {
                     if (con.State == ConnectionState.Closed)
@@ -335,6 +336,20 @@ namespace sample
             }
         }
 
+        private void dgvInnerDebiteNote_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtItemName.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["txtItem"].Value.ToString();
+            txtUnit.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Unit"].Value.ToString();
+            txtItemCode.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Item_Code"].Value.ToString();
+            txtMRP.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["MRP"].Value.ToString();
+            txtTax1.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Tax"].Value.ToString();
+            txtTaxAMount1.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Tax_Amount"].Value.ToString();
+            txtOty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Qty"].Value.ToString();
+            txtFreeQty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["FreeQty"].Value.ToString();
+            txtDis.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
+            txtDisAmount.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
+            txtItemTotal.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();
+        }
         private void fetchCategory()
         {
             if (cmbCategory.Text != "System.Data.DataRowView")
@@ -1069,5 +1084,7 @@ namespace sample
             report.Render();
             report.Show(false);
         }
+
+      
     }
 }

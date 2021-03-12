@@ -716,6 +716,11 @@ namespace sample
         {
           
         }
+
+        private void txtcampanyName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
