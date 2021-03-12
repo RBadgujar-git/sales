@@ -37,12 +37,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTaxRate = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +45,11 @@
             this.btnnImport = new System.Windows.Forms.Button();
             this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxRate)).BeginInit();
             this.SuspendLayout();
@@ -161,8 +160,7 @@
             this.Column5,
             this.Column2,
             this.Column4,
-            this.Column3,
-            this.Tax});
+            this.Column3});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,36 +201,6 @@
             this.dgvTaxRate.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvTaxRate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaxRate_CellContentClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Tax Type";
-            this.Column1.Name = "Column1";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Tax Percent";
-            this.Column5.Name = "Column5";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Taxable Sale Amount";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tax In";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Taxable Purchase Amount";
-            this.Column3.Name = "Column3";
-            // 
-            // Tax
-            // 
-            this.Tax.HeaderText = "Tax Out";
-            this.Tax.Name = "Tax";
-            // 
             // cmbAllFirms
             // 
             this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
@@ -254,6 +222,7 @@
             this.cmbAllFirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllFirms.StartIndex = 0;
             this.cmbAllFirms.TabIndex = 153;
+            this.cmbAllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllFirms_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -332,6 +301,33 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(127, 23);
             this.dtpToDate.TabIndex = 157;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
+            this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item Name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Tax For Sale";
+            this.Column5.Name = "Column5";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "SaleTaxAmount";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tax For Purchase";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = " Purchase Tax Amount";
+            this.Column3.Name = "Column3";
             // 
             // TaxRateReport
             // 
@@ -375,13 +371,12 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnnImport;
+        private System.Windows.Forms.DateTimePicker dtpFromdate;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tax;
-        private System.Windows.Forms.DateTimePicker dtpFromdate;
-        private System.Windows.Forms.DateTimePicker dtpToDate;
     }
 }

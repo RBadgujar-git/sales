@@ -83,7 +83,7 @@ namespace sample
                 dgvPartyReport.DataSource = ds;
                 dgvPartyReport.DataMember = "temp";
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
