@@ -589,7 +589,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                     cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
                     cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
-                   cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
+                    cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
                     cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
                     cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                     cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
@@ -1298,7 +1298,7 @@ namespace sample
             {
                 cmbpartyname.Visible = false;
                 comboBox1.Visible = true;
-                comboBox1.Text = "";
+              //  comboBox1.Text = "";
                 bind_sale_details();
             }
         }
@@ -1316,6 +1316,11 @@ namespace sample
             txtDis.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
             txtDisAmount.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
             txtItemTotal.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

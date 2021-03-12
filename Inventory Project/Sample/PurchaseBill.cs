@@ -1286,6 +1286,26 @@ dr.Close();
         {
 
         }
+
+        private void txtDisAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTaxAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBallaance_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
