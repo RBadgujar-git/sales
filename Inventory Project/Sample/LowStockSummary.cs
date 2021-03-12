@@ -42,18 +42,17 @@ namespace sample
             da.Fill(dt);
             con.Close();
             dgvLowstocksummary.AutoGenerateColumns = false;
-            dgvLowstocksummary.ColumnCount = 5;
+            dgvLowstocksummary.ColumnCount = 4;
             dgvLowstocksummary.Columns[0].HeaderText = "Item Name";
             dgvLowstocksummary.Columns[0].DataPropertyName = "ItemName";
             dgvLowstocksummary.Columns[1].HeaderText = " Opening Qty";
             dgvLowstocksummary.Columns[1].DataPropertyName = "OpeningQty";
             dgvLowstocksummary.Columns[2].HeaderText = "Minimum Stock";
             dgvLowstocksummary.Columns[2].DataPropertyName = "MinimumStock";
-            dgvLowstocksummary.Columns[3].HeaderText = " Opening Qty";
-            dgvLowstocksummary.Columns[3].DataPropertyName = "OpeningQty";
-            dgvLowstocksummary.Columns[4].HeaderText = " atPrice";
-            dgvLowstocksummary.Columns[4].DataPropertyName = "atPrice";
-            dgvLowstocksummary.DataSource = dt;
+            dgvLowstocksummary.Columns[3].HeaderText = " atPrice";
+            dgvLowstocksummary.Columns[3].DataPropertyName = "atPrice";
+            
+            dgvLowstocksummary.DataSource = dt; 
 
         }
         private void fetchcategory()

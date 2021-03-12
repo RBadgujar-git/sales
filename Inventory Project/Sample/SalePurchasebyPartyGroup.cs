@@ -43,7 +43,7 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = string.Format("select TableName,PartyName, OrderDate,Total from tbl_SaleOrder where  PartyName = '{0}' union all select TableName,PartyName, OrderDate,Total from tbl_PurchaseOrder where  PartyName = '{0}' union all select TableName,PartyName, OrderDate,Total from tbl_PurchaseBill where  PartyName = '{0}' union all  select TableName,PartyName, OrderDate,Total from tbl_PurchaseOrder where  PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+                string Query = string.Format("select TableName,PartyName, OrderDate as Date,Total from tbl_SaleOrder where  PartyName = '{0}' union all select TableName,PartyName, OrderDate as Date,Total from tbl_PurchaseOrder where  PartyName = '{0}' union all select TableName,PartyName, BillDate as Date,Total from tbl_PurchaseBill where  PartyName = '{0}' union all  select TableName,PartyName, InvoiceDate as Date,Total from tbl_SaleInvoice where  PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -81,13 +81,36 @@ namespace sample
                 }
             }
         }
+        private void fetchPartyGroup()
+        {
+            if (cmbGroup.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroupSelect where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbGroup.Items.Add(ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 
-                string Query = string.Format("select TableName,PartyName, OrderDate,Total from tbl_SaleOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, OrderDate,Total from tbl_PurchaseOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, OrderDate,Total,Received from tbl_PurchaseBill where  PartyName Like '%{0}%' union all  select TableName,PartyName, OrderDate,Total,Received from tbl_PurchaseOrder where  PartyName Like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
+                string Query = string.Format("select TableName,PartyName, OrderDate as Date,Total from tbl_SaleOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, OrderDate as Date,Total from tbl_PurchaseOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, BillDate as Date,Total from tbl_PurchaseBill where  PartyName Like '%{0}%' union all  select TableName,PartyName, InvoiceDate as Date,Total from tbl_SaleInvoice where  PartyName Like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

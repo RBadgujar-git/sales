@@ -121,7 +121,7 @@ namespace sample
                 }
                 dr1.Close();
                 float PA = 0, TA = 0, BalanceDue = 0;
-                PA = float.Parse(txttotalPrinciple.Text.ToString());
+                 PA = float.Parse(txttotalPrinciple.Text.ToString());
                 TA = float.Parse(txttotalInterest.Text.ToString());
                 BalanceDue = PA + TA;
                 txttBalancedue.Text = BalanceDue.ToString();

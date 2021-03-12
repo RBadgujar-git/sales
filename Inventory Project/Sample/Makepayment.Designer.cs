@@ -51,6 +51,8 @@
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.txtcurrentbal = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMakePayment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 88);
+            this.label2.Location = new System.Drawing.Point(226, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 1;
@@ -88,7 +90,7 @@
             this.txtPrincipleAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPrincipleAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPrincipleAmount.HoverState.Parent = this.txtPrincipleAmount;
-            this.txtPrincipleAmount.Location = new System.Drawing.Point(356, 82);
+            this.txtPrincipleAmount.Location = new System.Drawing.Point(356, 108);
             this.txtPrincipleAmount.MaxLength = 1000;
             this.txtPrincipleAmount.Name = "txtPrincipleAmount";
             this.txtPrincipleAmount.PasswordChar = '\0';
@@ -118,7 +120,7 @@
             this.txtinterestAmout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtinterestAmout.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtinterestAmout.HoverState.Parent = this.txtinterestAmout;
-            this.txtinterestAmout.Location = new System.Drawing.Point(356, 120);
+            this.txtinterestAmout.Location = new System.Drawing.Point(356, 146);
             this.txtinterestAmout.MaxLength = 1000;
             this.txtinterestAmout.Name = "txtinterestAmout";
             this.txtinterestAmout.PasswordChar = '\0';
@@ -136,7 +138,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(227, 126);
+            this.label3.Location = new System.Drawing.Point(227, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 16);
             this.label3.TabIndex = 4;
@@ -145,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(303, 162);
+            this.label4.Location = new System.Drawing.Point(303, 188);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
@@ -155,7 +157,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(247, 196);
+            this.label5.Location = new System.Drawing.Point(247, 222);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(107, 16);
             this.label5.TabIndex = 10;
@@ -176,7 +178,7 @@
             this.txtTotalAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.HoverState.Parent = this.txtTotalAmount;
-            this.txtTotalAmount.Location = new System.Drawing.Point(356, 190);
+            this.txtTotalAmount.Location = new System.Drawing.Point(356, 216);
             this.txtTotalAmount.MaxLength = 1000;
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.PasswordChar = '\0';
@@ -193,7 +195,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(270, 233);
+            this.label6.Location = new System.Drawing.Point(270, 259);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 16);
             this.label6.TabIndex = 11;
@@ -227,7 +229,7 @@
             this.dgvMakePayment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMakePayment.EnableHeadersVisualStyles = false;
             this.dgvMakePayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvMakePayment.Location = new System.Drawing.Point(86, 310);
+            this.dgvMakePayment.Location = new System.Drawing.Point(86, 336);
             this.dgvMakePayment.Name = "dgvMakePayment";
             this.dgvMakePayment.RowHeadersVisible = false;
             this.dgvMakePayment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -262,7 +264,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(336, 262);
+            this.btnSave.Location = new System.Drawing.Point(336, 288);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 7;
@@ -290,7 +292,7 @@
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDate.Location = new System.Drawing.Point(356, 159);
+            this.dtpDate.Location = new System.Drawing.Point(356, 185);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 23);
             this.dtpDate.TabIndex = 4;
@@ -304,7 +306,7 @@
             "Cash",
             "Cheque",
             "Online Payment"});
-            this.cmbPaidFrom.Location = new System.Drawing.Point(356, 229);
+            this.cmbPaidFrom.Location = new System.Drawing.Point(356, 255);
             this.cmbPaidFrom.Name = "cmbPaidFrom";
             this.cmbPaidFrom.Size = new System.Drawing.Size(200, 24);
             this.cmbPaidFrom.TabIndex = 6;
@@ -314,7 +316,7 @@
             this.btnclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnclear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnclear.Location = new System.Drawing.Point(622, 262);
+            this.btnclear.Location = new System.Drawing.Point(622, 288);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(90, 42);
             this.btnclear.TabIndex = 10;
@@ -327,7 +329,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(526, 262);
+            this.btnDelete.Location = new System.Drawing.Point(526, 288);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
             this.btnDelete.TabIndex = 9;
@@ -340,7 +342,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(430, 262);
+            this.btnUpdate.Location = new System.Drawing.Point(430, 288);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
             this.btnUpdate.TabIndex = 8;
@@ -357,15 +359,17 @@
             this.cmbCompanyName.Name = "cmbCompanyName";
             this.cmbCompanyName.Size = new System.Drawing.Size(200, 24);
             this.cmbCompanyName.TabIndex = 1;
+            this.cmbCompanyName.SelectedIndexChanged += new System.EventHandler(this.cmbCompanyName_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(227, 45);
+            this.label7.Location = new System.Drawing.Point(238, 45);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 16);
             this.label7.TabIndex = 20;
             this.label7.Text = "Account Name :";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // btnminimize
             // 
@@ -383,11 +387,50 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // txtcurrentbal
+            // 
+            this.txtcurrentbal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtcurrentbal.DefaultText = "0";
+            this.txtcurrentbal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtcurrentbal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtcurrentbal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcurrentbal.DisabledState.Parent = this.txtcurrentbal;
+            this.txtcurrentbal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtcurrentbal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcurrentbal.FocusedState.Parent = this.txtcurrentbal;
+            this.txtcurrentbal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtcurrentbal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtcurrentbal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtcurrentbal.HoverState.Parent = this.txtcurrentbal;
+            this.txtcurrentbal.Location = new System.Drawing.Point(356, 77);
+            this.txtcurrentbal.MaxLength = 1000;
+            this.txtcurrentbal.Name = "txtcurrentbal";
+            this.txtcurrentbal.PasswordChar = '\0';
+            this.txtcurrentbal.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtcurrentbal.PlaceholderText = "";
+            this.txtcurrentbal.SelectedText = "";
+            this.txtcurrentbal.SelectionStart = 1;
+            this.txtcurrentbal.ShadowDecoration.Parent = this.txtcurrentbal;
+            this.txtcurrentbal.Size = new System.Drawing.Size(200, 25);
+            this.txtcurrentbal.TabIndex = 441;
+            this.txtcurrentbal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(225, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(124, 16);
+            this.label8.TabIndex = 442;
+            this.label8.Text = "Current Balence :";
+            // 
             // Makepayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtcurrentbal);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.cmbCompanyName);
             this.Controls.Add(this.label7);
@@ -442,5 +485,7 @@
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2TextBox txtcurrentbal;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -326,6 +326,7 @@
             this.companyBankAccountToolStripMenuItem.Name = "companyBankAccountToolStripMenuItem";
             this.companyBankAccountToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.companyBankAccountToolStripMenuItem.Text = "Company Bank Account";
+            this.companyBankAccountToolStripMenuItem.Click += new System.EventHandler(this.companyBankAccountToolStripMenuItem_Click_1);
             // 
             // otherIncomeToolStripMenuItem
             // 
@@ -944,6 +945,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.Text = "Company Name";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

@@ -115,7 +115,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
+                string Query = string.Format("select OtherIncome from tbl_otherIncomeCaategory where OtherIncome  like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

@@ -58,7 +58,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);     
             dgvMakePayment.DataSource = dtable;
-
+            con.Close();
         }
         private void InsertData()
         {
@@ -88,7 +88,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Insert data Successfully");
-                
+                con.Close();
             }
         }
         
@@ -98,6 +98,7 @@ namespace sample
             txtinterestAmout.Text = "0";
             txtTotalAmount.Text = "0";
             cmbPaidFrom.Text = "";
+            txtcurrentbal.Text = "";
         }
         private void dgvMakePayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -112,11 +113,51 @@ namespace sample
     
         private void btnSave_Click(object sender, EventArgs e)
         {
+            calopenbal();
+            update_opening_bal();
             InsertData();
             fetchdetails();
             Cleardata();
         }
+        public void calopenbal()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
 
+            opening_bal = float.Parse(txtcurrentbal.Text);
+            amount = float.Parse(txtPrincipleAmount.Text);
+
+            remain_opening = opening_bal - amount;
+            txtcurrentbal.Text = remain_opening.ToString();
+        }
+        public void update_opening_bal()
+        {
+            try
+            {
+                con.Open();
+                String query = string.Format("update tbl_LoanBank set LoanAmount='" + txtcurrentbal.Text + "' where (AccountName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbCompanyName.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+
+            }
+        }
+        //public void calopenbal()
+        //{
+        //    float opening_bal = 0, amount = 0, remain_opening = 0;
+
+        //    opening_bal = float.Parse(txtCurrentBal.Text);
+        //    amount = float.Parse(txtTotal.Text);
+
+        //    remain_opening = opening_bal - amount;
+        //    txtCurrentBal.Text = remain_opening.ToString();
+        //}
         private void Makepayment_Load(object sender, EventArgs e)
         {
             fetchdetails();
@@ -253,6 +294,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -297,6 +339,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -320,6 +363,36 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbCompanyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string Query = String.Format("select LoanAmount from tbl_LoanBank where (AccountName='{0}') and Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY LoanAmount ", cmbCompanyName.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtcurrentbal.Text = dr["LoanAmount"].ToString();
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+            }
         }
     }
 }
