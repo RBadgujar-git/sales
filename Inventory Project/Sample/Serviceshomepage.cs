@@ -33,5 +33,10 @@ namespace sample
         {
 
         }
+
+        private void txtSearch1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

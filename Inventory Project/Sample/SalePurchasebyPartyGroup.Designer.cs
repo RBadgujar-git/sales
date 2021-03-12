@@ -39,6 +39,7 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.cmbGroup = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalepurchaseReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,11 +216,34 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // cmbGroup
+            // 
+            this.cmbGroup.BackColor = System.Drawing.Color.Transparent;
+            this.cmbGroup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGroup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbGroup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbGroup.FocusedState.Parent = this.cmbGroup;
+            this.cmbGroup.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
+            this.cmbGroup.ForeColor = System.Drawing.Color.Blue;
+            this.cmbGroup.HoverState.Parent = this.cmbGroup;
+            this.cmbGroup.ItemHeight = 30;
+            this.cmbGroup.Items.AddRange(new object[] {
+            "Party Group"});
+            this.cmbGroup.ItemsAppearance.Parent = this.cmbGroup;
+            this.cmbGroup.Location = new System.Drawing.Point(255, 23);
+            this.cmbGroup.Name = "cmbGroup";
+            this.cmbGroup.ShadowDecoration.Parent = this.cmbGroup;
+            this.cmbGroup.Size = new System.Drawing.Size(140, 36);
+            this.cmbGroup.StartIndex = 0;
+            this.cmbGroup.TabIndex = 453;
+            // 
             // SalePurchasebyPartyGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cmbGroup);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.cmbAAllfirms);
@@ -249,5 +273,6 @@
         private System.Windows.Forms.Button btnImport;
         private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbGroup;
     }
 }

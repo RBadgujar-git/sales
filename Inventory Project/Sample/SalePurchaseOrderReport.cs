@@ -41,7 +41,7 @@ namespace sample
             da.Fill(dt);
             con.Close();
             dgvSaleorder.AutoGenerateColumns = false;
-            dgvSaleorder.ColumnCount = 6;
+            dgvSaleorder.ColumnCount = 7;
             dgvSaleorder.Columns[0].HeaderText = "Date";
             dgvSaleorder.Columns[0].DataPropertyName = "OrderDate";
             dgvSaleorder.Columns[1].HeaderText = " Order No";
@@ -52,9 +52,11 @@ namespace sample
             dgvSaleorder.Columns[3].DataPropertyName = "PaymentType";
             dgvSaleorder.Columns[4].HeaderText = "Total";
             dgvSaleorder.Columns[4].DataPropertyName = "Total";
-           
             dgvSaleorder.Columns[5].HeaderText = " Status";
             dgvSaleorder.Columns[5].DataPropertyName = "Status";
+            dgvSaleorder.Columns[6].HeaderText = " TableName";
+            dgvSaleorder.Columns[6].DataPropertyName = "TableName";
+
             dgvSaleorder.DataSource = dt;
         }//BillDate,BillNo,PartyName,Pay
         private void Data()
@@ -106,7 +108,7 @@ namespace sample
             try
             {
                 //TableName
-                string SelectQuery = string.Format("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' union all select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
+                string SelectQuery = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -121,50 +123,50 @@ namespace sample
 
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string Tablename = cmbAlllFirms.SelectedItem.ToString();
-            if (Tablename == "Sale Order")
-            {
-                try
-                {
-                    //date = DateTime.Now.Month.ToString();
-                    //MessageBox.Show("moth o" + date);
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where  Sale Order(TableName)=" + Tablename + "  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(cmd);
-                    SDA.Fill(ds, "temp");
-                    dgvSaleorder.DataSource = ds;
-                    dgvSaleorder.DataMember = "temp";
-                    con.Close();
-                    Data();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            //string Tablename = cmbAlllFirms.SelectedItem.ToString();
+            //if (Tablename == "Sale Order")
+            //{
+            //    try
+            //    {
+            //        //date = DateTime.Now.Month.ToString();
+            //        //MessageBox.Show("moth o" + date);
+            //        con.Open();
+            //        SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where  Sale Order(TableName)=" + Tablename + "  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(cmd);
+            //        SDA.Fill(ds, "temp");
+            //        dgvSaleorder.DataSource = ds;
+            //        dgvSaleorder.DataMember = "temp";
+            //        con.Close();
+            //        Data();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
 
-            else if (Tablename == "Purchase Order")
-            {
-                try
-                {
-                    //date = DateTime.Now.Year.ToString();
+            //else if (Tablename == "Purchase Order")
+            //{
+            //    try
+            //    {
+            //        //date = DateTime.Now.Year.ToString();
 
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Purchase(TableName)=" + Tablename + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(cmd);
-                    SDA.Fill(ds, "temp");
-                    dgvSaleorder.DataSource = ds;
-                    dgvSaleorder.DataMember = "temp";
-                    con.Close();
-                    Data();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+            //        con.Open();
+            //        SqlCommand cmd = new SqlCommand("select OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Purchase(TableName)=" + Tablename + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(cmd);
+            //        SDA.Fill(ds, "temp");
+            //        dgvSaleorder.DataSource = ds;
+            //        dgvSaleorder.DataMember = "temp";
+            //        con.Close();
+            //        Data();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message);
+            //    }
+            //}
 
         }
 
@@ -179,6 +181,11 @@ namespace sample
         }
 
         private void cmbAlllFirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvSaleorder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

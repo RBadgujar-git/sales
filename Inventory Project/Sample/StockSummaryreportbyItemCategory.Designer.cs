@@ -72,11 +72,11 @@
             this.dgvStockSummary.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvStockSummary.EnableHeadersVisualStyles = false;
             this.dgvStockSummary.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvStockSummary.Location = new System.Drawing.Point(0, 128);
+            this.dgvStockSummary.Location = new System.Drawing.Point(0, 143);
             this.dgvStockSummary.Name = "dgvStockSummary";
             this.dgvStockSummary.RowHeadersVisible = false;
             this.dgvStockSummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStockSummary.Size = new System.Drawing.Size(1007, 398);
+            this.dgvStockSummary.Size = new System.Drawing.Size(1007, 383);
             this.dgvStockSummary.TabIndex = 113;
             this.dgvStockSummary.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvStockSummary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -169,12 +169,13 @@
             this.cmbAllFirms.Items.AddRange(new object[] {
             "All Firms"});
             this.cmbAllFirms.ItemsAppearance.Parent = this.cmbAllFirms;
-            this.cmbAllFirms.Location = new System.Drawing.Point(24, 9);
+            this.cmbAllFirms.Location = new System.Drawing.Point(164, 14);
             this.cmbAllFirms.Name = "cmbAllFirms";
             this.cmbAllFirms.ShadowDecoration.Parent = this.cmbAllFirms;
             this.cmbAllFirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllFirms.StartIndex = 0;
             this.cmbAllFirms.TabIndex = 210;
+            this.cmbAllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllFirms_SelectedIndexChanged);
             // 
             // label1
             // 
