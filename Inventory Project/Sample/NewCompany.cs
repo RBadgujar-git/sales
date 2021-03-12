@@ -22,6 +22,8 @@ namespace sample
         SqlCommand cmd;
         string id = "";
         public static string company_id;
+        public static string companyname;
+
         public NewCompany()
         {
             InitializeComponent();
@@ -215,12 +217,13 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
+                string Query = String.Format("select CompanyID,CompanyName,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,CompanyName,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                    company_id = dr["CompanyID"].ToString();
+                    companyname = dr["CompanyName"].ToString();
                     txtContactNo.Text = dr["PhoneNo"].ToString();
                     txtEmailID.Text = dr["EmailID"].ToString();
                     txtReferralCode.Text = dr["ReferaleCode"].ToString();

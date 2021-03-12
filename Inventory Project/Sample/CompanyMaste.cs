@@ -711,10 +711,15 @@ namespace sample
         {
             
         }
-
+       
         private void pictureBox1_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void txtcampanyName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

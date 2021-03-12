@@ -478,11 +478,10 @@ namespace sample
                 }
             }
         }
-       
+
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            //  itemtracking.Visible = true;
             itemtracking.Visible = true;
         }
 
@@ -702,7 +701,12 @@ namespace sample
 
         private void btnminimize_Click_1(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+           
+        }
+
+        private void txtItemName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

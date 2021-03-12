@@ -35,6 +35,7 @@ namespace sample
             cmbEntrytype.Text = "";
             txtAcoount.Text = "0";
             txtdescription.Text = "";
+            textBox1.Text = "";
         }
         private void fetchdetails()
         {
@@ -193,7 +194,7 @@ namespace sample
             }
             update_opening_bal();
             fetchdetails();
-            Cleardata();
+           
         }
         public void update_opening_bal()
         {
@@ -290,7 +291,9 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
-                finally { con.Close(); }
+                finally { con.Close();
+                    Cleardata();
+                }
             }
             else
             {
@@ -439,6 +442,16 @@ namespace sample
             { 
 
             }
+        }
+
+        private void dgvAdjustaccount_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

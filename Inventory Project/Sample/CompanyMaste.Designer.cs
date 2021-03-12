@@ -297,6 +297,7 @@
             this.txtcampanyName.ShadowDecoration.Parent = this.txtcampanyName;
             this.txtcampanyName.Size = new System.Drawing.Size(240, 24);
             this.txtcampanyName.TabIndex = 1;
+            this.txtcampanyName.TextChanged += new System.EventHandler(this.txtcampanyName_TextChanged);
             this.txtcampanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcampanyName_KeyPress);
             // 
             // txtAddress

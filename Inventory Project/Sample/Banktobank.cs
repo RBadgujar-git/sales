@@ -33,6 +33,7 @@ namespace sample
             txttobank.Text = "";
             txtAmount.Text = "0";
             txtDescription.Text = "";
+            textBox1.Text = "";
         }
         private void fetchdetails()
         {
@@ -156,7 +157,7 @@ namespace sample
             Insert();
            
             fetchdetails();
-            Cleardata();
+          //  Cleardata();
         }
 
 
