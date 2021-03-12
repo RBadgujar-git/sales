@@ -60,7 +60,8 @@ namespace sample
             //dgvPurchaseBill.DataSource = ds;
             //dgvPurchaseBill.DataMember = "temp";
             //con.Close();
-       //     Data();
+            //     Data();
+         
         }
         private void Bindadata()
         {
@@ -123,11 +124,24 @@ namespace sample
 
         public void Datacount()
         {
-            SqlCommand cmd = new SqlCommand("Select sum(Paid)",con);
 
+            con.Open();
 
+            SqlCommand cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
 
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@month",DateTime.Now.Month.ToString());
+            SqlDataReader dr = cmd.ExecuteReader();
 
+            while (dr.Read())
+            {
+
+                txtPaid.Text = dr[0].ToString();
+               txtUnpaid.Text = dr[1].ToString();
+
+            }
+            dr.Close();
+            con.Close();
 
         }
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -320,19 +334,7 @@ namespace sample
 
         private void dtpTodate_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                string SelectQuery = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvPurchaseBill.DataSource = ds;
-                dgvPurchaseBill.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
+           
             
         }
 
@@ -360,7 +362,19 @@ namespace sample
 
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                string SelectQuery = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Text + "' and '" + dtpTodate.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvPurchaseBill.DataSource = ds;
+                dgvPurchaseBill.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

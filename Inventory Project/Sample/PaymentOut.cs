@@ -88,7 +88,6 @@ namespace sample
                 {
                     MessageBox.Show("Party Name Is Required");
                 }
-
                 else
                 {
                     MemoryStream ms = new MemoryStream();
@@ -126,6 +125,8 @@ namespace sample
                     {
                         MessageBox.Show("Please try again");
                     }
+
+
                 }
             }
             catch (Exception ex)
@@ -411,6 +412,30 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cmbPartyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("select sum(Unpaid) from tbl_PartyMaster where PartyName="+cmbPartyName.Text+" and  Company_ID = '" + NewCompany.company_id + "'", con);       
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                 
+                }
+                dr.Close();
+              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

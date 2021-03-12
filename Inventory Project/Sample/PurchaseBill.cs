@@ -883,6 +883,7 @@ dr.Close();
                 txtTotal.Text = total.ToString();
             }
 
+
         }
 
         private void cmbtax_SelectedIndexChanged(object sender, EventArgs e)
@@ -918,49 +919,22 @@ dr.Close();
         {
             cal_Total();
         }
-        public int valid = 0;
-        public void validat()
-        {
-            if (ValidateChildren(ValidationConstraints.Enabled))
-            {
-               
-                valid = 1;
-            }
-       
-            //else if (ValidateChildren(ValidationConstraints.Enabled))
-            //{
-            //    MessageBox.Show(txtcon, "Demo App - Message!");
-            //}
-            //else if (ValidateChildren(ValidationConstraints.Enabled))
-            //{
-            //    MessageBox.Show(txtPONo, "Demo App - Message!");
+     
+            
 
-            //}
-            //else if (ValidateChildren(ValidationConstraints.Enabled))
-            //{
-            //    MessageBox.Show(txtrefNo, "Demo App - Message!");
-            //}
-            //else if (ValidateChildren(ValidationConstraints.Enabled))
-            //{
-            //    MessageBox.Show(cmbStatesupply, "Demo App - Message!");
-            //}
-          
-
-        }
+        
 
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            validat();
-            if (valid == 1)
-            {
+          
                 insertdata();
               //  bind_sale_details();
                 Clear_Text_data();
                 cleardata();
                 get_id();
-            }
+            
 
         }
 
@@ -1345,6 +1319,11 @@ dr.Close();
         }
 
         private void txtsubtotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
         {
 
         }
