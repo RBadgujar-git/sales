@@ -309,6 +309,12 @@
     <Compile Include="CompanyBankAccount.Designer.cs">
       <DependentUpon>CompanyBankAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="CompanyBankHomepage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompanyBankHomepage.Designer.cs">
+      <DependentUpon>CompanyBankHomepage.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompanyList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -922,6 +928,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyBankAccount.resx">
       <DependentUpon>CompanyBankAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyBankHomepage.resx">
+      <DependentUpon>CompanyBankHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyList.resx">
       <DependentUpon>CompanyList.cs</DependentUpon>

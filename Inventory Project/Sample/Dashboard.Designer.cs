@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewCompanyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,7 +94,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -110,6 +110,7 @@
             this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem5,
             this.toolStripMenuItem4,
             this.toolStripMenuItem3,
             this.toolStripMenuItem2,
@@ -128,11 +129,20 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1298, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1384, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "Home  ";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             this.menuStrip1.Click += new System.EventHandler(this.menuStrip1_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.BackColor = System.Drawing.Color.Brown;
+            this.toolStripMenuItem5.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(118, 20);
+            this.toolStripMenuItem5.Text = "Company Name";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -528,7 +538,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1037, 24);
+            this.panel1.Location = new System.Drawing.Point(1123, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 634);
             this.panel1.TabIndex = 4;
@@ -793,7 +803,6 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.guna2Panel4.Controls.Add(this.label1);
             this.guna2Panel4.Controls.Add(this.button1);
             this.guna2Panel4.Controls.Add(this.guna2Button1);
             this.guna2Panel4.Controls.Add(this.guna2TextBox2);
@@ -805,25 +814,16 @@
             this.guna2Panel4.Location = new System.Drawing.Point(0, 24);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(1037, 66);
+            this.guna2Panel4.Size = new System.Drawing.Size(1123, 66);
             this.guna2Panel4.TabIndex = 5;
             this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(789, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
             // 
             // button1
             // 
             this.button1.BackgroundImage = global::sample.Properties.Resources._3dot;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(981, 0);
+            this.button1.Location = new System.Drawing.Point(1067, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 66);
             this.button1.TabIndex = 0;
@@ -912,7 +912,10 @@
             // 
             this.panel3.AutoScroll = true;
             this.panel3.AutoSize = true;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.Color.White;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.MaximumSize = new System.Drawing.Size(1117, 660);
             this.panel3.Name = "panel3";
@@ -930,7 +933,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1298, 658);
+            this.ClientSize = new System.Drawing.Size(1384, 658);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -947,7 +950,6 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
-            this.guna2Panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,7 +1027,7 @@
         private System.Windows.Forms.ToolStripMenuItem barcodePrintToolStripMenuItem;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem companyBankAccountToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
     }
 }
 

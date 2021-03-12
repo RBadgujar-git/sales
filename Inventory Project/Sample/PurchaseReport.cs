@@ -60,6 +60,7 @@ namespace sample
             //dgvPurchaseBill.DataSource = ds;
             //dgvPurchaseBill.DataMember = "temp";
             //con.Close();
+       //     Data();
         }
         private void Bindadata()
         {
@@ -96,19 +97,38 @@ namespace sample
             //row = dgvexpense.Rows.Count - 2;
             ////dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
             //dgvexpense.CurrentCell = dgvexpense[1, row];
+
             //e.SuppressKeyPress = true;
+
             for (int i = 0; i < dgvPurchaseBill.Rows.Count; i++)
             {
-                TA += float.Parse(dgvPurchaseBill.Rows[i].Cells["Paid"].Value?.ToString());
-                txtPaid.Text = TA.ToString();
-                 TD += float.Parse(dgvPurchaseBill.Rows[i].Cells["RemainingBal"].Value?.ToString());
-                   txtUnpaid.Text = TD.ToString();
-              
-                   qty = float.Parse(txtPaid.Text.ToString());
-                   rate = float.Parse(txtUnpaid.Text.ToString());
-                 total = qty + rate;
-                  txtTotal.Text = total.ToString();
+                try
+                {
+                    TA += float.Parse(dgvPurchaseBill.Rows[i].Cells["Paid"].Value.ToString());
+                    txtPaid.Text = TA.ToString();
+                    TD += float.Parse(dgvPurchaseBill.Rows[i].Cells["RemainingBal"].Value.ToString());
+                    txtUnpaid.Text = TD.ToString();
+
+                    qty = float.Parse(txtPaid.Text.ToString());
+                    rate = float.Parse(txtUnpaid.Text.ToString());
+                    total = qty + rate;
+                    txtTotal.Text = total.ToString();
+                }
+                catch(Exception ew)
+                {
+                    MessageBox.Show(ew.Message);
+                }
             }
+        }
+
+        public void Datacount()
+        {
+            SqlCommand cmd = new SqlCommand("Select sum(Paid)",con);
+
+
+
+
+
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -186,7 +206,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+                   // Data();
                 }
                 catch (Exception ex)
                 {
@@ -208,7 +228,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+                //    Data();
                 }
                 catch (Exception ex)
                 {
@@ -229,7 +249,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+             //       Data();
 
                 }
                 catch (Exception ex)
@@ -250,7 +270,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+               //     Data();
                 }
                 catch (Exception ex)
                 {
@@ -261,15 +281,15 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                   con.Open();
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                    con.Close();
-                    Data();
+                  con.Close();
+                //    Data();
                 }
                 catch (Exception ex)
                 {

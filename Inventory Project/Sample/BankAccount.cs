@@ -108,6 +108,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
+                 
                     if (num > 0)
                     {
                         MessageBox.Show("Insert data Successfully");
@@ -127,17 +128,21 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            BankAccountHomePage cb = new BankAccountHomePage();
             Insert();
-            clearData();
-            fetchdetails();
+          
+            fetchdetails();          
+            cb.bindbankdata();
         }
 
       
 
         private void BankAccount_Load(object sender, EventArgs e)
         {
+            BankAccountHomePage cb = new BankAccountHomePage();
             fetchdetails();
             clearData();
+            cb.bindbankdata();
         }
 
        
