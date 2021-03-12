@@ -36,7 +36,6 @@
             this.txtadditional2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtadditional1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtrefNo = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmbtax = new Guna.UI2.WinForms.Guna2ComboBox();
             this.chkRoundOff = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtBallaance = new Guna.UI2.WinForms.Guna2TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -98,6 +97,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbtax = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.TxtIGST = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -141,6 +141,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.Delivery = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -162,15 +163,16 @@
             this.btnlinkPayment.BackColor = System.Drawing.Color.LimeGreen;
             this.btnlinkPayment.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlinkPayment.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnlinkPayment.Location = new System.Drawing.Point(339, 541);
+            this.btnlinkPayment.Location = new System.Drawing.Point(370, 554);
             this.btnlinkPayment.Name = "btnlinkPayment";
-            this.btnlinkPayment.Size = new System.Drawing.Size(130, 40);
+            this.btnlinkPayment.Size = new System.Drawing.Size(111, 40);
             this.btnlinkPayment.TabIndex = 22;
             this.btnlinkPayment.Text = "Link Payment";
             this.btnlinkPayment.UseVisualStyleBackColor = false;
             // 
             // txtadditional2
             // 
+            this.txtadditional2.BorderColor = System.Drawing.Color.Gray;
             this.txtadditional2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtadditional2.DefaultText = "";
             this.txtadditional2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -184,7 +186,7 @@
             this.txtadditional2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtadditional2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtadditional2.HoverState.Parent = this.txtadditional2;
-            this.txtadditional2.Location = new System.Drawing.Point(488, 470);
+            this.txtadditional2.Location = new System.Drawing.Point(334, 457);
             this.txtadditional2.Name = "txtadditional2";
             this.txtadditional2.PasswordChar = '\0';
             this.txtadditional2.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -197,6 +199,7 @@
             // 
             // txtadditional1
             // 
+            this.txtadditional1.BorderColor = System.Drawing.Color.Gray;
             this.txtadditional1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtadditional1.DefaultText = "";
             this.txtadditional1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -210,7 +213,7 @@
             this.txtadditional1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtadditional1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtadditional1.HoverState.Parent = this.txtadditional1;
-            this.txtadditional1.Location = new System.Drawing.Point(488, 428);
+            this.txtadditional1.Location = new System.Drawing.Point(334, 419);
             this.txtadditional1.Name = "txtadditional1";
             this.txtadditional1.PasswordChar = '\0';
             this.txtadditional1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -223,6 +226,7 @@
             // 
             // txtrefNo
             // 
+            this.txtrefNo.BorderColor = System.Drawing.Color.Gray;
             this.txtrefNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtrefNo.DefaultText = "";
             this.txtrefNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -236,7 +240,7 @@
             this.txtrefNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtrefNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtrefNo.HoverState.Parent = this.txtrefNo;
-            this.txtrefNo.Location = new System.Drawing.Point(488, 387);
+            this.txtrefNo.Location = new System.Drawing.Point(334, 382);
             this.txtrefNo.Name = "txtrefNo";
             this.txtrefNo.PasswordChar = '\0';
             this.txtrefNo.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -244,40 +248,8 @@
             this.txtrefNo.SelectedText = "";
             this.txtrefNo.ShadowDecoration.Parent = this.txtrefNo;
             this.txtrefNo.Size = new System.Drawing.Size(180, 24);
-            this.txtrefNo.TabIndex = 25;
+            this.txtrefNo.TabIndex = 11;
             this.txtrefNo.Visible = false;
-            // 
-            // cmbtax
-            // 
-            this.cmbtax.BackColor = System.Drawing.Color.Transparent;
-            this.cmbtax.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbtax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbtax.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbtax.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbtax.FocusedState.Parent = this.cmbtax;
-            this.cmbtax.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbtax.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbtax.HoverState.Parent = this.cmbtax;
-            this.cmbtax.ItemHeight = 30;
-            this.cmbtax.Items.AddRange(new object[] {
-            "0",
-            "2",
-            "3",
-            "5",
-            "9",
-            "12",
-            "15",
-            "18",
-            "24",
-            "30"});
-            this.cmbtax.ItemsAppearance.Parent = this.cmbtax;
-            this.cmbtax.Location = new System.Drawing.Point(699, 437);
-            this.cmbtax.Name = "cmbtax";
-            this.cmbtax.ShadowDecoration.Parent = this.cmbtax;
-            this.cmbtax.Size = new System.Drawing.Size(70, 36);
-            this.cmbtax.StartIndex = 0;
-            this.cmbtax.TabIndex = 224;
-            this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged);
             // 
             // chkRoundOff
             // 
@@ -289,7 +261,7 @@
             this.chkRoundOff.Location = new System.Drawing.Point(728, 487);
             this.chkRoundOff.Name = "chkRoundOff";
             this.chkRoundOff.Size = new System.Drawing.Size(103, 20);
-            this.chkRoundOff.TabIndex = 93;
+            this.chkRoundOff.TabIndex = 20;
             this.chkRoundOff.Text = "Round OFF ";
             this.chkRoundOff.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkRoundOff.UncheckedState.BorderRadius = 0;
@@ -323,6 +295,7 @@
             this.txtBallaance.ShadowDecoration.Parent = this.txtBallaance;
             this.txtBallaance.Size = new System.Drawing.Size(95, 24);
             this.txtBallaance.TabIndex = 92;
+            this.txtBallaance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBallaance_KeyPress);
             // 
             // button2
             // 
@@ -333,7 +306,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(1017, 4);
+            this.button2.Location = new System.Drawing.Point(996, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
             this.button2.TabIndex = 345;
@@ -342,6 +315,7 @@
             // 
             // txtRoundup
             // 
+            this.txtRoundup.BorderColor = System.Drawing.Color.Gray;
             this.txtRoundup.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtRoundup.DefaultText = "";
             this.txtRoundup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -355,10 +329,11 @@
             this.txtRoundup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtRoundup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoundup.HoverState.Parent = this.txtRoundup;
-            this.txtRoundup.Location = new System.Drawing.Point(837, 485);
+            this.txtRoundup.Location = new System.Drawing.Point(832, 484);
             this.txtRoundup.Name = "txtRoundup";
             this.txtRoundup.PasswordChar = '\0';
             this.txtRoundup.PlaceholderText = "";
+            this.txtRoundup.ReadOnly = true;
             this.txtRoundup.SelectedText = "";
             this.txtRoundup.ShadowDecoration.Parent = this.txtRoundup;
             this.txtRoundup.Size = new System.Drawing.Size(67, 25);
@@ -366,6 +341,7 @@
             // 
             // txtReceived
             // 
+            this.txtReceived.BorderColor = System.Drawing.Color.Gray;
             this.txtReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReceived.DefaultText = "0";
             this.txtReceived.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -389,11 +365,12 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(95, 24);
-            this.txtReceived.TabIndex = 24;
+            this.txtReceived.TabIndex = 19;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             // 
             // txtDisAmount
             // 
+            this.txtDisAmount.BorderColor = System.Drawing.Color.Gray;
             this.txtDisAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDisAmount.DefaultText = "0";
             this.txtDisAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -407,19 +384,22 @@
             this.txtDisAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDisAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDisAmount.HoverState.Parent = this.txtDisAmount;
-            this.txtDisAmount.Location = new System.Drawing.Point(982, 389);
+            this.txtDisAmount.Location = new System.Drawing.Point(982, 384);
             this.txtDisAmount.Name = "txtDisAmount";
             this.txtDisAmount.PasswordChar = '\0';
             this.txtDisAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtDisAmount.PlaceholderText = "";
+            this.txtDisAmount.ReadOnly = true;
             this.txtDisAmount.SelectedText = "";
             this.txtDisAmount.SelectionStart = 1;
             this.txtDisAmount.ShadowDecoration.Parent = this.txtDisAmount;
             this.txtDisAmount.Size = new System.Drawing.Size(95, 24);
             this.txtDisAmount.TabIndex = 87;
+            this.txtDisAmount.TextChanged += new System.EventHandler(this.txtDisAmount_TextChanged);
             // 
             // txtDiscount
             // 
+            this.txtDiscount.BorderColor = System.Drawing.Color.Gray;
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiscount.DefaultText = "";
             this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -433,18 +413,20 @@
             this.txtDiscount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscount.HoverState.Parent = this.txtDiscount;
-            this.txtDiscount.Location = new System.Drawing.Point(883, 390);
+            this.txtDiscount.Location = new System.Drawing.Point(883, 385);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
             this.txtDiscount.SelectedText = "";
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(95, 24);
-            this.txtDiscount.TabIndex = 20;
+            this.txtDiscount.TabIndex = 17;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // txtVehicleNo
             // 
+            this.txtVehicleNo.BorderColor = System.Drawing.Color.Gray;
             this.txtVehicleNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtVehicleNo.DefaultText = "";
             this.txtVehicleNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -458,7 +440,7 @@
             this.txtVehicleNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtVehicleNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtVehicleNo.HoverState.Parent = this.txtVehicleNo;
-            this.txtVehicleNo.Location = new System.Drawing.Point(139, 545);
+            this.txtVehicleNo.Location = new System.Drawing.Point(139, 537);
             this.txtVehicleNo.MaxLength = 8;
             this.txtVehicleNo.Name = "txtVehicleNo";
             this.txtVehicleNo.PasswordChar = '\0';
@@ -466,11 +448,12 @@
             this.txtVehicleNo.SelectedText = "";
             this.txtVehicleNo.ShadowDecoration.Parent = this.txtVehicleNo;
             this.txtVehicleNo.Size = new System.Drawing.Size(180, 24);
-            this.txtVehicleNo.TabIndex = 18;
+            this.txtVehicleNo.TabIndex = 15;
             this.txtVehicleNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVehicleNo_KeyPress);
             // 
             // txtDeliveryLoc
             // 
+            this.txtDeliveryLoc.BorderColor = System.Drawing.Color.Gray;
             this.txtDeliveryLoc.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDeliveryLoc.DefaultText = "";
             this.txtDeliveryLoc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -484,7 +467,7 @@
             this.txtDeliveryLoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDeliveryLoc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDeliveryLoc.HoverState.Parent = this.txtDeliveryLoc;
-            this.txtDeliveryLoc.Location = new System.Drawing.Point(139, 503);
+            this.txtDeliveryLoc.Location = new System.Drawing.Point(139, 502);
             this.txtDeliveryLoc.MaxLength = 150;
             this.txtDeliveryLoc.Name = "txtDeliveryLoc";
             this.txtDeliveryLoc.PasswordChar = '\0';
@@ -492,10 +475,12 @@
             this.txtDeliveryLoc.SelectedText = "";
             this.txtDeliveryLoc.ShadowDecoration.Parent = this.txtDeliveryLoc;
             this.txtDeliveryLoc.Size = new System.Drawing.Size(180, 24);
-            this.txtDeliveryLoc.TabIndex = 17;
+            this.txtDeliveryLoc.TabIndex = 14;
+            this.txtDeliveryLoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeliveryLoc_KeyPress);
             // 
             // txtTransportName
             // 
+            this.txtTransportName.BorderColor = System.Drawing.Color.Gray;
             this.txtTransportName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTransportName.DefaultText = "";
             this.txtTransportName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -509,7 +494,7 @@
             this.txtTransportName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTransportName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTransportName.HoverState.Parent = this.txtTransportName;
-            this.txtTransportName.Location = new System.Drawing.Point(139, 473);
+            this.txtTransportName.Location = new System.Drawing.Point(139, 472);
             this.txtTransportName.MaxLength = 20;
             this.txtTransportName.Name = "txtTransportName";
             this.txtTransportName.PasswordChar = '\0';
@@ -517,11 +502,12 @@
             this.txtTransportName.SelectedText = "";
             this.txtTransportName.ShadowDecoration.Parent = this.txtTransportName;
             this.txtTransportName.Size = new System.Drawing.Size(180, 24);
-            this.txtTransportName.TabIndex = 16;
+            this.txtTransportName.TabIndex = 13;
             this.txtTransportName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransportName_KeyPress);
             // 
             // txtDescription
             // 
+            this.txtDescription.BorderColor = System.Drawing.Color.Gray;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescription.DefaultText = "";
             this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -535,7 +521,7 @@
             this.txtDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(139, 415);
+            this.txtDescription.Location = new System.Drawing.Point(139, 414);
             this.txtDescription.MaxLength = 200;
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
@@ -544,7 +530,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(180, 51);
-            this.txtDescription.TabIndex = 15;
+            this.txtDescription.TabIndex = 12;
             // 
             // sr_no
             // 
@@ -553,6 +539,7 @@
             // 
             // txtTaxAmount
             // 
+            this.txtTaxAmount.BorderColor = System.Drawing.Color.Gray;
             this.txtTaxAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTaxAmount.DefaultText = "0";
             this.txtTaxAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -589,6 +576,7 @@
             // 
             // txtsubtotal
             // 
+            this.txtsubtotal.BorderColor = System.Drawing.Color.Gray;
             this.txtsubtotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtsubtotal.DefaultText = "";
             this.txtsubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -606,10 +594,11 @@
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.PasswordChar = '\0';
             this.txtsubtotal.PlaceholderText = "";
+            this.txtsubtotal.ReadOnly = true;
             this.txtsubtotal.SelectedText = "";
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(95, 24);
-            this.txtsubtotal.TabIndex = 214;
+            this.txtsubtotal.TabIndex = 0;
             // 
             // button4
             // 
@@ -620,7 +609,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(976, 1);
+            this.button4.Location = new System.Drawing.Point(958, 0);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 34);
             this.button4.TabIndex = 456;
@@ -642,7 +631,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(574, 540);
+            this.btnUpdate.Location = new System.Drawing.Point(582, 552);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
             this.btnUpdate.TabIndex = 24;
@@ -653,7 +642,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(903, 419);
+            this.label37.Location = new System.Drawing.Point(915, 419);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(44, 16);
             this.label37.TabIndex = 106;
@@ -662,7 +651,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(837, 419);
+            this.label35.Location = new System.Drawing.Point(842, 419);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 16);
             this.label35.TabIndex = 105;
@@ -670,6 +659,7 @@
             // 
             // txtsgst
             // 
+            this.txtsgst.BorderColor = System.Drawing.Color.Gray;
             this.txtsgst.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtsgst.DefaultText = "";
             this.txtsgst.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -695,6 +685,7 @@
             // 
             // txtcgst
             // 
+            this.txtcgst.BorderColor = System.Drawing.Color.Gray;
             this.txtcgst.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcgst.DefaultText = "";
             this.txtcgst.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -708,7 +699,7 @@
             this.txtcgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcgst.HoverState.Parent = this.txtcgst;
-            this.txtcgst.Location = new System.Drawing.Point(839, 438);
+            this.txtcgst.Location = new System.Drawing.Point(841, 439);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
@@ -720,6 +711,7 @@
             // 
             // txtcon
             // 
+            this.txtcon.BorderColor = System.Drawing.Color.Gray;
             this.txtcon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtcon.DefaultText = "";
             this.txtcon.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -733,7 +725,7 @@
             this.txtcon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcon.HoverState.Parent = this.txtcon;
-            this.txtcon.Location = new System.Drawing.Point(114, 137);
+            this.txtcon.Location = new System.Drawing.Point(114, 135);
             this.txtcon.MaxLength = 10;
             this.txtcon.Name = "txtcon";
             this.txtcon.PasswordChar = '\0';
@@ -741,7 +733,7 @@
             this.txtcon.SelectedText = "";
             this.txtcon.ShadowDecoration.Parent = this.txtcon;
             this.txtcon.Size = new System.Drawing.Size(181, 24);
-            this.txtcon.TabIndex = 2;
+            this.txtcon.TabIndex = 0;
             this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress);
             // 
             // label36
@@ -866,19 +858,23 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1074, 91);
-            this.guna2ShadowPanel1.TabIndex = 11;
+            this.guna2ShadowPanel1.TabIndex = 9;
             // 
             // txtItemName
             // 
+            this.txtItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.txtItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtItemName.FormattingEnabled = true;
             this.txtItemName.Location = new System.Drawing.Point(10, 45);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(95, 22);
-            this.txtItemName.TabIndex = 9;
+            this.txtItemName.TabIndex = 1;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
+            this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
             // txtItemTotal
             // 
+            this.txtItemTotal.BorderColor = System.Drawing.Color.Gray;
             this.txtItemTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItemTotal.DefaultText = "00";
             this.txtItemTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -902,7 +898,7 @@
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(90, 28);
-            this.txtItemTotal.TabIndex = 13;
+            this.txtItemTotal.TabIndex = 0;
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
             // label34
@@ -916,6 +912,7 @@
             // 
             // txtDisAmt
             // 
+            this.txtDisAmt.BorderColor = System.Drawing.Color.Gray;
             this.txtDisAmt.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDisAmt.DefaultText = "0";
             this.txtDisAmt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -934,14 +931,16 @@
             this.txtDisAmt.PasswordChar = '\0';
             this.txtDisAmt.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtDisAmt.PlaceholderText = "";
+            this.txtDisAmt.ReadOnly = true;
             this.txtDisAmt.SelectedText = "";
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(90, 28);
-            this.txtDisAmt.TabIndex = 889;
+            this.txtDisAmt.TabIndex = 0;
             // 
             // txtDis
             // 
+            this.txtDis.BorderColor = System.Drawing.Color.Gray;
             this.txtDis.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDis.DefaultText = "0";
             this.txtDis.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -964,8 +963,9 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(90, 28);
-            this.txtDis.TabIndex = 10;
+            this.txtDis.TabIndex = 2;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
+            this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
             // 
             // label32
             // 
@@ -987,6 +987,7 @@
             // 
             // txtTaxAMount1
             // 
+            this.txtTaxAMount1.BorderColor = System.Drawing.Color.Gray;
             this.txtTaxAMount1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTaxAMount1.DefaultText = "0";
             this.txtTaxAMount1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1010,7 +1011,7 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(90, 28);
-            this.txtTaxAMount1.TabIndex = 965;
+            this.txtTaxAMount1.TabIndex = 0;
             // 
             // label31
             // 
@@ -1023,6 +1024,7 @@
             // 
             // txtTax1
             // 
+            this.txtTax1.BorderColor = System.Drawing.Color.Gray;
             this.txtTax1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTax1.DefaultText = "0";
             this.txtTax1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1041,11 +1043,12 @@
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtTax1.PlaceholderText = "";
+            this.txtTax1.ReadOnly = true;
             this.txtTax1.SelectedText = "";
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(90, 28);
-            this.txtTax1.TabIndex = 567;
+            this.txtTax1.TabIndex = 0;
             // 
             // label30
             // 
@@ -1058,6 +1061,7 @@
             // 
             // txtMRP
             // 
+            this.txtMRP.BorderColor = System.Drawing.Color.Gray;
             this.txtMRP.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMRP.DefaultText = "";
             this.txtMRP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1079,7 +1083,7 @@
             this.txtMRP.SelectedText = "";
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(90, 28);
-            this.txtMRP.TabIndex = 367;
+            this.txtMRP.TabIndex = 0;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             // 
             // label29
@@ -1093,6 +1097,7 @@
             // 
             // txtUnit
             // 
+            this.txtUnit.BorderColor = System.Drawing.Color.Gray;
             this.txtUnit.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUnit.DefaultText = "";
             this.txtUnit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1110,10 +1115,11 @@
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "";
+            this.txtUnit.ReadOnly = true;
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(90, 28);
-            this.txtUnit.TabIndex = 267;
+            this.txtUnit.TabIndex = 0;
             // 
             // label28
             // 
@@ -1126,6 +1132,7 @@
             // 
             // txtFreeQty
             // 
+            this.txtFreeQty.BorderColor = System.Drawing.Color.Gray;
             this.txtFreeQty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFreeQty.DefaultText = "0";
             this.txtFreeQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1148,8 +1155,9 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(90, 28);
-            this.txtFreeQty.TabIndex = 12;
+            this.txtFreeQty.TabIndex = 4;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
+            this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
             // 
             // label27
             // 
@@ -1162,6 +1170,7 @@
             // 
             // txtItemCode
             // 
+            this.txtItemCode.BorderColor = System.Drawing.Color.Gray;
             this.txtItemCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItemCode.DefaultText = "";
             this.txtItemCode.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1183,7 +1192,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(90, 28);
-            this.txtItemCode.TabIndex = 567;
+            this.txtItemCode.TabIndex = 0;
             // 
             // label21
             // 
@@ -1205,6 +1214,7 @@
             // 
             // txtOty
             // 
+            this.txtOty.BorderColor = System.Drawing.Color.Gray;
             this.txtOty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOty.DefaultText = "0";
             this.txtOty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1227,8 +1237,9 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(90, 28);
-            this.txtOty.TabIndex = 11;
+            this.txtOty.TabIndex = 3;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
+            this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
             // label23
             // 
@@ -1319,7 +1330,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(729, 46);
+            this.label20.Location = new System.Drawing.Point(765, 48);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(88, 16);
             this.label20.TabIndex = 41;
@@ -1334,7 +1345,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(1053, 2);
+            this.button3.Location = new System.Drawing.Point(1057, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
             this.button3.TabIndex = 256;
@@ -1346,6 +1357,7 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.cmbtax);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.TxtIGST);
             this.panel1.Controls.Add(this.comboBox1);
@@ -1379,7 +1391,6 @@
             this.panel1.Controls.Add(this.txtadditional2);
             this.panel1.Controls.Add(this.txtadditional1);
             this.panel1.Controls.Add(this.txtrefNo);
-            this.panel1.Controls.Add(this.cmbtax);
             this.panel1.Controls.Add(this.chkRoundOff);
             this.panel1.Controls.Add(this.txtBallaance);
             this.panel1.Controls.Add(this.txtTotal);
@@ -1421,13 +1432,34 @@
             this.panel1.Location = new System.Drawing.Point(-1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1094, 605);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cmbtax
+            // 
+            this.cmbtax.FormattingEnabled = true;
+            this.cmbtax.Items.AddRange(new object[] {
+            "0",
+            "2",
+            "3",
+            "5",
+            "9",
+            "12",
+            "15",
+            "18",
+            "24",
+            "30"});
+            this.cmbtax.Location = new System.Drawing.Point(696, 441);
+            this.cmbtax.Name = "cmbtax";
+            this.cmbtax.Size = new System.Drawing.Size(71, 24);
+            this.cmbtax.TabIndex = 18;
+            this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged_1);
+            this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(781, 421);
+            this.label10.Location = new System.Drawing.Point(776, 421);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 689;
@@ -1435,6 +1467,7 @@
             // 
             // TxtIGST
             // 
+            this.TxtIGST.BorderColor = System.Drawing.Color.Gray;
             this.TxtIGST.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.TxtIGST.DefaultText = "";
             this.TxtIGST.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1448,10 +1481,11 @@
             this.TxtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TxtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtIGST.HoverState.Parent = this.TxtIGST;
-            this.TxtIGST.Location = new System.Drawing.Point(773, 439);
+            this.TxtIGST.Location = new System.Drawing.Point(776, 439);
             this.TxtIGST.Name = "TxtIGST";
             this.TxtIGST.PasswordChar = '\0';
             this.TxtIGST.PlaceholderText = "";
+            this.TxtIGST.ReadOnly = true;
             this.TxtIGST.SelectedText = "";
             this.TxtIGST.ShadowDecoration.Parent = this.TxtIGST;
             this.TxtIGST.Size = new System.Drawing.Size(57, 25);
@@ -1467,10 +1501,11 @@
             this.comboBox1.Size = new System.Drawing.Size(182, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(470, 152);
+            this.textBox1.Location = new System.Drawing.Point(470, 151);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 23);
             this.textBox1.TabIndex = 5;
@@ -1487,7 +1522,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(704, 368);
+            this.label15.Location = new System.Drawing.Point(613, 391);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 16);
             this.label15.TabIndex = 127;
@@ -1498,7 +1533,7 @@
             this.buttprint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.buttprint.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttprint.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.buttprint.Location = new System.Drawing.Point(673, 540);
+            this.buttprint.Location = new System.Drawing.Point(677, 552);
             this.buttprint.Name = "buttprint";
             this.buttprint.Size = new System.Drawing.Size(90, 42);
             this.buttprint.TabIndex = 25;
@@ -1511,17 +1546,18 @@
             this.butClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.butClear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.butClear.Location = new System.Drawing.Point(773, 540);
+            this.butClear.Location = new System.Drawing.Point(773, 552);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(90, 42);
             this.butClear.TabIndex = 26;
             this.butClear.Text = "Clear";
             this.butClear.UseVisualStyleBackColor = false;
+            this.butClear.Click += new System.EventHandler(this.butClear_Click);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(915, 577);
+            this.label14.Location = new System.Drawing.Point(915, 575);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(63, 16);
             this.label14.TabIndex = 124;
@@ -1537,7 +1573,7 @@
             "Paid",
             "Partial",
             "Unpaid"});
-            this.ComboBox.Location = new System.Drawing.Point(981, 574);
+            this.ComboBox.Location = new System.Drawing.Point(981, 572);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(98, 24);
             this.ComboBox.TabIndex = 21;
@@ -1554,19 +1590,21 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(139, 381);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(180, 24);
-            this.cmbPaymentType.TabIndex = 14;
+            this.cmbPaymentType.TabIndex = 10;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
+            this.cmbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaymentType_KeyPress);
             // 
             // cmbCategory
             // 
             this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(819, 138);
+            this.cmbCategory.Location = new System.Drawing.Point(856, 138);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(182, 24);
             this.cmbCategory.TabIndex = 8;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged_1);
+            this.cmbCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCategory_KeyPress);
             // 
             // cmbStatesupply
             // 
@@ -1602,25 +1640,26 @@
             "Uttar Pradesh",
             "Uttarakhand",
             "West Bengal"});
-            this.cmbStatesupply.Location = new System.Drawing.Point(470, 125);
+            this.cmbStatesupply.Location = new System.Drawing.Point(470, 123);
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(182, 24);
             this.cmbStatesupply.TabIndex = 4;
+            this.cmbStatesupply.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbStatesupply_KeyPress);
             // 
             // DtpdeliveryDate
             // 
             this.DtpdeliveryDate.CustomFormat = "MM/dd/yyyy";
             this.DtpdeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtpdeliveryDate.Location = new System.Drawing.Point(139, 579);
+            this.DtpdeliveryDate.Location = new System.Drawing.Point(139, 571);
             this.DtpdeliveryDate.Name = "DtpdeliveryDate";
             this.DtpdeliveryDate.Size = new System.Drawing.Size(180, 23);
-            this.DtpdeliveryDate.TabIndex = 19;
+            this.DtpdeliveryDate.TabIndex = 16;
             // 
             // dtpInvoice
             // 
             this.dtpInvoice.CustomFormat = "MM/dd/yyyy";
             this.dtpInvoice.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpInvoice.Location = new System.Drawing.Point(819, 80);
+            this.dtpInvoice.Location = new System.Drawing.Point(856, 80);
             this.dtpInvoice.Name = "dtpInvoice";
             this.dtpInvoice.Size = new System.Drawing.Size(182, 23);
             this.dtpInvoice.TabIndex = 6;
@@ -1629,7 +1668,7 @@
             // 
             this.dtpDueDate.CustomFormat = "MM/dd/yyyy";
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDueDate.Location = new System.Drawing.Point(819, 109);
+            this.dtpDueDate.Location = new System.Drawing.Point(856, 109);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(181, 23);
             this.dtpDueDate.TabIndex = 7;
@@ -1644,11 +1683,12 @@
             this.cmbpartyname.Size = new System.Drawing.Size(182, 24);
             this.cmbpartyname.TabIndex = 114;
             this.cmbpartyname.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
+            this.cmbpartyname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbpartyname_KeyPress);
             // 
             // chkenble
             // 
             this.chkenble.AutoSize = true;
-            this.chkenble.Location = new System.Drawing.Point(913, 48);
+            this.chkenble.Location = new System.Drawing.Point(950, 48);
             this.chkenble.Name = "chkenble";
             this.chkenble.Size = new System.Drawing.Size(70, 20);
             this.chkenble.TabIndex = 113;
@@ -1659,7 +1699,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(703, 143);
+            this.label38.Location = new System.Drawing.Point(739, 143);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(114, 16);
             this.label38.TabIndex = 112;
@@ -1667,6 +1707,7 @@
             // 
             // txtBillingadd
             // 
+            this.txtBillingadd.BorderColor = System.Drawing.Color.Gray;
             this.txtBillingadd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBillingadd.DefaultText = "";
             this.txtBillingadd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1680,18 +1721,19 @@
             this.txtBillingadd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBillingadd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingadd.HoverState.Parent = this.txtBillingadd;
-            this.txtBillingadd.Location = new System.Drawing.Point(470, 72);
+            this.txtBillingadd.Location = new System.Drawing.Point(470, 71);
             this.txtBillingadd.Multiline = true;
             this.txtBillingadd.Name = "txtBillingadd";
             this.txtBillingadd.PasswordChar = '\0';
             this.txtBillingadd.PlaceholderText = "";
             this.txtBillingadd.SelectedText = "";
             this.txtBillingadd.ShadowDecoration.Parent = this.txtBillingadd;
-            this.txtBillingadd.Size = new System.Drawing.Size(182, 49);
+            this.txtBillingadd.Size = new System.Drawing.Size(182, 47);
             this.txtBillingadd.TabIndex = 3;
             // 
             // txtReturnNo
             // 
+            this.txtReturnNo.BorderColor = System.Drawing.Color.Gray;
             this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReturnNo.DefaultText = "";
             this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1705,7 +1747,7 @@
             this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(826, 42);
+            this.txtReturnNo.Location = new System.Drawing.Point(856, 44);
             this.txtReturnNo.MaxLength = 15;
             this.txtReturnNo.Name = "txtReturnNo";
             this.txtReturnNo.PasswordChar = '\0';
@@ -1718,6 +1760,7 @@
             // 
             // txtBillingName
             // 
+            this.txtBillingName.BorderColor = System.Drawing.Color.Gray;
             this.txtBillingName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBillingName.DefaultText = "";
             this.txtBillingName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1731,7 +1774,7 @@
             this.txtBillingName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBillingName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingName.HoverState.Parent = this.txtBillingName;
-            this.txtBillingName.Location = new System.Drawing.Point(470, 43);
+            this.txtBillingName.Location = new System.Drawing.Point(470, 42);
             this.txtBillingName.MaxLength = 50;
             this.txtBillingName.Name = "txtBillingName";
             this.txtBillingName.PasswordChar = '\0';
@@ -1744,6 +1787,7 @@
             // 
             // txtPartyAdd
             // 
+            this.txtPartyAdd.BorderColor = System.Drawing.Color.Gray;
             this.txtPartyAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPartyAdd.DefaultText = "";
             this.txtPartyAdd.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -1757,14 +1801,14 @@
             this.txtPartyAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPartyAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPartyAdd.HoverState.Parent = this.txtPartyAdd;
-            this.txtPartyAdd.Location = new System.Drawing.Point(113, 82);
+            this.txtPartyAdd.Location = new System.Drawing.Point(113, 79);
             this.txtPartyAdd.Name = "txtPartyAdd";
             this.txtPartyAdd.PasswordChar = '\0';
             this.txtPartyAdd.PlaceholderText = "";
             this.txtPartyAdd.SelectedText = "";
             this.txtPartyAdd.ShadowDecoration.Parent = this.txtPartyAdd;
             this.txtPartyAdd.Size = new System.Drawing.Size(182, 48);
-            this.txtPartyAdd.TabIndex = 1;
+            this.txtPartyAdd.TabIndex = 0;
             // 
             // label25
             // 
@@ -1778,11 +1822,11 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(728, 418);
+            this.label24.Location = new System.Drawing.Point(702, 421);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 16);
+            this.label24.Size = new System.Drawing.Size(35, 16);
             this.label24.TabIndex = 66;
-            this.label24.Text = "Tax :";
+            this.label24.Text = "Tax ";
             // 
             // label22
             // 
@@ -1796,7 +1840,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(804, 393);
+            this.label19.Location = new System.Drawing.Point(804, 389);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(76, 16);
             this.label19.TabIndex = 56;
@@ -1814,7 +1858,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(29, 579);
+            this.label16.Location = new System.Drawing.Point(29, 576);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 16);
             this.label16.TabIndex = 50;
@@ -1825,7 +1869,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(477, 540);
+            this.btnSave.Location = new System.Drawing.Point(487, 552);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 23;
@@ -1836,7 +1880,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(716, 79);
+            this.label1.Location = new System.Drawing.Point(750, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 16);
             this.label1.TabIndex = 42;
@@ -1845,7 +1889,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(713, 110);
+            this.label13.Location = new System.Drawing.Point(773, 113);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 16);
             this.label13.TabIndex = 42;
@@ -1854,7 +1898,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 508);
+            this.label11.Location = new System.Drawing.Point(4, 507);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 16);
             this.label11.TabIndex = 36;
@@ -1881,7 +1925,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 478);
+            this.label8.Location = new System.Drawing.Point(18, 477);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 16);
             this.label8.TabIndex = 24;
@@ -1890,7 +1934,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 420);
+            this.label7.Location = new System.Drawing.Point(44, 419);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
             this.label7.TabIndex = 23;
@@ -1944,6 +1988,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.Delivery);
             this.panel3.Controls.Add(this.label39);
             this.panel3.Controls.Add(this.button4);
@@ -1955,6 +2000,21 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1094, 38);
             this.panel3.TabIndex = 16;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(1028, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 791;
+            this.btnminimize.UseVisualStyleBackColor = false;
             // 
             // Delivery
             // 
@@ -2006,7 +2066,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtadditional2;
         private Guna.UI2.WinForms.Guna2TextBox txtadditional1;
         private Guna.UI2.WinForms.Guna2TextBox txtrefNo;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbtax;
         private Guna.UI2.WinForms.Guna2CheckBox chkRoundOff;
         protected Guna.UI2.WinForms.Guna2TextBox txtBallaance;
         private System.Windows.Forms.Button button2;
@@ -2113,5 +2172,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox TxtIGST;
+        private System.Windows.Forms.ComboBox cmbtax;
+        private System.Windows.Forms.Button btnminimize;
     }
 }

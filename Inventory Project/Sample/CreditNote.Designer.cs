@@ -40,7 +40,6 @@
             this.label36 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.txtItemName = new System.Windows.Forms.ComboBox();
-            this.txtItemTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.txtDisAmt = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDis = new Guna.UI2.WinForms.Guna2TextBox();
@@ -146,6 +145,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.Credit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtItemTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerCreditNote)).BeginInit();
@@ -315,36 +315,6 @@
             this.txtItemName.TabIndex = 1;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
-            // 
-            // txtItemTotal
-            // 
-            this.txtItemTotal.BorderColor = System.Drawing.Color.Gray;
-            this.txtItemTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtItemTotal.DefaultText = "00";
-            this.txtItemTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtItemTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtItemTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtItemTotal.DisabledState.Parent = this.txtItemTotal;
-            this.txtItemTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtItemTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtItemTotal.FocusedState.Parent = this.txtItemTotal;
-            this.txtItemTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtItemTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtItemTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtItemTotal.HoverState.Parent = this.txtItemTotal;
-            this.txtItemTotal.Location = new System.Drawing.Point(990, 41);
-            this.txtItemTotal.Name = "txtItemTotal";
-            this.txtItemTotal.PasswordChar = '\0';
-            this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtItemTotal.PlaceholderText = "";
-            this.txtItemTotal.ReadOnly = true;
-            this.txtItemTotal.SelectedText = "";
-            this.txtItemTotal.SelectionStart = 2;
-            this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
-            this.txtItemTotal.Size = new System.Drawing.Size(100, 24);
-            this.txtItemTotal.TabIndex = 5;
-            this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
-            this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
             // label34
             // 
@@ -778,6 +748,7 @@
             this.txtrefNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtrefNo.HoverState.Parent = this.txtrefNo;
             this.txtrefNo.Location = new System.Drawing.Point(362, 372);
+            this.txtrefNo.MaxLength = 6;
             this.txtrefNo.Name = "txtrefNo";
             this.txtrefNo.PasswordChar = '\0';
             this.txtrefNo.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1548,6 +1519,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -2048,6 +2020,36 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
+            // txtItemTotal
+            // 
+            this.txtItemTotal.BorderColor = System.Drawing.Color.Gray;
+            this.txtItemTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtItemTotal.DefaultText = "00";
+            this.txtItemTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtItemTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtItemTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtItemTotal.DisabledState.Parent = this.txtItemTotal;
+            this.txtItemTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtItemTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtItemTotal.FocusedState.Parent = this.txtItemTotal;
+            this.txtItemTotal.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtItemTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtItemTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtItemTotal.HoverState.Parent = this.txtItemTotal;
+            this.txtItemTotal.Location = new System.Drawing.Point(990, 41);
+            this.txtItemTotal.Name = "txtItemTotal";
+            this.txtItemTotal.PasswordChar = '\0';
+            this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtItemTotal.PlaceholderText = "";
+            this.txtItemTotal.ReadOnly = true;
+            this.txtItemTotal.SelectedText = "";
+            this.txtItemTotal.SelectionStart = 2;
+            this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
+            this.txtItemTotal.Size = new System.Drawing.Size(100, 24);
+            this.txtItemTotal.TabIndex = 5;
+            this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
+            this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
+            // 
             // CreditNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2083,7 +2085,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtcon;
         private System.Windows.Forms.Label label36;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2TextBox txtItemTotal;
         private System.Windows.Forms.Label label34;
         private Guna.UI2.WinForms.Guna2TextBox txtDisAmt;
         private Guna.UI2.WinForms.Guna2TextBox txtDis;
@@ -2190,5 +2191,6 @@
         private System.Windows.Forms.CheckBox chkenble;
         private Guna.UI2.WinForms.Guna2TextBox txtReturnNo;
         private System.Windows.Forms.Label label20;
+        private Guna.UI2.WinForms.Guna2TextBox txtItemTotal;
     }
 }
