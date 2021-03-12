@@ -1170,12 +1170,7 @@ namespace sample
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             AddMore BA = new AddMore();
-            // BA.TopLevel = false;
-          //  BA.AutoScroll = true;
-         //   this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //BA.Dock = DockStyle.Fill;
-          //  BA.Visible = true;
+         
             BA.Show();
         }
 
@@ -1256,6 +1251,13 @@ namespace sample
                 expensesObject.Show();
                 return true;
             }
+            if (keyData == (Keys.Alt | Keys.C))
+            {
+                CompanyList companylistobjct = new CompanyList();
+                companylistobjct.Show();
+                return true;
+            }
+
             return base.ProcessCmdKey(ref msg, keyData);
         }
 

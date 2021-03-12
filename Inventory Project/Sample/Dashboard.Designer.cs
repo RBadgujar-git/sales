@@ -94,6 +94,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -326,7 +327,6 @@
             this.companyBankAccountToolStripMenuItem.Name = "companyBankAccountToolStripMenuItem";
             this.companyBankAccountToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.companyBankAccountToolStripMenuItem.Text = "Company Bank Account";
-            this.companyBankAccountToolStripMenuItem.Click += new System.EventHandler(this.companyBankAccountToolStripMenuItem_Click);
             // 
             // otherIncomeToolStripMenuItem
             // 
@@ -818,6 +818,15 @@
             this.guna2Panel4.Size = new System.Drawing.Size(1123, 66);
             this.guna2Panel4.TabIndex = 5;
             this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(789, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
             // 
             // button1
             // 
