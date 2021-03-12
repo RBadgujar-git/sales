@@ -32,14 +32,8 @@ namespace sample
 
         private void DeliveryChallan_Load(object sender, EventArgs e)
         {         
-            fetchCategory();
-            txtReturnNo.Enabled = false;       
-            bind_sale_details();
-            txtTotal.Enabled = false;
-            txtBallaance.Enabled = false;
-            txtsubtotal.Enabled = false;
-            fetchcustomername();
-           // fetchitem();
+            fetchCategory();                     
+            fetchcustomername();  
             get_id();
             txtReturnNo.Enabled = false;
             comboBox1.Visible = false;
@@ -166,7 +160,10 @@ namespace sample
         {
             try {
 
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
                 string State1 = cd.ExecuteScalar().ToString();
                 con.Close();
@@ -259,11 +256,6 @@ namespace sample
         }
 
 
-
-
-
-
-
         object id1;
         private void insertdata()
         {
@@ -275,13 +267,11 @@ namespace sample
                 }
 
 
-                string query = string.Format("insert into tbl_DeliveryChallan(PartyName ,BillingName,BillingAddress,PartyAddress,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, ContactNo,Feild1,Feild2,Feild3,Status,TableName,ItemCategory,Barcode,Company_ID) Values (@PartyName, @BillingName,  @BillingAddress,@PartyAddress,@InvoiceDate, @DueDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @ItemCategory,@Barcode,@compid); SELECT SCOPE_IDENTITY();");
-                SqlCommand cmd = new SqlCommand(query, con);
-                //cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
-                //cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@Action", "Insert");
-                //cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
-                //   cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
+                cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Action", "Insert");
+                cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
+              //  cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
                 if (cmbpartyname.Visible == true)
                 {
                     cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
@@ -356,7 +346,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_DeliveryChallanInner", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    cmd.Parameters.AddWithValue("@ID", id1);
+                    cmd.Parameters.AddWithValue("@ChallanNo", id1);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -394,28 +384,32 @@ namespace sample
 
         public void cal_Total()
         {
-            try {
-
-                float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
-
-
-
-                TA = float.Parse(txtsubtotal.Text.ToString());
-
-                dis = float.Parse(txtDiscount.Text.ToString());
-                gst = float.Parse(cmbtax.Text.ToString());
+            try
+            {
+                if (txtDiscount.Text != "")
+                {
+                    float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
 
 
 
+                    TA = float.Parse(txtsubtotal.Text.ToString());
 
-                dis_amt = TA * dis / 100;
-                txtDisAmount.Text = dis_amt.ToString();
+                    dis = float.Parse(txtDiscount.Text.ToString());
+                    gst = float.Parse(cmbtax.Text.ToString());
 
-                gst_amt = TA * gst / 100;
-                txtTaxAmount.Text = gst_amt.ToString();
 
-                total = (TA + gst_amt) - dis_amt;
-                txtTotal.Text = total.ToString();
+
+
+                    dis_amt = TA * dis / 100;
+                    txtDisAmount.Text = dis_amt.ToString();
+
+                    gst_amt = TA * gst / 100;
+                    txtTaxAmount.Text = gst_amt.ToString();
+
+                    total = (TA + gst_amt) - dis_amt;
+                    txtTotal.Text = total.ToString();
+                }
+            
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -552,7 +546,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_DeliveryChallanInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_DeliveryChallanInner where ChallanNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
@@ -677,7 +671,7 @@ namespace sample
             txtTransportName.Text = "";
             txtDeliveryLoc.Text = "";
             txtVehicleNo.Text = "";
-           
+            txtcon.Text = "";
             txtDescription.Text= "";
             cmbtax.Text = "0";
             txtcgst.Text = "0";
@@ -689,13 +683,15 @@ namespace sample
             txtTotal.Text = "0";
             txtReceived.Text = "0";
             txtBallaance.Text = "0";
-          //  txtrefNo.Text = "";
+            txtrefNo.Text = "";
             txtadditional1.Text = "";
             txtadditional2.Text = "";
             ComboBox.Text= "";
             Delivery.Text= "";
             cmbCategory.Text= "";
             textBox1.Text = "";
+            dgvInnerDeliveryChallanNote.Rows.Clear();
+            txtsubtotal.Text = "";
            
         }
         private void update_record_inner(string p)
@@ -800,7 +796,6 @@ namespace sample
             if (verifyid == 1)
             {
                 insertdata();
-                bind_sale_details();
                 clear_text_data();
                 cleardata();
             }
@@ -1033,5 +1028,136 @@ namespace sample
             report.Render();
             report.Show(false);
         }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbpartyname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbStatesupply_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtItemName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtDis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFreeQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbPaymentType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtDeliveryLoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbtax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+         (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtBallaance_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+         (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+         else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void butClear_Click(object sender, EventArgs e)
+        {
+            cleardata();
+            clear_text_data();
+        }
+
+        private void txtDisAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbtax_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            gst_devide();
+            cal_ItemTotal();
+        }
     }
-}
+    }
+

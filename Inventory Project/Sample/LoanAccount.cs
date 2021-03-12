@@ -299,8 +299,8 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            calopenbal();
-            update_opening_bal();
+            //calopenbal();
+            //update_opening_bal();
             InsertData();
             fetchdetails();
             cleardata();
@@ -424,27 +424,28 @@ namespace sample
         }
         public void companyfetch()
         {
-            try
-            {
-                con.Open();
-                string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' GROUP BY CompanyName ");
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    txtcompanyname.Text = dr["CompanyName"].ToString();
-                }
-                dr.Close();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
+            //try
+            //{
+            //    con.Open();
+            //    string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' GROUP BY CompanyName ");
+            //    SqlCommand cmd = new SqlCommand(Query, con);
+            //    SqlDataReader dr = cmd.ExecuteReader();
+            //    if (dr.Read())
+            //    {
+            //        txtcompanyname.Text = dr["CompanyName"].ToString();
+            //    }
+            //    dr.Close();
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
 
-            }
+            //}
+            txtcompanyname.Text = NewCompany.companyname;
         }
         private void cmbLoanReceive_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -537,17 +538,22 @@ namespace sample
 
         private void txtProcessingFees_KeyDown(object sender, KeyEventArgs e)
         {
-            float emi;
+            //float emi;
 
 
-            float principal, rate, time, fee;
-            principal = float.Parse(txtLoanAmount.Text);
-            rate = float.Parse(txtinterest.Text);
-            time = float.Parse(txtTermDuration.Text);
-            fee = float.Parse(txtProcessingFees.Text);
+            //float principal, rate, time, fee;
+            //principal = float.Parse(txtLoanAmount.Text);
+            //rate = float.Parse(txtinterest.Text);
+            //time = float.Parse(txtTermDuration.Text);
+            //fee = float.Parse(txtProcessingFees.Text);
 
-            emi = (principal * rate * time) / 100;
-            txtTotal.Text = (emi + principal + fee).ToString();
+            //emi = (principal * rate * time) / 100;
+            //txtTotal.Text = (emi + principal + fee).ToString();
+        }
+
+        private void txtcompanyname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

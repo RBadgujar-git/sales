@@ -27,20 +27,13 @@ namespace sample
 
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
-            fetchcustomername();
-          //  fetchitem();
-            fetchCategory();
+            cmbpartyname.Focus();
+            fetchcustomername();       
+            fetchCategory();  
+            cmbpartyname1.Visible = false;
+            comboBox1.Visible = false;
             txtReturnNo.Enabled = false;
             get_id();
-           // bind_sale_details();
-
-            cmbpartyname1.Visible = false;
-
-            txtTotal.Enabled = false;
-            txtBallaance.Enabled = false;
-            txtsubtotal.Enabled = false;
-            cmbpartyname.Focus();
-
         }
 
         private void clear_text_data()
@@ -60,8 +53,9 @@ namespace sample
 
         private void cleardata()
         {
-           // cmbpartyname1.Text = "";
+            cmbpartyname1.Text = "";
             cmbpartyname.Text = "";
+            comboBox1.Text = "";
             txtbillingadd.Text = "";
             txtcon.Text = "";
             dtpInvoice.Text = "";
@@ -87,12 +81,14 @@ namespace sample
             txtReceived.Text = "";
             txtBallaance.Text = "";
             txtrefNo.Text = "";
-            txtadditional1.Text = "";
+            txtsubtotal.Text = "";
             txtadditional2.Text = "";
             ComboBox.Text = "";
             cmbCategory.Text = "";
             Sale.Text = "";
             textBox1.Text = "";
+            cmbCategory.Text = "";
+            dgvInnerDebiteNote.Rows.Clear();
 
         }
 
@@ -119,11 +115,13 @@ namespace sample
                         txtReturnNo.Text = rd[0].ToString();
                         txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
                     }
-                }             
+                }
+                rd.Close();
             }
         }
 
-        
+
+
         object id1;
         private void insertdata()
         {
@@ -171,11 +169,19 @@ namespace sample
                 cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
+                cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Sale.Text);
-                cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                // cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
+                }
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", TxtIGST.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
@@ -237,11 +243,42 @@ namespace sample
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            insertdata();
-            bind_sale_details();
-            get_id();
+            insertdata();                       
             clear_text_data();
             cleardata();
+            get_id();
+            bind_sale_details();
+            printdata(id1.ToString());
+            dgvInnerDebiteNote.Rows.Clear();               
+        }
+        private void printdata(string id1)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"Report.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("SaleInvoice1", "SaleInvoice1", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void bind_sale_details()
         {
@@ -287,11 +324,11 @@ namespace sample
                         txtReceived.Text = dr["Received"].ToString();
                         txtBallaance.Text = dr["RemainingBal"].ToString();
                         txtrefNo.Text = dr["Feild1"].ToString();
-                        txtadditional1.Text = dr["Feild2"].ToString();
+                        txtsubtotal.Text = dr["Feild2"].ToString();
                         txtadditional2.Text = dr["Feild3"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
                         Sale.Text = dr["TableName"].ToString();
-                        cmbCategory.Text = dr["ItemCategory"].ToString();
+                        comboBox1.Text = dr["ItemCategory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
                         TxtIGST.Text = dr["IGST"].ToString();
                         id = dr["InvoiceID"].ToString();
@@ -347,7 +384,7 @@ namespace sample
             txtOty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Qty"].Value.ToString();
             txtFreeQty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["FreeQty"].Value.ToString();
             txtDis.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
-            txtDisAmount.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
+            txtDisAmt.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
             txtItemTotal.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();
         }
         private void fetchCategory()
@@ -508,6 +545,8 @@ namespace sample
             {
                 cmbpartyname.Visible = false;
                 cmbpartyname1.Visible = true;
+                cmbCategory.Visible = false;
+                comboBox1.Visible = true;
                 bind_sale_details();
             }
         }
@@ -516,32 +555,37 @@ namespace sample
 
             try
             {
-                con.Open();
-                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
-                string State1 = cd.ExecuteScalar().ToString();
-                con.Close();
-                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
-
-                if (State1 == cmbStatesupply.Text)
+                if (cmbtax.Text != "" && txtsgst.Text != "")
                 {
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                    string State1 = cd.ExecuteScalar().ToString();
+                    con.Close();
+                    // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
-                    float gst = 0, cgst = 0, sgst = 0;
-                    gst = float.Parse(cmbtax.Text);
-                    cgst = gst / 2;
-                    sgst = gst / 2;
-                    txtsgst.Text = sgst.ToString();
-                    txtcgst.Text = cgst.ToString();
+                    if (State1 == cmbStatesupply.Text)
+                    {
+
+                        float gst = 0, cgst = 0, sgst = 0;
+                        gst = float.Parse(cmbtax.Text);
+                        cgst = gst / 2;
+                        sgst = gst / 2;
+                        txtsgst.Text = sgst.ToString();
+                        txtcgst.Text = cgst.ToString();
+                    }
+                    else
+                    {
+                        float gst = 0;
+                        gst = float.Parse(cmbtax.Text);
+                        TxtIGST.Text = gst.ToString();
+                        txtsgst.Text = 0.ToString();
+                        txtcgst.Text = 0.ToString();
+
+                    }
                 }
-                else
-                {
-                    float gst = 0;
-                    gst = float.Parse(cmbtax.Text);
-                    TxtIGST.Text = gst.ToString();
-                    txtsgst.Text = 0.ToString();
-                    txtcgst.Text = 0.ToString();
-
-                }
-
             }
             catch (Exception e1)
             {
@@ -590,6 +634,7 @@ namespace sample
         private void txtDiscount_TextChanged(object sender, EventArgs e)
         {
             cal_Total();
+            cmbtax.Focus();
         }
 
 
@@ -719,6 +764,7 @@ namespace sample
                     }
                     clear_text_data();
                 }
+                txtItemName.Focus();
             }
             catch (Exception e1)
             {
@@ -727,14 +773,7 @@ namespace sample
         }
         private void cmbpartyname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void txtbillingadd_KeyPress(object sender, KeyPressEventArgs e)
@@ -892,7 +931,7 @@ namespace sample
         private void txtrefNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-          (e.KeyChar != '.'))
+           (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -905,7 +944,7 @@ namespace sample
         private void txtTotal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-        (e.KeyChar != '.'))
+         (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -922,15 +961,7 @@ namespace sample
 
         private void txtTransportName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            //{
-            //    e.Handled = true;
-            //}
-            //else
-            //{
-            //    e.Handled = false;
-            //}
+        
         }
 
         private void txtDeliveryLoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -942,6 +973,7 @@ namespace sample
         {
             cleardata();
             clear_text_data();
+            cmbpartyname.Focus();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -976,7 +1008,8 @@ namespace sample
                 for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)                                  
                 {
                     txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
-                }             
+                }
+                txtItemName.Focus();
             }
             catch (Exception ex)
             {
@@ -993,21 +1026,20 @@ namespace sample
         private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-                      (e.KeyChar != '.'))
+           (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
-            else
-            // if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
-                e.Handled = false;
+                e.Handled = true;
             }
         }
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-            gst_devide();
             cal_Total();
+            gst_devide();
         }
 
         private void TxtIGST_TextChanged(object sender, EventArgs e)
@@ -1033,20 +1065,13 @@ namespace sample
 
         private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+            
         }
 
         private void txtsubtotal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-        (e.KeyChar != '.'))
+           (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -1068,23 +1093,72 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.Fill(ds);
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
 
-            StiReport report = new StiReport();
-            report.Load(@"Report.mrt");
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
-            report.Compile();
-            StiPage page = report.Pages[0];
-            report.RegData("SaleInvoice1", "SaleInvoice1", ds.Tables[0]);
+                    StiReport report = new StiReport();
+                    report.Load(@"Report.mrt");
 
-            report.Dictionary.Synchronize();
-            report.Render();
-            report.Show(false);
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("SaleInvoice1", "SaleInvoice1", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
-      
+        private void cmbpartyname1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbStatesupply_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtItemName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbPaymentType_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void ComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtDiscount_TabStopChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

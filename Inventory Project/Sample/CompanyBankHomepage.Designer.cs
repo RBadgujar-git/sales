@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyBankHomepage));
-            this.btnminimize = new System.Windows.Forms.Button();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,26 +50,12 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSaleorder = new Guna.UI2.WinForms.Guna2Button();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(990, 18);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 464;
-            this.btnminimize.UseVisualStyleBackColor = false;
             // 
             // dtpTo
             // 
@@ -279,6 +264,21 @@
             this.btnSaleorder.Text = "+ Comapnay Bank Account";
             this.btnSaleorder.Click += new System.EventHandler(this.btnSaleorder_Click);
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(990, 18);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 464;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            // 
             // btncancel
             // 
             this.btncancel.BackColor = System.Drawing.Color.White;
@@ -338,7 +338,7 @@
             this.Controls.Add(this.btnprint);
             this.Controls.Add(this.btnImport);
             this.Name = "CompanyBankHomepage";
-            this.Size = new System.Drawing.Size(1082, 580);
+            this.Size = new System.Drawing.Size(1074, 582);
             this.Load += new System.EventHandler(this.CompanyBankHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).EndInit();
             this.ResumeLayout(false);

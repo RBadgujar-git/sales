@@ -166,6 +166,7 @@
             this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
             this.txtSearch1.Size = new System.Drawing.Size(246, 25);
             this.txtSearch1.TabIndex = 2;
+            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
             // 
             // guna2Button1
             // 

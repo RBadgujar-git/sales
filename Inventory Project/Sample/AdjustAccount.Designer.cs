@@ -337,7 +337,6 @@
             // 
             // btnclose
             // 
-            this.btnclose.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnclose.BackColor = System.Drawing.Color.White;
             this.btnclose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnclose.BackgroundImage")));
             this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

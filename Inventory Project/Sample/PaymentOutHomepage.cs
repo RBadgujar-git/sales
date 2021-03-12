@@ -45,6 +45,7 @@ namespace sample
             try
             {
                 con.Open();
+                DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(cmd);
@@ -64,7 +65,7 @@ namespace sample
                 dgvPaymentOut.Columns[4].DataPropertyName = "Discount";
                 dgvPaymentOut.Columns[5].HeaderText = "Total";
                 dgvPaymentOut.Columns[5].DataPropertyName = "Total";
-                
+                dgvPaymentOut.DataSource = dt;
             }
             catch (Exception ex)
             {

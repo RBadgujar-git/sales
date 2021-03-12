@@ -61,13 +61,14 @@
             this.btnminimize.BackColor = System.Drawing.Color.White;
             this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnminimize.FlatAppearance.BorderSize = 0;
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(732, 6);
+            this.btnminimize.Location = new System.Drawing.Point(785, 0);
             this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.Size = new System.Drawing.Size(26, 44);
             this.btnminimize.TabIndex = 441;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
@@ -160,6 +161,7 @@
             this.txtopeningbal.Size = new System.Drawing.Size(200, 24);
             this.txtopeningbal.TabIndex = 4;
             this.txtopeningbal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtopeningbal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtopeningbal_KeyPress);
             // 
             // txtaccountno
             // 
@@ -178,7 +180,7 @@
             this.txtaccountno.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtaccountno.HoverState.Parent = this.txtaccountno;
             this.txtaccountno.Location = new System.Drawing.Point(144, 166);
-            this.txtaccountno.MaxLength = 20;
+            this.txtaccountno.MaxLength = 15;
             this.txtaccountno.Name = "txtaccountno";
             this.txtaccountno.PasswordChar = '\0';
             this.txtaccountno.PlaceholderText = "";
@@ -186,6 +188,7 @@
             this.txtaccountno.ShadowDecoration.Parent = this.txtaccountno;
             this.txtaccountno.Size = new System.Drawing.Size(200, 24);
             this.txtaccountno.TabIndex = 3;
+            this.txtaccountno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtaccountno_KeyPress);
             // 
             // txtbankname
             // 
@@ -212,6 +215,7 @@
             this.txtbankname.ShadowDecoration.Parent = this.txtbankname;
             this.txtbankname.Size = new System.Drawing.Size(200, 24);
             this.txtbankname.TabIndex = 1;
+            this.txtbankname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbankname_KeyPress);
             // 
             // txtaccountname
             // 
@@ -238,6 +242,7 @@
             this.txtaccountname.ShadowDecoration.Parent = this.txtaccountname;
             this.txtaccountname.Size = new System.Drawing.Size(200, 24);
             this.txtaccountname.TabIndex = 2;
+            this.txtaccountname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtaccountname_KeyPress);
             // 
             // label7
             // 
@@ -306,17 +311,17 @@
             // 
             // btncancel
             // 
-            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btncancel.BackColor = System.Drawing.Color.White;
             this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
             this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btncancel.FlatAppearance.BorderSize = 0;
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(764, 6);
+            this.btncancel.Location = new System.Drawing.Point(811, 0);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(29, 26);
+            this.btncancel.Size = new System.Drawing.Size(29, 44);
             this.btncancel.TabIndex = 45;
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
