@@ -793,7 +793,13 @@ namespace sample
 
         private void exportItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExportToExcel IP = new ExportToExcel();
+            // ex.TopLevel = false;
+            IP.AutoScroll = true;
+            this.Controls.Add(IP);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            IP.Dock = DockStyle.Fill;
+            IP.BringToFront();
         }
 
         private void referalCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1170,7 +1176,12 @@ namespace sample
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             AddMore BA = new AddMore();
-         
+            // BA.TopLevel = false;
+          //  BA.AutoScroll = true;
+         //   this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //BA.Dock = DockStyle.Fill;
+          //  BA.Visible = true;
             BA.Show();
         }
 
@@ -1251,13 +1262,6 @@ namespace sample
                 expensesObject.Show();
                 return true;
             }
-            if (keyData == (Keys.Alt | Keys.C))
-            {
-                CompanyList companylistobjct = new CompanyList();
-                companylistobjct.Show();
-                return true;
-            }
-
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
@@ -1330,6 +1334,18 @@ namespace sample
             n.Location = new Point(200, 50);
             n.Visible = true;
             n.BringToFront();
+        }
+
+        private void companyBankAccountToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CompanyBankHomepage BA = new CompanyBankHomepage();
+            // BA.TopLevel = false;
+            // BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
     }
 }
