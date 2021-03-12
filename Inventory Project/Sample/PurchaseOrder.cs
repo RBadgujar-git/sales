@@ -614,7 +614,6 @@ namespace sample
         private void btnUpdate_Click(object sender, EventArgs e)
         {
            
-
                 try
                 {
 
@@ -1000,19 +999,8 @@ namespace sample
 
         private void txtbillingadd_Validating(object sender, CancelEventArgs e)
         {
-
-            if (string.IsNullOrWhiteSpace(txtbillingadd.Text))
-            {
-                e.Cancel = true;
-               
-                errorProvider1.SetError(txtbillingadd, "Name should not be left blank!");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider1.SetError(txtbillingadd, "");
-            }
         }
+
 
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
         {
