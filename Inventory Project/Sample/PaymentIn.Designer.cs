@@ -47,7 +47,6 @@
             this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbPartyName = new System.Windows.Forms.ComboBox();
             this.cmbPaymentType = new System.Windows.Forms.ComboBox();
@@ -65,10 +64,11 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPaymentIn = new Guna.UI2.WinForms.Guna2DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2Panel2.SuspendLayout();
             this.Clear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -113,6 +113,7 @@
             // 
             // txtDiscount
             // 
+            this.txtDiscount.BorderColor = System.Drawing.Color.Gray;
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiscount.DefaultText = "0";
             this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -143,6 +144,7 @@
             // 
             // txtReceived
             // 
+            this.txtReceived.BorderColor = System.Drawing.Color.Gray;
             this.txtReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReceived.DefaultText = "0";
             this.txtReceived.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -168,6 +170,7 @@
             // 
             // txtReceiptNo
             // 
+            this.txtReceiptNo.BorderColor = System.Drawing.Color.Gray;
             this.txtReceiptNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReceiptNo.DefaultText = "";
             this.txtReceiptNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -192,6 +195,7 @@
             // 
             // txtDescription
             // 
+            this.txtDescription.BorderColor = System.Drawing.Color.Gray;
             this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDescription.DefaultText = "";
             this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -216,6 +220,7 @@
             // txtTotal
             // 
             this.txtTotal.BackColor = System.Drawing.Color.LightGray;
+            this.txtTotal.BorderColor = System.Drawing.Color.Gray;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotal.DefaultText = "0";
             this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -235,7 +240,6 @@
             this.txtTotal.SelectedText = "";
             this.txtTotal.SelectionStart = 1;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
-            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotal.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
@@ -256,16 +260,6 @@
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // PictureBox1
-            // 
-            this.PictureBox1.BackColor = System.Drawing.Color.Gainsboro;
-            this.PictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
-            resources.ApplyResources(this.PictureBox1, "PictureBox1");
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.ShadowDecoration.Parent = this.PictureBox1;
-            this.PictureBox1.TabStop = false;
-            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // button1
             // 
@@ -312,6 +306,7 @@
             this.Print.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.Print.Name = "Print";
             this.Print.UseVisualStyleBackColor = false;
+            this.Print.Click += new System.EventHandler(this.Print_Click);
             // 
             // dtpdate
             // 
@@ -326,8 +321,8 @@
             this.guna2Panel2.Controls.Add(this.btnCancel);
             this.guna2Panel2.Controls.Add(this.btnSetting);
             this.guna2Panel2.Controls.Add(this.label1);
-            resources.ApplyResources(this.guna2Panel2, "guna2Panel2");
             this.guna2Panel2.ForeColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.guna2Panel2, "guna2Panel2");
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             // 
@@ -371,6 +366,7 @@
             // Clear
             // 
             this.Clear.BackColor = System.Drawing.Color.White;
+            this.Clear.Controls.Add(this.PictureBox1);
             this.Clear.Controls.Add(this.textBox1);
             this.Clear.Controls.Add(this.label12);
             this.Clear.Controls.Add(this.comboBox1);
@@ -383,7 +379,6 @@
             this.Clear.Controls.Add(this.cmbPaymentType);
             this.Clear.Controls.Add(this.cmbPartyName);
             this.Clear.Controls.Add(this.button1);
-            this.Clear.Controls.Add(this.PictureBox1);
             this.Clear.Controls.Add(this.btnUpdate);
             this.Clear.Controls.Add(this.btnSave);
             this.Clear.Controls.Add(this.txtTotal);
@@ -491,6 +486,14 @@
             this.dgvPaymentIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentClick);
             this.dgvPaymentIn.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentDoubleClick);
             // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
+            resources.ApplyResources(this.PictureBox1, "PictureBox1");
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.TabStop = false;
+            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
+            // 
             // PaymentIn
             // 
             resources.ApplyResources(this, "$this");
@@ -500,12 +503,12 @@
             this.Name = "PaymentIn";
             this.Load += new System.EventHandler(this.PaymentIn_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PaymentIn_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
             this.Clear.ResumeLayout(false);
             this.Clear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -528,7 +531,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTotal;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2PictureBox PictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cmbPartyName;
         private System.Windows.Forms.ComboBox cmbPaymentType;
@@ -546,5 +548,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.PictureBox PictureBox1;
     }
 }
