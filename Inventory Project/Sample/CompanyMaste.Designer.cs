@@ -755,7 +755,7 @@
             this.dgvComapnyMaster.Name = "dgvComapnyMaster";
             this.dgvComapnyMaster.RowHeadersVisible = false;
             this.dgvComapnyMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvComapnyMaster.Size = new System.Drawing.Size(1092, 228);
+            this.dgvComapnyMaster.Size = new System.Drawing.Size(1080, 228);
             this.dgvComapnyMaster.TabIndex = 30;
             this.dgvComapnyMaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

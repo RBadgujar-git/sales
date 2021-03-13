@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Estimate_Quotation));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtItemTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDisAmt = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDis = new Guna.UI2.WinForms.Guna2TextBox();
@@ -73,6 +73,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ComboBox = new System.Windows.Forms.ComboBox();
+            this.cmbtax = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -116,9 +119,6 @@
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmbtax = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerQuotation)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -148,6 +148,7 @@
             this.txtItemTotal.PlaceholderText = "";
             this.txtItemTotal.ReadOnly = true;
             this.txtItemTotal.SelectedText = "";
+            this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(80, 24);
             this.txtItemTotal.TabIndex = 10;
@@ -382,20 +383,20 @@
             // 
             // dgvInnerQuotation
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvInnerQuotation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvInnerQuotation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInnerQuotation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerQuotation.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerQuotation.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerQuotation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerQuotation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerQuotation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInnerQuotation.ColumnHeadersHeight = 37;
             this.dgvInnerQuotation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -410,14 +411,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerQuotation.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerQuotation.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInnerQuotation.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerQuotation.EnableHeadersVisualStyles = false;
             this.dgvInnerQuotation.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -738,6 +739,52 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(851, 551);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 16);
+            this.label1.TabIndex = 129;
+            this.label1.Text = "Status :";
+            // 
+            // ComboBox
+            // 
+            this.ComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.ComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.ComboBox.FormattingEnabled = true;
+            this.ComboBox.Items.AddRange(new object[] {
+            "Overview",
+            "Paid",
+            "Partial",
+            "Unpaid"});
+            this.ComboBox.Location = new System.Drawing.Point(917, 547);
+            this.ComboBox.Name = "ComboBox";
+            this.ComboBox.Size = new System.Drawing.Size(89, 24);
+            this.ComboBox.TabIndex = 14;
+            // 
+            // cmbtax
+            // 
+            this.cmbtax.FormattingEnabled = true;
+            this.cmbtax.Items.AddRange(new object[] {
+            "0",
+            "2",
+            "3",
+            "5",
+            "9",
+            "12",
+            "15",
+            "18",
+            "24",
+            "30"});
+            this.cmbtax.Location = new System.Drawing.Point(649, 465);
+            this.cmbtax.Name = "cmbtax";
+            this.cmbtax.Size = new System.Drawing.Size(85, 24);
+            this.cmbtax.TabIndex = 13;
+            this.cmbtax.Text = "0";
+            this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged_1);
+            this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
+            // 
             // comboBox2
             // 
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -908,7 +955,7 @@
             // 
             this.txtsubtotal.BorderColor = System.Drawing.Color.Gray;
             this.txtsubtotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsubtotal.DefaultText = "";
+            this.txtsubtotal.DefaultText = "0";
             this.txtsubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsubtotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -926,6 +973,7 @@
             this.txtsubtotal.PlaceholderText = "";
             this.txtsubtotal.ReadOnly = true;
             this.txtsubtotal.SelectedText = "";
+            this.txtsubtotal.SelectionStart = 1;
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(90, 24);
             this.txtsubtotal.TabIndex = 0;
@@ -1505,51 +1553,6 @@
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(163, 54);
             this.txtDescription.TabIndex = 11;
-            // 
-            // cmbtax
-            // 
-            this.cmbtax.FormattingEnabled = true;
-            this.cmbtax.Items.AddRange(new object[] {
-            "0",
-            "2",
-            "3",
-            "5",
-            "9",
-            "12",
-            "15",
-            "18",
-            "24",
-            "30"});
-            this.cmbtax.Location = new System.Drawing.Point(649, 465);
-            this.cmbtax.Name = "cmbtax";
-            this.cmbtax.Size = new System.Drawing.Size(85, 24);
-            this.cmbtax.TabIndex = 13;
-            this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged_1);
-            this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(822, 551);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 16);
-            this.label1.TabIndex = 129;
-            this.label1.Text = "Status :";
-            // 
-            // ComboBox
-            // 
-            this.ComboBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.ComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ComboBox.FormattingEnabled = true;
-            this.ComboBox.Items.AddRange(new object[] {
-            "Overview",
-            "Paid",
-            "Partial",
-            "Unpaid"});
-            this.ComboBox.Location = new System.Drawing.Point(888, 547);
-            this.ComboBox.Name = "ComboBox";
-            this.ComboBox.Size = new System.Drawing.Size(118, 24);
-            this.ComboBox.TabIndex = 14;
             // 
             // Estimate_Quotation
             // 
