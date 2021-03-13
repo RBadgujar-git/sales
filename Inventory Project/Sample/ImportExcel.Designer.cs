@@ -231,7 +231,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(405, 347);
+            this.btnSave.Location = new System.Drawing.Point(489, 347);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 448;
