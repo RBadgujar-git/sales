@@ -131,7 +131,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error" + ex.Message);
+                MessageBox.Show("Imaage is needed !");
             }
        }
         public int verify=0;
@@ -233,7 +233,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Image is needed !");
                 }
             }
             else
@@ -491,26 +491,26 @@ namespace sample
 
         private void cmbPartyName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
+            //try
+            //{
+            //    if (con.State == ConnectionState.Closed)
+            //    {
+            //        con.Open();
+            //    }
 
-                SqlCommand cmd = new SqlCommand("select sum(Unpaid) from tbl_PartyMaster where PartyName="+cmbPartyName.Text+" and  Company_ID = '" + NewCompany.company_id + "'", con);       
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
+            //    SqlCommand cmd = new SqlCommand("select sum(Unpaid) from tbl_PartyMaster where PartyName="+cmbPartyName.Text+" and  Company_ID = '" + NewCompany.company_id + "'", con);       
+            //    SqlDataReader dr = cmd.ExecuteReader();
+            //    if (dr.Read())
+            //    {
                  
-                }
-                dr.Close();
+            //    }
+            //    dr.Close();
               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }
