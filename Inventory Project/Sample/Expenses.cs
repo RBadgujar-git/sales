@@ -170,7 +170,7 @@ namespace sample
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Added");
+                MessageBox.Show("Expenses Record Added");
                 cleardata();
             }
             catch (Exception e1)
@@ -375,7 +375,7 @@ namespace sample
                     }
                     // dr.Close();
 
-                    string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_ExpensesInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                    string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_ExpensesInner where ID1='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                     SqlCommand cmd1 = new SqlCommand(str1, con);
                     dr.Close();
 
