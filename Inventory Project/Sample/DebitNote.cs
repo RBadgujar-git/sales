@@ -277,7 +277,7 @@ namespace sample
                     float ItemCode = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     float cureentstock = float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
 
-                    MessageBox.Show("Data " + ItemCode + "Data00" + cureentstock);
+             //       MessageBox.Show("Data " + ItemCode + "Data00" + cureentstock);
 
                     SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
@@ -498,7 +498,7 @@ namespace sample
             txtVehicleNo.Text = "";
             DtpdeliveryDate.Text = "";
             txtDescription.Text = "";
-            cmbtax.Text = "0";
+          //  cmbtax.Text = "0";
             txtcgst.Text = "0";
             txtsgst.Text = "0";
             txtTaxAmount.Text = "0";
@@ -577,11 +577,7 @@ namespace sample
             else if (cmbPaymentType.Text == "")
             {
                 MessageBox.Show("Please Select Payment Type !");
-            }
-            else if (cmbtax.Text == "")
-            {
-                MessageBox.Show("Please Select Tax !");
-            }
+            }         
             else
             {
                 verfy = 1;
@@ -1155,7 +1151,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
             finally
             {

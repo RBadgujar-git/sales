@@ -369,7 +369,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
+                   cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@freeQty", dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value.ToString());
                     cmd.Parameters.AddWithValue("@TaxForSale", dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value.ToString());
@@ -384,13 +384,14 @@ namespace sample
 
                     float ItemCode = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
-                   // MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
+                 //   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
                     SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd1.CommandType = CommandType.StoredProcedure;
                     cmd1.Parameters.AddWithValue("@Action","backget");
                     cmd1.Parameters.AddWithValue("@Itemcode", ItemCode);
                     float prestock =Convert.ToInt32(cmd1.ExecuteScalar());
+
                     float freeqty = float.Parse(txtFreeQty.Text);
                     float stockmangee = prestock + cureentstock+freeqty;
 
@@ -777,7 +778,10 @@ dr.Close();
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
 
             string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
             SqlCommand cmd = new SqlCommand(str, con);
@@ -952,16 +956,31 @@ dr.Close();
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            validat();
-            if (valid == 1)
+            if (con.State == ConnectionState.Closed)
             {
-                insertdata();
-              //  bind_sale_details();
-                Clear_Text_data();
-                cleardata();
-                get_id();
+                con.Open();
             }
-
+            string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+            SqlCommand cmd = new SqlCommand(str, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                MessageBox.Show("Invalid Data !");
+               
+            }
+            else
+            {
+              
+                validat();
+                if (valid == 1)
+                {
+                    insertdata();
+                    //  bind_sale_details();
+                    Clear_Text_data();
+                    cleardata();
+                    get_id();
+                }
+            }
         }
 
        
@@ -1034,6 +1053,7 @@ dr.Close();
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
+
 
 
         }
