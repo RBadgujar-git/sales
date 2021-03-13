@@ -386,6 +386,9 @@ namespace sample
             txtDis.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
             txtDisAmt.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
             txtItemTotal.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();
+
+            int row = dgvInnerDebiteNote.CurrentCell.RowIndex;
+            dgvInnerDebiteNote.Rows.RemoveAt(row);
         }
         private void fetchCategory()
         {
@@ -634,7 +637,7 @@ namespace sample
         private void txtDiscount_TextChanged(object sender, EventArgs e)
         {
             cal_Total();
-            cmbtax.Focus();
+          
         }
 
 
@@ -1157,6 +1160,21 @@ namespace sample
         }
 
         private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtsubtotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtItemTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
         {
 
         }
