@@ -63,10 +63,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnminimize = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItemServices)).BeginInit();
@@ -76,11 +76,10 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnupdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnupdate.Location = new System.Drawing.Point(501, 240);
+            this.btnupdate.Location = new System.Drawing.Point(488, 243);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(90, 42);
             this.btnupdate.TabIndex = 11;
@@ -90,11 +89,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(600, 238);
+            this.btnDelete.Location = new System.Drawing.Point(587, 243);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
             this.btnDelete.TabIndex = 12;
@@ -104,11 +102,10 @@
             // 
             // btnsave
             // 
-            this.btnsave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnsave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnsave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnsave.Location = new System.Drawing.Point(403, 240);
+            this.btnsave.Location = new System.Drawing.Point(390, 243);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(90, 42);
             this.btnsave.TabIndex = 10;
@@ -176,7 +173,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(329, 129);
+            this.label11.Location = new System.Drawing.Point(320, 129);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 17);
             this.label11.TabIndex = 36;
@@ -215,21 +212,21 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(930, 585);
+            this.panel1.Size = new System.Drawing.Size(812, 574);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Clear
             // 
-            this.Clear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(696, 238);
+            this.Clear.Location = new System.Drawing.Point(683, 243);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
             this.Clear.TabIndex = 13;
@@ -245,7 +242,7 @@
             this.cmbTaxType.Items.AddRange(new object[] {
             "Excluded",
             "Included"});
-            this.cmbTaxType.Location = new System.Drawing.Point(396, 89);
+            this.cmbTaxType.Location = new System.Drawing.Point(387, 89);
             this.cmbTaxType.Name = "cmbTaxType";
             this.cmbTaxType.Size = new System.Drawing.Size(174, 25);
             this.cmbTaxType.TabIndex = 7;
@@ -255,7 +252,7 @@
             this.cmbItemCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbItemCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbItemCategory.FormattingEnabled = true;
-            this.cmbItemCategory.Location = new System.Drawing.Point(111, 243);
+            this.cmbItemCategory.Location = new System.Drawing.Point(102, 243);
             this.cmbItemCategory.Name = "cmbItemCategory";
             this.cmbItemCategory.Size = new System.Drawing.Size(174, 25);
             this.cmbItemCategory.TabIndex = 5;
@@ -276,7 +273,7 @@
             "18",
             "21",
             "29"});
-            this.cmbTaxRate.Location = new System.Drawing.Point(396, 126);
+            this.cmbTaxRate.Location = new System.Drawing.Point(387, 126);
             this.cmbTaxRate.Name = "cmbTaxRate";
             this.cmbTaxRate.Size = new System.Drawing.Size(174, 25);
             this.cmbTaxRate.TabIndex = 8;
@@ -287,7 +284,7 @@
             this.cmbUnit.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbUnit.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(111, 130);
+            this.cmbUnit.Location = new System.Drawing.Point(102, 130);
             this.cmbUnit.Name = "cmbUnit";
             this.cmbUnit.Size = new System.Drawing.Size(174, 25);
             this.cmbUnit.TabIndex = 3;
@@ -320,12 +317,12 @@
             this.dgvItemServices.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItemServices.EnableHeadersVisualStyles = false;
             this.dgvItemServices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemServices.Location = new System.Drawing.Point(1, 297);
+            this.dgvItemServices.Location = new System.Drawing.Point(10, 297);
             this.dgvItemServices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvItemServices.Name = "dgvItemServices";
             this.dgvItemServices.RowHeadersVisible = false;
             this.dgvItemServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemServices.Size = new System.Drawing.Size(809, 264);
+            this.dgvItemServices.Size = new System.Drawing.Size(788, 264);
             this.dgvItemServices.TabIndex = 15;
             this.dgvItemServices.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvItemServices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -357,7 +354,7 @@
             // 
             this.picturebox.BackColor = System.Drawing.SystemColors.Menu;
             this.picturebox.Image = global::sample.Properties.Resources.No_Image_Available;
-            this.picturebox.Location = new System.Drawing.Point(628, 92);
+            this.picturebox.Location = new System.Drawing.Point(619, 92);
             this.picturebox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.picturebox.Name = "picturebox";
             this.picturebox.ShadowDecoration.Parent = this.picturebox;
@@ -383,7 +380,7 @@
             this.txtSubunit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSubunit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSubunit.HoverState.Parent = this.txtSubunit;
-            this.txtSubunit.Location = new System.Drawing.Point(111, 165);
+            this.txtSubunit.Location = new System.Drawing.Point(102, 165);
             this.txtSubunit.Name = "txtSubunit";
             this.txtSubunit.PasswordChar = '\0';
             this.txtSubunit.PlaceholderText = "";
@@ -408,7 +405,7 @@
             this.txtDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescription.HoverState.Parent = this.txtDescription;
-            this.txtDescription.Location = new System.Drawing.Point(396, 162);
+            this.txtDescription.Location = new System.Drawing.Point(387, 162);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
@@ -434,7 +431,7 @@
             this.txtSaleCoategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSaleCoategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSaleCoategory.HoverState.Parent = this.txtSaleCoategory;
-            this.txtSaleCoategory.Location = new System.Drawing.Point(396, 49);
+            this.txtSaleCoategory.Location = new System.Drawing.Point(387, 49);
             this.txtSaleCoategory.Name = "txtSaleCoategory";
             this.txtSaleCoategory.PasswordChar = '\0';
             this.txtSaleCoategory.PlaceholderText = "";
@@ -460,7 +457,7 @@
             this.txtitemcode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtitemcode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtitemcode.HoverState.Parent = this.txtitemcode;
-            this.txtitemcode.Location = new System.Drawing.Point(111, 202);
+            this.txtitemcode.Location = new System.Drawing.Point(102, 202);
             this.txtitemcode.Name = "txtitemcode";
             this.txtitemcode.PasswordChar = '\0';
             this.txtitemcode.PlaceholderText = "";
@@ -486,7 +483,7 @@
             this.txtHSNCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtHSNCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHSNCode.HoverState.Parent = this.txtHSNCode;
-            this.txtHSNCode.Location = new System.Drawing.Point(111, 90);
+            this.txtHSNCode.Location = new System.Drawing.Point(102, 90);
             this.txtHSNCode.MaxLength = 11;
             this.txtHSNCode.Name = "txtHSNCode";
             this.txtHSNCode.PasswordChar = '\0';
@@ -513,7 +510,7 @@
             this.txtItemName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemName.HoverState.Parent = this.txtItemName;
-            this.txtItemName.Location = new System.Drawing.Point(111, 51);
+            this.txtItemName.Location = new System.Drawing.Point(102, 51);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.PasswordChar = '\0';
             this.txtItemName.PlaceholderText = "";
@@ -526,7 +523,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(312, 165);
+            this.label12.Location = new System.Drawing.Point(303, 165);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(81, 17);
             this.label12.TabIndex = 26;
@@ -535,7 +532,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(679, 64);
+            this.label10.Location = new System.Drawing.Point(670, 64);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 17);
             this.label10.TabIndex = 26;
@@ -552,7 +549,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(328, 92);
+            this.label8.Location = new System.Drawing.Point(319, 92);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 17);
             this.label8.TabIndex = 24;
@@ -561,7 +558,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(322, 55);
+            this.label7.Location = new System.Drawing.Point(313, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 23;
@@ -570,7 +567,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 247);
+            this.label6.Location = new System.Drawing.Point(2, 247);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 17);
             this.label6.TabIndex = 22;
@@ -579,7 +576,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 207);
+            this.label5.Location = new System.Drawing.Point(20, 207);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 21;
@@ -588,7 +585,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 133);
+            this.label4.Location = new System.Drawing.Point(61, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 20;
@@ -597,7 +594,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 96);
+            this.label3.Location = new System.Drawing.Point(23, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 19;
@@ -606,11 +603,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 56);
+            this.label2.Location = new System.Drawing.Point(16, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 17);
             this.label2.TabIndex = 18;
             this.label2.Text = " Item Name :";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.btnminimize);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.btnCancel);
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(814, 44);
+            this.panel3.TabIndex = 16;
             // 
             // btnminimize
             // 
@@ -621,29 +629,12 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(728, 7);
+            this.btnminimize.Location = new System.Drawing.Point(737, 7);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(29, 29);
             this.btnminimize.TabIndex = 0;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(757, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(29, 29);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // label1
             // 
@@ -656,23 +647,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Services";
             // 
-            // panel3
+            // btnCancel
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.btnminimize);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.btnCancel);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(930, 44);
-            this.panel3.TabIndex = 16;
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.Location = new System.Drawing.Point(769, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(29, 29);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // ItemSevice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(926, 574);
+            this.ClientSize = new System.Drawing.Size(812, 574);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
