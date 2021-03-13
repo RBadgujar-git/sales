@@ -84,7 +84,7 @@ namespace sample
                         MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.Jet.OLEDB.4.0;;Data Source=" + strExcelPathName + ";Extended Properties=Excel 8.0;");
                         MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Template$]", MyConnection);
                         MyCommand.TableMappings.Add("Table", "Net-informations.com");
-                        DtSet = new System.Data.DataSet();
+                        DtSet = new System.Data.DataSet();       
                         MyCommand.Fill(DtSet);
                        dataGridView1.DataSource = DtSet.Tables[0];
                         MyConnection.Close();
