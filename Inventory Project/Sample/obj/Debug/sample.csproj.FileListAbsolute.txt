@@ -1319,3 +1319,4 @@ C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\j
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
