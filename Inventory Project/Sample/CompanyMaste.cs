@@ -689,28 +689,32 @@ namespace sample
         {
 
         }
-
-        private void btnminimize_Click_2(object sender, EventArgs e)
-        {
-        }
-
-        private void btnCancel_Click_1(object sender, EventArgs e)
-        {
-             this.Visible = false;
-            
-        }
+    
 
         private void btnminimize_Resize(object sender, EventArgs e)
         {
-           
-                
-            
+
         }
        
     
         private void btnminimize_SizeChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void btnminimize_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+          
         }
     }
 

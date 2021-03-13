@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Stimulsoft.Report;
+
+using Stimulsoft.Report.Components;
 
 namespace sample
 {
@@ -29,7 +32,7 @@ namespace sample
             fetchCategory();
             txtReturnNo.Enabled = false;
             get_id();
-            bind_sale_details();
+           // bind_sale_details();
 
             cmbpartyname1.Visible = false;
 
@@ -202,7 +205,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_SaleInvoiceInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    //cmd.Parameters.AddWithValue("@ID", id1);
+                 
                     cmd.Parameters.AddWithValue("@InvoiceID", id1);
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
@@ -249,7 +252,7 @@ namespace sample
                     con.Open();
                 }
 
-                string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -1046,6 +1049,25 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            DataSet ds = new DataSet();
+            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds);
+
+            StiReport report = new StiReport();
+            report.Load(@"Report.mrt");
+
+            report.Compile();
+            StiPage page = report.Pages[0];
+            report.RegData("SaleInvoice1", "SaleInvoice1", ds.Tables[0]);
+
+            report.Dictionary.Synchronize();
+            report.Render();
+            report.Show(false);
         }
     }
 }

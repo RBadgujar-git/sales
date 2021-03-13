@@ -33,7 +33,7 @@ namespace sample
         {
             cmbaccountname.Text= "";
             cmbEntrytype.Text = "";
-            txtAcoount.Text = "";
+            txtAcoount.Text = "0";
             txtdescription.Text = "";
         }
         private void fetchdetails()
@@ -62,7 +62,7 @@ namespace sample
             sdasql.Fill(dtable);
 
             dgvAdjustaccount.DataSource = dtable;
-
+            con.Close();
             ////dgvAdjustaccount.DataBind();
             //try
             //{
@@ -122,7 +122,7 @@ namespace sample
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data Successfully");
                 }
-              
+            con.Close();
             
         }
         private void label4_Click(object sender, EventArgs e)
@@ -139,7 +139,8 @@ namespace sample
         {
            
             fetchdetails();
-            fetchAccountname();
+            bankfetch();
+            //fetchAccountname();
             companyid = NewCompany.company_id;
         }
 
@@ -182,10 +183,37 @@ namespace sample
         private void btnSaave_Click(object sender, EventArgs e)
         {
             Insert();
+            if (cmbEntrytype.SelectedItem == "Debit")
+            {
+                calminus();
+            }
+            else if (cmbEntrytype.SelectedItem == "Credit")
+            { 
+                Caladd();
+            }
+            update_opening_bal();
             fetchdetails();
             Cleardata();
         }
+        public void update_opening_bal()
+        {
+            try
+            {
+                con.Open();
+                String query = string.Format("update tbl_BankAccount set OpeningBal='" + textBox1.Text + "' where (BankName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbaccountname.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
 
+            }
+        }
         private void btnclose_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -220,11 +248,11 @@ namespace sample
                         con.Open();
                     }
 
-                    if (cmbaccountname.Text=="")
+                    if (cmbaccountname.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
                     }
-                    else if (cmbEntrytype.Text== "")
+                    else if (cmbEntrytype.Text == "")
                     {
                         MessageBox.Show("Please Select Entry Type");
                     }
@@ -262,6 +290,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -286,9 +315,6 @@ namespace sample
                     {
                         con.Open();
                     }
-
-
-
                     if (cmbaccountname.Text=="")
                     {
                         MessageBox.Show("Please Select Record");
@@ -299,7 +325,6 @@ namespace sample
                     }
                     else
                     {
-
                         DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_BankAdjustmentselect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
@@ -322,6 +347,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -340,6 +366,79 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cmbEntrytype_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+        public void Caladd()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
+
+            opening_bal = float.Parse(textBox1.Text);
+            amount = float.Parse(txtAcoount.Text);
+
+            remain_opening = opening_bal + amount;
+            textBox1.Text = remain_opening.ToString();
+        }
+        public void calminus()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
+
+            opening_bal = float.Parse(textBox1.Text);
+            amount = float.Parse(txtAcoount.Text);
+
+            remain_opening = opening_bal - amount;
+            textBox1.Text = remain_opening.ToString();
+         }
+        private void bankfetch()
+        {
+            if (cmbaccountname.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbaccountname.Items.Add(ds.Tables["Temp"].Rows[i]["BankName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+
+        private void cmbaccountname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string Query = String.Format("select OpeningBal from tbl_BankAccount where (BankName='{0}') and Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY OpeningBal ", cmbaccountname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    textBox1.Text = dr["OpeningBal"].ToString();
+                }
+                dr.Close();    
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            { 
+
+            }
         }
     }
 }

@@ -53,7 +53,7 @@ namespace sample
             BA.TopLevel = false;
             //BA.AutoScroll = true;
             this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+          //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.Show();
@@ -254,12 +254,15 @@ namespace sample
         }
         private void Bindadata()
         {
-            con.Open();
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            con.Close();
+           
             dgvsaleInvoice.AutoGenerateColumns = false;
             dgvsaleInvoice.ColumnCount = 8;
             dgvsaleInvoice.Columns[0].HeaderText = "Date";

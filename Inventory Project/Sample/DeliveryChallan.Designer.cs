@@ -1504,6 +1504,7 @@
             this.buttprint.TabIndex = 25;
             this.buttprint.Text = "Print";
             this.buttprint.UseVisualStyleBackColor = false;
+            this.buttprint.Click += new System.EventHandler(this.buttprint_Click);
             // 
             // butClear
             // 
