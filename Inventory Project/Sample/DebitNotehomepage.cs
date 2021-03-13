@@ -50,7 +50,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster  where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -109,14 +109,12 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select PartyName from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
+                string Query = string.Format("select * from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvdebitNote.DataSource = ds;
                 dgvdebitNote.DataMember = "temp";
-
-
 
             }
             catch (Exception ex)
@@ -126,10 +124,10 @@ namespace sample
         }
 
         private void dtptodate_ValueChanged(object sender, EventArgs e)
-        {
+        { 
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between " +dtpfromdate.Value.ToString() + " and " + dtptodate.Value.ToString()+ " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

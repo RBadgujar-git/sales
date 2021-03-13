@@ -63,7 +63,7 @@ namespace sample
             txtReceived.Text = "0";
             txtDiscount.Text = "0";
             txtTotal.Text = "0";
-            PictureBox1.Image = null;
+     //       PictureBox1.Image = null;
         }
 
         private void fetchdetails()
@@ -134,11 +134,59 @@ namespace sample
                 MessageBox.Show("error" + ex.Message);
             }
        }
+        public int verify=0;
+        public void valid()
+        {
+            if (cmbPartyName.Text == "")
+            {
+                MessageBox.Show("Please Select Party Name ");              
+            }
+            else if (cmbPayment.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type ");
+
+            }
+            else if (txtReceiptNo.Text == "")
+            {
+                MessageBox.Show("Please Insert Paid Payment ");
+
+            }
+
+            else if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Status ");
+
+            }
+            else if (PictureBox1.Image ==null)
+            {
+                MessageBox.Show("Please Select Image ");
+            }
+            else
+            {
+                verify = 1;
+            }
+           
+
+
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
+            if (id== "")
+            {
+
+                valid();
+                if (verify == 1)
+                {
+                    InsertData();
+                    fetchdetails();
+                }
+            }
+           else {
+                MessageBox.Show("You no Permistin to save Staff !");
+            }
+
         }
 
         public void Update1()
@@ -196,9 +244,21 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();
-            Cleardata();
+            if (id != "")
+            {
+                valid();
+                if (verify == 1)
+                {
+                    Update1();
+                    Cleardata();
+                    fetchdetails();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have Not Perrmistion ! ");
+            }
+
         }
 
         public void Delete1()
@@ -240,8 +300,23 @@ namespace sample
  
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
+            if (id != "")
+            {
+                if (cmbPartyName.Text != "")
+                {
+
+                    Delete1();
+                    fetchdetails();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Record ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Indavlid Data !");
+            }
         }
 
         private void dgvPaymentIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
