@@ -104,6 +104,7 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderText = "";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.SelectedText = "";
             this.txtTotal.SelectionStart = 1;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
@@ -235,7 +236,7 @@
             this.comboBox1.Location = new System.Drawing.Point(524, 200);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 17;
+            this.comboBox1.TabIndex = 8;
             // 
             // label12
             // 
@@ -296,7 +297,7 @@
             this.cmbPayment.Location = new System.Drawing.Point(161, 107);
             this.cmbPayment.Name = "cmbPayment";
             this.cmbPayment.Size = new System.Drawing.Size(202, 24);
-            this.cmbPayment.TabIndex = 12;
+            this.cmbPayment.TabIndex = 2;
             // 
             // dtpDate
             // 
@@ -317,7 +318,7 @@
             this.cmbPartyName.Location = new System.Drawing.Point(161, 69);
             this.cmbPartyName.Name = "cmbPartyName";
             this.cmbPartyName.Size = new System.Drawing.Size(202, 24);
-            this.cmbPartyName.TabIndex = 9;
+            this.cmbPartyName.TabIndex = 1;
             this.cmbPartyName.SelectedIndexChanged += new System.EventHandler(this.cmbPartyName_SelectedIndexChanged);
             // 
             // btnExit
@@ -401,7 +402,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(523, 245);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -414,7 +415,7 @@
             this.btnSave.Location = new System.Drawing.Point(427, 246);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 1;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

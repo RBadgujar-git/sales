@@ -1320,3 +1320,12 @@ C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\r
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankHomepage.resources
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
