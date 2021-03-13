@@ -550,9 +550,9 @@ namespace sample
                 picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
-            txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AdditinalFeild1"].Value.ToString();
-            txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AdditinalFeild2"].Value.ToString();
-            txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AdditinalFeild3"].Value.ToString();
+            txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BankName"].Value.ToString();
+            txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AccountNo"].Value.ToString();
+            txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["IFSC_Code"].Value.ToString();
         }
 
         private void txtBankName_KeyPress(object sender, KeyPressEventArgs e)

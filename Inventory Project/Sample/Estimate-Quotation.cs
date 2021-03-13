@@ -163,7 +163,7 @@ namespace sample
                 txtItemTotal.Text = total.ToString();
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
         }
 
@@ -328,9 +328,13 @@ namespace sample
         }
         private void insert_record_inner(string id)
         {
-            for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++) {
+            for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++)
+            {
                 try {
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_QuotationInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -350,10 +354,12 @@ namespace sample
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception e1) {
-                    //MessageBox.Show(e1.Message);
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
                 }
-                finally {
+                finally
+                {
                     con.Close();
                 }
             }
@@ -404,7 +410,7 @@ namespace sample
                         TA += float.Parse(dgvInnerQuotation.Rows[i].Cells["Amount"].Value?.ToString());
                        
                         txtsubtotal.Text = TA.ToString();
-                       
+                        txtTotal.Text = TA.ToString();
                     }
                     clear_text_data();
                 }
@@ -437,7 +443,7 @@ namespace sample
             comboBox1.Text = "";
             cmbStatesupply.Text = "";
             txtDescription.Text = "";
-            cmbtax.Text = "0";
+            ////cmbtax.Text = "0";
             txtcgst.Text = "0";
             txtsgst.Text = "0";
             txtTaxAmount.Text = "0";
@@ -451,7 +457,7 @@ namespace sample
             dgvInnerQuotation.Rows.Clear();
         }
 
-        private void update_record_inner(string p)
+        private void update_record_inner(string id)
         {
             for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++) {
                 try {
@@ -637,8 +643,7 @@ namespace sample
         {
             
             try {
-                if (txtDiscount.Text != "")
-                {
+               
                     float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
 
 
@@ -660,9 +665,9 @@ namespace sample
                     total = (TA + gst_amt) - dis_amt;
                     txtTotal.Text = total.ToString();
                 }
-            }
+            
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
         }
 
@@ -693,8 +698,39 @@ namespace sample
                 clear_text_data();
                 cleardata();
                 get_id();
-               
-              
+                printdata(id1.ToString());
+                dgvInnerQuotation.Rows.Clear();
+
+            }
+        }
+
+        private void printdata(string id1)
+        {
+        if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                      report.Load(@"Quotation.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                      report.RegData("Quotation", "Quotation", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
@@ -845,23 +881,33 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
-            DataSet ds = new DataSet();
-            string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.Fill(ds);
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
-            StiReport report = new StiReport();
-            report.Load(@"Quotation.mrt");
+                    StiReport report = new StiReport();
+                    report.Load(@"Quotation.mrt");
 
-            report.Compile();
-            StiPage page = report.Pages[0];
-            report.RegData("Quotation", "Quotation", ds.Tables[0]);
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("Quotation", "Quotation", ds.Tables[0]);
 
-            report.Dictionary.Synchronize();
-            report.Render();
-            report.Show(false);
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
