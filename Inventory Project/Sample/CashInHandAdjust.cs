@@ -36,6 +36,7 @@ namespace sample
             txtenterAmount.Text = "0";
             txtDescription.Text = "";
             cmbbankaccount.Text = "";
+            textBox1.Text = "";
         }
 
         private void fetchdetails()
@@ -155,6 +156,7 @@ namespace sample
 
         private void CashInHandAdjust_Load(object sender, EventArgs e)
         {
+           // textBox1.Text=readon
             fetchdetails();
             bankfetch();
         }
@@ -409,6 +411,11 @@ namespace sample
                     MessageBox.Show(e1.Message);
                 }
             }
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

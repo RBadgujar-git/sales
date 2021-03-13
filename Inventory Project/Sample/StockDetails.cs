@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace sample
 {
     public partial class StockDetails : UserControl
     {
+
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         public FormWindowState WindowState { get; private set; }
 
         public StockDetails()
@@ -26,7 +29,33 @@ namespace sample
 
         private void StockDetails_Load(object sender, EventArgs e)
         {
+            fetchCampanyame();
 
+
+
+        }
+        private void fetchCampanyame()
+        {
+            if (cmbItemname.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ItemName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbItemname.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

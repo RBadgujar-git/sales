@@ -297,6 +297,7 @@
             this.txtcampanyName.ShadowDecoration.Parent = this.txtcampanyName;
             this.txtcampanyName.Size = new System.Drawing.Size(240, 24);
             this.txtcampanyName.TabIndex = 1;
+            this.txtcampanyName.TextChanged += new System.EventHandler(this.txtcampanyName_TextChanged);
             this.txtcampanyName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcampanyName_KeyPress);
             // 
             // txtAddress
@@ -754,7 +755,7 @@
             this.dgvComapnyMaster.Name = "dgvComapnyMaster";
             this.dgvComapnyMaster.RowHeadersVisible = false;
             this.dgvComapnyMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvComapnyMaster.Size = new System.Drawing.Size(1092, 228);
+            this.dgvComapnyMaster.Size = new System.Drawing.Size(1080, 228);
             this.dgvComapnyMaster.TabIndex = 30;
             this.dgvComapnyMaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

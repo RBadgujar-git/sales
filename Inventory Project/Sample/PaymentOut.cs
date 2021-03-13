@@ -63,7 +63,7 @@ namespace sample
             txtReceived.Text = "0";
             txtDiscount.Text = "0";
             txtTotal.Text = "0";
-            PictureBox1.Image = null;
+     //       PictureBox1.Image = null;
         }
 
         private void fetchdetails()
@@ -88,7 +88,6 @@ namespace sample
                 {
                     MessageBox.Show("Party Name Is Required");
                 }
-
                 else
                 {
                     MemoryStream ms = new MemoryStream();
@@ -126,18 +125,68 @@ namespace sample
                     {
                         MessageBox.Show("Please try again");
                     }
+
+
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("error" + ex.Message);
+                MessageBox.Show("Imaage is needed !");
             }
        }
+        public int verify=0;
+        public void valid()
+        {
+            if (cmbPartyName.Text == "")
+            {
+                MessageBox.Show("Please Select Party Name ");              
+            }
+            else if (cmbPayment.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Type ");
+
+            }
+            else if (txtReceiptNo.Text == "")
+            {
+                MessageBox.Show("Please Insert Paid Payment ");
+
+            }
+
+            else if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Please Select Payment Status ");
+
+            }
+            else if (PictureBox1.Image ==null)
+            {
+                MessageBox.Show("Please Select Image ");
+            }
+            else
+            {
+                verify = 1;
+            }
+           
+
+
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
+            if (id== "")
+            {
+
+                valid();
+                if (verify == 1)
+                {
+                    InsertData();
+                    fetchdetails();
+                }
+            }
+           else {
+                MessageBox.Show("You no Permistin to save Staff !");
+            }
+
         }
 
         public void Update1()
@@ -184,7 +233,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Image is needed !");
                 }
             }
             else
@@ -195,9 +244,21 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();
-            Cleardata();
+            if (id != "")
+            {
+                valid();
+                if (verify == 1)
+                {
+                    Update1();
+                    Cleardata();
+                    fetchdetails();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You have Not Perrmistion ! ");
+            }
+
         }
 
         public void Delete1()
@@ -239,8 +300,23 @@ namespace sample
  
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
+            if (id != "")
+            {
+                if (cmbPartyName.Text != "")
+                {
+
+                    Delete1();
+                    fetchdetails();
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Record ");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Indavlid Data !");
+            }
         }
 
         private void dgvPaymentIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -411,6 +487,30 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cmbPartyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    if (con.State == ConnectionState.Closed)
+            //    {
+            //        con.Open();
+            //    }
+
+            //    SqlCommand cmd = new SqlCommand("select sum(Unpaid) from tbl_PartyMaster where PartyName="+cmbPartyName.Text+" and  Company_ID = '" + NewCompany.company_id + "'", con);       
+            //    SqlDataReader dr = cmd.ExecuteReader();
+            //    if (dr.Read())
+            //    {
+                 
+            //    }
+            //    dr.Close();
+              
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
     }
 }

@@ -32,30 +32,59 @@ namespace sample
         private void LoanAccount_Load(object sender, EventArgs e)
         {
             fetchdetails();
-            fetchCompany();
+            //fetchCompany();
+            bankfetch();
+            companyfetch();
         }
-        private void fetchCompany()
+        private void bankfetch()
         {
-            if (cmbCompanyName.Text != "System.Data.DataRowView") {
-                try {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+            if (cmbAccount.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
                     DataTable DT = new DataTable();
                     SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
-                        cmbCompanyName.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbAccount.Items.Add(ds.Tables["Temp"].Rows[i]["BankName"].ToString());
                     }
                 }
-                catch (Exception e1) {
+                catch (Exception e1)
+                {
                     MessageBox.Show(e1.Message);
                 }
             }
         }
+        //private void fetchCompany()
+        //{
+        //    try
+        //    {
+        //        con.Open();
+        //        string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' GROUP BY CompanyName ");
+        //        SqlCommand cmd = new SqlCommand(Query, con);
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        if (dr.Read())
+        //        {
+        //            txtcompanyname.Text = dr["CompanyName"].ToString();
+        //        }
+        //        dr.Close();
+        //        con.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //    finally
+        //    {
 
-       
+        //    }
+        //}
+
+
         private void fetchdetails()
         {
             //AccountName,AccountNo,Description,LendarBank,
@@ -79,28 +108,32 @@ namespace sample
             cmd.Parameters.AddWithValue("@Duration", "");
             cmd.Parameters.AddWithValue("@ProcessingFees", "");
             cmd.Parameters.AddWithValue("@PaidBy", "");
+            cmd.Parameters.AddWithValue("@loanamount", "");
+            cmd.Parameters.AddWithValue("@total", "");
             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             cmd.Parameters.AddWithValue("@Action", "Select");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
            
               dgvDescription.DataSource = dtable;
-           
+            con.Close();
         }
 
         private void cleardata()
         {
-            txtAccountname.Text = "";
+            cmbAccount.Text = "";
             txtAccountNo.Text = "";
             txtDescription.Text = "";
             txtLenderBank.Text = "";
-            cmbCompanyName.Text = "";
+            txtcompanyname.Text = "";
             txtCurrentBal.Text = "";
             cmbLoanReceive.Text = "";
             txtinterest.Text = "";
             txtTermDuration.Text = "";
-            txtProcessingFees.Text = "";
+            txtProcessingFees.Text = "0";
             cmbfees.Text = "";
+            txtLoanAmount.Text = "";
+            txtTotal.Text = "";
         }
 
         private void InsertData()
@@ -109,7 +142,7 @@ namespace sample
             //FirmName,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,PaidBy,AdditionalFeild1,AdditionalFeild
             try
             {
-                if (txtAccountname.Text == "")
+                if (cmbAccount.Text == "")
                 {
                     MessageBox.Show("Account Name is requried");
                 }
@@ -124,21 +157,23 @@ namespace sample
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@AccountName", txtAccountname.Text);
+                    cmd.Parameters.AddWithValue("@AccountName", cmbAccount.Text);
                     cmd.Parameters.AddWithValue("@AccountNo", txtAccountNo.Text);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                     cmd.Parameters.AddWithValue("@LendarBank", txtLenderBank.Text);
-                    cmd.Parameters.AddWithValue("@FirmName", cmbCompanyName.Text);
+                    cmd.Parameters.AddWithValue("@FirmName", txtcompanyname.Text);
                     cmd.Parameters.AddWithValue("@CurrentBal", txtCurrentBal.Text);
                     cmd.Parameters.AddWithValue("@LoanReceive", cmbLoanReceive.Text);
                     cmd.Parameters.AddWithValue("@Interest", txtinterest.Text);
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);
                     cmd.Parameters.AddWithValue("@ProcessingFees", txtProcessingFees.Text);
                     cmd.Parameters.AddWithValue("@PaidBy", cmbfees.Text);
+                    cmd.Parameters.AddWithValue("@loanamount", txtLoanAmount.Text);
+                    cmd.Parameters.AddWithValue("@total", txtTotal.Text);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data Successfully");
-                   
+                    con.Close();
                 }
             }
             catch (Exception)
@@ -150,11 +185,11 @@ namespace sample
         private void dgvDescription_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvDescription.SelectedRows[0].Cells["ID"].Value.ToString();
-            txtAccountname.Text = dgvDescription.SelectedRows[0].Cells["AccountName"].Value.ToString();
+            cmbAccount.Text = dgvDescription.SelectedRows[0].Cells["AccountName"].Value.ToString();
             txtAccountNo.Text = dgvDescription.SelectedRows[0].Cells["AccountNo"].Value.ToString();
             txtDescription.Text = dgvDescription.SelectedRows[0].Cells["Description"].Value.ToString();
             txtLenderBank.Text = dgvDescription.SelectedRows[0].Cells["LendarBank"].Value.ToString();
-            cmbCompanyName.Text = dgvDescription.SelectedRows[0].Cells["FirmName"].Value.ToString();
+            txtcompanyname.Text = dgvDescription.SelectedRows[0].Cells["FirmName"].Value.ToString();
             txtCurrentBal.Text= dgvDescription.SelectedRows[0].Cells["CurrentBal"].Value.ToString();
             dtpdate.Text= dgvDescription.SelectedRows[0].Cells["BalAsOf"].Value.ToString();
             cmbLoanReceive.Text = dgvDescription.SelectedRows[0].Cells["LoanReceive"].Value.ToString();
@@ -162,6 +197,8 @@ namespace sample
             txtTermDuration.Text= dgvDescription.SelectedRows[0].Cells["Duration"].Value.ToString();
             txtProcessingFees.Text= dgvDescription.SelectedRows[0].Cells["ProcessingFees"].Value.ToString();
             cmbfees.Text= dgvDescription.SelectedRows[0].Cells["PaidBy"].Value.ToString();
+            txtLoanAmount.Text = dgvDescription.SelectedRows[0].Cells["LoanAmount"].Value.ToString();
+            txtTotal.Text = dgvDescription.SelectedRows[0].Cells["Total"].Value.ToString();
         }
         public void Update1()
         {
@@ -178,17 +215,19 @@ namespace sample
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
                     cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@AccountName", txtAccountname.Text);
+                    cmd.Parameters.AddWithValue("@AccountName", cmbAccount.Text);
                     cmd.Parameters.AddWithValue("@AccountNo", txtAccountNo.Text);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                     cmd.Parameters.AddWithValue("@LendarBank", txtLenderBank.Text);
-                    cmd.Parameters.AddWithValue("@FirmName", cmbCompanyName.Text);
+                    cmd.Parameters.AddWithValue("@FirmName", txtcompanyname.Text);
                     cmd.Parameters.AddWithValue("@CurrentBal", txtCurrentBal.Text);
                     cmd.Parameters.AddWithValue("@LoanReceive", cmbLoanReceive.Text);
                     cmd.Parameters.AddWithValue("@Interest", txtinterest.Text);
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);
                     cmd.Parameters.AddWithValue("@ProcessingFees", txtProcessingFees.Text);
                     cmd.Parameters.AddWithValue("@PaidBy", cmbfees.Text);
+                    cmd.Parameters.AddWithValue("@loanamount", txtLoanAmount.Text);
+                    cmd.Parameters.AddWithValue("@total", txtTotal.Text);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -204,6 +243,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -248,6 +288,7 @@ namespace sample
                 {
                     MessageBox.Show("error" + ex.Message);
                 }
+                finally { con.Close(); }
             }
             else
             {
@@ -258,11 +299,41 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //calopenbal();
+            //update_opening_bal();
             InsertData();
             fetchdetails();
             cleardata();
         }
+        public void calopenbal()
+        {
+            float opening_bal = 0, amount = 0, remain_opening = 0;
 
+            opening_bal = float.Parse(txtCurrentBal.Text);
+            amount = float.Parse(txtTotal.Text);
+
+            remain_opening = opening_bal + amount;
+            txtCurrentBal.Text = remain_opening.ToString();
+        }
+        public void update_opening_bal()
+        {
+            try
+            {
+                con.Open();
+                String query = string.Format("update tbl_BankAccount set OpeningBal='" + txtCurrentBal.Text + "' where (BankName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbAccount.Text);
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+
+            }
+        }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -349,9 +420,33 @@ namespace sample
 
         private void cmbCompanyName_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+           
         }
+        public void companyfetch()
+        {
+            //try
+            //{
+            //    con.Open();
+            //    string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' GROUP BY CompanyName ");
+            //    SqlCommand cmd = new SqlCommand(Query, con);
+            //    SqlDataReader dr = cmd.ExecuteReader();
+            //    if (dr.Read())
+            //    {
+            //        txtcompanyname.Text = dr["CompanyName"].ToString();
+            //    }
+            //    dr.Close();
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
 
+            //}
+            txtcompanyname.Text = NewCompany.companyname;
+        }
         private void cmbLoanReceive_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -394,6 +489,71 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void cmbAccount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string Query = String.Format("select OpeningBal from tbl_BankAccount where (BankName='{0}') and Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY OpeningBal ", cmbAccount.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtCurrentBal.Text = dr["OpeningBal"].ToString();
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void txtCurrentBal_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //float emi;
+          
+
+            //float principal, rate, time,fee;
+            //principal = float.Parse(txtLoanAmount.Text);
+            //rate = float.Parse(txtinterest.Text);
+            //time = float.Parse(txtTermDuration.Text);
+            //fee = float.Parse(txtProcessingFees.Text);
+          
+            //emi = (principal * rate * time) / 100;
+            //txtTotal.Text = (emi + principal + fee).ToString();
+        }
+
+        private void txtProcessingFees_KeyDown(object sender, KeyEventArgs e)
+        {
+            //float emi;
+
+
+            //float principal, rate, time, fee;
+            //principal = float.Parse(txtLoanAmount.Text);
+            //rate = float.Parse(txtinterest.Text);
+            //time = float.Parse(txtTermDuration.Text);
+            //fee = float.Parse(txtProcessingFees.Text);
+
+            //emi = (principal * rate * time) / 100;
+            //txtTotal.Text = (emi + principal + fee).ToString();
+        }
+
+        private void txtcompanyname_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

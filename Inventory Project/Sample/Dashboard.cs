@@ -32,27 +32,28 @@ namespace sample
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                con.Open();
-                string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY CompanyName ");
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    label1.Text = dr["CompanyName"].ToString();
-                }
-                dr.Close();
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
+            //try
+            //{
+            //    con.Open();
+            //    string Query = String.Format("select CompanyName from tbl_CompanyMaster where Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY CompanyName ");
+            //    SqlCommand cmd = new SqlCommand(Query, con);
+            //    SqlDataReader dr = cmd.ExecuteReader();
+            //    if (dr.Read())
+            //    {
+            //        textBox1.Text = dr["CompanyName"].ToString();
+            //    }
+            //    dr.Close();
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
 
-            }
+            //}
+            toolStripMenuItem5.Text=NewCompany.companyname;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -792,7 +793,13 @@ namespace sample
 
         private void exportItemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ExportToExcel IP = new ExportToExcel();
+            // ex.TopLevel = false;
+            IP.AutoScroll = true;
+            this.Controls.Add(IP);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            IP.Dock = DockStyle.Fill;
+            IP.BringToFront();
         }
 
         private void referalCodeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1313,11 +1320,32 @@ namespace sample
 
         private void companyBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CompanyBankAccount cb = new CompanyBankAccount();
+            CompanyBankHomepage cb = new CompanyBankHomepage();
             this.Controls.Add(cb);
             cb.Dock = DockStyle.Fill;
             cb.Visible = true;
             cb.BringToFront();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            NewCompany n = new NewCompany();
+            this.Controls.Add(n);
+            n.Location = new Point(200, 50);
+            n.Visible = true;
+            n.BringToFront();
+        }
+
+        private void companyBankAccountToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            CompanyBankHomepage BA = new CompanyBankHomepage();
+            // BA.TopLevel = false;
+            // BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
     }
 }

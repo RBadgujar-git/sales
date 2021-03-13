@@ -22,6 +22,8 @@ namespace sample
         SqlCommand cmd;
         string id = "";
         public static string company_id;
+        public static string companyname;
+
         public NewCompany()
         {
             InitializeComponent();
@@ -215,12 +217,13 @@ namespace sample
             try
             {
                 con.Open();
-                string Query = String.Format("select CompanyID,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
+                string Query = String.Format("select CompanyID,CompanyName,PhoneNo,EmailID,ReferaleCode from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID,CompanyName,PhoneNo,EmailID,ReferaleCode", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
                    company_id = dr["CompanyID"].ToString();
+                    companyname = dr["CompanyName"].ToString();
                     txtContactNo.Text = dr["PhoneNo"].ToString();
                     txtEmailID.Text = dr["EmailID"].ToString();
                     txtReferralCode.Text = dr["ReferaleCode"].ToString();
@@ -278,29 +281,7 @@ namespace sample
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
-                {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
-                    {
-                        guna2CirclePictureBox1.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        guna2CirclePictureBox1.Image.Save(ms, guna2CirclePictureBox1.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
-                    }
-                }
-            }
+            MessageBox.Show("Image Not Change or Insert");
         }
         //  // Convert borderStyle to Style and ExStyle values for Win32
         //protected override void OnPaint(PaintEventArgs e)

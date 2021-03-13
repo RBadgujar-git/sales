@@ -853,7 +853,7 @@
 
         #endregion
         private System.Windows.Forms.Button Delete;
-        private System.Windows.Forms.Button Update;
+      private System.Windows.Forms.Button Update;
         private System.Windows.Forms.Button btnSave;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private System.Windows.Forms.Label label11;

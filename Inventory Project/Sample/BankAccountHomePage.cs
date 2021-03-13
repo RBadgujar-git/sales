@@ -72,7 +72,7 @@ namespace sample
         {
             bindbankdata();
         }
-        private void bindbankdata()
+        public void bindbankdata()
         {
             con.Open();
             DataTable dt = new DataTable();
@@ -98,7 +98,8 @@ namespace sample
 
         private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)
         {
-
+            BankAccountHomePage cb = new BankAccountHomePage();
+            cb.bindbankdata();
         }
 
         private void label2_Click(object sender, EventArgs e)

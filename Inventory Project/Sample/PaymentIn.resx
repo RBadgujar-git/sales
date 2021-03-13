@@ -127,7 +127,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>57, 66</value>
+    <value>114, 74</value>
   </data>
   <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -160,7 +160,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 179</value>
+    <value>526, 181</value>
   </data>
   <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -193,7 +193,7 @@
     <value>NoControl</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>468, 62</value>
+    <value>528, 70</value>
   </data>
   <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -226,7 +226,7 @@
     <value>NoControl</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 151</value>
+    <value>118, 142</value>
   </data>
   <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -259,7 +259,7 @@
     <value>NoControl</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>803, 69</value>
+    <value>865, 82</value>
   </data>
   <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -292,7 +292,7 @@
     <value>NoControl</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 110</value>
+    <value>96, 109</value>
   </data>
   <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -325,7 +325,7 @@
     <value>NoControl</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 209</value>
+    <value>119, 209</value>
   </data>
   <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -358,7 +358,7 @@
     <value>NoControl</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 136</value>
+    <value>445, 141</value>
   </data>
   <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -388,7 +388,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="txtDiscount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 132</value>
+    <value>581, 137</value>
   </data>
   <data name="txtDiscount.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 24</value>
@@ -415,7 +415,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>443, 99</value>
+    <value>500, 104</value>
   </data>
   <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -445,7 +445,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="txtReceived.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 96</value>
+    <value>581, 101</value>
   </data>
   <data name="txtReceived.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 24</value>
@@ -469,10 +469,10 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="txtReceiptNo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 205</value>
+    <value>211, 205</value>
   </data>
   <data name="txtReceiptNo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 24</value>
+    <value>205, 24</value>
   </data>
   <data name="txtReceiptNo.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -493,10 +493,10 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="txtDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>156, 142</value>
+    <value>212, 139</value>
   </data>
   <data name="txtDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>203, 56</value>
+    <value>204, 56</value>
   </data>
   <data name="txtDescription.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -517,7 +517,7 @@
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="txtTotal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 175</value>
+    <value>581, 177</value>
   </data>
   <data name="txtTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 24</value>
@@ -544,7 +544,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 252</value>
+    <value>476, 264</value>
   </data>
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 42</value>
@@ -574,7 +574,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnUpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>517, 252</value>
+    <value>574, 264</value>
   </data>
   <data name="btnUpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 42</value>
@@ -597,33 +597,6 @@
   <data name="&gt;&gt;btnUpdate.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="PictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>765, 105</value>
-  </data>
-  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 88</value>
-  </data>
-  <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
-    <value>PictureBox1</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2PictureBox, Guna.UI2, Version=2.0.1.1, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
-    <value>Clear</value>
-  </data>
-  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
@@ -631,7 +604,7 @@
     <value>NoControl</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>616, 252</value>
+    <value>673, 264</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 42</value>
@@ -652,10 +625,10 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="cmbPartyName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 64</value>
+    <value>212, 71</value>
   </data>
   <data name="cmbPartyName.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 24</value>
@@ -673,7 +646,7 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;cmbPartyName.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="cmbPaymentType.Items" xml:space="preserve">
     <value>Cash</value>
@@ -685,7 +658,7 @@
     <value>Online Payment</value>
   </data>
   <data name="cmbPaymentType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 105</value>
+    <value>212, 106</value>
   </data>
   <data name="cmbPaymentType.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 24</value>
@@ -703,7 +676,7 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;cmbPaymentType.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
@@ -712,7 +685,7 @@
     <value>NoControl</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>812, 252</value>
+    <value>869, 264</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 42</value>
@@ -733,7 +706,7 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="Print.Font" type="System.Drawing.Font, System.Drawing">
     <value>Arial, 9.75pt, style=Bold</value>
@@ -742,7 +715,7 @@
     <value>NoControl</value>
   </data>
   <data name="Print.Location" type="System.Drawing.Point, System.Drawing">
-    <value>714, 252</value>
+    <value>771, 264</value>
   </data>
   <data name="Print.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 42</value>
@@ -763,13 +736,13 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;Print.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="dtpdate.CustomFormat" xml:space="preserve">
     <value>MM/dd/yyyy</value>
   </data>
   <data name="dtpdate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 60</value>
+    <value>581, 67</value>
   </data>
   <data name="dtpdate.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 23</value>
@@ -787,7 +760,7 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;dtpdate.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnminimize.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Stretch</value>
@@ -799,10 +772,10 @@
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
   <data name="btnminimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>881, 12</value>
+    <value>1038, 5</value>
   </data>
   <data name="btnminimize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 27</value>
+    <value>29, 29</value>
   </data>
   <data name="btnminimize.TabIndex" type="System.Int32, mscorlib">
     <value>457</value>
@@ -860,10 +833,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>910, 11</value>
+    <value>1068, 5</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 27</value>
+    <value>29, 29</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>348</value>
@@ -916,7 +889,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>848, 11</value>
+    <value>1009, 8</value>
   </data>
   <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 25</value>
@@ -946,7 +919,7 @@
     <value>NoControl</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>429, 14</value>
+    <value>513, 12</value>
   </data>
   <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -972,9 +945,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="guna2Panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <data name="guna2Panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -982,7 +952,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="guna2Panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 46</value>
+    <value>1100, 46</value>
   </data>
   <data name="guna2Panel2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -997,16 +967,40 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;guna2Panel2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>823, 108</value>
+  </data>
+  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 121</value>
+  </data>
+  <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>68</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 242</value>
+    <value>211, 241</value>
   </data>
   <data name="textBox1.MaxLength" type="System.Int32, mscorlib">
     <value>1000</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 23</value>
+    <value>205, 23</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1024,13 +1018,13 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 246</value>
+    <value>133, 243</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 16</value>
@@ -1054,7 +1048,7 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="comboBox1.Items" xml:space="preserve">
     <value>Overview</value>
@@ -1069,7 +1063,7 @@
     <value>Unpaid</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 206</value>
+    <value>581, 213</value>
   </data>
   <data name="comboBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 24</value>
@@ -1087,13 +1081,13 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>455, 210</value>
+    <value>514, 217</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 16</value>
@@ -1114,13 +1108,13 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="dgvPaymentIn.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>37</value>
   </data>
   <data name="dgvPaymentIn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 324</value>
+    <value>87, 321</value>
   </data>
   <data name="dgvPaymentIn.Size" type="System.Drawing.Size, System.Drawing">
     <value>931, 193</value>
@@ -1138,10 +1132,7 @@
     <value>Clear</value>
   </data>
   <data name="&gt;&gt;dgvPaymentIn.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="Clear.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+    <value>5</value>
   </data>
   <data name="Clear.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1150,7 +1141,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="Clear.Size" type="System.Drawing.Size, System.Drawing">
-    <value>955, 517</value>
+    <value>1100, 517</value>
   </data>
   <data name="Clear.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1174,7 +1165,7 @@
     <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>955, 517</value>
+    <value>1098, 517</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Verdana, 9.75pt</value>

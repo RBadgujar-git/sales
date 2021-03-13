@@ -60,6 +60,8 @@ namespace sample
             //dgvPurchaseBill.DataSource = ds;
             //dgvPurchaseBill.DataMember = "temp";
             //con.Close();
+            //     Data();
+         
         }
         private void Bindadata()
         {
@@ -96,19 +98,51 @@ namespace sample
             //row = dgvexpense.Rows.Count - 2;
             ////dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
             //dgvexpense.CurrentCell = dgvexpense[1, row];
+
             //e.SuppressKeyPress = true;
+
             for (int i = 0; i < dgvPurchaseBill.Rows.Count; i++)
             {
-                TA += float.Parse(dgvPurchaseBill.Rows[i].Cells["Paid"].Value?.ToString());
-                txtPaid.Text = TA.ToString();
-                 TD += float.Parse(dgvPurchaseBill.Rows[i].Cells["RemainingBal"].Value?.ToString());
-                   txtUnpaid.Text = TD.ToString();
-              
-                   qty = float.Parse(txtPaid.Text.ToString());
-                   rate = float.Parse(txtUnpaid.Text.ToString());
-                 total = qty + rate;
-                  txtTotal.Text = total.ToString();
+                try
+                {
+                    TA += float.Parse(dgvPurchaseBill.Rows[i].Cells["Paid"].Value.ToString());
+                    txtPaid.Text = TA.ToString();
+                    TD += float.Parse(dgvPurchaseBill.Rows[i].Cells["RemainingBal"].Value.ToString());
+                    txtUnpaid.Text = TD.ToString();
+
+                    qty = float.Parse(txtPaid.Text.ToString());
+                    rate = float.Parse(txtUnpaid.Text.ToString());
+                    total = qty + rate;
+                    txtTotal.Text = total.ToString();
+                }
+                catch(Exception ew)
+                {
+                    MessageBox.Show(ew.Message);
+                }
             }
+        }
+
+        public void Datacount()
+        {
+
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@month",DateTime.Now.Month.ToString());
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                txtPaid.Text = dr[0].ToString();
+               txtUnpaid.Text = dr[1].ToString();
+
+            }
+            dr.Close();
+            con.Close();
+
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
@@ -186,7 +220,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+                   // Data();
                 }
                 catch (Exception ex)
                 {
@@ -208,7 +242,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+                //    Data();
                 }
                 catch (Exception ex)
                 {
@@ -229,7 +263,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+             //       Data();
 
                 }
                 catch (Exception ex)
@@ -250,7 +284,7 @@ namespace sample
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
                     con.Close();
-                    Data();
+               //     Data();
                 }
                 catch (Exception ex)
                 {
@@ -261,15 +295,15 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                   con.Open();
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                    con.Close();
-                    Data();
+                  con.Close();
+                //    Data();
                 }
                 catch (Exception ex)
                 {
@@ -300,19 +334,7 @@ namespace sample
 
         private void dtpTodate_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                string SelectQuery = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvPurchaseBill.DataSource = ds;
-                dgvPurchaseBill.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
+           
             
         }
 
@@ -340,7 +362,19 @@ namespace sample
 
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                string SelectQuery = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Text + "' and '" + dtpTodate.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvPurchaseBill.DataSource = ds;
+                dgvPurchaseBill.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

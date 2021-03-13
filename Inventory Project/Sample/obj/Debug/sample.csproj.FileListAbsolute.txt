@@ -1250,14 +1250,6 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ADODB.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Data.v20.1.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Utils.v20.1.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.XtraEditors.v20.1.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Printing.v20.1.Core.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
@@ -1274,94 +1266,251 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Cheque.resources
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Database.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ADODB.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Data.v20.1.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Utils.v20.1.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.XtraEditors.v20.1.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\DevExpress.Printing.v20.1.Core.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ADODB.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Data.v20.1.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Utils.v20.1.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.XtraEditors.v20.1.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\DevExpress.Printing.v20.1.Core.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankHomepage.resources
+C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Guna.UI2.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\ADODB.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AddMore.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AllParties.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.backup.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Category.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DayBook.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Expenses.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Feedback.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.login.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Reports.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.restore.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Setting.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Settings.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache

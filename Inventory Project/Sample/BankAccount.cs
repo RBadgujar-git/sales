@@ -108,6 +108,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
+                 
                     if (num > 0)
                     {
                         MessageBox.Show("Insert data Successfully");
@@ -127,17 +128,35 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            Insert();
-            clearData();
-            fetchdetails();
+            BankAccountHomePage cb = new BankAccountHomePage();
+           
+            try
+            {
+                if (id == "")
+                {
+                    Insert();
+                    fetchdetails();
+                    cb.bindbankdata();
+                }
+                else
+                {
+                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show("error"+ex);
+            }
         }
 
       
 
         private void BankAccount_Load(object sender, EventArgs e)
         {
+            BankAccountHomePage cb = new BankAccountHomePage();
             fetchdetails();
             clearData();
+            cb.bindbankdata();
         }
 
        
@@ -414,6 +433,11 @@ namespace sample
         private void txtaccountname_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("Calc.exe");
         }
     }
 }

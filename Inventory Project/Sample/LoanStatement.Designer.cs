@@ -122,7 +122,7 @@
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImport.Location = new System.Drawing.Point(706, 60);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(22, 23);
+            this.btnImport.Size = new System.Drawing.Size(15, 19);
             this.btnImport.TabIndex = 203;
             this.btnImport.UseVisualStyleBackColor = false;
             // 
@@ -134,9 +134,9 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(743, 60);
+            this.btnPrint.Location = new System.Drawing.Point(737, 60);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.Size = new System.Drawing.Size(19, 19);
             this.btnPrint.TabIndex = 204;
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
