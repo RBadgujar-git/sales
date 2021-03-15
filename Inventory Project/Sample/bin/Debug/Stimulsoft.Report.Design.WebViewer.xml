@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Stimulsoft.Report.Design.WebViewer</name>
+    </assembly>
+    <members>
+        <member name="M:Stimulsoft.Report.Design.WebViewer.StiWebViewerControl.SavePackedDocumentToStringFx(Stimulsoft.Report.StiReport)">
+            <summary>
+            Преобразовывает BarCodes, RichText, Charts в картинки
+            </summary>
+            <param name="report"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Stimulsoft.Report.Design.WebViewer.StiWebViewerControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.WebViewer.StiWebViewerControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.WebViewer.StiWebViewerControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>
