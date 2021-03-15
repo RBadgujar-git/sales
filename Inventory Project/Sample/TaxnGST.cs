@@ -28,5 +28,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void TaxnGST_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

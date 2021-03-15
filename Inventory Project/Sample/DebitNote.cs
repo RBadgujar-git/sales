@@ -1275,11 +1275,6 @@ namespace sample
             cleardata();
             clear_text_data();
         }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
     
 }
