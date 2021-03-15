@@ -71,35 +71,35 @@
             Provides a user interface for selecting an type for a property in a property grid.
             </summary>
         </member>
-        <member name="F:Stimulsoft.Report.Design.Check.StiCheckControl.components">
+        <member name="F:Stimulsoft.Report.Design.Check.CheckControl.components">
             <summary> 
             Required designer variable.
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Design.Check.StiCheckControl.Dispose(System.Boolean)">
+        <member name="M:Stimulsoft.Report.Design.Check.CheckControl.Dispose(System.Boolean)">
             <summary> 
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:Stimulsoft.Report.Design.Check.StiCheckControl.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Design.Check.CheckControl.InitializeComponent">
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="F:Stimulsoft.Report.Design.Check.StiChecksViewerForm.components">
+        <member name="F:Stimulsoft.Report.Design.Check.ChecksViewerForm.components">
             <summary>
             Required designer variable.
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Design.Check.StiChecksViewerForm.Dispose(System.Boolean)">
+        <member name="M:Stimulsoft.Report.Design.Check.ChecksViewerForm.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
             </summary>
             <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         </member>
-        <member name="M:Stimulsoft.Report.Design.Check.StiChecksViewerForm.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Design.Check.ChecksViewerForm.InitializeComponent">
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
@@ -137,75 +137,6 @@
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Components.Design.StiIconSetConditionZoneControl">
-            <summary>
-            Summary description for StiIconSetConditionZoneControl.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Controls.StiZoneControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiZoneControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiZoneControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Components.Design.StiIconSetConditionZoneControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Components.Design.StiIconSetConditionZoneControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Components.Design.StiColorScaleConditionZoneControl">
-            <summary>
-            Summary description for StiColorScaleConditionZoneControl.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Components.Design.StiColorScaleConditionZoneControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Components.Design.StiColorScaleConditionZoneControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Components.Design.StiDataBarConditionZoneControl">
-            <summary>
-            Summary description for StiDataBarConditionZoneControl.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Components.Design.StiDataBarConditionZoneControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Components.Design.StiDataBarConditionZoneControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Components.Design.StiGroupConditionEditor">
-            <summary>
-            Provides a user interface to select and configure a Data Column object.
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.Components.Design.StiBusinessObjectSelectionControl.Dispose(System.Boolean)">
@@ -302,31 +233,6 @@
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.Design.ContextTools.StiCTService.Position">
-            <summary>
-            Gets position of the item in menu.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.ContextTools.StiTemplatesCTService.GetInterfaceType">
-            <summary>
-            Returns the type of interface with which works this service.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.ContextTools.StiTemplatesCTService.CreateMenuItem(Stimulsoft.Report.Design.StiDesignerControl)">
-            <summary>
-            Creates the item a menu for this service.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.ContextTools.StiTemplatesCTService.PageType">
-            <summary>
-            Returns the type of page with which works this service.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.ContextTools.StiTemplatesCTService.GroupCategory">
-            <summary>
-            Gets value for group items menu.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.ContextTools.StiTemplatesCTService.Position">
             <summary>
             Gets position of the item in menu.
             </summary>
@@ -649,229 +555,6 @@
         <member name="P:Stimulsoft.Report.Design.ContextTools.StiTableSelectRowCTService.Position">
             <summary>
             Gets position of the item in menu.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.Controls.StiDesignerRTPreviewControl">
-            <summary>
-            Class describes control for report preview using WinRT viewer.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Controls.StiDesignerRTPreviewControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerRTPreviewControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerRTPreviewControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.Controls.StiDesignerCodeControl">
-            <summary>
-            Class describes control for report html preview.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Controls.StiDesignerCodeControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerCodeControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerCodeControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.Controls.StiDesignerSLPreviewControl">
-            <summary>
-            Class describes control for report preview using Silverlight viewer.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Controls.StiDesignerSLPreviewControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerSLPreviewControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerSLPreviewControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.Controls.StiDesignerWebPreviewControl">
-            <summary>
-            Class describes control for report preview using WebViewerFx control.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Controls.StiDesignerWebPreviewControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerWebPreviewControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerWebPreviewControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.QuickButtons.Design.StiImageQuickButton">
-            <summary>
-            The class describes the StiImageQuickButton.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.QuickButtons.Design.StiImageQuickButton.Image">
-            <summary>
-            Gets image of the quick button.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.QuickButtons.Design.StiImageQuickButton.SelectedImage">
-            <summary>
-            Gets selected image of the quick button.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.QuickButtons.Design.StiImageQuickButton.Name">
-            <summary>
-            Gets name of the quick button.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Dictionary.StiDialogInfoGetItemsFromColumnForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Dictionary.StiDialogInfoGetItemsFromColumnForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Dictionary.StiDialogInfoGetItemsFromColumnForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Dictionary.StiDialogInfoItemsEditor.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Dictionary.StiDialogInfoItemsEditor.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.StiDialogStyleEditor">
-            <summary>
-            Provides a user interface for selecting an StiDialogStyle for a property in a property grid.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.StiDesignerControl">
-            <summary>
-            This is report designer control.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiDesignerControl.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiDesignerControl.ApplyStyle(Stimulsoft.Report.StiGlobalGuiStyle)">
-            <summary>
-            Internal use only.
-            </summary>
-            <param name="style"></param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiDesignerControl.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.Info">
-            <summary>
-            Gets or sets information which is necessary for the report designer.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.ComponentsOnReport">
-            <summary>
-            Gets collection of components in current report.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.ComponentsOnPage">
-            <summary>
-            Gets collection of components in current page.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.SelectedTextComponentsOnPage">
-            <summary>
-            Gets collection of selected text components on current page.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.SelectedComponentsOnPage">
-            <summary>
-            Gets collection of selected components on current page.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Ribbon.StiRibbonBackStageUserControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Ribbon.StiRibbonBackStageUserControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Ribbon.StiRibbonBackStageUserControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.StiCalculationModeEditor">
-            <summary>
-            Provides a user interface for selecting an calculation mode of report in a property grid.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.StiStylesCreateForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStylesCreateForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStylesCreateForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.Design.Dictionary.StiSelectTypeOfBusinessObjectForm">
@@ -1391,6 +1074,22 @@
         <member name="T:Stimulsoft.Report.Chart.Design.StiChartFilterZoneControl">
             <summary>
             Summary description for StiChartFilterZoneControl.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.Design.Controls.StiZoneControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.Controls.StiZoneControl.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.Controls.StiZoneControl.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="F:Stimulsoft.Report.Chart.Design.StiChartFilterZoneControl.components">
@@ -3084,6 +2783,11 @@
             Class describes control for report preview.
             </summary>
         </member>
+        <member name="F:Stimulsoft.Report.Design.Controls.StiDesignerPreviewControl.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
         <member name="M:Stimulsoft.Report.Design.Controls.StiDesignerPreviewControl.Dispose(System.Boolean)">
             <summary> 
             Clean up any resources being used.
@@ -3448,6 +3152,11 @@
             This form is used for editing column of data in report dictionary.
             </summary>
         </member>
+        <member name="F:Stimulsoft.Report.Design.Dictionary.StiDataColumnEditForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
         <member name="M:Stimulsoft.Report.Design.Dictionary.StiDataColumnEditForm.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
@@ -3731,12 +3440,12 @@
             the contents of this method with the code editor.
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Dictionary.Design.StiTotalsZoneControl.Dispose(System.Boolean)">
+        <member name="M:Stimulsoft.Report.Dictionary.Design.StiResultsZoneControl.Dispose(System.Boolean)">
             <summary> 
             Clean up any resources being used.
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Dictionary.Design.StiTotalsZoneControl.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Dictionary.Design.StiResultsZoneControl.InitializeComponent">
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
@@ -3756,6 +3465,11 @@
         <member name="T:Stimulsoft.Report.Dictionary.Design.StiSqlDatabaseEditForm">
             <summary>
             The form of the SqlDatabase edition.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.Dictionary.Design.StiSqlDatabaseEditForm.components">
+            <summary>
+            Required designer variable.
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.Dictionary.Design.StiSqlDatabaseEditForm.Dispose(System.Boolean)">
@@ -4057,6 +3771,11 @@
             Summary description for AddCultureForm.
             </summary>
         </member>
+        <member name="F:Stimulsoft.Report.Design.StiAddCultureForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
         <member name="M:Stimulsoft.Report.Design.StiAddCultureForm.Dispose(System.Boolean)">
             <summary>
             Clean up any resources being used.
@@ -4337,6 +4056,11 @@
             The class describes the StiBandQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.QuickButtons.Design.StiBandQuickButton.#cctor">
+            <summary>
+            Creates a new Quick Button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.QuickButtons.Design.StiBandQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -4395,6 +4119,11 @@
         <member name="T:Stimulsoft.Report.QuickButtons.Design.StiMasterComponentQuickButton">
             <summary>
             The class describes the StiMasterComponentQuickButton.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.QuickButtons.Design.StiMasterComponentQuickButton.#cctor">
+            <summary>
+            Creates a new Quick Button.
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.QuickButtons.Design.StiMasterComponentQuickButton.Name">
@@ -4511,6 +4240,11 @@
             This class helps with refreshing of report designer.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.Design.StiBuilder.RefreshScript">
+            <summary>
+            Refresh report script.
+            </summary>
+        </member>
         <member name="M:Stimulsoft.Report.Design.StiBuilder.Redraw(System.Drawing.Rectangle)">
             <summary>
             Redraws current page in report designer with specified clip rectangle.
@@ -4609,6 +4343,53 @@
             Gets collection of selected components on current page.
             </summary>
         </member>
+        <member name="T:Stimulsoft.Report.Design.StiDesignerControl">
+            <summary>
+            This is report designer control.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.StiDesignerControl.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.StiDesignerControl.ApplyStyle(Stimulsoft.Report.StiGuiStyle)">
+            <summary>
+            Internal use only.
+            </summary>
+            <param name="style"></param>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.StiDesignerControl.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.Info">
+            <summary>
+            Gets or sets information which is necessary for the report designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.ComponentsOnReport">
+            <summary>
+            Gets collection of components in current report.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.ComponentsOnPage">
+            <summary>
+            Gets collection of components in current page.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.SelectedTextComponentsOnPage">
+            <summary>
+            Gets collection of selected text components on current page.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Design.StiDesignerControl.SelectedComponentsOnPage">
+            <summary>
+            Gets collection of selected components on current page.
+            </summary>
+        </member>
         <member name="T:Stimulsoft.Report.Design.StiDesignerConfigService">
             <summary>
             This class desribes report designer configuration.
@@ -4621,7 +4402,7 @@
         </member>
         <member name="T:Stimulsoft.Report.Design.StiEngineVersionEditor">
             <summary>
-            Provides a user interface for selecting an engine version for a property in a property grid.
+            Provides a user interface for selecting an StiStyle for a property in a property grid.
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.Design.StiEventsTab">
@@ -4887,55 +4668,6 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.StiStyleConditionZoneControl">
-            <summary>
-            Summary description for StiConditionZoneControl.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStyleConditionZoneControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStyleConditionZoneControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStyleConditionsEditorForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStyleConditionsEditorForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Design.StiStyleConditionsCollectionEditor">
-            <summary>
-            Provides a user interface to select and configure a style conditions.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.StiStyleViewReportControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStyleViewReportControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.StiStyleViewReportControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.Design.Toolbars.StiStatusBarService">
@@ -5250,6 +4982,17 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.Design.Wizards.StiColumnsPanel.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Design.Wizards.StiColumnsPanel.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
         <member name="M:Stimulsoft.Report.Design.Wizards.StiColumnsRelation.Dispose(System.Boolean)">
             <summary> 
             Clean up any resources being used.
@@ -5278,23 +5021,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.Design.Wizards.StiColumnsSort.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Wizards.StiColumnsThemes.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Wizards.StiColumnsThemes.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Wizards.StiColumnsThemes.InitializeComponent">
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
@@ -5338,23 +5064,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.Design.Wizards.StiDataSourcePanel.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Wizards.StiHighlightComponentControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Wizards.StiHighlightComponentControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Wizards.StiHighlightComponentControl.InitializeComponent">
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.
@@ -5450,23 +5159,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.Design.Wizards.StiSortZoneControl.InitializeComponent">
-            <summary> 
-            Required method for Designer support - do not modify 
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.Design.Wizards.StiPlacementComponentControl.components">
-            <summary> 
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Wizards.StiPlacementComponentControl.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Design.Wizards.StiPlacementComponentControl.InitializeComponent">
             <summary> 
             Required method for Designer support - do not modify 
             the contents of this method with the code editor.

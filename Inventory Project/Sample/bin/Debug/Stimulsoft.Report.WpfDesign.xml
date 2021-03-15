@@ -14,52 +14,12 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiChartConditionsCollectionWindow">
-            <summary>
-            StiChartConditionsCollectionWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiChartConditionsCollectionWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiChartConditionZoneControl">
-            <summary>
-            StiChartConditionZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiChartConditionZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.Chart.Design.StiChartEditorWindow">
             <summary>
             StiChartEditorWindow
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.Chart.Design.StiChartEditorWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiChartFiltersCollectionWindow">
-            <summary>
-            StiChartFiltersCollectionWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiChartFiltersCollectionWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiChartFilterZoneControl">
-            <summary>
-            StiChartFilterZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiChartFilterZoneControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -104,16 +64,6 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Chart.Design.StiConstantLinesEditorWindow">
-            <summary>
-            StiConstantLinesEditorWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Chart.Design.StiConstantLinesEditorWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.Chart.Designer.StiPageListOfValuesControl">
             <summary>
             StiPageListOfValuesControl
@@ -126,20 +76,13 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiSeriesEditorWindow">
             <summary>
+            Interaction logic for StiSeriesEditorWindow.xaml
+            </summary>
+            <summary>
             StiSeriesEditorWindow
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiSeriesEditorWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Chart.Design.StiStripsEditorWindow">
-            <summary>
-            StiStripsEditorWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Chart.Design.StiStripsEditorWindow.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -183,22 +126,25 @@
             </summary>
             <param name="designer">Report designer.</param>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Check.StiCheckControl">
+        <member name="T:Stimulsoft.Report.WpfDesign.Check.CheckControl">
             <summary>
-            StiCheckControl
+            CheckControl
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Check.StiCheckControl.InitializeComponent">
+        <member name="M:Stimulsoft.Report.WpfDesign.Check.CheckControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Check.StiChecksViewerWindow">
+        <member name="T:Stimulsoft.Report.WpfDesign.Check.ChecksViewerWindow">
             <summary>
-            StiChecksViewerWindow
+            Interaction logic for ChecksViewerWindow.xaml
+            </summary>
+            <summary>
+            ChecksViewerWindow
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Check.StiChecksViewerWindow.InitializeComponent">
+        <member name="M:Stimulsoft.Report.WpfDesign.Check.ChecksViewerWindow.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -219,56 +165,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.Check.StiCheckStatusControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiColorCollectionEditorWindow">
-            <summary>
-            StiColorCollectionEditorWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiColorCollectionEditorWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiColorCollectionZoneControl">
-            <summary>
-            StiColorCollectionZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiColorCollectionZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Design.StiColorScaleConditionZoneControl">
-            <summary>
-            StiColorScaleConditionZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Design.StiColorScaleConditionZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Design.StiDataBarConditionZoneControl">
-            <summary>
-            StiDataBarConditionZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Design.StiDataBarConditionZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Design.StiIconSetConditionZoneControl">
-            <summary>
-            StiIconSetConditionZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Design.StiIconSetConditionZoneControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -301,6 +197,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiBandWindow">
             <summary>
+            Interaction logic for StiBandWindow.xaml
+            </summary>
+            <summary>
             StiBandWindow
             </summary>
         </member>
@@ -322,17 +221,23 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Design.StiConditionsEditorWindow">
+        <member name="T:Stimulsoft.Report.WpfDesign.StiConditionsEditorWindow">
+            <summary>
+            Interaction logic for StiConditionsEditorWindow.xaml
+            </summary>
             <summary>
             StiConditionsEditorWindow
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Design.StiConditionsEditorWindow.InitializeComponent">
+        <member name="M:Stimulsoft.Report.WpfDesign.StiConditionsEditorWindow.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiConditionItemZoneControl">
+            <summary>
+            Interaction logic for StiConditionItemZoneControl.xaml
+            </summary>
             <summary>
             StiConditionItemZoneControl
             </summary>
@@ -344,6 +249,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiConditionZoneControl">
             <summary>
+            Interaction logic for StiConditionZoneControl.xaml
+            </summary>
+            <summary>
             StiConditionZoneControl
             </summary>
         </member>
@@ -353,6 +261,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiStyleControl">
+            <summary>
+            Interaction logic for StiStyleControl.xaml
+            </summary>
             <summary>
             StiStyleControl
             </summary>
@@ -364,6 +275,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiPercentageEditor">
             <summary>
+            Interaction logic for StiPercentageEditor.xaml
+            </summary>
+            <summary>
             StiPercentageEditor
             </summary>
         </member>
@@ -373,6 +287,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiNumberEditor">
+            <summary>
+            Interaction logic for StiNumberEditor.xaml
+            </summary>
             <summary>
             StiNumberEditor
             </summary>
@@ -384,6 +301,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiTimeEditor">
             <summary>
+            Interaction logic for StiTimeEditor.xaml
+            </summary>
+            <summary>
             StiTimeEditor
             </summary>
         </member>
@@ -393,6 +313,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDateEditor">
+            <summary>
+            Interaction logic for StiDateEditor.xaml
+            </summary>
             <summary>
             StiDateEditor
             </summary>
@@ -404,6 +327,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiCustomEditor">
             <summary>
+            Interaction logic for StiCustomEditor.xaml
+            </summary>
+            <summary>
             StiCustomEditor
             </summary>
         </member>
@@ -413,6 +339,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiBooleanEditor">
+            <summary>
+            Interaction logic for StiBooleanEditor.xaml
+            </summary>
             <summary>
             StiBooleanEditor
             </summary>
@@ -424,6 +353,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiCurrencyEditor">
             <summary>
+            Interaction logic for StiCurrencyEditor.xaml
+            </summary>
+            <summary>
             StiCurrencyEditor
             </summary>
         </member>
@@ -433,6 +365,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiTextFormatEditorWindow">
+            <summary>
+            Interaction logic for StiTextFormatEditorWindow.xaml
+            </summary>
             <summary>
             StiTextFormatEditorWindow
             </summary>
@@ -795,275 +730,6 @@
             Gets position of the item in menu.
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiChecksBalloonUserControl">
-            <summary>
-            StiChecksBalloonUserControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiChecksBalloonUserControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Controls.StiZoneContainerControl">
-            <summary>
-            StiZoneContainerControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Controls.StiZoneContainerControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Controls.StiZoneControl">
-            <summary>
-            StiZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Controls.StiZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.WpfDesign.Dictionary.StiWpfDataBuilderEx.usedRelations">
-            <summary>
-            Relations being used in the dictionary.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.WpfDesign.Dictionary.StiWpfDataBuilderEx.usedDataSources">
-            <summary>
-            Data sources being used.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.WpfDesign.Dictionary.StiWpfDataBuilderEx.usedColumns">
-            <summary>
-            Columns being used.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Report.WpfDesign.Dictionary.StiWpfDataBuilderEx.level">
-            <summary>
-            Data source level.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiWpfDataBuilderEx.#ctor">
-            <summary>
-            Creates a new object of the type StiWpfDataBuilderEx.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiWpfDataBuilderEx.#ctor(System.Collections.Hashtable,System.Collections.Hashtable,System.Collections.Hashtable)">
-            <summary>
-            Creates a new object of the type StiWpfDataBuilderEx.
-            </summary>
-            <param name="usedRelations">Relations being used in the dictionary.</param>
-            <param name="usedDataSources">Data sources being used.</param>
-            <param name="usedColumns">Columns being used.</param>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl">
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            Interaction logic for StiWpfDesignerControl.xaml
-            </summary>
-            <summary>
-            StiWpfDesignerControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.AddOwnedForm(System.Windows.Forms.Form)">
-            <summary>
-            This method can't be used in Stimulsoft Reports.Wpf.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.Redraw(System.Boolean)">
-            <summary>
-            Redraws current page in report designer with specified clip rectangle.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.Redraw(System.Boolean,System.Boolean)">
-            <summary>
-            Redraws current page in report designer with specified clip rectangle.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.Info">
-            <summary>
-            Gets or sets information which is necessary for the report designer.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.ComponentsOnReport">
-            <summary>
-            Gets collection of components in current report.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.ComponentsOnPage">
-            <summary>
-            Gets collection of components in current page.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.SelectedTextComponentsOnPage">
-            <summary>
-            Gets collection of selected text components on current page.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.SelectedComponentsOnPage">
-            <summary>
-            Gets collection of selected components on current page.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiDialogInfoGetItemsFromColumnWindow">
-            <summary>
-            StiDialogInfoGetItemsFromColumnWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiDialogInfoGetItemsFromColumnWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiDialogInfoItemsEditor">
-            <summary>
-            StiDialogInfoItemsEditor
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiDialogInfoItemsEditor.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiViewDataForm">
-            <summary>
-            This control is used for viewing content of DataSet.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiViewDataForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiViewDataForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfImageQuickButton">
-            <summary>
-            The class describes the StiWpfImageQuickButton.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfQuickButton">
-            <summary>
-            The class describes the base type for the wpf quick button.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.OnClick(System.Windows.Forms.Control,System.Drawing.Point,Stimulsoft.Report.Components.StiComponent,Stimulsoft.Report.Design.IStiDesignerBase)">
-            <summary>
-            Not used in WPF!
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.Image">
-            <summary>
-            Not used in WPF!
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.SelectedImage">
-            <summary>
-            Not used in WPF!
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfImageQuickButton.Name">
-            <summary>
-            Gets name of the quick button.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder">
-            <summary>
-            Used to build trees by the data source.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildColumns(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.Dictionary.StiDataColumnsCollection,Stimulsoft.Report.Wpf.Node,System.Boolean)">
-            <summary>
-            Build TreeViewItem from the column collection.
-            </summary>
-            <param name="Data Source">Data source.</param>
-            <param name="columns">Column collection.</param>
-            <param name="parentNode">TreeViewItem in which TreeViewItem obtained will be added.</param>
-            <param name="alias">If true then, when rendering, aliases are used.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildRelations(Stimulsoft.Report.Dictionary.StiDataRelationsCollection,Stimulsoft.Report.Wpf.Node,Stimulsoft.Report.Dictionary.StiDataSourcesCollection,System.Boolean)">
-            <summary>
-            Builds TreeViewItem fom the collection of relations.
-            </summary>
-            <param name="relations">Collection of relations.</param>
-            <param name="parentNode">TreeViewItem in which TreeViewItem obtained will be added.</param>
-            <param name="alias">If true then, when rendering, aliases are used.</param>
-            <param name="datas">Data Source collection.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildDataSource(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.Wpf.Node,Stimulsoft.Report.Dictionary.StiDataSourcesCollection,System.Boolean)">
-            <summary>
-            Builds TreeViewItem from the Data Source.
-            </summary>
-            <param name="dataSource">Data source.</param>
-            <param name="parentNode">TreeViewItem in which TreeViewItem obtained will be added.</param>
-            <param name="datas">Data Source collection.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildDataSource(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.Wpf.Node@,System.Boolean)">
-            <summary>
-            Builds TreeViewItem from the Data Source.
-            </summary>
-            <param name="dataSource">Data Source for building.</param>
-            <param name="dataNode">Builded TreeViewItem.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildColumns(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.Dictionary.StiDataColumnsCollection,Stimulsoft.Report.Wpf.Node,System.Boolean)">
-            <summary>
-            Build TreeNode from the column collection.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildBusinessObject(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.Wpf.NodeTreeViewItem,System.Boolean)">
-            <summary>
-            Builds TreeNode from the Business Object.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildBusinessObject(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.Wpf.NodeTreeViewItem,System.Boolean,System.Boolean)">
-            <summary>
-            Builds TreeNode from the Business Object.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildBusinessObject(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.Wpf.Node,System.Boolean)">
-            <summary>
-            Builds TreeNode from the Business Object.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.#ctor">
-            <summary>
-            Creates a new object of the type StiWpfDataBuilder.
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiBusinessObjectEditWindow">
             <summary>
             Interaction logic for StiBusinessObjectEditWindow.xaml
@@ -1073,46 +739,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiBusinessObjectEditWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiColumnsGroup">
-            <summary>
-            StiColumnsGroup
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiColumnsGroup.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiColumnsResults">
-            <summary>
-            StiColumnsResults
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiColumnsResults.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiGroupZoneControl">
-            <summary>
-            StiGroupZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiGroupZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiResultsZoneControl">
-            <summary>
-            StiResultsZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiResultsZoneControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -1136,16 +762,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiSelectTypeOfBusinessObjectWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Dictionary.StiVirtualSourceEditWindow">
-            <summary>
-            StiVirtualSourceEditWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Dictionary.StiVirtualSourceEditWindow.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -1190,17 +806,10 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiAboutWindow">
-            <summary>
-            StiAboutWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiAboutWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiMenuItem2010NewUserControl">
+            <summary>
+            Interaction logic for StiMenuItem2010NewUserControl.xaml
+            </summary>
             <summary>
             StiMenuItem2010NewUserControl
             </summary>
@@ -1212,6 +821,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiMenuItem2010ReportUserControl">
             <summary>
+            Interaction logic for StiMenuItem2010ReportUserControl.xaml
+            </summary>
+            <summary>
             StiMenuItem2010ReportUserControl
             </summary>
         </member>
@@ -1221,6 +833,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiMenuItem2010PageUserControl">
+            <summary>
+            Interaction logic for StiMenuItem2010PageUserControl.xaml
+            </summary>
             <summary>
             StiMenuItem2010PageUserControl
             </summary>
@@ -1232,6 +847,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiMenuItem2010DesignerUserControl">
             <summary>
+            Interaction logic for StiMenuItem2010DesignerUserControl.xaml
+            </summary>
+            <summary>
             StiMenuItem2010DesignerUserControl
             </summary>
         </member>
@@ -1241,6 +859,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiMenuItem2010PrintUserControl">
+            <summary>
+            Interaction logic for StiMenuItem2010PrintUserControl.xaml
+            </summary>
             <summary>
             StiMenuItem2010PrintUserControl
             </summary>
@@ -1252,6 +873,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiCrossTabDesignerWindow">
             <summary>
+            Interaction logic for StiCrossTabDesignerWindow.xaml
+            </summary>
+            <summary>
             StiCrossTabDesignerWindow
             </summary>
         </member>
@@ -1261,6 +885,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiCrossTabDataSourceEditWindow">
+            <summary>
+            Interaction logic for StiCrossTabDataSourceEditWindow.xaml
+            </summary>
             <summary>
             StiCrossTabDataSourceEditWindow
             </summary>
@@ -1282,6 +909,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfConditionEditorWindow">
             <summary>
+            Interaction logic for StiWpfConditionEditorWindow.xaml
+            </summary>
+            <summary>
             StiWpfConditionEditorWindow
             </summary>
         </member>
@@ -1295,6 +925,46 @@
             The class describes the StiWpfTableCellCheckBoxQuickButton.
             </summary>
         </member>
+        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfQuickButton">
+            <summary>
+            The class describes the base type for the wpf quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.OnClick(System.Windows.Forms.Control,System.Drawing.Point,Stimulsoft.Report.Components.StiComponent,Stimulsoft.Report.Design.IStiDesignerBase)">
+            <summary>
+            Not used in WPF!
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.GetWpfImage">
+            <summary>
+            Returns image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.GetWpfSelectedImage">
+            <summary>
+            Returns selected image of the quick button.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.Image">
+            <summary>
+            Not used in WPF!
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfQuickButton.SelectedImage">
+            <summary>
+            Not used in WPF!
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellCheckBoxQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellCheckBoxQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfTableCellCheckBoxQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -1303,6 +973,16 @@
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfTableCellImageQuickButton">
             <summary>
             The class describes the  StiWpfTableCellImageQuickButton.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellImageQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellImageQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfTableCellImageQuickButton.Name">
@@ -1315,6 +995,16 @@
             The class describes the  StiWpfTableCellRichTextQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellRichTextQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellRichTextQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfTableCellRichTextQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -1325,12 +1015,38 @@
             The class describes the StiWpfTableCellTextQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellTextQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTableCellTextQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfTableCellTextQuickButton.Name">
             <summary>
             Gets name of the quick button.
             </summary>
         </member>
+        <member name="T:Stimulsoft.Report.WpfDesign.StiAboutWindow">
+            <summary>
+            Interaction logic for StiAboutWindow.xaml
+            </summary>
+            <summary>
+            StiAboutWindow
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiAboutWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiMenuItem2010RecentFilesUserControl">
+            <summary>
+            Interaction logic for StiMenuItem2010RecentFilesUserControl.xaml
+            </summary>
             <summary>
             StiMenuItem2010RecentFilesUserControl
             </summary>
@@ -1360,52 +1076,15 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiStyleConditionsEditorWindow">
-            <summary>
-            StiStyleConditionsEditorWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiStyleConditionsEditorWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiStyleConditionZoneControl">
-            <summary>
-            StiStyleConditionZoneControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiStyleConditionZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiStyleDesigner">
+            <summary>
+            Interaction logic for StiStyleDesigner.xaml
+            </summary>
             <summary>
             StiStyleDesigner
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiStyleDesigner.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiStylesCreateWindow">
-            <summary>
-            StiStylesCreateWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiStylesCreateWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.StiStyleViewReportControl">
-            <summary>
-            StiStyleViewReportControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.StiStyleViewReportControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -1425,6 +1104,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiColumnsFilters">
             <summary>
+            Interaction logic for StiColumnsFilters.xaml
+            </summary>
+            <summary>
             StiColumnsFilters
             </summary>
         </member>
@@ -1434,6 +1116,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDataSelectionControl">
+            <summary>
+            Interaction logic for StiDataSelectionControl.xaml
+            </summary>
             <summary>
             StiDataSelectionControl
             </summary>
@@ -2066,7 +1751,23 @@
             Gets position of the item in menu.
             </summary>
         </member>
+        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDesignerHtmlPreviewControl">
+            <summary>
+            Interaction logic for StiWpfDesignerHtmlPreviewControl.xaml
+            </summary>
+            <summary>
+            StiWpfDesignerHtmlPreviewControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerHtmlPreviewControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDesignerPreviewControl">
+            <summary>
+            Interaction logic for StiWpfDesignerPreviewControl.xaml
+            </summary>
             <summary>
             StiWpfDesignerPreviewControl
             </summary>
@@ -2092,6 +1793,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfPageViewControl">
+            <summary>
+            Interaction logic for StiWpfPageViewControl.xaml
+            </summary>
             <summary>
             StiWpfPageViewControl
             </summary>
@@ -2139,6 +1843,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiCalcDataColumnEditWindow">
             <summary>
+            Interaction logic for StiCalcDataColumnEditWindow.xaml
+            </summary>
+            <summary>
             StiCalcDataColumnEditWindow
             </summary>
         </member>
@@ -2149,7 +1856,7 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiCategoryEditWindow">
             <summary>
-            This form is used for editing variable category in report dictionary.
+            Interaction logic for StiCategoryEditWindow.xaml
             </summary>
             <summary>
             StiCategoryEditWindow
@@ -2162,6 +1869,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDatabaseSelectWindow">
             <summary>
+            Interaction logic for StiDatabaseSelectFormWindow.xaml
+            </summary>
+            <summary>
             StiDatabaseSelectWindow
             </summary>
         </member>
@@ -2172,7 +1882,7 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDataColumnEditWindow">
             <summary>
-            This form is used for editing column of data in report dictionary.
+            Interaction logic for StiDataColumnEditWindow.xaml
             </summary>
             <summary>
             StiDataColumnEditWindow
@@ -2184,6 +1894,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDataControl">
+            <summary>
+            Interaction logic for StiDataControl.xaml
+            </summary>
             <summary>
             StiDataControl
             </summary>
@@ -2216,6 +1929,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDataStoreSourceEditWindow">
             <summary>
+            Interaction logic for StiDataStoreSourceEditWindow.xaml
+            </summary>
+            <summary>
             StiDataStoreSourceEditWindow
             </summary>
         </member>
@@ -2226,6 +1942,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiNewDataWindow">
             <summary>
+            Interaction logic for StiNewDataWindow.xaml
+            </summary>
+            <summary>
             StiNewDataWindow
             </summary>
         </member>
@@ -2235,6 +1954,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiSelectDataWindow">
+            <summary>
+            Interaction logic for StiSelectDataWindow.xaml
+            </summary>
             <summary>
             StiSelectDataWindow
             </summary>
@@ -2285,6 +2007,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiViewDataWindow">
             <summary>
+            Interaction logic for StiViewDataWindow.xaml
+            </summary>
+            <summary>
             StiViewDataWindow
             </summary>
         </member>
@@ -2327,6 +2052,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDataParameterEditWindow">
             <summary>
+            Interaction logic for StiDataParameterEditWindow.xaml
+            </summary>
+            <summary>
             StiDataParameterEditWindow
             </summary>
         </member>
@@ -2336,6 +2064,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiDataRelationEditWindow">
+            <summary>
+            Interaction logic for StiDataRelationEditWindow.xaml
+            </summary>
             <summary>
             StiDataRelationEditWindow
             </summary>
@@ -2360,6 +2091,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiVariableEditWindow">
             <summary>
+            Interaction logic for StiVariableEditWindow.xaml
+            </summary>
+            <summary>
             StiVariableEditWindow
             </summary>
         </member>
@@ -2368,7 +2102,197 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder">
+            <summary>
+            Used to build trees by the data source.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetColumnPathFromNode(System.Windows.Controls.TreeViewItem)">
+            <summary>
+            Returns the ColumnPath from TreeViewItem.
+            </summary>
+            <param name="node">TreeViewItem to build the string view of a column.</param>
+            <returns>ColumnPath.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetColumnPathFromNode(Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem)">
+            <summary>
+            Returns the ColumnPath from TreeViewCheckBoxItem.
+            </summary>
+            <param name="node">TreeViewCheckBoxItem to build the string view of a column.</param>
+            <returns>ColumnPath.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetColumnPathFromNode(System.Windows.Controls.TreeViewItem,System.Boolean)">
+            <summary>
+            Returns the ColumnPath from TreeViewItem.
+            </summary>
+            <param name="node">TreeViewItem to build the string view of a column.</param>
+            <returns>ColumnPath.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetColumnPathFromNode(Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem,System.Boolean)">
+            <summary>
+            Returns the ColumnPath from TreeViewCheckBoxItem.
+            </summary>
+            <param name="node">TreeViewCheckBoxItem to build the string view of a column.</param>
+            <returns>ColumnPath.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetDataBandColumnPathFromNode(System.Windows.Controls.TreeViewItem,System.Boolean)">
+            <summary>
+            Returns the ColumnPath from TreeViewItem for Interaction.
+            </summary>
+            <param name="node">TreeViewItem to build the string view of a column.</param>
+            <returns>ColumnPath.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetPropertyInfoPathFromNode(System.Windows.Controls.TreeViewItem)">
+            <summary>
+            Returns the PropertyInfoPath from TreeViewItem.
+            </summary>
+            <param name="node">TreeViewItem to build the string view of a PropertyInfo.</param>
+            <returns>PropertyInfoPath.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.GetColumnPathFromNodeWithAlias(System.Windows.Controls.TreeViewItem)">
+            <summary>
+            Returns the string view of a column from TreeViewItem taking into consideration aliases.
+            </summary>
+            <param name="node">TreeViewItem to build the string view of a column.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildColumns(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.Dictionary.StiDataColumnsCollection,System.Windows.Controls.TreeViewItem,System.Boolean)">
+            <summary>
+            Build TreeViewItem from the column collection.
+            </summary>
+            <param name="Data Source">Data source.</param>
+            <param name="columns">Column collection.</param>
+            <param name="parentNode">TreeViewItem in which TreeViewItem obtained will be added.</param>
+            <param name="alias">If true then, when rendering, aliases are used.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildColumns(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.Dictionary.StiDataColumnsCollection,Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem,System.Boolean)">
+            <summary>
+            Build TreeViewCheckBoxItem from the column collection.
+            </summary>
+            <param name="Data Source">Data source.</param>
+            <param name="columns">Column collection.</param>
+            <param name="parentNode">TreeViewCheckBoxItem in which TreeViewItem obtained will be added.</param>
+            <param name="alias">If true then, when rendering, aliases are used.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildRelations(Stimulsoft.Report.Dictionary.StiDataRelationsCollection,System.Windows.Controls.TreeViewItem,Stimulsoft.Report.Dictionary.StiDataSourcesCollection,System.Boolean)">
+            <summary>
+            Builds TreeViewItem fom the collection of relations.
+            </summary>
+            <param name="relations">Collection of relations.</param>
+            <param name="parentNode">TreeViewItem in which TreeViewItem obtained will be added.</param>
+            <param name="alias">If true then, when rendering, aliases are used.</param>
+            <param name="datas">Data Source collection.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildRelations(Stimulsoft.Report.Dictionary.StiDataRelationsCollection,Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem,Stimulsoft.Report.Dictionary.StiDataSourcesCollection,System.Boolean)">
+            <summary>
+            Builds TreeViewCheckBoxItem fom the collection of relations.
+            </summary>
+            <param name="relations">Collection of relations.</param>
+            <param name="parentNode">TreeViewItem in which TreeViewCheckBoxItem obtained will be added.</param>
+            <param name="alias">If true then, when rendering, aliases are used.</param>
+            <param name="datas">Data Source collection.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildDataSource(Stimulsoft.Report.Dictionary.StiDataSource,System.Windows.Controls.TreeViewItem,Stimulsoft.Report.Dictionary.StiDataSourcesCollection,System.Boolean)">
+            <summary>
+            Builds TreeViewItem from the Data Source.
+            </summary>
+            <param name="dataSource">Data source.</param>
+            <param name="parentNode">TreeViewItem in which TreeViewItem obtained will be added.</param>
+            <param name="datas">Data Source collection.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildDataSource(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem,Stimulsoft.Report.Dictionary.StiDataSourcesCollection,System.Boolean)">
+            <summary>
+            Builds TreeViewCheckBoxItem from the Data Source.
+            </summary>
+            <param name="dataSource">Data source.</param>
+            <param name="parentNode">TreeViewItem in which TreeViewCheckBoxItem obtained will be added.</param>
+            <param name="datas">Data Source collection.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildDataSource(Stimulsoft.Report.Dictionary.StiDataSource,System.Windows.Controls.TreeViewItem@,System.Boolean)">
+            <summary>
+            Builds TreeViewItem from the Data Source.
+            </summary>
+            <param name="dataSource">Data Source for building.</param>
+            <param name="dataNode">Builded TreeViewItem.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildDataSource(Stimulsoft.Report.Dictionary.StiDataSource,Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem@,System.Boolean)">
+            <summary>
+            Builds TreeViewCheckBoxItem from the Data Source.
+            </summary>
+            <param name="dataSource">Data Source for building.</param>
+            <param name="dataNode">Builded TreeViewCheckBoxItem.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.Build(System.Windows.Controls.ItemCollection,Stimulsoft.Report.Dictionary.StiDictionary,System.Boolean,System.Boolean)">
+            <summary>
+            Builds ItemCollection from dictionary.
+            </summary>
+            <param name="nodes">Collection TreeViewItem.</param>
+            <param name="dictionary">Dictionary data.</param>
+            <param name="dictionaryDesign">If true then, when rendering, aliases are used.</param>
+            <param name="includeCalcColumn">If true then, when rendering, CalcDataColumn are included.</param>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildColumns(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.Dictionary.StiDataColumnsCollection,System.Windows.Controls.TreeViewItem,System.Boolean)">
+            <summary>
+            Build TreeNode from the column collection.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildColumns(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.Dictionary.StiDataColumnsCollection,Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem,System.Boolean)">
+            <summary>
+            Build TreeNode from the column collection.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildBusinessObject(Stimulsoft.Report.Dictionary.StiBusinessObject,System.Windows.Controls.TreeViewItem,System.Boolean)">
+            <summary>
+            Builds TreeNode from the Business Object.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.BuildBusinessObject(Stimulsoft.Report.Dictionary.StiBusinessObject,Stimulsoft.Report.WpfDesign.Wizards.Controls.TreeViewCheckBoxItem,System.Boolean)">
+            <summary>
+            Builds TreeNode from the Business Object.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.usedRelations">
+            <summary>
+            Relations being used in the dictionary.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.usedDataSources">
+            <summary>
+            Data sources being used.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.usedColumns">
+            <summary>
+            Columns being used.
+            </summary>
+        </member>
+        <member name="F:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.level">
+            <summary>
+            Data source level.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.#ctor">
+            <summary>
+            Creates a new object of the type StiWpfDataBuilder.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.#ctor(System.Windows.Controls.TreeView)">
+            <summary>
+            Creates a new object of the type StiWpfDataBuilder.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataBuilder.#ctor(System.Collections.Hashtable,System.Collections.Hashtable,System.Collections.Hashtable,System.Windows.Controls.TreeView)">
+            <summary>
+            Creates a new object of the type StiWpfDataBuilder.
+            </summary>
+            <param name="usedRelations">Relations being used in the dictionary.</param>
+            <param name="usedDataSources">Data sources being used.</param>
+            <param name="usedColumns">Columns being used.</param>
+        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDictionaryControl">
+            <summary>
+            Interaction logic for StiWpfDictionaryControl.xaml
+            </summary>
             <summary>
             StiWpfDictionaryControl
             </summary>
@@ -2392,6 +2316,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfSystemTextEditorWindow">
+            <summary>
+            Interaction logic for StiWpfSystemTextEditorWindow.xaml
+            </summary>
             <summary>
             StiWpfSystemTextEditorWindow
             </summary>
@@ -2431,7 +2358,15 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfCodeEditor">
             <summary>
+            Interaction logic for StiWpfCodeEditor.xaml
+            </summary>
+            <summary>
             StiWpfCodeEditor
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfCodeEditor.DesignerLoadNodes">
+            <summary>
+            Internal use only.
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiWpfCodeEditor.InitializeComponent">
@@ -2542,6 +2477,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiReportSetupWindow">
             <summary>
+            Interaction logic for StiReportSetupWindow.xaml
+            </summary>
+            <summary>
             StiReportSetupWindow
             </summary>
         </member>
@@ -2596,6 +2534,16 @@
             The class describes the StiWpfBandQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfBandQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfBandQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfBandQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -2604,6 +2552,16 @@
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDataRelationQuickButton">
             <summary>
             The class describes the StiWpfDataRelationQuickButton.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataRelationQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataRelationQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDataRelationQuickButton.Name">
@@ -2616,6 +2574,16 @@
             The class describes the StiWpfDataSourceQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataSourceQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDataSourceQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDataSourceQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -2624,6 +2592,16 @@
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfMasterComponentQuickButton">
             <summary>
             The class describes the StiWpfMasterComponentQuickButton.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfMasterComponentQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfMasterComponentQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfMasterComponentQuickButton.Name">
@@ -2636,6 +2614,16 @@
             The class describes the StiWpfRichTextQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfRichTextQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfRichTextQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfRichTextQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -2646,6 +2634,16 @@
             The class describes the StiWpfSelectAllQuickButton.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfSelectAllQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfSelectAllQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfSelectAllQuickButton.Name">
             <summary>
             Gets name of the quick button.
@@ -2654,6 +2652,16 @@
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfTextQuickButton">
             <summary>
             The class describes the StiWpfTextQuickButton.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTextQuickButton.GetWpfImage">
+            <summary>
+            Gets image of the quick button.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfTextQuickButton.GetWpfSelectedImage">
+            <summary>
+            Gets selected image of the quick button.
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfTextQuickButton.Name">
@@ -2739,6 +2747,11 @@
         <member name="T:Stimulsoft.Report.WpfDesign.StiBuilder">
             <summary>
             This class helps with refreshing of report designer.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiBuilder.RefreshScript">
+            <summary>
+            Refresh report script.
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiBuilder.RefreshPageNames">
@@ -2895,6 +2908,16 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesigner.Stimulsoft#Report#Design#IStiDesigner#get_ShowInTaskbar">
+            <summary>
+            Interaction logic for StiWpfDesigner.xaml
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesigner.Stimulsoft#Report#Design#IStiDesigner#set_ShowInTaskbar(System.Boolean)">
+            <summary>
+            Interaction logic for StiWpfDesigner.xaml
+            </summary>
+        </member>
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesigner.RunInDesignMode">
             <summary>
             Gets or sets value which indicates that designer called from VisualStudio.Net.
@@ -2929,6 +2952,59 @@
         <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesigner.MdiParent">
             <summary>
             This property can't be used in Stimulsoft Reports.Wpf.
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl">
+            <summary>
+            Interaction logic for StiWpfDesignerControl.xaml
+            </summary>
+            <summary>
+            StiWpfDesignerControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.AddOwnedForm(System.Windows.Forms.Form)">
+            <summary>
+            This method can't be used in Stimulsoft Reports.Wpf.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.Redraw(System.Boolean)">
+            <summary>
+            Redraws current page in report designer with specified clip rectangle.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.Redraw(System.Boolean,System.Boolean)">
+            <summary>
+            Redraws current page in report designer with specified clip rectangle.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.Info">
+            <summary>
+            Gets or sets information which is necessary for the report designer.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.ComponentsOnReport">
+            <summary>
+            Gets collection of components in current report.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.ComponentsOnPage">
+            <summary>
+            Gets collection of components in current page.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.SelectedTextComponentsOnPage">
+            <summary>
+            Gets collection of selected text components on current page.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.WpfDesign.StiWpfDesignerControl.SelectedComponentsOnPage">
+            <summary>
+            Gets collection of selected components on current page.
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiComponentsToolboxWindow">
@@ -3072,6 +3148,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiColumnsGroup">
             <summary>
+            Interaction logic for StiColumnsGroup.xaml
+            </summary>
+            <summary>
             StiColumnsGroup
             </summary>
         </member>
@@ -3091,6 +3170,9 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiColumnsRelation">
+            <summary>
+            Interaction logic for StiColumnsRelation.xaml
+            </summary>
             <summary>
             StiColumnsRelation
             </summary>
@@ -3112,20 +3194,13 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiColumnsSort">
             <summary>
+            Interaction logic for StiColumnsSort.xaml
+            </summary>
+            <summary>
             StiColumnsSort
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiColumnsSort.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiColumnsThemes">
-            <summary>
-            StiColumnsThemes
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Wizards.StiColumnsThemes.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -3152,6 +3227,9 @@
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiDataSourcePanel">
             <summary>
+            Interaction logic for StiDataSourcePanel.xaml
+            </summary>
+            <summary>
             StiDataSourcePanel
             </summary>
         </member>
@@ -3169,16 +3247,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.StiFilterZoneControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiHighlightComponentControl">
-            <summary>
-            StiHighlightComponentControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Wizards.StiHighlightComponentControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -3203,42 +3271,15 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiNewWindow">
-            <summary>
-            StiNewWindow
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Wizards.StiNewWindow.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiReportLayout">
+            <summary>
+            Interaction logic for StiReportLayout.xaml
+            </summary>
             <summary>
             StiReportLayout
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.WpfDesign.Wizards.StiReportLayout.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiPlacementComponentControl">
-            <summary>
-            StiPlacementComponentControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Wizards.StiPlacementComponentControl.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.WpfDesign.Wizards.StiStylesCollectionViewControl">
-            <summary>
-            StiStylesCollectionViewControl
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.WpfDesign.Wizards.StiStylesCollectionViewControl.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

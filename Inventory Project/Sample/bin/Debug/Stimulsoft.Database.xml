@@ -34,23 +34,6 @@
             TacMetadataObjectFetcherFromQuery
             </summary>
         </member>
-        <member name="F:Stimulsoft.Report.Dictionary.MSAccessConnectionEditor.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Dictionary.MSAccessConnectionEditor.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:Stimulsoft.Report.Dictionary.MSAccessConnectionEditor.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Database.Connection.StiOdbcConnectionHelper">
             <summary>
             Summary description for StiOdbcConnectionHelper.
@@ -80,26 +63,6 @@
             <summary>
             Required method for Designer support - do not modify
             the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Database.BaseMetadataProvider.ServiceCategory">
-            <summary>
-            Gets a service category.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Database.BaseMetadataProvider.ServiceType">
-            <summary>
-            Gets a service type.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Database.StiMSAccessMetadataProvider.ServiceName">
-            <summary>
-            Gets a service name.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Database.StiDatabaseAssemblyHelper">
-            <summary>
-            This class helps in initialization of Stimulsoft.Database assembly.
             </summary>
         </member>
         <member name="F:Stimulsoft.Database.AddObjectForm.components">
@@ -245,6 +208,16 @@
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Database.BaseMetadataProvider.ServiceCategory">
+            <summary>
+            Gets a service category.
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Database.BaseMetadataProvider.ServiceType">
+            <summary>
+            Gets a service type.
             </summary>
         </member>
         <member name="P:Stimulsoft.Database.StiOdbcMetadataProvider.ServiceName">
