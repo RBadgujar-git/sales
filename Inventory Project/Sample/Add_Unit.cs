@@ -23,13 +23,14 @@ namespace sample
         string id = "";
         public Add_Unit()
         {
-              InitializeComponent();
-          //  con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+            InitializeComponent();
+            //  con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
         private void Add_Unit_Load(object sender, EventArgs e)
         {
-         fetchdetails();
+            txtAddUnit.Focus();
+            fetchdetails();
         }
 
         private void cleardata()
@@ -40,7 +41,7 @@ namespace sample
 
         private void fetchdetails()
         {
-            
+
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
@@ -56,7 +57,7 @@ namespace sample
             SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
             sqlSda.Fill(dtable);
             dgvAddunit.DataSource = dtable;
-
+            dgvAddunit.AllowUserToAddRows = false;
         }
 
 
@@ -117,11 +118,14 @@ namespace sample
             id = dgvAddunit.SelectedRows[0].Cells["UnitID"].Value.ToString();
             txtAddUnit.Text = dgvAddunit.SelectedRows[0].Cells["UnitName"].Value.ToString();
             txtSubunit.Text = dgvAddunit.SelectedRows[0].Cells["SubunitName"].Value.ToString();
+
+
+
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -278,12 +282,29 @@ namespace sample
 
         private void closebtn_Click(object sender, EventArgs e)
         {
-            this.Visible=false;
+
+           //  this.Visible = false;
         }
 
-        private void btnminimize_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select UnitID,UnitName,SubUnitName from tbl_UnitMaster where Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' and UnitName like '%{0}%' or UnitID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvAddunit.DataSource = ds;
+                dgvAddunit.DataMember = "temp";
+            }
         }
     }
+
+  
 }
+
+

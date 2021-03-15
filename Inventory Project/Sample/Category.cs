@@ -51,10 +51,12 @@ namespace sample
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvCategory.DataSource = dtable;
+            dgvCategory.AllowUserToAddRows = false;
         }
 
         private void Category_Load(object sender, EventArgs e)
         {
+            txtCategory.Focus();
             fetchdetails();
         }
 
@@ -246,6 +248,23 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' and CategoryName like '%{0}%' or CategoryID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvCategory.DataSource = ds;
+                dgvCategory.DataMember = "temp";
+            }
         }
     }
 }

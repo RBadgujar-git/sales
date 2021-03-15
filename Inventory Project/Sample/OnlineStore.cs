@@ -21,7 +21,7 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -35,6 +35,11 @@ namespace sample
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
