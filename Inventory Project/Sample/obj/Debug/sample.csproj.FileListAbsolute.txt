@@ -1493,3 +1493,4 @@ C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\S
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Barcode.xml
