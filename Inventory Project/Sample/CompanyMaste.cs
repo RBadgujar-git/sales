@@ -511,7 +511,7 @@ namespace sample
                 e.Handled = false;
             }
         }
-
+       
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
@@ -689,7 +689,7 @@ namespace sample
         {
 
         }
-    
+  
 
         private void btnminimize_Resize(object sender, EventArgs e)
         {

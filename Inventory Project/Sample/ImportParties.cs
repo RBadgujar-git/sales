@@ -91,5 +91,10 @@ namespace sample
                 
             }
         }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
