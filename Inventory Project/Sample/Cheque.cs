@@ -97,7 +97,7 @@ namespace sample
             {
                 string SelectQuery = string.Format("select TableName,InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1 as Ref No,Total,Received,RemainingBal,Status  from tbl_SaleInvoice where Feild1 IS NOT Null  InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Feild1 as Ref No,Total,Received,RemainingBal,Status  from tbl_SaleOrder where Feild1 IS NOT Null OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);     
                 SDA.Fill(ds, "temp");
                 dgvSaleOrder.DataSource = ds;
                 dgvSaleOrder.DataMember = "temp";
