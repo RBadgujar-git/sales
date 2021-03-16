@@ -173,6 +173,16 @@ namespace sample.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stock_vector_loupe_magnifying_glass_search_icon_549694213 {
             get {
                 object obj = ResourceManager.GetObject("stock-vector-loupe-magnifying-glass-search-icon-549694213", resourceCulture);

@@ -321,7 +321,7 @@
             // 
             // btnminimize
             // 
-            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnminimize.BackColor = System.Drawing.Color.White;
             this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -329,16 +329,15 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(705, 8);
+            this.btnminimize.Location = new System.Drawing.Point(709, 9);
             this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.Size = new System.Drawing.Size(26, 26);
             this.btnminimize.TabIndex = 435;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnclose
             // 
-            this.btnclose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnclose.BackColor = System.Drawing.Color.White;
             this.btnclose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnclose.BackgroundImage")));
             this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -346,7 +345,7 @@
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclose.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclose.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnclose.Location = new System.Drawing.Point(737, 8);
+            this.btnclose.Location = new System.Drawing.Point(734, 8);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(28, 26);
             this.btnclose.TabIndex = 149;
