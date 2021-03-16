@@ -1339,7 +1339,10 @@ namespace sample
         private void companyBankAccountToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             CompanyBankAccountHomepage BA = new CompanyBankAccountHomepage();
+            //BA.TopLevel = false;
+            //  BA.AutoScroll = true;
             this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();

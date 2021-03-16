@@ -36,5 +36,11 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            POS ps = new POS();
+            ps.Show();
+        }
     }
 }

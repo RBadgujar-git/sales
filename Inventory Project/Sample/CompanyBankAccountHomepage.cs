@@ -16,5 +16,17 @@ namespace sample
         {
             InitializeComponent();
         }
+
+        private void btnSaleorder_Click(object sender, EventArgs e)
+        {
+            CompanyBankAccount BA = new CompanyBankAccount();
+            //BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
+        }
     }
 }

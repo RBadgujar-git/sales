@@ -73,6 +73,7 @@
             this.btnSaleorder.Size = new System.Drawing.Size(145, 45);
             this.btnSaleorder.TabIndex = 468;
             this.btnSaleorder.Text = "+ Comapnay Bank Account";
+            this.btnSaleorder.Click += new System.EventHandler(this.btnSaleorder_Click);
             // 
             // dtpTo
             // 
@@ -268,7 +269,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.Controls.Add(this.btnminimize);
             this.panel1.Controls.Add(this.btnSaleorder);
             this.panel1.Controls.Add(this.btncancel);
@@ -282,7 +282,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dgvcompanybank);
             this.panel1.Controls.Add(this.btnprint);
-            this.panel1.Location = new System.Drawing.Point(23, 4);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1071, 576);
             this.panel1.TabIndex = 1;
@@ -351,7 +351,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "CompanyBankAccountHomepage";
-            this.Size = new System.Drawing.Size(1103, 584);
+            this.Size = new System.Drawing.Size(1080, 586);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
