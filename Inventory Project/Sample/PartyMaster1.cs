@@ -52,6 +52,7 @@ namespace sample
             txtAddRemainder.Text = "";
             txtShippingAdd.Text = "";
             comboBox1.Text = "";
+            comboBox2.Text = "";
         }
         private void fetchdetails()
         {
@@ -75,12 +76,14 @@ namespace sample
             cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
             cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
             cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
+            cmd.Parameters.AddWithValue("@Type", comboBox2.Text);
             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
             cmd.Parameters.AddWithValue("@Action", "Select");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvParty.DataSource = dtable;
+            dgvParty.AllowUserToAddRows = false;
         }
 
         private void InsertData()
@@ -112,15 +115,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
                 cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
                 cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
-                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                if (radTopay.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@paidstatus", radTopay.Text);
-                }
-                else if (radReceive.Checked == true)
-                {
-                    cmd.Parameters.AddWithValue("@paidstatus", radReceive.Text);
-                }
+                cmd.Parameters.AddWithValue("@Type", comboBox2.Text);
 
                 int num = cmd.ExecuteNonQuery();
                 if (num > 0)
@@ -138,11 +133,80 @@ namespace sample
                 MessageBox.Show("error" + ex.Message);
             }
         }
+        public int veryfi = 0;
 
+        public void validdata()
+        {
+            if (txtPartyname.Text == "")
+            {
+                MessageBox.Show("Party Name Is Required");
+                txtPartyname.Focus();
+
+            }
+            else if (txtBillingAdd.Text == "")
+            {
+                MessageBox.Show("Billing Address Is Required");
+                txtBillingAdd.Focus();
+
+            }
+            else if (txtContactNo.Text == "")
+            {
+                MessageBox.Show("Contact No Is Required");
+                txtContactNo.Focus();
+            }
+            else if (txtEmailID.Text == "")
+            {
+                MessageBox.Show("Email ID Is Required");
+                txtEmailID.Focus();
+            }
+            else if (txtGSTType.Text == "")
+            {
+                MessageBox.Show("GST No Is Required");
+                txtGSTType.Focus();
+            }
+            else if (txtPartyType.Text == "")
+            {
+                MessageBox.Show("Party Type Is Requried");
+                txtPartyType.Focus();
+            }
+            else if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Party Group Is Requried");
+                comboBox1.Focus();
+            }
+            else if (txtState.Text == "")
+            {
+                MessageBox.Show("State Is Requried");
+                txtState.Focus();
+            }
+            else if (txtOpeningBal.Text == "")
+            {
+                MessageBox.Show("Opening Balance Is Requried");
+                txtOpeningBal.Focus();
+            }
+            else if (comboBox2.Text == "")
+            {
+                MessageBox.Show("Costomer Type Is Requried");
+                comboBox2.Focus();
+            }
+        
+            else
+            {
+                veryfi = 1;
+            }
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
+            validdata();
+            if (veryfi == 1)
+            {
+                InsertData();
+                fetchdetails();
+            }
+        }
+        private void hidedata()
+        {
+            dgvParty.Columns["ShippingAddress"].Visible = false;
         }
 
         private void Update1()
@@ -172,14 +236,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@PartyType", txtPartyType.Text);
                     cmd.Parameters.AddWithValue("@ShippingAddress", txtShippingAdd.Text);
                     cmd.Parameters.AddWithValue("@PartyGroup", comboBox1.Text);
-                    if (radTopay.Checked == true)
-                    {
-                        cmd.Parameters.AddWithValue("@paidstatus", radTopay.Text);
-                    }
-                    else if (radReceive.Checked == true)
-                    {
-                        cmd.Parameters.AddWithValue("@paidstatus", radReceive.Text);
-                    }
+                    cmd.Parameters.AddWithValue("@Type", comboBox2.Text);
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -258,8 +315,10 @@ namespace sample
 
         private void PartyMaster1_Load(object sender, EventArgs e)
         {
+            txtPartyname.Focus();
             fetchdetails();
             fetchgroup();
+            hidedata();
         }
 
         private void dgvParty_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -269,7 +328,7 @@ namespace sample
             txtContactNo.Text = dgvParty.Rows[e.RowIndex].Cells["ContactNo"].Value.ToString();
             txtBillingAdd.Text = dgvParty.Rows[e.RowIndex].Cells["BillingAddress"].Value.ToString();
             txtEmailID.Text = dgvParty.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
-            txtGSTType.Text = dgvParty.Rows[e.RowIndex].Cells["GSTType"].Value.ToString();
+            txtGSTType.Text = dgvParty.Rows[e.RowIndex].Cells["GSTNo"].Value.ToString();
             txtState.Text = dgvParty.Rows[e.RowIndex].Cells["State"].Value.ToString();
             txtOpeningBal.Text = dgvParty.Rows[e.RowIndex].Cells["OpeningBal"].Value.ToString();
             dtpDate.Text = dgvParty.Rows[e.RowIndex].Cells["AsOfDate"].Value.ToString();
@@ -277,7 +336,7 @@ namespace sample
             txtPartyType.Text = dgvParty.Rows[e.RowIndex].Cells["PartyType"].Value.ToString();
             txtShippingAdd.Text = dgvParty.Rows[e.RowIndex].Cells["ShippingAddress"].Value.ToString();
             comboBox1.Text = dgvParty.Rows[e.RowIndex].Cells["PartyGroup"].Value.ToString();
-
+            comboBox2.Text = dgvParty.Rows[e.RowIndex].Cells["Type"].Value.ToString();
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -336,6 +395,7 @@ namespace sample
             {
                 MessageBox.Show(" Invalid Email Address");
                 txtEmailID.Text = "";
+                txtEmailID.Focus();
             }
         }
 
@@ -363,6 +423,7 @@ namespace sample
             {
                 MessageBox.Show(" Invalid GST Number");
                 txtGSTType.Text = "";
+                txtGSTType.Focus();
             }
         }
         private void txtGSTType_Leave(object sender, EventArgs e)
@@ -433,6 +494,7 @@ namespace sample
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+
         }
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -459,6 +521,32 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
-        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select PartiesID,PartyName,ContactNo,BillingAddress,EmailID,GSTType as GSTNo,State,OpeningBal,AsOfDate,AddRemainder,PartyType,ShippingAddress,PartyGroup,PaidStatus,Type from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PartyName like '%{0}%' or PartiesID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvParty.DataSource = ds;
+                dgvParty.DataMember = "temp";
+            }
+        }
+
+        private void radTopay_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

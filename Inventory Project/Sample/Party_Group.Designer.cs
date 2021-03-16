@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Party_Group));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btndelete = new System.Windows.Forms.Button();
@@ -43,6 +43,8 @@
             this.btncancel = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartyGroup)).BeginInit();
             this.panel3.SuspendLayout();
@@ -53,6 +55,8 @@
             this.guna2Panel1.AutoScroll = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
             this.guna2Panel1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2Panel1.Controls.Add(this.button1);
+            this.guna2Panel1.Controls.Add(this.textBox1);
             this.guna2Panel1.Controls.Add(this.btndelete);
             this.guna2Panel1.Controls.Add(this.btnupdate);
             this.guna2Panel1.Controls.Add(this.Clear);
@@ -74,7 +78,7 @@
             this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btndelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btndelete.Location = new System.Drawing.Point(390, 116);
+            this.btndelete.Location = new System.Drawing.Point(404, 120);
             this.btndelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(70, 30);
@@ -88,7 +92,7 @@
             this.btnupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnupdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnupdate.Location = new System.Drawing.Point(312, 116);
+            this.btnupdate.Location = new System.Drawing.Point(326, 120);
             this.btnupdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(70, 30);
@@ -102,7 +106,7 @@
             this.Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Clear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Clear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Clear.Location = new System.Drawing.Point(466, 116);
+            this.Clear.Location = new System.Drawing.Point(480, 120);
             this.Clear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(70, 30);
@@ -113,6 +117,7 @@
             // 
             // txtPartyGroupName
             // 
+            this.txtPartyGroupName.BorderColor = System.Drawing.Color.Gray;
             this.txtPartyGroupName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPartyGroupName.DefaultText = "";
             this.txtPartyGroupName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -126,7 +131,7 @@
             this.txtPartyGroupName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtPartyGroupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPartyGroupName.HoverState.Parent = this.txtPartyGroupName;
-            this.txtPartyGroupName.Location = new System.Drawing.Point(248, 67);
+            this.txtPartyGroupName.Location = new System.Drawing.Point(265, 67);
             this.txtPartyGroupName.Name = "txtPartyGroupName";
             this.txtPartyGroupName.PasswordChar = '\0';
             this.txtPartyGroupName.PlaceholderText = "";
@@ -134,6 +139,7 @@
             this.txtPartyGroupName.ShadowDecoration.Parent = this.txtPartyGroupName;
             this.txtPartyGroupName.Size = new System.Drawing.Size(192, 31);
             this.txtPartyGroupName.TabIndex = 2;
+            this.txtPartyGroupName.Load += new System.EventHandler(this.txtPartyGroupName_Load);
             this.txtPartyGroupName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartyGroupName_KeyPress);
             // 
             // btnSave
@@ -141,7 +147,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(236, 117);
+            this.btnSave.Location = new System.Drawing.Point(250, 121);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(70, 30);
@@ -152,33 +158,33 @@
             // 
             // dgvPartyGroup
             // 
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
-            this.dgvPartyGroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPartyGroup.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPartyGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartyGroup.BackgroundColor = System.Drawing.Color.White;
             this.dgvPartyGroup.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPartyGroup.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPartyGroup.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPartyGroup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartyGroup.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPartyGroup.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPartyGroup.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartyGroup.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPartyGroup.EnableHeadersVisualStyles = false;
             this.dgvPartyGroup.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartyGroup.Location = new System.Drawing.Point(109, 169);
+            this.dgvPartyGroup.Location = new System.Drawing.Point(115, 169);
             this.dgvPartyGroup.Name = "dgvPartyGroup";
             this.dgvPartyGroup.RowHeadersVisible = false;
             this.dgvPartyGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -213,7 +219,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(128, 75);
+            this.label2.Location = new System.Drawing.Point(145, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 16);
@@ -226,11 +232,10 @@
             this.panel3.Controls.Add(this.btncancel);
             this.panel3.Controls.Add(this.btnminimize);
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(663, 50);
+            this.panel3.Size = new System.Drawing.Size(663, 42);
             this.panel3.TabIndex = 17;
             // 
             // btncancel
@@ -242,9 +247,9 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(547, 8);
+            this.btncancel.Location = new System.Drawing.Point(571, 8);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(28, 26);
+            this.btncancel.Size = new System.Drawing.Size(22, 22);
             this.btncancel.TabIndex = 1;
             this.btncancel.UseVisualStyleBackColor = false;
             this.btncancel.Click += new System.EventHandler(this.btncancel_Click_1);
@@ -258,9 +263,9 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(515, 8);
+            this.btnminimize.Location = new System.Drawing.Point(546, 8);
             this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.Size = new System.Drawing.Size(22, 22);
             this.btnminimize.TabIndex = 0;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
@@ -270,12 +275,36 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(263, 15);
+            this.label1.Location = new System.Drawing.Point(271, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Party Group ";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::sample.Properties.Resources.icons8_search_1001;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(116, 128);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(18, 18);
+            this.button1.TabIndex = 76;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(142, 128);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(96, 20);
+            this.textBox1.TabIndex = 75;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Party_Group
             // 
@@ -308,5 +337,7 @@
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Button btncancel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
