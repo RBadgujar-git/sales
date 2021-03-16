@@ -118,7 +118,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1047, 41);
+            this.panel3.Size = new System.Drawing.Size(1050, 41);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -148,7 +148,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Chocolate;
-            this.btnCancel.Location = new System.Drawing.Point(949, 6);
+            this.btnCancel.Location = new System.Drawing.Point(952, 6);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(29, 29);
             this.btnCancel.TabIndex = 0;
@@ -346,7 +346,7 @@
             this.guna2Button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2Button2.CheckedState.Parent = this.guna2Button2;
             this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Location = new System.Drawing.Point(181, 371);
@@ -388,7 +388,7 @@
             // 
             this.txtOpeningqty.BorderColor = System.Drawing.Color.Gray;
             this.txtOpeningqty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOpeningqty.DefaultText = "";
+            this.txtOpeningqty.DefaultText = "0";
             this.txtOpeningqty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtOpeningqty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtOpeningqty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -406,6 +406,7 @@
             this.txtOpeningqty.PasswordChar = '\0';
             this.txtOpeningqty.PlaceholderText = "";
             this.txtOpeningqty.SelectedText = "";
+            this.txtOpeningqty.SelectionStart = 1;
             this.txtOpeningqty.ShadowDecoration.Parent = this.txtOpeningqty;
             this.txtOpeningqty.Size = new System.Drawing.Size(200, 24);
             this.txtOpeningqty.TabIndex = 11;
@@ -578,7 +579,7 @@
             // 
             this.txtSalePrice.BorderColor = System.Drawing.Color.Gray;
             this.txtSalePrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSalePrice.DefaultText = "";
+            this.txtSalePrice.DefaultText = "0";
             this.txtSalePrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtSalePrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtSalePrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -596,6 +597,7 @@
             this.txtSalePrice.PasswordChar = '\0';
             this.txtSalePrice.PlaceholderText = "";
             this.txtSalePrice.SelectedText = "";
+            this.txtSalePrice.SelectionStart = 1;
             this.txtSalePrice.ShadowDecoration.Parent = this.txtSalePrice;
             this.txtSalePrice.Size = new System.Drawing.Size(200, 24);
             this.txtSalePrice.TabIndex = 16;
@@ -634,7 +636,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(580, 369);
+            this.btnSave.Location = new System.Drawing.Point(583, 369);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
@@ -685,7 +687,7 @@
             this.txtTaxAmountPurchase.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxAmountPurchase.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxAmountPurchase.HoverState.Parent = this.txtTaxAmountPurchase;
-            this.txtTaxAmountPurchase.Location = new System.Drawing.Point(277, 328);
+            this.txtTaxAmountPurchase.Location = new System.Drawing.Point(277, 325);
             this.txtTaxAmountPurchase.MaxLength = 8;
             this.txtTaxAmountPurchase.Name = "txtTaxAmountPurchase";
             this.txtTaxAmountPurchase.PasswordChar = '\0';
@@ -701,7 +703,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(678, 369);
+            this.btnUpdate.Location = new System.Drawing.Point(681, 369);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
@@ -716,7 +718,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(774, 369);
+            this.btnDelete.Location = new System.Drawing.Point(777, 369);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
@@ -729,7 +731,7 @@
             // 
             this.txtpurchasseprice.BorderColor = System.Drawing.Color.Gray;
             this.txtpurchasseprice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtpurchasseprice.DefaultText = "";
+            this.txtpurchasseprice.DefaultText = "0";
             this.txtpurchasseprice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtpurchasseprice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtpurchasseprice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -747,6 +749,7 @@
             this.txtpurchasseprice.PasswordChar = '\0';
             this.txtpurchasseprice.PlaceholderText = "";
             this.txtpurchasseprice.SelectedText = "";
+            this.txtpurchasseprice.SelectionStart = 1;
             this.txtpurchasseprice.ShadowDecoration.Parent = this.txtpurchasseprice;
             this.txtpurchasseprice.Size = new System.Drawing.Size(200, 24);
             this.txtpurchasseprice.TabIndex = 8;
@@ -777,7 +780,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(872, 369);
+            this.button2.Location = new System.Drawing.Point(875, 369);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 42);
@@ -942,10 +945,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(30, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1047, 828);
+            this.panel1.Size = new System.Drawing.Size(1050, 828);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 

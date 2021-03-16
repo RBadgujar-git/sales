@@ -672,7 +672,7 @@ dr.Close();
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+             //   MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -971,7 +971,7 @@ dr.Close();
             else
             {
               
-                validat();
+          //      validat();
                 if (valid == 1)
                 {
                     insertdata();
@@ -1235,8 +1235,7 @@ dr.Close();
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Calculator cr = new Calculator();
-            cr.Show();
+          
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

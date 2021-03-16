@@ -24,11 +24,21 @@ namespace sample
 
         private void btnSaleorder_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnSaleorder_Click_1(object sender, EventArgs e)
+        {
             CompanyBankAccount cb = new CompanyBankAccount();
             this.Controls.Add(cb);
             cb.Dock = DockStyle.Fill;
             cb.Visible = true;
             cb.BringToFront();
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
     }
 }

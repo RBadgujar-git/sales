@@ -48,7 +48,7 @@ namespace sample
         private void btnDownload_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "*.xls|*.xlsx";
+            sfd.Filter = "Excel Sheet(*.xlsx)|*.xlsx|All Files(*.*)|*.*";
             sfd.FileName = "Import Item Template";
             sfd.Title = "Save Excel File";
             if (sfd.ShowDialog() == DialogResult.OK)

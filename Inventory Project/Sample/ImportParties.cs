@@ -12,8 +12,9 @@ namespace sample
 {
     public partial class ImportParties : UserControl
     {
-        string result = "D:\\Git project\\sales\\Inventory Project\\Sample\\bin\\Debug\\ImportPartiesTemplate.xlsx";
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+       
+        
 
         public ImportParties()
         {
@@ -34,13 +35,14 @@ namespace sample
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            string path = "D:\\Git project\\sales\\Inventory Project\\Sample\\bin\\Debug\\Import Parties Template.xlsx";
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "*.xlsx | *.xls";
-            sfd.FileName = "ImportPartiesTemplate";
+            sfd.Filter = "Excel Sheet(*.xlsx)|*.xlsx|All Files(*.*)|*.*";
+          //  sfd.FileName = "Import Parties Template";
             sfd.Title = "Save Excel File";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                result = sfd.FileName;
+                path = sfd.FileName;
             }
         }
 
@@ -67,7 +69,7 @@ namespace sample
                         System.Data.DataSet DtSet;
                         System.Data.OleDb.OleDbDataAdapter MyCommand;
                         MyConnection = new System.Data.OleDb.OleDbConnection(@"provider=Microsoft.Jet.OLEDB.4.0;;Data Source=" + strExcelPathName + ";Extended Properties=Excel 8.0;");
-                        MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Sheet1$]", MyConnection);
+                        MyCommand = new System.Data.OleDb.OleDbDataAdapter("select * from [Template$]", MyConnection);
                         MyCommand.TableMappings.Add("Table", "Net-informations.com");
                         DtSet = new System.Data.DataSet();
                         MyCommand.Fill(DtSet);
