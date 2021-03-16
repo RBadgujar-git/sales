@@ -732,6 +732,9 @@ namespace sample
         private void chequeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Cheque ch = new Cheque();
+         //   this.Controls.Add(ch);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            ch.Dock = DockStyle.Fill;
             ch.Show();
         }
 
@@ -1321,11 +1324,7 @@ namespace sample
 
         private void companyBankAccountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CompanyBankHomepage cb = new CompanyBankHomepage();
-            this.Controls.Add(cb);
-            cb.Dock = DockStyle.Fill;
-            cb.Visible = true;
-            cb.BringToFront();
+           
         }
 
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
@@ -1339,11 +1338,8 @@ namespace sample
 
         private void companyBankAccountToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            CompanyBankHomepage BA = new CompanyBankHomepage();
-            // BA.TopLevel = false;
-            // BA.AutoScroll = true;
+            CompanyBankAccountHomepage BA = new CompanyBankAccountHomepage();
             this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();

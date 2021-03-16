@@ -17,7 +17,7 @@ namespace sample
         // SqlConnection sqlcon = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         //  SqlConnection con;
         SqlCommand cmd;
-        string id = "";
+      
 
         public FormWindowState WindowState { get; private set; }
 

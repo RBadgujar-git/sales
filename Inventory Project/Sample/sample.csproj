@@ -331,17 +331,11 @@
     <Compile Include="Cheque.Designer.cs">
       <DependentUpon>Cheque.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompanyBankAccount.cs">
+    <Compile Include="CompanyBankAccountHomepage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CompanyBankAccount.Designer.cs">
-      <DependentUpon>CompanyBankAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CompanyBankHomepage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CompanyBankHomepage.Designer.cs">
-      <DependentUpon>CompanyBankHomepage.cs</DependentUpon>
+    <Compile Include="CompanyBankAccountHomepage.Designer.cs">
+      <DependentUpon>CompanyBankAccountHomepage.cs</DependentUpon>
     </Compile>
     <Compile Include="CompanyList.cs">
       <SubType>UserControl</SubType>
@@ -961,11 +955,8 @@
     <EmbeddedResource Include="Cheque.resx">
       <DependentUpon>Cheque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CompanyBankAccount.resx">
-      <DependentUpon>CompanyBankAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CompanyBankHomepage.resx">
-      <DependentUpon>CompanyBankHomepage.cs</DependentUpon>
+    <EmbeddedResource Include="CompanyBankAccountHomepage.resx">
+      <DependentUpon>CompanyBankAccountHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyList.resx">
       <DependentUpon>CompanyList.cs</DependentUpon>
