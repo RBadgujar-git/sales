@@ -66,7 +66,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(785, 0);
+            this.btnminimize.Location = new System.Drawing.Point(814, 0);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 44);
             this.btnminimize.TabIndex = 441;
@@ -314,7 +314,6 @@
             this.btncancel.BackColor = System.Drawing.Color.White;
             this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
             this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.Dock = System.Windows.Forms.DockStyle.Right;
             this.btncancel.FlatAppearance.BorderSize = 0;
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

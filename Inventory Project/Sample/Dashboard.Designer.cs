@@ -140,8 +140,8 @@
             this.toolStripMenuItem5.BackColor = System.Drawing.Color.Brown;
             this.toolStripMenuItem5.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(118, 20);
-            this.toolStripMenuItem5.Text = "Company Name";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(120, 20);
+            this.toolStripMenuItem5.Text = "Select Company";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // toolStripMenuItem4
@@ -865,7 +865,7 @@
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
             this.guna2TextBox2.IconLeft = ((System.Drawing.Image)(resources.GetObject("guna2TextBox2.IconLeft")));
-            this.guna2TextBox2.Location = new System.Drawing.Point(4, 7);
+            this.guna2TextBox2.Location = new System.Drawing.Point(2, 7);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.DimGray;

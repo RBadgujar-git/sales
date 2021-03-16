@@ -21,11 +21,11 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
-      
+
         public CompanyMaste()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+            //SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
             // con = new SqlConnection("Data Source=DESKTOP-UK7P4M8\\SQLEXPRESS;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
@@ -58,17 +58,19 @@ namespace sample
             cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "Select");
-            cmd.Parameters.AddWithValue("@CompanyID",0);
+            cmd.Parameters.AddWithValue("@CompanyID", 0);
             cmd.Parameters.AddWithValue("@CompanyName", txtcampanyName.Text);
+            cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
             cmd.Parameters.AddWithValue("@PhoneNo", txtContactNo.Text);
             cmd.Parameters.AddWithValue("@EmailID", txtemail.Text);
             cmd.Parameters.AddWithValue("@ReferaleCode", txtreferralcode.Text);
             cmd.Parameters.AddWithValue("@BusinessType", txtbusinesstype.Text);
-            cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+            cmd.Parameters.AddWithValue("@OwnerName", ownerName.Text);
+            cmd.Parameters.AddWithValue("@GSTNumber", txtGSTNo.Text);
             cmd.Parameters.AddWithValue("@City", txtCity.Text);
             cmd.Parameters.AddWithValue("@State", cmbState.Text);
-            cmd.Parameters.AddWithValue("@GSTNumber", txtGSTNo.Text);
-            cmd.Parameters.AddWithValue("@OwnerName", ownerName.Text);
+          
+          
             SqlParameter sqlpara = new SqlParameter("@Signature", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
             cmd.Parameters.Add(sqlpara);
@@ -81,8 +83,9 @@ namespace sample
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvComapnyMaster.DataSource = dtable;
+            dgvComapnyMaster.AllowUserToAddRows = false;
         }
-        public  int verify = 0;
+        public int verify = 0;
 
         public void validfild()
         {
@@ -114,7 +117,7 @@ namespace sample
             else if (txtGSTNo.Text == "")
             {
                 MessageBox.Show("GST NO. Is Requried ");
-               txtGSTNo.Focus();
+                txtGSTNo.Focus();
             }
             else if (txtCity.Text == "")
             {
@@ -125,7 +128,7 @@ namespace sample
             {
                 MessageBox.Show("Owner Name Is Requried ");
                 ownerName.Focus();
-            }        
+            }
             else if (cmbState.Text == "")
             {
                 MessageBox.Show(" Please Select State ");
@@ -144,20 +147,21 @@ namespace sample
             else if (txtIFSCcode.Text == "")
             {
                 MessageBox.Show("IFSC Code Is Requried ");
-               txtIFSCcode.Focus();
+                txtIFSCcode.Focus();
             }
+
             else
             {
                 verify = 1;
 
-            }                      
+            }
         }
-      
+
         public void Insert1()
         {
             try
             {
-             
+
                 if (txtcampanyName.Text == "")
                 {
                     MessageBox.Show("Company Name Is Requried");
@@ -217,14 +221,16 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+
+
             validfild();
             if (verify == 1)
             {
                 Insert1();
                 fetchdetails();
             }
-
         }
+
 
         public void Update1()
         {
@@ -245,7 +251,7 @@ namespace sample
                     {
                         con.Open();
                     }
-                  
+
                     cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
@@ -292,8 +298,8 @@ namespace sample
         {
             Update1();
             fetchdetails();
-           
-       
+
+
         }
 
         public void Delete1()
@@ -336,13 +342,14 @@ namespace sample
         private void delete_Click(object sender, EventArgs e)
         {
             Delete1();
-            fetchdetails();    
+            fetchdetails();
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
         {
-           
+            txtcampanyName.Focus();
             fetchdetails();
+            hidedata();
         }
 
 
@@ -447,6 +454,7 @@ namespace sample
             {
                 MessageBox.Show(" Invalid Email Address");
                 txtemail.Text = "";
+                txtemail.Focus();
             }
         }
 
@@ -458,7 +466,7 @@ namespace sample
             else
             {
                 ValidateEmail();
-              
+
             }
         }
 
@@ -475,6 +483,7 @@ namespace sample
             {
                 MessageBox.Show(" Invalid GST Number");
                 txtGSTNo.Text = "";
+                txtGSTNo.Focus();
             }
         }
         private void txtGSTNo_Leave(object sender, EventArgs e)
@@ -492,7 +501,7 @@ namespace sample
         {
             if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
             {
-                e.Handled = true;          
+                e.Handled = true;
             }
             else
             {
@@ -504,27 +513,38 @@ namespace sample
         {
             if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
             {
-                e.Handled = true;       
+                e.Handled = true;
             }
             else
             {
                 e.Handled = false;
             }
         }
-       
+
+        public void hidedata()
+        {
+          
+            dgvComapnyMaster.Columns["Signature"].Visible = false;
+            dgvComapnyMaster.Columns["AddLogo"].Visible = false;
+            dgvComapnyMaster.Columns["BankName"].Visible = false;
+            dgvComapnyMaster.Columns["AccountNo"].Visible = false;
+            dgvComapnyMaster.Columns["IFSC_Code"].Visible = false;
+        }
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
             txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
-            txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["PhoneNo"].Value.ToString();
+            txtAddress.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ContactNo"].Value.ToString();
             txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
             txtreferralcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ReferaleCode"].Value.ToString();
             txtbusinesstype.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BusinessType"].Value.ToString();
-            txtAddress.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
+            txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
             txtCity.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["City"].Value.ToString();
             cmbState.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["State"].Value.ToString();
-            txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
-            ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
+       
+      
 
             SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -553,6 +573,7 @@ namespace sample
             txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BankName"].Value.ToString();
             txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AccountNo"].Value.ToString();
             txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["IFSC_Code"].Value.ToString();
+
         }
 
         private void txtBankName_KeyPress(object sender, KeyPressEventArgs e)
@@ -578,8 +599,8 @@ namespace sample
                 e.Handled = true;
             }
         }
-       private void validateIFSC()
-        { 
+        private void validateIFSC()
+        {
             string gst = txtIFSCcode.Text;
             Regex regex = new Regex(@"^[A-Za-z]{4}[0-9]{6,7}$");
             Match match = regex.Match(gst);
@@ -591,8 +612,9 @@ namespace sample
             {
                 MessageBox.Show(" Invalid IFSC Number");
                 txtIFSCcode.Text = "";
+                txtIFSCcode.Focus();
             }
-            
+
         }
 
         private void txtIFSCcode_Leave(object sender, EventArgs e)
@@ -622,7 +644,7 @@ namespace sample
                 e.Handled = false;
             }
         }
-       private void txtIFSCcode_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtIFSCcode_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }
@@ -648,20 +670,20 @@ namespace sample
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {      
+        {
             this.WindowState = FormWindowState.Minimized;
         }
 
         private void txtBankName_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
         }
 
-        private void txtBankName_KeyUp(object sender, EventArgs  e)
+        private void txtBankName_KeyUp(object sender, EventArgs e)
         {
-            
 
-            
+
+
         }
 
         private void txtBankName_KeyUp(object sender, KeyEventArgs e)
@@ -689,17 +711,17 @@ namespace sample
         {
 
         }
-  
+
 
         private void btnminimize_Resize(object sender, EventArgs e)
         {
 
         }
-       
-    
+
+
         private void btnminimize_SizeChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)
@@ -709,19 +731,57 @@ namespace sample
 
         private void btnminimize_Click_2(object sender, EventArgs e)
         {
-            
+            //  CompanyMaste cm = new CompanyMaste();
+            this.WindowState = FormWindowState.Minimized;
         }
-       
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-          
+
         }
 
         private void txtcampanyName_TextChanged(object sender, EventArgs e)
         {
 
         }
-    }
 
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+        }
+
+        private void txtserach_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void txtSearch1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%' or CompanyID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvComapnyMaster.DataSource = ds;
+                dgvComapnyMaster.DataMember = "temp";
+            }
+        }
+    }
 }
+    
+  
        

@@ -261,7 +261,89 @@ namespace sample
                 }            
             }
         }
-  
+        public int veryfi = 0;
+
+        public void validdata()
+        {
+            if (cmbpartyname.Text == "")
+            {
+                MessageBox.Show("Party Name Required");
+                cmbpartyname.Focus();
+
+            }
+            else if (txtbillingadd.Text == "")
+            {
+                MessageBox.Show("Party Address Name Is Required");
+                txtbillingadd.Focus();
+
+            }
+            else if (txtcon.Text == "")
+            {
+                MessageBox.Show("Contact No. Is Required");
+                txtcon.Focus();
+            }
+            else if (txtPoNo.Text == "")
+            {
+                MessageBox.Show("PO No Is Requried Required");
+                txtPoNo.Focus();
+            }
+            else if (dtpPodate.Text == "")
+            {
+                MessageBox.Show("PO Date Is Requried Category");
+                dtpPodate.Focus();
+            }
+            else if (cmbStatesupply.Text == "")
+            {
+                MessageBox.Show("State Is Requried");
+                cmbStatesupply.Focus();
+
+            }
+            else if (dtpInvoice.Text == "")
+            {
+                MessageBox.Show("Invoice Date Is Required");
+                dtpInvoice.Focus();
+            }
+            else if (cmbCategory.Text == "")
+            {
+                MessageBox.Show("Item Category Is Required");
+                cmbCategory.Focus();
+
+            }
+            else if (txtItemName.Text == "")
+            {
+                MessageBox.Show("Item Name Is Required");
+                txtItemName.Focus();
+            }
+            else if (txtOty.Text == "")
+            {
+                MessageBox.Show("Quantity Is Required");
+                txtOty.Focus();
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Payment Type Is Required");
+                cmbPaymentType.Focus();
+            }
+            else if (cmbPaymentType.Text == "Cheque" && txtrefNo .Text == "")
+            {
+                
+                MessageBox.Show("Cheque Ref No Is Required");
+                txtrefNo.Focus();
+            }
+            else if (ComboBox.Text == "")
+            {
+                MessageBox.Show("Status Is Required");
+                comboBox1.Focus();
+
+            }   
+                
+            else
+            {
+                veryfi = 1;
+            }
+        }
+
+        // public int veryfi = 0;
         /// <summary>
         /// 
         /// </summary>
@@ -269,13 +351,33 @@ namespace sample
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            insertdata();                       
-            clear_text_data();
-            cleardata();
-            get_id();
-            bind_sale_details();
-            printdata(id1.ToString());
-            dgvInnerDebiteNote.Rows.Clear();               
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string str = string.Format("SELECT * FROM tbl_SaleInvoice where @InvoiceID ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+            SqlCommand cmd = new SqlCommand(str, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                MessageBox.Show("Invalid Data !");
+
+            }
+            else
+            {
+
+                validdata();
+                if (veryfi == 1)
+                {
+                    insertdata();
+                    clear_text_data();
+                    cleardata();
+                    get_id();
+                    bind_sale_details();
+                    printdata(id1.ToString());
+                    dgvInnerDebiteNote.Rows.Clear();
+                }
+            }
         }
         private void printdata(string id1)
         {

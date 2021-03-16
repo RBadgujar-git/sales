@@ -1329,6 +1329,18 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock-vector-loupe-magnifying-glass-search-icon-549694213.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock-vector-loupe-magnifying-glass-search-icon-5496942131.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-1001.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

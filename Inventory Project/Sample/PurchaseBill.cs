@@ -1387,6 +1387,11 @@ dr.Close();
         {
 
         }
+
+        private void btnlinkPayment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
