@@ -113,6 +113,26 @@ namespace sample.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_search_1001 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-search-1001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimize {
             get {
                 object obj = ResourceManager.GetObject("minimize", resourceCulture);
@@ -146,6 +166,26 @@ namespace sample.Properties {
         internal static System.Drawing.Bitmap noimage {
             get {
                 object obj = ResourceManager.GetObject("noimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stock_vector_loupe_magnifying_glass_search_icon_549694213 {
+            get {
+                object obj = ResourceManager.GetObject("stock-vector-loupe-magnifying-glass-search-icon-549694213", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stock_vector_loupe_magnifying_glass_search_icon_5496942131 {
+            get {
+                object obj = ResourceManager.GetObject("stock-vector-loupe-magnifying-glass-search-icon-5496942131", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
