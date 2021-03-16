@@ -245,7 +245,7 @@ namespace sample
                 if (e.KeyCode == Keys.Enter) {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvinnerexpenses.Rows.Add();
-                    row = dgvinnerexpenses.Rows.Count - 2;
+                    row = dgvinnerexpenses.Rows.Count - 1;
                     
                     dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
                     dgvinnerexpenses.CurrentCell = dgvinnerexpenses[1, row];
@@ -622,8 +622,10 @@ namespace sample
             txtdescritpition.Text = "";
             txtTotal.Text = "0";
             txtReceived.Text = "0";
+            picImage.Image = null;
             txtBalance.Text = "0";
             ComboBox.Text = "";
+            dgvinnerexpenses.Rows.Clear();
 
         }
 

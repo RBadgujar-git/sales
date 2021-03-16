@@ -80,7 +80,7 @@ namespace sample
                     }
                 }
                 catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -98,7 +98,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+                //MessageBox.Show(e1.Message);
             }
         }
 
@@ -195,11 +195,12 @@ namespace sample
 
         private void txtitemamount_KeyDown(object sender, KeyEventArgs e)
         {
+            
             try {
                 if (e.KeyCode == Keys.Enter) {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvinnerexpenses.Rows.Add();
-                    row = dgvinnerexpenses.Rows.Count - 2;
+                    row = dgvinnerexpenses.Rows.Count - 1;
                     dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
                     dgvinnerexpenses.CurrentCell = dgvinnerexpenses[1, row];
 
@@ -237,6 +238,7 @@ namespace sample
             txtMRP.Text = "0";
             txtOty.Text = "0";
             txtitemamount.Text = "0";
+            //dgvinnerexpenses.Rows.Clear();
         }
         private void cleardata()
         {
@@ -247,6 +249,7 @@ namespace sample
             txtReceived.Text = "0";
             txtBalance.Text = "0";
             ComboBox.Text = "";
+            dgvinnerexpenses.Rows.Clear();
         }
 
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
@@ -259,6 +262,7 @@ namespace sample
         {
             try {
                 con.Open();
+
 
 
                 string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}' and  Company_ID='"+NewCompany.company_id+ "'", txtReturnNo.Text);
@@ -410,7 +414,7 @@ namespace sample
                 //}
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+                //MessageBox.Show(e1.Message);
             }
         }
         byte[] arrImage1;
@@ -574,6 +578,14 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+
+            cmbexpenses.Text = "";
+            txtdescritpition.Text = "";
+            picturebox1.Image = null;
+            txtTotal.Text = "0";
+            txtReceived.Text = "0";
+            txtBalance.Text = "0";
+            ComboBox.Text = "";
             cleardata();
             clear_text_data();
             
@@ -606,6 +618,11 @@ namespace sample
         private void button4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("calc.exe");
+        }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
