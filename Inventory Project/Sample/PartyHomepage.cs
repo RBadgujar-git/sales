@@ -109,7 +109,7 @@ namespace sample
              BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();
-            guna2ShadowPanel3.Visible = false;
+            guna2ShadowPanel3.Visible = true;
 
          //   BA.Show();
         }

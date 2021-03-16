@@ -51,6 +51,7 @@ namespace sample
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvPartyGroup.DataSource = dtable;
+            dgvPartyGroup.AllowUserToAddRows = false;
         }
 
         private void InsertData()
@@ -95,6 +96,7 @@ namespace sample
 
         private void Party_Group_Load(object sender, EventArgs e)
         {
+            txtPartyGroupName.Focus();
             fetchdetails();
         }
 
@@ -242,10 +244,31 @@ namespace sample
         {
             this.Visible = false;
         }
-
         private void btnminimize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("  select PartyGroupID,AddPartyGroup from tbl_PartyGroup where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AddPartyGroup like '%{0}%' or PartyGroupID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPartyGroup.DataSource = ds;
+                dgvPartyGroup.DataMember = "temp";
+            }
+        }
+
+        private void txtPartyGroupName_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

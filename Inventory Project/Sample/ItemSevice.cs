@@ -70,7 +70,8 @@ namespace sample
                 SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
                 sdasql.Fill(dtable); 
                 dgvItemServices.DataSource = dtable;
-            }
+               dgvItemServices.AllowUserToAddRows = false;
+        }
 
             private void InsertData()
             {
@@ -398,12 +399,12 @@ namespace sample
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
 
         byte[] arrImage1 = null;
