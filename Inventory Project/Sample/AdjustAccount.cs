@@ -183,18 +183,43 @@ namespace sample
 
         private void btnSaave_Click(object sender, EventArgs e)
         {
-            Insert();
-            if (cmbEntrytype.SelectedItem == "Debit")
-            {
-                calminus();
-            }
-            else if (cmbEntrytype.SelectedItem == "Credit")
-            { 
-                Caladd();
-            }
-            update_opening_bal();
-            fetchdetails();
            
+            try
+            {
+                if (id == "")
+                {
+                       
+                        if (cmbEntrytype.SelectedItem == "Debit")
+                        {
+                            if (Int32.Parse(textBox1.Text) < Int32.Parse(txtAcoount.Text))
+                            {
+                                MessageBox.Show("Insuficient Balence");
+                            }
+                            else
+                            {
+                                calminus();
+                                Insert();
+                                update_opening_bal();
+                                fetchdetails();
+                            }
+                        }
+                        else if (cmbEntrytype.SelectedItem == "Credit")
+                        {
+                            Caladd();
+                            Insert();
+                            update_opening_bal();
+                            fetchdetails();
+                        }        
+                }
+                else
+                {
+                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show("error"+ex);
+            }
         }
         public void update_opening_bal()
         {

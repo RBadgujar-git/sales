@@ -151,12 +151,32 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (id == "")
+                {
+                     if (Int32.Parse(textBox1.Text) < Int32.Parse(txtAmount.Text))
+                     {
+                          MessageBox.Show("Insuficient Balence");
+                     }   
+                    else 
+                    {
+                        calopenbal();
+                        update_opening_bal();
+                        Insert();
+                        fetchdetails();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                }
+            }
+            catch (Exception ex)
+            {
+                // MessageBox.Show("error"+ex);
+            }
             
-            calopenbal();
-            update_opening_bal();
-            Insert();
-           
-            fetchdetails();
           //  Cleardata();
         }
 

@@ -29,9 +29,9 @@ namespace sample
 
         private void OtherIncome_Load(object sender, EventArgs e)
         {
+            get_id();
             fetchexpenses();
             txtReturnNo.Enabled = false;
-            get_id();
             txtTotal.Enabled = false;
             
             //txtitemamount.Enabled = false;
@@ -50,12 +50,15 @@ namespace sample
                 {
                     string Value = rd[0].ToString();
                     if (Value == "") {
+
+
                         txtReturnNo.Text = "1";
                     }
                     else
                     {
-                        txtReturnNo.Text = rd[0].ToString();
-                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
+                        int iddd =Convert.ToInt32(rd[0]) + 1;
+                        txtReturnNo.Text = iddd.ToString();
+                        //txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
                     }
                 }
                 con.Close();
@@ -73,6 +76,7 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
                         cmbexpenses.Items.Add(ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString());
+                    dgvinnerexpenses.AllowUserToAddRows= false;
                     }
                 }
                 catch (Exception e1) {
@@ -105,23 +109,35 @@ namespace sample
                 try {
                     con.Open();
                     DataTable dtable = new DataTable();
+
+                    //SqlCommand cmd = new SqlCommand("SELECT max(ID1) FROM tbl_OtherIncomeInner1", con);
+                 //   string iddd1 =cmd.ExecuteScalar().ToString();
+                 //  string ddd =iddd1.ToString()+1.ToString();
+                 ////   int ddd = iddd + 1;
+                 //   if(iddd1==null)
+                 //   {
+                 //       ddd = 1.ToString();
+                 //   }
+
+
                     cmd = new SqlCommand("tbl_OtherIncomeInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    cmd.Parameters.AddWithValue("@ID", id1);
-
+                     cmd.Parameters.AddWithValue("@ID2",txtReturnNo.Text);
+                    //cmd.Parameters.AddWithValue("@Id1",ddd);
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
-
+                
                     cmd.Parameters.AddWithValue("@ItemName", dgvinnerexpenses.Rows[i].Cells["Item"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price/Unit"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvinnerexpenses.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                   cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+             //       cmd.Parameters.AddWithValue("@del",1);
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) {
-                    //MessageBox.Show(e1.Message);
+                 // MessageBox.Show(e1.Message);
                 }
                 finally {
                     con.Close();
@@ -134,11 +150,14 @@ namespace sample
             //ID,ExpenseCategory,Date,Description,Image,Total,Paid,Balance,AdditinalFeild1,AdditionalFeild2
             try {
                 con.Open();
+
+
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_OtherIncomeSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
-                cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+               cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+              //  cmd.Parameters.AddWithValue("@Id1",ddd);
                 cmd.Parameters.AddWithValue("@IncomeCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtdescritpition.Text);           
@@ -150,28 +169,28 @@ namespace sample
                 //cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status",ComboBox.Text);
                 //cmd.Parameters.AddWithValue("@TableName", Income.Text);
-                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Added");
+             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Other Income Record Added");
+               // MessageBox.Show("dfhfhfhh"+id1);
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+                //MessageBox.Show(e1.Message);
             }
             finally
             {
-                 con.Close();
-                insert_record_inner(id1.ToString());
+                con.Close();
+                insert_record_inner(txtrefNo.ToString());
             }
         }
         int row = 0;
-
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
             insertdata();
             bind_sale_details();
             clear_text_data();
             cleardata();
-
         }
 
         private void txtitemamount_KeyDown(object sender, KeyEventArgs e)
@@ -209,7 +228,7 @@ namespace sample
                 }
             }
             catch (Exception e1) {
-                string message = e1.Message;
+                //string message = e1.Message;
             }
         }
         private void clear_text_data()
@@ -227,6 +246,7 @@ namespace sample
             txtTotal.Text = "0";
             txtReceived.Text = "0";
             txtBalance.Text = "0";
+            ComboBox.Text = "";
         }
 
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
@@ -239,7 +259,9 @@ namespace sample
         {
             try {
                 con.Open();
-                string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}' and  Company_ID='"+NewCompany.company_id+ "' and DeleteData='1'", txtReturnNo.Text);
+
+
+                string str = string.Format("SELECT * FROM tbl_OtherIncome where ID='{0}' and  Company_ID='"+NewCompany.company_id+ "'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -273,9 +295,10 @@ namespace sample
                         }
                     }
                 }
-             
 
-                string str1 = string.Format("SELECT ID,ItemName,SalePrice,Qty,ItemAmount FROM tbl_OtherIncomeInner where ID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+
+
+                string str1 = string.Format("SELECT * FROM tbl_OtherIncomeInner3 where ID2='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -283,12 +306,11 @@ namespace sample
                     int i = 0;
                     while (dr1.Read()) {
                         dgvinnerexpenses.Rows.Add();
-                        dgvinnerexpenses.Rows[i].Cells["ID"].Value = i + 1;
-                        dgvinnerexpenses.Rows[i].Cells["ItemName"].Value = dr1["Item"].ToString();
-                        dgvinnerexpenses.Rows[i].Cells["SalePrice"].Value = dr1["Price/Unit"].ToString();
-
+                        dgvinnerexpenses.Rows[i].Cells["sr_no"].Value = i + 1;
+                        dgvinnerexpenses.Rows[i].Cells["Item"].Value = dr1["ItemName"].ToString();
+                        dgvinnerexpenses.Rows[i].Cells["Price"].Value = dr1["SalePrice"].ToString();
                         dgvinnerexpenses.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
-                        dgvinnerexpenses.Rows[i].Cells["ItemAmount"].Value = dr1["Amount"].ToString();
+                        dgvinnerexpenses.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
 
 
                         i++;
@@ -297,7 +319,7 @@ namespace sample
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             finally {
                 con.Close();
@@ -357,7 +379,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Action", "Update");
 
                 id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Update");
+                MessageBox.Show("Other Income Record Updated !!");
                 clear_text_data();
             }
             catch (Exception e1) {
@@ -390,11 +412,6 @@ namespace sample
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
             }
-        }
-
-        private void cmbexpenses_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
         byte[] arrImage1;
         private void picturebox1_Click(object sender, EventArgs e)
@@ -441,14 +458,15 @@ namespace sample
 
         private void txtItem_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
@@ -552,6 +570,42 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            cleardata();
+            clear_text_data();
+            
+        }
+
+        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+         
+        }
+
+        private void txtReturnNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtitemamount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvinnerexpenses_DoubleClick(object sender, EventArgs e)
+        {
+            txtItem.Text = this.dgvinnerexpenses.CurrentRow.Cells[1].Value.ToString();
+            txtMRP.Text = this.dgvinnerexpenses.CurrentRow.Cells[2].Value.ToString();
+            txtOty.Text = this.dgvinnerexpenses.CurrentRow.Cells[3].Value.ToString();
+            txtitemamount.Text = this.dgvinnerexpenses.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("calc.exe");
         }
     }
 }

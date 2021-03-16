@@ -43,9 +43,8 @@ namespace sample
             dgvCategory.Columns[0].HeaderText = "Category";
             dgvCategory.Columns[0].DataPropertyName = "OtherIncome";
            
-
-
             dgvCategory.DataSource = dt;
+            dgvOtherincome.AllowUserToDeleteRows = false;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
