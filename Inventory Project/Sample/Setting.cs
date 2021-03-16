@@ -53,5 +53,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

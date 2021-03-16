@@ -140,7 +140,7 @@ namespace sample
                 }
                 catch(Exception ew )
                 {
-                    MessageBox.Show(ew.Message);
+                  //  MessageBox.Show(ew.Message);
                 }
             }
 
@@ -532,7 +532,7 @@ namespace sample
               
                 dr.Close();
              
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseOrderInner where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "'",id);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseOrderInner where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' And DeleteData='1' ",id);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows) {
@@ -673,70 +673,82 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-           
-                try
+
+            
+                if (comboBox1.Text == "")
                 {
+                    MessageBox.Show("Party Name Is Requried");
+                    cmbpartyname.Focus();
+                }
+                else
+                {
+                    try
+                    {
+
 
                     //     con.Open();
-
-                    if (con.State == ConnectionState.Closed)
+                    verfydata();
+                    if (verify == 1)
                     {
-                        con.Open();
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+
+                        DataTable dtable = new DataTable();
+                        cmd = new SqlCommand("tbl_PurchaseOrderSelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
+                        // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
+                        // cmd.Parameters.AddWithValue("@PONo", txtPONo.Text);
+                        cmd.Parameters.AddWithValue("@PartyName", comboBox1.Text);
+                        cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
+                        cmd.Parameters.AddWithValue("@OrderDate", dtpInvoice.Text);
+                        //  cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
+                        cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
+                        cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
+                        cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                        cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
+                        cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
+                        cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
+                        cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
+                        //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
+                        cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                        // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
+                        cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                        cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
+                        cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
+                        cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
+                        cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
+                        cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
+                        cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
+                        cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                        cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
+                        cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
+                        //  cmd.Parameters.AddWithValue("@PaymentTerms", .Text);
+                        cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                        cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
+                        cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
+                        cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
+                        cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                        cmd.Parameters.AddWithValue("@TableName", Order.Text);
+                        cmd.Parameters.AddWithValue("@Action", "Update");
+
+                        id1 = cmd.ExecuteScalar();
+                        MessageBox.Show("Sale Record Update");
                     }
 
-                    DataTable dtable = new DataTable();
-                    cmd = new SqlCommand("tbl_PurchaseOrderSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
-                    // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
-                    // cmd.Parameters.AddWithValue("@PONo", txtPONo.Text);
-                    cmd.Parameters.AddWithValue("@PartyName",comboBox1.Text);
-                    cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
-                    cmd.Parameters.AddWithValue("@OrderDate", dtpInvoice.Text);
-                    //  cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
-                    cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
-                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
-                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
-                    cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
-                    cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
-                    cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
-                    cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
-                    //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
-                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
-                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
-                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
-                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
-                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
-                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
-                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
-                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
-                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                    cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
-                    cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
-                    //  cmd.Parameters.AddWithValue("@PaymentTerms", .Text);
-                    cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-                    cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                    cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
-                    cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
-                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                    cmd.Parameters.AddWithValue("@TableName", Order.Text);
-                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    }
+                    catch (Exception e1)
+                    {
+                        MessageBox.Show(e1.Message);
+                    }
+                    finally
+                    {
+                        //  con.Close();
+                        update_record_inner(txtReturnNo.ToString());
 
-                    id1 = cmd.ExecuteScalar();
-                    MessageBox.Show("Sale Record Update");
-
-
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-                finally
-                {
-                    //  con.Close();
-                    update_record_inner(txtReturnNo.ToString());
-                
+                    }
                 }
             
         }
@@ -870,12 +882,8 @@ namespace sample
         public int verify = 0;
         public void verfydata()
         {
-            if (cmbpartyname.Text == "")
-            {
-                MessageBox.Show("Party Name Is Requried");
-                cmbpartyname.Focus();
-            }
-            else if (txtbillingadd.Text == "")
+         
+            if (txtbillingadd.Text == "")
             {
                 MessageBox.Show("Party Addrtess Is Requueird !");
                 txtbillingadd.Focus();
@@ -1131,14 +1139,20 @@ namespace sample
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
-            verfydata();
-            if (verify == 1)
+            if (cmbpartyname.Text == "")
             {
-                insertdata();
-                //  bind_sale_details();
-                clear_text_data();
-                cleardata();
-                get_id();
+                MessageBox.Show("Party Name Is Requried");
+                cmbpartyname.Focus();
+
+                verfydata();
+                if (verify == 1)
+                {
+                    insertdata();
+                    //  bind_sale_details();
+                    clear_text_data();
+                    cleardata();
+                    get_id();
+                }
             }
         }
 

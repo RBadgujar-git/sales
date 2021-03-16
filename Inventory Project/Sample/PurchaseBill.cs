@@ -799,8 +799,8 @@ namespace sample
             verfydata();
             if (verify == 1)
             {
-
-                string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+              
+                    string str = string.Format("SELECT * FROM tbl_PurchaseBill where BillNo ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd = new SqlCommand(str, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)

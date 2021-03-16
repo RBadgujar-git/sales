@@ -66,6 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
@@ -350,11 +351,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 198);
+            this.label4.Location = new System.Drawing.Point(168, 205);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 229;
-            this.label4.Text = "eg.0.00";
+            this.label4.Text = "eg.0 .";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // cmbChangeCurrency
@@ -394,6 +395,7 @@
             this.NumericUpDown1.ShadowDecoration.Parent = this.NumericUpDown1;
             this.NumericUpDown1.Size = new System.Drawing.Size(100, 26);
             this.NumericUpDown1.TabIndex = 233;
+            this.NumericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // guna2Panel4
             // 
@@ -592,11 +594,21 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(213, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(24, 16);
+            this.label11.TabIndex = 449;
+            this.label11.Text = "00";
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.NumericUpDown3);
             this.Controls.Add(this.label9);
@@ -687,5 +699,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label11;
     }
 }

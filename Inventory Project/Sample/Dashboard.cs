@@ -55,6 +55,9 @@ namespace sample
             //
             toolStripMenuItem5.Text = "Select Company";
             toolStripMenuItem5.Text=NewCompany.companyname;
+
+                    
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1296,9 +1299,11 @@ namespace sample
 
         private void barcodePrintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Barcodeprint br = new Barcodeprint();
-            br.Show();
+            //Barcodeprint br = new Barcodeprint();
+            //br.Show();
+            PasswordAsign as1=new  PasswordAsign();
 
+            as1.Show();
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
