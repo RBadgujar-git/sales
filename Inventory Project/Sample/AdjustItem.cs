@@ -30,6 +30,7 @@ namespace sample
 
         private void Cleardata()
         {
+            txtName.Focus();
             txtName.Text = "";
             combotype.Text = "";
             txtatprice.Text = "0";
@@ -58,23 +59,13 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
              dgvItemAdjustment.DataSource = dtable;
-
+            dgvItemAdjustment.AllowUserToAddRows = false;
 
         }
         public void Insert()
         {
             try
-            {
-                if (txtName.Text == "")
-                {
-                    MessageBox.Show("Item Name Is Rquired");
-                }
-                else if (txtatprice.Text == "")
-                {
-                    MessageBox.Show("Item Price Is Rquired");
-                }
-                else
-                {
+            {                     
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -102,19 +93,60 @@ namespace sample
                         MessageBox.Show("Please try again");
                     }
                 }
-            }
+            
             catch (Exception ex)
             {
                 MessageBox.Show("error" + ex.Message);
             }
         }
+        public int veryfi = 0;
 
+        public void validdata()
+        {
+           if(txtName.Text == "")
+            {
+                MessageBox.Show("Item Name Is  Required");
+                txtName.Focus();
+            }
+            else if (cmbAdjustmenttype.Text == "")
+            {
+                MessageBox.Show("Adjustment Type Is Required");
+                cmbAdjustmenttype.Focus();
+
+            }
+            else if (date.Text == "")
+            {
+                MessageBox.Show("Date Is Required");
+                date.Focus();
+            }
+            else if (txtatprice.Text == "")
+            {
+                MessageBox.Show("Price Is Required");
+                txtatprice.Focus();
+            }
+            else if (txtQuantity.Text == "")
+            {
+                MessageBox.Show("Item Quantity Is Category");
+                txtQuantity.Focus();
+            }      
+            else
+            {
+                veryfi = 1;
+            }
+        }
+
+
+      
         private void buttonsave_Click(object sender, EventArgs e)
         {
-            Insert();
-            fetchdetails();
-            Cleardata();
+            validdata();
+            if (veryfi == 1)
+            {
+                Insert();
+                fetchdetails();
+            }
         }
+    
      
         private void button3_Click(object sender, EventArgs e)
         {
@@ -123,6 +155,7 @@ namespace sample
 
         private void AdjustItem_Load(object sender, EventArgs e)
         {
+            txtName.Focus();
             fetchdetails();
             fetchItemName();
         }
@@ -317,7 +350,29 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            //this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dgvItemAdjustment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select ID,ItemName,AdjustmentType,AdjustmentDate,AtPrice,Quantity,Details from tbl_ItemAdjustement where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemAdjustment.DataSource = ds;
+                dgvItemAdjustment.DataMember = "temp";
+            }
         }
     }
 }

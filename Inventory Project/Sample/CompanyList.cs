@@ -72,7 +72,8 @@ namespace sample
            // DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            dgvCompanylist.DataSource = dt;                   
+            dgvCompanylist.DataSource = dt;
+            dgvCompanylist.AllowUserToAddRows = false;
             con.Close();           
         }
 

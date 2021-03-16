@@ -396,6 +396,69 @@ namespace sample
                 //}
             }
         }
+
+        private void update()
+        {
+            try
+            {
+                con.Open();
+                verifydata();
+                if (verifyid == 1)
+                {
+                    DataTable dtable = new DataTable();
+                    cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
+                    // cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
+                    cmd.Parameters.AddWithValue("@BillingName", txtBillingName.Text);
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                    cmd.Parameters.AddWithValue("@BillingAddress", txtPartyAdd.Text);
+                    cmd.Parameters.AddWithValue("@PartyAddress", txtBillingadd.Text);
+                    cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
+                    cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
+                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
+                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
+                    cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
+                    cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
+                    cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
+                    cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
+                    //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
+                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                    // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
+                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
+                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
+                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
+                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
+                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
+                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
+                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                    cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
+                    cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
+
+                    cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                    cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
+                    cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
+                    cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
+                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                    cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
+
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+
+                    id1 = cmd.ExecuteScalar();
+                    MessageBox.Show("Sale Record Update");
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+            finally
+            {
+                con.Close();
+                update_record_inner(txtReturnNo.ToString());
+            }
+        }
         private void cmbtax_SelectedIndexChanged(object sender, EventArgs e)
         {
             gst_devide();
@@ -718,16 +781,24 @@ namespace sample
          //   txtsubtotal.Text = "";
            
         }
-        private void update_record_inner(string p)
+        private void update_record_inner(string id)
         {
-            for (int i = 0; i < dgvInnerDeliveryChallanNote.Rows.Count; i++) {
-                try {
-                    con.Open();
+            for (int i = 0; i < dgvInnerDeliveryChallanNote.Rows.Count; i++)
+            {
+                try
+                {
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_DeliveryChallanInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@ChallanNo", id1);
 
-                    cmd.Parameters.AddWithValue("@id", id1);
+                    // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
+                    //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDeliveryChallanNote.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDeliveryChallanNote.Rows[i].Cells["Item_Code"].Value.ToString());
@@ -740,80 +811,32 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception e1) {
+                catch (Exception e1)
+                {
                     //MessageBox.Show(e1.Message);
                 }
-                finally
-                {
-                    con.Close();
-                }
+                //finally
+                //{
+                //    con.Close();
+                //}
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try {
-                con.Open();
-                verifydata();
-                if (verifyid == 1)
-                {
-                    DataTable dtable = new DataTable();
-                    cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
-                    // cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
-                    cmd.Parameters.AddWithValue("@BillingName", txtBillingName.Text);
-                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
-                    cmd.Parameters.AddWithValue("@BillingAddress", txtPartyAdd.Text);
-                    cmd.Parameters.AddWithValue("@PartyAddress", txtBillingadd.Text);
-                    cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
-                    cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
-                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
-                    cmd.Parameters.AddWithValue("@PaymentType", cmbPaymentType.Text);
-                    cmd.Parameters.AddWithValue("@TransportName", txtTransportName.Text);
-                    cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
-                    cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
-                    cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
-                    //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
-                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
-                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
-                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
-                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
-                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
-                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
-                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
-                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
-                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                    cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
-                    cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
-
-                    cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-                    cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                    cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
-                    cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
-                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                    cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
-
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-
-                    id1 = cmd.ExecuteScalar();
-                    MessageBox.Show("Sale Record Update");
-                }
-            }
-            catch (Exception e1) {
-                MessageBox.Show(e1.Message);
-            }
-            finally {
-                con.Close();
-                update_record_inner(txtReturnNo.ToString());
-            }
+            update();
+            clear_text_data();
+            cleardata();
+            //get_id();
+            printdata(id1.ToString());
+            dgvInnerDeliveryChallanNote.Rows.Clear();
         }
 
+      
         private void btnSave_Click(object sender, EventArgs e)
         {
             verifydata();

@@ -29,9 +29,13 @@ namespace sample
 
         private void Itemmaster_Load(object sender, EventArgs e)
         {
+           // autogenrate();
             fetchdetails();
             fetchUnit();
             fetchcategory();
+            dgvItemmaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            hidedatagri();
+
         }
 
         private void fetchcategory()
@@ -100,15 +104,15 @@ namespace sample
                 //con.Close();
             }
         }
-       
+
         private void Cleardata()
         {
             txtItemName.Text = "";
             txtHSNcode.Text = "";
-            cmbUnit.Text= "";
+            cmbUnit.Text = "";
             txtsubunit.Text = "";
             txtItemCode.Text = "";
-            cmbCategry.Text= "";
+            cmbCategry.Text = "";
             txtSalePrice.Text = "";
             cmbSaleTax.Text = "";
             txtTaxAmountSale.Text = "";
@@ -128,7 +132,7 @@ namespace sample
         }
         private void cmbSaleTax_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (txtSalePrice.Text != "" && cmbSaleTax.Text != "" && txtTaxAmountSale.Text != "")
+            if (txtSalePrice.Text != "" && cmbSaleTax.Text != "")
             {
                 float gst = 0, gst_amt = 0, TA = 0;
                 TA = float.Parse(txtSalePrice.Text.ToString());
@@ -137,10 +141,10 @@ namespace sample
                 txtTaxAmountSale.Text = gst_amt.ToString();
             }
         }
-        
+
         private void cmbPurchasetax_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (txtpurchasseprice.Text != "" && cmbPurchasetax.Text != "" && txtTaxAmountPurchase.Text != "")
+            if (txtpurchasseprice.Text != "" && cmbPurchasetax.Text != "")
             {
                 float gst = 0, gst_amt = 0, TA = 0;
                 TA = float.Parse(txtpurchasseprice.Text.ToString());
@@ -167,11 +171,11 @@ namespace sample
             {
                 con.Open();
             }
-      
-            DataTable dtable = new DataTable();          
+
+            DataTable dtable = new DataTable();
             cmd = new SqlCommand("tbl_ItemMasterSelect", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action","Select");    
+            cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@ItemID", 0);
             cmd.Parameters.AddWithValue("@ItemName", txtItemName.Text);
             cmd.Parameters.AddWithValue("@HSNCode", txtHSNcode.Text);
@@ -201,14 +205,19 @@ namespace sample
             SqlParameter sqlpara = new SqlParameter("@Image1", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
             cmd.Parameters.Add(sqlpara);
-   
+
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
-            dgvItemmaster.DataSource = dtable;       
+            dgvItemmaster.DataSource = dtable;
+            hidedatagri();
+
+
+
+
         }
-           
-           private void InsertData()
-            {
+
+        private void InsertData()
+        {
             try
             {
                 if (txtItemName.Text == "")
@@ -274,15 +283,70 @@ namespace sample
                 MessageBox.Show("error" + ex.Message);
             }
         }
-    
 
+        public void autogenrate()
+            {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var stringChars = new char[8];
+            var random = new Random();
+
+            for (int i = 0; i < stringChars.Length; i++)
+            {
+                stringChars[i] = chars[random.Next(chars.Length)];
+            }
+
+        
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
-           
-        }
+            vald();
+            if (veryfy == 1)
+            {
+                InsertData();
+                fetchdetails();
+            }
 
+
+        }
+        public int veryfy = 0;
+        public void vald()
+        {
+            if (txtItemName.Text == "")
+            {
+                MessageBox.Show("Please Insert ItemName");
+            }
+            else if (cmbUnit.Text == "")
+            {
+                MessageBox.Show("Please Select ItemUnit");
+
+            }
+            else if (txtItemCode.Text == "")
+            {
+                MessageBox.Show("Please Insert Itemcode ");
+            }
+            else if (txtHSNcode.Text == "")
+            {
+                MessageBox.Show("Please Insert HSN No ");
+            }
+            else if (txtpurchasseprice.Text == "0 "||txtpurchasseprice.Text=="")
+            {
+                MessageBox.Show("Please Insert Item Puchess Amount ");
+            }
+            else if (txtatPrice.Text == "0 ")
+            {
+                MessageBox.Show("Please Insert At Prices ");
+            }
+            else if (txtSalePrice.Text == "0 ")
+            {
+                MessageBox.Show("Please Insert Saleing Price !");
+            }
+            else
+            {
+                veryfy = 1;
+            }
+       
+
+        }
 
         private void Update1()
         {
@@ -300,7 +364,8 @@ namespace sample
                         {
                             con.Open();
                         }
-                        DataTable dt = new DataTable();
+
+                          DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_ItemMasterSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Update");
@@ -338,7 +403,7 @@ namespace sample
                         }
                         else
                         {
-                            MessageBox.Show("Please Select Record");
+                                MessageBox.Show("Please Select Record");
                         }
                     }
                 //}
@@ -408,7 +473,42 @@ namespace sample
             fetchdetails();
            
         }
+        public void hidedatagri()
+        {
+          //  dgvItemmaster.Columns["HSNCode"].Visible = false;
+            dgvItemmaster.Columns["BasicUnit"].Visible = false;
+            dgvItemmaster.Columns["SecondaryUnit"].Visible = false;
+            dgvItemmaster.Columns["ItemCategory"].Visible = false;
+            dgvItemmaster.Columns["TaxForSale"].Visible = false;
+            dgvItemmaster.Columns["SaleTaxAmount"].Visible = false;
+        //    dgvItemmaster.Columns["PurchasePrice"].Visible = false;
 
+            dgvItemmaster.Columns["TaxForPurchase"].Visible = false;
+            dgvItemmaster.Columns["PurchaseTaxAmount"].Visible = false;
+            dgvItemmaster.Columns["atPrice"].Visible = false;
+            dgvItemmaster.Columns["ItemLocation"].Visible = false;
+            dgvItemmaster.Columns["atPrice"].Visible = false;
+            dgvItemmaster.Columns["SerialNo"].Visible = false;
+            dgvItemmaster.Columns["TrackingMRP"].Visible = false;
+            dgvItemmaster.Columns["MFgdate"].Visible = false;
+            dgvItemmaster.Columns["Expdate"].Visible = false;
+            dgvItemmaster.Columns["Expdate"].Visible = false;
+            dgvItemmaster.Columns["Size"].Visible = false;
+            dgvItemmaster.Columns["DeleteData"].Visible = false;
+            dgvItemmaster.Columns["Image1"].Visible = false;
+            dgvItemmaster.Columns["CategoryID"].Visible = false;
+            dgvItemmaster.Columns["Barcode"].Visible = false;
+            dgvItemmaster.Columns["Company_ID"].Visible = false;
+         
+
+
+
+
+
+
+
+
+        }
         private void dgvItemmaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id= dgvItemmaster.Rows[e.RowIndex].Cells["ItemID"].Value.ToString();
@@ -674,7 +774,7 @@ namespace sample
 
         private void dgvItemmaster_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+         //   dgvItemmaster.Rows[e.RowIndex].Cells[11].Visible = false;
         }
         private void btnminimize_Click(object sender, EventArgs e)
         {

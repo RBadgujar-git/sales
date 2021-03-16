@@ -760,9 +760,6 @@
         </member>
         <member name="T:Stimulsoft.Report.Export.Wpf.StiDigitalSignatureUserControl">
             <summary>
-            Interaction logic for StiDigitalSignatureUserControl.xaml
-            </summary>
-            <summary>
             StiDigitalSignatureUserControl
             </summary>
         </member>
@@ -773,9 +770,6 @@
         </member>
         <member name="T:Stimulsoft.Report.Export.Wpf.StiDocumentSecurityUserControl">
             <summary>
-            Interaction logic for StiDocumentSecurityUserControl.xaml
-            </summary>
-            <summary>
             StiDocumentSecurityUserControl
             </summary>
         </member>
@@ -783,6 +777,32 @@
             <summary>
             InitializeComponent
             </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.StiWpfIconSetHelper">
+            <summary>
+            Class helps in working with Icon Set images.
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.StiWpfIconSetHelper.GetIcons(Stimulsoft.Report.Components.StiIconSet)">
+            <summary>
+            Returns aray of icon images for specified Icon Set.
+            </summary>
+            <param name="iconSet">Specified Icon Set.</param>
+            <returns>Array of icon images.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.StiWpfIconSetHelper.GetImage(Stimulsoft.Report.Components.StiIcon)">
+            <summary>
+            Returns image for specified icon key.
+            </summary>
+            <param name="icon">Specified icon key.</param>
+            <returns>Image for specified icon key.</returns>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.StiWpfIconSetHelper.GetImageSource(System.String)">
+            <summary>
+            Returns icon image with specified name.
+            </summary>
+            <param name="name">Icon name.</param>
+            <returns>Icon image for specified name.</returns>
         </member>
         <member name="T:Stimulsoft.Report.WpfDesign.StiWpfNodesMemory">
             <summary>
@@ -1063,6 +1083,19 @@
             <param name="dc">DrawingContext on which a border can be drawn.</param>
             <param name="rect">The rectangle that indicates an area of the border drawing.</param>
             <param name="emptyColor">The color of space between double lines (used only when border style equal Double).</param>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.StiBorderHelper.Paint(Stimulsoft.Base.Drawing.StiBorder,System.Windows.Media.DrawingContext,System.Windows.Rect,System.Windows.Media.Color,System.Boolean,System.Boolean)">
+            <summary>
+            Draws this border on the indicated Graphics.
+            </summary>
+            <param name="dc">DrawingContext on which a border can be drawn.</param>
+            <param name="rect">The rectangle that indicates an area of the border drawing.</param>
+            <param name="emptyColor">The color of space between double lines (used only when border style equal Double).</param>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.StiWpfRotatedTextDrawing">
+            <summary>
+            Class contains methods for rotated text drawing.
+            </summary>
         </member>
         <member name="T:Stimulsoft.Report.Wpf.StiMessageBoxWindow">
             <summary>
@@ -1407,10 +1440,12 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Viewer.StiWpfViewerControl">
+        <member name="T:Stimulsoft.Report.Viewer.StiChartInteractionResult">
             <summary>
-            Interaction logic for StiWpfViewerControl.xaml
+            Class contains result of chart interaction processin.
             </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Viewer.StiWpfViewerControl">
             <summary>
             StiWpfViewerControl
             </summary>
@@ -1495,6 +1530,11 @@
             Invalidates page.
             </summary>
             <param name="page"></param>
+        </member>
+        <member name="M:Stimulsoft.Report.Viewer.StiWpfViewerControl.InvalidateComponent(Stimulsoft.Report.Components.StiComponent)">
+            <summary>
+            Invalidates the area of specified component.
+            </summary>
         </member>
         <member name="M:Stimulsoft.Report.Viewer.StiWpfViewerControl.InitializeComponent">
             <summary>
@@ -1661,11 +1701,6 @@
             Gets or sets value indicates show button Close or no.
             </summary>
         </member>
-        <member name="P:Stimulsoft.Report.Viewer.StiWpfViewerControl.Report">
-            <summary>
-            Gets or sets viewed report.
-            </summary>
-        </member>
         <member name="P:Stimulsoft.Report.Viewer.StiWpfViewerControl.CurrentPrintPage">
             <summary>
             Gets or sets current displayed page. Only for internal use.
@@ -1682,6 +1717,289 @@
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "P:Stimulsoft.Report.Viewer.StiWpfViewerControl.IsHandModeActivated" -->
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListBoolItemControl">
+            <summary>
+            StiListBoolItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListBoolItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListButtonXControl">
+            <summary>
+            StiListButtonXControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListButtonXControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListCharItemControl">
+            <summary>
+            StiListCharItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListCharItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListDateTimeItemControl">
+            <summary>
+            StiListDateTimeItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListDateTimeItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListDoubleItemControl">
+            <summary>
+            StiListDoubleItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListDoubleItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListGuidItemControl">
+            <summary>
+            StiListGuidItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListGuidItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListLongItemControl">
+            <summary>
+            StiListLongItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListLongItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListStringItemControl">
+            <summary>
+            StiListStringItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListStringItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListTimeSpanItemControl">
+            <summary>
+            StiListTimeSpanItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.List.StiListTimeSpanItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeCharItemControl">
+            <summary>
+            StiRangeCharItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeCharItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeDateTimeItemControl">
+            <summary>
+            StiRangeDateTimeItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeDateTimeItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeDoubleItemControl">
+            <summary>
+            StiRangeDoubleItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeDoubleItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeGuidItemControl">
+            <summary>
+            StiRangeGuidItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeGuidItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeLongItemControl">
+            <summary>
+            StiRangeLongItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeLongItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeStringItemControl">
+            <summary>
+            StiRangeStringItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeStringItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeTimeSpanItemControl">
+            <summary>
+            StiRangeTimeSpanItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Range.StiRangeTimeSpanItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueBoolItemControl">
+            <summary>
+            StiValueBoolItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueBoolItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueCharItemControl">
+            <summary>
+            StiValueCharItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueCharItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueDateTimeItemControl">
+            <summary>
+            StiValueDateTimeItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueDateTimeItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueDoubleItemControl">
+            <summary>
+            StiValueDoubleItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueDoubleItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueGuidItemControl">
+            <summary>
+            StiValueGuidItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueGuidItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueImageItemControl">
+            <summary>
+            StiValueImageItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueImageItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueLongItemControl">
+            <summary>
+            StiValueLongItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueLongItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueStringItemControl">
+            <summary>
+            StiValueStringItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueStringItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueTimeSpanItemControl">
+            <summary>
+            StiValueTimeSpanItemControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Wpf.RequestFromUser.Value.StiValueTimeSpanItemControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Viewer.StiWpfRibbonViewerControl">
+            <summary>
+            StiWpfRibbonViewerControl
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Viewer.StiWpfRibbonViewerControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Viewer.StiWpfRibbonViewerControl.Report">
+            <summary>
+            Gets or sets viewed report.
+            </summary>
+        </member>
+        <member name="T:Stimulsoft.Report.Viewer.StiWpfRibbonViewerWindow">
+            <summary>
+            Interaction logic for StiWpfRibbonViewerWindow.xaml
+            </summary>
+            <summary>
+            StiWpfRibbonViewerWindow
+            </summary>
+        </member>
+        <member name="M:Stimulsoft.Report.Viewer.StiWpfRibbonViewerWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:Stimulsoft.Report.Viewer.StiWpfRibbonViewerWindow.Report">
+            <summary>
+            Gets or sets viewed report.
+            </summary>
+        </member>
         <member name="T:Stimulsoft.Report.Viewer.StiWpfFullScreenViewerWindow">
             <summary>
             Interaction logic for StiWpfFullScreenViewerWindow.xaml
@@ -1693,16 +2011,6 @@
         <member name="M:Stimulsoft.Report.Viewer.StiWpfFullScreenViewerWindow.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Viewer.StiWpfFullScreenViewerWindow.Stimulsoft#Report#Viewer#IStiViewerForm#get_ShowInTaskbar">
-            <summary>
-            Interaction logic for StiWpfFullScreenViewerWindow.xaml
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Viewer.StiWpfFullScreenViewerWindow.Stimulsoft#Report#Viewer#IStiViewerForm#set_ShowInTaskbar(System.Boolean)">
-            <summary>
-            Interaction logic for StiWpfFullScreenViewerWindow.xaml
             </summary>
         </member>
         <member name="P:Stimulsoft.Report.Viewer.StiWpfFullScreenViewerWindow.Report">
@@ -1747,9 +2055,6 @@
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.Viewer.StiMultiPagesUserControl">
-            <summary>
-            Interaction logic for StiMultiPagesUserControl.xaml
-            </summary>
             <summary>
             StiMultiPagesUserControl
             </summary>
@@ -1835,16 +2140,6 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Viewer.StiWpfDotMatrixViewerWindow.Stimulsoft#Report#Viewer#IStiViewerForm#get_ShowInTaskbar">
-            <summary>
-            Interaction logic for StiDotMatrixViewerWindow.xaml
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Viewer.StiWpfDotMatrixViewerWindow.Stimulsoft#Report#Viewer#IStiViewerForm#set_ShowInTaskbar(System.Boolean)">
-            <summary>
-            Interaction logic for StiDotMatrixViewerWindow.xaml
-            </summary>
-        </member>
         <member name="P:Stimulsoft.Report.Viewer.StiWpfDotMatrixViewerWindow.Report">
             <summary>
             Gets or sets viewed report.
@@ -1863,129 +2158,9 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Viewer.StiWpfViewerWindow.Stimulsoft#Report#Viewer#IStiViewerForm#get_ShowInTaskbar">
-            <summary>
-            Interaction logic for StiWpfViewerWindow.xaml
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Viewer.StiWpfViewerWindow.Stimulsoft#Report#Viewer#IStiViewerForm#set_ShowInTaskbar(System.Boolean)">
-            <summary>
-            Interaction logic for StiWpfViewerWindow.xaml
-            </summary>
-        </member>
         <member name="P:Stimulsoft.Report.Viewer.StiWpfViewerWindow.Report">
             <summary>
             Gets or sets viewed report.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.BusinessObject">
-            <summary>
-            BusinessObject
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.BusinessObject.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumn">
-            <summary>
-            CalcColumn
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumn.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnBinary">
-            <summary>
-            CalcColumnBinary
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnBinary.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnBool">
-            <summary>
-            CalcColumnBool
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnBool.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnChar">
-            <summary>
-            CalcColumnChar
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnChar.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnDateTime">
-            <summary>
-            CalcColumnDateTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnDateTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnDecimal">
-            <summary>
-            CalcColumnDecimal
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnDecimal.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnFloat">
-            <summary>
-            CalcColumnFloat
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnFloat.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnImage">
-            <summary>
-            CalcColumnImage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnImage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnInt">
-            <summary>
-            CalcColumnInt
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnInt.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.CalcColumnString">
-            <summary>
-            CalcColumnString
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.CalcColumnString.InitializeComponent">
-            <summary>
-            InitializeComponent
             </summary>
         </member>
         <member name="T:Stimulsoft.Report.Wpf.XamlImages.Checker.Error">
@@ -2038,672 +2213,42 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Class">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.catBands">
             <summary>
-            Class
+            catBands
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Class.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.catBands.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Close">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.catComponents">
             <summary>
-            Close
+            catComponents
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Close.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.catComponents.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ColumnsOrder">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.catCrossBands">
             <summary>
-            ColumnsOrder
+            catCrossBands
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ColumnsOrder.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.catCrossBands.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Connection">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.DropDownArrow">
             <summary>
-            Connection
+            DropDownArrow
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Connection.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ConnectionFail">
-            <summary>
-            ConnectionFail
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ConnectionFail.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumn">
-            <summary>
-            DataColumn
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumn.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnBinary">
-            <summary>
-            DataColumnBinary
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnBinary.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnBool">
-            <summary>
-            DataColumnBool
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnBool.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnChar">
-            <summary>
-            DataColumnChar
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnChar.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnDateTime">
-            <summary>
-            DataColumnDateTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnDateTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnDecimal">
-            <summary>
-            DataColumnDecimal
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnDecimal.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnFloat">
-            <summary>
-            DataColumnFloat
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnFloat.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnImage">
-            <summary>
-            DataColumnImage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnImage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnInt">
-            <summary>
-            DataColumnInt
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnInt.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataColumnString">
-            <summary>
-            DataColumnString
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataColumnString.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataSource">
-            <summary>
-            DataSource
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataSource.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataStore">
-            <summary>
-            DataStore
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataStore.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataTable">
-            <summary>
-            DataTable
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataTable.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.DataTables">
-            <summary>
-            DataTables
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.DataTables.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Folder">
-            <summary>
-            Folder
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Folder.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Format">
-            <summary>
-            Format
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Format.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatBoolean">
-            <summary>
-            FormatBoolean
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatBoolean.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatCurrency">
-            <summary>
-            FormatCurrency
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatCurrency.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatDate">
-            <summary>
-            FormatDate
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatDate.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatGeneral">
-            <summary>
-            FormatGeneral
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatGeneral.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatNumber">
-            <summary>
-            FormatNumber
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatNumber.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatPercentage">
-            <summary>
-            FormatPercentage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatPercentage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.FormatTime">
-            <summary>
-            FormatTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.FormatTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Function">
-            <summary>
-            Function
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Function.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.HtmlTag">
-            <summary>
-            HtmlTag
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.HtmlTag.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumn">
-            <summary>
-            LockedCalcColumn
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumn.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnBinary">
-            <summary>
-            LockedCalcColumnBinary
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnBinary.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnBool">
-            <summary>
-            LockedCalcColumnBool
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnBool.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnChar">
-            <summary>
-            LockedCalcColumnChar
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnChar.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnDateTime">
-            <summary>
-            LockedCalcColumnDateTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnDateTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnDecimal">
-            <summary>
-            LockedCalcColumnDecimal
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnDecimal.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnFloat">
-            <summary>
-            LockedCalcColumnFloat
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnFloat.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnImage">
-            <summary>
-            LockedCalcColumnImage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnImage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnInt">
-            <summary>
-            LockedCalcColumnInt
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnInt.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnString">
-            <summary>
-            LockedCalcColumnString
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedCalcColumnString.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedConnection">
-            <summary>
-            LockedConnection
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedConnection.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumn">
-            <summary>
-            LockedDataColumn
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumn.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnBinary">
-            <summary>
-            LockedDataColumnBinary
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnBinary.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnBool">
-            <summary>
-            LockedDataColumnBool
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnBool.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnChar">
-            <summary>
-            LockedDataColumnChar
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnChar.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnDateTime">
-            <summary>
-            LockedDataColumnDateTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnDateTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnDecimal">
-            <summary>
-            LockedDataColumnDecimal
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnDecimal.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnFloat">
-            <summary>
-            LockedDataColumnFloat
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnFloat.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnImage">
-            <summary>
-            LockedDataColumnImage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnImage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnInt">
-            <summary>
-            LockedDataColumnInt
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnInt.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnString">
-            <summary>
-            LockedDataColumnString
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataColumnString.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedDataSource">
-            <summary>
-            LockedDataSource
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedDataSource.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedFolder">
-            <summary>
-            LockedFolder
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedFolder.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedParameter">
-            <summary>
-            LockedParameter
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedParameter.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedRelation">
-            <summary>
-            LockedRelation
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedRelation.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariable">
-            <summary>
-            LockedVariable
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariable.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableBinary">
-            <summary>
-            LockedVariableBinary
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableBinary.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableBool">
-            <summary>
-            LockedVariableBool
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableBool.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableChar">
-            <summary>
-            LockedVariableChar
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableChar.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableDateTime">
-            <summary>
-            LockedVariableDateTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableDateTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableDecimal">
-            <summary>
-            LockedVariableDecimal
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableDecimal.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableFloat">
-            <summary>
-            LockedVariableFloat
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableFloat.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableImage">
-            <summary>
-            LockedVariableImage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableImage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableInt">
-            <summary>
-            LockedVariableInt
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableInt.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LockedVariableString">
-            <summary>
-            LockedVariableString
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LockedVariableString.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Namespace">
-            <summary>
-            Namespace
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Namespace.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Property">
-            <summary>
-            Property
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Property.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.DropDownArrow.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -2718,332 +2263,22 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Parameter">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.Hand">
             <summary>
-            Parameter
+            Hand
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Parameter.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Queries">
-            <summary>
-            Queries
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Queries.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.Hand.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Query">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.Select">
             <summary>
-            Query
+            Select
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Query.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Relation">
-            <summary>
-            Relation
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Relation.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.LabelType">
-            <summary>
-            LabelType
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.LabelType.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.StoredProcedure">
-            <summary>
-            StoredProcedure
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.StoredProcedure.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.StoredProcedures">
-            <summary>
-            StoredProcedures
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.StoredProcedures.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariable">
-            <summary>
-            SystemVariable
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariable.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableColumn">
-            <summary>
-            SystemVariableColumn
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableColumn.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableGroupLine">
-            <summary>
-            SystemVariableGroupLine
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableGroupLine.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsFirstPage">
-            <summary>
-            SystemVariableIsFirstPage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsFirstPage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsFirstPageThrough">
-            <summary>
-            SystemVariableIsFirstPageThrough
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsFirstPageThrough.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsLastPage">
-            <summary>
-            SystemVariableIsLastPage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsLastPage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsLastPageThrough">
-            <summary>
-            SystemVariableIsLastPageThrough
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableIsLastPageThrough.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLine">
-            <summary>
-            SystemVariableLine
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLine.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLineABC">
-            <summary>
-            SystemVariableLineABC
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLineABC.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLineRoman">
-            <summary>
-            SystemVariableLineRoman
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLineRoman.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLineThrough">
-            <summary>
-            SystemVariableLineThrough
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableLineThrough.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNofM">
-            <summary>
-            SystemVariablePageNofM
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNofM.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNofMThrough">
-            <summary>
-            SystemVariablePageNofMThrough
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNofMThrough.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNumber">
-            <summary>
-            SystemVariablePageNumber
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNumber.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNumberThrough">
-            <summary>
-            SystemVariablePageNumberThrough
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariablePageNumberThrough.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportAlias">
-            <summary>
-            SystemVariableReportAlias
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportAlias.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportAuthor">
-            <summary>
-            SystemVariableReportAuthor
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportAuthor.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportChanged">
-            <summary>
-            SystemVariableReportChanged
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportChanged.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportCreated">
-            <summary>
-            SystemVariableReportCreated
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportCreated.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportDescription">
-            <summary>
-            SystemVariableReportDescription
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportDescription.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportName">
-            <summary>
-            SystemVariableReportName
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableReportName.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariables">
-            <summary>
-            SystemVariables
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariables.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableTime">
-            <summary>
-            SystemVariableTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableToday">
-            <summary>
-            SystemVariableToday
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableToday.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableTotalPageCount">
-            <summary>
-            SystemVariableTotalPageCount
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableTotalPageCount.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.SystemVariableTotalPageCountThrough">
-            <summary>
-            SystemVariableTotalPageCountThrough
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.SystemVariableTotalPageCountThrough.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.Select.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
@@ -3768,142 +3003,32 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.UndefinedConnection">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.Style">
             <summary>
-            UndefinedConnection
+            Style
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.UndefinedConnection.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.UndefinedDataSource">
-            <summary>
-            UndefinedDataSource
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.UndefinedDataSource.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.Style.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Variable">
+        <member name="T:Stimulsoft.Report.Wpf.XamlImages.ToolBox.ToolBoxSetup">
             <summary>
-            Variable
+            ToolBoxSetup
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Variable.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableBinary">
-            <summary>
-            VariableBinary
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableBinary.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Wpf.XamlImages.ToolBox.ToolBoxSetup.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>
         </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableBool">
+        <member name="T:Stimulsoft.Report.Export.Wpf.StiHtml5ExportSetupForm">
             <summary>
-            VariableBool
+            StiHtml5ExportSetupForm
             </summary>
         </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableBool.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableChar">
-            <summary>
-            VariableChar
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableChar.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableDateTime">
-            <summary>
-            VariableDateTime
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableDateTime.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableDecimal">
-            <summary>
-            VariableDecimal
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableDecimal.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableFloat">
-            <summary>
-            VariableFloat
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableFloat.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableImage">
-            <summary>
-            VariableImage
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableImage.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableInt">
-            <summary>
-            VariableInt
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableInt.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.VariableString">
-            <summary>
-            VariableString
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.VariableString.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.View">
-            <summary>
-            View
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.View.InitializeComponent">
-            <summary>
-            InitializeComponent
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Report.Wpf.XamlImages.Views">
-            <summary>
-            Views
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Report.Wpf.XamlImages.Views.InitializeComponent">
+        <member name="M:Stimulsoft.Report.Export.Wpf.StiHtml5ExportSetupForm.InitializeComponent">
             <summary>
             InitializeComponent
             </summary>

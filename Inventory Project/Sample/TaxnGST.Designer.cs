@@ -293,6 +293,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaxnGST";
             this.Size = new System.Drawing.Size(1029, 599);
+            this.Load += new System.EventHandler(this.TaxnGST_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

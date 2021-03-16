@@ -128,6 +128,7 @@ namespace sample
             dgvItem.Columns[1].HeaderText = "Quantity";
             dgvItem.Columns[1].DataPropertyName = "OpeningQty";
             dgvItem.DataSource = dtable;
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

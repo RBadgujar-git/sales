@@ -58,9 +58,9 @@
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(68, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 36);
+            this.label1.Size = new System.Drawing.Size(251, 36);
             this.label1.TabIndex = 346;
-            this.label1.Text = "Dounload .xls/xlsx (excel sheet)\r\nTemplate File to enter Data";
+            this.label1.Text = "Download .xls/xlsx (excel sheet)\r\nTemplate File to enter Data";
             // 
             // label2
             // 
@@ -80,7 +80,7 @@
             this.btnDownload.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDownload.ForeColor = System.Drawing.Color.White;
             this.btnDownload.HoverState.Parent = this.btnDownload;
-            this.btnDownload.Location = new System.Drawing.Point(71, 344);
+            this.btnDownload.Location = new System.Drawing.Point(87, 344);
             this.btnDownload.Name = "btnDownload";
             this.btnDownload.ShadowDecoration.Parent = this.btnDownload;
             this.btnDownload.Size = new System.Drawing.Size(180, 45);
@@ -92,7 +92,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(54, 43);
+            this.label3.Location = new System.Drawing.Point(118, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 18);
             this.label3.TabIndex = 390;
@@ -176,6 +176,7 @@
             // 
             // btnminimize
             // 
+            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnminimize.BackColor = System.Drawing.Color.White;
             this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -183,7 +184,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(976, 8);
+            this.btnminimize.Location = new System.Drawing.Point(996, 3);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 446;
@@ -211,7 +212,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1008, 8);
+            this.btncancel.Location = new System.Drawing.Point(1018, 3);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 345;
@@ -221,9 +222,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(405, 388);
+            this.dataGridView1.Location = new System.Drawing.Point(420, 361);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(622, 176);
+            this.dataGridView1.Size = new System.Drawing.Size(558, 176);
             this.dataGridView1.TabIndex = 447;
             // 
             // btnSave
@@ -231,11 +232,11 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(489, 347);
+            this.btnSave.Location = new System.Drawing.Point(888, 540);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 448;
-            this.btnSave.Text = "Save ";
+            this.btnSave.Text = "Import";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 

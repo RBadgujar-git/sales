@@ -139,10 +139,34 @@ namespace sample
             }
         }
 
+
+     public int verify;
+
+       public void valid ()
+        {
+
+
+            var controls = new[] { txtPartyname, txtBillingAdd, txtContactNo, txtEmailID, txtGSTType };     
+            foreach (var control in controls.Where(e => String.IsNullOrWhiteSpace(e.Text)))
+            {
+               errorProvider1.SetError(control, "Please fill the required field");
+               verify = 1;
+            }
+           
+    }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
+            verify = 0;
+            valid();
+            if (verify != 1)
+            { 
+                InsertData();
+                fetchdetails();
+                errorProvider1.Clear();
+                Cleardata();
+            }
+
         }
 
         private void Update1()
@@ -443,6 +467,7 @@ namespace sample
         private void txtState_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+
         }
 
         private void dgvParty_CellContentClick(object sender, DataGridViewCellEventArgs e)

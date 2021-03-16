@@ -459,15 +459,19 @@ namespace sample
 
         private void update_record_inner(string id)
         {
-            for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++) {
-                try {
-                    con.Open();
+            for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++)
+            {
+                try
+                {
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_QuotationInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-
+                    cmd.Parameters.AddWithValue("@Action", "Update");
                     cmd.Parameters.AddWithValue("@RefNo", id1);
-
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerQuotation.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerQuotation.Rows[i].Cells["Item_Code"].Value.ToString());
                     cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerQuotation.Rows[i].Cells["Unit"].Value.ToString());
@@ -479,14 +483,15 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerQuotation.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerQuotation.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerQuotation.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                 }
-                catch (Exception e1) {
-                    //MessageBox.Show(e1.Message);
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
                 }
-                finally {
+                finally
+                {
                     con.Close();
                 }
             }
@@ -494,58 +499,81 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try {
-
-
-                validdata();
-                if (verify == 1)
-                {
-
-                    con.Open();
-                    //MemoryStream ms = new MemoryStream();
-                    //picImage.Image.Save(ms, picImage.Image.RawFormat);
-                    //byte[] arrImage1 = ms.GetBuffer();
-
-                    DataTable dtable = new DataTable();
-                    cmd = new SqlCommand("tbl_QuotationSelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
-                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
-                    cmd.Parameters.AddWithValue("@BillingName", txtBillingAdd.Text);
-                    cmd.Parameters.AddWithValue("@Date", dtpInvoice.Text);
-                    cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
-                    cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
-                    cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
-                    cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
-                    cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
-                    cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
-                    cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
-                    cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
-                    cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                    //   cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
-
-                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                    cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
-                    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
-                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-                    //   cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-
-                    id1 = cmd.ExecuteScalar();
-                    MessageBox.Show("Sale Record Update");
-                }
+            insertdata();
+            //bind_sale_details();
+            clear_text_data();
+            cleardata();
+           // get_id();
+            printdata(id1.ToString());
+            dgvInnerQuotation.Rows.Clear();
         }
-            catch (Exception e1) {
+
+        private void update()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                DataTable dtable = new DataTable();
+                cmd = new SqlCommand("tbl_QuotationSelect", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Action", "Update");
+                cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
+                //cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@PartyName", comboBox1.Text);
+                }
+                cmd.Parameters.AddWithValue("@BillingAddress", txtBillingAdd.Text);
+                cmd.Parameters.AddWithValue("@Date", dtpInvoice.Text);
+                cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
+                cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
+                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
+                cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
+                cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
+                cmd.Parameters.AddWithValue("@TotalDiscount", txtDiscount.Text);
+                cmd.Parameters.AddWithValue("@DiscountAmount1", txtDisAmount.Text);
+                cmd.Parameters.AddWithValue("@RoundFigure", txtRoundup.Text);
+                cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
+                cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
+
+
+                if (cmbpartyname.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@Itemcatgory", cmbCategory.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
+                }
+
+                cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                // cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                id1 = cmd.ExecuteScalar();
+                MessageBox.Show("Update Record Sucessfully");
+
+            }
+            catch (Exception e1)
+            {
                 MessageBox.Show(e1.Message);
             }
-            finally {
-                con.Close();
-                update_record_inner(txtReturnNo.ToString());
-}
+            finally
+            {
+                // con.Close();
+                update_record_inner(id1.ToString());
+            }
         }
-
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
         {
 

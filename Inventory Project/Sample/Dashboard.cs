@@ -52,7 +52,8 @@ namespace sample
             //finally
             //{
 
-            //}
+            //
+            toolStripMenuItem5.Text = "Select Company";
             toolStripMenuItem5.Text=NewCompany.companyname;
         }
 
@@ -1331,7 +1332,7 @@ namespace sample
         {
             NewCompany n = new NewCompany();
             this.Controls.Add(n);
-            n.Location = new Point(200, 50);
+            n.Location = new Point(200, 120);
             n.Visible = true;
             n.BringToFront();
         }

@@ -958,13 +958,22 @@ namespace sample
 
         private void update()
         {
-          
             try
-            {             
+            {
+                if (cmbpartyname.Text == "")
+                {
+                    MessageBox.Show("Party Name Is Requried");
+                }
+                else
+                {
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
                     }
+
+
+                    //string query = string.Format("insert into tbl_CreditNote1( PartyName ,InvoiceNo ,BillingName,PONumber,PODate,InvoiceDate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3,ContactNo,TableName,Status,Barcode,Company_ID) Values (@PartyName,@InvoiceNo,  @BillingName, @PONumber, @PODate,@InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @ContactNo, @TableName, @Status,@Barcode,@compid); SELECT SCOPE_IDENTITY();");
+                    //SqlCommand cmd = new SqlCommand(query, con);
 
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_CreditNote1Select", con);
@@ -994,7 +1003,15 @@ namespace sample
                     cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
                     cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Value.Date);
                     cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                    cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    //  cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    if (cmbpartyname.Visible == true)
+                    {
+                        cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Tax1", comboBox3.Text);
+                    }
                     cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
                     cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
                     cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
@@ -1010,15 +1027,23 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                     cmd.Parameters.AddWithValue("@TableName", Credit.Text);
                     cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                    // cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                    if (cmbpartyname.Visible == true)
+                    {
+                        cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@ItemCategory", comboBox2.Text);
+                    }
                     cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     id1 = cmd.ExecuteScalar();
-                    MessageBox.Show("Sale Record Updated");
-                cleardata();
-                clear_text_data();
+                    MessageBox.Show("Update Record Sucessfully");
+                    //cleardata();
+                    //clear_text_data();
                 }
-            
+            }
             catch (Exception e1)
             {
                 MessageBox.Show(e1.Message);
@@ -1029,7 +1054,6 @@ namespace sample
                 update_record_inner(id1.ToString());
             }
         }
-
         private void update_record_inner(string id)
         {
             for (int i = 0; i < dgvInnerCreditNote.Rows.Count; i++)
@@ -1070,12 +1094,17 @@ namespace sample
 
             }
         }
-    
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             update();
+            //  insert_record_inner();
             bind_sale_details();
+           // get_id();
+            cleardata();
+            clear_text_data();
+            printdata(id1.ToString());
+            dgvInnerCreditNote.Rows.Clear();
         }
 
         private void Print_Click(object sender, EventArgs e)

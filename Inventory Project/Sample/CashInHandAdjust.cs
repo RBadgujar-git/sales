@@ -115,21 +115,42 @@ namespace sample
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            if (txtCashadjustment.SelectedItem == "Cash In")
+        {       
+            try
             {
-                Caladd();
-
+                if (id == "")
+                {
+                    if (txtCashadjustment.SelectedItem == "Cash In")
+                    {
+                        if (Int32.Parse(textBox1.Text) < Int32.Parse(txtenterAmount.Text))
+                        {
+                            MessageBox.Show("Insuficient Balence");
+                        }
+                        else
+                        {
+                            Caladd();                            
+                            Insert();
+                            update_opening_bal();
+                            fetchdetails();
+                        }
+                    }
+                    else if (txtCashadjustment.SelectedItem == "Cash Out")
+                    {
+                        calminus();
+                        Insert();
+                        update_opening_bal();
+                        fetchdetails();
+                    }              
+                }
+                else
+                {
+                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                }
             }
-            else if (txtCashadjustment.SelectedItem == "Cash Out")
+            catch (Exception ex)
             {
-                calminus();
+                // MessageBox.Show("error"+ex);
             }
-            update_opening_bal();
-            Insert();
-           
-           
-            fetchdetails();
         }
 
         public void Caladd()

@@ -274,6 +274,7 @@
             // 
             // btncancel
             // 
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btncancel.BackColor = System.Drawing.Color.White;
             this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
             this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -281,7 +282,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(741, 7);
+            this.btncancel.Location = new System.Drawing.Point(746, 7);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(30, 27);
             this.btncancel.TabIndex = 156;
@@ -373,6 +374,7 @@
             // 
             // btnminimize
             // 
+            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnminimize.BackColor = System.Drawing.Color.White;
             this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -380,7 +382,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(709, 8);
+            this.btnminimize.Location = new System.Drawing.Point(723, 8);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 440;
