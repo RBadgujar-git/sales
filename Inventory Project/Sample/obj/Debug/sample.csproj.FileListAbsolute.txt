@@ -1540,3 +1540,7 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveCom
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.POS.resources
+C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\Rukmini\source\repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
