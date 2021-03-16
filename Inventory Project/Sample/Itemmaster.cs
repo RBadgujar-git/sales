@@ -210,10 +210,7 @@ namespace sample
             sdasql.Fill(dtable);
             dgvItemmaster.DataSource = dtable;
             hidedatagri();
-
-
-
-
+            dgvItemmaster.AllowUserToAddRows = false;
         }
 
         private void InsertData()
@@ -807,6 +804,23 @@ namespace sample
         private void txtItemName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select @ItemID,ItemName,HSNCode ,BasicUnit,SecondaryUnit,ItemCode ,ItemCategory,SalePrice,TaxForSale ,SaleTaxAmount ,TaxForPurchase ,PurchasePrice,PurchaseTaxAmount ,OpeningQty,atPrice ,Date,ItemLocation,TrackingMRP,BatchNo,SerialNo,MFgdate,Expdate,Size ,Description ,MinimumStock ,Image1,Barcode from tbl_ItemMaster where DeleteData = '1' and ItemName like '%{0}%' or ItemID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemmaster.DataSource = ds;
+                dgvItemmaster.DataMember = "temp";
+            }
         }
     }
 }

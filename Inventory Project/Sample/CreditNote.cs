@@ -1051,7 +1051,7 @@ namespace sample
             finally
             {
                 //  con.Close();
-                update_record_inner(id1.ToString());
+                update_record_inner(txtReturnNo.Text.ToString());
             }
         }
         private void update_record_inner(string id)
@@ -1069,7 +1069,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_CreditNoteInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ReturnNo", id1);
+                    cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
                     //  cmd.Parameters.AddWithValue("@ID", id);
 
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerCreditNote.Rows[i].Cells["txtItem"].Value.ToString());
