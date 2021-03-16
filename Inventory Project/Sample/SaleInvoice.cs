@@ -233,7 +233,6 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
-                    cmd.ExecuteNonQuery();
                     float ItemCode = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
                     float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
                     // MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
@@ -243,16 +242,20 @@ namespace sample
                     cmd1.Parameters.AddWithValue("@Action", "backget");
                     cmd1.Parameters.AddWithValue("@Itemcode", ItemCode);
                     float prestock = Convert.ToInt32(cmd1.ExecuteScalar());
+
                     float freeqty = float.Parse(txtFreeQty.Text);
-                    float stockmangee = prestock - cureentstock - freeqty;
+                    float stockmangee = prestock - (cureentstock + freeqty);
+
+
 
                     SqlCommand cmd2 = new SqlCommand("tbl_SaleInvoiceInnersp", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
                     cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
                     cmd2.Parameters.AddWithValue("@stock", stockmangee);
                     cmd2.Parameters.AddWithValue("@Itemcode", ItemCode);
-
                     cmd2.ExecuteNonQuery();
+
+                    cmd.ExecuteNonQuery();
 
                 }
                 catch (Exception e1)
@@ -355,17 +358,18 @@ namespace sample
             {
                 con.Open();
             }
-            string str = string.Format("SELECT * FROM tbl_SaleInvoice where @InvoiceID ='{0}' and  Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+            string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID ="+txtReturnNo.Text+" and  Company_ID='" + NewCompany.company_id + "'");
             SqlCommand cmd = new SqlCommand(str, con);
+
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.HasRows)
             {
                 MessageBox.Show("Invalid Data !");
-
+                dr.Close();
             }
             else
             {
-
+                dr.Close();
                 validdata();
                 if (veryfi == 1)
                 {
@@ -373,10 +377,11 @@ namespace sample
                     clear_text_data();
                     cleardata();
                     get_id();
-                    bind_sale_details();
+                //    bind_sale_details();
                     printdata(id1.ToString());
-                    dgvInnerDebiteNote.Rows.Clear();
+                    
                 }
+                dr.Close();
             }
         }
         private void printdata(string id1)
@@ -1192,7 +1197,7 @@ namespace sample
             clear_text_data();
             cleardata();
            // get_id();
-            bind_sale_details();
+         //   bind_sale_details();
             printdata(id1.ToString());
             dgvInnerDebiteNote.Rows.Clear();
 
@@ -1528,6 +1533,11 @@ namespace sample
         }
 
         private void txtTaxAMount1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
