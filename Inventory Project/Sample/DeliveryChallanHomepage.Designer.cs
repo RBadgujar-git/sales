@@ -97,7 +97,7 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(914, 55);
+            this.btnPrint.Location = new System.Drawing.Point(978, 41);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(24, 23);
             this.btnPrint.TabIndex = 192;
@@ -111,7 +111,7 @@
             this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Location = new System.Drawing.Point(870, 55);
+            this.btnImport.Location = new System.Drawing.Point(945, 41);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 191;

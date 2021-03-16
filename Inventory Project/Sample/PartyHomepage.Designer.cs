@@ -255,7 +255,6 @@
             this.guna2ShadowPanel3.Controls.Add(this.label2);
             this.guna2ShadowPanel3.Controls.Add(this.lblbal);
             this.guna2ShadowPanel3.Controls.Add(this.btnPartyGroup);
-            this.guna2ShadowPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(289, 53);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
@@ -337,7 +336,7 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(311, 236);
+            this.dgvParty.Location = new System.Drawing.Point(294, 236);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

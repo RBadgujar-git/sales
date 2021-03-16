@@ -46,7 +46,7 @@ namespace sample
         private void DeliveryChallanHomepage_Load(object sender, EventArgs e)
         {
             fetchCompany();
-
+            bindbankdata();
         }
         private void fetchCompany()
         {

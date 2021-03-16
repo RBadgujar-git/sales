@@ -28,13 +28,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryChallan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlinkPayment = new System.Windows.Forms.Button();
             this.txtadditional2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtadditional1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtrefNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.chkRoundOff = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtBallaance = new Guna.UI2.WinForms.Guna2TextBox();
@@ -144,6 +143,8 @@
             this.btnminimize = new System.Windows.Forms.Button();
             this.Delivery = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDeliveryChallanNote)).BeginInit();
             this.panel1.SuspendLayout();
@@ -186,43 +187,16 @@
             this.txtadditional2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtadditional2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtadditional2.HoverState.Parent = this.txtadditional2;
-            this.txtadditional2.Location = new System.Drawing.Point(334, 457);
+            this.txtadditional2.Location = new System.Drawing.Point(334, 421);
             this.txtadditional2.Name = "txtadditional2";
             this.txtadditional2.PasswordChar = '\0';
             this.txtadditional2.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtadditional2.PlaceholderText = "Additional Field";
             this.txtadditional2.SelectedText = "";
             this.txtadditional2.ShadowDecoration.Parent = this.txtadditional2;
-            this.txtadditional2.Size = new System.Drawing.Size(180, 24);
+            this.txtadditional2.Size = new System.Drawing.Size(131, 24);
             this.txtadditional2.TabIndex = 27;
             this.txtadditional2.Visible = false;
-            // 
-            // txtadditional1
-            // 
-            this.txtadditional1.BorderColor = System.Drawing.Color.Gray;
-            this.txtadditional1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtadditional1.DefaultText = "";
-            this.txtadditional1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtadditional1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtadditional1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtadditional1.DisabledState.Parent = this.txtadditional1;
-            this.txtadditional1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtadditional1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtadditional1.FocusedState.Parent = this.txtadditional1;
-            this.txtadditional1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtadditional1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtadditional1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtadditional1.HoverState.Parent = this.txtadditional1;
-            this.txtadditional1.Location = new System.Drawing.Point(334, 419);
-            this.txtadditional1.Name = "txtadditional1";
-            this.txtadditional1.PasswordChar = '\0';
-            this.txtadditional1.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtadditional1.PlaceholderText = "Additional Field";
-            this.txtadditional1.SelectedText = "";
-            this.txtadditional1.ShadowDecoration.Parent = this.txtadditional1;
-            this.txtadditional1.Size = new System.Drawing.Size(180, 24);
-            this.txtadditional1.TabIndex = 26;
-            this.txtadditional1.Visible = false;
             // 
             // txtrefNo
             // 
@@ -247,7 +221,7 @@
             this.txtrefNo.PlaceholderText = "Cheque Ref No ";
             this.txtrefNo.SelectedText = "";
             this.txtrefNo.ShadowDecoration.Parent = this.txtrefNo;
-            this.txtrefNo.Size = new System.Drawing.Size(180, 24);
+            this.txtrefNo.Size = new System.Drawing.Size(131, 24);
             this.txtrefNo.TabIndex = 11;
             this.txtrefNo.Visible = false;
             // 
@@ -258,7 +232,7 @@
             this.chkRoundOff.CheckedState.BorderRadius = 0;
             this.chkRoundOff.CheckedState.BorderThickness = 0;
             this.chkRoundOff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkRoundOff.Location = new System.Drawing.Point(728, 487);
+            this.chkRoundOff.Location = new System.Drawing.Point(728, 479);
             this.chkRoundOff.Name = "chkRoundOff";
             this.chkRoundOff.Size = new System.Drawing.Size(103, 20);
             this.chkRoundOff.TabIndex = 20;
@@ -284,7 +258,7 @@
             this.txtBallaance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBallaance.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBallaance.HoverState.Parent = this.txtBallaance;
-            this.txtBallaance.Location = new System.Drawing.Point(982, 541);
+            this.txtBallaance.Location = new System.Drawing.Point(982, 534);
             this.txtBallaance.Name = "txtBallaance";
             this.txtBallaance.PasswordChar = '\0';
             this.txtBallaance.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -329,7 +303,7 @@
             this.txtRoundup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtRoundup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoundup.HoverState.Parent = this.txtRoundup;
-            this.txtRoundup.Location = new System.Drawing.Point(832, 484);
+            this.txtRoundup.Location = new System.Drawing.Point(832, 476);
             this.txtRoundup.Name = "txtRoundup";
             this.txtRoundup.PasswordChar = '\0';
             this.txtRoundup.PlaceholderText = "";
@@ -355,18 +329,18 @@
             this.txtReceived.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReceived.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReceived.HoverState.Parent = this.txtReceived;
-            this.txtReceived.Location = new System.Drawing.Point(982, 511);
+            this.txtReceived.Location = new System.Drawing.Point(982, 503);
             this.txtReceived.Name = "txtReceived";
             this.txtReceived.PasswordChar = '\0';
             this.txtReceived.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtReceived.PlaceholderText = "";
-            this.txtReceived.ReadOnly = true;
             this.txtReceived.SelectedText = "";
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(95, 24);
             this.txtReceived.TabIndex = 19;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
+            this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
             // txtDisAmount
             // 
@@ -384,7 +358,7 @@
             this.txtDisAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDisAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDisAmount.HoverState.Parent = this.txtDisAmount;
-            this.txtDisAmount.Location = new System.Drawing.Point(982, 384);
+            this.txtDisAmount.Location = new System.Drawing.Point(982, 376);
             this.txtDisAmount.Name = "txtDisAmount";
             this.txtDisAmount.PasswordChar = '\0';
             this.txtDisAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -401,7 +375,7 @@
             // 
             this.txtDiscount.BorderColor = System.Drawing.Color.Gray;
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.DefaultText = "";
+            this.txtDiscount.DefaultText = "0";
             this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -413,11 +387,12 @@
             this.txtDiscount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscount.HoverState.Parent = this.txtDiscount;
-            this.txtDiscount.Location = new System.Drawing.Point(883, 385);
+            this.txtDiscount.Location = new System.Drawing.Point(883, 377);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
             this.txtDiscount.SelectedText = "";
+            this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(95, 24);
             this.txtDiscount.TabIndex = 17;
@@ -553,7 +528,7 @@
             this.txtTaxAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxAmount.HoverState.Parent = this.txtTaxAmount;
-            this.txtTaxAmount.Location = new System.Drawing.Point(982, 439);
+            this.txtTaxAmount.Location = new System.Drawing.Point(982, 431);
             this.txtTaxAmount.Name = "txtTaxAmount";
             this.txtTaxAmount.PasswordChar = '\0';
             this.txtTaxAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -578,7 +553,7 @@
             // 
             this.txtsubtotal.BorderColor = System.Drawing.Color.Gray;
             this.txtsubtotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsubtotal.DefaultText = "";
+            this.txtsubtotal.DefaultText = "0";
             this.txtsubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsubtotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -590,12 +565,13 @@
             this.txtsubtotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsubtotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsubtotal.HoverState.Parent = this.txtsubtotal;
-            this.txtsubtotal.Location = new System.Drawing.Point(698, 387);
+            this.txtsubtotal.Location = new System.Drawing.Point(698, 379);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.PasswordChar = '\0';
             this.txtsubtotal.PlaceholderText = "";
             this.txtsubtotal.ReadOnly = true;
             this.txtsubtotal.SelectedText = "";
+            this.txtsubtotal.SelectionStart = 1;
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(95, 24);
             this.txtsubtotal.TabIndex = 0;
@@ -642,7 +618,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(915, 419);
+            this.label37.Location = new System.Drawing.Point(915, 411);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(44, 16);
             this.label37.TabIndex = 106;
@@ -651,7 +627,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(842, 419);
+            this.label35.Location = new System.Drawing.Point(842, 411);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 16);
             this.label35.TabIndex = 105;
@@ -661,7 +637,7 @@
             // 
             this.txtsgst.BorderColor = System.Drawing.Color.Gray;
             this.txtsgst.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsgst.DefaultText = "";
+            this.txtsgst.DefaultText = "0";
             this.txtsgst.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtsgst.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtsgst.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -673,12 +649,13 @@
             this.txtsgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsgst.HoverState.Parent = this.txtsgst;
-            this.txtsgst.Location = new System.Drawing.Point(912, 438);
+            this.txtsgst.Location = new System.Drawing.Point(912, 430);
             this.txtsgst.Name = "txtsgst";
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
             this.txtsgst.ReadOnly = true;
             this.txtsgst.SelectedText = "";
+            this.txtsgst.SelectionStart = 1;
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
             this.txtsgst.Size = new System.Drawing.Size(57, 25);
             this.txtsgst.TabIndex = 104;
@@ -687,7 +664,7 @@
             // 
             this.txtcgst.BorderColor = System.Drawing.Color.Gray;
             this.txtcgst.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtcgst.DefaultText = "";
+            this.txtcgst.DefaultText = "0";
             this.txtcgst.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtcgst.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtcgst.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -699,12 +676,13 @@
             this.txtcgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcgst.HoverState.Parent = this.txtcgst;
-            this.txtcgst.Location = new System.Drawing.Point(841, 439);
+            this.txtcgst.Location = new System.Drawing.Point(841, 431);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
             this.txtcgst.ReadOnly = true;
             this.txtcgst.SelectedText = "";
+            this.txtcgst.SelectionStart = 1;
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
             this.txtcgst.Size = new System.Drawing.Size(61, 25);
             this.txtcgst.TabIndex = 103;
@@ -761,7 +739,7 @@
             this.txtTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(982, 474);
+            this.txtTotal.Location = new System.Drawing.Point(982, 466);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -888,7 +866,7 @@
             this.txtItemTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemTotal.HoverState.Parent = this.txtItemTotal;
-            this.txtItemTotal.Location = new System.Drawing.Point(973, 48);
+            this.txtItemTotal.Location = new System.Drawing.Point(973, 47);
             this.txtItemTotal.Name = "txtItemTotal";
             this.txtItemTotal.PasswordChar = '\0';
             this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -904,7 +882,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(988, 25);
+            this.label34.Location = new System.Drawing.Point(979, 24);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(46, 14);
             this.label34.TabIndex = 98;
@@ -926,7 +904,7 @@
             this.txtDisAmt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDisAmt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDisAmt.HoverState.Parent = this.txtDisAmt;
-            this.txtDisAmt.Location = new System.Drawing.Point(783, 48);
+            this.txtDisAmt.Location = new System.Drawing.Point(783, 47);
             this.txtDisAmt.Name = "txtDisAmt";
             this.txtDisAmt.PasswordChar = '\0';
             this.txtDisAmt.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -937,6 +915,7 @@
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(90, 28);
             this.txtDisAmt.TabIndex = 0;
+            this.txtDisAmt.TextChanged += new System.EventHandler(this.txtDisAmt_TextChanged);
             // 
             // txtDis
             // 
@@ -954,7 +933,7 @@
             this.txtDis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDis.HoverState.Parent = this.txtDis;
-            this.txtDis.Location = new System.Drawing.Point(404, 47);
+            this.txtDis.Location = new System.Drawing.Point(404, 46);
             this.txtDis.Name = "txtDis";
             this.txtDis.PasswordChar = '\0';
             this.txtDis.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -970,7 +949,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(419, 24);
+            this.label32.Location = new System.Drawing.Point(411, 22);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(66, 14);
             this.label32.TabIndex = 94;
@@ -979,7 +958,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(784, 24);
+            this.label33.Location = new System.Drawing.Point(784, 22);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(87, 14);
             this.label33.TabIndex = 96;
@@ -1001,7 +980,7 @@
             this.txtTaxAMount1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxAMount1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxAMount1.HoverState.Parent = this.txtTaxAMount1;
-            this.txtTaxAMount1.Location = new System.Drawing.Point(878, 49);
+            this.txtTaxAMount1.Location = new System.Drawing.Point(878, 47);
             this.txtTaxAMount1.Name = "txtTaxAMount1";
             this.txtTaxAMount1.PasswordChar = '\0';
             this.txtTaxAMount1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1016,7 +995,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(885, 24);
+            this.label31.Location = new System.Drawing.Point(881, 23);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(85, 14);
             this.label31.TabIndex = 92;
@@ -1038,7 +1017,7 @@
             this.txtTax1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTax1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax1.HoverState.Parent = this.txtTax1;
-            this.txtTax1.Location = new System.Drawing.Point(498, 47);
+            this.txtTax1.Location = new System.Drawing.Point(498, 46);
             this.txtTax1.Name = "txtTax1";
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1049,11 +1028,12 @@
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(90, 28);
             this.txtTax1.TabIndex = 0;
+            this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(524, 24);
+            this.label30.Location = new System.Drawing.Point(505, 24);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 14);
             this.label30.TabIndex = 90;
@@ -1063,7 +1043,7 @@
             // 
             this.txtMRP.BorderColor = System.Drawing.Color.Gray;
             this.txtMRP.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMRP.DefaultText = "";
+            this.txtMRP.DefaultText = "0";
             this.txtMRP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtMRP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtMRP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1081,6 +1061,7 @@
             this.txtMRP.PlaceholderText = "";
             this.txtMRP.ReadOnly = true;
             this.txtMRP.SelectedText = "";
+            this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(90, 28);
             this.txtMRP.TabIndex = 0;
@@ -1089,7 +1070,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(337, 23);
+            this.label29.Location = new System.Drawing.Point(318, 23);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(42, 14);
             this.label29.TabIndex = 88;
@@ -1124,7 +1105,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(243, 22);
+            this.label28.Location = new System.Drawing.Point(222, 22);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -1146,7 +1127,7 @@
             this.txtFreeQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFreeQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFreeQty.HoverState.Parent = this.txtFreeQty;
-            this.txtFreeQty.Location = new System.Drawing.Point(688, 48);
+            this.txtFreeQty.Location = new System.Drawing.Point(688, 47);
             this.txtFreeQty.Name = "txtFreeQty";
             this.txtFreeQty.PasswordChar = '\0';
             this.txtFreeQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1162,7 +1143,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(696, 24);
+            this.label27.Location = new System.Drawing.Point(693, 23);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(70, 14);
             this.label27.TabIndex = 84;
@@ -1184,7 +1165,7 @@
             this.txtItemCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemCode.HoverState.Parent = this.txtItemCode;
-            this.txtItemCode.Location = new System.Drawing.Point(120, 44);
+            this.txtItemCode.Location = new System.Drawing.Point(118, 44);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.PasswordChar = '\0';
             this.txtItemCode.PlaceholderText = "";
@@ -1197,7 +1178,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(127, 21);
+            this.label21.Location = new System.Drawing.Point(124, 20);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 14);
             this.label21.TabIndex = 80;
@@ -1206,7 +1187,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(41, 21);
+            this.label18.Location = new System.Drawing.Point(19, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 14);
             this.label18.TabIndex = 78;
@@ -1228,7 +1209,7 @@
             this.txtOty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(593, 48);
+            this.txtOty.Location = new System.Drawing.Point(593, 46);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1244,7 +1225,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(622, 24);
+            this.label23.Location = new System.Drawing.Point(600, 23);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(38, 14);
             this.label23.TabIndex = 82;
@@ -1259,20 +1240,20 @@
             // 
             // dgvInnerDeliveryChallanNote
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDeliveryChallanNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDeliveryChallanNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvInnerDeliveryChallanNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDeliveryChallanNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDeliveryChallanNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDeliveryChallanNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDeliveryChallanNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDeliveryChallanNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvInnerDeliveryChallanNote.ColumnHeadersHeight = 37;
             this.dgvInnerDeliveryChallanNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1287,14 +1268,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDeliveryChallanNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDeliveryChallanNote.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvInnerDeliveryChallanNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDeliveryChallanNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDeliveryChallanNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1326,6 +1307,7 @@
             this.dgvInnerDeliveryChallanNote.ThemeStyle.RowsStyle.Height = 22;
             this.dgvInnerDeliveryChallanNote.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerDeliveryChallanNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvInnerDeliveryChallanNote.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDeliveryChallanNote_CellContentDoubleClick);
             // 
             // label20
             // 
@@ -1357,6 +1339,8 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.cmbtax);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.TxtIGST);
@@ -1389,7 +1373,6 @@
             this.panel1.Controls.Add(this.guna2ShadowPanel1);
             this.panel1.Controls.Add(this.btnlinkPayment);
             this.panel1.Controls.Add(this.txtadditional2);
-            this.panel1.Controls.Add(this.txtadditional1);
             this.panel1.Controls.Add(this.txtrefNo);
             this.panel1.Controls.Add(this.chkRoundOff);
             this.panel1.Controls.Add(this.txtBallaance);
@@ -1433,7 +1416,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1094, 605);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cmbtax
             // 
@@ -1449,7 +1431,7 @@
             "18",
             "24",
             "30"});
-            this.cmbtax.Location = new System.Drawing.Point(696, 441);
+            this.cmbtax.Location = new System.Drawing.Point(696, 433);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(71, 24);
             this.cmbtax.TabIndex = 18;
@@ -1459,7 +1441,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(776, 421);
+            this.label10.Location = new System.Drawing.Point(776, 413);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 689;
@@ -1469,7 +1451,7 @@
             // 
             this.TxtIGST.BorderColor = System.Drawing.Color.Gray;
             this.TxtIGST.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TxtIGST.DefaultText = "";
+            this.TxtIGST.DefaultText = "0";
             this.TxtIGST.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.TxtIGST.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.TxtIGST.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1481,12 +1463,13 @@
             this.TxtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TxtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TxtIGST.HoverState.Parent = this.TxtIGST;
-            this.TxtIGST.Location = new System.Drawing.Point(776, 439);
+            this.TxtIGST.Location = new System.Drawing.Point(776, 431);
             this.TxtIGST.Name = "TxtIGST";
             this.TxtIGST.PasswordChar = '\0';
             this.TxtIGST.PlaceholderText = "";
             this.TxtIGST.ReadOnly = true;
             this.TxtIGST.SelectedText = "";
+            this.TxtIGST.SelectionStart = 1;
             this.TxtIGST.ShadowDecoration.Parent = this.TxtIGST;
             this.TxtIGST.Size = new System.Drawing.Size(57, 25);
             this.TxtIGST.TabIndex = 688;
@@ -1505,7 +1488,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(470, 151);
+            this.textBox1.Location = new System.Drawing.Point(500, 151);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 23);
             this.textBox1.TabIndex = 5;
@@ -1513,7 +1496,7 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(331, 156);
+            this.label40.Location = new System.Drawing.Point(361, 153);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(137, 16);
             this.label40.TabIndex = 128;
@@ -1522,7 +1505,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(613, 391);
+            this.label15.Location = new System.Drawing.Point(613, 383);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 16);
             this.label15.TabIndex = 127;
@@ -1557,7 +1540,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(915, 575);
+            this.label14.Location = new System.Drawing.Point(915, 568);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(63, 16);
             this.label14.TabIndex = 124;
@@ -1573,7 +1556,7 @@
             "Paid",
             "Partial",
             "Unpaid"});
-            this.ComboBox.Location = new System.Drawing.Point(981, 572);
+            this.ComboBox.Location = new System.Drawing.Point(981, 565);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(98, 24);
             this.ComboBox.TabIndex = 21;
@@ -1599,7 +1582,7 @@
             this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(856, 138);
+            this.cmbCategory.Location = new System.Drawing.Point(856, 140);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(182, 24);
             this.cmbCategory.TabIndex = 8;
@@ -1640,7 +1623,7 @@
             "Uttar Pradesh",
             "Uttarakhand",
             "West Bengal"});
-            this.cmbStatesupply.Location = new System.Drawing.Point(470, 123);
+            this.cmbStatesupply.Location = new System.Drawing.Point(500, 123);
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(182, 24);
             this.cmbStatesupply.TabIndex = 4;
@@ -1699,7 +1682,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(739, 143);
+            this.label38.Location = new System.Drawing.Point(739, 141);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(114, 16);
             this.label38.TabIndex = 112;
@@ -1721,7 +1704,7 @@
             this.txtBillingadd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBillingadd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingadd.HoverState.Parent = this.txtBillingadd;
-            this.txtBillingadd.Location = new System.Drawing.Point(470, 71);
+            this.txtBillingadd.Location = new System.Drawing.Point(500, 71);
             this.txtBillingadd.Multiline = true;
             this.txtBillingadd.Name = "txtBillingadd";
             this.txtBillingadd.PasswordChar = '\0';
@@ -1756,6 +1739,7 @@
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
             this.txtReturnNo.Size = new System.Drawing.Size(81, 28);
             this.txtReturnNo.TabIndex = 687;
+            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
             // 
             // txtBillingName
@@ -1774,7 +1758,7 @@
             this.txtBillingName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBillingName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingName.HoverState.Parent = this.txtBillingName;
-            this.txtBillingName.Location = new System.Drawing.Point(470, 42);
+            this.txtBillingName.Location = new System.Drawing.Point(500, 42);
             this.txtBillingName.MaxLength = 50;
             this.txtBillingName.Name = "txtBillingName";
             this.txtBillingName.PasswordChar = '\0';
@@ -1813,7 +1797,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(909, 546);
+            this.label25.Location = new System.Drawing.Point(909, 539);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(70, 16);
             this.label25.TabIndex = 68;
@@ -1822,7 +1806,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(702, 421);
+            this.label24.Location = new System.Drawing.Point(702, 413);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(35, 16);
             this.label24.TabIndex = 66;
@@ -1831,7 +1815,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(901, 515);
+            this.label22.Location = new System.Drawing.Point(901, 507);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 16);
             this.label22.TabIndex = 62;
@@ -1840,7 +1824,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(804, 389);
+            this.label19.Location = new System.Drawing.Point(804, 381);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(76, 16);
             this.label19.TabIndex = 56;
@@ -1849,7 +1833,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(927, 478);
+            this.label17.Location = new System.Drawing.Point(927, 470);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 16);
             this.label17.TabIndex = 52;
@@ -1916,7 +1900,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(363, 77);
+            this.label9.Location = new System.Drawing.Point(392, 73);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 16);
             this.label9.TabIndex = 25;
@@ -1952,7 +1936,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(343, 129);
+            this.label5.Location = new System.Drawing.Point(373, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 16);
             this.label5.TabIndex = 21;
@@ -1961,7 +1945,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(378, 47);
+            this.label4.Location = new System.Drawing.Point(408, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 16);
             this.label4.TabIndex = 20;
@@ -2035,6 +2019,37 @@
             this.label39.Text = "Delivery challan :";
             this.label39.Visible = false;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(856, 140);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 24);
+            this.comboBox2.TabIndex = 690;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "0",
+            "2",
+            "3",
+            "5",
+            "9",
+            "12",
+            "15",
+            "18",
+            "24",
+            "30"});
+            this.comboBox3.Location = new System.Drawing.Point(696, 433);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(71, 24);
+            this.comboBox3.TabIndex = 691;
+            this.comboBox3.Text = "0";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
             // DeliveryChallan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2064,7 +2079,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txtItem;
         private System.Windows.Forms.Button btnlinkPayment;
         private Guna.UI2.WinForms.Guna2TextBox txtadditional2;
-        private Guna.UI2.WinForms.Guna2TextBox txtadditional1;
         private Guna.UI2.WinForms.Guna2TextBox txtrefNo;
         private Guna.UI2.WinForms.Guna2CheckBox chkRoundOff;
         protected Guna.UI2.WinForms.Guna2TextBox txtBallaance;
@@ -2169,10 +2183,12 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox TxtIGST;
         private System.Windows.Forms.ComboBox cmbtax;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

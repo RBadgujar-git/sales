@@ -70,7 +70,8 @@ namespace sample
                 SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
                 sdasql.Fill(dtable); 
                 dgvItemServices.DataSource = dtable;
-            }
+               dgvItemServices.AllowUserToAddRows = false;
+        }
 
             private void InsertData()
             {
@@ -315,6 +316,7 @@ namespace sample
         
         private void ItemSevice_Load(object sender, EventArgs e)
         {
+            txtItemName.Focus();
             fetchdetails();
             fetchUnit();
             fetchcategory();
@@ -397,12 +399,12 @@ namespace sample
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+           // this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
         }
 
         byte[] arrImage1 = null;
@@ -503,7 +505,7 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            //this.WindowState = FormWindowState.Minimized;
         }
 
         private void dgvItemServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -536,6 +538,23 @@ namespace sample
                 ms.Seek(0, SeekOrigin.Begin);
                 picturebox.Image = Image.FromStream(ms);
                 picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ServiceID like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemServices.DataSource = ds;
+                dgvItemServices.DataMember = "temp";
             }
         }
     }
