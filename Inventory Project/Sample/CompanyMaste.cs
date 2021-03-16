@@ -68,9 +68,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@OwnerName", ownerName.Text);
             cmd.Parameters.AddWithValue("@GSTNumber", txtGSTNo.Text);
             cmd.Parameters.AddWithValue("@City", txtCity.Text);
-            cmd.Parameters.AddWithValue("@State", cmbState.Text);
-          
-          
+            cmd.Parameters.AddWithValue("@State", cmbState.Text);          
             SqlParameter sqlpara = new SqlParameter("@Signature", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
             cmd.Parameters.Add(sqlpara);
@@ -769,6 +767,7 @@ namespace sample
             if (textBox1.Text == "")
             {
                 fetchdetails();
+                hidedata();
             }
             else
             {

@@ -1030,8 +1030,7 @@ namespace sample
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Calculator cr = new Calculator();
-            cr.Show();
+            System.Diagnostics.Process.Start("calc.exe");
         }
 
         private void cmbtax_SelectedIndexChanged_1(object sender, EventArgs e)

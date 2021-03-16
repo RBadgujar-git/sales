@@ -267,15 +267,11 @@ namespace sample
             {
                 try
                 {
-
-                    if (txtItemName.Text == "")
+                    if (con.State == ConnectionState.Closed)
                     {
-
-                        if (con.State == ConnectionState.Closed)
-                        {
-                            con.Open();
-                        }
-                        DataTable dtable = new DataTable();
+                        con.Open();
+                    }
+                        DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_ItemServicemasterSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Delete");
@@ -283,7 +279,7 @@ namespace sample
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
-                            MessageBox.Show("Delete Data Successfully");
+                            MessageBox.Show("Delete data Successfully");
                             Cleardata();
                         }
                         else
@@ -291,12 +287,6 @@ namespace sample
                             MessageBox.Show("Please Select Record");
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Please Select Record");
-                    }
-
-                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("error" + ex.Message);
@@ -307,6 +297,7 @@ namespace sample
                 MessageBox.Show("Please Select Record");
             }
         }
+
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
@@ -527,7 +518,7 @@ namespace sample
             cmbTaxRate.Text = dgvItemServices.Rows[e.RowIndex].Cells["TaxRate"].Value.ToString();
             txtDescription.Text = dgvItemServices.Rows[e.RowIndex].Cells["Description"].Value.ToString();
 
-            SqlCommand cmd = new SqlCommand("select Image from tbl_ItemServicemaster where DeleteData = '1'", con);
+            SqlCommand cmd = new SqlCommand("select Image from tbl_ItemServicemaster where DeleteData = '1' and  Company_ID='" + NewCompany.company_id + "'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -556,6 +547,19 @@ namespace sample
                 dgvItemServices.DataSource = ds;
                 dgvItemServices.DataMember = "temp";
             }
+        }
+
+        private void cmbTaxType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTaxType.SelectedItem == "Excluded")
+            {
+                cmbTaxRate.Enabled = false;
+            }
+            else if (cmbTaxType.SelectedItem == "Included")
+            {
+                cmbTaxRate.Enabled = true;
+            }
+           
         }
     }
 }
