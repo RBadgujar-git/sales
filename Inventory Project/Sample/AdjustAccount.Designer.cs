@@ -321,6 +321,7 @@
             // 
             // btnminimize
             // 
+            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnminimize.BackColor = System.Drawing.Color.White;
             this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -337,6 +338,7 @@
             // 
             // btnclose
             // 
+            this.btnclose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.btnclose.BackColor = System.Drawing.Color.White;
             this.btnclose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnclose.BackgroundImage")));
             this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
