@@ -66,6 +66,11 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvinnerexpenses = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.picImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label10 = new System.Windows.Forms.Label();
@@ -79,11 +84,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvinnerexpenses)).BeginInit();
@@ -150,7 +150,7 @@
             this.Print.Location = new System.Drawing.Point(786, 551);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 12;
+            this.Print.TabIndex = 15;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -163,7 +163,7 @@
             this.Clear.Location = new System.Drawing.Point(885, 551);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 13;
+            this.Clear.TabIndex = 15;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -179,7 +179,7 @@
             this.ComboBox.Location = new System.Drawing.Point(823, 512);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(143, 24);
-            this.ComboBox.TabIndex = 9;
+            this.ComboBox.TabIndex = 13;
             // 
             // label4
             // 
@@ -262,7 +262,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(903, 87);
-            this.guna2ShadowPanel1.TabIndex = 109;
+            this.guna2ShadowPanel1.TabIndex = 4;
             // 
             // txtitemamount
             // 
@@ -288,7 +288,7 @@
             this.txtitemamount.SelectionStart = 1;
             this.txtitemamount.ShadowDecoration.Parent = this.txtitemamount;
             this.txtitemamount.Size = new System.Drawing.Size(150, 26);
-            this.txtitemamount.TabIndex = 112;
+            this.txtitemamount.TabIndex = 8;
             this.txtitemamount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtitemamount_KeyDown);
             this.txtitemamount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemamount_KeyPress);
             // 
@@ -324,7 +324,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(150, 26);
-            this.txtMRP.TabIndex = 4;
+            this.txtMRP.TabIndex = 6;
             this.txtMRP.Click += new System.EventHandler(this.txtMRP_Click);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
@@ -360,7 +360,7 @@
             this.txtItem.SelectedText = "";
             this.txtItem.ShadowDecoration.Parent = this.txtItem;
             this.txtItem.Size = new System.Drawing.Size(200, 28);
-            this.txtItem.TabIndex = 4;
+            this.txtItem.TabIndex = 5;
             this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             // 
             // label18
@@ -396,7 +396,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(150, 26);
-            this.txtOty.TabIndex = 5;
+            this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -487,7 +487,7 @@
             this.txtBalance.SelectionStart = 1;
             this.txtBalance.ShadowDecoration.Parent = this.txtBalance;
             this.txtBalance.Size = new System.Drawing.Size(143, 25);
-            this.txtBalance.TabIndex = 8;
+            this.txtBalance.TabIndex = 12;
             this.txtBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBalance_KeyPress);
             // 
             // txtTotal
@@ -541,7 +541,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(143, 25);
-            this.txtReceived.TabIndex = 7;
+            this.txtReceived.TabIndex = 11;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
@@ -568,7 +568,7 @@
             this.txtdescritpition.SelectedText = "";
             this.txtdescritpition.ShadowDecoration.Parent = this.txtdescritpition;
             this.txtdescritpition.Size = new System.Drawing.Size(166, 70);
-            this.txtdescritpition.TabIndex = 6;
+            this.txtdescritpition.TabIndex = 10;
             // 
             // label25
             // 
@@ -605,7 +605,7 @@
             this.btnSave.Location = new System.Drawing.Point(588, 551);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button5_Click);
@@ -618,7 +618,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(686, 552);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 11;
+            this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -671,7 +671,7 @@
             this.dgvinnerexpenses.RowHeadersVisible = false;
             this.dgvinnerexpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvinnerexpenses.Size = new System.Drawing.Size(903, 128);
-            this.dgvinnerexpenses.TabIndex = 6;
+            this.dgvinnerexpenses.TabIndex = 9;
             this.dgvinnerexpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -696,6 +696,41 @@
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvinnerexpenses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellContentClick);
             this.dgvinnerexpenses.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellDoubleClick);
+            this.dgvinnerexpenses.DoubleClick += new System.EventHandler(this.dgvinnerexpenses_DoubleClick);
+            // 
+            // sr_no
+            // 
+            this.sr_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sr_no.FillWeight = 25.38071F;
+            this.sr_no.HeaderText = "ID";
+            this.sr_no.Name = "sr_no";
+            this.sr_no.Width = 50;
+            // 
+            // Item
+            // 
+            this.Item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Item.FillWeight = 118.6548F;
+            this.Item.HeaderText = "Item ";
+            this.Item.Name = "Item";
+            // 
+            // Price
+            // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Price.FillWeight = 118.6548F;
+            this.Price.HeaderText = "Price/Unit";
+            this.Price.Name = "Price";
+            // 
+            // Qty
+            // 
+            this.Qty.FillWeight = 118.6548F;
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // Amount
+            // 
+            this.Amount.FillWeight = 118.6548F;
+            this.Amount.HeaderText = " Amount";
+            this.Amount.Name = "Amount";
             // 
             // picImage
             // 
@@ -902,40 +937,6 @@
             this.button3.TabIndex = 0;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // sr_no
-            // 
-            this.sr_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sr_no.FillWeight = 25.38071F;
-            this.sr_no.HeaderText = "ID";
-            this.sr_no.Name = "sr_no";
-            this.sr_no.Width = 50;
-            // 
-            // Item
-            // 
-            this.Item.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Item.FillWeight = 118.6548F;
-            this.Item.HeaderText = "Item ";
-            this.Item.Name = "Item";
-            // 
-            // Price
-            // 
-            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Price.FillWeight = 118.6548F;
-            this.Price.HeaderText = "Price/Unit";
-            this.Price.Name = "Price";
-            // 
-            // Qty
-            // 
-            this.Qty.FillWeight = 118.6548F;
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // Amount
-            // 
-            this.Amount.FillWeight = 118.6548F;
-            this.Amount.HeaderText = " Amount";
-            this.Amount.Name = "Amount";
             // 
             // Expenses
             // 

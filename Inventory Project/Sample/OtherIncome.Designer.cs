@@ -76,6 +76,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.Print = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@
             this.ComboBox = new System.Windows.Forms.ComboBox();
             this.cmbexpenses = new System.Windows.Forms.ComboBox();
             this.chkenble = new System.Windows.Forms.CheckBox();
-            this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvinnerexpenses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox1)).BeginInit();
@@ -118,7 +118,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(859, 87);
-            this.guna2ShadowPanel1.TabIndex = 109;
+            this.guna2ShadowPanel1.TabIndex = 3;
             // 
             // txtitemamount
             // 
@@ -144,7 +144,8 @@
             this.txtitemamount.SelectionStart = 1;
             this.txtitemamount.ShadowDecoration.Parent = this.txtitemamount;
             this.txtitemamount.Size = new System.Drawing.Size(150, 25);
-            this.txtitemamount.TabIndex = 6;
+            this.txtitemamount.TabIndex = 7;
+            this.txtitemamount.TextChanged += new System.EventHandler(this.txtitemamount_TextChanged);
             this.txtitemamount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtitemamount_KeyDown);
             this.txtitemamount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemamount_KeyPress);
             // 
@@ -180,7 +181,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(150, 25);
-            this.txtMRP.TabIndex = 4;
+            this.txtMRP.TabIndex = 5;
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
             // label29
@@ -215,7 +216,7 @@
             this.txtItem.SelectedText = "";
             this.txtItem.ShadowDecoration.Parent = this.txtItem;
             this.txtItem.Size = new System.Drawing.Size(200, 28);
-            this.txtItem.TabIndex = 3;
+            this.txtItem.TabIndex = 4;
             this.txtItem.TabStop = false;
             this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             // 
@@ -252,7 +253,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(150, 25);
-            this.txtOty.TabIndex = 5;
+            this.txtOty.TabIndex = 6;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -343,7 +344,7 @@
             this.txtBalance.SelectionStart = 1;
             this.txtBalance.ShadowDecoration.Parent = this.txtBalance;
             this.txtBalance.Size = new System.Drawing.Size(130, 25);
-            this.txtBalance.TabIndex = 10;
+            this.txtBalance.TabIndex = 11;
             this.txtBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBalance_KeyPress);
             // 
             // txtTotal
@@ -398,7 +399,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(130, 25);
-            this.txtReceived.TabIndex = 9;
+            this.txtReceived.TabIndex = 10;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
@@ -425,7 +426,7 @@
             this.txtdescritpition.SelectedText = "";
             this.txtdescritpition.ShadowDecoration.Parent = this.txtdescritpition;
             this.txtdescritpition.Size = new System.Drawing.Size(150, 58);
-            this.txtdescritpition.TabIndex = 8;
+            this.txtdescritpition.TabIndex = 9;
             // 
             // label25
             // 
@@ -462,7 +463,7 @@
             this.btnSave.Location = new System.Drawing.Point(502, 564);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(107, 42);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -475,7 +476,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(615, 565);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(107, 42);
-            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -528,7 +529,7 @@
             this.dgvinnerexpenses.RowHeadersVisible = false;
             this.dgvinnerexpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvinnerexpenses.Size = new System.Drawing.Size(859, 131);
-            this.dgvinnerexpenses.TabIndex = 7;
+            this.dgvinnerexpenses.TabIndex = 8;
             this.dgvinnerexpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -552,6 +553,7 @@
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvinnerexpenses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellContentClick);
+            this.dgvinnerexpenses.DoubleClick += new System.EventHandler(this.dgvinnerexpenses_DoubleClick);
             // 
             // sr_no
             // 
@@ -702,8 +704,9 @@
             this.button4.Location = new System.Drawing.Point(856, 7);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 34);
-            this.button4.TabIndex = 465;
+            this.button4.TabIndex = 0;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label26
             // 
@@ -727,7 +730,7 @@
             this.button2.Location = new System.Drawing.Point(901, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 567;
+            this.button2.TabIndex = 0;
             this.button2.UseVisualStyleBackColor = false;
             // 
             // panel3
@@ -759,7 +762,7 @@
             this.btnminimize.Location = new System.Drawing.Point(939, 11);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 367;
+            this.btnminimize.TabIndex = 0;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
@@ -793,7 +796,7 @@
             this.button3.Location = new System.Drawing.Point(974, 11);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 362;
+            this.button3.TabIndex = 0;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -837,6 +840,32 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // txtReturnNo
+            // 
+            this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtReturnNo.DefaultText = "";
+            this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtReturnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtReturnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReturnNo.DisabledState.Parent = this.txtReturnNo;
+            this.txtReturnNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReturnNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReturnNo.FocusedState.Parent = this.txtReturnNo;
+            this.txtReturnNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
+            this.txtReturnNo.Location = new System.Drawing.Point(729, 66);
+            this.txtReturnNo.Name = "txtReturnNo";
+            this.txtReturnNo.PasswordChar = '\0';
+            this.txtReturnNo.PlaceholderText = "";
+            this.txtReturnNo.SelectedText = "";
+            this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
+            this.txtReturnNo.Size = new System.Drawing.Size(90, 28);
+            this.txtReturnNo.TabIndex = 968;
+            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
+            this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
+            // 
             // dtpDate
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
@@ -854,7 +883,7 @@
             this.Print.Location = new System.Drawing.Point(729, 566);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(107, 42);
-            this.Print.TabIndex = 14;
+            this.Print.TabIndex = 15;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             // 
@@ -866,7 +895,7 @@
             this.Clear.Location = new System.Drawing.Point(841, 567);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(107, 42);
-            this.Clear.TabIndex = 15;
+            this.Clear.TabIndex = 16;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -892,7 +921,7 @@
             this.ComboBox.Location = new System.Drawing.Point(816, 515);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(130, 24);
-            this.ComboBox.TabIndex = 11;
+            this.ComboBox.TabIndex = 12;
             // 
             // cmbexpenses
             // 
@@ -913,30 +942,6 @@
             this.chkenble.Text = "Enable";
             this.chkenble.UseVisualStyleBackColor = true;
             this.chkenble.CheckedChanged += new System.EventHandler(this.chkenble_CheckedChanged);
-            // 
-            // txtReturnNo
-            // 
-            this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReturnNo.DefaultText = "";
-            this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtReturnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtReturnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReturnNo.DisabledState.Parent = this.txtReturnNo;
-            this.txtReturnNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReturnNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReturnNo.FocusedState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(745, 66);
-            this.txtReturnNo.Name = "txtReturnNo";
-            this.txtReturnNo.PasswordChar = '\0';
-            this.txtReturnNo.PlaceholderText = "";
-            this.txtReturnNo.SelectedText = "";
-            this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
-            this.txtReturnNo.Size = new System.Drawing.Size(90, 28);
-            this.txtReturnNo.TabIndex = 968;
             // 
             // OtherIncome
             // 
@@ -1010,11 +1015,11 @@
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2TextBox txtReturnNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn sr_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private Guna.UI2.WinForms.Guna2TextBox txtReturnNo;
     }
 }

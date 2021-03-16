@@ -45,6 +45,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dt);
             dgvcategory.DataSource = dt;
+            dgvcategory.AllowUserToAddRows= false;
         }
         private void cleardata()
         {
