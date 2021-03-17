@@ -73,7 +73,7 @@
             // 
             // btncancel
             // 
-            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btncancel.BackColor = System.Drawing.Color.White;
             this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
             this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -90,7 +90,7 @@
             // 
             // btnminimize
             // 
-            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnminimize.BackColor = System.Drawing.Color.White;
             this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
             this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

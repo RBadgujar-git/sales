@@ -337,11 +337,11 @@
     <Compile Include="CompanyBankAccount.Designer.cs">
       <DependentUpon>CompanyBankAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="CompanyBankHomepage.cs">
+    <Compile Include="CompanyBankAccountHomepage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CompanyBankHomepage.Designer.cs">
-      <DependentUpon>CompanyBankHomepage.cs</DependentUpon>
+    <Compile Include="CompanyBankAccountHomepage.Designer.cs">
+      <DependentUpon>CompanyBankAccountHomepage.cs</DependentUpon>
     </Compile>
     <Compile Include="CompanyList.cs">
       <SubType>UserControl</SubType>
@@ -697,6 +697,12 @@
     <Compile Include="PaymentOutHomepage.Designer.cs">
       <DependentUpon>PaymentOutHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="POS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POS.Designer.cs">
+      <DependentUpon>POS.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintSetting.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -976,8 +982,8 @@
     <EmbeddedResource Include="CompanyBankAccount.resx">
       <DependentUpon>CompanyBankAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CompanyBankHomepage.resx">
-      <DependentUpon>CompanyBankHomepage.cs</DependentUpon>
+    <EmbeddedResource Include="CompanyBankAccountHomepage.resx">
+      <DependentUpon>CompanyBankAccountHomepage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyList.resx">
       <DependentUpon>CompanyList.cs</DependentUpon>
@@ -1152,6 +1158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentOutHomepage.resx">
       <DependentUpon>PaymentOutHomepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POS.resx">
+      <DependentUpon>POS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintSetting.resx">
       <DependentUpon>PrintSetting.cs</DependentUpon>
@@ -1358,6 +1367,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-1001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

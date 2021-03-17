@@ -274,6 +274,7 @@
             this.cmbTaxType.Name = "cmbTaxType";
             this.cmbTaxType.Size = new System.Drawing.Size(174, 25);
             this.cmbTaxType.TabIndex = 7;
+            this.cmbTaxType.SelectedIndexChanged += new System.EventHandler(this.cmbTaxType_SelectedIndexChanged);
             // 
             // cmbItemCategory
             // 

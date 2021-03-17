@@ -169,6 +169,7 @@ namespace sample
             txtatprice.Text = dgvItemAdjustment.Rows[e.RowIndex].Cells["AtPrice"].Value.ToString();
             txtitemqantity.Text = dgvItemAdjustment.Rows[e.RowIndex].Cells["Quantity"].Value.ToString();
             txtitemdetails.Text = dgvItemAdjustment.Rows[e.RowIndex].Cells["Details"].Value.ToString();
+            txtName.Focus();
         }
 
         private void guna2TextBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -213,7 +214,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'group by ItemName");
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where DeleteData = '1'and  Company_ID='"+NewCompany.company_id+"'group by ItemName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -373,6 +374,11 @@ namespace sample
                 dgvItemAdjustment.DataSource = ds;
                 dgvItemAdjustment.DataMember = "temp";
             }
+        }
+
+        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

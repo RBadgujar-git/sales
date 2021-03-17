@@ -51,7 +51,6 @@
             this.cmbPartyName = new System.Windows.Forms.ComboBox();
             this.cmbPaymentType = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.Print = new System.Windows.Forms.Button();
             this.dtpdate = new System.Windows.Forms.DateTimePicker();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnminimize = new System.Windows.Forms.Button();
@@ -59,16 +58,18 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Clear = new Guna.UI2.WinForms.Guna2Panel();
+            this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPaymentIn = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.PictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.guna2Panel2.SuspendLayout();
             this.Clear.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentIn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentIn)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -299,15 +300,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // Print
-            // 
-            this.Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            resources.ApplyResources(this.Print, "Print");
-            this.Print.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Print.Name = "Print";
-            this.Print.UseVisualStyleBackColor = false;
-            this.Print.Click += new System.EventHandler(this.Print_Click);
-            // 
             // dtpdate
             // 
             resources.ApplyResources(this.dtpdate, "dtpdate");
@@ -366,6 +358,8 @@
             // Clear
             // 
             this.Clear.BackColor = System.Drawing.Color.White;
+            this.Clear.Controls.Add(this.button3);
+            this.Clear.Controls.Add(this.textBox2);
             this.Clear.Controls.Add(this.PictureBox1);
             this.Clear.Controls.Add(this.textBox1);
             this.Clear.Controls.Add(this.label12);
@@ -374,7 +368,6 @@
             this.Clear.Controls.Add(this.dgvPaymentIn);
             this.Clear.Controls.Add(this.guna2Panel2);
             this.Clear.Controls.Add(this.dtpdate);
-            this.Clear.Controls.Add(this.Print);
             this.Clear.Controls.Add(this.button2);
             this.Clear.Controls.Add(this.cmbPaymentType);
             this.Clear.Controls.Add(this.cmbPartyName);
@@ -399,6 +392,14 @@
             this.Clear.Name = "Clear";
             this.Clear.ShadowDecoration.Parent = this.Clear;
             this.Clear.Paint += new System.Windows.Forms.PaintEventHandler(this.Clear_Paint);
+            // 
+            // PictureBox1
+            // 
+            this.PictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
+            resources.ApplyResources(this.PictureBox1, "PictureBox1");
+            this.PictureBox1.Name = "PictureBox1";
+            this.PictureBox1.TabStop = false;
+            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
             // 
             // textBox1
             // 
@@ -485,14 +486,23 @@
             this.dgvPaymentIn.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvPaymentIn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentClick);
             this.dgvPaymentIn.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellContentDoubleClick);
+            this.dgvPaymentIn.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPaymentIn_CellDoubleClick_1);
             // 
-            // PictureBox1
+            // button3
             // 
-            this.PictureBox1.Image = global::sample.Properties.Resources.No_Image_Available;
-            resources.ApplyResources(this.PictureBox1, "PictureBox1");
-            this.PictureBox1.Name = "PictureBox1";
-            this.PictureBox1.TabStop = false;
-            this.PictureBox1.Click += new System.EventHandler(this.PictureBox1_Click_1);
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = global::sample.Properties.Resources.icons8_search_1001;
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // PaymentIn
             // 
@@ -507,8 +517,8 @@
             this.guna2Panel2.PerformLayout();
             this.Clear.ResumeLayout(false);
             this.Clear.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentIn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentIn)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -535,7 +545,6 @@
         private System.Windows.Forms.ComboBox cmbPartyName;
         private System.Windows.Forms.ComboBox cmbPaymentType;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Print;
         private System.Windows.Forms.DateTimePicker dtpdate;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Button btnCancel;
@@ -549,5 +558,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.PictureBox PictureBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
