@@ -694,8 +694,6 @@
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.Height = 22;
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvinnerexpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvinnerexpenses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellContentClick);
-            this.dgvinnerexpenses.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvinnerexpenses_CellDoubleClick);
             this.dgvinnerexpenses.DoubleClick += new System.EventHandler(this.dgvinnerexpenses_DoubleClick);
             // 
             // sr_no
