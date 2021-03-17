@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 using System.IO;
 namespace sample
 {
@@ -1283,7 +1284,7 @@ namespace sample
 
         private void button4_Click(object sender, EventArgs e)
         {
-          
+            System.Diagnostics.Process.Start("Calc.exe");
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -1354,7 +1355,31 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.ContactNo,b.BillingName,b.PODate,b.BillDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.RemainingBal,b.Paid,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_PurchaseBill as b,tbl_PurchaseBillInner as c where b.BillNo='{0}' and c.BillNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
+                    StiReport report = new StiReport();
+                    report.Load(@"PurchaseBill.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("PurchaseBill1", "PurchaseBill1", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void txtcon_Validating(object sender, CancelEventArgs e)
