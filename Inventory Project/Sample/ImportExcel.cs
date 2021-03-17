@@ -24,7 +24,7 @@ namespace sample
     {
 
         SqlConnection sqlconn = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-        string result = "D:\\Git project\\sales\\Inventory Project\\Sample\\bin\\Debug\\ItemsTemplate.xlsx";
+        string result = "D:\\Git project\\sales\\Inventory Project\\Sample\\bin\\Debug\\ItemTemplate.xlsx";
 
         //Save Path
 
@@ -57,12 +57,10 @@ namespace sample
             //}
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();  
             saveFileDialog1.Title = "Save Excel Files";
-            saveFileDialog1.CheckFileExists = true;
-            saveFileDialog1.CheckPathExists = true;
+           
             saveFileDialog1.FileName = "Import Item.xlsx";
             saveFileDialog1.Filter = "Excel files (*.xls)|*.xlsx|All files (*.*)|*.*";
-            saveFileDialog1.FilterIndex = 2;
-            saveFileDialog1.RestoreDirectory = true;
+           
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                     result = saveFileDialog1.FileName;
