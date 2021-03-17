@@ -303,7 +303,7 @@
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
   <MetaTags isList="true" count="0" />
-  <Pages isList="true" count="4">
+  <Pages isList="true" count="5">
     <Page1 Ref="12" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
@@ -2689,8 +2689,24 @@
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page3>
+    <Page4 Ref="222" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="0" />
+      <Conditions isList="true" count="0" />
+      <Guid>b537d9c58c4f4c1eb3e3a8a737ea33ab</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page4</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="223" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page4>
   </Pages>
-  <PrinterSettings Ref="222" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="224" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -2702,10 +2718,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/10/2021 3:14:01 PM</ReportChanged>
+  <ReportChanged>3/11/2021 1:06:58 PM</ReportChanged>
   <ReportCreated>2/5/2021 2:15:48 PM</ReportCreated>
   <ReportFile>C:\Users\Rukmini\Desktop\shritej\shritej\Report.mrt</ReportFile>
-  <ReportGuid>f62ce49c610941b9a0b8fe12c807b39c</ReportGuid>
+  <ReportGuid>44b0997d88004745ab32764d28e42c0e</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

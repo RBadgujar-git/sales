@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cheque));
             this.btnminimize = new System.Windows.Forms.Button();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -41,18 +41,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvSaleOrder = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
+            this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,16 +67,17 @@
             // 
             this.dtpTo.CustomFormat = "MM/dd/yyyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(402, 47);
+            this.dtpTo.Location = new System.Drawing.Point(603, 48);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(147, 20);
             this.dtpTo.TabIndex = 463;
+            this.dtpTo.Enter += new System.EventHandler(this.dtpTo_Enter);
             // 
             // dtpFrom
             // 
             this.dtpFrom.CustomFormat = "MM/dd/yyyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(220, 48);
+            this.dtpFrom.Location = new System.Drawing.Point(421, 49);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(145, 20);
             this.dtpFrom.TabIndex = 462;
@@ -92,7 +85,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(371, 48);
+            this.label5.Location = new System.Drawing.Point(572, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 13);
             this.label5.TabIndex = 461;
@@ -101,7 +94,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(174, 48);
+            this.label1.Location = new System.Drawing.Point(375, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 460;
@@ -122,7 +115,7 @@
             this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Location = new System.Drawing.Point(116, 118);
+            this.txtFilterBy.Location = new System.Drawing.Point(99, 123);
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.PasswordChar = '\0';
             this.txtFilterBy.PlaceholderText = "";
@@ -131,6 +124,7 @@
             this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
             this.txtFilterBy.TabIndex = 459;
             this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
             // 
             // label3
             // 
@@ -153,40 +147,30 @@
             // 
             // dgvSaleOrder
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvSaleOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvSaleOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSaleOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSaleOrder.BackgroundColor = System.Drawing.Color.White;
             this.dgvSaleOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSaleOrder.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSaleOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSaleOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSaleOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvSaleOrder.ColumnHeadersHeight = 18;
-            this.dgvSaleOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column7,
-            this.Column6,
-            this.Column8,
-            this.Column9});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSaleOrder.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSaleOrder.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvSaleOrder.EnableHeadersVisualStyles = false;
             this.dgvSaleOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSaleOrder.Location = new System.Drawing.Point(1, 165);
@@ -217,51 +201,6 @@
             this.dgvSaleOrder.ThemeStyle.RowsStyle.Height = 22;
             this.dgvSaleOrder.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSaleOrder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Party";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Ref No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Due date";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total Amount";
-            this.Column4.Name = "Column4";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Balance ";
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Type";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Status";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Action";
-            this.Column9.Name = "Column9";
             // 
             // btncancel
             // 
@@ -305,11 +244,34 @@
             this.btnImport.TabIndex = 452;
             this.btnImport.UseVisualStyleBackColor = false;
             // 
+            // cmbAllfirms
+            // 
+            this.cmbAllfirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbAllfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAllfirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbAllfirms.FocusedState.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAllfirms.ForeColor = System.Drawing.Color.Blue;
+            this.cmbAllfirms.HoverState.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.ItemHeight = 30;
+            this.cmbAllfirms.Items.AddRange(new object[] {
+            "All Firms"});
+            this.cmbAllfirms.ItemsAppearance.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.Location = new System.Drawing.Point(156, 46);
+            this.cmbAllfirms.Name = "cmbAllfirms";
+            this.cmbAllfirms.ShadowDecoration.Parent = this.cmbAllfirms;
+            this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
+            this.cmbAllfirms.StartIndex = 0;
+            this.cmbAllfirms.TabIndex = 465;
+            // 
             // Cheque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 547);
+            this.Controls.Add(this.cmbAllfirms);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
@@ -326,6 +288,7 @@
             this.Name = "Cheque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cheque";
+            this.Load += new System.EventHandler(this.Cheque_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleOrder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -343,17 +306,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2DataGridView dgvSaleOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Button btnImport;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
     }
 }
