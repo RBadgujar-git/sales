@@ -914,7 +914,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -923,14 +923,13 @@ namespace sample
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("Quotation", "Quotation", ds.Tables[0]);
+                    report.RegData("Quotation1", "Quotation1", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
                     report.Show(false);
                 }
                 catch (Exception ex)
-
                 {
                     MessageBox.Show(ex.Message);
                 }

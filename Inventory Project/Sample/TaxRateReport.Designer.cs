@@ -37,6 +37,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTaxRate = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,11 +50,6 @@
             this.btnnImport = new System.Windows.Forms.Button();
             this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxRate)).BeginInit();
             this.SuspendLayout();
@@ -201,6 +201,31 @@
             this.dgvTaxRate.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvTaxRate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaxRate_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Item Name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Tax For Sale";
+            this.Column5.Name = "Column5";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "SaleTaxAmount";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tax For Purchase";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = " Purchase Tax Amount";
+            this.Column3.Name = "Column3";
+            // 
             // cmbAllFirms
             // 
             this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
@@ -270,6 +295,7 @@
             this.btnPrint.Size = new System.Drawing.Size(24, 23);
             this.btnPrint.TabIndex = 147;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnnImport
             // 
@@ -303,31 +329,6 @@
             this.dtpToDate.TabIndex = 157;
             this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Item Name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Tax For Sale";
-            this.Column5.Name = "Column5";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "SaleTaxAmount";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tax For Purchase";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = " Purchase Tax Amount";
-            this.Column3.Name = "Column3";
             // 
             // TaxRateReport
             // 

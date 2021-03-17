@@ -391,7 +391,7 @@ namespace sample
               try
                     {
                         DataSet ds = new DataSet();
-                        string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and Company_ID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
                         SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                         SDA.Fill(ds);
 
@@ -400,7 +400,7 @@ namespace sample
 
                         report.Compile();
                         StiPage page = report.Pages[0];
-                        report.RegData("SaleInvoice1", "SaleInvoice1", ds.Tables[0]);
+                        report.RegData("Saleinvoice1", "Saleinvoice1", ds.Tables[0]);
 
                         report.Dictionary.Synchronize();
                         report.Render();
@@ -1395,8 +1395,7 @@ namespace sample
 
         private void btnCalculator_Click(object sender, EventArgs e)
         {
-            Calculator cs = new Calculator();
-            cs.Show();
+            System.Diagnostics.Process.Start("Calc.exe");
         }
 
         private void txtVehicleNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -1435,7 +1434,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and Company_ID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -1444,7 +1443,7 @@ namespace sample
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("SaleInvoice1", "SaleInvoice1", ds.Tables[0]);
+                    report.RegData("SaleInvoice", "SaleInvoice", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
