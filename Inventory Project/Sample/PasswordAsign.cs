@@ -189,5 +189,10 @@ namespace sample
             button1.Hide();
             label4.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
