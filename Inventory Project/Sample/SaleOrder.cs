@@ -338,7 +338,7 @@ namespace sample
                 {
                     cmd.Parameters.AddWithValue("@PartyName", comboBox2.Text);
                 }
-                cmd.Parameters.AddWithValue("@BillingAddress", txtbillingadd.Text);
+                cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
                 cmd.Parameters.AddWithValue("@OrderDate", dtpInvoice.Text);
                 cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
                 //  cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
@@ -444,16 +444,17 @@ namespace sample
 
                 // PartyName ,PONo,BillDate,PODate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,TransportCharges,Image,Tax1,TaxAmount1 ,TotalDiscount 
                 //    ,DiscountAmount1 ,RoundFigure ,Total, Paid, RemainingBal, PaymentTerms, Feild1,Feild2,Feild3,Feild4,Feild5
-                con.Open();
 
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_SaleOrderSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Update");
                 cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
-                // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
-                // cmd.Parameters.AddWithValue("@PONo", txtPONo.Text);
-                // cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+            
                 if (cmbpartyname.Visible == true)
                 {
                     cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
@@ -462,7 +463,7 @@ namespace sample
                 {
                     cmd.Parameters.AddWithValue("@PartyName", comboBox2.Text);
                 }
-                cmd.Parameters.AddWithValue("@BillingAddress", txtbillingadd.Text);
+                cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
                 cmd.Parameters.AddWithValue("@OrderDate", dtpInvoice.Text);
                 cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
                 //  cmd.Parameters.AddWithValue("@DueDate", dtpDueDate.Text);
@@ -514,8 +515,8 @@ namespace sample
             }
             finally
             {
-                con.Close();
-                update_record_inner(id1.ToString());
+              //  con.Close();
+                update_record_inner(txtReturnNo.Text.ToString());
             }
         }
      
@@ -538,7 +539,7 @@ namespace sample
                     while (dr.Read())
                     {
                         comboBox2.Text = dr["PartyName"].ToString();
-                        txtbillingadd.Text = dr["BillingAddress"].ToString();                  
+                        txtbillingadd.Text = dr["BillingName"].ToString();                  
                         txtcon.Text = dr["ContactNo"].ToString();
                         dtpInvoice.Text = dr["OrderDate"].ToString();
                         dtpDueDate.Text = dr["DueDate"].ToString();
@@ -619,7 +620,7 @@ namespace sample
         }
 
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
-          {
+         {
             if (e.KeyCode == Keys.Enter)
             {
                 cmbpartyname.Visible = false;
@@ -632,18 +633,28 @@ namespace sample
 
         private void update_record_inner(string id)
         {
+
+            //SqlCommand cmdn = new SqlCommand("tbl_SaleOrderInnersp", con);
+            //cmdn.CommandType = CommandType.StoredProcedure;
+            //cmdn.Parameters.AddWithValue("@Action", "inserdelete");
+            //cmdn.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
+            //cmdn.ExecuteNonQuery();
+
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
             {
                 try
                 {
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_SaleOrderInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@OrderNo", id1);
+                    cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
 
-                    // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
+                    // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCatory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
@@ -663,11 +674,11 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    //MessageBox.Show(e1.Message);
+                    MessageBox.Show(e1.Message);
                 }
                 finally
                 {
-                    con.Close();
+                    //con.Close();
                 }
             }
         }
@@ -778,7 +789,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleOrder as b,tbl_SaleOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and Company_ID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleOrder as b,tbl_SaleOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and Company_ID ='" + NewCompany.company_id + "'", txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -880,7 +891,7 @@ namespace sample
                 }
                 dr.Close();
 
-                dtpInvoice.Focus();
+                dtpDueDate.Focus();
             }
             catch (Exception ex)
             {
@@ -1029,18 +1040,13 @@ namespace sample
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            validdata();
-            if (verfy == 1)
-            {
-                update();
-                //bind_sale_details();
-              //  get_id();
+        {          
+                update();    
                 clear_text_data();
                 cleardata();
-                printdata(id1.ToString());
+                printdata(txtReturnNo.Text.ToString());
                 dgvInnerDebiteNote.Rows.Clear();
-            }
+            
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -1268,6 +1274,7 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
+           
             cal_Total();
             gst_devide();
         }
@@ -1280,6 +1287,83 @@ namespace sample
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private void fetchcustomername1()
+        {
+            if (comboBox2.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by PartyName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        comboBox2.Items.Add(ds.Tables["Temp"].Rows[i]["PartyName"].ToString());
+
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
+        private void comboBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string Query = String.Format("select BillingAddress, ContactNo from tbl_PartyMaster where (PartyName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY BillingAddress, ContactNo", comboBox2.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtbillingadd.Text = dr["BillingAddress"].ToString();
+                    txtcon.Text = dr["ContactNo"].ToString();
+
+
+                }
+                dr.Close();
+
+                dtpInvoice.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtIGST_TextChanged(object sender, EventArgs e)
+        {
+            cal_Total();
+            gst_devide();
+        }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
+        {
+            cal_Total();
+        }
+
+        private void txtsgst_TextChanged(object sender, EventArgs e)
+        {
+            cal_Total();
         }
     }
     }

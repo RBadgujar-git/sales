@@ -24,7 +24,7 @@ namespace sample
     {
 
         SqlConnection sqlconn = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-        string result = "D:\\Git project\\sales\\Inventory Project\\Sample\\bin\\Debug\\ItemsTemplate.xls";
+        string result = "D:\\Git project\\sales\\Inventory Project\\Sample\\bin\\Debug\\ItemTemplate.xlsx";
 
         //Save Path
 
@@ -47,13 +47,23 @@ namespace sample
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Excel Sheet(*.xlsx)|*.xlsx|All Files(*.*)|*.*";
-            sfd.FileName = "Import Item Template";
-            sfd.Title = "Save Excel File";
-            if (sfd.ShowDialog() == DialogResult.OK)
+            //SaveFileDialog sfd = new SaveFileDialog();
+            //sfd.Filter = "Excel Sheet(*.xlsx)|*.xlsx|All Files(*.*)|*.*";
+            //sfd.FileName = "Import Item Template";
+            //sfd.Title = "Save Excel File";
+            //if (sfd.ShowDialog() == DialogResult.OK)
+            //{
+            //    result = sfd.FileName;
+            //}
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();  
+            saveFileDialog1.Title = "Save Excel Files";
+           
+            saveFileDialog1.FileName = "Import Item.xlsx";
+            saveFileDialog1.Filter = "Excel files (*.xls)|*.xlsx|All files (*.*)|*.*";
+           
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                result = sfd.FileName;
+                    result = saveFileDialog1.FileName;
             }
 
         }

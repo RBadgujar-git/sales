@@ -1,6 +1,6 @@
 ﻿namespace sample
 {
-    partial class CompanyBankHomepage
+    partial class CompanyBankAccountHomepage
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,24 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyBankHomepage));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnminimize = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyBankAccountHomepage));
             this.btnSaleorder = new Guna.UI2.WinForms.Guna2Button();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,53 +40,28 @@
             this.txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcompanybank = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
+            this.btncancel = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnminimize);
-            this.panel1.Controls.Add(this.btnSaleorder);
-            this.panel1.Controls.Add(this.btncancel);
-            this.panel1.Controls.Add(this.btnImport);
-            this.panel1.Controls.Add(this.dtpTo);
-            this.panel1.Controls.Add(this.dtpFrom);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtFilterBy);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.dgvcompanybank);
-            this.panel1.Controls.Add(this.btnprint);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1071, 576);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(984, 16);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 477;
-            this.btnminimize.UseVisualStyleBackColor = false;
             // 
             // btnSaleorder
             // 
-            this.btnSaleorder.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSaleorder.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnSaleorder.CheckedState.Parent = this.btnSaleorder;
             this.btnSaleorder.CustomImages.Parent = this.btnSaleorder;
             this.btnSaleorder.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,82 +73,7 @@
             this.btnSaleorder.Size = new System.Drawing.Size(145, 45);
             this.btnSaleorder.TabIndex = 468;
             this.btnSaleorder.Text = "+ Comapnay Bank Account";
-            this.btnSaleorder.Click += new System.EventHandler(this.btnSaleorder_Click_1);
-            // 
-            // btncancel
-            // 
-            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btncancel.BackColor = System.Drawing.Color.White;
-            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
-            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1016, 16);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(28, 26);
-            this.btncancel.TabIndex = 467;
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // btnImport
-            // 
-            this.btnImport.BackColor = System.Drawing.Color.Transparent;
-            this.btnImport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImport.BackgroundImage")));
-            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Location = new System.Drawing.Point(942, 61);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(21, 23);
-            this.btnImport.TabIndex = 465;
-            this.btnImport.UseVisualStyleBackColor = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Action";
-            this.Column9.Name = "Column9";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Status";
-            this.Column8.Name = "Column8";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Type";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Balance ";
-            this.Column7.Name = "Column7";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total Amount";
-            this.Column4.Name = "Column4";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Due date";
-            this.Column3.Name = "Column3";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Ref No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Party";
-            this.Column5.Name = "Column5";
+            this.btnSaleorder.Click += new System.EventHandler(this.btnSaleorder_Click);
             // 
             // dtpTo
             // 
@@ -268,12 +155,15 @@
             this.label6.TabIndex = 470;
             this.label6.Text = "Transaction";
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Status";
+            this.Column8.Name = "Column8";
+            // 
             // dgvcompanybank
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvcompanybank.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvcompanybank.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvcompanybank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcompanybank.BackgroundColor = System.Drawing.Color.White;
             this.dgvcompanybank.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -337,6 +227,111 @@
             this.dgvcompanybank.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvcompanybank.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Party";
+            this.Column5.Name = "Column5";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Ref No";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Date";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Due date";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total Amount";
+            this.Column4.Name = "Column4";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Balance ";
+            this.Column7.Name = "Column7";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Type";
+            this.Column6.Name = "Column6";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Action";
+            this.Column9.Name = "Column9";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnminimize);
+            this.panel1.Controls.Add(this.btnSaleorder);
+            this.panel1.Controls.Add(this.btncancel);
+            this.panel1.Controls.Add(this.btnImport);
+            this.panel1.Controls.Add(this.dtpTo);
+            this.panel1.Controls.Add(this.dtpFrom);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtFilterBy);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.dgvcompanybank);
+            this.panel1.Controls.Add(this.btnprint);
+            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1071, 576);
+            this.panel1.TabIndex = 1;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(984, 16);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 477;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            // 
+            // btncancel
+            // 
+            this.btncancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(1016, 16);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(28, 26);
+            this.btncancel.TabIndex = 467;
+            this.btncancel.UseVisualStyleBackColor = false;
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.Color.Transparent;
+            this.btnImport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImport.BackgroundImage")));
+            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Location = new System.Drawing.Point(942, 61);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(21, 23);
+            this.btnImport.TabIndex = 465;
+            this.btnImport.UseVisualStyleBackColor = false;
+            // 
             // btnprint
             // 
             this.btnprint.BackColor = System.Drawing.Color.Transparent;
@@ -350,24 +345,22 @@
             this.btnprint.TabIndex = 466;
             this.btnprint.UseVisualStyleBackColor = false;
             // 
-            // CompanyBankHomepage
+            // CompanyBankAccountHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "CompanyBankHomepage";
-            this.Size = new System.Drawing.Size(1074, 582);
-            this.Load += new System.EventHandler(this.CompanyBankHomepage_Load);
+            this.Name = "CompanyBankAccountHomepage";
+            this.Size = new System.Drawing.Size(1080, 586);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnminimize;
         private Guna.UI2.WinForms.Guna2Button btnSaleorder;
         private System.Windows.Forms.Button btncancel;
@@ -379,6 +372,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private Guna.UI2.WinForms.Guna2DataGridView dgvcompanybank;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -387,8 +381,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button btnprint;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -402,8 +402,7 @@ namespace sample
             try
             {
                 con.Open();
-                verifydata();
-                if (verifyid == 1)
+               
                 {
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_DeliveryChallanSelect", con);
@@ -456,7 +455,7 @@ namespace sample
             finally
             {
                 con.Close();
-                update_record_inner(txtReturnNo.ToString());
+                update_record_inner(txtReturnNo.Text.ToString());
             }
         }
         private void cmbtax_SelectedIndexChanged(object sender, EventArgs e)
@@ -718,10 +717,11 @@ namespace sample
                             //   // TGST += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
 
                             txtsubtotal.Text = TA.ToString();
-                            //    txtTotal.Text = TA.ToString();
-                            //  //  txtDisAmt.Text = TD.ToString();
-                            //   // txtTaxAMount1.Text = TGST.ToString();
-                        }
+                        txtTotal.Text = TA.ToString();
+                        //    txtTotal.Text = TA.ToString();
+                        //  //  txtDisAmt.Text = TD.ToString();
+                        //   // txtTaxAMount1.Text = TGST.ToString();
+                    }
                     clear_text_data();
                 }              
             }
@@ -795,7 +795,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_DeliveryChallanInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ChallanNo", id1);
+                    cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -817,7 +817,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    //MessageBox.Show(e1.Message);
+                    MessageBox.Show(e1.Message);
                 }
                 //finally
                 //{
@@ -832,7 +832,7 @@ namespace sample
             clear_text_data();
             cleardata();
             //get_id();
-            printdata(id1.ToString());
+            printdata(txtrefNo.Text.ToString());
             dgvInnerDeliveryChallanNote.Rows.Clear();
         }
 

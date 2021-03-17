@@ -101,23 +101,12 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);                      
             dgvPaymentIn.DataSource = dtable;
+            dgvPaymentIn.AllowUserToAddRows = false;
         }
 
 
         private void InsertData()
-        {
-           
-                   
-            var controls = new[] { cmbPartyName.Text };
-            if (controls.All(x => string.IsNullOrEmpty(x)))
-            {
-                MessageBox.Show("Requried All Feilds");
-                
-            }
-          
-            else
-            {
-
+        {          
                 try
                 {
                         MemoryStream ms = new MemoryStream();
@@ -164,7 +153,7 @@ namespace sample
                 }
 
             }
-        }
+        
 
 
         public void Update1()
@@ -284,11 +273,55 @@ namespace sample
             Update1();
             fetchdetails();           
         }
+        public int verify = 0;
 
+        public void validfild()
+        {
+            if (cmbPartyName.Text == "")
+            {
+                MessageBox.Show("Party Name Is Requried ");
+                cmbPartyName.Focus();
+            }
+            else if (cmbPaymentType.Text == "")
+            {
+                MessageBox.Show("Payment Type Is Requried ");
+                cmbPaymentType.Focus();
+            }
+            else if (txtReceiptNo.Text == "")
+            {
+                MessageBox.Show("Receipt No. Is Requried ");
+                txtReceiptNo.Focus();
+            }
+            
+            else if (dtpdate.Text == "")
+            {
+                MessageBox.Show("Date Is Requried ");
+                dtpdate.Focus();
+            }
+            else if (txtReceived.Text == "")
+            {
+                MessageBox.Show("Received amount Is Requried ");
+                txtReceived.Focus();
+            }
+            else if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Status Is Requried ");
+                comboBox1.Focus();
+            }         
+            else
+            {
+                verify = 1;
+
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();        
+            validfild();
+            if (verify == 1)
+            {
+                InsertData();
+                fetchdetails();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -346,29 +379,7 @@ namespace sample
         private void dgvPaymentIn_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            id = dgvPaymentIn.Rows[e.RowIndex].Cells["ID"].Value.ToString();
-            cmbPartyName.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["CustomerName"].Value.ToString();
-            cmbPaymentType.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["PaymentType"].Value.ToString();
-            txtReceiptNo.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["ReceiptNo"].Value.ToString();
-            dtpdate.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Date"].Value.ToString();
-            txtDescription.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Description"].Value.ToString();
-            txtReceived.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["ReceivedAmount"].Value.ToString();
-            txtDiscount.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["UnusedAmount"].Value.ToString();
-
-            SqlCommand cmd = new SqlCommand("select image from tbl_PaymentIn where DeleteData = '1' and CompanyID = '" + NewCompany.company_id  + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["image"]);
-                ms.Seek(0, SeekOrigin.Begin);
-                PictureBox1.Image = Image.FromStream(ms);
-                PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-            txtTotal.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Total"].Value.ToString();
-            comboBox1.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Status"].Value.ToString();
-
+           
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -491,6 +502,50 @@ namespace sample
         private void Print_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+              
+            }
+            else
+            {
+                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where DeleteData = '1' and CustomerName like '%{0}%' or ID like '%{0}%'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPaymentIn.DataSource = ds;
+                dgvPaymentIn.DataMember = "temp";
+            }
+        }
+
+        private void dgvPaymentIn_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            id = dgvPaymentIn.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            cmbPartyName.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["PartyName"].Value.ToString();
+            cmbPaymentType.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["PaymentType"].Value.ToString();
+            txtReceiptNo.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["ReceiptNo"].Value.ToString();
+            dtpdate.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Date"].Value.ToString();
+            txtDescription.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Description"].Value.ToString();
+            txtReceived.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["ReceivedAmount"].Value.ToString();
+            txtDiscount.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["UnusedAmount"].Value.ToString();
+            txtTotal.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Total"].Value.ToString();
+            comboBox1.Text = dgvPaymentIn.Rows[e.RowIndex].Cells["Status"].Value.ToString();
+
+            SqlCommand cmd2 = new SqlCommand("select image from tbl_PaymentIn where DeleteData='1' and Company_ID = '" + NewCompany.company_id + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd2);
+            DataSet dds = new DataSet();
+            sda.Fill(dds);
+            if (dds.Tables[0].Rows.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream((byte[])dds.Tables[0].Rows[e.RowIndex]["image"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                PictureBox1.Image = Image.FromStream(ms);
+                PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
     }
 }

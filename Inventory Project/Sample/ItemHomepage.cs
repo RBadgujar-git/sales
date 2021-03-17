@@ -45,7 +45,7 @@ namespace sample
         {
             Itemmaster BA = new Itemmaster();
             BA.TopLevel = false;
-              BA.AutoScroll = true;
+            BA.AutoScroll = true;
             this.Controls.Add(BA);
             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             BA.Dock = DockStyle.Fill;

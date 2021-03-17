@@ -101,7 +101,7 @@
             this.dgvItemAdjustment.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItemAdjustment.EnableHeadersVisualStyles = false;
             this.dgvItemAdjustment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemAdjustment.Location = new System.Drawing.Point(10, 233);
+            this.dgvItemAdjustment.Location = new System.Drawing.Point(32, 233);
             this.dgvItemAdjustment.Name = "dgvItemAdjustment";
             this.dgvItemAdjustment.RowHeadersVisible = false;
             this.dgvItemAdjustment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -275,6 +275,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 24);
             this.txtName.TabIndex = 1;
+            this.txtName.SelectedIndexChanged += new System.EventHandler(this.txtName_SelectedIndexChanged);
             // 
             // combotype
             // 
