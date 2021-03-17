@@ -195,7 +195,6 @@ namespace sample
 
         private void txtitemamount_KeyDown(object sender, KeyEventArgs e)
         {
-            
             try {
                 if (e.KeyCode == Keys.Enter) {
                     float TA = 0, TD = 0, TGST = 0;
