@@ -86,7 +86,10 @@ namespace sample
             fetchCategory();         
             comboBox1.Visible = false;
             comboBox2.Visible = false;
-
+            if (chkRoundOff.Checked == true)
+            {
+                Math.Round(Convert.ToDouble(txtTotal.Text));
+            }
         }
         private void fetchCategory()
         {
@@ -313,16 +316,16 @@ namespace sample
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 // cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Added");
+                MessageBox.Show("Quotation Record Added");
                
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+                //MessageBox.Show(e1.Message);
             }
             finally
             {
-                // con.Close();
+                 con.Close();
                 insert_record_inner(id1.ToString());
             }
         }
@@ -356,7 +359,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                    //MessageBox.Show(e1.Message);
                 }
                 finally
                 {
@@ -411,13 +414,14 @@ namespace sample
                        
                         txtsubtotal.Text = TA.ToString();
                         txtTotal.Text = TA.ToString();
+                        
                     }
                     clear_text_data();
                 }
                 txtDescription.Focus();
             }
             catch (Exception e1) {
-                string message = e1.Message;
+                //string message = e1.Message;
             }
         }
         private void clear_text_data()
@@ -499,12 +503,12 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            insertdata();
-            //bind_sale_details();
+            update();
+            bind_sale_details();
             clear_text_data();
             cleardata();
            // get_id();
-            printdata(id1.ToString());
+            //printdata(id1.ToString());
             dgvInnerQuotation.Rows.Clear();
         }
 
@@ -570,13 +574,13 @@ namespace sample
             }
             finally
             {
-                // con.Close();
+                 con.Close();
                 update_record_inner(id1.ToString());
             }
         }
         private void txtReturnNo_KeyDown(object sender, KeyEventArgs e)
         {
-
+        
             if (e.KeyCode == Keys.Enter)
             {
                 cmbCategory.Visible = false;
@@ -673,14 +677,10 @@ namespace sample
             try {
                
                     float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
-
-
-
                     TA = float.Parse(txtsubtotal.Text.ToString());
 
                     dis = float.Parse(txtDiscount.Text.ToString());
                     gst = float.Parse(cmbtax.Text.ToString());
-
 
 
 
@@ -714,6 +714,10 @@ namespace sample
         private void txtRoundup_TextChanged(object sender, EventArgs e)
         {
             cal_Total();
+            //if (chkRoundOff.Checked == true)
+            //{
+            //    Math.Round(Convert.ToDouble(txtTotal.Text));
+            //}
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -726,9 +730,8 @@ namespace sample
                 clear_text_data();
                 cleardata();
                 get_id();
-                printdata(id1.ToString());
+                //printdata(id1.ToString());
                 dgvInnerQuotation.Rows.Clear();
-
             }
         }
 
@@ -781,10 +784,12 @@ namespace sample
 
         private void chkenble_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkenble.Checked == true) {
+            if (chkenble.Checked == true)
+            {
                 txtReturnNo.Enabled = true;
             }
-            else {
+            else
+            {
                 txtReturnNo.Enabled = false;
             }
         }
@@ -841,7 +846,7 @@ namespace sample
             }
             finally
             {
-                //con.Close();
+                con.Close();
             }
         }
 
@@ -872,10 +877,10 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
-            //finally
-            //{
-            //    con.Close();
-            //}
+            finally
+            {
+                con.Close();
+            }
         }
         private void cmbCategory_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -903,7 +908,7 @@ namespace sample
             }
             finally
             {
-              //  con.Close();
+                con.Close();
             }
         }
 
@@ -1036,6 +1041,73 @@ namespace sample
         {
             gst_devide();
             cal_ItemTotal();
+        }
+
+        private void txtDis_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtOty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtFreeQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRoundOff.Checked == false)
+            {
+                txtTotal.Text = txtTotal.Text;      // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
+            }
+            else if (chkRoundOff.Checked == true)
+            {
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+            }            
+            //Math.Round(Convert.ToDouble(txtTotal.Text));
+        }
+
+        private void dgvInnerQuotation_DoubleClick(object sender, EventArgs e)
+        {
+            txtItemName.Text = this.dgvInnerQuotation.CurrentRow.Cells[1].Value.ToString();
+            txtItemCode.Text = this.dgvInnerQuotation.CurrentRow.Cells[2].Value.ToString();
+            txtUnit.Text = this.dgvInnerQuotation.CurrentRow.Cells[3].Value.ToString();
+            txtMRP.Text = this.dgvInnerQuotation.CurrentRow.Cells[4].Value.ToString();
+            txtDis.Text = this.dgvInnerQuotation.CurrentRow.Cells[5].Value.ToString();
+            txtTax1.Text = this.dgvInnerQuotation.CurrentRow.Cells[6].Value.ToString();
+            txtOty.Text = this.dgvInnerQuotation.CurrentRow.Cells[7].Value.ToString();
+            txtFreeQty.Text = this.dgvInnerQuotation.CurrentRow.Cells[8].Value.ToString();
+            txtDisAmt.Text = this.dgvInnerQuotation.CurrentRow.Cells[9].Value.ToString();
+            txtTaxAMount1.Text = this.dgvInnerQuotation.CurrentRow.Cells[10].Value.ToString();
+            txtItemTotal.Text = this.dgvInnerQuotation.CurrentRow.Cells[11].Value.ToString();
         }
     }
     
