@@ -125,7 +125,7 @@ namespace sample
             txtItem.Text = "";
             txtMRP.Text = "0";
             txtOty.Text = "0";
-            txtitemamount.Text = "0";
+            //txtitemamount.Text = "0";
            
         }
         private void cleardata()
@@ -181,7 +181,7 @@ namespace sample
             }
             finally {
                 con.Close();
-                insert_record_inner(txtrefNo.ToString());
+                insert_record_inner(id1.ToString());
             }
         }   
 
@@ -268,7 +268,7 @@ namespace sample
                         TA += float.Parse(dgvinnerexpenses.Rows[i].Cells["Amount"].Value?.ToString());
                         txtTotal.Text = TA.ToString();
                     }
-                    clear_text_data();
+                    //clear_text_data();
                 }
             }
             catch (Exception e1) {
@@ -582,26 +582,10 @@ namespace sample
                 throw;
             }
         }
-
-        private void dgvinnerexpenses_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //id1 =dgvinnerexpenses.SelectedRows[0].Cells["ID"].Value.ToString();
-            //txtItem.Text = dgvinnerexpenses.SelectedRows[0].Cells["ItemName"].Value.ToString();
-            //txtMRP.Text = dgvinnerexpenses.SelectedRows[0].Cells["SalePrice"].Value.ToString();
-            //txtOty.Text = dgvinnerexpenses.SelectedRows[0].Cells["Qty"].Value.ToString();
-            //txtitemamount.Text = dgvinnerexpenses.SelectedRows[0].Cells["ItemAmount"].Value.ToString();
-        }
-
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("calc.exe");
@@ -615,7 +599,7 @@ namespace sample
         private void Clear_Click(object sender, EventArgs e)
         {
             cmbexpenses.Text = "";
-            txtReturnNo.Text = "";
+            //txtReturnNo.Text = "";
             txtitemamount.Text = "0";
             txtMRP.Text = "0";
             txtOty.Text = "0";

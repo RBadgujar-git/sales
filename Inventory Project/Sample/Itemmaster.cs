@@ -400,7 +400,7 @@ namespace sample
                         }
                         else
                         {
-                                MessageBox.Show("Please Select Record");
+                            MessageBox.Show("Please Select Record");
                         }
                     }
                 //}

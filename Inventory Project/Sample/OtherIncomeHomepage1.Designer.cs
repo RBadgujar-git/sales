@@ -247,7 +247,7 @@
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(295, 65);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(788, 130);
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(788, 70);
             this.guna2ShadowPanel3.TabIndex = 13;
             this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
@@ -306,11 +306,11 @@
             this.dgvOtherincome.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOtherincome.EnableHeadersVisualStyles = false;
             this.dgvOtherincome.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvOtherincome.Location = new System.Drawing.Point(298, 247);
+            this.dgvOtherincome.Location = new System.Drawing.Point(295, 172);
             this.dgvOtherincome.Name = "dgvOtherincome";
             this.dgvOtherincome.RowHeadersVisible = false;
             this.dgvOtherincome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOtherincome.Size = new System.Drawing.Size(788, 398);
+            this.dgvOtherincome.Size = new System.Drawing.Size(788, 473);
             this.dgvOtherincome.TabIndex = 4;
             this.dgvOtherincome.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvOtherincome.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -377,7 +377,7 @@
             this.txtSearch2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
-            this.txtSearch2.Location = new System.Drawing.Point(295, 216);
+            this.txtSearch2.Location = new System.Drawing.Point(295, 141);
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
             this.txtSearch2.PlaceholderText = "";
