@@ -822,5 +822,10 @@ namespace sample
                 dgvItemmaster.DataMember = "temp";
             }
         }
+
+        private void itemtracking_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

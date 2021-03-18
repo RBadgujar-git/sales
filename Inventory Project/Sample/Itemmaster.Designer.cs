@@ -1046,6 +1046,7 @@
             this.itemtracking.Size = new System.Drawing.Size(603, 179);
             this.itemtracking.TabIndex = 64;
             this.itemtracking.Visible = false;
+            this.itemtracking.Paint += new System.Windows.Forms.PaintEventHandler(this.itemtracking_Paint);
             // 
             // dtpexpdate
             // 

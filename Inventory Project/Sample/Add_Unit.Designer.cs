@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Unit));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.Clear = new System.Windows.Forms.Button();
@@ -45,8 +47,6 @@
             this.btnminimize = new System.Windows.Forms.Button();
             this.closebtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddunit)).BeginInit();
             this.panel3.SuspendLayout();
@@ -76,6 +76,30 @@
             this.guna2Panel1.Size = new System.Drawing.Size(636, 458);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::sample.Properties.Resources.icons8_search_1001;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(65, 134);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(15, 17);
+            this.button1.TabIndex = 72;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(83, 132);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(105, 23);
+            this.textBox1.TabIndex = 71;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btndelete
             // 
@@ -140,6 +164,7 @@
             this.txtSubunit.ShadowDecoration.Parent = this.txtSubunit;
             this.txtSubunit.Size = new System.Drawing.Size(150, 21);
             this.txtSubunit.TabIndex = 2;
+            this.txtSubunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSubunit_KeyPress);
             // 
             // label3
             // 
@@ -175,6 +200,7 @@
             this.txtAddUnit.ShadowDecoration.Parent = this.txtAddUnit;
             this.txtAddUnit.Size = new System.Drawing.Size(150, 21);
             this.txtAddUnit.TabIndex = 1;
+            this.txtAddUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddUnit_KeyPress);
             // 
             // btnSave
             // 
@@ -314,30 +340,6 @@
             this.label1.Size = new System.Drawing.Size(82, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Unit";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = global::sample.Properties.Resources.icons8_search_1001;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(65, 134);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(15, 17);
-            this.button1.TabIndex = 72;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(83, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(105, 23);
-            this.textBox1.TabIndex = 71;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Add_Unit
             // 

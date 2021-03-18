@@ -150,7 +150,7 @@
             this.Print.Location = new System.Drawing.Point(786, 551);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 15;
+            this.Print.TabIndex = 16;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -163,7 +163,7 @@
             this.Clear.Location = new System.Drawing.Point(885, 551);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 15;
+            this.Clear.TabIndex = 17;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -204,7 +204,7 @@
             this.chkenble.Location = new System.Drawing.Point(836, 60);
             this.chkenble.Name = "chkenble";
             this.chkenble.Size = new System.Drawing.Size(70, 20);
-            this.chkenble.TabIndex = 2;
+            this.chkenble.TabIndex = 1;
             this.chkenble.Text = "Enable";
             this.chkenble.UseVisualStyleBackColor = true;
             this.chkenble.CheckedChanged += new System.EventHandler(this.chkenble_CheckedChanged);
@@ -360,7 +360,7 @@
             this.txtItem.SelectedText = "";
             this.txtItem.ShadowDecoration.Parent = this.txtItem;
             this.txtItem.Size = new System.Drawing.Size(200, 28);
-            this.txtItem.TabIndex = 5;
+            this.txtItem.TabIndex = 2;
             this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             // 
             // label18
@@ -618,7 +618,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(686, 552);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 14;
+            this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -776,7 +776,7 @@
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.guna2DataGridView1.Size = new System.Drawing.Size(8, 8);
-            this.guna2DataGridView1.TabIndex = 38;
+            this.guna2DataGridView1.TabIndex = 1;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -824,7 +824,7 @@
             this.label2.Location = new System.Drawing.Point(140, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 8;
             this.label2.Text = "Expense Category :";
             // 
             // panel3
@@ -841,7 +841,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 52);
-            this.panel3.TabIndex = 16;
+            this.panel3.TabIndex = 14;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnminimize
@@ -856,7 +856,7 @@
             this.btnminimize.Location = new System.Drawing.Point(933, 12);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 0;
+            this.btnminimize.TabIndex = 6;
             this.btnminimize.UseVisualStyleBackColor = false;
             // 
             // Expences
@@ -864,7 +864,7 @@
             this.Expences.Location = new System.Drawing.Point(189, 14);
             this.Expences.Name = "Expences";
             this.Expences.Size = new System.Drawing.Size(100, 23);
-            this.Expences.TabIndex = 75;
+            this.Expences.TabIndex = 5;
             this.Expences.Text = "Expences";
             this.Expences.Visible = false;
             // 
@@ -874,7 +874,7 @@
             this.label5.Location = new System.Drawing.Point(104, 17);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 16);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 5;
             this.label5.Text = "Expences :";
             this.label5.Visible = false;
             // 
@@ -890,7 +890,7 @@
             this.button4.Location = new System.Drawing.Point(865, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 34);
-            this.button4.TabIndex = 0;
+            this.button4.TabIndex = 5;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -932,7 +932,7 @@
             this.button3.Location = new System.Drawing.Point(964, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 0;
+            this.button3.TabIndex = 1;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

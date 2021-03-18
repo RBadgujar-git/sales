@@ -162,7 +162,7 @@ namespace sample
 
         private void dgvItemAdjustment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-             id = dgvItemAdjustment.Rows[e.RowIndex].Cells["ID"].Value.ToString();
+            id = dgvItemAdjustment.Rows[e.RowIndex].Cells["ID"].Value.ToString();
             txtName.Text = dgvItemAdjustment.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
             combotype.Text = dgvItemAdjustment.Rows[e.RowIndex].Cells["AdjustmentType"].Value.ToString();
             date.Text = dgvItemAdjustment.Rows[e.RowIndex].Cells["AdjustmentDate"].Value.ToString();

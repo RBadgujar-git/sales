@@ -82,7 +82,7 @@ namespace sample
             lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
 
-            string Query = string.Format("select ID,Date,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ID,Date,Total,Paid,Balance", lblCategory.Text);
+            string Query = string.Format("select ID1,Date,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ID,Date,Total,Paid,Balance", lblCategory.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -120,7 +120,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ID from tbl_Expenses where ID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                string Query = string.Format("select ID1 from tbl_Expenses where ID1 like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
