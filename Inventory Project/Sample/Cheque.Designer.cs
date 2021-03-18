@@ -324,7 +324,7 @@
             this.Controls.Add(this.btnImport);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cheque";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cheque";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleOrder)).EndInit();
             this.ResumeLayout(false);

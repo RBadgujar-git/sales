@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace sample
 {
-   
     public partial class CompanyBankAccount : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
@@ -21,47 +20,6 @@ namespace sample
         public CompanyBankAccount()
         {
             InitializeComponent();
-        }
-        private void Cleardata()
-        {
-            txtbankname.Text = "";
-            txtaccountname.Text = "";
-            txtaccountno.Text = "";
-            txtopeningbal.Text = "";
-        }
-        private void fetchdetails()
-        {
-
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            DataTable dtable = new DataTable();
-            cmd = new SqlCommand("sp_CompanyBanckAccount", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Select");
-            cmd.Parameters.AddWithValue("@ID", 0);
-            cmd.Parameters.AddWithValue("@BankName", txtbankname.Text);
-            cmd.Parameters.AddWithValue("@AccountName", txtaccountname.Text);
-            cmd.Parameters.AddWithValue("@AccountNo", txtaccountno.Text);
-            cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
-
-            cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
-            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-            SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
-
-            sdasql.Fill(dtable);
-            dgvbankaccount.DataSource = dtable;
-
-
-        }
-        private void btncancel_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-        }
-       
-        private void btnminimize_Click(object sender, EventArgs e)
-        {
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -74,20 +32,20 @@ namespace sample
         {
             try
             {
-                if (txtbankname.Text == "")
+                if (txtBankName.Text == "")
                 {
                     MessageBox.Show("Bank Name Is Requried");
-                    txtbankname.Focus();
+                    txtBankName.Focus();
                 }
-                else if (txtaccountname.Text == "")
+                else if (txtAccountName.Text == "")
                 {
                     MessageBox.Show("Bank Holder Name Is Requried");
-                    txtaccountname.Focus();
+                    txtAccountName.Focus();
                 }
-                else if (txtaccountno.Text == "")
+                else if (txtAccountNo.Text == "")
                 {
                     MessageBox.Show("Account NO Is Requried");
-                    txtaccountno.Focus();
+                    txtAccountNo.Focus();
                 }
                 else
                 {
@@ -96,14 +54,14 @@ namespace sample
                         con.Open();
                     }
                     DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("sp_CompanyBanckAccount", con);
+                    SqlCommand cmd = new SqlCommand("sp_CompanyBankAccount", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.Parameters.AddWithValue("@BankName", txtbankname.Text);
-                    cmd.Parameters.AddWithValue("@AccountName", txtaccountname.Text);
-                    cmd.Parameters.AddWithValue("@AccountNo", txtaccountno.Text);
-                    cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
+                    cmd.Parameters.AddWithValue("@BankName", txtBankName.Text);
+                    cmd.Parameters.AddWithValue("@AccountName", txtAccountName.Text);
+                    cmd.Parameters.AddWithValue("@AccountNo", txtAccountNo.Text);
+                    cmd.Parameters.AddWithValue("@OpeningBal", txtOpeningBal.Text);
 
                     cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
@@ -124,10 +82,43 @@ namespace sample
                 MessageBox.Show("error" + ex.Message);
             }
         }
-
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        private void Cleardata()
+        {
+            txtBankName.Text = "";
+            txtAccountName.Text = "";
+            txtAccountNo.Text = "";
+            txtOpeningBal.Text = "";
+        }
+        private void fetchdetails()
         {
 
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            DataTable dtable = new DataTable();
+            cmd = new SqlCommand("sp_CompanyBankAccount", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "Select");
+            cmd.Parameters.AddWithValue("@ID", 0);
+            cmd.Parameters.AddWithValue("@BankName", txtBankName.Text);
+            cmd.Parameters.AddWithValue("@AccountName", txtAccountName.Text);
+            cmd.Parameters.AddWithValue("@AccountNo", txtAccountNo.Text);
+            cmd.Parameters.AddWithValue("@OpeningBal", txtOpeningBal.Text);
+
+            cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
+            cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+            SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
+
+            sdasql.Fill(dtable);
+            dgvbankaccount.DataSource = dtable;
+
+
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
         }
 
         private void CompanyBankAccount_Load(object sender, EventArgs e)
@@ -142,20 +133,20 @@ namespace sample
                 try
                 {
 
-                    if (txtbankname.Text == "")
+                    if (txtBankName.Text == "")
                     {
                         MessageBox.Show("Bank Name Is Requried");
-                        txtbankname.Focus();
+                        txtBankName.Focus();
                     }
-                    else if (txtaccountname.Text == "")
+                    else if (txtAccountName.Text == "")
                     {
                         MessageBox.Show("Bank Holder Name Is Requried");
-                        txtaccountname.Focus();
+                        txtAccountName.Focus();
                     }
-                    else if (txtaccountno.Text == "")
+                    else if (txtAccountNo.Text == "")
                     {
                         MessageBox.Show("Account NO Is Requried");
-                        txtaccountno.Focus();
+                        txtAccountNo.Focus();
                     }
                     else
                     {
@@ -165,14 +156,14 @@ namespace sample
                         }
 
                         DataTable dt = new DataTable();
-                        SqlCommand cmd = new SqlCommand("sp_CompanyBanckAccount", con);
+                        SqlCommand cmd = new SqlCommand("sp_CompanyBankAccount", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Update");
                         cmd.Parameters.AddWithValue("@ID", id);
-                        cmd.Parameters.AddWithValue("@BankName", txtbankname.Text);
-                        cmd.Parameters.AddWithValue("@AccountName", txtaccountname.Text);
-                        cmd.Parameters.AddWithValue("@AccountNo", txtaccountno.Text);
-                        cmd.Parameters.AddWithValue("@OpeningBal", txtopeningbal.Text);
+                        cmd.Parameters.AddWithValue("@BankName", txtBankName.Text);
+                        cmd.Parameters.AddWithValue("@AccountName", txtAccountName.Text);
+                        cmd.Parameters.AddWithValue("@AccountNo", txtAccountNo.Text);
+                        cmd.Parameters.AddWithValue("@OpeningBal", txtOpeningBal.Text);
                         cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
                         int num = cmd.ExecuteNonQuery();
                         //if (num > 0)
@@ -210,15 +201,15 @@ namespace sample
                 try
                 {
 
-                    if (txtbankname.Text == "")
+                    if (txtBankName.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
                     }
-                    else if (txtaccountname.Text == "")
+                    else if (txtAccountName.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
                     }
-                    else if (txtaccountno.Text == "")
+                    else if (txtAccountNo.Text == "")
                     {
                         MessageBox.Show("Please Select Record");
                     }
@@ -230,9 +221,9 @@ namespace sample
                             con.Open();
                         }
                         DataTable dt = new DataTable();
-                        SqlCommand cmd = new SqlCommand("sp_CompanyBanckAccount", con);
+                        SqlCommand cmd = new SqlCommand("sp_CompanyBankAccount", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@Action", "delete");
                         cmd.Parameters.AddWithValue("@ID", id);
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
@@ -267,16 +258,16 @@ namespace sample
         private void dgvbankaccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvbankaccount.SelectedRows[0].Cells["ID"].Value.ToString();
-            txtbankname.Text = dgvbankaccount.SelectedRows[0].Cells["BankName"].Value.ToString();
-            txtaccountname.Text = dgvbankaccount.SelectedRows[0].Cells["AccountName"].Value.ToString();
-            txtaccountno.Text = dgvbankaccount.SelectedRows[0].Cells["AccountNo"].Value.ToString();
-            txtopeningbal.Text = dgvbankaccount.SelectedRows[0].Cells["OpeningBal"].Value.ToString();
+            txtBankName.Text = dgvbankaccount.SelectedRows[0].Cells["BankName"].Value.ToString();
+            txtAccountName.Text = dgvbankaccount.SelectedRows[0].Cells["AccountName"].Value.ToString();
+            txtAccountNo.Text = dgvbankaccount.SelectedRows[0].Cells["AccountNo"].Value.ToString();
+            txtOpeningBal.Text = dgvbankaccount.SelectedRows[0].Cells["OpeningBal"].Value.ToString();
             dtpdate.Text = dgvbankaccount.SelectedRows[0].Cells["Date"].Value.ToString();
-            // txtDetails.Text = dgvItemAdjustment.SelectedRows[0].Cells["Details"].Value.ToString();
+           //txtDetails.Text = dgvItemAdjustment.SelectedRows[0].Cells["Details"].Value.ToString();
         }
         public void clearData()
         {
-            txtopeningbal.Text = txtbankname.Text = txtaccountno.Text = txtaccountname.Text = "";
+            txtOpeningBal.Text = txtBankName.Text = txtAccountNo.Text = txtAccountName.Text = "";
         }
 
         private void txtbankname_KeyPress(object sender, KeyPressEventArgs e)
