@@ -391,16 +391,16 @@ namespace sample
               try
                     {
                         DataSet ds = new DataSet();
-                        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.InvoiceID, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID, b.InvoiceID,b.Deliverydate,b.DeliveryLocation,b.TransportName,b.BillingName   , b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", id1, id1);
                         SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                         SDA.Fill(ds);
 
                         StiReport report = new StiReport();
-                        report.Load(@"Report.mrt");
+                        report.Load(@"SaleReport.mrt");
 
                         report.Compile();
                         StiPage page = report.Pages[0];
-                        report.RegData("Saleinvoice1", "Saleinvoice1", ds.Tables[0]);
+                        report.RegData("SaleInvoice", "SaleInvoice", ds.Tables[0]);
 
                         report.Dictionary.Synchronize();
                         report.Render();
