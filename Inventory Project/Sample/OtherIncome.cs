@@ -123,8 +123,8 @@ namespace sample
                     cmd = new SqlCommand("tbl_OtherIncomeInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                     cmd.Parameters.AddWithValue("@ID2",txtReturnNo.Text);
-                    //cmd.Parameters.AddWithValue("@Id1",ddd);
+                     cmd.Parameters.AddWithValue("@Id_inner",txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@Id", txtReturnNo.Text);
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
                 
@@ -156,7 +156,7 @@ namespace sample
                 cmd = new SqlCommand("tbl_OtherIncomeSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
-               cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+               cmd.Parameters.AddWithValue("@Id", txtReturnNo.Text);
               //  cmd.Parameters.AddWithValue("@Id1",ddd);
                 cmd.Parameters.AddWithValue("@IncomeCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
@@ -169,8 +169,8 @@ namespace sample
                 //cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status",ComboBox.Text);
                 //cmd.Parameters.AddWithValue("@TableName", Income.Text);
-             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Other Income Record Added");
                // MessageBox.Show("dfhfhfhh"+id1);
             }
@@ -189,13 +189,13 @@ namespace sample
         {
             insertdata();
             bind_sale_details();
+            get_id();
             clear_text_data();
             cleardata();
         }
 
         private void txtitemamount_KeyDown(object sender, KeyEventArgs e)
         {
-            
             try {
                 if (e.KeyCode == Keys.Enter) {
                     float TA = 0, TD = 0, TGST = 0;
@@ -225,12 +225,13 @@ namespace sample
                         txtTotal.Text = TA.ToString();
 
                     }
-                    clear_text_data();
+                    //clear_text_data();
                 }
             }
             catch (Exception e1) {
                 //string message = e1.Message;
             }
+            //clear_text_data();
         }
         private void clear_text_data()
         {
@@ -302,7 +303,7 @@ namespace sample
 
 
 
-                string str1 = string.Format("SELECT * FROM tbl_OtherIncomeInner3 where ID2='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT * FROM tbl_OtherIncomeInner3 where Id='{0}' and Company_ID='" + NewCompany.company_id + "'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -340,7 +341,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_OtherIncomeInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", id1);
+                    cmd.Parameters.AddWithValue("@Id", txtReturnNo.Text);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -367,7 +368,7 @@ namespace sample
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_OtherIncomeSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+                cmd.Parameters.AddWithValue("@Id", txtReturnNo.Text);
                 cmd.Parameters.AddWithValue("@IncomeCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtdescritpition.Text);
@@ -527,8 +528,7 @@ namespace sample
 
         private void txtBalance_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-          (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&  (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -551,26 +551,6 @@ namespace sample
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbexpenses_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -590,23 +570,6 @@ namespace sample
             clear_text_data();
             
         }
-
-        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-         
-        }
-
-        private void txtReturnNo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtitemamount_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvinnerexpenses_DoubleClick(object sender, EventArgs e)
         {
             txtItem.Text = this.dgvinnerexpenses.CurrentRow.Cells[1].Value.ToString();
@@ -624,5 +587,6 @@ namespace sample
         {
 
         }
+   
     }
 }
