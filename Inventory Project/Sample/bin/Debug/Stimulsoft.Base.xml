@@ -4,78 +4,6 @@
         <name>Stimulsoft.Base</name>
     </assembly>
     <members>
-        <member name="P:Stimulsoft.Base.Context.StiTextGeom.IsRounded">
-            <summary>
-            Special flag which simulate drawing as for Rectangle
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Base.StiBaseOptions">
-            <summary>
-            Class for adjustment aspects of Stimulsoft Reports.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Base.StiUndefinedType">
-            <summary>
-            Class describes a special class wrapper for the undefined type.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Base.StiUndefinedType.#ctor(System.String)">
-            <summary>
-            Creates a new instance of the StiUndefinedType class.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.StiUndefinedType.Type">
-            <summary>
-            Gets or sets the string representation of the type.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Base.Localization.StiNullableEnumConverter">
-            <summary>
-            Provides a type converter to convert Enum objects to and from various other representations.
-            </summary>
-        </member>
-        <member name="T:Stimulsoft.Base.StiFileVersions">
-            <summary>
-            Contains report files version constants.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Base.StiConvert.IsNullableType(System.Type)">
-            <summary>
-            Internal use only.
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Base.StiConvert.ChangeType(System.Object,System.Type)">
-            <summary>
-            Changes a type of the specified value. 
-            </summary>
-            <param name="value">A parameter which type will be changed.</param>
-            <param name="conversionType">A type to which the value parameter will be converted.</param>
-            <returns>Returns a value of the converted type.</returns>
-        </member>
-        <member name="M:Stimulsoft.Base.StiConvert.ChangeType(System.Object,System.Type,System.Boolean)">
-            <summary>
-            Changes a type of the specified value. 
-            </summary>
-            <param name="value">A parameter which type will be changed.</param>
-            <param name="conversionType">A type to which the value parameter will be converted.</param>
-            <param name="convertNulls">A parameter which, when converting zero values, instead of null, returns String.Empty, false for Boolean, ' ' for char or null for DateTime.</param>
-            <returns>Returns a value of the converted type.</returns>
-        </member>
-        <member name="T:Stimulsoft.Base.Design.StiPropertyLevelAttribute">
-            <summary>
-            Attribute provide information about level of property
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Base.Design.StiPropertyLevelAttribute.#ctor">
-            <summary>
-            Creates a new object of the type StiPropertyLevelAttribute. 
-            </summary>
-        </member>
-        <member name="M:Stimulsoft.Base.Design.StiPropertyLevelAttribute.#ctor(Stimulsoft.Base.StiLevel)">
-            <summary>
-            Creates a new object of the type StiPropertyLevelAttribute. 
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Base.Design.StiProcessDescriptionEventHandler">
             <summary>
             Represents the method that handles the StiProcessDescriptionEvent.
@@ -357,11 +285,6 @@
             <summary>
             Class describes the panel of properties StiPropertyGrid.
             </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Design.StiPropertiesTab.ShowAllPropertiesInWpf">
-            <summary>
-            This property let to show in WPF designer properties of components, which unavailable in WPF.
-            </summary>            
         </member>
         <member name="T:Stimulsoft.Base.Design.StiPropertyGrid">
             <summary>
@@ -1125,15 +1048,6 @@
             <param name="zoom">The scale of a border to draw.</param>
             <param name="emptyColor">The color of space between double lines (used only when border style equal Double).</param>
         </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiBorder.Draw(System.Drawing.Graphics,System.Drawing.RectangleF,System.Single,System.Drawing.Color,System.Boolean,System.Boolean)">
-            <summary>
-            Draws this border on the indicated Graphics.
-            </summary>
-            <param name="g">Graphics on which a border can be drawn.</param>
-            <param name="rect">The rectangle that indicates an area of the border drawing.</param>
-            <param name="zoom">The scale of a border to draw.</param>
-            <param name="emptyColor">The color of space between double lines (used only when border style equal Double).</param>
-        </member>
         <member name="M:Stimulsoft.Base.Drawing.StiBorder.DrawBorderShadow(System.Drawing.Graphics,System.Drawing.RectangleF,System.Single)">
             <summary>
             Draws shadow on the indicated Graphics.
@@ -1167,19 +1081,6 @@
             <param name="dropShadow">Drop shadow or not.</param>
             <param name="shadowSize">Shadow size.</param>
             <param name="shadowBrush">Brush for drawing shadow of border.</param>
-        </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiBorder.#ctor(Stimulsoft.Base.Drawing.StiBorderSides,System.Drawing.Color,System.Double,Stimulsoft.Base.Drawing.StiPenStyle,System.Boolean,System.Double,Stimulsoft.Base.Drawing.StiBrush,System.Boolean)">
-            <summary>
-            Creates a new instance of the StiBorder class.
-            </summary>
-            <param name="side">Border sides.</param>
-            <param name="color">Border color.</param>
-            <param name="size">Border size.</param>
-            <param name="style">Border style.</param>
-            <param name="dropShadow">Drop shadow or not.</param>
-            <param name="shadowSize">Shadow size.</param>
-            <param name="shadowBrush">Brush for drawing shadow of border.</param>
-            <param name="topmost">Value which indicates that border sides will be drawn on top of all components.</param>
         </member>
         <member name="P:Stimulsoft.Base.Drawing.StiBorder.IsTopBorderSidePresent">
             <summary>
@@ -1241,11 +1142,6 @@
             Gets or sets value which indicates drop shadow or not.
             </summary>
         </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiBorder.Topmost">
-            <summary>
-            Gets or sets value which indicates that border sides will be drawn on top of all components.
-            </summary>
-        </member>
         <member name="P:Stimulsoft.Base.Drawing.StiBorder.IsDefault">
             <summary>
             Gets value indicates, that this object-frame is by default.
@@ -1263,7 +1159,7 @@
             </summary>
             <returns>A new object that is a copy of this instance.</returns>
         </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiAdvancedBorder.Draw(System.Drawing.Graphics,System.Drawing.RectangleF,System.Single,System.Drawing.Color,System.Boolean,System.Boolean)">
+        <member name="M:Stimulsoft.Base.Drawing.StiAdvancedBorder.Draw(System.Drawing.Graphics,System.Drawing.RectangleF,System.Single,System.Drawing.Color)">
             <summary>
             Draws this border on the indicated Graphics.
             </summary>
@@ -1282,11 +1178,6 @@
             Creates a new instance of the StiAdvancedBorder class.
             </summary>
         </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiAdvancedBorder.#ctor(System.Drawing.Color,System.Double,Stimulsoft.Base.Drawing.StiPenStyle,System.Drawing.Color,System.Double,Stimulsoft.Base.Drawing.StiPenStyle,System.Drawing.Color,System.Double,Stimulsoft.Base.Drawing.StiPenStyle,System.Drawing.Color,System.Double,Stimulsoft.Base.Drawing.StiPenStyle,System.Boolean,System.Double,Stimulsoft.Base.Drawing.StiBrush,System.Boolean)">
-            <summary>
-            Creates a new instance of the StiAdvancedBorder class.
-            </summary>
-        </member>
         <member name="M:Stimulsoft.Base.Drawing.StiAdvancedBorder.#ctor(Stimulsoft.Base.Drawing.StiBorderSide,Stimulsoft.Base.Drawing.StiBorderSide,Stimulsoft.Base.Drawing.StiBorderSide,Stimulsoft.Base.Drawing.StiBorderSide,System.Boolean,System.Double,Stimulsoft.Base.Drawing.StiBrush)">
             <summary>
             Creates a new instance of the StiAdvancedBorder class.
@@ -1298,19 +1189,6 @@
             <param name="dropShadow">Drop shadow or not.</param>
             <param name="shadowSize">Shadow siz.</param>
             <param name="shadowBrush">Brush for drawing shadow of border.</param>
-        </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiAdvancedBorder.#ctor(Stimulsoft.Base.Drawing.StiBorderSide,Stimulsoft.Base.Drawing.StiBorderSide,Stimulsoft.Base.Drawing.StiBorderSide,Stimulsoft.Base.Drawing.StiBorderSide,System.Boolean,System.Double,Stimulsoft.Base.Drawing.StiBrush,System.Boolean)">
-            <summary>
-            Creates a new instance of the StiAdvancedBorder class.
-            </summary>
-            <param name="topSide">Top side of border.</param>
-            <param name="bottomSide">Bottom side of border.</param>
-            <param name="leftSide">Left side of border.</param>
-            <param name="rightSide">Right side of border.</param>
-            <param name="dropShadow">Drop shadow or not.</param>
-            <param name="shadowSize">Shadow siz.</param>
-            <param name="shadowBrush">Brush for drawing shadow of border.</param>
-            <param name="topmost">Value which indicates that border sides will be drawn on top of all components.</param>
         </member>
         <member name="P:Stimulsoft.Base.Drawing.StiAdvancedBorder.LeftSide">
             <summary>
@@ -1383,14 +1261,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Base.Drawing.StiAlignHelper.AlignToGrid(System.Drawing.Rectangle,System.Int32,System.Boolean)">
-            <summary>
-            Align the rectangle to grid.
-            </summary>
-            <param name="gridSize">Grid size.</param>
-            <param name="aligningToGrid">Align or no.</param>
-            <returns>Aligned rectangle.</returns>
-        </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiAlignHelper.AlignToGrid(Stimulsoft.Base.Drawing.RectangleD,System.Double,System.Boolean)">
             <summary>
             Align the rectangle to grid.
             </summary>
@@ -1737,21 +1607,6 @@
             <param name="state">Specifies the state of an item that is being drawn.</param>
         </member>
         <member name="M:Stimulsoft.Base.Drawing.StiControlPaint.DrawItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.DrawItemState,System.String,System.Windows.Forms.ImageList,System.Int32,System.Drawing.Font,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Windows.Forms.RightToLeft)">
-            <summary>
-            Draws a list item.
-            </summary>
-            <param name="graphics">The Graphics object to draw on.</param>
-            <param name="bounds">The bounds that represents the dimensions of the item rectangle.</param>
-            <param name="state">Specifies the state of an item that is being drawn.</param>
-            <param name="text">The Text of the item.</param>
-            <param name="imageList">Specifies the ImageList of an item.</param>
-            <param name="imageIndex">Specifies the ImageIndex of an item.</param>
-            <param name="font">The Font to draw the item. </param>
-            <param name="color">The Color to draw the string with.</param>
-            <param name="textStartPos">The Position for draws of the text.</param>
-            <param name="rightToLeft">Specifies that text is right to left.</param>
-        </member>
-        <member name="M:Stimulsoft.Base.Drawing.StiControlPaint.DrawItem(System.Drawing.Graphics,System.Drawing.Rectangle,System.Windows.Forms.DrawItemState,System.String,System.Windows.Forms.ImageList,System.Int32,System.Drawing.Font,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Windows.Forms.RightToLeft,System.Drawing.StringAlignment)">
             <summary>
             Draws a list item.
             </summary>
@@ -2406,11 +2261,6 @@
             <param name="ha">Horizontal alignment.</param>
             <param name="va">Vertical alignment.</param>
         </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextDrawing.MeasureTrailingSpaces">
-            <summary>
-            Gets or sets value which indicates that text drawing engine will be measure text string including trailing spaces.
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Base.Drawing.StiTextDrawing.StiRange">
             <summary>
             Structure describes the range.
@@ -2584,38 +2434,6 @@
             </summary>
             <param name="c">Input Color</param>
             <returns>Result GDI Color</returns>
-        </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextRenderer.PrecisionModeFactor">
-            <summary>
-            Obsolete
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextRenderer.PrecisionModeEnabled">
-            <summary>
-            Obsolete
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextRenderer.CorrectionEnabled">
-            <summary>
-            Enable the inter-character distance correction
-            Can cause exception on some systems or fonts
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextRenderer.Compatibility2009">
-            <summary>
-            Enable text scaling mode as in the 2009.1 version.
-            For backward compatibility 
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextRenderer.OptimizeBottomMargin">
-            <summary>
-            Optimize the bottom margin of the text
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Drawing.StiTextRenderer.InterpreteFontSizeInHtmlTagsAsInHtml">
-            <summary>
-            Interprete the FontSize attribute in the Html-tags as in Html
-            </summary>
         </member>
         <member name="T:Stimulsoft.Base.Drawing.StiTextRenderer.TextFormatFlags">
             <summary>
@@ -5338,7 +5156,7 @@
         </member>
         <member name="T:Stimulsoft.Report.Engine.StiEngineVersion">
             <summary>
-            A type of the report engine core.
+            Languages of the report.
             </summary>
         </member>
         <member name="M:Stimulsoft.Report.Engine.IStiReportProperty.GetReport">
@@ -5626,26 +5444,6 @@
             EOF Token.
             </summary>
         </member>
-        <member name="T:Stimulsoft.Base.StiLevel">
-            <summary>
-            Enums provides levels of access to property.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Base.StiLevel.Basic">
-            <summary>
-            Minimal level of properties access. Only principal properties of components.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Base.StiLevel.Standard">
-            <summary>
-            Standard level of properties access. All properties available except rarely used properties.
-            </summary>
-        </member>
-        <member name="F:Stimulsoft.Base.StiLevel.Professional">
-            <summary>
-            Professional level of properties access. All properties available.
-            </summary>
-        </member>
         <member name="T:Stimulsoft.Base.Localization.StiBoolConverter">
             <summary>
             Provides a type converter to convert Boolean objects to and from various other representations.
@@ -5715,11 +5513,6 @@
             </summary>
         </member>
         <member name="P:Stimulsoft.Base.Localization.StiLocalization.CultureName">
-            <summary>
-            Gets or sets the name of the culture of the localization.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.Localization.StiLocalization.BlockLocalizationExceptions">
             <summary>
             Gets or sets the name of the culture of the localization.
             </summary>
@@ -6008,11 +5801,6 @@
             Collection for serialization/deserialization.
             </summary>
         </member>
-        <member name="F:Stimulsoft.Base.Serializing.StiSerializing.propertyNameHashtable">
-            <summary>
-            A collection which used for conversation of the name of property to correct name of property.
-            </summary>
-        </member>
         <member name="F:Stimulsoft.Base.Serializing.StiSerializing.References">
             <summary>
             Collection of references for delayed serialization/deserialization.
@@ -6173,7 +5961,7 @@
             <param name="obj">Object for deserialization.</param>
             <param name="props">List contains objects.</param>
         </member>
-        <member name="M:Stimulsoft.Base.Serializing.StiSerializing.DeserializeObject(System.Xml.XmlTextReader,System.String)">
+        <member name="M:Stimulsoft.Base.Serializing.StiSerializing.DeserializeObject(System.Xml.XmlTextReader)">
             <summary>
             Deserilizes object from XML.
             </summary>
@@ -6224,11 +6012,6 @@
             Creates a new instance of the StiSerializing class.
             </summary>
             <param name="converter">Converter for tranformation of objects into the string and back.</param>
-        </member>
-        <member name="P:Stimulsoft.Base.Serializing.StiSerializing.AllowFixOldChartTitle">
-            <summary>
-            Gets or sets value which indicates that bug with loading old charts (without Direction property) will be fixed during loading of report.
-            </summary>
         </member>
         <member name="P:Stimulsoft.Base.Serializing.StiSerializing.SortProperties">
             <summary>
@@ -6412,12 +6195,6 @@
             </summary>
         </member>
         <member name="M:Stimulsoft.Base.Services.StiServiceContainer.Add(Stimulsoft.Base.Services.StiService)">
-            <summary>
-            Adds service to the container.
-            </summary>
-            <param name="service">Service.</param>
-        </member>
-        <member name="M:Stimulsoft.Base.Services.StiServiceContainer.Add(Stimulsoft.Base.Services.StiService,System.Boolean)">
             <summary>
             Adds service to the container.
             </summary>
@@ -6646,11 +6423,6 @@
             Helps to compile scripts.
             </summary>
         </member>
-        <member name="F:Stimulsoft.Base.StiCompiler.AssemblyVersion">
-            <summary>
-            An string of the version which will be used for compiled assembly. Example: 3.2.0.0
-            </summary>
-        </member>
         <!-- Badly formed XML comment ignored for member "M:Stimulsoft.Base.StiCompiler.Compile(System.String,System.String,Stimulsoft.Base.StiCompiler.LanguageType,Stimulsoft.Base.StiOutputType,System.String[])" -->
         <!-- Badly formed XML comment ignored for member "M:Stimulsoft.Base.StiCompiler.Compile(System.String,System.String,Stimulsoft.Base.StiCompiler.LanguageType,Stimulsoft.Base.StiOutputType,System.String[],System.Collections.Generic.List{System.String})" -->
         <member name="F:Stimulsoft.Base.StiCompiler.LanguageType.CSharp">
@@ -6809,6 +6581,16 @@
             Reset state.
             </summary>
         </member>
+        <member name="M:Stimulsoft.Base.StiLexer.Replace(System.String,System.String,System.String)">
+            <summary>
+            Replaces all occurrences of a specified string, with another specified string.
+            Replacing is produced with provision for tokens.
+            </summary>
+            <param name="textValue">Text for replace.</param>
+            <param name="oldValue">A String to be replaced.</param>
+            <param name="newValue">A String to replace all occurrences of oldValue.</param>
+            <returns>Replaced string.</returns>
+        </member>
         <member name="M:Stimulsoft.Base.StiLexer.ReplaceWithPrefix(System.String,System.String,System.String,System.String)">
             <summary>
             Replaces all occurrences of a specified String, with another specified String.
@@ -6842,6 +6624,14 @@
             <param name="newValue">A String to replace all occurrences of oldValue.</param>
             <returns>Replaced string.</returns>
         </member>
+        <member name="M:Stimulsoft.Base.StiLexer.Replace(System.String,System.String)">
+            <summary>
+            Replaces all occurrences of a specified String, with another specified string.
+            Replacing is produced with provision for tokens.
+            </summary>
+            <param name="oldValue">A String to be replaced.</param>
+            <param name="newValue">A String to replace all occurrences of oldValue.</param>
+        </member>
         <member name="M:Stimulsoft.Base.StiLexer.#ctor(System.String)">
             <summary>
             Creates a new instance of the StiLexer class.
@@ -6849,11 +6639,6 @@
             <param name="textValue">The Text for lexical analysis.</param>
         </member>
         <member name="P:Stimulsoft.Base.StiLexer.Text">
-            <summary>
-            Gets or sets text for analys.
-            </summary>
-        </member>
-        <member name="P:Stimulsoft.Base.StiLexer.BaseText">
             <summary>
             Gets or sets text for analys.
             </summary>
