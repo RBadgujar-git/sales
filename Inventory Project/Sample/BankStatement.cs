@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 namespace sample
 {
     public partial class BankStatement : UserControl
@@ -62,6 +64,40 @@ namespace sample
                     MessageBox.Show(e1.Message);
                 }
             }
+
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select Company_ID,BillDate, BillNo, PartyName, PaymentType, Total, Paid, RemainingBal, Status from tbl_PurchaseBill where Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'");
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"PurchaseBillData.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("PurchaseBillData", "PurchaseBillData", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvbankStatement_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
