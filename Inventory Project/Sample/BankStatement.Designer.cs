@@ -74,6 +74,7 @@
             this.cmbbankname.Size = new System.Drawing.Size(140, 36);
             this.cmbbankname.StartIndex = 0;
             this.cmbbankname.TabIndex = 0;
+            this.cmbbankname.SelectedIndexChanged += new System.EventHandler(this.cmbbankname_SelectedIndexChanged);
             // 
             // label5
             // 
