@@ -605,6 +605,10 @@ namespace sample
         {
 
         }
-   
+
+        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

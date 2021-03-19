@@ -144,6 +144,7 @@ namespace sample
             ComboBox.Text = "";
             Expences.Text = "";
 
+
         }
      
         private void insertdata()
@@ -328,6 +329,7 @@ namespace sample
             get_id();
             cleardata();
             clear_text_data();
+            dgvinnerexpenses.Rows.Clear();
         }
     
     private void update_record_inner(string p)
@@ -650,6 +652,10 @@ namespace sample
             txtBalance.Text = "0";
             ComboBox.Text = "";
         }
-       
+
+        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

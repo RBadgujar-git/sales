@@ -46,6 +46,18 @@
             this.label17 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvInnerQuotation = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -107,18 +119,6 @@
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerQuotation)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -151,8 +151,10 @@
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(80, 24);
-            this.txtItemTotal.TabIndex = 10;
+            this.txtItemTotal.TabIndex = 17;
+            this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
+            this.txtItemTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemTotal_KeyPress);
             // 
             // txtDisAmt
             // 
@@ -179,7 +181,8 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(80, 24);
-            this.txtDisAmt.TabIndex = 0;
+            this.txtDisAmt.TabIndex = 15;
+            this.txtDisAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisAmt_KeyPress);
             // 
             // txtDis
             // 
@@ -206,7 +209,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(80, 24);
-            this.txtDis.TabIndex = 7;
+            this.txtDis.TabIndex = 11;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
             // 
@@ -253,7 +256,8 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(80, 24);
-            this.txtTaxAMount1.TabIndex = 0;
+            this.txtTaxAMount1.TabIndex = 16;
+            this.txtTaxAMount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxAMount1_KeyPress);
             // 
             // button3
             // 
@@ -267,7 +271,7 @@
             this.button3.Location = new System.Drawing.Point(985, 7);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 345;
+            this.button3.TabIndex = 0;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -368,7 +372,7 @@
             this.btnSave.Location = new System.Drawing.Point(293, 564);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 15;
+            this.btnSave.TabIndex = 24;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -419,7 +423,7 @@
             this.dgvInnerQuotation.RowHeadersVisible = false;
             this.dgvInnerQuotation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvInnerQuotation.Size = new System.Drawing.Size(990, 125);
-            this.dgvInnerQuotation.TabIndex = 46;
+            this.dgvInnerQuotation.TabIndex = 18;
             this.dgvInnerQuotation.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvInnerQuotation.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvInnerQuotation.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -442,7 +446,89 @@
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.Height = 22;
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvInnerQuotation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerQuotation_CellContentClick);
             this.dgvInnerQuotation.DoubleClick += new System.EventHandler(this.dgvInnerQuotation_DoubleClick);
+            // 
+            // sr_no
+            // 
+            this.sr_no.HeaderText = "sr_no";
+            this.sr_no.Name = "sr_no";
+            // 
+            // txtItem
+            // 
+            this.txtItem.DataPropertyName = "ItemName";
+            this.txtItem.HeaderText = "Item";
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Item_Code
+            // 
+            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Item_Code.DataPropertyName = "ItemCode";
+            this.Item_Code.HeaderText = "Item Code";
+            this.Item_Code.MinimumWidth = 50;
+            this.Item_Code.Name = "Item_Code";
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "BasicUnit";
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // MRP
+            // 
+            this.MRP.DataPropertyName = "SalePrice";
+            this.MRP.HeaderText = "MRP";
+            this.MRP.Name = "MRP";
+            // 
+            // Discount
+            // 
+            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Discount.DataPropertyName = "TaxforSale";
+            this.Discount.HeaderText = "Discount";
+            this.Discount.Name = "Discount";
+            this.Discount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Tax
+            // 
+            this.Tax.DataPropertyName = "Discount";
+            this.Tax.HeaderText = "Tax%";
+            this.Tax.Name = "Tax";
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // FreeQty
+            // 
+            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FreeQty.DataPropertyName = "FreeQty";
+            this.FreeQty.HeaderText = "Free Qty";
+            this.FreeQty.Name = "FreeQty";
+            // 
+            // Tax_Amount
+            // 
+            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
+            this.Tax_Amount.HeaderText = "Tax Amount";
+            this.Tax_Amount.Name = "Tax_Amount";
+            // 
+            // Discount_Amount
+            // 
+            this.Discount_Amount.DataPropertyName = "DiscountAmount";
+            this.Discount_Amount.HeaderText = "Discount Amount";
+            this.Discount_Amount.Name = "Discount_Amount";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "ItemAmount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
             // 
             // label20
             // 
@@ -495,7 +581,7 @@
             this.label2.Location = new System.Drawing.Point(52, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Party Name :";
             // 
             // panel3
@@ -527,7 +613,7 @@
             this.btnminimize.Location = new System.Drawing.Point(953, 6);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 790;
+            this.btnminimize.TabIndex = 0;
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
@@ -543,7 +629,7 @@
             this.button4.Location = new System.Drawing.Point(885, 1);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(31, 34);
-            this.button4.TabIndex = 456;
+            this.button4.TabIndex = 0;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -554,7 +640,7 @@
             this.label26.Location = new System.Drawing.Point(419, 12);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(182, 18);
-            this.label26.TabIndex = 73;
+            this.label26.TabIndex = 0;
             this.label26.Text = "Estimate/Quotation";
             // 
             // button2
@@ -569,7 +655,7 @@
             this.button2.Location = new System.Drawing.Point(922, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 789;
+            this.button2.TabIndex = 0;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -578,7 +664,7 @@
             this.Quatation.Location = new System.Drawing.Point(119, 11);
             this.Quatation.Name = "Quatation";
             this.Quatation.Size = new System.Drawing.Size(107, 23);
-            this.Quatation.TabIndex = 646;
+            this.Quatation.TabIndex = 0;
             this.Quatation.Text = "Estimate";
             this.Quatation.Visible = false;
             // 
@@ -588,7 +674,7 @@
             this.label4.Location = new System.Drawing.Point(33, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 16);
-            this.label4.TabIndex = 115;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Estimate :";
             this.label4.Visible = false;
             // 
@@ -680,7 +766,7 @@
             this.ComboBox.Location = new System.Drawing.Point(917, 547);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(89, 24);
-            this.ComboBox.TabIndex = 14;
+            this.ComboBox.TabIndex = 23;
             // 
             // cmbtax
             // 
@@ -699,7 +785,7 @@
             this.cmbtax.Location = new System.Drawing.Point(649, 465);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(85, 24);
-            this.cmbtax.TabIndex = 13;
+            this.cmbtax.TabIndex = 21;
             this.cmbtax.Text = "0";
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged_1);
             this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
@@ -761,7 +847,7 @@
             this.cmbCategory.Location = new System.Drawing.Point(819, 123);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(163, 24);
-            this.cmbCategory.TabIndex = 124;
+            this.cmbCategory.TabIndex = 4;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged_1);
             // 
             // cmbStatesupply
@@ -821,7 +907,7 @@
             this.Print.Location = new System.Drawing.Point(497, 563);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 17;
+            this.Print.TabIndex = 26;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -834,7 +920,7 @@
             this.Clear.Location = new System.Drawing.Point(598, 562);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 18;
+            this.Clear.TabIndex = 26;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -899,6 +985,7 @@
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(90, 24);
             this.txtsubtotal.TabIndex = 0;
+            this.txtsubtotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsubtotal_KeyPress);
             // 
             // btnUpdate
             // 
@@ -908,7 +995,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(395, 563);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.TabIndex = 25;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -1062,7 +1149,7 @@
             this.txtItemName.Location = new System.Drawing.Point(19, 48);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(99, 22);
-            this.txtItemName.TabIndex = 6;
+            this.txtItemName.TabIndex = 7;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
@@ -1091,8 +1178,9 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(80, 24);
-            this.txtTax1.TabIndex = 0;
+            this.txtTax1.TabIndex = 12;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
+            this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
             // 
             // label30
             // 
@@ -1127,8 +1215,9 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(80, 24);
-            this.txtMRP.TabIndex = 0;
+            this.txtMRP.TabIndex = 10;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
+            this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
             // label29
             // 
@@ -1162,7 +1251,8 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(80, 24);
-            this.txtUnit.TabIndex = 0;
+            this.txtUnit.TabIndex = 9;
+            this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
             // 
@@ -1198,7 +1288,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(80, 24);
-            this.txtFreeQty.TabIndex = 9;
+            this.txtFreeQty.TabIndex = 14;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
             // 
@@ -1234,7 +1324,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(85, 24);
-            this.txtItemCode.TabIndex = 0;
+            this.txtItemCode.TabIndex = 8;
             this.txtItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemCode_KeyPress);
             // 
             // label21
@@ -1280,7 +1370,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(80, 24);
-            this.txtOty.TabIndex = 8;
+            this.txtOty.TabIndex = 13;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -1303,7 +1393,7 @@
             this.chkRoundOff.Location = new System.Drawing.Point(651, 516);
             this.chkRoundOff.Name = "chkRoundOff";
             this.chkRoundOff.Size = new System.Drawing.Size(103, 20);
-            this.chkRoundOff.TabIndex = 13;
+            this.chkRoundOff.TabIndex = 22;
             this.chkRoundOff.Text = "Round OFF ";
             this.chkRoundOff.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkRoundOff.UncheckedState.BorderRadius = 0;
@@ -1344,7 +1434,7 @@
             // 
             this.txtRoundup.BorderColor = System.Drawing.Color.Gray;
             this.txtRoundup.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRoundup.DefaultText = "";
+            this.txtRoundup.DefaultText = "0";
             this.txtRoundup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtRoundup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtRoundup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1361,10 +1451,12 @@
             this.txtRoundup.PasswordChar = '\0';
             this.txtRoundup.PlaceholderText = "";
             this.txtRoundup.SelectedText = "";
+            this.txtRoundup.SelectionStart = 1;
             this.txtRoundup.ShadowDecoration.Parent = this.txtRoundup;
             this.txtRoundup.Size = new System.Drawing.Size(88, 24);
             this.txtRoundup.TabIndex = 0;
             this.txtRoundup.TextChanged += new System.EventHandler(this.txtRoundup_TextChanged);
+            this.txtRoundup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRoundup_KeyPress);
             // 
             // txtTaxAmount
             // 
@@ -1446,8 +1538,9 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(90, 24);
-            this.txtDiscount.TabIndex = 12;
+            this.txtDiscount.TabIndex = 20;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
+            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
             // txtDescription
             // 
@@ -1473,88 +1566,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(163, 54);
-            this.txtDescription.TabIndex = 11;
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "ItemAmount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            // 
-            // Discount_Amount
-            // 
-            this.Discount_Amount.DataPropertyName = "DiscountAmount";
-            this.Discount_Amount.HeaderText = "Discount Amount";
-            this.Discount_Amount.Name = "Discount_Amount";
-            // 
-            // Tax_Amount
-            // 
-            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
-            this.Tax_Amount.HeaderText = "Tax Amount";
-            this.Tax_Amount.Name = "Tax_Amount";
-            // 
-            // FreeQty
-            // 
-            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FreeQty.DataPropertyName = "FreeQty";
-            this.FreeQty.HeaderText = "Free Qty";
-            this.FreeQty.Name = "FreeQty";
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Qty.DataPropertyName = "Qty";
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // Tax
-            // 
-            this.Tax.DataPropertyName = "Discount";
-            this.Tax.HeaderText = "Tax%";
-            this.Tax.Name = "Tax";
-            // 
-            // Discount
-            // 
-            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Discount.DataPropertyName = "TaxforSale";
-            this.Discount.HeaderText = "Discount";
-            this.Discount.Name = "Discount";
-            this.Discount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // MRP
-            // 
-            this.MRP.DataPropertyName = "SalePrice";
-            this.MRP.HeaderText = "MRP";
-            this.MRP.Name = "MRP";
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "BasicUnit";
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Item_Code
-            // 
-            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Item_Code.DataPropertyName = "ItemCode";
-            this.Item_Code.HeaderText = "Item Code";
-            this.Item_Code.MinimumWidth = 50;
-            this.Item_Code.Name = "Item_Code";
-            // 
-            // txtItem
-            // 
-            this.txtItem.DataPropertyName = "ItemName";
-            this.txtItem.HeaderText = "Item";
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // sr_no
-            // 
-            this.sr_no.HeaderText = "sr_no";
-            this.sr_no.Name = "sr_no";
+            this.txtDescription.TabIndex = 19;
             // 
             // Estimate_Quotation
             // 

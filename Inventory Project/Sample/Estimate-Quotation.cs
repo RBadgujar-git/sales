@@ -239,12 +239,7 @@ namespace sample
                 txtReturnNo.Focus();
 
             }
-            else if (cmbCategory.Text == "")
-            {
-                MessageBox.Show("Please Select Item Category ");
-               
-            }
-              else if (cmbStatesupply.Text == "")
+             else if (cmbStatesupply.Text == "")
             {
                 MessageBox.Show("Please Select State ");
             }
@@ -304,14 +299,14 @@ namespace sample
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
                 
 
-                if (cmbpartyname.Visible == true)
-                {
-                    cmd.Parameters.AddWithValue("@Itemcatgory", cmbCategory.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
-                }
+                //if (cmbpartyname.Visible == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@Itemcatgory", cmbCategory.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
+                //}
                
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
@@ -420,8 +415,7 @@ namespace sample
                 {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvInnerQuotation.Rows.Add();
-                    row = dgvInnerQuotation.Rows.Count 
-                        - 1;
+                    row = dgvInnerQuotation.Rows.Count - 2;
                     dgvInnerQuotation.Rows[row].Cells["sr_no"].Value = row + 1;
                     dgvInnerQuotation.CurrentCell = dgvInnerQuotation[1, row];
 
@@ -453,14 +447,13 @@ namespace sample
                     dgvInnerQuotation.Rows[row].Cells[11].Value = Total;
 
                     txtItemName.Focus();
-
-                    for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++)
+                    int count=Convert.ToInt32(dgvInnerQuotation.RowCount.ToString())-1;
+                    for (int i = 0; i < count; i++)
                     {
                         TA += float.Parse(dgvInnerQuotation.Rows[i].Cells["Amount"].Value?.ToString());
 
                         txtsubtotal.Text = TA.ToString();
                         txtTotal.Text = TA.ToString();
-
                     }
 
                 }
@@ -518,7 +511,8 @@ namespace sample
 
         private void update_record_inner(string id)
         {
-            for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++)
+            int count = Convert.ToInt32(dgvInnerQuotation.RowCount.ToString()) - 1;
+            for (int i = 0; i < count; i++)
             {
                 try
                 {
@@ -1184,17 +1178,25 @@ namespace sample
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
         {
+            int round = 0;
+
             if (chkRoundOff.Checked == false)
             {
-                txtTotal.Text = txtTotal.Text;      // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
+                txtTotal.Clear();
+                txtRoundup.Text = txtTotal.Text;            // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
             }
             else if (chkRoundOff.Checked == true)
             {
+                
+                txtRoundup.Text = txtTotal.Text;
                 txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
-            }
-            Math.Round(Convert.ToDouble(txtTotal.Text));
-        }
+                round = Convert.ToInt32(txtTotal.Text);
 
+                txtTotal.Text = round.ToString();
+            }
+            // Math.Round(Convert.ToDouble(txtTotal.Text));
+            
+        }
         private void dgvInnerQuotation_DoubleClick(object sender, EventArgs e)
         {
             txtItemName.Text = this.dgvInnerQuotation.CurrentRow.Cells[1].Value.ToString();
@@ -1246,6 +1248,125 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void txtItemTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtUnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTax1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDisAmt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTaxAMount1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtsubtotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtRoundup_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+          (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtItemTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvInnerQuotation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
