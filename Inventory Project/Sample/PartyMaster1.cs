@@ -158,11 +158,7 @@ namespace sample
                 MessageBox.Show("Email Id Is Requried ");
                 txtEmailID.Focus();
             }
-            else if (txtGSTType.Text == "")
-            {
-                MessageBox.Show("GST No Is Requried ");
-                txtGSTType.Focus();
-            }
+           
             else if (txtPartyType.Text == "")
             {
                 MessageBox.Show("Party Type Is Requried ");
@@ -311,9 +307,19 @@ namespace sample
             fetchdetails();
             Cleardata();
         }
-
+        public int gstint; 
         private void PartyMaster1_Load(object sender, EventArgs e)
         {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select Gst_In from Setting_Table where Company_ID="+NewCompany.company_id+" ",con);
+            gstint = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            if(gstint==1)
+            {
+                txtGSTType.Hide();
+                label6.Hide();
+            }
+
             fetchdetails();
             fetchgroup();
         }

@@ -36,8 +36,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.chkprintAmount = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.chkGoodsReturns = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkDeliveryChalln = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkOtherincome = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkSaleOrder = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -67,9 +65,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chkGoodsReturns = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.chkprintAmount = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
@@ -126,6 +130,7 @@
             this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
             // guna2Panel1
             // 
@@ -168,40 +173,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(84, 29);
             this.guna2Button1.TabIndex = 216;
             this.guna2Button1.Text = " + Add Firm";
-            // 
-            // chkprintAmount
-            // 
-            this.chkprintAmount.AutoSize = true;
-            this.chkprintAmount.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkprintAmount.CheckedState.BorderRadius = 0;
-            this.chkprintAmount.CheckedState.BorderThickness = 0;
-            this.chkprintAmount.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkprintAmount.Location = new System.Drawing.Point(101, 571);
-            this.chkprintAmount.Name = "chkprintAmount";
-            this.chkprintAmount.Size = new System.Drawing.Size(242, 20);
-            this.chkprintAmount.TabIndex = 218;
-            this.chkprintAmount.Text = "Print Amount in Delivery  Challan";
-            this.chkprintAmount.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkprintAmount.UncheckedState.BorderRadius = 0;
-            this.chkprintAmount.UncheckedState.BorderThickness = 0;
-            this.chkprintAmount.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // chkGoodsReturns
-            // 
-            this.chkGoodsReturns.AutoSize = true;
-            this.chkGoodsReturns.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkGoodsReturns.CheckedState.BorderRadius = 0;
-            this.chkGoodsReturns.CheckedState.BorderThickness = 0;
-            this.chkGoodsReturns.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkGoodsReturns.Location = new System.Drawing.Point(101, 528);
-            this.chkGoodsReturns.Name = "chkGoodsReturns";
-            this.chkGoodsReturns.Size = new System.Drawing.Size(252, 20);
-            this.chkGoodsReturns.TabIndex = 219;
-            this.chkGoodsReturns.Text = "Goods Returns on Delivery Challan";
-            this.chkGoodsReturns.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkGoodsReturns.UncheckedState.BorderRadius = 0;
-            this.chkGoodsReturns.UncheckedState.BorderThickness = 0;
-            this.chkGoodsReturns.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // chkDeliveryChalln
             // 
@@ -219,6 +191,7 @@
             this.chkDeliveryChalln.UncheckedState.BorderRadius = 0;
             this.chkDeliveryChalln.UncheckedState.BorderThickness = 0;
             this.chkDeliveryChalln.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkDeliveryChalln.CheckedChanged += new System.EventHandler(this.chkDeliveryChalln_CheckedChanged);
             // 
             // chkOtherincome
             // 
@@ -236,6 +209,7 @@
             this.chkOtherincome.UncheckedState.BorderRadius = 0;
             this.chkOtherincome.UncheckedState.BorderThickness = 0;
             this.chkOtherincome.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkOtherincome.CheckedChanged += new System.EventHandler(this.chkOtherincome_CheckedChanged);
             // 
             // chkSaleOrder
             // 
@@ -253,6 +227,7 @@
             this.chkSaleOrder.UncheckedState.BorderRadius = 0;
             this.chkSaleOrder.UncheckedState.BorderThickness = 0;
             this.chkSaleOrder.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSaleOrder.CheckedChanged += new System.EventHandler(this.chkSaleOrder_CheckedChanged);
             // 
             // chkEstimate
             // 
@@ -270,6 +245,7 @@
             this.chkEstimate.UncheckedState.BorderRadius = 0;
             this.chkEstimate.UncheckedState.BorderThickness = 0;
             this.chkEstimate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEstimate.CheckedChanged += new System.EventHandler(this.chkEstimate_CheckedChanged);
             // 
             // ChkGSTin
             // 
@@ -287,6 +263,7 @@
             this.ChkGSTin.UncheckedState.BorderRadius = 0;
             this.ChkGSTin.UncheckedState.BorderThickness = 0;
             this.ChkGSTin.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.ChkGSTin.CheckedChanged += new System.EventHandler(this.ChkGSTin_CheckedChanged);
             // 
             // chkEnableLaunch
             // 
@@ -304,6 +281,7 @@
             this.chkEnableLaunch.UncheckedState.BorderRadius = 0;
             this.chkEnableLaunch.UncheckedState.BorderThickness = 0;
             this.chkEnableLaunch.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEnableLaunch.CheckedChanged += new System.EventHandler(this.chkEnableLaunch_CheckedChanged);
             // 
             // chkEnablePassword
             // 
@@ -432,6 +410,7 @@
             this.chkAutoBackup.UncheckedState.BorderRadius = 0;
             this.chkAutoBackup.UncheckedState.BorderThickness = 0;
             this.chkAutoBackup.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkAutoBackup.CheckedChanged += new System.EventHandler(this.chkAutoBackup_CheckedChanged);
             // 
             // radiobtnFirmName
             // 
@@ -450,6 +429,7 @@
             this.radiobtnFirmName.UncheckedState.BorderThickness = 2;
             this.radiobtnFirmName.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.radiobtnFirmName.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.radiobtnFirmName.CheckedChanged += new System.EventHandler(this.radiobtnFirmName_CheckedChanged);
             // 
             // guna2Button4
             // 
@@ -602,12 +582,75 @@
             this.label11.Size = new System.Drawing.Size(24, 16);
             this.label11.TabIndex = 449;
             this.label11.Text = "00";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.chkGoodsReturns);
+            this.panel1.Controls.Add(this.chkprintAmount);
+            this.panel1.Location = new System.Drawing.Point(75, 516);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(292, 62);
+            this.panel1.TabIndex = 450;
+            // 
+            // chkGoodsReturns
+            // 
+            this.chkGoodsReturns.AutoSize = true;
+            this.chkGoodsReturns.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkGoodsReturns.CheckedState.BorderRadius = 0;
+            this.chkGoodsReturns.CheckedState.BorderThickness = 0;
+            this.chkGoodsReturns.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkGoodsReturns.Location = new System.Drawing.Point(3, 6);
+            this.chkGoodsReturns.Name = "chkGoodsReturns";
+            this.chkGoodsReturns.Size = new System.Drawing.Size(252, 20);
+            this.chkGoodsReturns.TabIndex = 221;
+            this.chkGoodsReturns.Text = "Goods Returns on Delivery Challan";
+            this.chkGoodsReturns.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkGoodsReturns.UncheckedState.BorderRadius = 0;
+            this.chkGoodsReturns.UncheckedState.BorderThickness = 0;
+            this.chkGoodsReturns.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // chkprintAmount
+            // 
+            this.chkprintAmount.AutoSize = true;
+            this.chkprintAmount.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkprintAmount.CheckedState.BorderRadius = 0;
+            this.chkprintAmount.CheckedState.BorderThickness = 0;
+            this.chkprintAmount.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkprintAmount.Location = new System.Drawing.Point(3, 36);
+            this.chkprintAmount.Name = "chkprintAmount";
+            this.chkprintAmount.Size = new System.Drawing.Size(242, 20);
+            this.chkprintAmount.TabIndex = 220;
+            this.chkprintAmount.Text = "Print Amount in Delivery  Challan";
+            this.chkprintAmount.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkprintAmount.UncheckedState.BorderRadius = 0;
+            this.chkprintAmount.UncheckedState.BorderThickness = 0;
+            this.chkprintAmount.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(-15, -15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 451;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(375, 106);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(238, 274);
+            this.panel2.TabIndex = 453;
             // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.NumericUpDown3);
@@ -637,8 +680,6 @@
             this.Controls.Add(this.chkSaleOrder);
             this.Controls.Add(this.chkOtherincome);
             this.Controls.Add(this.chkDeliveryChalln);
-            this.Controls.Add(this.chkGoodsReturns);
-            this.Controls.Add(this.chkprintAmount);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
@@ -651,9 +692,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Setting";
             this.Size = new System.Drawing.Size(1043, 633);
+            this.Load += new System.EventHandler(this.Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,8 +713,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CheckBox chkprintAmount;
-        private Guna.UI2.WinForms.Guna2CheckBox chkGoodsReturns;
         private Guna.UI2.WinForms.Guna2CheckBox chkDeliveryChalln;
         private Guna.UI2.WinForms.Guna2CheckBox chkOtherincome;
         private Guna.UI2.WinForms.Guna2CheckBox chkSaleOrder;
@@ -700,5 +742,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CheckBox chkGoodsReturns;
+        private Guna.UI2.WinForms.Guna2CheckBox chkprintAmount;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

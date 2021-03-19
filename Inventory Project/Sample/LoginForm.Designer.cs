@@ -28,52 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pass1 = new System.Windows.Forms.TextBox();
+            this.Pass2 = new System.Windows.Forms.TextBox();
+            this.pass3 = new System.Windows.Forms.TextBox();
+            this.Pass4 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // pass1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(21, 73);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 54);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pass1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass1.Location = new System.Drawing.Point(21, 73);
+            this.pass1.MaxLength = 1;
+            this.pass1.Multiline = true;
+            this.pass1.Name = "pass1";
+            this.pass1.PasswordChar = '*';
+            this.pass1.Size = new System.Drawing.Size(56, 54);
+            this.pass1.TabIndex = 1;
+            this.pass1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pass1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // Pass2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(87, 73);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(56, 54);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Pass2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.Pass2.Location = new System.Drawing.Point(87, 73);
+            this.Pass2.MaxLength = 1;
+            this.Pass2.Multiline = true;
+            this.Pass2.Name = "Pass2";
+            this.Pass2.PasswordChar = '*';
+            this.Pass2.Size = new System.Drawing.Size(56, 54);
+            this.Pass2.TabIndex = 2;
+            this.Pass2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Pass2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // pass3
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(157, 73);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(56, 54);
-            this.textBox3.TabIndex = 3;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pass3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.pass3.Location = new System.Drawing.Point(157, 73);
+            this.pass3.MaxLength = 1;
+            this.pass3.Multiline = true;
+            this.pass3.Name = "pass3";
+            this.pass3.PasswordChar = '*';
+            this.pass3.Size = new System.Drawing.Size(56, 54);
+            this.pass3.TabIndex = 3;
+            this.pass3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.pass3.TextChanged += new System.EventHandler(this.pass3_TextChanged);
             // 
-            // textBox4
+            // Pass4
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(231, 73);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(56, 54);
-            this.textBox4.TabIndex = 4;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Pass4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.Pass4.Location = new System.Drawing.Point(231, 73);
+            this.Pass4.MaxLength = 1;
+            this.Pass4.Multiline = true;
+            this.Pass4.Name = "Pass4";
+            this.Pass4.PasswordChar = '*';
+            this.Pass4.Size = new System.Drawing.Size(56, 54);
+            this.Pass4.TabIndex = 4;
+            this.Pass4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Pass4.TextChanged += new System.EventHandler(this.Pass4_TextChanged);
+            this.Pass4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pass4_KeyDown);
             // 
             // linkLabel1
             // 
@@ -85,19 +99,31 @@
             this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forget Password";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(25, 140);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 993;
+            this.label4.Text = "label4";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(310, 207);
+            this.ClientSize = new System.Drawing.Size(305, 207);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Pass4);
+            this.Controls.Add(this.pass3);
+            this.Controls.Add(this.Pass2);
+            this.Controls.Add(this.pass1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -108,10 +134,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox pass1;
+        private System.Windows.Forms.TextBox Pass2;
+        private System.Windows.Forms.TextBox pass3;
+        private System.Windows.Forms.TextBox Pass4;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label4;
     }
 }

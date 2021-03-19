@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace sample
 {
@@ -16,7 +17,9 @@ namespace sample
         {
             InitializeComponent();
         }
-
+        SqlCommand cmd;
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+    
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -190,8 +193,46 @@ namespace sample
             label4.Hide();
         }
 
+        public void insert()
+        {
+
+            try
+            {
+                if (NewCompany.company_id == null)
+                {
+                    MessageBox.Show("Please Select Company !");
+                }
+                else
+                {
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    string a1 = New1.Text.ToString() + New2.Text.ToString() + New3.Text.ToString() + New4.Text.ToString();
+                  //  MessageBox.Show("Data is " + a1);
+
+                    SqlCommand cmd = new SqlCommand("Sp_loginpassword", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@password", a1);
+                    cmd.Parameters.AddWithValue("@ComId", NewCompany.company_id);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Passcode Creted !");
+                    this.Close();
+                }
+            }
+            catch(Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+        }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+
+            
+            insert();
 
         }
     }

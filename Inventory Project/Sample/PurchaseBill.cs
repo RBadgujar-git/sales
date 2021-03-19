@@ -285,6 +285,9 @@ namespace sample
     
     private void get_id()
         {
+
+
+
             if (txtReturnNo.Text != "0" || txtReturnNo.Text != "") {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
                 // SqlConnection con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
@@ -481,13 +484,14 @@ namespace sample
                 }
                 string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
-            
+
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 // cmd.Parameters.AddWithValue("@Action", "Insert");
                 //cmd.Parameters.AddWithValue("@BillNo", txtReturnNo.Text);
                 // cmd.Parameters.AddWithValue("@InvoiceNo", .Text);
+
                 if (cmbpartyname.Visible == true)
                 {
                     cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
@@ -784,7 +788,9 @@ namespace sample
 
             cleardata();
             comboBox2.Visible = false;
+
             get_id();
+
             fetchcustomername();
             cmbpartyname.Visible = true;
 
@@ -1101,7 +1107,7 @@ namespace sample
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
-
+            
 
 
         }

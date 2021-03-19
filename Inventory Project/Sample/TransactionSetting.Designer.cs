@@ -154,6 +154,7 @@
             this.chkInvoiceBill.UncheckedState.BorderRadius = 0;
             this.chkInvoiceBill.UncheckedState.BorderThickness = 0;
             this.chkInvoiceBill.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkInvoiceBill.CheckedChanged += new System.EventHandler(this.chkInvoiceBill_CheckedChanged);
             // 
             // chkBillingname
             // 
