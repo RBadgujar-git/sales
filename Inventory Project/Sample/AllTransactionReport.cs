@@ -131,7 +131,7 @@ namespace sample
             try
             {
 
-                string Query = string.Format("(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as Receievd'/'Paid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as Receievd'/'Paid,RemainingBal,Status from tbl_PurchaseOrder)union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_SaleInvoice )union all(select TableName,PartyName,OrderDate as Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from  tbl_SaleOrder ) Where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmballfrims.Text);
+                string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrder)union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice )union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder ) Where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmballfrims.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -142,7 +142,7 @@ namespace sample
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
         }
 

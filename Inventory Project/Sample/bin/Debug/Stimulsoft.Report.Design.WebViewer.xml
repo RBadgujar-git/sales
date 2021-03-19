@@ -4,6 +4,13 @@
         <name>Stimulsoft.Report.Design.WebViewer</name>
     </assembly>
     <members>
+        <member name="M:Stimulsoft.Report.Design.WebViewer.StiWebViewerControl.SavePackedDocumentToStringFx(Stimulsoft.Report.StiReport)">
+            <summary>
+            Преобразовывает BarCodes, RichText, Charts в картинки
+            </summary>
+            <param name="report"></param>
+            <returns></returns>
+        </member>
         <member name="F:Stimulsoft.Report.Design.WebViewer.StiWebViewerControl.components">
             <summary> 
             Required designer variable.
