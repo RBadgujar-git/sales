@@ -1589,8 +1589,6 @@ namespace sample
                 {
                     con.Open();
                 }
-                
-                    
                         string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' group by PartyName ");
                         DataSet ds = new DataSet();
                         SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -1631,11 +1629,15 @@ namespace sample
 
         private void textBox1_KeyDown_1(object sender, KeyEventArgs e)
         {
-            fetchBarcode();
+                fetchBarcode();
+    }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtItemTotal_TextChanged(object sender, EventArgs e)
         {
 
         }

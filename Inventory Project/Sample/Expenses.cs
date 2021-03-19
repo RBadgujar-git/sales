@@ -650,5 +650,6 @@ namespace sample
             txtBalance.Text = "0";
             ComboBox.Text = "";
         }
+       
     }
 }

@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 namespace sample
 {
     public partial class Cheque : Form
@@ -88,7 +89,7 @@ namespace sample
             //dgvSaleOrder.Columns[7].HeaderText = "Remaining Bal";
             //dgvSaleOrder.Columns[7].DataPropertyName = "RemainingBal";
             //dgvSaleOrder.Columns[8].HeaderText = " Status";
-            //dgvSaleOrder.Columns[8].DataPropertyName = "Status";
+            //dgvSaleOrder.Columns[8].DataPropertyName = "Status"
 
         }//BillDate,BillNo,PartyName,PaymentType,T
         private void dtpTo_Enter(object sender, EventArgs e)
@@ -119,6 +120,35 @@ namespace sample
         }
 
         private void btnprint_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("(select TableName, InvoiceDate as Date, InvoiceID as Number, PartyName, PaymentType, Feild1, Total, Received, RemainingBal, Status from tbl_SaleInvoice where Feild1 IS NOT Null and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1')union all(select TableName, OrderDate as Date, OrderNo as Number, PartyName, PaymentType, Feild1, Total, Received, RemainingBal, Status  from tbl_SaleOrder where Feild1 IS NOT Null and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1')", con);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"ChequeReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("Cheque", "Cheque", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvSaleOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

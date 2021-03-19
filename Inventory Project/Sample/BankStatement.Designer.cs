@@ -74,6 +74,7 @@
             this.cmbbankname.Size = new System.Drawing.Size(140, 36);
             this.cmbbankname.StartIndex = 0;
             this.cmbbankname.TabIndex = 0;
+            this.cmbbankname.SelectedIndexChanged += new System.EventHandler(this.cmbbankname_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -204,6 +205,7 @@
             this.dgvbankStatement.ThemeStyle.RowsStyle.Height = 22;
             this.dgvbankStatement.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvbankStatement.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvbankStatement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbankStatement_CellContentClick);
             // 
             // Column1
             // 
@@ -277,6 +279,7 @@
             this.btnprint.Size = new System.Drawing.Size(24, 23);
             this.btnprint.TabIndex = 133;
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // btnimport
             // 
