@@ -190,7 +190,7 @@ namespace sample
             guna2Button1.Hide();
             fetchcustomername();
 
-            
+            panel2.Hide();
 
 
             //for (int i = 0; i <= 4; i++)
@@ -298,36 +298,21 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
-                    // cmbpartyname.Items.Add(ds.Tables["Temp"].Rows[i]["PartyName"].ToString());
-
-                    RadioButton btn = new RadioButton();
-
-
-
-
-                
-
-                    btn.Name = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
-                    btn.Location = new Point(3, 14 + x);
-                    
-
-
-              
-
-                    btn.Text = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
-                    //  btn.Click += new EventHandler(());
                   
-                //   btn.Checked = new (createButton());
+                    RadioButton btn = new RadioButton();
+                    btn.Name = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+                    btn.Location = new Point(3, 14 + x);           
+                    btn.Text = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+                    //btn.Checked += new EventHandler();
 
                     Panel panel = new Panel();
                     panel.Location = new Point(3, 35 + w);
                     panel.Size = new Size(200, 2);
-                    panel.BackColor = Color.DarkGreen;
-                    //     panel.Location = new Point(3, 14 + x);
+                    panel.BackColor = Color.DarkGreen;                  
                     panel2.Controls.Add(panel);
                     panel2.Controls.Add(btn);
 
-                    //     i += 10;
+                
                     x += 50;
                     w += 55;
 

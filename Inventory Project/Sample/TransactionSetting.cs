@@ -41,10 +41,7 @@ namespace sample
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
-                }
-
-
-             
+                }       
                 SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
                 SqlDataReader dr = cmd1.ExecuteReader();
 
@@ -55,35 +52,42 @@ namespace sample
                 }
                 dr.Close();
 
-
-
-                //SqlCommand cmd1 = new SqlCommand("Select Gst_In from Setting_Table where Company_ID='"+NewCompany.company_id+"'", con);
-                //gstint =Convert.ToInt32( cmd1.ExecuteScalar());
-
-                //SqlCommand cmd2 = new SqlCommand("Select Enable_Launch from Setting_Table where Company_ID='" + NewCompany.company_id + "' ", con);
-                //Enablelunch =Convert.ToInt32(cmd2.ExecuteScalar());
-
-                //SqlCommand cmd3 = new SqlCommand("Select Estiment from Setting_Table where Company_ID='" + NewCompany.company_id + "' ", con);
-                //Estiment = Convert.ToInt32(cmd3.ExecuteScalar());
-
             }
 
             catch (Exception ew)
             {
                 MessageBox.Show(ew.Message);
             }
+
         }
         private void chkInvoiceBill_CheckedChanged(object sender, EventArgs e)
         {
+           
             if (chkInvoiceBill.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set InvoiceNo = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+
+                SqlCommand cmd1 = new SqlCommand("SET IDENTITY_INSERT [tbl_PurchaseBill] ON", con);
+                cmd1.ExecuteNonQuery();
+
+                SqlCommand cmd2 = new SqlCommand("SET IDENTITY_INSERT [tbl_SaleInvoice] ON", con);
+                cmd2.ExecuteNonQuery();
+
+                
+
             }
             else if (chkInvoiceBill.Checked == false)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set InvoiceNo = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+
+                SqlCommand cmd1 = new SqlCommand("SET IDENTITY_INSERT [tbl_PurchaseBill] OFF", con);
+                cmd1.ExecuteNonQuery();
+
+                SqlCommand cmd2 = new SqlCommand("SET IDENTITY_INSERT [tbl_SaleInvoice] OFF", con);
+                cmd2.ExecuteNonQuery();
+
             }
 
         }

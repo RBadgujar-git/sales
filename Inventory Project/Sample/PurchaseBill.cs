@@ -280,37 +280,63 @@ namespace sample
                 string message = e1.Message;
             }
         }
-       
 
+        public int investment; 
+       public  void seeting()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+                investment= Convert.ToInt32(dr["InvoiceNo"]);
+
+            }
+            dr.Close();
+        }
 
     
     private void get_id()
         {
 
 
+            seeting();
 
-            if (txtReturnNo.Text != "0" || txtReturnNo.Text != "") {
-                SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-                // SqlConnection con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
-
-                if (con.State == ConnectionState.Closed)
+            if (investment == 0) {
+                if (txtReturnNo.Text != "0" || txtReturnNo.Text != "")
                 {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("select MAX (CAST( BillNo as INT)) from tbl_PurchaseBill", con);
-                SqlDataReader rd = cmd.ExecuteReader();
-                if (rd.Read()) {
-                    string Value = rd[0].ToString();
-                    if (Value == "") {
-                        txtReturnNo.Text = "1";
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+                    // SqlConnection con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
+
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
                     }
-                    else {
-                        txtReturnNo.Text = rd[0].ToString();
-                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();                 
+
+                    SqlCommand cmd = new SqlCommand("select MAX (CAST( BillNo as INT)) from tbl_PurchaseBill", con);
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    if (rd.Read())
+                    {
+                        string Value = rd[0].ToString();
+                        if (Value == "")
+                        {
+                            txtReturnNo.Text = "1";
+                        }
+                        else
+                        {
+                            txtReturnNo.Text = rd[0].ToString();
+                            txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
+                        }
                     }
+                    rd.Close();
+                    // con.Close();
                 }
-                rd.Close();
-               // con.Close();
             }
         }
 
@@ -483,9 +509,20 @@ namespace sample
                 {
                     con.Open();
                 }
-                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
-                SqlCommand cmd = new SqlCommand(query, con);
-
+                seeting();
+                if (investment == 0)
+                {
+                    string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                    SqlCommand cmd = new SqlCommand(query, con);
+                }
+                else
+                {
+                    if (txtReturnNo.Text != "")
+                    {
+                        string query = string.Format("insert into tbl_PurchaseBill(BillNo,PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@return,@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                        SqlCommand cmd = new SqlCommand(query, con);
+                    }
+                }
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
@@ -513,6 +550,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@DeliveryLocation", txtDeliveryLoc.Text);
                 cmd.Parameters.AddWithValue("@VehicleNumber", txtVehicleNo.Text);
                 cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
+                cmd.Parameters.AddWithValue("@return", txtReturnNo.Text);
                 //  cmd.Parameters.AddWithValue("@due_date", txtdue_date.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                 // cmd.Parameters.AddWithValue("@TransportCharges", tx.Text);
@@ -1022,7 +1060,12 @@ namespace sample
                 verfydata();
                 if (verify == 1)
                 {
+
+
+                
                     insertdata();
+                
+              
                     //  bind_sale_details();
                     Clear_Text_data();
                     cleardata();

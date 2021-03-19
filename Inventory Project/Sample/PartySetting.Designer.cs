@@ -563,6 +563,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PartySetting";
             this.Size = new System.Drawing.Size(1034, 544);
+            this.Load += new System.EventHandler(this.PartySetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

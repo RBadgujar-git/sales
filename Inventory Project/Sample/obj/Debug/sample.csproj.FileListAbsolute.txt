@@ -1130,7 +1130,6 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\ADODB.dll
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
-C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankHomepage.resources
 C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
@@ -1544,3 +1543,9 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
 C:\Users\idealtechinfo-8\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.POS.resources
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.POS.resources
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Barcode.dll
+C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Barcode.xml

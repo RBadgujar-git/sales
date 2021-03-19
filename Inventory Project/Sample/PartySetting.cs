@@ -43,5 +43,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void PartySetting_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

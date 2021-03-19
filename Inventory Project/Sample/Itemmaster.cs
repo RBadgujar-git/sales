@@ -27,8 +27,131 @@ namespace sample
             //con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
+
+        public int NameMrp, batchno, Serealno, MFd, exd, size;
+
+        public void chekpoint()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+           
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+                NameMrp = Convert.ToInt32(dr["MRPDate"]);
+                batchno = Convert.ToInt32(dr["BatchNo"]);
+                Serealno = Convert.ToInt32(dr["SerialNo"]);
+                MFd = Convert.ToInt32(dr["MnfDate"]);
+                exd = Convert.ToInt32(dr["ExpDate"]);
+                size = Convert.ToInt32(dr["Size"]);
+            }
+            dr.Close();
+
+        }
+
+        public int  m = 0;
+        public void setting()
+        {
+            if(NameMrp==1)
+            {
+                label24.Hide();
+                txtMRP.Hide();
+                m++;
+            }
+            if (batchno == 1)
+            {
+                label23.Hide();
+                txtBatchNo.Hide();
+                m++;
+            }
+            if (Serealno == 1)
+            {
+                label22.Hide();
+                txtSerialNo.Hide();
+                m++;
+            }
+           if (MFd == 1)
+            {
+                label20.Hide();
+                dtpmfgDate.Hide();
+                m++;
+            }
+
+            if (exd == 1)
+            {
+                label14.Hide();
+                dtpexpdate.Hide();
+                m++;
+            }
+
+            if (exd == 1)
+            {
+                label21.Hide();
+                txtsize.Hide();
+                m++;
+            }
+
+            if (m == 6)
+            {
+                guna2Button2.Hide();
+            }
+        }
+
+        public String MRPtext, batchNotext, SeriealText, Mfddatetext, Expdatetext, Sizename;
+
+
+        public void fatchname()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd1 = new SqlCommand("Select * from Item_Seeting where Company_ID=" + NewCompany.company_id + "", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    MRPtext = dr["MRP"].ToString();
+                    batchNotext = dr["Batch_No"].ToString();
+                    SeriealText = dr["Serial_No"].ToString();
+                    Mfddatetext = dr["Mef_Date"].ToString();
+                    Expdatetext = dr["Exp_date"].ToString();
+                    Sizename = dr["Size"].ToString();
+
+                }
+                dr.Close();
+
+            }
+
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+        }
+
+        public void showpaneldata()
+        {
+            label24.Text = MRPtext;
+            label23.Text = batchNotext;
+            label22.Text = SeriealText;
+            label20.Text = Mfddatetext;
+            label14.Text = Mfddatetext;
+            label21.Text = Sizename;
+        }
+
         private void Itemmaster_Load(object sender, EventArgs e)
         {
+            chekpoint();
+            setting();
+            fatchname();
+            showpaneldata();
            // autogenrate();
             fetchdetails();
             fetchUnit();
