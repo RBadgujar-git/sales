@@ -117,7 +117,10 @@ namespace sample
         {
 
         }
-    
 
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

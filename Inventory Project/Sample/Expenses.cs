@@ -25,11 +25,12 @@ namespace sample
 
         private void Expenses_Load(object sender, EventArgs e)
         {
+            get_id();
             fetchexpenses();
             txtReturnNo.Enabled = false;
-            get_id();
-            bind_sale_details();
-           // cleardata();
+            txtTotal.Enabled = false;
+            //bind_sale_details();
+            //cleardata();
             //clear_text_data();
         }
 
@@ -39,7 +40,7 @@ namespace sample
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
                 // SqlConnection con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select MAX (CAST( ID as INT)) from tbl_Expenses", con);
+                SqlCommand cmd = new SqlCommand("select MAX (ID1) from tbl_Expenses", con);
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
@@ -74,8 +75,9 @@ namespace sample
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
                         cmbexpenses.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
+                        dgvinnerexpenses.AllowUserToAddRows = false;
                     }
-                    dgvinnerexpenses.AllowUserToAddRows = false;
+                    
                 }
                 catch (Exception e1)
                 {
@@ -125,13 +127,13 @@ namespace sample
             txtItem.Text = "";
             txtMRP.Text = "0";
             txtOty.Text = "0";
-            txtitemamount.Text = "0";
+            //txtitemamount.Text = "0";
            
         }
         private void cleardata()
         {
            
-            cmbexpenses.SelectedText= "";
+            cmbexpenses.Text= "";
             txtdescritpition.Text = "";
             txtTotal.Text = "0";
             txtrefNo.Text = "";
@@ -147,16 +149,19 @@ namespace sample
         private void insertdata()
         {
             try {
-                con.Open();
                 MemoryStream ms = new MemoryStream();
                 picImage.Image.Save(ms, picImage.Image.RawFormat);
                 byte[] arrImage1 = ms.GetBuffer();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_ExpensesSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
-                 cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+                //cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
              //   cmd.Parameters.AddWithValue("@ID", id);
                 cmd.Parameters.AddWithValue("@ExpenseCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
@@ -164,16 +169,16 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
                 cmd.Parameters.AddWithValue("@Balance",txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
-                cmd.Parameters.AddWithValue("@AdditinalFeild1", txtrefNo.Text);
-                cmd.Parameters.AddWithValue("@AdditionalFeild2", txtAdditional1.Text);
+                //cmd.Parameters.AddWithValue("@AdditinalFeild1", txtrefNo.Text);
+                //cmd.Parameters.AddWithValue("@AdditionalFeild2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                cmd.Parameters.AddWithValue("@TableName", Expences.Text);
+                //cmd.Parameters.AddWithValue("@TableName", Expences.Text);
 
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Expenses Record Added");
-                cleardata();
+               // cleardata();
             }
             catch (Exception e1)
             {
@@ -181,7 +186,7 @@ namespace sample
             }
             finally {
                 con.Close();
-                insert_record_inner(txtrefNo.ToString());
+                insert_record_inner(txtReturnNo.ToString());
             }
         }   
 
@@ -211,7 +216,8 @@ namespace sample
                     cmd = new SqlCommand("tbl_ExpensesInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
-                    cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@Id_inner", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
                     cmd.Parameters.AddWithValue("@ItemName", dgvinnerexpenses.Rows[i].Cells["Item"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
@@ -221,7 +227,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-
+                    // MessageBox.Show(e1.Message);
                 }
                 finally
                 {
@@ -234,6 +240,7 @@ namespace sample
         {
             insertdata();
             bind_sale_details();
+            get_id();
             cleardata();
             clear_text_data();
         }
@@ -268,7 +275,7 @@ namespace sample
                         TA += float.Parse(dgvinnerexpenses.Rows[i].Cells["Amount"].Value?.ToString());
                         txtTotal.Text = TA.ToString();
                     }
-                    clear_text_data();
+                    //clear_text_data();
                 }
             }
             catch (Exception e1) {
@@ -276,10 +283,10 @@ namespace sample
             }
         }
 
-        
-        private void btnUpdate_Click(object sender, EventArgs e)
+        public void update()
         {
-            try {
+            try
+            {
                 con.Open();
                 MemoryStream ms = new MemoryStream();
                 picImage.Image.Save(ms, picImage.Image.RawFormat);
@@ -287,8 +294,8 @@ namespace sample
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_ExpensesSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                 cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
-               // cmd.Parameters.AddWithValue("@ID", id);
+                cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
+                // cmd.Parameters.AddWithValue("@ID", id);
                 cmd.Parameters.AddWithValue("@ExpenseCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtdescritpition.Text);
@@ -303,14 +310,24 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Action", "Update");
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Expenses Record Updated !!");
+                
             }
-            catch (Exception e1) {
+            catch (Exception e1)
+            {
                 //MessageBox.Show(e1.Message);
             }
-            finally {
+            finally
+            {
                 con.Close();
                 update_record_inner(txtReturnNo.ToString());
             }
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            update();
+            get_id();
+            cleardata();
+            clear_text_data();
         }
     
     private void update_record_inner(string p)
@@ -322,7 +339,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_ExpensesInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
                     cmd.Parameters.AddWithValue("@ItemName", dgvinnerexpenses.Rows[i].Cells["Item"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price"].Value.ToString());
@@ -349,7 +366,7 @@ namespace sample
         {
             try {
                    con.Open();
-                    string str = string.Format("SELECT * FROM tbl_Expenses where ID = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                    string str = string.Format("SELECT * FROM tbl_Expenses where ID1 = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                     SqlCommand cmd = new SqlCommand(str, con);
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataSet ds = new DataSet();
@@ -370,7 +387,7 @@ namespace sample
                             txtAdditional1.Text = dr["AdditionalFeild2"].ToString();
                             ComboBox.Text = dr["Status"].ToString();
                             Expences.Text = dr["TableName"].ToString();
-                            id = dr["id"].ToString();
+                          //id = dr["id"].ToString();
                             if (ds.Tables[0].Rows.Count > 0)
                             {
                                 MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["Image"]);
@@ -378,7 +395,7 @@ namespace sample
                                 picImage.Image = Image.FromStream(ms); ;
                                 picImage.SizeMode = PictureBoxSizeMode.StretchImage;
                             }
-                        }
+                    }
 
                     }
                     // dr.Close();
@@ -582,26 +599,10 @@ namespace sample
                 throw;
             }
         }
-
-        private void dgvinnerexpenses_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //id1 =dgvinnerexpenses.SelectedRows[0].Cells["ID"].Value.ToString();
-            //txtItem.Text = dgvinnerexpenses.SelectedRows[0].Cells["ItemName"].Value.ToString();
-            //txtMRP.Text = dgvinnerexpenses.SelectedRows[0].Cells["SalePrice"].Value.ToString();
-            //txtOty.Text = dgvinnerexpenses.SelectedRows[0].Cells["Qty"].Value.ToString();
-            //txtitemamount.Text = dgvinnerexpenses.SelectedRows[0].Cells["ItemAmount"].Value.ToString();
-        }
-
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
-
-        private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("calc.exe");
@@ -615,7 +616,7 @@ namespace sample
         private void Clear_Click(object sender, EventArgs e)
         {
             cmbexpenses.Text = "";
-            txtReturnNo.Text = "";
+            //txtReturnNo.Text = "";
             txtitemamount.Text = "0";
             txtMRP.Text = "0";
             txtOty.Text = "0";
@@ -643,6 +644,11 @@ namespace sample
 
             int row = dgvinnerexpenses.CurrentCell.RowIndex;
             dgvinnerexpenses.Rows.RemoveAt(row);
+
+            txtTotal.Text = "0";
+            txtReceived.Text = "0";
+            txtBalance.Text = "0";
+            ComboBox.Text = "";
         }
     }
 }

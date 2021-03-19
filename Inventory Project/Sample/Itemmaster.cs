@@ -128,6 +128,7 @@ namespace sample
             txtsize.Text = "";
             txtDescritption.Text = "";
             txtminimumStock.Text = "";
+            textBox1.Text = "";
             picturebox.Image = Properties.Resources.No_Image_Available;
         }
         private void cmbSaleTax_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -201,6 +202,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@Size", txtsize.Text);
             cmd.Parameters.AddWithValue("@Description", txtDescritption.Text);
             cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
+            cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             SqlParameter sqlpara = new SqlParameter("@Image1", SqlDbType.Image);
             sqlpara.Value = DBNull.Value;
@@ -261,6 +263,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Size", txtsize.Text);
                     cmd.Parameters.AddWithValue("@Description", txtDescritption.Text);
                     cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
+                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                     cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     int num = cmd.ExecuteNonQuery();
@@ -391,7 +394,8 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Size", txtsize.Text);
                         cmd.Parameters.AddWithValue("@Description", txtDescritption.Text);
                         cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
-                        cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
+                    cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
@@ -400,7 +404,7 @@ namespace sample
                         }
                         else
                         {
-                                MessageBox.Show("Please Select Record");
+                            MessageBox.Show("Please Select Record");
                         }
                     }
                 //}
@@ -496,7 +500,8 @@ namespace sample
             dgvItemmaster.Columns["CategoryID"].Visible = false;
             dgvItemmaster.Columns["Barcode"].Visible = false;
             dgvItemmaster.Columns["Company_ID"].Visible = false;
-         
+            dgvItemmaster.Columns["Barcode"].Visible = false;
+
 
 
 
@@ -533,7 +538,7 @@ namespace sample
             txtsize.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Size"].Value.ToString();
             txtDescritption.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Description"].Value.ToString();
             txtminimumStock.Text = dgvItemmaster.Rows[e.RowIndex].Cells["MinimumStock"].Value.ToString();
-
+            textBox1.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Barcode"].Value.ToString();
             SqlCommand cmd = new SqlCommand("select Image1 from tbl_ItemMaster", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -821,6 +826,11 @@ namespace sample
                 dgvItemmaster.DataSource = ds;
                 dgvItemmaster.DataMember = "temp";
             }
+        }
+
+        private void itemtracking_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

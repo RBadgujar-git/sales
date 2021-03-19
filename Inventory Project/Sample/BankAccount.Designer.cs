@@ -351,7 +351,7 @@
             this.dgvbankaccount.RowHeadersVisible = false;
             this.dgvbankaccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvbankaccount.Size = new System.Drawing.Size(788, 293);
-            this.dgvbankaccount.TabIndex = 100;
+            this.dgvbankaccount.TabIndex = 1;
             this.dgvbankaccount.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvbankaccount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvbankaccount.ThemeStyle.AlternatingRowsStyle.Font = null;

@@ -276,7 +276,7 @@ namespace sample
                 cmd = new SqlCommand("tbl_QuotationSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
-                  cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
+                cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
                 //cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
                 if (cmbpartyname.Visible == true)
                 {
@@ -376,7 +376,7 @@ namespace sample
                 if (e.KeyCode == Keys.Enter) {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvInnerQuotation.Rows.Add();
-                    row = dgvInnerQuotation.Rows.Count - 2;
+                    row = dgvInnerQuotation.Rows.Count - 1;
                     dgvInnerQuotation.Rows[row].Cells["sr_no"].Value = row + 1;
                     dgvInnerQuotation.CurrentCell = dgvInnerQuotation[1, row];
 
@@ -447,7 +447,7 @@ namespace sample
             comboBox1.Text = "";
             cmbStatesupply.Text = "";
             txtDescription.Text = "";
-            ////cmbtax.Text = "0";
+            //cmbtax.Text = "0";
             txtcgst.Text = "0";
             txtsgst.Text = "0";
             txtTaxAmount.Text = "0";
@@ -742,16 +742,16 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.BillingAddress,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.TaxForSale,c.SaleTaxAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", id1,id1);
                      SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
                     StiReport report = new StiReport();
-                      report.Load(@"Quotation.mrt");
+                      report.Load(@"EstimateReport.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                      report.RegData("Quotation", "Quotation", ds.Tables[0]);
+                      report.RegData("Estimate", "Estimate", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
@@ -919,23 +919,22 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.BillingAddress,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.TaxForSale,c.SaleTaxAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
                     StiReport report = new StiReport();
-                    report.Load(@"Quotation.mrt");
+                    report.Load(@"EstimateReport.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("Quotation", "Quotation", ds.Tables[0]);
+                    report.RegData("Estimate", "Estimate", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
                     report.Show(false);
                 }
                 catch (Exception ex)
-
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -1085,14 +1084,14 @@ namespace sample
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkRoundOff.Checked == false)
-            {
-                txtTotal.Text = txtTotal.Text;      // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
-            }
-            else if (chkRoundOff.Checked == true)
-            {
-                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
-            }            
+            //if (chkRoundOff.Checked == false)
+            //{
+            //    txtTotal.Text = txtTotal.Text;      // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
+            //}
+            //else if (chkRoundOff.Checked == true)
+            //{
+            //    txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+            //}            
             //Math.Round(Convert.ToDouble(txtTotal.Text));
         }
 

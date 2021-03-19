@@ -120,7 +120,7 @@ namespace sample
             {
                 if (id == "")
                 {
-                    if (txtCashadjustment.SelectedItem == "Cash In")
+                    if (txtCashadjustment.SelectedItem == "Cash Out")
                     {
                         if (Int32.Parse(textBox1.Text) < Int32.Parse(txtenterAmount.Text))
                         {
@@ -128,17 +128,18 @@ namespace sample
                         }
                         else
                         {
-                            Caladd();                            
-                            Insert();
+                           
+                            calminus();
                             update_opening_bal();
+                            Insert();
                             fetchdetails();
                         }
                     }
-                    else if (txtCashadjustment.SelectedItem == "Cash Out")
+                    else if (txtCashadjustment.SelectedItem == "Cash In")
                     {
-                        calminus();
-                        Insert();
+                        Caladd();
                         update_opening_bal();
+                        Insert();
                         fetchdetails();
                     }              
                 }

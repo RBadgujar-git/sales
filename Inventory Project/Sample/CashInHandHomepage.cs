@@ -81,5 +81,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dgvCashInHand_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

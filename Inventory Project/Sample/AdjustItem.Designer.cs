@@ -191,7 +191,7 @@
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
             this.guna2Panel3.Size = new System.Drawing.Size(900, 529);
-            this.guna2Panel3.TabIndex = 11;
+            this.guna2Panel3.TabIndex = 1;
             this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
             // 
             // button1
@@ -226,7 +226,7 @@
             this.butUpdate.Location = new System.Drawing.Point(488, 172);
             this.butUpdate.Name = "butUpdate";
             this.butUpdate.Size = new System.Drawing.Size(90, 42);
-            this.butUpdate.TabIndex = 8;
+            this.butUpdate.TabIndex = 7;
             this.butUpdate.Text = "Update";
             this.butUpdate.UseVisualStyleBackColor = false;
             this.butUpdate.Click += new System.EventHandler(this.butUpdate_Click);
@@ -239,7 +239,7 @@
             this.butDelete.Location = new System.Drawing.Point(585, 171);
             this.butDelete.Name = "butDelete";
             this.butDelete.Size = new System.Drawing.Size(90, 42);
-            this.butDelete.TabIndex = 9;
+            this.butDelete.TabIndex = 8;
             this.butDelete.Text = "Delete";
             this.butDelete.UseVisualStyleBackColor = false;
             this.butDelete.Click += new System.EventHandler(this.Delete_Click);
@@ -252,7 +252,7 @@
             this.Clear.Location = new System.Drawing.Point(681, 171);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 10;
+            this.Clear.TabIndex = 9;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -264,7 +264,7 @@
             this.date.Location = new System.Drawing.Point(198, 105);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(200, 23);
-            this.date.TabIndex = 3;
+            this.date.TabIndex = 2;
             // 
             // txtName
             // 
@@ -274,7 +274,7 @@
             this.txtName.Location = new System.Drawing.Point(198, 25);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(200, 24);
-            this.txtName.TabIndex = 1;
+            this.txtName.TabIndex = 0;
             this.txtName.SelectedIndexChanged += new System.EventHandler(this.txtName_SelectedIndexChanged);
             // 
             // combotype
@@ -289,7 +289,7 @@
             this.combotype.Location = new System.Drawing.Point(198, 64);
             this.combotype.Name = "combotype";
             this.combotype.Size = new System.Drawing.Size(200, 24);
-            this.combotype.TabIndex = 2;
+            this.combotype.TabIndex = 1;
             // 
             // txtitemqantity
             // 
@@ -315,7 +315,7 @@
             this.txtitemqantity.SelectedText = "";
             this.txtitemqantity.ShadowDecoration.Parent = this.txtitemqantity;
             this.txtitemqantity.Size = new System.Drawing.Size(200, 30);
-            this.txtitemqantity.TabIndex = 5;
+            this.txtitemqantity.TabIndex = 4;
             this.txtitemqantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox1_KeyPress);
             // 
             // label8
@@ -352,7 +352,7 @@
             this.txtitemdetails.SelectedText = "";
             this.txtitemdetails.ShadowDecoration.Parent = this.txtitemdetails;
             this.txtitemdetails.Size = new System.Drawing.Size(200, 59);
-            this.txtitemdetails.TabIndex = 6;
+            this.txtitemdetails.TabIndex = 5;
             // 
             // label9
             // 
@@ -371,7 +371,7 @@
             this.buttonsave.Location = new System.Drawing.Point(390, 173);
             this.buttonsave.Name = "buttonsave";
             this.buttonsave.Size = new System.Drawing.Size(90, 42);
-            this.buttonsave.TabIndex = 7;
+            this.buttonsave.TabIndex = 6;
             this.buttonsave.Text = "Save ";
             this.buttonsave.UseVisualStyleBackColor = false;
             this.buttonsave.Click += new System.EventHandler(this.buttonsave_Click);
@@ -401,7 +401,7 @@
             this.txtatprice.SelectionStart = 1;
             this.txtatprice.ShadowDecoration.Parent = this.txtatprice;
             this.txtatprice.Size = new System.Drawing.Size(200, 30);
-            this.txtatprice.TabIndex = 4;
+            this.txtatprice.TabIndex = 3;
             this.txtatprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.guna2TextBox4_KeyPress);
             // 
             // label10
@@ -419,7 +419,7 @@
             this.label11.Location = new System.Drawing.Point(105, 28);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 16);
-            this.label11.TabIndex = 1;
+            this.label11.TabIndex = 3;
             this.label11.Text = "Item Name :";
             // 
             // label12
@@ -494,7 +494,7 @@
             this.cmbAdjustmenttype.Name = "cmbAdjustmenttype";
             this.cmbAdjustmenttype.ShadowDecoration.Parent = this.cmbAdjustmenttype;
             this.cmbAdjustmenttype.Size = new System.Drawing.Size(250, 36);
-            this.cmbAdjustmenttype.TabIndex = 6;
+            this.cmbAdjustmenttype.TabIndex = 1;
             // 
             // dtpdaate
             // 
@@ -534,7 +534,7 @@
             this.txtItemName.SelectedText = "";
             this.txtItemName.ShadowDecoration.Parent = this.txtItemName;
             this.txtItemName.Size = new System.Drawing.Size(250, 30);
-            this.txtItemName.TabIndex = 2;
+            this.txtItemName.TabIndex = 3;
             // 
             // txtprice
             // 
@@ -575,7 +575,7 @@
             this.label3.Location = new System.Drawing.Point(164, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 16);
-            this.label3.TabIndex = 1;
+            this.label3.TabIndex = 8;
             this.label3.Text = "Item Name :";
             // 
             // label5
@@ -607,7 +607,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(900, 47);
-            this.guna2Panel1.TabIndex = 2;
+            this.guna2Panel1.TabIndex = 1;
             // 
             // btnminimize
             // 
