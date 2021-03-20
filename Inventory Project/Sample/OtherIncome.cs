@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 
 namespace sample
 {
@@ -603,7 +605,31 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select a.Id,a.ItemName,a.SalePrice,a.DeleteData,a.Qty,a.ItemAmount,b.Id,b.IncomeCategory,b.Date,b.Balance,b.Paid,b.Status,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber  from tbl_OtherIncomeInner3 as a,tbl_OtherIncome as b,tbl_CompanyMaster as c where a.Id={0} and b.Id={1} and c.CompanyID='" + NewCompany.company_id + "'",txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
+                    StiReport report = new StiReport();
+                    report.Load(@"OtherIncome.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("OtherIncome", "OtherIncome", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void dgvinnerexpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
