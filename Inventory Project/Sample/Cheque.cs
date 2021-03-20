@@ -91,7 +91,7 @@ namespace sample
             //dgvSaleOrder.Columns[8].HeaderText = " Status";
             //dgvSaleOrder.Columns[8].DataPropertyName = "Status"
 
-        }//BillDate,BillNo,PartyName,PaymentType,T
+        }//BillDate,BillNo,PartyName,Pay
         private void dtpTo_Enter(object sender, EventArgs e)
         {
             try
