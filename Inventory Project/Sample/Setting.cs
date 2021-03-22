@@ -303,7 +303,14 @@ namespace sample
                     btn.Name = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
                     btn.Location = new Point(3, 14 + x);           
                     btn.Text = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+                  //  btn.Checked += new EventHandler("checked",);
+ 
                     //btn.Checked += new EventHandler();
+                    //////btn.Click += new EventHandler();
+                 //   btn.Add("onclick", "MyFunction()");
+
+                    //btn.Checked.Add(
+                      // ", "MyFunction()");
 
                     Panel panel = new Panel();
                     panel.Location = new Point(3, 35 + w);

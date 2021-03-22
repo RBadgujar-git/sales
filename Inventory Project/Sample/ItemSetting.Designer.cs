@@ -545,6 +545,7 @@
             this.chkItemWiseTax.UncheckedState.BorderRadius = 0;
             this.chkItemWiseTax.UncheckedState.BorderThickness = 0;
             this.chkItemWiseTax.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkItemWiseTax.CheckedChanged += new System.EventHandler(this.chkItemWiseTax_CheckedChanged);
             // 
             // guna2CheckBox16
             // 
@@ -562,6 +563,7 @@
             this.guna2CheckBox16.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox16.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox16.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox16.CheckedChanged += new System.EventHandler(this.guna2CheckBox16_CheckedChanged);
             // 
             // label9
             // 

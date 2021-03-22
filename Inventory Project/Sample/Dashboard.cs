@@ -34,13 +34,13 @@ namespace sample
         private void Form1_Load(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select CompanyID  from tbl_CompanyMaster Where CompanyName = 'My Company'", con);
-           string CompantId= cmd.ExecuteScalar().ToString();
+            SqlCommand cmd = new SqlCommand("Select CompanyID  from tbl_CompanyMaster Where CompanyName = 'MyCompany'", con);
+            string CompantId= cmd.ExecuteScalar().ToString();
             con.Close();
             NewCompany.company_id = CompantId.ToString();
 
+       //     NewCompany.company_id = 4.ToString();
 
-            
 
             //try
             //{

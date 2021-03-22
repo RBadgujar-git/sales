@@ -27,15 +27,17 @@ namespace sample
           //  con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
 
         }
-
+      
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
             cleardata();
             fetchCategory();
-            //fetchitem();
+            fetchitem();
+                   // fetchitem();
             fetchcustomername();
           //  bind_sale_details();
             txtReturnNo.Enabled = false;
+            cmbpartyname.Focus();
             get_id();
             txtsubtotal.Enabled = false;
             txtTotal.Enabled = false;
@@ -72,10 +74,29 @@ namespace sample
             }
 
         }
-        private void fetchitem()
+        public void fetchitem()
         {
+            if (txtItemName.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' group by ItemName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
         }
-
         private void fetchcustomername()
         {
             if (cmbpartyname.Text != "System.Data.DataRowView") {
@@ -220,6 +241,7 @@ namespace sample
                 }
                 else
                 {
+                    insertitem();
                     if (e.KeyCode == Keys.Enter)
                     {
                         float TA = 0, TD = 0, TGST = 0;
@@ -388,6 +410,7 @@ namespace sample
                         con.Open();
                     }
                     DataTable dtable = new DataTable();
+
                     cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
@@ -432,7 +455,11 @@ namespace sample
                     cmd2.Parameters.AddWithValue("@Itemcode",ItemCode);
                   
                     cmd2.ExecuteNonQuery();
+
+
+
                    
+
 
                 }
                 catch (Exception e1) {
@@ -441,6 +468,47 @@ namespace sample
                 finally {
                    con.Close();
                 }
+            }
+        }
+
+        public int chekpoint = 0;
+        public void insertitem()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string Query = String.Format("select ItemName from tbl_ItemMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    string itemname = ds.Tables["Temp"].Rows[i]["ItemName"].ToString();
+                    if (itemname.ToString() == txtItemName.Text.ToString())
+                    {
+                        chekpoint = 1;
+                    }
+
+                }
+
+                if (chekpoint != 1)
+                {
+                    string query = string.Format("insert into tbl_ItemMaster(ItemName, BasicUnit, ItemCode, SalePrice, TaxForSale,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtUnit.Text + "'," + txtItemCode.Text + ", " + txtMRP.Text + "," + txtTax1.Text + "," + NewCompany.company_id + ")");
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e1)
+
+            {
+                MessageBox.Show(e1.Message);
             }
         }
 
@@ -510,19 +578,7 @@ namespace sample
                     con.Open();
                 }
                 seeting();
-                if (investment == 0)
-                {
-                    string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
-                    SqlCommand cmd = new SqlCommand(query, con);
-                }
-                else
-                {
-                    if (txtReturnNo.Text != "")
-                    {
-                        string query = string.Format("insert into tbl_PurchaseBill(BillNo,PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@return,@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
-                        SqlCommand cmd = new SqlCommand(query, con);
-                    }
-                }
+             
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
@@ -577,13 +633,31 @@ namespace sample
                 cmd.Parameters.AddWithValue("@IGST", guna2TextBox1.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
-                id1 = cmd.ExecuteScalar();
+
+
+                if (investment == 0)
+                {
+                    string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    id1 = cmd.ExecuteScalar();
+                }
+                else
+                {
+                    if (txtReturnNo.Text != "")
+                    {
+                        string query = string.Format("insert into tbl_PurchaseBill(BillNo,PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@return,@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                        SqlCommand cmd = new SqlCommand(query, con);
+                        id1 = cmd.ExecuteScalar();
+                    }
+                }
+                
                 MessageBox.Show("Sale Record Added");
                 //cleardata();
             }
             catch (Exception e1)
             {
-            ///   MessageBox.Show(e1.Message);
+
+                MessageBox.Show(e1.Message);
             }
             finally {
                 //con.Close();
@@ -1002,21 +1076,8 @@ namespace sample
             {
                 MessageBox.Show("Party Contact no Is Requueird !");
                 txtcon.Focus();
-            }
-
-            else if (cmbStatesupply.Text == "")
-            {
-                MessageBox.Show("Please Select State !");
-
-            }
-            else if (cmbPaymentType.Text == "")
-            {
-                MessageBox.Show("Please Select Payment Type !");
-            }
-            else if (cmbtax.Text == "")
-            {
-                MessageBox.Show("Please Select Tax !");
-            }
+            }          
+         
             else if (ComboBox.Text == "")
             {
                 MessageBox.Show("Please Select Payment Status  !");
@@ -1061,11 +1122,9 @@ namespace sample
                 if (verify == 1)
                 {
 
-
-                
                     insertdata();
                 
-              
+        
                     //  bind_sale_details();
                     Clear_Text_data();
                     cleardata();
@@ -1192,14 +1251,8 @@ namespace sample
                     con.Open();
                 }
 
-                if (comboBox1.Text == "")
-                {
-                    MessageBox.Show("Please Select Item Category");
-                }
-                else
-                {
-
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
+
                     string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and DeleteData='1' and  Company_ID='" + NewCompany.company_id + "' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                     SqlCommand cmd = new SqlCommand(Query, con);
                     SqlDataReader dr = cmd.ExecuteReader();
@@ -1214,7 +1267,7 @@ namespace sample
                     }
                     dr.Close();
                    
-                }
+                
             }
             catch (Exception ex)
             {

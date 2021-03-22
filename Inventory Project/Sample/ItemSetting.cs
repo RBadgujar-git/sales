@@ -60,8 +60,16 @@ namespace sample
                 txtSize.Text = Sizename;
 
             }
+            if(itemwise==1)
+            {
+                guna2CheckBox16.Checked = true;
+            }
+            if (ItemwisTax == 1)
+            {
+                chkItemWiseTax.Checked = true;
+            }
+            
 
-           
         }
 
 
@@ -115,7 +123,7 @@ namespace sample
             }
         }
     
-        public int NameMrp,batchno,Serealno,MFd,exd,size;
+        public int NameMrp,batchno,Serealno,MFd,exd,size,itemwise, ItemwisTax;
 
         public void cheekpass()
         {
@@ -136,8 +144,9 @@ namespace sample
                     Serealno = Convert.ToInt32(dr["SerialNo"]);
                     MFd = Convert.ToInt32(dr["MnfDate"]);
                     exd = Convert.ToInt32(dr["ExpDate"]);
+                    itemwise= Convert.ToInt32(dr["ItemWiseDiscount"]);
                     size = Convert.ToInt32(dr["Size"]);
-
+                    ItemwisTax=Convert.ToInt32(dr["ItemwisTax"]);
                 }
                 dr.Close();
             
@@ -243,6 +252,34 @@ namespace sample
                 SqlCommand cmd = new SqlCommand("update Item_Seeting Set MFDAte = '1' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
                 //  txtMRP.Visible = false;
+            }
+        }
+
+        private void chkItemWiseTax_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2CheckBox16.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (guna2CheckBox16.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void guna2CheckBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            if (guna2CheckBox16.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemWiseDiscount = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (guna2CheckBox16.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemWiseDiscount = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
             }
         }
 

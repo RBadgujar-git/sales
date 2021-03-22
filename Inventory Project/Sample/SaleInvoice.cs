@@ -37,6 +37,31 @@ namespace sample
             txtReturnNo.Enabled = false;
             //comboBox3.Enabled = false;
             get_id();
+
+
+            if (discountcheck == 1)
+            {
+                txtDis.Hide();
+                txtDisAmt.Hide();
+                label32.Hide();
+                label33.Hide();
+             }
+
+
+            if (ItemwisTax == 1)
+            {
+                txtTax1.Hide();
+                label30.Hide();
+                //txtDis ds = new txtDis();
+
+                txtDis.Width = 130;
+                txtDis.Height = 28;
+
+                txtOty.Location = new Point(567, 42);
+                txtOty.Width = 119;
+                txtOty.Height = 28;
+            }
+
         }
 
         private void fetchBarcode()
@@ -437,7 +462,7 @@ namespace sample
         }
 
 
-        public int investment;
+        public int investment,discountcheck, ItemwisTax;
         public void seeting()
         {
 
@@ -452,7 +477,8 @@ namespace sample
             while (dr.Read())
             {
                 investment = Convert.ToInt32(dr["InvoiceNo"]);
-
+                discountcheck= Convert.ToInt32(dr["ItemWiseDiscount"]);
+                ItemwisTax= Convert.ToInt32(dr["ItemwisTax"]);
             }
             dr.Close();
         }
@@ -1637,7 +1663,17 @@ namespace sample
 
         }
 
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

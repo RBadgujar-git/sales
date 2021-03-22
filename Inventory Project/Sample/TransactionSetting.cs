@@ -71,8 +71,8 @@ namespace sample
                 SqlCommand cmd1 = new SqlCommand("SET IDENTITY_INSERT [tbl_PurchaseBill] ON", con);
                 cmd1.ExecuteNonQuery();
 
-                SqlCommand cmd2 = new SqlCommand("SET IDENTITY_INSERT [tbl_SaleInvoice] ON", con);
-                cmd2.ExecuteNonQuery();
+                //SqlCommand cmd2 = new SqlCommand("SET IDENTITY_INSERT [tbl_SaleInvoice] ON", con);
+                //cmd2.ExecuteNonQuery();
 
                 
 
@@ -85,8 +85,8 @@ namespace sample
                 SqlCommand cmd1 = new SqlCommand("SET IDENTITY_INSERT [tbl_PurchaseBill] OFF", con);
                 cmd1.ExecuteNonQuery();
 
-                SqlCommand cmd2 = new SqlCommand("SET IDENTITY_INSERT [tbl_SaleInvoice] OFF", con);
-                cmd2.ExecuteNonQuery();
+                //SqlCommand cmd2 = new SqlCommand("SET IDENTITY_INSERT [tbl_SaleInvoice] OFF", con);
+                //cmd2.ExecuteNonQuery();
 
             }
 
