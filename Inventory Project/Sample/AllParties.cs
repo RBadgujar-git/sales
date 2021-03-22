@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 namespace sample
 {
     public partial class AllParties : UserControl
@@ -145,6 +146,35 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.PhoneNo,c.EmailID,c.GSTNumber,b.PartyName ,b.ContactNo,b.Received tbl_PurchaseBill as b,tbl_CompanyMaster as c where CompanyID='" + NewCompany.company_id + "' ");
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"AllPartiesReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("AllParties", "AllParties", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
