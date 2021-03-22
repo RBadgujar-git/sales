@@ -61,7 +61,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory group by OtherIncome where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by OtherIncome ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -84,7 +84,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName ");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName ");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");

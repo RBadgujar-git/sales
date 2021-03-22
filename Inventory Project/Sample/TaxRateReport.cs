@@ -49,7 +49,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'group by PartyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -71,15 +71,12 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("(select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount  from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", cmbAllFirms.Text);
+                string Query = string.Format("(select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", cmbAllFirms.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvTaxRate.DataSource = ds;
                 dgvTaxRate.DataMember = "temp";
-                
-
-
             }
             catch (Exception ex)
             {

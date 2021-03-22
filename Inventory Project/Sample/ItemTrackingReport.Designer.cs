@@ -135,6 +135,7 @@
             this.btnPrint.Size = new System.Drawing.Size(21, 24);
             this.btnPrint.TabIndex = 118;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnImport
             // 

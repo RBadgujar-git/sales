@@ -229,6 +229,7 @@
             this.btnprint.Size = new System.Drawing.Size(24, 23);
             this.btnprint.TabIndex = 157;
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // btnImport
             // 
