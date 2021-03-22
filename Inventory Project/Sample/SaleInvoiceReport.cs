@@ -117,6 +117,11 @@ namespace sample
 
         private void cmbThisMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
             string saledate = cmbThisMonth.SelectedItem.ToString();
             if (saledate == "This Month")
             {
@@ -124,14 +129,15 @@ namespace sample
                 {
                     date = DateTime.Now.Month.ToString();
                     //MessageBox.Show("moth o" + date);
-                    con.Open();
+                  //  con.Open();
+
                     SqlCommand cmd = new SqlCommand("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where month(InvoiceDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvsaleInvoice.DataSource = ds;
                     dgvsaleInvoice.DataMember = "temp";
-                    con.Close();
+                 //   con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -145,14 +151,14 @@ namespace sample
                 {
                     date = DateTime.Now.Year.ToString();
 
-                    con.Open();
+                  //  con.Open();
                     SqlCommand cmd = new SqlCommand("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where year(InvoiceDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvsaleInvoice.DataSource = ds;
                     dgvsaleInvoice.DataMember = "temp";
-                    con.Close();
+              //      con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -165,14 +171,14 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                   // con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice WHERE DATEPART(m, InvoiceDate) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yy, InvoiceDate) = DATEPART(yy, DATEADD(m, -1, getdate())) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvsaleInvoice.DataSource = ds;
                     dgvsaleInvoice.DataMember = "temp";
-                    con.Close();
+                ///    con.Close();
 
                 }
                 catch (Exception ex)
@@ -185,14 +191,14 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                //    con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice WHERE InvoiceDate>= DATEADD(M, -3, GETDATE()) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvsaleInvoice.DataSource = ds;
                     dgvsaleInvoice.DataMember = "temp";
-                    con.Close();
+             //       con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -203,14 +209,14 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                   // con.Open();
                     SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvsaleInvoice.DataSource = ds;
                     dgvsaleInvoice.DataMember = "temp";
-                    con.Close();
+              //      con.Close();
                 }
                 catch (Exception ex)
                 {
@@ -232,6 +238,7 @@ namespace sample
             //dgvsaleInvoice.DataSource = ds;
             //dgvsaleInvoice.DataMember = "temp";
             //con.Close();
+            Data();
         }
         private void Data()
         {
@@ -241,17 +248,18 @@ namespace sample
             ////dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
             //dgvexpense.CurrentCell = dgvexpense[1, row];
             //e.SuppressKeyPress = true;
-            for (int i = 0; i < dgvsaleInvoice.Rows.Count; i++)
+            for (int i = 1; i < dgvsaleInvoice.Rows.Count; i++)
             {
                 TA += float.Parse(dgvsaleInvoice.Rows[i].Cells["Paid"].Value?.ToString());
                 txtPaid.Text = TA.ToString();
                 TD += float.Parse(dgvsaleInvoice.Rows[i].Cells["RemainingBal"].Value?.ToString());
-                txtUnpaid.Text = TD.ToString();
 
+                txtUnpaid.Text = TD.ToString();
                 qty = float.Parse(txtPaid.Text.ToString());
                 rate = float.Parse(txtUnpaid.Text.ToString());
                 total = qty + rate;
                 txtTotal.Text = total.ToString();
+
             }
         }
         private void Bindadata()

@@ -62,7 +62,7 @@ namespace sample
             //dgvPurchaseBill.DataSource = ds;
             //dgvPurchaseBill.DataMember = "temp";
             //con.Close();
-            //     Data();
+              Data();
          
         }
         private void Bindadata()
@@ -85,7 +85,7 @@ namespace sample
             dgvPurchaseBill.Columns[3].DataPropertyName = "PaymentType";
             dgvPurchaseBill.Columns[4].HeaderText = "Total";
             dgvPurchaseBill.Columns[4].DataPropertyName = "Total";
-            dgvPurchaseBill.Columns[5].HeaderText = " Paid";
+            dgvPurchaseBill.Columns[5].HeaderText = "Paid";
             dgvPurchaseBill.Columns[5].DataPropertyName = "Paid";
             dgvPurchaseBill.Columns[6].HeaderText = "Remaining Bal";
             dgvPurchaseBill.Columns[6].DataPropertyName = "RemainingBal";
@@ -103,7 +103,7 @@ namespace sample
 
             //e.SuppressKeyPress = true;
 
-            for (int i = 0; i < dgvPurchaseBill.Rows.Count; i++)
+            for (int i = 1; i < dgvPurchaseBill.Rows.Count; i++)
             {
                 try
                 {
@@ -116,6 +116,7 @@ namespace sample
                     rate = float.Parse(txtUnpaid.Text.ToString());
                     total = qty + rate;
                     txtTotal.Text = total.ToString();
+
                 }
                 catch(Exception ew)
                 {
@@ -373,7 +374,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where PartyName like '%{0}%' or BillNo like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
+                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' AND PartyName like '%{0}%' or BillNo like '%{0}%'  and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

@@ -217,7 +217,20 @@ namespace sample
             }
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+        public void Seeting()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmdn = new SqlCommand("Select CompanyID from tbl_CompanyMaster where CompanyName="+txtcampanyName.Text+" and PhoneNo="+txtContactNo.Text+" ",con);
+            string id = cmdn.ExecuteScalar().ToString();
+
+            SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values("+id+")", con);
+            cmd.ExecuteNonQuery();
+            
+    }
+    private void btnsave_Click(object sender, EventArgs e)
         {
 
 
@@ -225,8 +238,10 @@ namespace sample
             if (verify == 1)
             {
                 Insert1();
+                Seeting();
                 fetchdetails();
             }
+
         }
 
 

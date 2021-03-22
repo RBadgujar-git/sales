@@ -61,12 +61,12 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.txtmfgdate = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtexpdate = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmbExpDate = new Guna.UI2.WinForms.Guna2ComboBox();
             this.chkExpdate = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtSize = new Guna.UI2.WinForms.Guna2TextBox();
             this.chkSize = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.expcomb = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.cmbmgfdate.Size = new System.Drawing.Size(128, 36);
             this.cmbmgfdate.StartIndex = 0;
             this.cmbmgfdate.TabIndex = 368;
+            this.cmbmgfdate.SelectedIndexChanged += new System.EventHandler(this.cmbmgfdate_SelectedIndexChanged_1);
             // 
             // txtSerialNo
             // 
@@ -116,6 +117,7 @@
             this.txtSerialNo.ShadowDecoration.Parent = this.txtSerialNo;
             this.txtSerialNo.Size = new System.Drawing.Size(200, 36);
             this.txtSerialNo.TabIndex = 367;
+            this.txtSerialNo.TextChanged += new System.EventHandler(this.txtSerialNo_TextChanged_1);
             // 
             // txtBatchNo
             // 
@@ -140,6 +142,7 @@
             this.txtBatchNo.ShadowDecoration.Parent = this.txtBatchNo;
             this.txtBatchNo.Size = new System.Drawing.Size(200, 36);
             this.txtBatchNo.TabIndex = 366;
+            this.txtBatchNo.TextChanged += new System.EventHandler(this.txtBatchNo_TextChanged_1);
             // 
             // txtMRP
             // 
@@ -164,6 +167,7 @@
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(200, 36);
             this.txtMRP.TabIndex = 365;
+            this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged_1);
             // 
             // chkmfgDate
             // 
@@ -199,6 +203,7 @@
             this.chkSerialNo.UncheckedState.BorderRadius = 0;
             this.chkSerialNo.UncheckedState.BorderThickness = 0;
             this.chkSerialNo.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSerialNo.CheckedChanged += new System.EventHandler(this.chkSerialNo_CheckedChanged);
             // 
             // chkBatchNo
             // 
@@ -216,6 +221,7 @@
             this.chkBatchNo.UncheckedState.BorderRadius = 0;
             this.chkBatchNo.UncheckedState.BorderThickness = 0;
             this.chkBatchNo.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkBatchNo.CheckedChanged += new System.EventHandler(this.chkBatchNo_CheckedChanged);
             // 
             // chkMRP
             // 
@@ -233,6 +239,7 @@
             this.chkMRP.UncheckedState.BorderRadius = 0;
             this.chkMRP.UncheckedState.BorderThickness = 0;
             this.chkMRP.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkMRP.CheckedChanged += new System.EventHandler(this.chkMRP_CheckedChanged);
             // 
             // label3
             // 
@@ -538,6 +545,7 @@
             this.chkItemWiseTax.UncheckedState.BorderRadius = 0;
             this.chkItemWiseTax.UncheckedState.BorderThickness = 0;
             this.chkItemWiseTax.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkItemWiseTax.CheckedChanged += new System.EventHandler(this.chkItemWiseTax_CheckedChanged);
             // 
             // guna2CheckBox16
             // 
@@ -555,6 +563,7 @@
             this.guna2CheckBox16.UncheckedState.BorderRadius = 0;
             this.guna2CheckBox16.UncheckedState.BorderThickness = 0;
             this.guna2CheckBox16.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox16.CheckedChanged += new System.EventHandler(this.guna2CheckBox16_CheckedChanged);
             // 
             // label9
             // 
@@ -603,6 +612,7 @@
             this.txtmfgdate.ShadowDecoration.Parent = this.txtmfgdate;
             this.txtmfgdate.Size = new System.Drawing.Size(200, 36);
             this.txtmfgdate.TabIndex = 386;
+            this.txtmfgdate.TextChanged += new System.EventHandler(this.txtmfgdate_TextChanged_1);
             // 
             // txtexpdate
             // 
@@ -627,28 +637,7 @@
             this.txtexpdate.ShadowDecoration.Parent = this.txtexpdate;
             this.txtexpdate.Size = new System.Drawing.Size(200, 36);
             this.txtexpdate.TabIndex = 389;
-            // 
-            // cmbExpDate
-            // 
-            this.cmbExpDate.BackColor = System.Drawing.Color.Transparent;
-            this.cmbExpDate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbExpDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbExpDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbExpDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbExpDate.FocusedState.Parent = this.cmbExpDate;
-            this.cmbExpDate.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbExpDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbExpDate.HoverState.Parent = this.cmbExpDate;
-            this.cmbExpDate.ItemHeight = 30;
-            this.cmbExpDate.Items.AddRange(new object[] {
-            "mm/yyyy"});
-            this.cmbExpDate.ItemsAppearance.Parent = this.cmbExpDate;
-            this.cmbExpDate.Location = new System.Drawing.Point(525, 263);
-            this.cmbExpDate.Name = "cmbExpDate";
-            this.cmbExpDate.ShadowDecoration.Parent = this.cmbExpDate;
-            this.cmbExpDate.Size = new System.Drawing.Size(128, 36);
-            this.cmbExpDate.StartIndex = 0;
-            this.cmbExpDate.TabIndex = 388;
+            this.txtexpdate.TextChanged += new System.EventHandler(this.txtexpdate_TextChanged_1);
             // 
             // chkExpdate
             // 
@@ -666,6 +655,7 @@
             this.chkExpdate.UncheckedState.BorderRadius = 0;
             this.chkExpdate.UncheckedState.BorderThickness = 0;
             this.chkExpdate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkExpdate.CheckedChanged += new System.EventHandler(this.chkExpdate_CheckedChanged);
             // 
             // txtSize
             // 
@@ -708,6 +698,7 @@
             this.chkSize.UncheckedState.BorderRadius = 0;
             this.chkSize.UncheckedState.BorderThickness = 0;
             this.chkSize.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSize.CheckedChanged += new System.EventHandler(this.chkSize_CheckedChanged);
             // 
             // label4
             // 
@@ -734,18 +725,42 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // expcomb
+            // 
+            this.expcomb.BackColor = System.Drawing.Color.Transparent;
+            this.expcomb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.expcomb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.expcomb.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.expcomb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.expcomb.FocusedState.Parent = this.expcomb;
+            this.expcomb.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.expcomb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.expcomb.HoverState.Parent = this.expcomb;
+            this.expcomb.ItemHeight = 30;
+            this.expcomb.Items.AddRange(new object[] {
+            "dd/mm/yyyy",
+            "mm/yyyy"});
+            this.expcomb.ItemsAppearance.Parent = this.expcomb;
+            this.expcomb.Location = new System.Drawing.Point(525, 263);
+            this.expcomb.Name = "expcomb";
+            this.expcomb.ShadowDecoration.Parent = this.expcomb;
+            this.expcomb.Size = new System.Drawing.Size(128, 36);
+            this.expcomb.StartIndex = 0;
+            this.expcomb.TabIndex = 438;
+            this.expcomb.SelectedIndexChanged += new System.EventHandler(this.expcomb_SelectedIndexChanged);
+            // 
             // ItemSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.expcomb);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtSize);
             this.Controls.Add(this.chkSize);
             this.Controls.Add(this.txtexpdate);
-            this.Controls.Add(this.cmbExpDate);
             this.Controls.Add(this.chkExpdate);
             this.Controls.Add(this.txtmfgdate);
             this.Controls.Add(this.guna2Button3);
@@ -824,11 +839,11 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2TextBox txtmfgdate;
         private Guna.UI2.WinForms.Guna2TextBox txtexpdate;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbExpDate;
         private Guna.UI2.WinForms.Guna2CheckBox chkExpdate;
         private Guna.UI2.WinForms.Guna2TextBox txtSize;
         private Guna.UI2.WinForms.Guna2CheckBox chkSize;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2ComboBox expcomb;
     }
 }

@@ -637,7 +637,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(586, 369);
+            this.btnSave.Location = new System.Drawing.Point(614, 369);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
@@ -704,7 +704,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(684, 369);
+            this.btnUpdate.Location = new System.Drawing.Point(712, 369);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
@@ -719,7 +719,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDelete.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnDelete.Location = new System.Drawing.Point(780, 369);
+            this.btnDelete.Location = new System.Drawing.Point(808, 369);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 42);
@@ -781,7 +781,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(878, 369);
+            this.button2.Location = new System.Drawing.Point(906, 369);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 42);
@@ -923,10 +923,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 749);
+            this.panel1.Size = new System.Drawing.Size(1081, 749);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -992,12 +992,12 @@
             this.dgvItemmaster.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvItemmaster.EnableHeadersVisualStyles = false;
             this.dgvItemmaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemmaster.Location = new System.Drawing.Point(12, 456);
+            this.dgvItemmaster.Location = new System.Drawing.Point(12, 604);
             this.dgvItemmaster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvItemmaster.Name = "dgvItemmaster";
             this.dgvItemmaster.RowHeadersVisible = false;
             this.dgvItemmaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItemmaster.Size = new System.Drawing.Size(1016, 195);
+            this.dgvItemmaster.Size = new System.Drawing.Size(1016, 68);
             this.dgvItemmaster.TabIndex = 39;
             this.dgvItemmaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvItemmaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1026,6 +1026,7 @@
             // 
             // itemtracking
             // 
+            this.itemtracking.BackColor = System.Drawing.Color.Silver;
             this.itemtracking.BorderThickness = 1;
             this.itemtracking.Controls.Add(this.dtpexpdate);
             this.itemtracking.Controls.Add(this.dtpmfgDate);
@@ -1040,7 +1041,7 @@
             this.itemtracking.Controls.Add(this.label23);
             this.itemtracking.Controls.Add(this.label24);
             this.itemtracking.Controls.Add(this.panel2);
-            this.itemtracking.Location = new System.Drawing.Point(423, 206);
+            this.itemtracking.Location = new System.Drawing.Point(347, 418);
             this.itemtracking.Name = "itemtracking";
             this.itemtracking.ShadowDecoration.Parent = this.itemtracking;
             this.itemtracking.Size = new System.Drawing.Size(603, 179);
@@ -1249,7 +1250,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(541, 6);
+            this.button1.Location = new System.Drawing.Point(554, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(26, 27);
             this.button1.TabIndex = 3;

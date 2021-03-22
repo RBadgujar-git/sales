@@ -30,8 +30,18 @@ namespace sample
         {
                     }
 
+        public int Estiment ;
         private void Form1_Load(object sender, EventArgs e)
         {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select CompanyID  from tbl_CompanyMaster Where CompanyName = 'MyCompany'", con);
+            string CompantId= cmd.ExecuteScalar().ToString();
+            con.Close();
+            NewCompany.company_id = CompantId.ToString();
+
+       //     NewCompany.company_id = 4.ToString();
+
+
             //try
             //{
             //    con.Open();
@@ -55,6 +65,9 @@ namespace sample
             //
             toolStripMenuItem5.Text = "Select Company";
             toolStripMenuItem5.Text=NewCompany.companyname;
+
+                    
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -613,9 +626,69 @@ namespace sample
             PB.BringToFront();
             // PB.Show();
         }
-
+        public int Estiment1,deleverychallan;
         private void saleToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //con.Open();
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            //SqlCommand cmd3 = new SqlCommand("Select Estiment  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);
+            //Estiment = Convert.ToInt32(cmd3.ExecuteScalar());
+
+
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Estiment = Convert.ToInt32(dr["Estiment"]);
+                Estiment1 = Convert.ToInt32(dr["Sale_purches"]);
+                deleverychallan = Convert.ToInt32(dr["Delliverychallen"]);
+            }
+            dr.Close();
+                //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);
+                //int  Estiment1 = Convert.ToInt32(cmd4.ExecuteScalar());
+
+
+                //    con.Close();
+                if (Estiment == 1)
+            {
+             //   estimateQuotationToolStripMenuItem.Enabled = false;
+                estimateQuotationToolStripMenuItem.Visible= false;
+
+            }
+            else
+            {
+             //   estimateQuotationToolStripMenuItem.Enabled = true;
+                estimateQuotationToolStripMenuItem.Visible = true;
+            }
+
+            if (Estiment1==1)
+            {
+                saleOrderToolStripMenuItem.Visible = false;
+
+            }
+            else
+            {
+                //   estimateQuotationToolStripMenuItem.Enabled = true;
+                saleOrderToolStripMenuItem.Visible = true;
+            }
+
+            if (deleverychallan == 1)
+            {
+                deliveryChallanToolStripMenuItem.Visible = false;
+
+            }
+            else
+            {
+                //   estimateQuotationToolStripMenuItem.Enabled = true;
+                deliveryChallanToolStripMenuItem.Visible = true;
+            }
+
+
 
         }
 
@@ -628,6 +701,7 @@ namespace sample
             //ex.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             ex.Dock = DockStyle.Fill;
             ex.BringToFront();
+
         }
 
         private void paymentInToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1299,9 +1373,11 @@ namespace sample
 
         private void barcodePrintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Barcodeprint br = new Barcodeprint();
-            br.Show();
+            //Barcodeprint br = new Barcodeprint();
+            //br.Show();
+            PasswordAsign as1=new  PasswordAsign();
 
+            as1.Show();
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
@@ -1346,6 +1422,28 @@ namespace sample
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();
+        }
+
+        private void purchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);
+            int Estiment1 = Convert.ToInt32(cmd4.ExecuteScalar());
+
+            if (Estiment1 == 1)
+            {
+                purchaseOrderToolStripMenuItem.Visible = false;
+
+            }
+            else
+            {
+                //   estimateQuotationToolStripMenuItem.Enabled = true;
+                purchaseOrderToolStripMenuItem.Visible = true;
+            }
+
         }
     }
 }

@@ -565,6 +565,12 @@
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LowStockSummary.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -660,6 +666,12 @@
     </Compile>
     <Compile Include="Party_Group.Designer.cs">
       <DependentUpon>Party_Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordAsign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordAsign.Designer.cs">
+      <DependentUpon>PasswordAsign.cs</DependentUpon>
     </Compile>
     <Compile Include="PaymentIn.cs">
       <SubType>Form</SubType>
@@ -1081,6 +1093,9 @@
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LowStockSummary.resx">
       <DependentUpon>LowStockSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -1128,6 +1143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Party_Group.resx">
       <DependentUpon>Party_Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordAsign.resx">
+      <DependentUpon>PasswordAsign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentIn.resx">
       <DependentUpon>PaymentIn.cs</DependentUpon>

@@ -37,6 +37,31 @@ namespace sample
             txtReturnNo.Enabled = false;
             //comboBox3.Enabled = false;
             get_id();
+
+
+            if (discountcheck == 1)
+            {
+                txtDis.Hide();
+                txtDisAmt.Hide();
+                label32.Hide();
+                label33.Hide();
+             }
+
+
+            if (ItemwisTax == 1)
+            {
+                txtTax1.Hide();
+                label30.Hide();
+                //txtDis ds = new txtDis();
+
+                txtDis.Width = 130;
+                txtDis.Height = 28;
+
+                txtOty.Location = new Point(567, 42);
+                txtOty.Width = 119;
+                txtOty.Height = 28;
+            }
+
         }
 
         private void fetchBarcode()
@@ -125,29 +150,35 @@ namespace sample
 
         private void get_id()
         {
-            if (txtReturnNo.Text != "0" || txtReturnNo.Text != "")
+            seeting();
+
+            if (investment == 1)
             {
-                SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-                if (con.State == ConnectionState.Closed)
+                if (txtReturnNo.Text != "0" || txtReturnNo.Text != "")
                 {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("select MAX (CAST( InvoiceID as INT)) from tbl_SaleInvoice", con);
-                SqlDataReader rd = cmd.ExecuteReader();
-                if (rd.Read())
-                {
-                    string Value = rd[0].ToString();
-                    if (Value == "")
+
+                    SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+                    if (con.State == ConnectionState.Closed)
                     {
-                        txtReturnNo.Text = "1";
+                        con.Open();
                     }
-                    else
+                    SqlCommand cmd = new SqlCommand("select MAX (CAST( InvoiceID as INT)) from tbl_SaleInvoice", con);
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    if (rd.Read())
                     {
-                        txtReturnNo.Text = rd[0].ToString();
-                        txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
+                        string Value = rd[0].ToString();
+                        if (Value == "")
+                        {
+                            txtReturnNo.Text = "1";
+                        }
+                        else
+                        {
+                            txtReturnNo.Text = rd[0].ToString();
+                            txtReturnNo.Text = (Convert.ToInt64(txtReturnNo.Text) + 1).ToString();
+                        }
                     }
+                    rd.Close();
                 }
-                rd.Close();
             }
         }
 
@@ -166,9 +197,23 @@ namespace sample
                 //string query = string.Format("insert into tbl_SaleInvoice( PartyName,BillingName,ContactNo ,PoNumber,PoDate,InvoiceDate,StateofSupply  ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,Tax1,CGST,SGST,TaxAmount1 ,TotalDiscount ,DiscountAmount1 ,RoundFigure ,Total, Received, RemainingBal, Feild1,Feild2,Feild3, Status,TableName,Barcode) Values (@PartyName, @BillingName, @ContactNo, @PoNumber, @PoDate, @InvoiceDate, @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description, @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal, @Feild1, @Feild2, @Feild3, @Status, @TableName,@Barcode); SELECT SCOPE_IDENTITY();");
                 //SqlCommand cmd = new SqlCommand(query, con);
                 DataTable dtable = new DataTable();
-                cmd = new SqlCommand("tbl_SaleInvoiceSelect", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@Action", "Insert");
+                seeting();
+
+                if (investment == 0)
+                {
+                    id1 = cmd.ExecuteScalar();
+
+                    cmd = new SqlCommand("tbl_SaleInvoiceSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                }
+                else if (investment == 1)
+                {
+                    cmd = new SqlCommand("tbl_SaleInvoiceSelect", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Insert1");
+                }
+        
                 if (cmbpartyname.Visible == true)
                 {
                     cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
@@ -219,7 +264,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", TxtIGST.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                id1 = cmd.ExecuteScalar();
+
+
+              
+
                 MessageBox.Show("Insert Record Added");
             }
             catch (Exception e1)
@@ -381,6 +429,9 @@ namespace sample
             {
                 con.Open();
             }
+
+          
+            
             string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
             SqlCommand cmd = new SqlCommand(str, con);
 
@@ -409,6 +460,29 @@ namespace sample
                 dr.Close();
             }
         }
+
+
+        public int investment,discountcheck, ItemwisTax;
+        public void seeting()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+                investment = Convert.ToInt32(dr["InvoiceNo"]);
+                discountcheck= Convert.ToInt32(dr["ItemWiseDiscount"]);
+                ItemwisTax= Convert.ToInt32(dr["ItemwisTax"]);
+            }
+            dr.Close();
+        }
+
         private void printdata(string id1)
         {
             if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -1589,7 +1663,17 @@ namespace sample
 
         }
 
+        private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -101,9 +101,10 @@ namespace sample
             {
                 InsertData();
                 this.Visible = false;
-                th = new Thread(openingform);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
+                //this.Visible = false;
+                //th = new Thread(openingform);
+                //th.SetApartmentState(ApartmentState.STA);
+                //th.Start();
             }
         }
 
