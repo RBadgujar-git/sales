@@ -134,7 +134,7 @@
             // 
             this.txtPaid.BorderThickness = 0;
             this.txtPaid.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPaid.DefaultText = "";
+            this.txtPaid.DefaultText = "0";
             this.txtPaid.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtPaid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtPaid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -152,8 +152,9 @@
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.PasswordChar = '\0';
             this.txtPaid.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtPaid.PlaceholderText = "0";
+            this.txtPaid.PlaceholderText = "";
             this.txtPaid.SelectedText = "";
+            this.txtPaid.SelectionStart = 1;
             this.txtPaid.ShadowDecoration.Parent = this.txtPaid;
             this.txtPaid.Size = new System.Drawing.Size(169, 43);
             this.txtPaid.TabIndex = 56;
@@ -185,7 +186,7 @@
             // 
             this.txtUnpaid.BorderThickness = 0;
             this.txtUnpaid.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUnpaid.DefaultText = "";
+            this.txtUnpaid.DefaultText = "0";
             this.txtUnpaid.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUnpaid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUnpaid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -203,8 +204,9 @@
             this.txtUnpaid.Name = "txtUnpaid";
             this.txtUnpaid.PasswordChar = '\0';
             this.txtUnpaid.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtUnpaid.PlaceholderText = "0";
+            this.txtUnpaid.PlaceholderText = "";
             this.txtUnpaid.SelectedText = "";
+            this.txtUnpaid.SelectionStart = 1;
             this.txtUnpaid.ShadowDecoration.Parent = this.txtUnpaid;
             this.txtUnpaid.Size = new System.Drawing.Size(169, 43);
             this.txtUnpaid.TabIndex = 3;
@@ -236,7 +238,7 @@
             // 
             this.txtTotal.BorderThickness = 0;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotal.DefaultText = "";
+            this.txtTotal.DefaultText = "0";
             this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -254,8 +256,9 @@
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtTotal.PlaceholderText = "0";
+            this.txtTotal.PlaceholderText = "";
             this.txtTotal.SelectedText = "";
+            this.txtTotal.SelectionStart = 1;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
             this.txtTotal.Size = new System.Drawing.Size(169, 43);
             this.txtTotal.TabIndex = 4;

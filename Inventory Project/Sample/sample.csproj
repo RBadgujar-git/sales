@@ -738,9 +738,7 @@
     <Compile Include="PurchaseReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PurchaseReport.Designer.cs">
-      <DependentUpon>PurchaseReport.cs</DependentUpon>
-    </Compile>
+    <Compile Include="PurchaseReport.Designer.cs" />
     <Compile Include="ReferandEarn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1187,9 +1185,7 @@
     <EmbeddedResource Include="PurchaseOrderHomepage.resx">
       <DependentUpon>PurchaseOrderHomepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseReport.resx">
-      <DependentUpon>PurchaseReport.cs</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseReport.resx" />
     <EmbeddedResource Include="ReferandEarn.resx">
       <DependentUpon>ReferandEarn.cs</DependentUpon>
     </EmbeddedResource>

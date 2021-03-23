@@ -240,24 +240,31 @@ namespace sample
         }
         private void Data()
         {
+            try { 
             float TA = 0, TD = 0, total = 0, TG = 0, qty = 0, rate = 0;
             //dgvexpense.Rows.Add();
             //row = dgvexpense.Rows.Count - 2;
             ////dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
             //dgvexpense.CurrentCell = dgvexpense[1, row];
             //e.SuppressKeyPress = true;
-            for (int i = 1; i < dgvsaleInvoice.Rows.Count; i++)
+            for (int i = 0; i < dgvsaleInvoice.Rows.Count; i++)
             {
-                TA += float.Parse(dgvsaleInvoice.Rows[i].Cells["Paid"].Value?.ToString());
+                TA += float.Parse(dgvsaleInvoice.Rows[i].Cells["Total"].Value?.ToString());
                 txtPaid.Text = TA.ToString();
                 TD += float.Parse(dgvsaleInvoice.Rows[i].Cells["RemainingBal"].Value?.ToString());
-
                 txtUnpaid.Text = TD.ToString();
+
                 qty = float.Parse(txtPaid.Text.ToString());
                 rate = float.Parse(txtUnpaid.Text.ToString());
                 total = qty + rate;
                 txtTotal.Text = total.ToString();
 
+            }
+        }
+        
+        catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         private void Bindadata()
