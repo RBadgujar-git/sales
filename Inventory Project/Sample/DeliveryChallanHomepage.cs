@@ -109,13 +109,12 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select * from tbl_DeliveryChallan where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string Query = string.Format("select ChallanNo ,PartyName,BillingName,InvoiceDate,Total,Received from tbl_DeliveryChallan where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvdeliveryChallan.DataSource = ds;
                 dgvdeliveryChallan.DataMember = "temp";
-
 
 
             }
@@ -129,7 +128,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select * from tbl_DeliveryChallan where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
+                string Query = string.Format("select  ChallanNo ,PartyName,BillingName,InvoiceDate,Total,Received  from tbl_DeliveryChallan where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -149,7 +148,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select  ChallanNo ,PartyName,BillingName,InvoiceDate,Total,Received  from tbl_DeliveryChallan where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
