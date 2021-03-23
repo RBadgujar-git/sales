@@ -306,7 +306,7 @@
             this.txtbillingadd.ForeColor = System.Drawing.Color.Black;
             this.txtbillingadd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbillingadd.HoverState.Parent = this.txtbillingadd;
-            this.txtbillingadd.Location = new System.Drawing.Point(153, 75);
+            this.txtbillingadd.Location = new System.Drawing.Point(153, 76);
             this.txtbillingadd.Multiline = true;
             this.txtbillingadd.Name = "txtbillingadd";
             this.txtbillingadd.PasswordChar = '\0';
@@ -514,10 +514,10 @@
             this.cmbpartyname1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbpartyname1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbpartyname1.FormattingEnabled = true;
-            this.cmbpartyname1.Location = new System.Drawing.Point(153, 47);
+            this.cmbpartyname1.Location = new System.Drawing.Point(153, 48);
             this.cmbpartyname1.Name = "cmbpartyname1";
             this.cmbpartyname1.Size = new System.Drawing.Size(200, 24);
-            this.cmbpartyname1.TabIndex = 1;
+            this.cmbpartyname1.TabIndex = 232;
             this.cmbpartyname1.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             this.cmbpartyname1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbpartyname1_KeyPress);
             this.cmbpartyname1.ParentChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
@@ -721,7 +721,7 @@
             this.cmbpartyname.Location = new System.Drawing.Point(153, 47);
             this.cmbpartyname.Name = "cmbpartyname";
             this.cmbpartyname.Size = new System.Drawing.Size(200, 24);
-            this.cmbpartyname.TabIndex = 135;
+            this.cmbpartyname.TabIndex = 1;
             this.cmbpartyname.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
             this.cmbpartyname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbpartyname_KeyPress);
             // 

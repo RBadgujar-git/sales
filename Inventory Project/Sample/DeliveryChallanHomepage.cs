@@ -46,7 +46,8 @@ namespace sample
         private void DeliveryChallanHomepage_Load(object sender, EventArgs e)
         {
             fetchCompany();
-            bindbankdata();
+       //     bindbankdata();
+            show();
         }
         private void fetchCompany()
         {
@@ -104,11 +105,31 @@ namespace sample
 
         }
 
+        public void show()
+        {
+            try
+            {
+                string Query = string.Format("select * from tbl_DeliveryChallan where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvdeliveryChallan.DataSource = ds;
+                dgvdeliveryChallan.DataMember = "temp";
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string Query = string.Format("select PartyName from tbl_DeliveryChallan where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
+                string Query = string.Format("select * from tbl_DeliveryChallan where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

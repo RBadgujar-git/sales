@@ -210,6 +210,7 @@ namespace sample
                     cmd = new SqlCommand("tbl_SaleInvoiceSelect", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert1");
+
                 }
         
                 if (cmbpartyname.Visible == true)
@@ -233,8 +234,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                 //  cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
 
-                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
 
+
+                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
                 cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
                 cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
                 cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
@@ -270,7 +272,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -335,7 +337,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                   MessageBox.Show(e1.Message);
+                  // MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -1245,7 +1247,8 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-            cal_Total();
+
+cal_Total();
             gst_devide();
         }
 
@@ -1265,6 +1268,9 @@ namespace sample
             clear_text_data();
             cleardata();
             // dgvInnerDebiteNote.Rows.Clear();
+            comboBox2.Visible =false;
+            cmbpartyname1.Visible = true;
+
 
         }
 
@@ -1429,51 +1435,51 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
-                    string intemcode = dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString().ToString();
-                    string qtyw = dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString().ToString();
-                    float qty1 = float.Parse(qtyw);
+                    //string intemcode = dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString().ToString();
+                    //string qtyw = dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString().ToString();
+                    //float qty1 = float.Parse(qtyw);
 
 
-                    //   MessageBox.Show("existing" +intemcode+" thtee"+ qty1+"   iifasfdsfsd"+txtReturnNo.Text);
+                    ////   MessageBox.Show("existing" +intemcode+" thtee"+ qty1+"   iifasfdsfsd"+txtReturnNo.Text);
 
 
-                    SqlCommand cmd1 = new SqlCommand("Select Qty from tbl_SaleInvoiceInnersp where ItemCode='" + intemcode + "' and InvoiceID='" + txtReturnNo.Text + "' ", con);
-                    float existingQty = Convert.ToInt32(cmd1.ExecuteScalar());
+                    //SqlCommand cmd1 = new SqlCommand("Select Qty from tbl_SaleInvoiceInnersp where ItemCode='" + intemcode + "' and InvoiceID='" + txtReturnNo.Text + "' ", con);
+                    //float existingQty = Convert.ToInt32(cmd1.ExecuteScalar());
 
-                    //   MessageBox.Show("existing" + existingQty + "new qty" + qty1);
+                    ////   MessageBox.Show("existing" + existingQty + "new qty" + qty1);
 
-                    SqlCommand cmdb = new SqlCommand("tbl_SaleInvoiceInnersp", con);
-                    cmdb.CommandType = CommandType.StoredProcedure;
-                    cmdb.Parameters.AddWithValue("@Action", "backget");
-                    cmdb.Parameters.AddWithValue("@Itemcode", intemcode);
-                    float prestock = Convert.ToInt32(cmdb.ExecuteScalar());
+                    //SqlCommand cmdb = new SqlCommand("tbl_SaleInvoiceInnersp", con);
+                    //cmdb.CommandType = CommandType.StoredProcedure;
+                    //cmdb.Parameters.AddWithValue("@Action", "backget");
+                    //cmdb.Parameters.AddWithValue("@Itemcode", intemcode);
+                    //float prestock = Convert.ToInt32(cmdb.ExecuteScalar());
 
-                    if (existingQty > qty1)
-                    {
-                        float finalqty = existingQty - qty1;
-                        float stockmange = prestock - finalqty;
+                    //if (existingQty > qty1)
+                    //{
+                    //    float finalqty = existingQty - qty1;
+                    //    float stockmange = prestock - finalqty;
 
-                        SqlCommand cmd2 = new SqlCommand("tbl_SaleInvoiceInnersp", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
-                        cmd2.Parameters.AddWithValue("@stock", stockmange);
-                        cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
-                        cmd2.ExecuteNonQuery();
+                    //    SqlCommand cmd2 = new SqlCommand("tbl_SaleInvoiceInnersp", con);
+                    //    cmd2.CommandType = CommandType.StoredProcedure;
+                    //    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    //    cmd2.Parameters.AddWithValue("@stock", stockmange);
+                    //    cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
+                    //    cmd2.ExecuteNonQuery();
 
-                    }
-                    else if (existingQty < qty1)
-                    {
+                    //}
+                    //else if (existingQty < qty1)
+                    //{
 
-                        float finalqty = qty1 - existingQty;
-                        float stockmange = prestock + finalqty;
-                        SqlCommand cmd2 = new SqlCommand("tbl_SaleInvoiceInnersp", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
-                        cmd2.Parameters.AddWithValue("@stock", stockmange);
-                        cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
-                        cmd2.ExecuteNonQuery();
+                    //    float finalqty = qty1 - existingQty;
+                    //    float stockmange = prestock + finalqty;
+                    //    SqlCommand cmd2 = new SqlCommand("tbl_SaleInvoiceInnersp", con);
+                    //    cmd2.CommandType = CommandType.StoredProcedure;
+                    //    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    //    cmd2.Parameters.AddWithValue("@stock", stockmange);
+                    //    cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
+                    //    cmd2.ExecuteNonQuery();
 
-                    }
+                    //}
 
                     cmd.ExecuteNonQuery();
 
@@ -1680,7 +1686,8 @@ namespace sample
         private void textBox1_KeyDown_1(object sender, KeyEventArgs e)
         {
                 fetchBarcode();
-    }
+
+              }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {

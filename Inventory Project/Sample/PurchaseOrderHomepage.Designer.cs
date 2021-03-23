@@ -103,11 +103,11 @@
             this.dgvPurchaseOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPurchaseOrder.EnableHeadersVisualStyles = false;
             this.dgvPurchaseOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPurchaseOrder.Location = new System.Drawing.Point(0, 94);
+            this.dgvPurchaseOrder.Location = new System.Drawing.Point(3, 94);
             this.dgvPurchaseOrder.Name = "dgvPurchaseOrder";
             this.dgvPurchaseOrder.RowHeadersVisible = false;
             this.dgvPurchaseOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPurchaseOrder.Size = new System.Drawing.Size(1033, 449);
+            this.dgvPurchaseOrder.Size = new System.Drawing.Size(1030, 449);
             this.dgvPurchaseOrder.TabIndex = 195;
             this.dgvPurchaseOrder.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPurchaseOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

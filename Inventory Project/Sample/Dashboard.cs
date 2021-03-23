@@ -640,6 +640,7 @@ namespace sample
 
 
             SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+
             SqlDataReader dr = cmd1.ExecuteReader();
 
             while (dr.Read())
