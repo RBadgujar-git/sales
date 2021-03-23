@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 namespace sample
 {
     public partial class ExpenseCategoryReport : UserControl
@@ -63,7 +64,7 @@ namespace sample
             dgvExpensecategory.AutoGenerateColumns = false;
             dgvExpensecategory.ColumnCount = 2;
             dgvExpensecategory.Columns[0].HeaderText = "Category Name";
-            dgvExpensecategory.Columns[0].DataPropertyName = "CategoryName";
+            dgvExpensecategory.Columns[0].DataPropertyName = "ExpenseCategory";
             dgvExpensecategory.Columns[1].HeaderText = " Paid Amount";
             dgvExpensecategory.Columns[1].DataPropertyName = "Paid";
             dgvExpensecategory.DataSource = dt;
@@ -82,7 +83,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster group by CompanyName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -103,7 +104,7 @@ namespace sample
         {
             if (cmbExpensecategory.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory group by CategoryName where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
+                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -181,6 +182,35 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.Paid,b.ExpenseCategory,b.Company_ID from tbl_Expenses as b,tbl_CompanyMaster as c where b.Company_ID = '" + NewCompany.company_id + "' and c.CompanyID='" + NewCompany.company_id + "' and b.DeleteData = '1'");
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"ExpensesCategoryData.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("ExpensesCategoryData", "ExpensesCategoryData", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

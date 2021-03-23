@@ -589,6 +589,7 @@ namespace sample
             txtitemamount.Text = this.dgvinnerexpenses.CurrentRow.Cells[4].Value.ToString();
 
             int row = dgvinnerexpenses.CurrentCell.RowIndex;
+
             dgvinnerexpenses.Rows.RemoveAt(row);
             txtTotal.Text = "0";
             txtReceived.Text = "0";

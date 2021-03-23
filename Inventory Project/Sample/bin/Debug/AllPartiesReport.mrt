@@ -446,10 +446,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/20/2021 1:34:52 PM</ReportChanged>
+  <ReportChanged>3/20/2021 2:11:49 PM</ReportChanged>
   <ReportCreated>3/20/2021 12:28:28 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\AllPartiesReport.mrt</ReportFile>
-  <ReportGuid>fdd9deea6b0940f68dc667c288f4aa2e</ReportGuid>
+  <ReportGuid>a9fa9260a5ef42a4956501e7530c6c53</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
