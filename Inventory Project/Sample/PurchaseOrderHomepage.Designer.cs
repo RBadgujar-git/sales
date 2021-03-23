@@ -103,7 +103,7 @@
             this.dgvPurchaseOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPurchaseOrder.EnableHeadersVisualStyles = false;
             this.dgvPurchaseOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPurchaseOrder.Location = new System.Drawing.Point(12, 169);
+            this.dgvPurchaseOrder.Location = new System.Drawing.Point(0, 94);
             this.dgvPurchaseOrder.Name = "dgvPurchaseOrder";
             this.dgvPurchaseOrder.RowHeadersVisible = false;
             this.dgvPurchaseOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
