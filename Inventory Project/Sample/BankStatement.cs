@@ -40,6 +40,25 @@ namespace sample
 
         private void cmbbankname_SelectedIndexChanged(object sender, EventArgs e)
         {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                string Query = String.Format("select a.Company_ID,a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where b.BankName='{0}' and a.Company_ID='" + NewCompany.company_id + "'" , cmbbankname.Text);
+                    //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvbankStatement.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public void bankname()
         {
