@@ -78,10 +78,12 @@ namespace sample
         {
 
             fetchcustomername();
-            // fetchitem();
+            fetchitem();
             txtReturnNo.Enabled = false;
             comboBox2.Visible = false;
-            comboBox3.Visible = false;
+          comboBox3.Visible = true;
+            comboBox1.Hide();
+            label15.Hide();
             fetchCategory();
             get_id();
         }
@@ -625,7 +627,7 @@ namespace sample
             {
                 cmbpartyname.Visible = false;
                 comboBox2.Visible = true;
-                comboBox1.Visible = false;
+                comboBox1.Visible = true;
                 comboBox3.Visible = true;
                 bind_sale_details();
             }
@@ -634,27 +636,34 @@ namespace sample
         private void update_record_inner(string id)
         {
 
-            //SqlCommand cmdn = new SqlCommand("tbl_SaleOrderInnersp", con);
-            //cmdn.CommandType = CommandType.StoredProcedure;
-            //cmdn.Parameters.AddWithValue("@Action", "inserdelete");
-            //cmdn.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
-            //cmdn.ExecuteNonQuery();
+            if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmdn = new SqlCommand("tbl_SaleOrderInnersp", con);
+            cmdn.CommandType = CommandType.StoredProcedure;
+            cmdn.Parameters.AddWithValue("@Action", "inserdelete");
+            cmdn.Parameters.AddWithValue("@OrderNo",txtReturnNo.Text);
+            cmdn.ExecuteNonQuery();
 
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
             {
                 try
                 {
+
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
                     }
+
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_SaleOrderInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@OrderNo", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@OrderNo",txtReturnNo.Text);
 
-                    // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCatory,SalePrice
+                    // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
@@ -671,6 +680,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
+
                 }
                 catch (Exception e1)
                 {
@@ -818,30 +828,13 @@ namespace sample
             {
                 MessageBox.Show("Please Insert Party Name");
 
-            }
-            else if (txtcon.Text == "")
-            {
-                MessageBox.Show("Please Insert Contact no");
-                txtcon.Focus();
-            }
-            else if (txtcon.Text == "")
-            {
-                MessageBox.Show("Please Insert Contact no");
-                txtcon.Focus();
-            }
+            }     
             else if (txtReturnNo.Text == "")
             {
                 MessageBox.Show("Please Insert Contact no");
                 txtReturnNo.Focus();
             }
-            else if (cmbStatesupply.Text == "")
-            {
-                MessageBox.Show("Please Select State ");
-            }
-            else if (cmbtax.Text == "")
-            {
-                MessageBox.Show("Please Select Tax !");
-            }
+          
             else if (cmbPaymentType.Text == "")
             {
                 MessageBox.Show("Please Select Payment Type !");
@@ -850,10 +843,7 @@ namespace sample
             {
                 MessageBox.Show("Please Select Payment Status !");
             }
-            else if (txtItemCode.Text == "")
-            {
-                MessageBox.Show("Please Select Payment Status !");
-            }
+          
             else
             {
                 verfy = 1;
@@ -930,6 +920,9 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+            comboBox1.Visible = true;
+            cmbpartyname.Visible = false;
+            get_id();
 
         }
 
@@ -1042,11 +1035,17 @@ namespace sample
         private void btnUpdate_Click(object sender, EventArgs e)
         {          
                 update();    
-                clear_text_data();
-                cleardata();
+             
                 printdata(txtReturnNo.Text.ToString());
                 dgvInnerDebiteNote.Rows.Clear();
-            
+            clear_text_data();
+            cleardata();
+            comboBox2.Visible = false;
+
+            //     comboBox3.Visible = true;
+            cmbpartyname.Visible = true;
+            get_id();
+
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -1274,8 +1273,8 @@ namespace sample
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
            
-            cal_Total();
-            gst_devide();
+            //cal_Total();
+            //gst_devide();
         }
 
         private void txtItemTotal_ImeModeChanged(object sender, EventArgs e)
@@ -1363,6 +1362,11 @@ namespace sample
         private void txtsgst_TextChanged(object sender, EventArgs e)
         {
             cal_Total();
+        }
+
+        private void txtItemCode_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }

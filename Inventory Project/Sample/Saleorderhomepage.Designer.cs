@@ -36,15 +36,6 @@
             this.btnprint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvSaleOrder = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -131,16 +122,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvSaleOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSaleOrder.ColumnHeadersHeight = 18;
-            this.dgvSaleOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column7,
-            this.Column6,
-            this.Column8,
-            this.Column9});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -151,11 +132,11 @@
             this.dgvSaleOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleOrder.EnableHeadersVisualStyles = false;
             this.dgvSaleOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSaleOrder.Location = new System.Drawing.Point(3, 175);
+            this.dgvSaleOrder.Location = new System.Drawing.Point(48, 190);
             this.dgvSaleOrder.Name = "dgvSaleOrder";
             this.dgvSaleOrder.RowHeadersVisible = false;
             this.dgvSaleOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSaleOrder.Size = new System.Drawing.Size(1046, 382);
+            this.dgvSaleOrder.Size = new System.Drawing.Size(971, 344);
             this.dgvSaleOrder.TabIndex = 196;
             this.dgvSaleOrder.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvSaleOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -179,51 +160,7 @@
             this.dgvSaleOrder.ThemeStyle.RowsStyle.Height = 22;
             this.dgvSaleOrder.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSaleOrder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Party";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Ref No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Due date";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total Amount";
-            this.Column4.Name = "Column4";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Balance ";
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Type";
-            this.Column6.Name = "Column6";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Status";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Action";
-            this.Column9.Name = "Column9";
+            this.dgvSaleOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleOrder_CellContentClick);
             // 
             // dtpTo
             // 
@@ -359,15 +296,6 @@
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Button btnImport;
         private Guna.UI2.WinForms.Guna2DataGridView dgvSaleOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DateTimePicker dtpTo;
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label label5;

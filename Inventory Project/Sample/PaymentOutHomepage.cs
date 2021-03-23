@@ -86,7 +86,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data not" + ex);
+               // MessageBox.Show("Data not" + ex);
             }
         }
 

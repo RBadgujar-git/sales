@@ -42,10 +42,11 @@ namespace sample
                     {
                         cmbFirm.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
                     }
+
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                 //   MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -319,7 +320,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data not" + ex);
+             //   MessageBox.Show("Data not" + ex);
             }
         }
 
