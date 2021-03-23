@@ -559,6 +559,12 @@
     <Compile Include="LoanStatement.Designer.cs">
       <DependentUpon>LoanStatement.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoanStatementReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LoanStatementReport.Designer.cs">
+      <DependentUpon>LoanStatementReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -738,7 +744,9 @@
     <Compile Include="PurchaseReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PurchaseReport.Designer.cs" />
+    <Compile Include="PurchaseReport.Designer.cs">
+      <DependentUpon>PurchaseReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReferandEarn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1088,6 +1096,9 @@
     <EmbeddedResource Include="LoanStatement.resx">
       <DependentUpon>LoanStatement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoanStatementReport.resx">
+      <DependentUpon>LoanStatementReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -1185,7 +1196,9 @@
     <EmbeddedResource Include="PurchaseOrderHomepage.resx">
       <DependentUpon>PurchaseOrderHomepage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PurchaseReport.resx" />
+    <EmbeddedResource Include="PurchaseReport.resx">
+      <DependentUpon>PurchaseReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReferandEarn.resx">
       <DependentUpon>ReferandEarn.cs</DependentUpon>
     </EmbeddedResource>

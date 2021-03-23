@@ -165,6 +165,7 @@
               <Parent isRef="4" />
               <Text>{ExpensesCategoryData.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text13 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -179,6 +180,7 @@
               <Parent isRef="4" />
               <Text>{ExpensesCategoryData.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text13>
             <HorizontalLinePrimitive2 Ref="15" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0,3.2,19,0.0254</ClientRectangle>
@@ -271,7 +273,7 @@
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>a5135d0b43964b1a9ed61e01b862bd11</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text12</Name>
               <Page isRef="3" />
@@ -336,7 +338,7 @@
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>821246d74d8e47c19c2e1ca03be0b93b</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
               <Page isRef="3" />
@@ -477,10 +479,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/22/2021 12:58:27 PM</ReportChanged>
+  <ReportChanged>3/23/2021 6:17:57 PM</ReportChanged>
   <ReportCreated>3/22/2021 12:16:47 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpensesCategoryData.mrt</ReportFile>
-  <ReportGuid>3979f658f0934b9fbc5c304408f21ac3</ReportGuid>
+  <ReportGuid>cd5031c75cb74063b7bada3c1d2ac977</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

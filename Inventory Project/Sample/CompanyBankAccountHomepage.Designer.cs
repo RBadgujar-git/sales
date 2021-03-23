@@ -318,6 +318,7 @@
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 467;
             this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
             // btnImport
             // 

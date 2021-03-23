@@ -411,7 +411,7 @@ namespace sample
 
           
             
-            string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
+            string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID ='" + txtReturnNo.Text + "' and  Company_ID='" + NewCompany.company_id + "'");
             SqlCommand cmd = new SqlCommand(str, con);
 
             SqlDataReader dr = cmd.ExecuteReader();

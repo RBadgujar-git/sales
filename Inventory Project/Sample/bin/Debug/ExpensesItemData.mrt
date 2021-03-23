@@ -184,6 +184,7 @@
               <Parent isRef="4" />
               <Text>{ExpensesItemData.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text13 Ref="15" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -198,6 +199,7 @@
               <Parent isRef="4" />
               <Text>{ExpensesItemData.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text13>
             <Text7 Ref="16" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -289,7 +291,6 @@
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>350f960350b948d3bfd23518a9a987bc</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
               <Page isRef="3" />
@@ -323,7 +324,7 @@
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>f2f3acc9dea34fcfa6611361ff8e5c6c</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text12</Name>
               <Page isRef="3" />
@@ -404,7 +405,7 @@
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>9e2f72d6c9d440fc977f142350876235</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
               <Page isRef="3" />
@@ -544,10 +545,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/22/2021 12:59:19 PM</ReportChanged>
+  <ReportChanged>3/23/2021 6:16:39 PM</ReportChanged>
   <ReportCreated>3/22/2021 11:36:05 AM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpensesItemData.mrt</ReportFile>
-  <ReportGuid>0063e08fc2ef4530a9089787933009b3</ReportGuid>
+  <ReportGuid>cdcab9828a7d4976ab708dc4871eb19f</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

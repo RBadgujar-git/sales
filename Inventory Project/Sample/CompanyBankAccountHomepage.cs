@@ -28,5 +28,10 @@ namespace sample
             BA.Visible = true;
             BA.BringToFront();
         }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
     }
 }

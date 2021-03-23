@@ -155,7 +155,9 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.PhoneNo,c.EmailID,c.GSTNumber,b.PartyName ,b.ContactNo,b.Received tbl_PurchaseBill as b,tbl_CompanyMaster as c where CompanyID='" + NewCompany.company_id + "' ");
+                    string Query = String.Format("select TableName,PartyName, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}'union all select TableName,PartyName, ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "'", cmballparties.Text);
+
+                    // string Query = string.Format("select c.CompanyID,c.CompanyName,c.PhoneNo,c.EmailID,c.GSTNumber,b.PartyName ,b.ContactNo,b.Received From tbl_PurchaseBill as b,tbl_CompanyMaster as c where CompanyID='" + NewCompany.company_id + "' and b.PartyName='{0}'",cmballparties.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
