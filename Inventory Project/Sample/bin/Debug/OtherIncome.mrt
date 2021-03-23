@@ -111,6 +111,7 @@
               <Parent isRef="4" />
               <Text>{OtherIncomeReport.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text4>
             <Text5 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -125,6 +126,7 @@
               <Parent isRef="4" />
               <Text>{OtherIncomeReport.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text6 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -137,7 +139,7 @@
               <Name>Text6</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Purchase Invoice</Text>
+              <Text>Other Income </Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text6>
@@ -439,7 +441,6 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>231c05a800b6434e9dd07cd0e77dc928</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
               <Page isRef="3" />
@@ -473,7 +474,7 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>2f0b97fa4202480890a07cefa2f0415a</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text35</Name>
               <Page isRef="3" />
@@ -507,7 +508,7 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>b04fafe7ba964f61b63e37320a3fe412</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text12</Name>
               <Page isRef="3" />
@@ -523,7 +524,7 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>cc20407445f04bd6b1abdab6aa582f05</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text21</Name>
               <Page isRef="3" />
@@ -539,7 +540,7 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>6e91d7e8c4b24511be401b69c80e3b50</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
               <Page isRef="3" />
@@ -555,7 +556,6 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>e6a3eb8cf3da4739afaaff84f198b295</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text23</Name>
               <Page isRef="3" />
@@ -571,7 +571,6 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>66082111e87340a381875bf6ff0cd08b</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text25</Name>
               <Page isRef="3" />
@@ -594,6 +593,7 @@ Category</Text>
               <Parent isRef="40" />
               <Text>{OtherIncomeReport.Date}</Text>
               <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text11>
             <EndPointPrimitive5 Ref="51" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
@@ -626,7 +626,7 @@ Category</Text>
         <FooterBand1 Ref="53" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,8.2,19,0.6</ClientRectangle>
-          <Components isList="true" count="1">
+          <Components isList="true" count="2">
             <Text13 Ref="54" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
@@ -643,6 +643,21 @@ Category</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text13>
+            <Text14 Ref="55" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,17.2,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,14,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="3" />
+              <Parent isRef="53" />
+              <Text>Total
+</Text>
+              <TextBrush>Black</TextBrush>
+            </Text14>
           </Components>
           <Conditions isList="true" count="0" />
           <Name>FooterBand1</Name>
@@ -657,13 +672,13 @@ Category</Text>
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="55" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="56" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="56" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="57" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -675,10 +690,10 @@ Category</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/20/2021 5:36:27 PM</ReportChanged>
+  <ReportChanged>3/23/2021 6:12:37 PM</ReportChanged>
   <ReportCreated>3/20/2021 2:45:05 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncome.mrt</ReportFile>
-  <ReportGuid>cf8645f041744fe3aa39e3d78010a24e</ReportGuid>
+  <ReportGuid>1be4c80e66494c1aa7d17fe7e7ed36a7</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

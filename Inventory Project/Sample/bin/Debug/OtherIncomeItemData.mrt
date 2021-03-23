@@ -150,6 +150,7 @@ No.</Text>
               <Parent isRef="4" />
               <Text>{OtherIncomeItemData.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text13 Ref="13" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -164,6 +165,7 @@ No.</Text>
               <Parent isRef="4" />
               <Text>{OtherIncomeItemData.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text13>
             <Text11 Ref="14" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -511,10 +513,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/22/2021 4:45:22 PM</ReportChanged>
+  <ReportChanged>3/23/2021 6:13:10 PM</ReportChanged>
   <ReportCreated>3/22/2021 4:02:04 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeItemData.mrt</ReportFile>
-  <ReportGuid>f44cb012e5554ba68041da7925062915</ReportGuid>
+  <ReportGuid>d320ad8936ea4fbeb9cf15cde963c195</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

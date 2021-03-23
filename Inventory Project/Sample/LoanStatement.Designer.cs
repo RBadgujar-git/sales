@@ -139,6 +139,7 @@
             this.btnPrint.Size = new System.Drawing.Size(19, 19);
             this.btnPrint.TabIndex = 204;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // dgvLoanStatement
             // 

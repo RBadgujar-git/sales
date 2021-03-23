@@ -170,6 +170,7 @@ No.</Text>
               <Parent isRef="4" />
               <Text>{ItemTrackingData.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text13 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -184,6 +185,7 @@ No.</Text>
               <Parent isRef="4" />
               <Text>{ItemTrackingData.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text13>
             <Text7 Ref="15" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -205,7 +207,7 @@ No.</Text>
             <Text9 Ref="16" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>10,3.6,2.6,1.2</ClientRectangle>
+              <ClientRectangle>10,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,14,Bold</Font>
               <Guid>06ffee060deb4397aeeb06c25c712a30</Guid>
@@ -222,7 +224,7 @@ No.</Text>
             <Text11 Ref="17" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>12.6,3.6,3,1.2</ClientRectangle>
+              <ClientRectangle>12.2,3.6,3.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,14,Bold</Font>
               <Guid>bf46a40564c5499aa68ec9ede1c07a0e</Guid>
@@ -239,7 +241,7 @@ No.</Text>
             <Text14 Ref="18" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,3.6,3.4,1.2</ClientRectangle>
+              <ClientRectangle>15.4,3.6,3.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,14,Bold</Font>
               <Guid>5dddeea975e3480180b41c60f1a2450c</Guid>
@@ -326,7 +328,6 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>49c8e75c44964b3f9237a74a6a42aaaa</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
               <Page isRef="3" />
@@ -340,7 +341,7 @@ No.</Text>
             <Text12 Ref="29" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,0,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.4,0,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>d7e30bdf629744f88baeb1ac276b7fbf</Guid>
@@ -410,7 +411,7 @@ No.</Text>
             <Text17 Ref="33" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>10,0,2.6,0.6</ClientRectangle>
+              <ClientRectangle>10,0,2.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>4855a173b6df42158395829626b29090</Guid>
@@ -428,7 +429,7 @@ No.</Text>
             <Text18 Ref="34" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>12.6,0,3,0.6</ClientRectangle>
+              <ClientRectangle>12.2,0,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>822b8549a8e94a1dbe71aca9ca07ff6a</Guid>
@@ -579,10 +580,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/22/2021 1:02:24 PM</ReportChanged>
+  <ReportChanged>3/23/2021 6:15:25 PM</ReportChanged>
   <ReportCreated>3/22/2021 12:34:26 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ItemTrackingData.mrt</ReportFile>
-  <ReportGuid>9ccf35db7cfb4f73849c2407ef27fc90</ReportGuid>
+  <ReportGuid>b78f818456de44f994bddad9b0cddfe8</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

@@ -165,6 +165,7 @@
               <Parent isRef="4" />
               <Text>{IncomeCategoryData.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text13 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -179,6 +180,7 @@
               <Parent isRef="4" />
               <Text>{IncomeCategoryData.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text13>
             <HorizontalLinePrimitive2 Ref="15" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0,3.2,19,0.0254</ClientRectangle>
@@ -349,7 +351,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,10.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>Arial,14,Bold</Font>
               <Guid>7b44eebc2c4742c090515a5c13850251</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -475,10 +477,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/22/2021 3:39:54 PM</ReportChanged>
+  <ReportChanged>3/23/2021 6:14:13 PM</ReportChanged>
   <ReportCreated>3/22/2021 2:41:03 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeCategoryData.mrt</ReportFile>
-  <ReportGuid>8924f8f62c9d46b580f4de16c5681f31</ReportGuid>
+  <ReportGuid>d477effa6d7a4f0cbb99ece7027327e2</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

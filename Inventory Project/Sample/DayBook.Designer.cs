@@ -48,9 +48,9 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdaybook)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -336,6 +336,7 @@
             this.btnPrint.Size = new System.Drawing.Size(25, 26);
             this.btnPrint.TabIndex = 28;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnimport
             // 
@@ -367,16 +368,15 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
-            // radioButton1
+            // groupBox1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(11, 14);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 20);
-            this.radioButton1.TabIndex = 439;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Sale";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(239, 63);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 41);
+            this.groupBox1.TabIndex = 441;
+            this.groupBox1.TabStop = false;
             // 
             // radioButton2
             // 
@@ -389,15 +389,16 @@
             this.radioButton2.Text = "Purchase";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // radioButton1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(239, 63);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 41);
-            this.groupBox1.TabIndex = 441;
-            this.groupBox1.TabStop = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(11, 14);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(54, 20);
+            this.radioButton1.TabIndex = 439;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Sale";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // DayBook
             // 
@@ -450,8 +451,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpdate;
         private System.Windows.Forms.Button btnminimize;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

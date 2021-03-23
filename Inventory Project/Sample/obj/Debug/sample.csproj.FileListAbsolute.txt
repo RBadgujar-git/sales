@@ -1549,3 +1549,7 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.POS.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Barcode.xml
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
