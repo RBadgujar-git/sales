@@ -1553,3 +1553,4 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoginForm.resourc
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Barcode.xml
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque1.resources

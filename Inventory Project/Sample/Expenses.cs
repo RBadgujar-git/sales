@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 
 namespace sample
 {
@@ -29,6 +31,9 @@ namespace sample
             fetchexpenses();
             txtReturnNo.Enabled = false;
             txtTotal.Enabled = false;
+            this.dgvinnerexpenses.AllowUserToAddRows = false;
+            string id = "";
+            //this.BindDataGridView();
             //bind_sale_details();
             //cleardata();
             //clear_text_data();
@@ -36,7 +41,8 @@ namespace sample
 
         private void get_id()
         {
-            if (txtReturnNo.Text != "0" || txtReturnNo.Text != "") {
+            if (txtReturnNo.Text != "0" || txtReturnNo.Text != "")
+            {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
                 // SqlConnection con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
                 con.Open();
@@ -127,7 +133,7 @@ namespace sample
             txtItem.Text = "";
             txtMRP.Text = "0";
             txtOty.Text = "0";
-            //txtitemamount.Text = "0";
+            txtitemamount.Text = "0";
            
         }
         private void cleardata()
@@ -143,7 +149,7 @@ namespace sample
             txtBalance.Text = "0";
             ComboBox.Text = "";
             Expences.Text = "";
-
+            dgvinnerexpenses.Rows.Clear();
 
         }
      
@@ -162,8 +168,8 @@ namespace sample
                 cmd = new SqlCommand("tbl_ExpensesSelect", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Action", "Insert");
-                //cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
-             //   cmd.Parameters.AddWithValue("@ID", id);
+                cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
+                //cmd.Parameters.AddWithValue("@ID", id);
                 cmd.Parameters.AddWithValue("@ExpenseCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtdescritpition.Text);
@@ -187,7 +193,7 @@ namespace sample
             }
             finally {
                 con.Close();
-                insert_record_inner(txtReturnNo.ToString());
+                insert_record_inner(id1.ToString());
             }
         }   
 
@@ -218,7 +224,7 @@ namespace sample
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@Id_inner", txtReturnNo.Text);
-                    cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@ID1", id1);
                     cmd.Parameters.AddWithValue("@ItemName", dgvinnerexpenses.Rows[i].Cells["Item"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
@@ -233,54 +239,127 @@ namespace sample
                 finally
                 {
                     con.Close();
+                   
                 }
+            }
+        }
+
+        
+        public int veryfi = 0;
+
+        public void validdata()
+        {
+            if (cmbexpenses.Text == "")
+            {
+                MessageBox.Show("Expenses Category is Required");
+                cmbexpenses.Focus();
+
+            }
+            else if (txtItem.Text == "")
+            {
+                MessageBox.Show("Item Name Is Required");
+                txtItem.Focus();
+
+            }
+            else if (txtMRP.Text == "")
+            {
+                MessageBox.Show("Please Enter the MRP of Item");
+                txtMRP.Focus();
+            }
+            else if (txtOty.Text == "")
+            {
+                MessageBox.Show("Quantity is Required");
+                txtOty.Focus();
+            }
+            else if (ComboBox.Text == "")
+            {
+                MessageBox.Show("Payment Status is Required");
+            }
+            else
+            {
+                veryfi = 1;
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            insertdata();
-            bind_sale_details();
-            get_id();
-            cleardata();
-            clear_text_data();
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string str = string.Format("SELECT * FROM tbl_Expenses where ID1 =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
+            SqlCommand cmd = new SqlCommand(str, con);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (id == "")
+            {
+                if (dr.HasRows)
+                {
+                    MessageBox.Show("You Have To No Permission To Save This Record !");
+                    dr.Close();
+                }
+                else
+                {
+                    dr.Close();
+                    validdata();
+                    if (veryfi == 1)
+                    {
+                        insertdata();
+                        //bind_sale_details();
+                        get_id();
+                        cleardata();
+                        clear_text_data();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("You Have To No Permission To Insert This Record");
+            }
         }
 
         int row = 0;
         private void txtitemamount_KeyDown(object sender, KeyEventArgs e)
         {
-            try {
-                if (e.KeyCode == Keys.Enter) {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvinnerexpenses.Rows.Add();
                     row = dgvinnerexpenses.Rows.Count - 1;
-                    
+
                     dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
                     dgvinnerexpenses.CurrentCell = dgvinnerexpenses[1, row];
                     e.SuppressKeyPress = true;
                     string Item = txtItem.Text;
                     string MRP = txtMRP.Text;
-                    string qty = txtOty.Text;     
+                    string qty = txtOty.Text;
                     string Total = txtitemamount.Text;
                     //int id = dgvinnerexpenses.Rows.Count+1;
 
                     //dgvinnerexpenses.Rows[row].Cells[0].Value = id;
-                    dgvinnerexpenses.Rows[row].Cells[1].Value = Item;         
+                    dgvinnerexpenses.Rows[row].Cells[1].Value = Item;
                     dgvinnerexpenses.Rows[row].Cells[2].Value = MRP;
-                    dgvinnerexpenses.Rows[row].Cells[3].Value = qty;           
+                    dgvinnerexpenses.Rows[row].Cells[3].Value = qty;
                     dgvinnerexpenses.Rows[row].Cells[4].Value = Total;
-
-
+                    
                     txtItem.Focus();
-                    for (int i = 0; i < dgvinnerexpenses.Rows.Count; i++) {
+                    for (int i = 0; i < dgvinnerexpenses.Rows.Count; i++)
+                    {
                         TA += float.Parse(dgvinnerexpenses.Rows[i].Cells["Amount"].Value?.ToString());
                         txtTotal.Text = TA.ToString();
                     }
                     //clear_text_data();
                 }
             }
-            catch (Exception e1) {
+            catch (Exception e1)
+            {
                 //string message = e1.Message;
+            }
+            finally
+            {
+               // clear_text_data();
             }
         }
 
@@ -288,7 +367,10 @@ namespace sample
         {
             try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 MemoryStream ms = new MemoryStream();
                 picImage.Image.Save(ms, picImage.Image.RawFormat);
                 byte[] arrImage1 = ms.GetBuffer();
@@ -325,33 +407,70 @@ namespace sample
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            update();
-            get_id();
-            cleardata();
-            clear_text_data();
-            dgvinnerexpenses.Rows.Clear();
+            if(con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            validdata();
+            if (veryfi == 1)
+            {
+                string str = string.Format("SELECT * FROM tbl_Expenses where ID1 =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
+                SqlCommand cmd = new SqlCommand(str, con);
+
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    dr.Close();
+                    update();
+                    get_id();
+                    cleardata();
+                    clear_text_data();
+                    dgvinnerexpenses.Rows.Clear();
+                }
+            }
         }
-    
-    private void update_record_inner(string p)
-    {
-            for (int i = 0; i < dgvinnerexpenses.Rows.Count; i++) {
-                try {
-                    con.Open();
+
+        private void update_record_inner(string id)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmdn = new SqlCommand("tbl_ExpensesInnersp", con);
+            cmdn.CommandType = CommandType.StoredProcedure;
+            cmdn.Parameters.AddWithValue("@Action", "Delete");
+            cmdn.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
+            cmdn.ExecuteNonQuery();
+
+            // int count = Convert.ToInt32(dgvinnerexpenses.RowCount.ToString()) - 1;
+            for (int i = 0; i < dgvinnerexpenses.Rows.Count; i++)
+            {
+                try
+                {
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_ExpensesInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@Id_inner", txtReturnNo.Text);
                     cmd.Parameters.AddWithValue("@ID1", txtReturnNo.Text);
                     cmd.Parameters.AddWithValue("@ItemName", dgvinnerexpenses.Rows[i].Cells["Item"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@SalePrice", dgvinnerexpenses.Rows[i].Cells["Price"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Qty", dgvinnerexpenses.Rows[i].Cells["Qty"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvinnerexpenses.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
-            }
+                }
             catch (Exception e1)
             {
+                   // MessageBox.Show(e1.Message);
+
             }
-            finally {
+            finally
+            {
                 con.Close();
             }
         }
@@ -402,7 +521,7 @@ namespace sample
                     }
                     // dr.Close();
 
-                    string str1 = string.Format("SELECT * FROM tbl_ExpensesInner where ID1='{0}' and Company_ID='" + NewCompany.company_id + "' ", txtReturnNo.Text);
+                    string str1 = string.Format("SELECT * FROM tbl_ExpensesInner where ID1='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtReturnNo.Text);
                     SqlCommand cmd1 = new SqlCommand(str1, con);
                     dr.Close();
 
@@ -634,7 +753,31 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.BillingAddress,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.TaxForSale,c.SaleTaxAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
+                    StiReport report = new StiReport();
+                    report.Load(@"ExpencesReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("Expences", "Expences", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void dgvinnerexpenses_DoubleClick(object sender, EventArgs e)
@@ -657,5 +800,19 @@ namespace sample
         {
 
         }
+
+        private void txtReturnNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+ 
     }
 }

@@ -173,6 +173,7 @@ namespace sample
                             con.Open();
                         }
                         DataTable dtable = new DataTable();
+                        MessageBox.Show("Do You Want to Delete");
                         SqlCommand cmd = new SqlCommand("tbl_ExpenseCategorySelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Delete");

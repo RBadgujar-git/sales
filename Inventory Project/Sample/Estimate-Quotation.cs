@@ -47,6 +47,7 @@ namespace sample
             }
         }
 
+        int cmbpoint = 0;
         private void fetchcustomername()
         {
             if (cmbpartyname.Text != "System.Data.DataRowView")
@@ -62,7 +63,9 @@ namespace sample
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
                         cmbpartyname.Items.Add(ds.Tables["Temp"].Rows[i]["PartyName"].ToString());
+
                     }
+                    
                 }
                 catch (Exception e1)
                 {
@@ -77,19 +80,49 @@ namespace sample
             this.Close();
         }
 
+        public  void itemfeatch()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                // con.Close();
+                string Query = String.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Estimate_Quotation_Load(object sender, EventArgs e)
         {
+            cmbCategory.Visible = false;
+            comboBox2.Visible = false;
             cmbpartyname.Focus();             
             txtReturnNo.Enabled = false;        
-            fetchcustomername();     
             get_id();
+            fetchcustomername();
+            itemfeatch();
             fetchCategory();         
             comboBox1.Visible = false;
-            comboBox2.Visible = false;
-            if (chkRoundOff.Checked == true)
-            {
-                Math.Round(Convert.ToDouble(txtTotal.Text));
-            }
+            dgvInnerQuotation.AllowUserToAddRows = false;
+
+
+            //if (chkRoundOff.Checked == false)
+            //{
+            //    Math.Round(Convert.ToDouble(txtTotal.Text));
+            //}
         }
         private void fetchCategory()
         {
@@ -137,6 +170,7 @@ namespace sample
                     }
                 }
                 con.Close();
+                rd.Close();
             }
         }
 
@@ -297,7 +331,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
-                
+
 
                 //if (cmbpartyname.Visible == true)
                 //{
@@ -307,7 +341,7 @@ namespace sample
                 //{
                 //    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
                 //}
-               
+
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 // cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
@@ -415,7 +449,7 @@ namespace sample
                 {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvInnerQuotation.Rows.Add();
-                    row = dgvInnerQuotation.Rows.Count - 2;
+                    row = dgvInnerQuotation.Rows.Count - 1;
                     dgvInnerQuotation.Rows[row].Cells["sr_no"].Value = row + 1;
                     dgvInnerQuotation.CurrentCell = dgvInnerQuotation[1, row];
 
@@ -447,8 +481,8 @@ namespace sample
                     dgvInnerQuotation.Rows[row].Cells[11].Value = Total;
 
                     txtItemName.Focus();
-                    int count=Convert.ToInt32(dgvInnerQuotation.RowCount.ToString())-1;
-                    for (int i = 0; i < count; i++)
+                   // int count=Convert.ToInt32(dgvInnerQuotation.RowCount.ToString())-1;
+                    for (int i = 0; i < dgvInnerQuotation.RowCount; i++)
                     {
                         TA += float.Parse(dgvInnerQuotation.Rows[i].Cells["Amount"].Value?.ToString());
 
@@ -484,6 +518,7 @@ namespace sample
         }
         private void cleardata()
         {
+            comboBox2.Visible = false;
             txtcon.Text = "";
             cmbpartyname.Text = "";
             txtBillingAdd.Text = "";
@@ -511,8 +546,16 @@ namespace sample
 
         private void update_record_inner(string id)
         {
-            int count = Convert.ToInt32(dgvInnerQuotation.RowCount.ToString()) - 1;
-            for (int i = 0; i < count; i++)
+
+            //int count = Convert.ToInt32(dgvInnerQuotation.RowCount.ToString()) - 1;
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("Update tbl_QuotationInner set DeleteData='0' where RefNo=" + txtReturnNo.Text+ " " , con);
+            cmd.ExecuteNonQuery();
+          
+            for (int i = 0; i < dgvInnerQuotation.Rows.Count; i++)
             {
                 try
                 {
@@ -523,7 +566,7 @@ namespace sample
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_QuotationInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@RefNo", txtReturnNo.Text);
                     cmd.Parameters.AddWithValue("@ItemName", dgvInnerQuotation.Rows[i].Cells["txtItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemCode", dgvInnerQuotation.Rows[i].Cells["Item_Code"].Value.ToString());
@@ -538,6 +581,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerQuotation.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
+
                 }
                 catch (Exception e1)
                 {
@@ -601,14 +645,14 @@ namespace sample
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
 
 
-                if (cmbpartyname.Visible == true)
-                {
-                    cmd.Parameters.AddWithValue("@Itemcatgory", cmbCategory.Text);
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
-                }
+                //if (cmbpartyname.Visible == true)
+                //{
+                //    cmd.Parameters.AddWithValue("@Itemcatgory", cmbCategory.Text);
+                //}
+                //else
+                //{
+                //    cmd.Parameters.AddWithValue("@Itemcatgory", comboBox2.Text);
+                //}
 
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
@@ -633,7 +677,7 @@ namespace sample
             if (e.KeyCode == Keys.Enter)
             {
                 cmbCategory.Visible = false;
-                comboBox2.Visible = true;
+                comboBox2.Visible =false;
                 cmbpartyname.Visible = false;
                 comboBox1.Visible = true;
                 bind_sale_details();
@@ -687,7 +731,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_QuotationInner where RefNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT RefNo,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_QuotationInner where RefNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
@@ -806,7 +850,6 @@ namespace sample
             }
 
             catch (Exception e1)
-
             {
                 MessageBox.Show(e1.Message);
             }
@@ -913,7 +956,7 @@ namespace sample
         }
 
        
-
+       
         private void cmbpartyname_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             try
@@ -1213,6 +1256,8 @@ namespace sample
 
             int row = dgvInnerQuotation.CurrentCell.RowIndex;
             dgvInnerQuotation.Rows.RemoveAt(row);
+
+
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
@@ -1233,6 +1278,7 @@ namespace sample
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+
                     txtItemName.Text = dr["ItemName"].ToString();
                     txtItemCode.Text = dr["ItemCode"].ToString();
                     txtUnit.Text = dr["BasicUnit"].ToString();
@@ -1240,13 +1286,17 @@ namespace sample
                     txtTax1.Text = dr["TaxForSale"].ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
-
+                   // dr.Close();
                 }
                 dr.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                 //MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
 
         }
@@ -1361,11 +1411,6 @@ namespace sample
         }
 
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvInnerQuotation_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -139,12 +139,18 @@ namespace sample
       
         private void buttonsave_Click(object sender, EventArgs e)
         {
-            validdata();
-            if (veryfi == 1)
+            if (id == "")
             {
-                Insert();
-                fetchdetails();
+                validdata();
+                if (veryfi == 1)
+                {
+                    Insert();
+                    fetchdetails();
+                }
             }
+            else {
+                MessageBox.Show("No permission");}
+           
         }
     
      

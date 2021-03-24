@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyBankAccountHomepage));
             this.btnSaleorder = new Guna.UI2.WinForms.Guna2Button();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -67,7 +67,7 @@
             this.btnSaleorder.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleorder.ForeColor = System.Drawing.Color.White;
             this.btnSaleorder.HoverState.Parent = this.btnSaleorder;
-            this.btnSaleorder.Location = new System.Drawing.Point(883, 120);
+            this.btnSaleorder.Location = new System.Drawing.Point(626, 128);
             this.btnSaleorder.Name = "btnSaleorder";
             this.btnSaleorder.ShadowDecoration.Parent = this.btnSaleorder;
             this.btnSaleorder.Size = new System.Drawing.Size(145, 45);
@@ -162,21 +162,21 @@
             // 
             // dgvcompanybank
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvcompanybank.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvcompanybank.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvcompanybank.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcompanybank.BackgroundColor = System.Drawing.Color.White;
             this.dgvcompanybank.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcompanybank.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvcompanybank.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcompanybank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcompanybank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvcompanybank.ColumnHeadersHeight = 18;
             this.dgvcompanybank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
@@ -188,21 +188,21 @@
             this.Column6,
             this.Column8,
             this.Column9});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcompanybank.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvcompanybank.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvcompanybank.EnableHeadersVisualStyles = false;
             this.dgvcompanybank.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvcompanybank.Location = new System.Drawing.Point(12, 179);
+            this.dgvcompanybank.Location = new System.Drawing.Point(7, 179);
             this.dgvcompanybank.Name = "dgvcompanybank";
             this.dgvcompanybank.RowHeadersVisible = false;
             this.dgvcompanybank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcompanybank.Size = new System.Drawing.Size(1046, 382);
+            this.dgvcompanybank.Size = new System.Drawing.Size(764, 312);
             this.dgvcompanybank.TabIndex = 469;
             this.dgvcompanybank.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvcompanybank.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -282,9 +282,9 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dgvcompanybank);
             this.panel1.Controls.Add(this.btnprint);
-            this.panel1.Location = new System.Drawing.Point(3, 5);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1071, 576);
+            this.panel1.Size = new System.Drawing.Size(777, 506);
             this.panel1.TabIndex = 1;
             // 
             // btnminimize
@@ -297,7 +297,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(984, 16);
+            this.btnminimize.Location = new System.Drawing.Point(711, 3);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 477;
@@ -313,7 +313,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1016, 16);
+            this.btncancel.Location = new System.Drawing.Point(743, 4);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 467;
@@ -327,7 +327,7 @@
             this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Location = new System.Drawing.Point(942, 61);
+            this.btnImport.Location = new System.Drawing.Point(626, 63);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(21, 23);
             this.btnImport.TabIndex = 465;
@@ -340,7 +340,7 @@
             this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnprint.FlatAppearance.BorderSize = 0;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Location = new System.Drawing.Point(977, 63);
+            this.btnprint.Location = new System.Drawing.Point(667, 65);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(21, 21);
             this.btnprint.TabIndex = 466;
@@ -352,7 +352,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "CompanyBankAccountHomepage";
-            this.Size = new System.Drawing.Size(1080, 586);
+            this.Size = new System.Drawing.Size(780, 517);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

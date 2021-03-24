@@ -23,7 +23,7 @@ namespace sample
         {
             InitializeComponent();
             con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-            //picturebox.Image = Properties.Resources.No_Image_Available;
+           // picturebox.Image = Properties.Resources.No_Image_Available;
             //con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
 
@@ -493,10 +493,10 @@ namespace sample
                         {
                             con.Open();
                         }
-                    MemoryStream ms = new MemoryStream();
-                    picturebox.Image.Save(ms, picturebox.Image.RawFormat);
-                    byte[] arrImage1 = ms.GetBuffer();
-                    DataTable dt = new DataTable();
+                    //MemoryStream ms = new MemoryStream();
+                    //picturebox.Image.Save(ms, picturebox.Image.RawFormat);
+                    //byte[] arrImage1 = ms.GetBuffer();
+                    //DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_ItemMasterSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Update");
@@ -525,8 +525,8 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Size", txtsize.Text);
                         cmd.Parameters.AddWithValue("@Description", txtDescritption.Text);
                         cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
-                    cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
-                    cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                        cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
+                        cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
@@ -670,7 +670,7 @@ namespace sample
             txtDescritption.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Description"].Value.ToString();
             txtminimumStock.Text = dgvItemmaster.Rows[e.RowIndex].Cells["MinimumStock"].Value.ToString();
             textBox1.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Barcode"].Value.ToString();
-            SqlCommand cmd = new SqlCommand("select Image1 from tbl_ItemMaster", con);
+            SqlCommand cmd = new SqlCommand("select Image1 from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
@@ -684,7 +684,7 @@ namespace sample
         }
        
 
-        byte[] arrImage1;
+        byte[] arrImage1=null;
         private void picturebox_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();

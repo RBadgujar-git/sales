@@ -64,8 +64,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 SqlParameter sqlpara = new SqlParameter("@Image", SqlDbType.Image);
-                sqlpara.Value = DBNull.Value;
-                cmd.Parameters.Add(sqlpara);
+                //sqlpara.Value = DBNull.Value;
+                //cmd.Parameters.Add(sqlpara);
 
                 SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
                 sdasql.Fill(dtable); 

@@ -40,19 +40,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvCategory = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lblBankAccount = new System.Windows.Forms.Label();
             this.btnOtherIncome = new System.Windows.Forms.Button();
             this.dgvOtherincome = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.OtherIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
@@ -150,7 +145,7 @@
             this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCategory.ColumnHeadersHeight = 18;
             this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1});
+            this.OtherIncome});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -191,11 +186,6 @@
             this.dgvCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvCategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellDoubleClick);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Category";
-            this.Column1.Name = "Column1";
-            // 
             // txtSearch
             // 
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -221,6 +211,7 @@
             this.txtSearch.Size = new System.Drawing.Size(246, 25);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // guna2Button1
             // 
@@ -247,7 +238,7 @@
             this.guna2ShadowPanel3.Location = new System.Drawing.Point(295, 65);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(788, 70);
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(788, 108);
             this.guna2ShadowPanel3.TabIndex = 13;
             this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
@@ -290,12 +281,6 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOtherincome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvOtherincome.ColumnHeadersHeight = 18;
-            this.dgvOtherincome.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn1,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -306,11 +291,11 @@
             this.dgvOtherincome.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvOtherincome.EnableHeadersVisualStyles = false;
             this.dgvOtherincome.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvOtherincome.Location = new System.Drawing.Point(295, 172);
+            this.dgvOtherincome.Location = new System.Drawing.Point(295, 221);
             this.dgvOtherincome.Name = "dgvOtherincome";
             this.dgvOtherincome.RowHeadersVisible = false;
             this.dgvOtherincome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOtherincome.Size = new System.Drawing.Size(788, 473);
+            this.dgvOtherincome.Size = new System.Drawing.Size(788, 424);
             this.dgvOtherincome.TabIndex = 4;
             this.dgvOtherincome.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvOtherincome.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -335,31 +320,7 @@
             this.dgvOtherincome.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvOtherincome.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvOtherincome.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOtherincome_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Category";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Amount";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Receiable";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Due Amount";
-            this.Column5.Name = "Column5";
+            this.dgvOtherincome.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOtherincome_CellDoubleClick);
             // 
             // txtSearch2
             // 
@@ -377,7 +338,7 @@
             this.txtSearch2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
-            this.txtSearch2.Location = new System.Drawing.Point(295, 141);
+            this.txtSearch2.Location = new System.Drawing.Point(295, 190);
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
             this.txtSearch2.PlaceholderText = "";
@@ -386,6 +347,12 @@
             this.txtSearch2.Size = new System.Drawing.Size(246, 25);
             this.txtSearch2.TabIndex = 14;
             this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
+            this.txtSearch2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch2_KeyPress);
+            // 
+            // OtherIncome
+            // 
+            this.OtherIncome.HeaderText = "OtherIncome";
+            this.OtherIncome.Name = "OtherIncome";
             // 
             // OtherIncomeHomepage1
             // 
@@ -424,15 +391,10 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
         private System.Windows.Forms.Button btnOtherIncome;
         private Guna.UI2.WinForms.Guna2DataGridView dgvOtherincome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch2;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.Label lblBankAccount;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OtherIncome;
     }
 }

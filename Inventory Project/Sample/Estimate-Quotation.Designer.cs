@@ -151,7 +151,7 @@
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(80, 24);
-            this.txtItemTotal.TabIndex = 17;
+            this.txtItemTotal.TabIndex = 11;
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             this.txtItemTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemTotal_KeyPress);
@@ -181,7 +181,7 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(80, 24);
-            this.txtDisAmt.TabIndex = 15;
+            this.txtDisAmt.TabIndex = 9;
             this.txtDisAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisAmt_KeyPress);
             // 
             // txtDis
@@ -209,7 +209,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(80, 24);
-            this.txtDis.TabIndex = 11;
+            this.txtDis.TabIndex = 5;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
             // 
@@ -256,7 +256,7 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(80, 24);
-            this.txtTaxAMount1.TabIndex = 16;
+            this.txtTaxAMount1.TabIndex = 10;
             this.txtTaxAMount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxAMount1_KeyPress);
             // 
             // button3
@@ -372,7 +372,7 @@
             this.btnSave.Location = new System.Drawing.Point(293, 564);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 24;
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -423,7 +423,7 @@
             this.dgvInnerQuotation.RowHeadersVisible = false;
             this.dgvInnerQuotation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvInnerQuotation.Size = new System.Drawing.Size(990, 125);
-            this.dgvInnerQuotation.TabIndex = 18;
+            this.dgvInnerQuotation.TabIndex = 7;
             this.dgvInnerQuotation.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvInnerQuotation.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvInnerQuotation.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -446,7 +446,6 @@
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.Height = 22;
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvInnerQuotation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerQuotation_CellContentClick);
             this.dgvInnerQuotation.DoubleClick += new System.EventHandler(this.dgvInnerQuotation_DoubleClick);
             // 
             // sr_no
@@ -766,7 +765,7 @@
             this.ComboBox.Location = new System.Drawing.Point(917, 547);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(89, 24);
-            this.ComboBox.TabIndex = 23;
+            this.ComboBox.TabIndex = 12;
             // 
             // cmbtax
             // 
@@ -785,7 +784,7 @@
             this.cmbtax.Location = new System.Drawing.Point(649, 465);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(85, 24);
-            this.cmbtax.TabIndex = 21;
+            this.cmbtax.TabIndex = 10;
             this.cmbtax.Text = "0";
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.cmbtax_SelectedIndexChanged_1);
             this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
@@ -907,7 +906,7 @@
             this.Print.Location = new System.Drawing.Point(497, 563);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 26;
+            this.Print.TabIndex = 15;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -920,7 +919,7 @@
             this.Clear.Location = new System.Drawing.Point(598, 562);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 26;
+            this.Clear.TabIndex = 16;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -933,7 +932,7 @@
             this.cmbpartyname.Location = new System.Drawing.Point(150, 54);
             this.cmbpartyname.Name = "cmbpartyname";
             this.cmbpartyname.Size = new System.Drawing.Size(163, 24);
-            this.cmbpartyname.TabIndex = 75;
+            this.cmbpartyname.TabIndex = 10;
             this.cmbpartyname.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
             this.cmbpartyname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbpartyname_KeyPress);
             // 
@@ -984,7 +983,7 @@
             this.txtsubtotal.SelectionStart = 1;
             this.txtsubtotal.ShadowDecoration.Parent = this.txtsubtotal;
             this.txtsubtotal.Size = new System.Drawing.Size(90, 24);
-            this.txtsubtotal.TabIndex = 0;
+            this.txtsubtotal.TabIndex = 37;
             this.txtsubtotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsubtotal_KeyPress);
             // 
             // btnUpdate
@@ -995,7 +994,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(395, 563);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.TabIndex = 14;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -1149,7 +1148,7 @@
             this.txtItemName.Location = new System.Drawing.Point(19, 48);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(99, 22);
-            this.txtItemName.TabIndex = 7;
+            this.txtItemName.TabIndex = 1;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
@@ -1178,7 +1177,7 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(80, 24);
-            this.txtTax1.TabIndex = 12;
+            this.txtTax1.TabIndex = 6;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
             // 
@@ -1215,7 +1214,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(80, 24);
-            this.txtMRP.TabIndex = 10;
+            this.txtMRP.TabIndex = 4;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
@@ -1251,7 +1250,7 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(80, 24);
-            this.txtUnit.TabIndex = 9;
+            this.txtUnit.TabIndex = 3;
             this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
@@ -1288,7 +1287,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(80, 24);
-            this.txtFreeQty.TabIndex = 14;
+            this.txtFreeQty.TabIndex = 8;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
             // 
@@ -1324,7 +1323,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(85, 24);
-            this.txtItemCode.TabIndex = 8;
+            this.txtItemCode.TabIndex = 2;
             this.txtItemCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemCode_KeyPress);
             // 
             // label21
@@ -1370,7 +1369,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(80, 24);
-            this.txtOty.TabIndex = 13;
+            this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -1393,7 +1392,7 @@
             this.chkRoundOff.Location = new System.Drawing.Point(651, 516);
             this.chkRoundOff.Name = "chkRoundOff";
             this.chkRoundOff.Size = new System.Drawing.Size(103, 20);
-            this.chkRoundOff.TabIndex = 22;
+            this.chkRoundOff.TabIndex = 11;
             this.chkRoundOff.Text = "Round OFF ";
             this.chkRoundOff.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkRoundOff.UncheckedState.BorderRadius = 0;
@@ -1538,7 +1537,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(90, 24);
-            this.txtDiscount.TabIndex = 20;
+            this.txtDiscount.TabIndex = 9;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
@@ -1566,7 +1565,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(163, 54);
-            this.txtDescription.TabIndex = 19;
+            this.txtDescription.TabIndex = 8;
             // 
             // Estimate_Quotation
             // 
