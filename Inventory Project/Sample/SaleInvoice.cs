@@ -29,7 +29,7 @@ namespace sample
         {
             cmbpartyname.Focus();
             fetchcustomername();
-            fetchBarcode();
+          //  fetchBarcode();
             // fetchCategory();
             fetchitem();
             cmbpartyname1.Visible = false;
@@ -1697,6 +1697,11 @@ cal_Total();
         private void dgvInnerDebiteNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            fetchBarcode();
         }
 
         private void txtItemTotal_TextChanged(object sender, EventArgs e)

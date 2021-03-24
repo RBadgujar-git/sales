@@ -135,8 +135,6 @@ namespace sample
                 dgvdeliveryChallan.DataSource = ds;
                 dgvdeliveryChallan.DataMember = "temp";
 
-
-
             }
             catch (Exception ex)
             {
