@@ -132,6 +132,8 @@ namespace sample
                             calminus();
                             update_opening_bal();
                             Insert();
+                            cmbbankaccount.Focus();
+
                             fetchdetails();
                         }
                     }

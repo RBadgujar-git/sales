@@ -1699,6 +1699,11 @@ cal_Total();
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
         {
 
