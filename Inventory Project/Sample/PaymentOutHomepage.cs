@@ -42,35 +42,38 @@ namespace sample
 
         private void PaymentOutHomepage_Load(object sender, EventArgs e)
         {
-            try
-            {
-                con.Open();
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(cmd);
-                SDA.Fill(ds, "temp");
-                con.Close();
-                dgvPaymentOut.AutoGenerateColumns = false;
-                dgvPaymentOut.ColumnCount = 6;
-                dgvPaymentOut.Columns[0].HeaderText = "Receipt No";
-                dgvPaymentOut.Columns[0].DataPropertyName = "ReceiptNo";
-                dgvPaymentOut.Columns[1].HeaderText = " Party Name";
-                dgvPaymentOut.Columns[1].DataPropertyName = "CustomerName";
-                dgvPaymentOut.Columns[2].HeaderText = "Payment Type";
-                dgvPaymentOut.Columns[2].DataPropertyName = "PaymentType";
-                dgvPaymentOut.Columns[3].HeaderText = "Paid";
-                dgvPaymentOut.Columns[3].DataPropertyName = "Paid";
-                dgvPaymentOut.Columns[4].HeaderText = "Discount";
-                dgvPaymentOut.Columns[4].DataPropertyName = "Discount";
-                dgvPaymentOut.Columns[5].HeaderText = "Total";
-                dgvPaymentOut.Columns[5].DataPropertyName = "Total";
-                dgvPaymentOut.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+            binddaata();
+
+            //try
+            //{
+            //    con.Open();
+            //    DataTable dt = new DataTable();
+            //    SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(cmd);
+            //    SDA.Fill(ds, "temp");
+            //    con.Close();
+            //    dgvPaymentOut.AutoGenerateColumns = false;
+            //    dgvPaymentOut.ColumnCount = 6;
+            //    dgvPaymentOut.Columns[0].HeaderText = "Receipt No";
+            //    dgvPaymentOut.Columns[0].DataPropertyName = "ReceiptNo";
+            //    dgvPaymentOut.Columns[1].HeaderText = " Party Name";
+            //    dgvPaymentOut.Columns[1].DataPropertyName = "CustomerName";
+            //    dgvPaymentOut.Columns[2].HeaderText = "Payment Type";
+            //    dgvPaymentOut.Columns[2].DataPropertyName = "PaymentType";
+            //    dgvPaymentOut.Columns[3].HeaderText = "Paid";
+            //    dgvPaymentOut.Columns[3].DataPropertyName = "Paid";
+            //    dgvPaymentOut.Columns[4].HeaderText = "Discount";
+            //    dgvPaymentOut.Columns[4].DataPropertyName = "Discount";
+            //    dgvPaymentOut.Columns[5].HeaderText = "Total";
+            //    dgvPaymentOut.Columns[5].DataPropertyName = "Total";
+            //    dgvPaymentOut.DataSource = dt;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void dtpTo_Enter(object sender, EventArgs e)
@@ -89,7 +92,22 @@ namespace sample
                // MessageBox.Show("Data not" + ex);
             }
         }
-
+        public void binddaata()
+        {
+            try
+            {
+                string Query = string.Format("select ReceiptNo, CustomerName, PaymentType, Paid,Discount,Total from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPaymentOut.DataSource = ds;
+                dgvPaymentOut.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+            //    MessageBox.Show(ex.Message);
+            }
+        }
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
         {
             try

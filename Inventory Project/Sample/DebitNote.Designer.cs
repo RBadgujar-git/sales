@@ -295,14 +295,14 @@
             this.comboBox1.Location = new System.Drawing.Point(940, 129);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 24);
-            this.comboBox1.TabIndex = 126;
+            this.comboBox1.TabIndex = 11;
             // 
             // cmbpartyname1
             // 
             this.cmbpartyname1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbpartyname1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbpartyname1.FormattingEnabled = true;
-            this.cmbpartyname1.Location = new System.Drawing.Point(112, 53);
+            this.cmbpartyname1.Location = new System.Drawing.Point(258, 51);
             this.cmbpartyname1.Name = "cmbpartyname1";
             this.cmbpartyname1.Size = new System.Drawing.Size(140, 24);
             this.cmbpartyname1.TabIndex = 125;
@@ -317,7 +317,7 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(137, 386);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(151, 24);
-            this.cmbPaymentType.TabIndex = 124;
+            this.cmbPaymentType.TabIndex = 24;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             // 
             // cmbCategory
@@ -368,7 +368,7 @@
             this.cmbStatesupply.Location = new System.Drawing.Point(937, 89);
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(140, 24);
-            this.cmbStatesupply.TabIndex = 122;
+            this.cmbStatesupply.TabIndex = 10;
             // 
             // dtpPODate
             // 
@@ -377,14 +377,14 @@
             this.dtpPODate.Location = new System.Drawing.Point(404, 93);
             this.dtpPODate.Name = "dtpPODate";
             this.dtpPODate.Size = new System.Drawing.Size(140, 23);
-            this.dtpPODate.TabIndex = 121;
+            this.dtpPODate.TabIndex = 5;
             // 
             // cmbbarcode
             // 
             this.cmbbarcode.Location = new System.Drawing.Point(404, 132);
             this.cmbbarcode.Name = "cmbbarcode";
             this.cmbbarcode.Size = new System.Drawing.Size(140, 23);
-            this.cmbbarcode.TabIndex = 120;
+            this.cmbbarcode.TabIndex = 6;
             // 
             // DtpdeliveryDate
             // 
@@ -393,7 +393,7 @@
             this.DtpdeliveryDate.Location = new System.Drawing.Point(138, 555);
             this.DtpdeliveryDate.Name = "DtpdeliveryDate";
             this.DtpdeliveryDate.Size = new System.Drawing.Size(150, 23);
-            this.DtpdeliveryDate.TabIndex = 119;
+            this.DtpdeliveryDate.TabIndex = 29;
             // 
             // dtpDueDate
             // 
@@ -402,7 +402,7 @@
             this.dtpDueDate.Location = new System.Drawing.Point(662, 133);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(138, 23);
-            this.dtpDueDate.TabIndex = 118;
+            this.dtpDueDate.TabIndex = 9;
             // 
             // dtpInvoice
             // 
@@ -411,7 +411,7 @@
             this.dtpInvoice.Location = new System.Drawing.Point(660, 95);
             this.dtpInvoice.Name = "dtpInvoice";
             this.dtpInvoice.Size = new System.Drawing.Size(141, 23);
-            this.dtpInvoice.TabIndex = 117;
+            this.dtpInvoice.TabIndex = 8;
             // 
             // Print
             // 
@@ -461,7 +461,7 @@
             this.ComboBox.Location = new System.Drawing.Point(974, 554);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(93, 24);
-            this.ComboBox.TabIndex = 113;
+            this.ComboBox.TabIndex = 32;
             // 
             // cmbpartyname
             // 
@@ -471,7 +471,7 @@
             this.cmbpartyname.Location = new System.Drawing.Point(112, 53);
             this.cmbpartyname.Name = "cmbpartyname";
             this.cmbpartyname.Size = new System.Drawing.Size(140, 24);
-            this.cmbpartyname.TabIndex = 112;
+            this.cmbpartyname.TabIndex = 1;
             this.cmbpartyname.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
             // 
             // chkenble
@@ -628,7 +628,7 @@
             this.txtcon.SelectedText = "";
             this.txtcon.ShadowDecoration.Parent = this.txtcon;
             this.txtcon.Size = new System.Drawing.Size(142, 24);
-            this.txtcon.TabIndex = 2;
+            this.txtcon.TabIndex = 3;
             // 
             // label36
             // 
@@ -681,7 +681,7 @@
             this.txtItemName.Location = new System.Drawing.Point(16, 45);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(92, 22);
-            this.txtItemName.TabIndex = 124;
+            this.txtItemName.TabIndex = 12;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtItemTotal
@@ -709,7 +709,7 @@
             this.txtItemTotal.SelectionStart = 1;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(85, 24);
-            this.txtItemTotal.TabIndex = 10;
+            this.txtItemTotal.TabIndex = 22;
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
@@ -747,7 +747,7 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(85, 24);
-            this.txtDisAmt.TabIndex = 8;
+            this.txtDisAmt.TabIndex = 20;
             this.txtDisAmt.TextChanged += new System.EventHandler(this.txtDisAmt_TextChanged);
             // 
             // txtDis
@@ -774,7 +774,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(85, 24);
-            this.txtDis.TabIndex = 4;
+            this.txtDis.TabIndex = 16;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             // 
             // label32
@@ -820,7 +820,7 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(85, 24);
-            this.txtTaxAMount1.TabIndex = 9;
+            this.txtTaxAMount1.TabIndex = 21;
             this.txtTaxAMount1.TextChanged += new System.EventHandler(this.txtTaxAMount1_TextChanged);
             // 
             // label31
@@ -856,7 +856,7 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(85, 24);
-            this.txtTax1.TabIndex = 5;
+            this.txtTax1.TabIndex = 17;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             // 
             // label30
@@ -891,7 +891,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(85, 24);
-            this.txtMRP.TabIndex = 3;
+            this.txtMRP.TabIndex = 15;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             // 
             // label29
@@ -922,12 +922,11 @@
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "";
-            this.txtUnit.ReadOnly = true;
             this.txtUnit.SelectedText = "";
             this.txtUnit.SelectionStart = 1;
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(85, 24);
-            this.txtUnit.TabIndex = 2;
+            this.txtUnit.TabIndex = 14;
             // 
             // label28
             // 
@@ -962,7 +961,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(85, 24);
-            this.txtFreeQty.TabIndex = 7;
+            this.txtFreeQty.TabIndex = 19;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             // 
             // label27
@@ -993,12 +992,11 @@
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.PasswordChar = '\0';
             this.txtItemCode.PlaceholderText = "";
-            this.txtItemCode.ReadOnly = true;
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.SelectionStart = 1;
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(85, 24);
-            this.txtItemCode.TabIndex = 1;
+            this.txtItemCode.TabIndex = 13;
             // 
             // label21
             // 
@@ -1042,7 +1040,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(85, 24);
-            this.txtOty.TabIndex = 6;
+            this.txtOty.TabIndex = 18;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             // 
             // label23
@@ -1300,7 +1298,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(90, 24);
-            this.txtReceived.TabIndex = 26;
+            this.txtReceived.TabIndex = 33;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             // 
             // txtTaxAmount
@@ -1328,7 +1326,7 @@
             this.txtTaxAmount.SelectionStart = 1;
             this.txtTaxAmount.ShadowDecoration.Parent = this.txtTaxAmount;
             this.txtTaxAmount.Size = new System.Drawing.Size(90, 24);
-            this.txtTaxAmount.TabIndex = 24;
+            this.txtTaxAmount.TabIndex = 24443;
             this.txtTaxAmount.TextChanged += new System.EventHandler(this.txtTaxAmount_TextChanged);
             // 
             // txtDisAmount
@@ -1355,7 +1353,7 @@
             this.txtDisAmount.SelectionStart = 1;
             this.txtDisAmount.ShadowDecoration.Parent = this.txtDisAmount;
             this.txtDisAmount.Size = new System.Drawing.Size(90, 24);
-            this.txtDisAmount.TabIndex = 87;
+            this.txtDisAmount.TabIndex = 875;
             // 
             // txtDiscount
             // 
@@ -1380,7 +1378,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(90, 24);
-            this.txtDiscount.TabIndex = 22;
+            this.txtDiscount.TabIndex = 2255;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // txtVehicleNo
@@ -1405,7 +1403,7 @@
             this.txtVehicleNo.SelectedText = "";
             this.txtVehicleNo.ShadowDecoration.Parent = this.txtVehicleNo;
             this.txtVehicleNo.Size = new System.Drawing.Size(150, 24);
-            this.txtVehicleNo.TabIndex = 16;
+            this.txtVehicleNo.TabIndex = 28;
             // 
             // txtDeliveryLoc
             // 
@@ -1429,7 +1427,7 @@
             this.txtDeliveryLoc.SelectedText = "";
             this.txtDeliveryLoc.ShadowDecoration.Parent = this.txtDeliveryLoc;
             this.txtDeliveryLoc.Size = new System.Drawing.Size(150, 24);
-            this.txtDeliveryLoc.TabIndex = 15;
+            this.txtDeliveryLoc.TabIndex = 2;
             // 
             // txtTransportName
             // 
@@ -1453,7 +1451,7 @@
             this.txtTransportName.SelectedText = "";
             this.txtTransportName.ShadowDecoration.Parent = this.txtTransportName;
             this.txtTransportName.Size = new System.Drawing.Size(150, 24);
-            this.txtTransportName.TabIndex = 14;
+            this.txtTransportName.TabIndex = 26;
             // 
             // txtDescription
             // 
@@ -1477,7 +1475,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(150, 36);
-            this.txtDescription.TabIndex = 13;
+            this.txtDescription.TabIndex = 25;
             // 
             // txtReturnNo
             // 
@@ -1560,7 +1558,7 @@
             this.txtPONo.SelectedText = "";
             this.txtPONo.ShadowDecoration.Parent = this.txtPONo;
             this.txtPONo.Size = new System.Drawing.Size(140, 24);
-            this.txtPONo.TabIndex = 3;
+            this.txtPONo.TabIndex = 4;
             // 
             // txtbillingadd
             // 
@@ -1585,7 +1583,7 @@
             this.txtbillingadd.SelectedText = "";
             this.txtbillingadd.ShadowDecoration.Parent = this.txtbillingadd;
             this.txtbillingadd.Size = new System.Drawing.Size(140, 46);
-            this.txtbillingadd.TabIndex = 1;
+            this.txtbillingadd.TabIndex = 2;
             // 
             // label25
             // 
@@ -1709,7 +1707,7 @@
             this.dgvInnerDebiteNote.RowHeadersVisible = false;
             this.dgvInnerDebiteNote.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvInnerDebiteNote.Size = new System.Drawing.Size(1084, 99);
-            this.dgvInnerDebiteNote.TabIndex = 46;
+            this.dgvInnerDebiteNote.TabIndex = 23;
             this.dgvInnerDebiteNote.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -1949,39 +1947,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1091, 38);
             this.panel3.TabIndex = 16;
-            // 
-            // btncancel
-            // 
-            this.btncancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncancel.BackColor = System.Drawing.Color.White;
-            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
-            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1050, 9);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(29, 26);
-            this.btncancel.TabIndex = 439;
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(1018, 8);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 438;
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btncancel
             // 

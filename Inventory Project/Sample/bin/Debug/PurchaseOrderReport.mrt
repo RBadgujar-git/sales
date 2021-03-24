@@ -6,7 +6,7 @@
     <DataSources isList="true" count="1">
       <PurchaseOrder Ref="2" type="DataTableSource" isKey="true">
         <Alias>PurchaseOrder</Alias>
-        <Columns isList="true" count="27">
+        <Columns isList="true" count="26">
           <value>CompanyName,System.String</value>
           <value>Address,System.String</value>
           <value>GSTNumber,System.String</value>
@@ -15,7 +15,6 @@
           <value>EmaiID,System.String</value>
           <value>PartyName,System.String</value>
           <value>ContactNo,System.String</value>
-          <value>PartyName,System.String</value>
           <value>BillingName,System.String</value>
           <value>OrderNo,System.String</value>
           <value>OrderDate,System.String</value>
@@ -1950,10 +1949,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/24/2021 12:08:48 PM</ReportChanged>
+  <ReportChanged>3/24/2021 4:23:09 PM</ReportChanged>
   <ReportCreated>3/18/2021 10:59:29 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PurchaseOrderReport.mrt</ReportFile>
-  <ReportGuid>3252711ee6164721ac593c9c866888c8</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\Sample\bin\Debug\PurchaseOrderReport.mrt</ReportFile>
+  <ReportGuid>73861f11a7424b35b4e5a237fc397bc7</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
