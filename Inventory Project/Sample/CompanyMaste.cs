@@ -223,7 +223,7 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmdn = new SqlCommand("Select CompanyID from tbl_CompanyMaster where CompanyName="+txtcampanyName.Text+" and PhoneNo="+txtContactNo.Text+" ",con);
+            SqlCommand cmdn = new SqlCommand("Select CompanyID from tbl_CompanyMaster where CompanyName='"+txtcampanyName.Text+"' and PhoneNo="+txtContactNo.Text+" ",con);
             string id = cmdn.ExecuteScalar().ToString();
 
             SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values("+id+")", con);
@@ -232,15 +232,21 @@ namespace sample
     }
     private void btnsave_Click(object sender, EventArgs e)
         {
-
-
-            validfild();
-            if (verify == 1)
+            if (id == "")
             {
-                Insert1();
-                Seeting();
-                fetchdetails();
+                validfild();
+                if (verify == 1)
+                {
+                    Insert1();
+                    Seeting();
+                    fetchdetails();
+                }
             }
+            else {
+                MessageBox.Show("No Permission");
+            }
+
+          
 
         }
 
@@ -354,8 +360,15 @@ namespace sample
 
         private void delete_Click(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete1();
+                fetchdetails();
+            }
+            else
+            {
+
+            }
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)

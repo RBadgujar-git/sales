@@ -302,6 +302,8 @@ namespace sample
             //calopenbal();
             //update_opening_bal();
             InsertData();
+                    cmbAccount.Focus();
+
             fetchdetails();
             cleardata();
         }

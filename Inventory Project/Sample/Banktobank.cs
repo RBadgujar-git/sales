@@ -164,6 +164,8 @@ namespace sample
                         calopenbal();
                         update_opening_bal();
                         Insert();
+                    cmbfrombank.Focus();
+
                         fetchdetails();
                     }
                 }

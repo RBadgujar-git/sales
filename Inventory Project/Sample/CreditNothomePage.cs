@@ -163,5 +163,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

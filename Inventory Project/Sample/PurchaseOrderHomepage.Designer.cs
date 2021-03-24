@@ -57,7 +57,7 @@
             this.btnpurchaseorder.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnpurchaseorder.ForeColor = System.Drawing.Color.White;
             this.btnpurchaseorder.HoverState.Parent = this.btnpurchaseorder;
-            this.btnpurchaseorder.Location = new System.Drawing.Point(875, 103);
+            this.btnpurchaseorder.Location = new System.Drawing.Point(875, 81);
             this.btnpurchaseorder.Name = "btnpurchaseorder";
             this.btnpurchaseorder.ShadowDecoration.Parent = this.btnpurchaseorder;
             this.btnpurchaseorder.Size = new System.Drawing.Size(170, 45);
@@ -103,7 +103,7 @@
             this.dgvPurchaseOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPurchaseOrder.EnableHeadersVisualStyles = false;
             this.dgvPurchaseOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPurchaseOrder.Location = new System.Drawing.Point(3, 94);
+            this.dgvPurchaseOrder.Location = new System.Drawing.Point(15, 132);
             this.dgvPurchaseOrder.Name = "dgvPurchaseOrder";
             this.dgvPurchaseOrder.RowHeadersVisible = false;
             this.dgvPurchaseOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

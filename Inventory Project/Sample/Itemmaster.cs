@@ -422,12 +422,20 @@ namespace sample
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            vald();
-            if (veryfy == 1)
+            if (id == "")
             {
-                InsertData();
-                fetchdetails();
+                vald();
+                if (veryfy == 1)
+                {
+                    InsertData();
+                    fetchdetails();
+                }
             }
+            else {
+                MessageBox.Show("No permission");
+            }
+
+           
 
 
         }
@@ -473,9 +481,7 @@ namespace sample
 
         private void Update1()
         {
-            MemoryStream ms = new MemoryStream();
-            picturebox.Image.Save(ms, picturebox.Image.RawFormat);
-            byte[] arrImage1 = ms.GetBuffer();
+            
 
             //DialogResult dr = MessageBox.Show("Are you sure to delete  row ?", "Confirmation", MessageBoxButtons.YesNo);
             if (!string.IsNullOrEmpty(id))
@@ -487,8 +493,10 @@ namespace sample
                         {
                             con.Open();
                         }
-
-                          DataTable dt = new DataTable();
+                    MemoryStream ms = new MemoryStream();
+                    picturebox.Image.Save(ms, picturebox.Image.RawFormat);
+                    byte[] arrImage1 = ms.GetBuffer();
+                    DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_ItemMasterSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Update");

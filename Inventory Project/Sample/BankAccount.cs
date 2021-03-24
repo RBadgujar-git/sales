@@ -135,6 +135,7 @@ namespace sample
                 if (id == "")
                 {
                     Insert();
+                    txtaccountname.Focus();
                     fetchdetails();
                     cb.bindbankdata();
                 }
@@ -224,6 +225,8 @@ namespace sample
         private void btnupdate_Click(object sender, EventArgs e)
         {
             update();
+            txtaccountname.Focus();
+
             clearData();
             fetchdetails();
         }
@@ -284,6 +287,8 @@ namespace sample
         private void button4_Click(object sender, EventArgs e)
         {
             Delete();
+            txtaccountname.Focus();
+
             fetchdetails();
         }
         private void btnexit_Click(object sender, EventArgs e)
