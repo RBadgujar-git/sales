@@ -975,7 +975,9 @@ namespace sample
                     dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
                     dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
 
+
                     txtItemName.Focus();
+
                     for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                     {
 

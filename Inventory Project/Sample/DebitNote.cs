@@ -76,7 +76,7 @@ namespace sample
                     }
                 }
                 catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
+                 //   MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -96,7 +96,7 @@ namespace sample
                     }
                 }
                 catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
+                //    MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -117,7 +117,7 @@ namespace sample
                     }
                 }
                 catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -180,7 +180,7 @@ namespace sample
                 }
                 catch(Exception ew)
                 {
-                    MessageBox.Show(ew.Message);
+              //      MessageBox.Show(ew.Message);
                 }
             
            
@@ -241,7 +241,7 @@ namespace sample
 
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
         }
 
@@ -274,33 +274,33 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Deletedata",'1');
 
 
-                    float ItemCode = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
-                    float cureentstock = float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
+             //       float ItemCode = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
+             //       float cureentstock = float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
 
-             //       MessageBox.Show("Data " + ItemCode + "Data00" + cureentstock);
+             ////       MessageBox.Show("Data " + ItemCode + "Data00" + cureentstock);
 
-                    SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
-                    cmd1.CommandType = CommandType.StoredProcedure;
-                    cmd1.Parameters.AddWithValue("@Action", "backget");
-                    cmd1.Parameters.AddWithValue("@Itemcode", ItemCode);
-                    float prestock = Convert.ToInt32(cmd1.ExecuteScalar());
-                    float freeqty = float.Parse(txtFreeQty.Text);
-                    float stockmangee = prestock -(cureentstock + freeqty);
+             //       SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+             //       cmd1.CommandType = CommandType.StoredProcedure;
+             //       cmd1.Parameters.AddWithValue("@Action", "backget");
+             //       cmd1.Parameters.AddWithValue("@Itemcode", ItemCode);
+             //       float prestock = Convert.ToInt32(cmd1.ExecuteScalar());
+             //       float freeqty = float.Parse(txtFreeQty.Text);
+             //       float stockmangee = prestock -(cureentstock + freeqty);
 
-                    SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
-                    cmd2.CommandType = CommandType.StoredProcedure;
-                    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
-                    cmd2.Parameters.AddWithValue("@stock", stockmangee);
-                    cmd2.Parameters.AddWithValue("@Itemcode", ItemCode);
+             //       SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+             //       cmd2.CommandType = CommandType.StoredProcedure;
+             //       cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+             //       cmd2.Parameters.AddWithValue("@stock", stockmangee);
+             //       cmd2.Parameters.AddWithValue("@Itemcode", ItemCode);
 
 
-                    cmd2.ExecuteNonQuery();
+             //       cmd2.ExecuteNonQuery();
 
 
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) {
-                   MessageBox.Show(e1.Message);
+                  // MessageBox.Show(e1.Message);
                 }
                 finally {
                   //  con.Close();
@@ -309,6 +309,7 @@ namespace sample
         }
 
         byte[] arrImage1;
+
         private void insertdata()
         {
             try {
@@ -386,7 +387,7 @@ namespace sample
                 MessageBox.Show("Sale Record Added");
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+                //MessageBox.Show(e1.Message);
             }
             finally {
               //  con.Close();
@@ -533,12 +534,7 @@ namespace sample
             {
                 MessageBox.Show("Party Name Is Requried");
                 cmbpartyname.Focus();
-            }
-            else if (txtbillingadd.Text == "")
-            {
-                MessageBox.Show("Party Addrtess Is Requueird !");
-                txtbillingadd.Focus();
-            }
+            }        
             else if (txtcon.Text == "")
             {
                 MessageBox.Show("Party Contact no Is Requueird !");
@@ -549,35 +545,16 @@ namespace sample
                 MessageBox.Show("Party PONO Is Requueird !");
                 txtcon.Focus();
             }
-            else if (ComboBox.Text == "")
-            {
-                MessageBox.Show("Party PONO Is Requueird !");
-                txtcon.Focus();
-            }
-
-
-            else if (cmbStatesupply.Text == "")
-            {
-                MessageBox.Show("Party Refrence No Is Requueird !");
-
-            }
+      
             else if (txtInvoiceNo.Text == "")
             {
                 MessageBox.Show("Party Refrence No Is Requueird !");
                 txtInvoiceNo.Focus();
             }
-            else if (cmbCategory.Text == "")
-            {
-                MessageBox.Show("Party Refrence No Is Requueird !");
-            }
             else if (cmbPaymentType.Text == "")
             {
                 MessageBox.Show("Please Select Payment Type !");
             }
-            else if (cmbPaymentType.Text == "")
-            {
-                MessageBox.Show("Please Select Payment Type !");
-            }         
             else
             {
                 verfy = 1;
@@ -749,7 +726,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                  //  MessageBox.Show(e1.Message);
                 }
                 finally
                 {
@@ -1117,7 +1094,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -1230,7 +1207,7 @@ namespace sample
             }
             catch(Exception ew)
             {
-                MessageBox.Show(ew.Message);
+               // MessageBox.Show(ew.Message);
             }
         }
 

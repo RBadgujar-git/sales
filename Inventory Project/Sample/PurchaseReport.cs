@@ -62,7 +62,7 @@ namespace sample
             //dgvPurchaseBill.DataSource = ds;
             //dgvPurchaseBill.DataMember = "temp";
             //con.Close();
-            //     Data();
+            Data();
          
         }
         private void Bindadata()
@@ -119,7 +119,7 @@ namespace sample
                 }
                 catch(Exception ew)
                 {
-                    MessageBox.Show(ew.Message);
+                  //  MessageBox.Show(ew.Message);
                 }
             }
         }

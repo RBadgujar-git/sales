@@ -116,6 +116,11 @@ namespace sample
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     int num = cmd.ExecuteNonQuery();
+
+
+
+                    //SqlCommand cmdd = new SqlCommand("Select OpeningBal from CompanyBankAccount where BankName="+" ", con);
+
                     if (num > 0)
                     {
                         MessageBox.Show("Insert data Successfully");
@@ -165,9 +170,7 @@ namespace sample
             {
                 verify = 1;
             }
-           
-
-
+          
         }
 
 
@@ -252,6 +255,7 @@ namespace sample
                     Update1();
                     Cleardata();
                     fetchdetails();
+                    id = "";
                 }
             }
             else
@@ -307,6 +311,7 @@ namespace sample
 
                     Delete1();
                     fetchdetails();
+                    id = "";
                 }
                 else
                 {
@@ -467,11 +472,12 @@ namespace sample
         private void button1_Click(object sender, EventArgs e)
         {
             Cleardata();
+            id = "";
         }
 
         private void Print_Click(object sender, EventArgs e)
         {
-
+            id = "";
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)

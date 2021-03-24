@@ -32,13 +32,17 @@ namespace sample
 
         private void DeliveryChallan_Load(object sender, EventArgs e)
         {         
-            fetchCategory();                     
+            fetchCategory();
+            fetchitem();
             fetchcustomername();  
             get_id();
             txtReturnNo.Enabled = false;
             comboBox1.Visible = false;
             comboBox2.Visible = false;
             comboBox3.Visible = false;
+            cmbCategory.Visible = false;
+            label38.Visible = false;
+
         }
         private void fetchitem()
         {
@@ -56,7 +60,7 @@ namespace sample
                     }
                 }
                 catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
+                    //MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -77,7 +81,7 @@ namespace sample
                     }
                 }
                 catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
+                  //  MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -206,51 +210,11 @@ namespace sample
             {
                 MessageBox.Show("Party Name Is Reguerd !");
             }
-            else if (txtPartyAdd.Text == "")
-            {
-                MessageBox.Show("Party Addresss Is Reguerd !");
-                txtPartyAdd.Focus();
-            }
-            else if (txtcon.Text == "")
-            {
-                MessageBox.Show("Party Contact No Is Reguerd !");
-                txtcon.Focus();
-            }
-            else if (txtBillingName.Text == "")
-            {
-                MessageBox.Show("Party Billing Name  Is Reguerd !");
-                txtBillingName.Focus();
-            }
-            else if (txtBillingadd.Text == "")
-            {
-                MessageBox.Show("Party Billing Address Is Reguerd !");
-                txtBillingadd.Focus();
-            }
-            else if (cmbStatesupply.Text == "")
-            {
-                MessageBox.Show("Party Supplay State  Is Reguerd !");
-                //txtBillingadd.Focus();
-            }
-            else if (cmbStatesupply.Text == "")
-            {
-                MessageBox.Show("Please Select Supplay State !");
-                //txtBillingadd.Focus();
-            }
-            else if (cmbCategory.Text == "")
-            {
-                MessageBox.Show(" Please Select Item Categoery!");
-                //txtBillingadd.Focus();
-            }
-            else if (cmbPaymentType.Text == "")
+         else if (cmbPaymentType.Text == "")
             {
                 MessageBox.Show(" Please Select Payment Type !");
                 //txtBillingadd.Focus();
-            }
-            else if (cmbtax.Text == "")
-            {
-                MessageBox.Show(" Please Select TaxType !");
-                //txtBillingadd.Focus();
-            }
+            }         
             else
             {
                 verifyid = 1;
@@ -342,7 +306,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -410,7 +374,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
                     // cmd.Parameters.AddWithValue("@InvoiceNo", txtInvoiceNo.Text);
                     cmd.Parameters.AddWithValue("@BillingName", txtBillingName.Text);
-                    cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                    cmd.Parameters.AddWithValue("@PartyName", comboBox1.Text);
                     cmd.Parameters.AddWithValue("@BillingAddress", txtPartyAdd.Text);
                     cmd.Parameters.AddWithValue("@PartyAddress", txtBillingadd.Text);
                     cmd.Parameters.AddWithValue("@InvoiceDate", dtpInvoice.Text);
@@ -443,14 +407,14 @@ namespace sample
                     cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
 
                     cmd.Parameters.AddWithValue("@Action", "Update");
-
                     id1 = cmd.ExecuteScalar();
                     MessageBox.Show("Sale Record Update");
+
                 }
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+                //MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -660,7 +624,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+             //   MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -783,6 +747,19 @@ namespace sample
         }
         private void update_record_inner(string id)
         {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmdn = new SqlCommand("tbl_DeliveryChallanInnersp", con);
+            cmdn.CommandType = CommandType.StoredProcedure;
+            cmdn.Parameters.AddWithValue("@Action", "Delete");
+            cmdn.Parameters.AddWithValue("@ID", txtReturnNo.Text);
+            cmdn.ExecuteNonQuery();
+
+
             for (int i = 0; i < dgvInnerDeliveryChallanNote.Rows.Count; i++)
             {
                 try
@@ -794,8 +771,8 @@ namespace sample
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_DeliveryChallanInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Update");
-                    cmd.Parameters.AddWithValue("@ChallanNo", txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
+                    cmd.Parameters.AddWithValue("@ChallanNo",txtReturnNo.Text);
 
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
@@ -817,7 +794,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
                 //finally
                 //{
@@ -831,12 +808,17 @@ namespace sample
             update();
             clear_text_data();
             cleardata();
-            //get_id();
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
             printdata(txtrefNo.Text.ToString());
-            dgvInnerDeliveryChallanNote.Rows.Clear();
+            get_id();
+
+            //   dgvInnerDeliveryChallanNote.Rows.Clear();
         }
 
       
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             verifydata();
@@ -847,7 +829,7 @@ namespace sample
                 cleardata();
                 get_id();
                 printdata(id1.ToString());
-                dgvInnerDeliveryChallanNote.Rows.Clear();
+
             }
         }
         private void printdata(string id1)
@@ -875,7 +857,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                  //  MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -929,7 +911,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+             //   MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -955,7 +937,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                    ///MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -981,7 +963,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -1017,7 +999,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -1090,12 +1072,13 @@ namespace sample
 
         private void buttprint_Click(object sender, EventArgs e)
         {
+         
             if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.ChallanNo,b.Deliverydate,b.DeliveryLocation,b.TransportName ,b.BillingAddress  , b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_DeliveryChallan as b,tbl_DeliveryChallanInner as c where b.ChallanNo='{0}' and c.ChallanNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.ChallanNo,b.Deliverydate,b.DeliveryLocation,b.TransportName ,b.BillingAddress  , b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_DeliveryChallan as b,tbl_DeliveryChallanInner as c where b.ChallanNo='{0}' and c.ChallanNo='{1}' and c.Company_ID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -1112,9 +1095,11 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
         }
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1289,6 +1274,46 @@ namespace sample
         private void txtDisAmt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void fetchBarcode()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
+                string Query = String.Format("select ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='" + textBox1.Text + "' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtItemName.Text = dr["ItemName"].ToString();
+                    txtItemCode.Text = dr["ItemCode"].ToString();
+                    txtUnit.Text = dr["BasicUnit"].ToString();
+                    txtMRP.Text = dr["SalePrice"].ToString();
+                    txtTax1.Text = dr["TaxForSale"].ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
+
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            fetchBarcode();
         }
     }
     }
