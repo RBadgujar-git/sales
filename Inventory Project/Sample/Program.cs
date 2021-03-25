@@ -30,6 +30,7 @@ namespace sample
             con.Close();
             if (password == 0)
             {
+
                 Application.Run(new Dashboard());
             }
             else
