@@ -198,6 +198,7 @@ namespace sample
 
                 total = (sub_total + gst_amt) - dis_amt;
                 txtItemTotal.Text = total.ToString();
+                //txtTotal.Text = total.ToString();
             }
             catch (Exception ex) {
                // MessageBox.Show(ex.Message);
@@ -1236,6 +1237,7 @@ namespace sample
                 round = Convert.ToInt32(txtTotal.Text);
 
                 txtTotal.Text = round.ToString();
+
             }
             // Math.Round(Convert.ToDouble(txtTotal.Text));
             
@@ -1409,11 +1411,7 @@ namespace sample
                 e.Handled = true;
             }
         }
-
-        private void txtItemTotal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
     
 }

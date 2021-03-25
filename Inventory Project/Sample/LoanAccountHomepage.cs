@@ -135,7 +135,7 @@ namespace sample
         {
             lblBankAccount.Text = dgvbankAccount.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
 
-            string Query = string.Format("select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AccountName='{0}' group by AccountNo,Date,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
+            string Query = string.Format("select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AccountName='{0}' group by AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration", lblBankAccount.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
