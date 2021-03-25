@@ -39,7 +39,7 @@
           <Components isList="true" count="16">
             <Text6 Ref="5" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>5.6,2.4,7.6,0.6</ClientRectangle>
+              <ClientRectangle>5.6,2.4,8.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,16,Bold</Font>
               <Guid>e274c4dbec964ca3ac21af420a99e70e</Guid>
@@ -48,7 +48,7 @@
               <Name>Text6</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Expences Category Details</Text>
+              <Text>Other Income Category Details</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text6>
@@ -115,18 +115,7 @@
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text1>
-            <Image1 Ref="10" type="Image" isKey="true">
-              <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,2.2,2.2</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <DataColumn>IncomeCategoryData.AddLogo</DataColumn>
-              <Guid>b7d053bc3dc64c72a59f5fabf8a85673</Guid>
-              <Name>Image1</Name>
-              <Page isRef="3" />
-              <Parent isRef="4" />
-              <Stretch>True</Stretch>
-            </Image1>
-            <Text2 Ref="11" type="Text" isKey="true">
+            <Text2 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>2.2,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -139,7 +128,7 @@
               <Text>{IncomeCategoryData.Address}</Text>
               <TextBrush>Black</TextBrush>
             </Text2>
-            <Text3 Ref="12" type="Text" isKey="true">
+            <Text3 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>2.2,1.6,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -152,7 +141,7 @@
               <Text>{IncomeCategoryData.GSTNumber}</Text>
               <TextBrush>Black</TextBrush>
             </Text3>
-            <Text5 Ref="13" type="Text" isKey="true">
+            <Text5 Ref="12" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>14,0.6,5,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -167,7 +156,7 @@
               <TextBrush>Black</TextBrush>
               <VertAlignment>Bottom</VertAlignment>
             </Text5>
-            <Text13 Ref="14" type="Text" isKey="true">
+            <Text13 Ref="13" type="Text" isKey="true">
               <Brush>Transparent</Brush>
               <ClientRectangle>14,0,5,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -182,6 +171,17 @@
               <TextBrush>Black</TextBrush>
               <VertAlignment>Bottom</VertAlignment>
             </Text13>
+            <Image1 Ref="14" type="Image" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0.2,1.8,1.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DataColumn>IncomeCategoryData.AddLogo</DataColumn>
+              <Guid>b7d053bc3dc64c72a59f5fabf8a85673</Guid>
+              <Name>Image1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Stretch>True</Stretch>
+            </Image1>
             <HorizontalLinePrimitive2 Ref="15" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0,3.2,19,0.0254</ClientRectangle>
               <Color>Black</Color>
@@ -477,10 +477,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:14:13 PM</ReportChanged>
+  <ReportChanged>3/25/2021 3:38:17 PM</ReportChanged>
   <ReportCreated>3/22/2021 2:41:03 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeCategoryData.mrt</ReportFile>
-  <ReportGuid>d477effa6d7a4f0cbb99ece7027327e2</ReportGuid>
+  <ReportGuid>2cec41d027b64b61b33b7b48d573f515</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

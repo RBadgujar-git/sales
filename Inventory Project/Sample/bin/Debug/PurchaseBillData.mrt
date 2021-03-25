@@ -214,7 +214,7 @@ No</Text>
             </Text1>
             <Image1 Ref="15" type="Image" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,2.2,2.2</ClientRectangle>
+              <ClientRectangle>0.2,0.2,1.8,1.8</ClientRectangle>
               <Conditions isList="true" count="0" />
               <DataColumn>PurchaseBillData.AddLogo</DataColumn>
               <Guid>6dddb7a93d84425fb2e340664e954e67</Guid>
@@ -697,10 +697,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:08:00 PM</ReportChanged>
+  <ReportChanged>3/25/2021 3:48:41 PM</ReportChanged>
   <ReportCreated>3/19/2021 11:00:31 AM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PurchaseBillData.mrt</ReportFile>
-  <ReportGuid>a813aa2a446d4bcf9acac8d7fa241a4e</ReportGuid>
+  <ReportGuid>749887d9c2b849598a91772ac64f553c</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

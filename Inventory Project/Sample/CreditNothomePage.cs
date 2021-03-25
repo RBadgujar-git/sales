@@ -168,5 +168,10 @@ namespace sample
         {
 
         }
+
+        private void dgvcreditNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

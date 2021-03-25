@@ -379,7 +379,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>d959204746c54236bf1b7b880ed55565</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
               <Page isRef="3" />
@@ -397,7 +397,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>adfde34eb2d44b1db192efd154cbf1e2</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text16</Name>
               <Page isRef="3" />
@@ -415,7 +415,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>4855a173b6df42158395829626b29090</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
               <Page isRef="3" />
@@ -580,10 +580,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:15:25 PM</ReportChanged>
+  <ReportChanged>3/25/2021 3:09:25 PM</ReportChanged>
   <ReportCreated>3/22/2021 12:34:26 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ItemTrackingData.mrt</ReportFile>
-  <ReportGuid>b78f818456de44f994bddad9b0cddfe8</ReportGuid>
+  <ReportGuid>a34f8cb3d1294c5aa88d08cbce9448af</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
