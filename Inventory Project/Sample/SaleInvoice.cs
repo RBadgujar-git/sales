@@ -167,6 +167,7 @@ namespace sample
                     SqlDataReader rd = cmd.ExecuteReader();
                     if (rd.Read())
                     {
+                        rd.Close();
                         string Value = rd[0].ToString();
                         if (Value == "")
                         {
@@ -495,7 +496,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -584,7 +585,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -628,7 +629,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                  //  MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -651,7 +652,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                  //  MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -687,7 +688,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         
         }
@@ -739,7 +740,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
         }
 
