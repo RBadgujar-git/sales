@@ -138,11 +138,12 @@ namespace sample
 
         private void AdjustAccount_Load(object sender, EventArgs e)
         {
-           
-            fetchdetails();
-            bankfetch();
-            //fetchAccountname();
             companyid = NewCompany.company_id;
+            bankfetch();
+            fetchdetails();
+            fetchdetails();
+            //fetchAccountname();
+          
         }
 
         private void fetchAccountname()

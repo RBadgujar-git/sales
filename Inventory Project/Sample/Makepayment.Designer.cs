@@ -420,11 +420,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(225, 77);
+            this.label8.Location = new System.Drawing.Point(240, 77);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 16);
+            this.label8.Size = new System.Drawing.Size(110, 16);
             this.label8.TabIndex = 442;
-            this.label8.Text = "Current Balence :";
+            this.label8.Text = "Loan Amount  :";
             // 
             // Makepayment
             // 

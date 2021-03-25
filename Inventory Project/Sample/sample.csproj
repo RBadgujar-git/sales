@@ -335,6 +335,12 @@
     <Compile Include="Cheque.Designer.cs">
       <DependentUpon>Cheque.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cheque1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cheque1.Designer.cs">
+      <DependentUpon>Cheque1.cs</DependentUpon>
+    </Compile>
     <Compile Include="CompanyBankAccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -423,7 +429,7 @@
     <Compile Include="Estimate-Quotation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estimate-Quotation.Designer.cs">
+    <Compile Include="Estimate-Quotation.designer.cs">
       <DependentUpon>Estimate-Quotation.cs</DependentUpon>
     </Compile>
     <Compile Include="EstimateQuotationhomepage.cs">
@@ -435,7 +441,7 @@
     <Compile Include="ExpenseCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ExpenseCategory.Designer.cs">
+    <Compile Include="ExpenseCategory.designer.cs">
       <DependentUpon>ExpenseCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="ExpenseCategoryReport.cs">
@@ -459,7 +465,7 @@
     <Compile Include="Expenses.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Expenses.Designer.cs">
+    <Compile Include="Expenses.designer.cs">
       <DependentUpon>Expenses.cs</DependentUpon>
     </Compile>
     <Compile Include="ExpensesReport.cs">
@@ -608,13 +614,13 @@
     <Compile Include="OtherIncome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OtherIncome.Designer.cs">
+    <Compile Include="OtherIncome.designer.cs">
       <DependentUpon>OtherIncome.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherIncomeCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OtherIncomeCategory.Designer.cs">
+    <Compile Include="OtherIncomeCategory.designer.cs">
       <DependentUpon>OtherIncomeCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherIncomeCategoryReport.cs">
@@ -626,7 +632,7 @@
     <Compile Include="OtherIncomeHomepage1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="OtherIncomeHomepage1.Designer.cs">
+    <Compile Include="OtherIncomeHomepage1.designer.cs">
       <DependentUpon>OtherIncomeHomepage1.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherIncomeItemReport.cs">
@@ -988,6 +994,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cheque.resx">
       <DependentUpon>Cheque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheque1.resx">
+      <DependentUpon>Cheque1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyBankAccount.resx">
       <DependentUpon>CompanyBankAccount.cs</DependentUpon>

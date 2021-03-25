@@ -220,9 +220,9 @@ namespace sample
             TA = PA + IA;
             txtTotalAmount.Text = TA.ToString();
             }
-            catch (Exception) {
+            catch (Exception ex) {
 
-                MessageBox.Show("error");
+                //MessageBox.Show("error"+ex);
             }
         }
 

@@ -806,11 +806,14 @@ namespace sample
 
         private void chequeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cheque ch = new Cheque();
-         //   this.Controls.Add(ch);
+            Cheque1 BA = new Cheque1();
+            //BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
             // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            ch.Dock = DockStyle.Fill;
-            ch.Show();
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
 
         private void bankAccountToolStripMenuItem_Click(object sender, EventArgs e)

@@ -109,8 +109,16 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Insertdata();
-            fetchdetails();
+            if (id == "")
+            {
+                Insertdata();
+                fetchdetails();
+            }
+            else
+            {
+                MessageBox.Show("No permission");
+            }
+           
         }
 
         private void dgvAddunit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

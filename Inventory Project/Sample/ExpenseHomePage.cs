@@ -59,13 +59,12 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select CategoryName from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
-            dgvcategory.AutoGenerateColumns = false;
+            this.dgvcategory.AllowUserToAddRows = false;
             dgvcategory.ColumnCount = 1;
-            dgvcategory.Columns[0].HeaderText = "Category";
             dgvcategory.Columns[0].DataPropertyName = "CategoryName";
             
 
@@ -79,36 +78,53 @@ namespace sample
 
         private void dgvcategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+            lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Category"].Value.ToString();
 
 
-            string Query = string.Format("select ID1,Date,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by ID,Date,Total,Paid,Balance", lblCategory.Text);
+            string Query = string.Format("select Date,ExpenseCategory,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by Date, ExpenseCategory, Total,Paid,Balance", lblCategory.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
             dgvExxpenses.DataSource = ds;
             dgvExxpenses.DataMember = "temp";
+            this.dgvcategory.AllowUserToAddRows = false;
+            this.dgvExxpenses.AllowUserToAddRows = false;
+            lblCategory.Visible = true;
 
         }
 
         private void ExpenseHomePage_Load(object sender, EventArgs e)
         {
             bindbankdata();
+            search1();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
+                string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvcategory.DataSource = ds;
                 dgvcategory.DataMember = "temp";
-
-
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void search1()
+        {
+            try
+            {
+                string Query = string.Format("select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvExxpenses.DataSource = ds;
+                dgvExxpenses.DataMember = "temp";
             }
             catch (Exception ex)
             {
@@ -120,12 +136,13 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ID1 from tbl_Expenses where ID1 like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                string Query = string.Format("select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvExxpenses.DataSource = ds;
                 dgvExxpenses.DataMember = "temp";
+               
             }
             catch (Exception ex)
             {
@@ -148,9 +165,9 @@ namespace sample
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void dgvcategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvExxpenses_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            this.dgvExxpenses.AllowUserToAddRows = false;
         }
     }
 }

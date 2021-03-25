@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreditNote));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -96,6 +96,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbtax = new System.Windows.Forms.ComboBox();
             this.chkenble = new System.Windows.Forms.CheckBox();
             this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -145,8 +147,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.Credit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerCreditNote)).BeginInit();
@@ -161,7 +161,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(596, 552);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 26;
+            this.btnUpdate.TabIndex = 32;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -262,7 +262,7 @@
             this.txtcon.SelectedText = "";
             this.txtcon.ShadowDecoration.Parent = this.txtcon;
             this.txtcon.Size = new System.Drawing.Size(160, 24);
-            this.txtcon.TabIndex = 0;
+            this.txtcon.TabIndex = 3;
             this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress_1);
             // 
             // label36
@@ -315,7 +315,7 @@
             this.txtItemName.Location = new System.Drawing.Point(17, 40);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(99, 22);
-            this.txtItemName.TabIndex = 1;
+            this.txtItemName.TabIndex = 12;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
@@ -345,7 +345,7 @@
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(100, 24);
-            this.txtItemTotal.TabIndex = 5;
+            this.txtItemTotal.TabIndex = 22;
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
@@ -384,7 +384,7 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(90, 24);
-            this.txtDisAmt.TabIndex = 0;
+            this.txtDisAmt.TabIndex = 20;
             this.txtDisAmt.TextChanged += new System.EventHandler(this.txtDisAmt_TextChanged);
             // 
             // txtDis
@@ -412,7 +412,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(90, 24);
-            this.txtDis.TabIndex = 2;
+            this.txtDis.TabIndex = 16;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             // 
             // label32
@@ -459,7 +459,7 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(90, 24);
-            this.txtTaxAMount1.TabIndex = 0;
+            this.txtTaxAMount1.TabIndex = 21;
             this.txtTaxAMount1.TextChanged += new System.EventHandler(this.txtTaxAMount1_TextChanged);
             // 
             // label31
@@ -497,7 +497,7 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(90, 24);
-            this.txtTax1.TabIndex = 0;
+            this.txtTax1.TabIndex = 17;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             // 
             // label30
@@ -533,7 +533,7 @@
             this.txtMRP.SelectedText = "";
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(90, 24);
-            this.txtMRP.TabIndex = 0;
+            this.txtMRP.TabIndex = 15;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             // 
             // label29
@@ -569,7 +569,7 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(90, 24);
-            this.txtUnit.TabIndex = 0;
+            this.txtUnit.TabIndex = 14;
             // 
             // label28
             // 
@@ -605,7 +605,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(90, 24);
-            this.txtFreeQty.TabIndex = 4;
+            this.txtFreeQty.TabIndex = 19;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             // 
             // label27
@@ -641,7 +641,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(90, 24);
-            this.txtItemCode.TabIndex = 0;
+            this.txtItemCode.TabIndex = 13;
             // 
             // label21
             // 
@@ -687,7 +687,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(90, 24);
-            this.txtOty.TabIndex = 3;
+            this.txtOty.TabIndex = 18;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -892,7 +892,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(100, 24);
-            this.txtReceived.TabIndex = 20;
+            this.txtReceived.TabIndex = 29;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
@@ -1004,7 +1004,7 @@
             this.txtVehicleNo.SelectedText = "";
             this.txtVehicleNo.ShadowDecoration.Parent = this.txtVehicleNo;
             this.txtVehicleNo.Size = new System.Drawing.Size(180, 24);
-            this.txtVehicleNo.TabIndex = 16;
+            this.txtVehicleNo.TabIndex = 27;
             // 
             // txtDeliveryLoc
             // 
@@ -1030,7 +1030,7 @@
             this.txtDeliveryLoc.SelectedText = "";
             this.txtDeliveryLoc.ShadowDecoration.Parent = this.txtDeliveryLoc;
             this.txtDeliveryLoc.Size = new System.Drawing.Size(180, 43);
-            this.txtDeliveryLoc.TabIndex = 15;
+            this.txtDeliveryLoc.TabIndex = 26;
             // 
             // txtTransportName
             // 
@@ -1055,7 +1055,7 @@
             this.txtTransportName.SelectedText = "";
             this.txtTransportName.ShadowDecoration.Parent = this.txtTransportName;
             this.txtTransportName.Size = new System.Drawing.Size(180, 24);
-            this.txtTransportName.TabIndex = 14;
+            this.txtTransportName.TabIndex = 25;
             this.txtTransportName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransportName_KeyPress_1);
             // 
             // txtDescription
@@ -1082,7 +1082,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(180, 45);
-            this.txtDescription.TabIndex = 13;
+            this.txtDescription.TabIndex = 24;
             // 
             // txtInvoiceNo
             // 
@@ -1107,7 +1107,7 @@
             this.txtInvoiceNo.SelectedText = "";
             this.txtInvoiceNo.ShadowDecoration.Parent = this.txtInvoiceNo;
             this.txtInvoiceNo.Size = new System.Drawing.Size(150, 24);
-            this.txtInvoiceNo.TabIndex = 2;
+            this.txtInvoiceNo.TabIndex = 3;
             // 
             // button4
             // 
@@ -1174,7 +1174,7 @@
             this.txtPONo.SelectedText = "";
             this.txtPONo.ShadowDecoration.Parent = this.txtPONo;
             this.txtPONo.Size = new System.Drawing.Size(164, 24);
-            this.txtPONo.TabIndex = 5;
+            this.txtPONo.TabIndex = 6;
             this.txtPONo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPONo_KeyPress_1);
             // 
             // txtbillingadd
@@ -1201,7 +1201,7 @@
             this.txtbillingadd.SelectedText = "";
             this.txtbillingadd.ShadowDecoration.Parent = this.txtbillingadd;
             this.txtbillingadd.Size = new System.Drawing.Size(160, 46);
-            this.txtbillingadd.TabIndex = 0;
+            this.txtbillingadd.TabIndex = 2;
             // 
             // label25
             // 
@@ -1265,7 +1265,7 @@
             this.btnSave.Location = new System.Drawing.Point(499, 552);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 25;
+            this.btnSave.TabIndex = 31;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -1409,6 +1409,38 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "0",
+            "2",
+            "3",
+            "5",
+            "9",
+            "12",
+            "15",
+            "18",
+            "24",
+            "30"});
+            this.comboBox3.Location = new System.Drawing.Point(715, 431);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(79, 24);
+            this.comboBox3.TabIndex = 212;
+            this.comboBox3.Text = "0";
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(956, 127);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(143, 24);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.Visible = false;
+            // 
             // cmbtax
             // 
             this.cmbtax.FormattingEnabled = true;
@@ -1465,7 +1497,7 @@
             this.txtReturnNo.SelectedText = "";
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
             this.txtReturnNo.Size = new System.Drawing.Size(82, 24);
-            this.txtReturnNo.TabIndex = 208;
+            this.txtReturnNo.TabIndex = 9;
             this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown_1);
             this.txtReturnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReturnNo_KeyPress);
@@ -1523,7 +1555,7 @@
             this.dtpInvoice.Location = new System.Drawing.Point(421, 89);
             this.dtpInvoice.Name = "dtpInvoice";
             this.dtpInvoice.Size = new System.Drawing.Size(150, 23);
-            this.dtpInvoice.TabIndex = 3;
+            this.dtpInvoice.TabIndex = 4;
             // 
             // comboBox1
             // 
@@ -1541,7 +1573,8 @@
             this.textBox1.Location = new System.Drawing.Point(421, 125);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(150, 23);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 5;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label42
             // 
@@ -1573,7 +1606,7 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(140, 368);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(181, 24);
-            this.cmbPaymentType.TabIndex = 11;
+            this.cmbPaymentType.TabIndex = 23;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             this.cmbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaymentType_KeyPress);
             // 
@@ -1614,7 +1647,7 @@
             this.cmbStatesupply.Location = new System.Drawing.Point(954, 92);
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(140, 24);
-            this.cmbStatesupply.TabIndex = 8;
+            this.cmbStatesupply.TabIndex = 10;
             this.cmbStatesupply.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbStatesupply_KeyPress);
             // 
             // cmbCategory
@@ -1636,7 +1669,7 @@
             this.DtpdeliveryDate.Location = new System.Drawing.Point(138, 568);
             this.DtpdeliveryDate.Name = "DtpdeliveryDate";
             this.DtpdeliveryDate.Size = new System.Drawing.Size(182, 23);
-            this.DtpdeliveryDate.TabIndex = 17;
+            this.DtpdeliveryDate.TabIndex = 28;
             // 
             // dtpDueDate
             // 
@@ -1645,7 +1678,7 @@
             this.dtpDueDate.Location = new System.Drawing.Point(663, 125);
             this.dtpDueDate.Name = "dtpDueDate";
             this.dtpDueDate.Size = new System.Drawing.Size(159, 23);
-            this.dtpDueDate.TabIndex = 7;
+            this.dtpDueDate.TabIndex = 8;
             // 
             // txtPODate
             // 
@@ -1654,7 +1687,7 @@
             this.txtPODate.Location = new System.Drawing.Point(662, 87);
             this.txtPODate.Name = "txtPODate";
             this.txtPODate.Size = new System.Drawing.Size(160, 23);
-            this.txtPODate.TabIndex = 6;
+            this.txtPODate.TabIndex = 7;
             // 
             // Clear
             // 
@@ -1664,7 +1697,7 @@
             this.Clear.Location = new System.Drawing.Point(794, 551);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 28;
+            this.Clear.TabIndex = 34;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -1677,7 +1710,7 @@
             this.Print.Location = new System.Drawing.Point(694, 552);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 27;
+            this.Print.TabIndex = 33;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -1702,7 +1735,7 @@
             this.ComboBox.Location = new System.Drawing.Point(996, 564);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(100, 24);
-            this.ComboBox.TabIndex = 23;
+            this.ComboBox.TabIndex = 30;
             this.ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // cmbpartyname
@@ -1725,23 +1758,24 @@
             this.label38.Size = new System.Drawing.Size(114, 16);
             this.label38.TabIndex = 114;
             this.label38.Text = "Item Category :";
+            this.label38.Visible = false;
             // 
             // dgvInnerCreditNote
             // 
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
-            this.dgvInnerCreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.dgvInnerCreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvInnerCreditNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerCreditNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerCreditNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerCreditNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerCreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerCreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvInnerCreditNote.ColumnHeadersHeight = 37;
             this.dgvInnerCreditNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1756,14 +1790,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerCreditNote.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerCreditNote.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvInnerCreditNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerCreditNote.EnableHeadersVisualStyles = false;
             this.dgvInnerCreditNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -2037,37 +2071,6 @@
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(956, 127);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(143, 24);
-            this.comboBox2.TabIndex = 211;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "0",
-            "2",
-            "3",
-            "5",
-            "9",
-            "12",
-            "15",
-            "18",
-            "24",
-            "30"});
-            this.comboBox3.Location = new System.Drawing.Point(715, 431);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(79, 24);
-            this.comboBox3.TabIndex = 212;
-            this.comboBox3.Text = "0";
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
             // 
             // CreditNote
             // 

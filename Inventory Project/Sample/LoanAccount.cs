@@ -163,6 +163,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@LendarBank", txtLenderBank.Text);
                     cmd.Parameters.AddWithValue("@FirmName", txtcompanyname.Text);
                     cmd.Parameters.AddWithValue("@CurrentBal", txtCurrentBal.Text);
+                    cmd.Parameters.AddWithValue("@BalAsOf", dtpdate.Value);
                     cmd.Parameters.AddWithValue("@LoanReceive", cmbLoanReceive.Text);
                     cmd.Parameters.AddWithValue("@Interest", txtinterest.Text);
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);
@@ -191,7 +192,7 @@ namespace sample
             txtLenderBank.Text = dgvDescription.SelectedRows[0].Cells["LendarBank"].Value.ToString();
             txtcompanyname.Text = dgvDescription.SelectedRows[0].Cells["FirmName"].Value.ToString();
             txtCurrentBal.Text= dgvDescription.SelectedRows[0].Cells["CurrentBal"].Value.ToString();
-            dtpdate.Text= dgvDescription.SelectedRows[0].Cells["BalAsOf"].Value.ToString();
+          dtpdate.Text= dgvDescription.SelectedRows[0].Cells["BalAsOf"].Value.ToString();
             cmbLoanReceive.Text = dgvDescription.SelectedRows[0].Cells["LoanReceive"].Value.ToString();
             txtinterest.Text= dgvDescription.SelectedRows[0].Cells["Interest"].Value.ToString();        
             txtTermDuration.Text= dgvDescription.SelectedRows[0].Cells["Duration"].Value.ToString();
@@ -221,6 +222,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@LendarBank", txtLenderBank.Text);
                     cmd.Parameters.AddWithValue("@FirmName", txtcompanyname.Text);
                     cmd.Parameters.AddWithValue("@CurrentBal", txtCurrentBal.Text);
+                    cmd.Parameters.AddWithValue("@BalAsOf", dtpdate.Value);
+
                     cmd.Parameters.AddWithValue("@LoanReceive", cmbLoanReceive.Text);
                     cmd.Parameters.AddWithValue("@Interest", txtinterest.Text);
                     cmd.Parameters.AddWithValue("@Duration", txtTermDuration.Text);

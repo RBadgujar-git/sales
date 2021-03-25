@@ -178,6 +178,7 @@ namespace sample
                         con.Open();
                     }
                     DataTable dt = new DataTable();
+                    MessageBox.Show("Do You Want to Delete");
                     SqlCommand cmd = new SqlCommand("tbl_otherIncomeCategorySelect", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Delete");

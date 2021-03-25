@@ -172,7 +172,7 @@
             this.txtMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMRP.HoverState.Parent = this.txtMRP;
-            this.txtMRP.Location = new System.Drawing.Point(275, 43);
+            this.txtMRP.Location = new System.Drawing.Point(282, 43);
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.PasswordChar = '\0';
             this.txtMRP.PlaceholderText = "";
@@ -207,7 +207,7 @@
             this.txtItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItem.HoverState.Parent = this.txtItem;
-            this.txtItem.Location = new System.Drawing.Point(31, 43);
+            this.txtItem.Location = new System.Drawing.Point(39, 43);
             this.txtItem.MaxLength = 1000;
             this.txtItem.Name = "txtItem";
             this.txtItem.PasswordChar = '\0';
@@ -527,7 +527,7 @@
             this.dgvinnerexpenses.Name = "dgvinnerexpenses";
             this.dgvinnerexpenses.RowHeadersVisible = false;
             this.dgvinnerexpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvinnerexpenses.Size = new System.Drawing.Size(859, 131);
+            this.dgvinnerexpenses.Size = new System.Drawing.Size(859, 124);
             this.dgvinnerexpenses.TabIndex = 3;
             this.dgvinnerexpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -598,7 +598,7 @@
             // 
             this.picturebox1.BackColor = System.Drawing.Color.Silver;
             this.picturebox1.Image = global::sample.Properties.Resources.No_Image_Available;
-            this.picturebox1.Location = new System.Drawing.Point(406, 404);
+            this.picturebox1.Location = new System.Drawing.Point(396, 404);
             this.picturebox1.Name = "picturebox1";
             this.picturebox1.ShadowDecoration.Parent = this.picturebox1;
             this.picturebox1.Size = new System.Drawing.Size(132, 94);
@@ -766,7 +766,7 @@
             // 
             // Income
             // 
-            this.Income.Location = new System.Drawing.Point(130, 13);
+            this.Income.Location = new System.Drawing.Point(201, 11);
             this.Income.Name = "Income";
             this.Income.Size = new System.Drawing.Size(119, 23);
             this.Income.TabIndex = 3;
@@ -775,7 +775,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(57, 16);
+            this.label5.Location = new System.Drawing.Point(128, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 16);
             this.label5.TabIndex = 6;
@@ -836,6 +836,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 603);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtReturnNo
             // 
@@ -852,7 +853,7 @@
             this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(729, 66);
+            this.txtReturnNo.Location = new System.Drawing.Point(746, 66);
             this.txtReturnNo.Name = "txtReturnNo";
             this.txtReturnNo.PasswordChar = '\0';
             this.txtReturnNo.PlaceholderText = "";
@@ -860,7 +861,9 @@
             this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
             this.txtReturnNo.Size = new System.Drawing.Size(90, 28);
             this.txtReturnNo.TabIndex = 968;
+            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
             this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown);
+            this.txtReturnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReturnNo_KeyPress);
             // 
             // dtpDate
             // 
