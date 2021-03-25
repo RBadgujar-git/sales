@@ -359,7 +359,7 @@ namespace sample
             }
             finally
             {
-               // clear_text_data();
+                // clear_text_data();
             }
         }
 

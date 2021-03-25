@@ -229,8 +229,10 @@ namespace sample
 
         private void txtitemamount_KeyDown(object sender, KeyEventArgs e)
         {
-            try {
-                if (e.KeyCode == Keys.Enter) {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
                     float TA = 0, TD = 0, TGST = 0;
                     dgvinnerexpenses.Rows.Add();
                     row = dgvinnerexpenses.Rows.Count - 1;
@@ -261,10 +263,14 @@ namespace sample
                     //clear_text_data();
                 }
             }
-            catch (Exception e1) {
-                //string message = e1.Message;
+            catch (Exception e1)
+            {
+                string message = e1.Message;
             }
-            //clear_text_data();
+            finally
+            {
+                // clear_text_data();
+            }
         }
         private void clear_text_data()
         {
@@ -272,7 +278,7 @@ namespace sample
             txtMRP.Text = "0";
             txtOty.Text = "0";
             txtitemamount.Text = "0";
-            dgvinnerexpenses.Rows.Clear();
+            //dgvinnerexpenses.Rows.Clear();
         }
         private void cleardata()
         {
