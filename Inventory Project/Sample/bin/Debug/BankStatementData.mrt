@@ -183,6 +183,7 @@ No</Text>
               <Parent isRef="4" />
               <Text>{BankStatement.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text13 Ref="15" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -197,6 +198,7 @@ No</Text>
               <Parent isRef="4" />
               <Text>{BankStatement.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text13>
             <HorizontalLinePrimitive2 Ref="16" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0,3.2,19,0.0254</ClientRectangle>
@@ -271,7 +273,7 @@ No</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>fd8b325469444e41aa99400e86167a42</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
               <Page isRef="3" />
@@ -287,7 +289,7 @@ No</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>0792b52189654ebab3c33256fa7cdcda</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text35</Name>
               <Page isRef="3" />
@@ -321,7 +323,7 @@ No</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>591f37db54cd4e43a734b55507c6962f</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text11</Name>
               <Page isRef="3" />
@@ -465,10 +467,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 5:59:23 PM</ReportChanged>
+  <ReportChanged>3/25/2021 4:21:17 PM</ReportChanged>
   <ReportCreated>3/23/2021 5:09:57 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\BankStatementData.mrt</ReportFile>
-  <ReportGuid>88678fe1218b47e29d10c9708a2ffff3</ReportGuid>
+  <ReportGuid>80e3d3204d30464eaed0b93f10909f7e</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

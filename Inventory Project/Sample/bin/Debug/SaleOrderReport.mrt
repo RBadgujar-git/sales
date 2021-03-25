@@ -275,6 +275,7 @@
               <Parent isRef="19" />
               <Text>{SaleOrder.EmailID}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text5>
             <Text6 Ref="25" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -822,6 +823,7 @@ No.</Text>
               <Parent isRef="19" />
               <Text>{SaleOrder.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Bottom</VertAlignment>
             </Text30>
             <HorizontalLinePrimitive2 Ref="62" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0,3.2,19,0.0254</ClientRectangle>
@@ -852,7 +854,7 @@ No.</Text>
               </StartCap>
             </HorizontalLinePrimitive6>
             <StartPointPrimitive15 Ref="68" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
-              <ClientRectangle>6.4,3.4,0,0</ClientRectangle>
+              <ClientRectangle>6.4,3.2,0,0</ClientRectangle>
               <Guid>6516cbe313d44ef4a5334e144bbf8b86</Guid>
               <Name>StartPointPrimitive15</Name>
               <Page isRef="3" />
@@ -868,7 +870,7 @@ No.</Text>
               <ReferenceToGuid>373d1412041b46019dc5e2437a645c03</ReferenceToGuid>
             </EndPointPrimitive15>
             <StartPointPrimitive16 Ref="70" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
-              <ClientRectangle>13,3.4,0,0</ClientRectangle>
+              <ClientRectangle>13,3.2,0,0</ClientRectangle>
               <Guid>b4024d8a3d7c4c13b41572713b281bb3</Guid>
               <Name>StartPointPrimitive16</Name>
               <Page isRef="3" />
@@ -1030,7 +1032,6 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>8865deec58804f07bca237098a6ce747</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
               <Page isRef="3" />
@@ -1080,7 +1081,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>3bf4b85bf2784c3680b1e605e84f74d3</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text12</Name>
               <Page isRef="3" />
@@ -1096,7 +1097,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>17cbec6b06374f629c9c5bf1b041d27d</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text13</Name>
               <Page isRef="3" />
@@ -1112,7 +1113,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>bfb0d481ccce4ac38e440e0dd71121fa</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text14</Name>
               <Page isRef="3" />
@@ -1128,7 +1129,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>ca9b244f7f824425ab4f45ceb517c657</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
               <Page isRef="3" />
@@ -1144,7 +1145,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>3d4c20fb6edf4461905e9c262264ddeb</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text16</Name>
               <Page isRef="3" />
@@ -1160,7 +1161,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>9c20def2c72f498e8af27984a6ef30a4</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
               <Page isRef="3" />
@@ -1176,7 +1177,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>d2a1a940389549789693c5270a065024</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text35</Name>
               <Page isRef="3" />
@@ -1203,10 +1204,11 @@ No.</Text>
             <Text57 Ref="102" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,0.6,2.6,0.6</ClientRectangle>
+              <ClientRectangle>13,0.6,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>8fc496dc486b494a9996bb66cea11987</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text57</Name>
               <Page isRef="3" />
@@ -1217,10 +1219,11 @@ No.</Text>
             <Text58 Ref="103" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,1.2,2.6,0.6</ClientRectangle>
+              <ClientRectangle>13,1.2,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>c2794e41a69e4168a10fcfb93c6834b6</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text58</Name>
               <Page isRef="3" />
@@ -1231,10 +1234,11 @@ No.</Text>
             <Text59 Ref="104" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,1.8,2.6,0.6</ClientRectangle>
+              <ClientRectangle>13,1.8,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>e1b63f82c68040468f6ed11f9e852d9f</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text59</Name>
               <Page isRef="3" />
@@ -1246,10 +1250,11 @@ No.</Text>
             <Text60 Ref="105" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,2.4,2.6,0.6</ClientRectangle>
+              <ClientRectangle>13,2.4,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>784b778accd94504ac5b94ca70befad4</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text60</Name>
               <Page isRef="3" />
@@ -1260,10 +1265,11 @@ No.</Text>
             <Text62 Ref="106" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,0.6,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.8,0.6,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>24e9c4c6ab1348709306ffbbcacc9a3f</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text62</Name>
               <Page isRef="3" />
@@ -1274,10 +1280,11 @@ No.</Text>
             <Text63 Ref="107" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,1.2,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.8,1.2,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>1033387cff1e4a128c5ccf42dcbdf83a</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text63</Name>
               <Page isRef="3" />
@@ -1288,10 +1295,11 @@ No.</Text>
             <Text64 Ref="108" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,1.8,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.8,1.8,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>398f25719c8c459ab21b288a8d493c5b</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text64</Name>
               <Page isRef="3" />
@@ -1302,10 +1310,11 @@ No.</Text>
             <Text72 Ref="109" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,3,2.6,0.6</ClientRectangle>
+              <ClientRectangle>13,3,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>4f99d66015b54299af1bff66cab4c160</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text72</Name>
               <Page isRef="3" />
@@ -1317,10 +1326,11 @@ No.</Text>
             <Text73 Ref="110" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,3.6,2.6,0.6</ClientRectangle>
+              <ClientRectangle>13,3.6,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>9755fd404af340e395eef79fa5b6a719</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text73</Name>
               <Page isRef="3" />
@@ -1331,10 +1341,11 @@ No.</Text>
             <Text74 Ref="111" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,3,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.8,3,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>3f6aff56baa14a368d86cd1da58eeaf8</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text74</Name>
               <Page isRef="3" />
@@ -1345,10 +1356,11 @@ No.</Text>
             <Text75 Ref="112" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,3.6,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.8,3.6,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>1127fa49dfbc4622ac75479f5c366697</Guid>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text75</Name>
               <Page isRef="3" />
@@ -1362,7 +1374,7 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>35067d6a4f1c4ca296f7eedeb67afced</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
               <Page isRef="3" />
@@ -1374,11 +1386,11 @@ No.</Text>
             <Text53 Ref="114" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.6,2.4,3.4,0.6</ClientRectangle>
+              <ClientRectangle>15.8,2.4,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>1c155588546e48dc9abdbebdbc52363e</Guid>
-              <HorAlignment>Center</HorAlignment>
+              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text53</Name>
               <Page isRef="3" />
@@ -1445,7 +1457,7 @@ No.</Text>
           <PrintAtBottom>True</PrintAtBottom>
         </FooterBand1>
         <VerticalLinePrimitive15 Ref="124" type="VerticalLinePrimitive" isKey="true">
-          <ClientRectangle>6.4,3.8,0.0254,2.4</ClientRectangle>
+          <ClientRectangle>6.4,3.6,0.0254,2.6</ClientRectangle>
           <Color>Black</Color>
           <EndCap Ref="125" type="Cap" isKey="true">
             <Color>Black</Color>
@@ -1459,7 +1471,7 @@ No.</Text>
           </StartCap>
         </VerticalLinePrimitive15>
         <VerticalLinePrimitive16 Ref="127" type="VerticalLinePrimitive" isKey="true">
-          <ClientRectangle>13,3.8,0.0254,2.4</ClientRectangle>
+          <ClientRectangle>13,3.6,0.0254,2.6</ClientRectangle>
           <Color>Black</Color>
           <EndCap Ref="128" type="Cap" isKey="true">
             <Color>Black</Color>
@@ -1847,10 +1859,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/24/2021 10:57:57 AM</ReportChanged>
+  <ReportChanged>3/25/2021 2:45:17 PM</ReportChanged>
   <ReportCreated>3/18/2021 4:25:09 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\SaleOrderReport.mrt</ReportFile>
-  <ReportGuid>a66ad900593b4e27a98ed4aa3ee31ea3</ReportGuid>
+  <ReportGuid>0ebd2cff87b249a99afbae2a7f5bbfbd</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
