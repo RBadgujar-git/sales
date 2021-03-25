@@ -134,6 +134,7 @@ namespace sample
             cmbpartyname.Focus(); 
             fetchcustomername();
             fetchCategory();
+            fetchitem1();
             txtReturnNo.Enabled = false;
             get_id();
         }
@@ -409,11 +410,42 @@ namespace sample
             //    gst_devide();
             //    cal_Total();
         }
+        private void fetchBarcode()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
+                string Query = String.Format("select ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='" + cmbbarcode.Text + "' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtItemName.Text = dr["ItemName"].ToString();
+                    txtItemCode.Text = dr["ItemCode"].ToString();
+                    txtUnit.Text = dr["BasicUnit"].ToString();
+                    txtMRP.Text = dr["SalePrice"].ToString();
+                    txtTax1.Text = dr["TaxForSale"].ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
 
+                }
+                dr.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+
+        }
         int row = 0;
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
         {
-
+            insertitem();
             try {
                 if (e.KeyCode == Keys.Enter) {
                     float TA = 0, TD = 0, TGST = 0;
@@ -468,6 +500,47 @@ namespace sample
                 string message = e1.Message;
             }
         }
+        public int chekpoint = 0;
+        public void insertitem()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string Query = String.Format("select ItemName from tbl_ItemMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    string itemname = ds.Tables["Temp"].Rows[i]["ItemName"].ToString();
+                    if (itemname.ToString() == txtItemName.Text.ToString())
+                    {
+                        chekpoint = 1;
+                    }
+
+                }
+
+                if (chekpoint != 1)
+                {
+                    string query = string.Format("insert into tbl_ItemMaster(ItemName, BasicUnit, ItemCode, SalePrice, TaxForSale,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtUnit.Text + "'," + txtItemCode.Text + ", " + txtMRP.Text + "," + txtTax1.Text + "," + NewCompany.company_id + ")");
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e1)
+
+            {
+                // MessageBox.Show(e1.Message);
+            }
+        }
+
         private void clear_text_data()
         {
             txtItemName.Text = "";
@@ -530,12 +603,8 @@ namespace sample
 
         public void verfydata()
         {
-            if (cmbpartyname.Text == "")
-            {
-                MessageBox.Show("Party Name Is Requried");
-                cmbpartyname.Focus();
-            }        
-            else if (txtcon.Text == "")
+              
+            if (txtcon.Text == "")
             {
                 MessageBox.Show("Party Contact no Is Requueird !");
                 txtcon.Focus();
@@ -544,8 +613,7 @@ namespace sample
             {
                 MessageBox.Show("Party PONO Is Requueird !");
                 txtcon.Focus();
-            }
-      
+            }      
             else if (txtInvoiceNo.Text == "")
             {
                 MessageBox.Show("Party Refrence No Is Requueird !");
@@ -592,49 +660,50 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                    cmd.Parameters.AddWithValue("@Deletedata",1);
+                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id); 
 
 
-                    string intemcode = dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString();
-                    float qty1 = float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
+                    //string intemcode = dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString();
+                    //float qty1 = float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
 
 
-                    SqlCommand cmd1 = new SqlCommand("Select Qty from tbl_DebitNoteInner where ItemCode='" + intemcode + "' and ReturnNo='" + txtReturnNo.Text + "' ", con);
-                    float existingQty = Convert.ToInt32(cmd1.ExecuteScalar());
+                    //SqlCommand cmd1 = new SqlCommand("Select Qty from tbl_DebitNoteInner where ItemCode='" + intemcode + "' and ReturnNo='" + txtReturnNo.Text + "' ", con);
+                    //float existingQty = Convert.ToInt32(cmd1.ExecuteScalar());
 
 
-                    SqlCommand cmdb = new SqlCommand("tbl_PurchaseBillInnersp", con);
-                    cmdb.CommandType = CommandType.StoredProcedure;
-                    cmdb.Parameters.AddWithValue("@Action", "backget");
-                    cmdb.Parameters.AddWithValue("@Itemcode", intemcode);
-                    float prestock = Convert.ToInt32(cmdb.ExecuteScalar());
+                    //SqlCommand cmdb = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    //cmdb.CommandType = CommandType.StoredProcedure;
+                    //cmdb.Parameters.AddWithValue("@Action", "backget");
+                    //cmdb.Parameters.AddWithValue("@Itemcode", intemcode);
+                    //float prestock = Convert.ToInt32(cmdb.ExecuteScalar());
 
-                    if (existingQty > qty1)
-                    {
-                        float finalqty = existingQty - qty1;
-                        float stockmange = prestock + finalqty;
+                    //if (existingQty > qty1)
+                    //{
+                    //    float finalqty = existingQty - qty1;
+                    //    float stockmange = prestock + finalqty;
 
-                        SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
-                        cmd2.Parameters.AddWithValue("@stock", stockmange);
-                        cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
-                        cmd2.ExecuteNonQuery();
+                    //    SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    //    cmd2.CommandType = CommandType.StoredProcedure;
+                    //    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    //    cmd2.Parameters.AddWithValue("@stock", stockmange);
+                    //    cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
+                    //    cmd2.ExecuteNonQuery();
 
-                    }
-                    else if (existingQty < qty1)
-                    {
+                    //}
+                    //else if (existingQty < qty1)
+                    //{
 
-                        float finalqty = qty1 - existingQty;
-                        float stockmange = prestock - finalqty;
-                        SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
-                        cmd2.CommandType = CommandType.StoredProcedure;
-                        cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
-                        cmd2.Parameters.AddWithValue("@stock", stockmange);
-                        cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
-                        cmd2.ExecuteNonQuery();
+                    //    float finalqty = qty1 - existingQty;
+                    //    float stockmange = prestock - finalqty;
+                    //    SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    //    cmd2.CommandType = CommandType.StoredProcedure;
+                    //    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    //    cmd2.Parameters.AddWithValue("@stock", stockmange);
+                    //    cmd2.Parameters.AddWithValue("@Itemcode", intemcode);
+                    //    cmd2.ExecuteNonQuery();
 
-                    }
+                    //}
 
                     cmd.ExecuteNonQuery();
                 }
@@ -650,8 +719,8 @@ namespace sample
             }
             fetchcustomername();
             get_id();
-            cmbpartyname.Visible = false;
-            cmbpartyname1.Visible = true;
+            cmbpartyname.Visible = true;
+            cmbpartyname1.Visible = false;
             cleardata();
         }
 
@@ -671,8 +740,8 @@ namespace sample
                 {
 
 
-                //    verfydata();
-                    verfy = 1;
+                  verfydata();
+                   
                     if (verfy == 1)
                     {
                     
@@ -769,11 +838,18 @@ namespace sample
                     verfydata();
                     if (verfy == 1)
                     {
-                        insertdata();
-                        // bind_sale_details();
-                   //     clear_text_data();
-                        cleardata();
-                        get_id();
+                        if (cmbpartyname.Text != "")
+                        {
+                            insertdata();
+                            // bind_sale_details();
+                            //     clear_text_data();
+                            cleardata();
+                            get_id();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Insert Party Name !");
+                        }
                     }
                 }
             }
@@ -1209,6 +1285,10 @@ namespace sample
             {
                // MessageBox.Show(ew.Message);
             }
+            get_id();
+            cleardata();
+            cmbpartyname1.Visible = true;
+            cmbpartyname.Visible = false;
         }
 
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
@@ -1219,6 +1299,29 @@ namespace sample
         private void txtsubtotal_TextChanged(object sender, EventArgs e)
         {
             cal_Total();
+        }
+        public void fetchitem1()
+        {
+            if (txtItemName.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select ItemName from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' group by ItemName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    // MessageBox.Show(e1.Message);
+                }
+            }
         }
 
         private void dgvInnerDebiteNote_DoubleClick(object sender, EventArgs e)
@@ -1251,6 +1354,15 @@ namespace sample
         {
             cleardata();
             clear_text_data();
+            cmbpartyname1.Visible = true;
+            cmbpartyname.Visible =false ;
+            get_id();
+         
+        }
+
+        private void cmbbarcode_TextChanged(object sender, EventArgs e)
+        {
+            fetchBarcode();
         }
     }
     

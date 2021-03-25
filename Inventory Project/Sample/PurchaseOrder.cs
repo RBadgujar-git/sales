@@ -200,7 +200,7 @@ namespace sample
                 }
                 catch(Exception ew )
                 {
-                    MessageBox.Show(ew.Message);
+                  //  MessageBox.Show(ew.Message);
                 }
             }
 
@@ -848,19 +848,26 @@ namespace sample
 
         public void cal_Total()
         {
-            float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
-            TA = float.Parse(txtsubtotal.Text.ToString());
+            try
+            {
+                float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
+                TA = float.Parse(txtsubtotal.Text.ToString());
 
-            dis = float.Parse(txtDiscount.Text.ToString());
-            gst = float.Parse(cmbtax.Text.ToString());
-            dis_amt = TA * dis / 100;
-            txtDisAmount.Text = dis_amt.ToString();
+                dis = float.Parse(txtDiscount.Text.ToString());
+                gst = float.Parse(cmbtax.Text.ToString());
+                dis_amt = TA * dis / 100;
+                txtDisAmount.Text = dis_amt.ToString();
 
-            gst_amt = TA * gst / 100;
-            txtTaxAmount.Text = gst_amt.ToString();
+                gst_amt = TA * gst / 100;
+                txtTaxAmount.Text = gst_amt.ToString();
 
-            total = (TA + gst_amt) - dis_amt;
-            txtTotal.Text = total.ToString();
+                total = (TA + gst_amt) - dis_amt;
+                txtTotal.Text = total.ToString();
+            }
+            catch(Exception ew)
+            {
+               // MessageBox.Show(ew.Message);
+            }
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
