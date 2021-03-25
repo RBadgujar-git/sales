@@ -114,5 +114,10 @@ namespace sample
         {
             
         }
+
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
