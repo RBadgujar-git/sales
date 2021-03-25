@@ -777,18 +777,53 @@ namespace sample
             }
         }
 
+        public int checkid;
+        public void invalid()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Close();
+            }
+            string str = string.Format("SELECT * FROM tbl_SaleOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+            SqlCommand cmd = new SqlCommand(str, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Close();
+              //  MessageBox.Show("Invalid Data !");
+                checkid = 1;
+            }
+           
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            validdata();
-            if (verfy == 1)
+
+            if(con.State==ConnectionState.Closed)
             {
-                insertdata();
-                //bind_sale_details();
-                get_id();
-                clear_text_data();
-                cleardata();
-                printdata(id1.ToString());
-                dgvInnerDebiteNote.Rows.Clear();
+                con.Close();
+            }
+            string str = string.Format("SELECT * FROM tbl_SaleOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+            SqlCommand cmd = new SqlCommand(str, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                dr.Close();
+                MessageBox.Show("Invalid Data !");
+            }
+            else
+            {
+                dr.Close();
+                validdata();
+                if (verfy == 1)
+                {
+                    insertdata();
+                    //bind_sale_details();
+                    get_id();
+                    clear_text_data();
+                    cleardata();
+                    printdata(id1.ToString());
+                    dgvInnerDebiteNote.Rows.Clear();
+                }
             }
         }
         private void printdata(string id1)
@@ -1033,18 +1068,23 @@ namespace sample
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {          
-                update();    
-             
+        {
+            invalid();
+            if (checkid == 1)
+            {
+                update();
+
                 printdata(txtReturnNo.Text.ToString());
                 dgvInnerDebiteNote.Rows.Clear();
-            clear_text_data();
-            cleardata();
-            comboBox2.Visible = false;
+                clear_text_data();
+                cleardata();
+                comboBox2.Visible = false;
 
-            //     comboBox3.Visible = true;
-            cmbpartyname.Visible = true;
-            get_id();
+                //     comboBox3.Visible = true;
+                cmbpartyname.Visible = true;
+                get_id();
+            }
+
 
         }
 

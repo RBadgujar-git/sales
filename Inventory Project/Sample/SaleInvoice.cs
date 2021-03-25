@@ -37,7 +37,7 @@ namespace sample
             txtReturnNo.Enabled = false;
             //comboBox3.Enabled = false;
             get_id();
-
+            guna2TextBox1.Visible = false;
 
             if (discountcheck == 1)
             {
@@ -73,7 +73,7 @@ namespace sample
                     con.Open();
                 }
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='"+textBox1.Text+"' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
+                string Query = String.Format("select ItemID,ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='" + textBox1.Text+"' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -83,9 +83,10 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    guna2TextBox1.Text = dr["ItemID"].ToString();
+                    txtOty.Text = 1.ToString();                    
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
-
                 }
                 dr.Close();              
             }
@@ -416,8 +417,7 @@ namespace sample
                 con.Open();
             }
 
-          
-            
+                 
             string str = string.Format("SELECT * FROM tbl_SaleInvoice where InvoiceID ='" + txtReturnNo.Text + "' and  Company_ID='" + NewCompany.company_id + "'");
             SqlCommand cmd = new SqlCommand(str, con);
 
@@ -675,14 +675,15 @@ namespace sample
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
                     guna2TextBox1.Text= dr["ItemID"].ToString();
-
+                    txtOty.Text = 1.ToString();
+                    txtOty.Focus();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
                 }
                 dr.Close();
 
-                txtItemCode.Focus();
+            //    txtItemCode.Focus();
             }
             catch (Exception ex)
             {
@@ -731,9 +732,10 @@ namespace sample
                 {
                     txtbillingadd.Text = dr["BillingAddress"].ToString();
                     txtcon.Text = dr["ContactNo"].ToString();
+                    txtPoNo.Focus();
                 }
                 dr.Close();
-                txtPoNo.Focus();
+             //   txtPoNo.Focus();
             }
             catch (Exception ex)
             {
@@ -1283,8 +1285,6 @@ cal_Total();
 
             // get_id();
             //   bind_sale_details();
-          
-
             printdata1();
 
             get_id();
@@ -1708,9 +1708,8 @@ cal_Total();
 
         private void textBox1_KeyDown_1(object sender, KeyEventArgs e)
         {
-                fetchBarcode();
-
-              }
+               
+      }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1724,7 +1723,7 @@ cal_Total();
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            fetchBarcode();
         }
 
         private void txtItemCode_TextChanged(object sender, EventArgs e)

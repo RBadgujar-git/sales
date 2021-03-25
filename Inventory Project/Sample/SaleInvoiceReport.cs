@@ -101,9 +101,33 @@ namespace sample
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            if (txtSearch.Text == "")
+            {
+                search();
+            }
+            else
+            {
+                try
+                {
+                    string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where PartyName like '%{0}%' or InvoiceID like '%{0}%'  or  InvoiceDate like '%{0}%'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                    da.Fill(ds, "temp");
+                    dgvsaleInvoice.DataSource = ds;
+                    dgvsaleInvoice.DataMember = "temp";
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public void search()
+        {
             try
             {
-                string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where PartyName like '%{0}%' or InvoiceID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
+                string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -112,10 +136,9 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
-
         private void cmbThisMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed)
@@ -142,7 +165,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
 
@@ -163,7 +186,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                 //   MessageBox.Show(ex.Message);
                 }
             }
 
@@ -184,7 +207,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
                
@@ -203,7 +226,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
             else if (saledate == "All Sale Invoice")
@@ -221,7 +244,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                   // MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -231,6 +254,8 @@ namespace sample
             
             fetchCampanyame();
             Bindadata();
+            label14.Visible = false;
+            cmbFirm.Visible = false;
             //con.Open();
             //SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice", con);
             //DataSet ds = new DataSet();
@@ -267,7 +292,7 @@ namespace sample
         
         catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+            //    MessageBox.Show(ex.Message);
             }
         }
         private void Bindadata()
@@ -346,7 +371,7 @@ namespace sample
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized; 
         }
 
         private void btnprint_Click(object sender, EventArgs e)
@@ -373,7 +398,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                 //   MessageBox.Show(ex.Message);
                 }
             }
         }
