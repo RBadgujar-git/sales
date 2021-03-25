@@ -415,5 +415,23 @@ namespace sample
 
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+                // hidedata();
+            }
+            else
+            {
+                string Query = string.Format("select ID,PrincipleAmount,InterestAmount,Date,TotalAmount,PaidFrom,AccountName from tbl_MakePayment where DeleteData = '1' and AccountName like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvMakePayment.DataSource = ds;
+                dgvMakePayment.DataMember = "temp";
+            }
+        }
     }
 }

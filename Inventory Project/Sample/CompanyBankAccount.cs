@@ -317,5 +317,28 @@ namespace sample
                 e.Handled = true;
             }
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+                // hidedata();
+            }
+            else
+            {
+                string Query = string.Format("select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where DeleteData = '1' and BankName like '%{0}%' or ID like '%{0}%' and Company_ID='" + NewCompany.company_id+"'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvbankaccount.DataSource = ds;
+                dgvbankaccount.DataMember = "temp";
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

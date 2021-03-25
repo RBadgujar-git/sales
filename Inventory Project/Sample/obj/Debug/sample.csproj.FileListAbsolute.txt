@@ -1555,3 +1555,4 @@ C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.pdb
 C:\Users\Idealtechinfo-7\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque1.resources

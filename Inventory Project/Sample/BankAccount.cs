@@ -444,5 +444,28 @@ namespace sample
         {
             System.Diagnostics.Process.Start("Calc.exe");
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+                // hidedata();
+            }
+            else
+            {
+                string Query = string.Format("select * from tbl_BankAccount where DeleteData = '1' and AccountName like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvbankaccount.DataSource = ds;
+                dgvbankaccount.DataMember = "temp";
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
