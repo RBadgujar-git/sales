@@ -48,7 +48,7 @@
               <Name>Text6</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Expences Category Details</Text>
+              <Text>Expenses Category Details</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text6>
@@ -57,7 +57,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1.8,3.6,8.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>c2bbd3ba248340c4ba7142bd3f93706d</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -73,7 +73,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>10.4,3.6,8.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>2bf0d110b018411ebd15cb4e8e9bf190</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -90,7 +90,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,1.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>9ca52130b0324000aaf5d611ce6b5520</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -479,10 +479,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:17:57 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:49:19 PM</ReportChanged>
   <ReportCreated>3/22/2021 12:16:47 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpensesCategoryData.mrt</ReportFile>
-  <ReportGuid>cd5031c75cb74063b7bada3c1d2ac977</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\ExpensesCategoryData.mrt</ReportFile>
+  <ReportGuid>d61256e7a71d4b00830cd7814210eb20</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

@@ -73,7 +73,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1,3.6,2.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>b97bcd32918d4117b7fd7dba9a94b926</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -89,7 +89,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>3.8,3.6,3.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>f05dea7d96e5471eab91592f8cce472e</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -105,7 +105,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>7,3.6,3.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>33554c1becf84e3cb7d9d7219b59c085</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -121,7 +121,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>10.4,3.6,2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>1a884601a85e4f8b936e2a793d41079a</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -137,7 +137,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12.4,3.6,1.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>ef344393d0ba4c19996ebcd69ae0bbb1</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -153,7 +153,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>14.2,3.6,2.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>a613aa1e078341ea83bde7781b5a0f3e</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -161,7 +161,7 @@
               <Page isRef="3" />
               <Parent isRef="4" />
               <Text>Remaining 
-Balence</Text>
+Balance</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text24>
@@ -170,7 +170,7 @@ Balence</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>16.8,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>f646f8ea3f7b45a7839d61c03ec933fc</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -186,7 +186,7 @@ Balence</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,1,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>043981b84abb43739b16686ab7bd386e</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -697,10 +697,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:08:00 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:56:08 PM</ReportChanged>
   <ReportCreated>3/19/2021 11:00:31 AM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\PurchaseBillData.mrt</ReportFile>
-  <ReportGuid>a813aa2a446d4bcf9acac8d7fa241a4e</ReportGuid>
+  <ReportGuid>a9333af8736f4930b755c923384e6f5e</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

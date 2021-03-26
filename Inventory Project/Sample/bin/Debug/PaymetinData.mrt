@@ -86,14 +86,14 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,2.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>9449957ad2844e9ca3f82bf057081ce8</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text19</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
-              <Text>ReceiptNo</Text>
+              <Text>Receipt No</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text19>
@@ -183,7 +183,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>17,3.6,2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>e196e2f1920f457da4321c7b2ed022cd</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -199,7 +199,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>8.2,3.6,3.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>7744a4d3ebfa4293a8c9a410448e5fb0</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -215,7 +215,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>14.6,3.6,2.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>8db5f385c1dc456e903b077d64f13689</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -232,14 +232,14 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>2.82,3.6,5.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>49c4ab3eea1143aaacad5b8b342d2822</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
               <Page isRef="4" />
               <Parent isRef="5" />
-              <Text>CustomerName</Text>
+              <Text>Customer Name</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text4>
@@ -248,7 +248,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12,3.6,2.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>0bdf6ada504542688bc79cc960cc0059</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -550,10 +550,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 5:14:22 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:55:23 PM</ReportChanged>
   <ReportCreated>3/25/2021 1:46:42 PM</ReportCreated>
-  <ReportFile>C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\Sample\bin\Debug\PaymetinData.mrt</ReportFile>
-  <ReportGuid>47ebd0f2d3ea4cefa12f896894f7b536</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\PaymetinData.mrt</ReportFile>
+  <ReportGuid>ebf7ef44334349bc889f1723321bfe06</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

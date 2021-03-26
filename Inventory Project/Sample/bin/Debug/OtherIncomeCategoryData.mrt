@@ -57,7 +57,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1.8,3.6,8.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>7f26cc40d0d04d2b858cddce63a17009</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -73,7 +73,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>10.4,3.6,8.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>5e4bd4f5e62f4d0ea22a3f694d3d095b</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -90,7 +90,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,1.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>eff928bc9e0a438b8ffc205d10ba266b</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -477,10 +477,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 3:38:17 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:52:10 PM</ReportChanged>
   <ReportCreated>3/22/2021 2:41:03 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeCategoryData.mrt</ReportFile>
-  <ReportGuid>2cec41d027b64b61b33b7b48d573f515</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\OtherIncomeCategoryData.mrt</ReportFile>
+  <ReportGuid>16f9dcd6c1a847c598c512c38af78013</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
