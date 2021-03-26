@@ -664,6 +664,7 @@ Category</Text>
           <Name>FooterBand1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
+          <PrintAtBottom>True</PrintAtBottom>
         </FooterBand1>
         <HorizontalLinePrimitive2 Ref="56" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,19,0.0254</ClientRectangle>
@@ -776,7 +777,7 @@ Category</Text>
   <ReportChanged>3/25/2021 6:32:34 PM</ReportChanged>
   <ReportCreated>3/25/2021 4:48:49 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeReport1.mrt</ReportFile>
-  <ReportGuid>2b83ee9298bf4407910851bddff8437b</ReportGuid>
+  <ReportGuid>eaecaecc281e452595e9f2d266eeffd6</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
