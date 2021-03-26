@@ -15,9 +15,13 @@ namespace sample
 {
     public partial class Dashboard : DevExpress.XtraEditors.XtraForm
     {
+
+
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
+       
         public Dashboard()
         {
+            //label1.Text = NewCompany.companyname;
             InitializeComponent();
         }
 
@@ -28,11 +32,13 @@ namespace sample
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-                    }
+
+        }
 
         public int Estiment ;
         private void Form1_Load(object sender, EventArgs e)
         {
+            //toolStripMenuItem5.Text = "Select Company";
             con.Open();
             SqlCommand cmd = new SqlCommand("Select CompanyID  from tbl_CompanyMaster Where CompanyName = 'MyCompany'", con);
             string CompantId= cmd.ExecuteScalar().ToString();
@@ -63,11 +69,6 @@ namespace sample
             //{
 
             //
-            toolStripMenuItem5.Text = "Select Company";
-            toolStripMenuItem5.Text=NewCompany.companyname;
-
-                    
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1391,10 +1392,10 @@ namespace sample
 
         private void button1_Click_4(object sender, EventArgs e)
         {
-            if (panel1.Visible)
-                panel1.Hide();
-            else
-                panel1.Show();
+            //if (panel1.Visible)
+            //    panel1.Hide();
+            //else
+            //    panel1.Show();
         }
 
         private void menuStrip1_Click(object sender, EventArgs e)
@@ -1414,6 +1415,7 @@ namespace sample
             n.Location = new Point(200, 120);
             n.Visible = true;
             n.BringToFront();
+           
         }
 
         private void companyBankAccountToolStripMenuItem_Click_1(object sender, EventArgs e)

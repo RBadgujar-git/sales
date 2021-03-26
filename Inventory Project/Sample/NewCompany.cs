@@ -96,11 +96,15 @@ namespace sample
             if (cmbCompanyName.Text == "")
             {
                 MessageBox.Show("Company Name Is Requried");
+               
             }
             else
             {
+                Dashboard da = new Dashboard();
+                da.label1.Text = companyname;
                 InsertData();
                 this.Visible = false;
+               
                 //this.Visible = false;
                 //th = new Thread(openingform);
                 //th.SetApartmentState(ApartmentState.STA);
