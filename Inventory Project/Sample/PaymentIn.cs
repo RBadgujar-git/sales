@@ -270,8 +270,12 @@ namespace sample
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();           
+            if (id != "")
+            {
+                Update1();
+               fetchdetails();
+                id = "";
+            }        
         }
         public int verify = 0;
 
@@ -316,11 +320,14 @@ namespace sample
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            validfild();
-            if (verify == 1)
+            if (id == "")
             {
-                InsertData();
-                fetchdetails();
+                validfild();
+                if (verify == 1)
+                {
+                    InsertData();
+                    fetchdetails();
+                }
             }
         }
 
@@ -343,9 +350,13 @@ namespace sample
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
-            Cleardata();
+            if (id != "")
+            {
+                Delete1();
+                fetchdetails();
+                Cleardata();
+                id = "";
+            }
         }
 
         private void dgvPaymentIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -369,6 +380,7 @@ namespace sample
         private void button2_Click_1(object sender, EventArgs e)
         {
             Cleardata();
+            id = "";
         }
         byte[] arrImage1 = null;
         private void PictureBox1_Click(object sender, EventArgs e)

@@ -1218,7 +1218,7 @@ namespace sample
                     txtcon.Text = dr["ContactNo"].ToString();
                 }
                 dr.Close();
-                txtPONo.Focus();
+             
             }
             catch (Exception ex)
             {
@@ -1282,7 +1282,7 @@ namespace sample
                         txtUnit.Text = dr["BasicUnit"].ToString();
                         txtMRP.Text = dr["SalePrice"].ToString();
                         txtTax1.Text = dr["TaxForSale"].ToString();
-                     
+                          txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
                 }
@@ -1692,7 +1692,7 @@ namespace sample
                     con.Open();
                 }
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
-                string Query = String.Format("select ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='" + cmbbarcode.Text + "' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
+                string Query = String.Format("select ItemID,ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='" + cmbbarcode.Text + "' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
@@ -1702,6 +1702,8 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    guna2TextBox1.Text = dr["ItemID"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
@@ -1730,6 +1732,24 @@ namespace sample
         private void cmbbarcode_TextChanged(object sender, EventArgs e)
         {
             fetchBarcode();
+        }
+
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRoundOff.Checked == true)
+            {
+                int round = 0;
+                txtRoundup.Text = txtTotal.Text;
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                round = Convert.ToInt32(txtTotal.Text);
+                txtTotal.Text = round.ToString();
+
+            }
+            if (chkRoundOff.Checked == false)
+            {
+                cal_Total();
+                txtRoundup.Text = "";
+            }
         }
     }
 }

@@ -81,8 +81,9 @@ namespace sample
             fetchitem();
             txtReturnNo.Enabled = false;
             comboBox2.Visible = false;
-          comboBox3.Visible = true;
-            comboBox1.Hide();
+          comboBox3.Visible = false;
+
+            comboBox1.Visible=false;
             label15.Hide();
             fetchCategory();
             get_id();
@@ -187,6 +188,7 @@ namespace sample
                     clear_text_data();
                 }
                 txtItemName.Focus();
+                textBox1.Text = "";
             }
             catch (Exception e1)
             {
@@ -322,7 +324,10 @@ namespace sample
 
                 // PartyName ,PONo,BillDate,PODate ,DueDate,StateofSupply ,PaymentType,TransportName,DeliveryLocation,VehicleNumber,Deliverydate,Description,TransportCharges,Image,Tax1,TaxAmount1 ,TotalDiscount 
                 //    ,DiscountAmount1 ,RoundFigure ,Total, Paid, RemainingBal, PaymentTerms, Feild1,Feild2,Feild3,Feild4,Feild5
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
 
                 DataTable dtable = new DataTable();
                 cmd = new SqlCommand("tbl_SaleOrderSelect", con);
@@ -392,7 +397,7 @@ namespace sample
             }
             finally
             {
-                con.Close();
+              //  con.Close();
                 insert_record_inner(id1.ToString());
             }
         }
@@ -402,7 +407,10 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     DataTable dtable = new DataTable();
                     cmd = new SqlCommand("tbl_SaleOrderInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -782,7 +790,7 @@ namespace sample
         {
             if (con.State == ConnectionState.Closed)
             {
-                con.Close();
+                con.Open();
             }
             string str = string.Format("SELECT * FROM tbl_SaleOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
             SqlCommand cmd = new SqlCommand(str, con);
@@ -800,7 +808,7 @@ namespace sample
 
             if(con.State==ConnectionState.Closed)
             {
-                con.Close();
+                con.Open();
             }
             string str = string.Format("SELECT * FROM tbl_SaleOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
             SqlCommand cmd = new SqlCommand(str, con);
@@ -834,7 +842,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.BillingAddress,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleOrder as b,tbl_SaleOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", id1,id1);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleOrder as b,tbl_SaleOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", id1,id1);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -916,7 +924,7 @@ namespace sample
                 }
                 dr.Close();
 
-                dtpDueDate.Focus();
+               // dtpDueDate.Focus();
             }
             catch (Exception ex)
             {
@@ -1015,7 +1023,12 @@ namespace sample
         {
             try
             {
-                con.Open();
+
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
                 string Query = String.Format("select ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY ItemCode, BasicUnit, SalePrice,TaxForSale", txtItemName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
@@ -1026,17 +1039,18 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
                 }
                 dr.Close();
-
+                
                 txtItemCode.Focus();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -1079,7 +1093,7 @@ namespace sample
                 clear_text_data();
                 cleardata();
                 comboBox2.Visible = false;
-
+                printdata(txtReturnNo.Text.ToString());
                 //     comboBox3.Visible = true;
                 cmbpartyname.Visible = true;
                 get_id();
@@ -1325,6 +1339,9 @@ namespace sample
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+
+
+
         }
         private void fetchcustomername1()
         {
@@ -1371,8 +1388,7 @@ namespace sample
                 }
                 dr.Close();
 
-                dtpInvoice.Focus();
-            }
+                        }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -1403,9 +1419,66 @@ namespace sample
         {
             cal_Total();
         }
+        private void fetchBarcode()
+     {
+            try
+            {
+               if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice TaxForSale ,SaleTaxAmount
+                string Query = String.Format("select ItemID,ItemName,ItemCode, BasicUnit, SalePrice,TaxForSale from tbl_ItemMaster where Barcode='" + textBox1.Text + "' and Company_ID='" + NewCompany.company_id + "'  and DeleteData='1'");
+                SqlCommand cmd = new SqlCommand(Query, con);
+                
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    txtItemName.Text = dr["ItemName"].ToString();
+                    txtItemCode.Text = dr["ItemCode"].ToString();
+                    txtUnit.Text = dr["BasicUnit"].ToString();
+                    txtMRP.Text = dr["SalePrice"].ToString();
+                    txtTax1.Text = dr["TaxForSale"].ToString();            
+                    txtOty.Text = 1.ToString();
+                    //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
+                    //  txtTaxType.Text = dr["TaxType"].ToString();
 
+                }
+                dr.Close();
+                //con.Close();
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.Message);
+            }
+
+        }
         private void txtItemCode_TextChanged(object sender, EventArgs e)
         {
+           
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            fetchBarcode();
+        }
+
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRoundOff.Checked == true)
+            {
+                int round = 0;
+                txtRoundup.Text = txtTotal.Text;
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                round = Convert.ToInt32(txtTotal.Text);
+                txtTotal.Text = round.ToString();
+
+            }
+            if (chkRoundOff.Checked == false)
+            {
+                cal_Total();
+                txtRoundup.Text = "";
+            }
 
         }
     }

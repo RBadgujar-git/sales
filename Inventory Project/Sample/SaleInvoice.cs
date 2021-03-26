@@ -733,7 +733,7 @@ namespace sample
                 {
                     txtbillingadd.Text = dr["BillingAddress"].ToString();
                     txtcon.Text = dr["ContactNo"].ToString();
-                    txtPoNo.Focus();
+                  
                 }
                 dr.Close();
              //   txtPoNo.Focus();
@@ -1752,29 +1752,21 @@ cal_Total();
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            if (chkRoundOff.Checked == true)
             {
                 int round = 0;
+                txtRoundup.Text = txtTotal.Text;
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                round = Convert.ToInt32(txtTotal.Text);
+                txtTotal.Text = round.ToString();
 
-                if (chkRoundOff.Checked == false)
-                {
-                    txtTotal.Clear();
-                    txtRoundup.Text = txtTotal.Text;            // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
-                }
-                else if (chkRoundOff.Checked == true)
-                {
-
-                    txtRoundup.Text = txtTotal.Text;
-                    txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
-                    round = Convert.ToInt32(txtTotal.Text);
-                    txtTotal.Text = round.ToString();
-
-                }
             }
-            catch (Exception ew)
+            if (chkRoundOff.Checked == false)
             {
-                MessageBox.Show(ew.Message);
+                cal_Total();
+                txtRoundup.Text = "";
             }
+
         }
 
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
