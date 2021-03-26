@@ -223,7 +223,7 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmdn = new SqlCommand("Select CompanyID from tbl_CompanyMaster where CompanyName='"+txtcampanyName.Text+"' and PhoneNo="+txtContactNo.Text+" ",con);
+            SqlCommand cmdn = new SqlCommand("Select Max(CompanyID) from tbl_CompanyMaster ",con);
             string id = cmdn.ExecuteScalar().ToString();
 
             SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values("+id+")", con);
@@ -245,9 +245,6 @@ namespace sample
             else {
                 MessageBox.Show("No Permission");
             }
-
-          
-
         }
 
 

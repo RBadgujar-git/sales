@@ -32,14 +32,40 @@ namespace sample
 
         private void AllTransactionReport_Load(object sender, EventArgs e)
         {
-            fetchCompany();
+            //fetchCompany();
+            PartyName();
+            // fetchTrannsaction();
+            try
+            {
+                //con.Open();
+                DataTable dt = new DataTable();
+
+
+                //string Query = string.Format("(select TableName,PartyName,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_SaleInvoice where PartyName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,Total,Paid as 'Receievd/Paid',RemainingBal,Status from tbl_PurchaseBill  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_CreditNote1  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", txtpartyfilter.Text);
+
+                string Query = string.Format("(select TableName,PartyName,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_CreditNote1  where PartyName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DebitNote  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DeliveryChallan  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,BillDate,Total,Paid as 'Receievd/Paid',RemainingBal,Status from  tbl_PurchaseBill  where PartyName = '{0}'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,OrderDate ,Total,Paid as 'Receievd/Paid',RemainingBal,Status from tbl_PurchaseOrder where PartyName = '{0}'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_SaleInvoice where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' )union all(select TableName,PartyName,OrderDate ,Total,Received as 'Receievd/Paid',RemainingBal,Status from  tbl_SaleOrder where PartyName = '{0}'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+
+                //string Query = String.Format("select TableName,PartyName, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}'union all select TableName,PartyName, ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName = '{0}'  AND Company_ID='" + NewCompany.company_id + "'", cmballparties.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvalltransactions.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //con.Close();
+            }
         }
         private void fetchTrannsaction()
         {
             try
             {
 
-                string Query = string.Format("(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_CreditNote1  where PartyName='{0}')union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote  where PartyName = '{0}')Union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DeliveryChallan  where PartyName = '{0}')union all(select TableName,PartyName,BillDate as Date,Total,Paid as Receievd'/'Paid,RemainingBal,Status from  tbl_PurchaseBill  where PartyName = '{0}')Union all(select TableName,PartyName,OrderDate As Date,Total,Paid as Receievd'/'Paid,RemainingBal,Status from tbl_PurchaseOrder where PartyName = '{0}')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_SaleInvoice where PartyName = '{0}')union all(select TableName,PartyName,OrderDate as Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from  tbl_SaleOrder where PartyName = '{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtpartyfilter.Text);
+                string Query = string.Format("(select TableName,PartyName,Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_CreditNote1  where PartyName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DebitNote  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DeliveryChallan  where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,BillDate as Date,Total,Paid as 'Receievd/Paid',RemainingBal,Status from  tbl_PurchaseBill  where PartyName = '{0}'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,OrderDate As Date,Total,Paid as 'Receievd/Paid',RemainingBal,Status from tbl_PurchaseOrder where PartyName = '{0}'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_SaleInvoice where PartyName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' )union all(select TableName,PartyName,OrderDate as Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from  tbl_SaleOrder where PartyName = '{0}'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -50,7 +76,7 @@ namespace sample
             catch (Exception)
             {
 
-                throw;
+               // throw;
             }
         }
         //select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID= C.ID where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where ItemName = '{0}') and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'", lblItemName.Text);
@@ -123,7 +149,7 @@ namespace sample
 
         private void txtpartyfilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            fetchTrannsaction();
+           
         }
 
         private void cmballfrims_SelectedIndexChanged(object sender, EventArgs e)

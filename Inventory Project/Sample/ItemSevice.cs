@@ -169,12 +169,6 @@ namespace sample
             else if (cmbTaxRate.Text == "")
             {
                 MessageBox.Show(" select Tax Rate !");
-
-            }
-            else if (cmbTaxRate.Text == "")
-            {
-                MessageBox.Show(" select Tax Rate !");
-
             }
             else
             {
