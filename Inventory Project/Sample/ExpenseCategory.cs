@@ -158,48 +158,49 @@ namespace sample
 
         public void Delete()
         {
-            if (!string.IsNullOrEmpty(id))
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                try
+                if (!string.IsNullOrEmpty(id))
                 {
-                    if (txtaddcategory.Text == "")
+                    try
                     {
-                        MessageBox.Show("Please Select Record");
-                    }
-                    else
-                    {
-                        if (con.State == ConnectionState.Closed)
-                        {
-                            con.Open();
-                        }
-                        DataTable dtable = new DataTable();
-                        MessageBox.Show("Do You Want to Delete");
-                        SqlCommand cmd = new SqlCommand("tbl_ExpenseCategorySelect", con);
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Action", "Delete");
-                        cmd.Parameters.AddWithValue("@CategoryID", id);
-                        int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
-                            MessageBox.Show("Delete data Successfully");
-                            cleardata();
-                        }
-                        else
+                        if (txtaddcategory.Text == "")
                         {
                             MessageBox.Show("Please Select Record");
                         }
+                        else
+                        {
+                            if (con.State == ConnectionState.Closed)
+                            {
+                                con.Open();
+                            }
+                            DataTable dtable = new DataTable();
+                            SqlCommand cmd = new SqlCommand("tbl_ExpenseCategorySelect", con);
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Action", "Delete");
+                            cmd.Parameters.AddWithValue("@CategoryID", id);
+                            int num = cmd.ExecuteNonQuery();
+                            if (num > 0)
+                            {
+                                MessageBox.Show("Delete data Successfully");
+                                cleardata();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please Select Record");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("error" + ex.Message);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Please Select Record");
                 }
             }
-            else
-            {
-                MessageBox.Show("Please Select Record");
-            }
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

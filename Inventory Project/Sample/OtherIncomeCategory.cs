@@ -169,42 +169,43 @@ namespace sample
         }
         public void Delete()
         {
-            if (!string.IsNullOrEmpty(id))
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                try
-                {
-                    if (con.State == ConnectionState.Closed)
+                if (!string.IsNullOrEmpty(id))
+                        {
+                    try
                     {
-                        con.Open();
-                    }
-                    DataTable dt = new DataTable();
-                    MessageBox.Show("Do You Want to Delete");
-                    SqlCommand cmd = new SqlCommand("tbl_otherIncomeCategorySelect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_otherIncomeCategorySelect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
 
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
-                    {
-                        MessageBox.Show("Delete data Successfully");
-                        cleardata();
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Please Select Record");
+                        MessageBox.Show("error" + ex.Message);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("error" + ex.Message);
-                }
-            }
-            else
-            {
                 MessageBox.Show("Please Select Record");
+                }
             }
-
         }
         private void btndelete_Click(object sender, EventArgs e)
         {

@@ -39,6 +39,7 @@
             this.btnexpenses = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvcategory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAddcategory = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -47,7 +48,6 @@
             this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategory)).BeginInit();
@@ -168,6 +168,11 @@
             this.dgvcategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvcategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvcategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcategory_CellDoubleClick);
+            // 
+            // Category
+            // 
+            this.Category.HeaderText = "Category";
+            this.Category.Name = "Category";
             // 
             // txtSearch
             // 
@@ -324,6 +329,7 @@
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 438;
             this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnCancel
@@ -352,11 +358,6 @@
             this.label1.Size = new System.Drawing.Size(92, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Expenses";
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Category";
-            this.Category.Name = "Category";
             // 
             // ExpenseHomePage
             // 

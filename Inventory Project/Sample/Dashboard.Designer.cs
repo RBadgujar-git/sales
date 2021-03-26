@@ -129,7 +129,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1384, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1298, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "Home  ";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -540,7 +540,7 @@
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1123, 24);
+            this.panel1.Location = new System.Drawing.Point(1037, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(261, 634);
             this.panel1.TabIndex = 4;
@@ -816,7 +816,7 @@
             this.guna2Panel4.Location = new System.Drawing.Point(0, 24);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(1123, 66);
+            this.guna2Panel4.Size = new System.Drawing.Size(1037, 66);
             this.guna2Panel4.TabIndex = 5;
             this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
             // 
@@ -825,7 +825,7 @@
             this.button1.BackgroundImage = global::sample.Properties.Resources._3dot;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.Location = new System.Drawing.Point(1067, 0);
+            this.button1.Location = new System.Drawing.Point(981, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 66);
             this.button1.TabIndex = 0;
@@ -935,7 +935,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1384, 658);
+            this.ClientSize = new System.Drawing.Size(1298, 658);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
