@@ -109,6 +109,7 @@ namespace sample
             txtDis.Text = "0";
             txtDisAmt.Text = "0";
             txtItemTotal.Text = "0";
+            guna2TextBox1.Text = "";
         }
 
         private void cleardata()
@@ -166,8 +167,7 @@ namespace sample
                     SqlCommand cmd = new SqlCommand("select MAX (CAST( InvoiceID as INT)) from tbl_SaleInvoice", con);
                     SqlDataReader rd = cmd.ExecuteReader();
                     if (rd.Read())
-                    {
-                        rd.Close();
+                    { 
                         string Value = rd[0].ToString();
                         if (Value == "")
                         {
@@ -957,6 +957,7 @@ namespace sample
         }
 
         int row = 0;
+        public string Itemid;
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -985,7 +986,15 @@ namespace sample
                     string dis = txtDis.Text;
                     string dis_amt = txtDisAmt.Text;
                     string Total = txtItemTotal.Text;
-                    string Itemid = guna2TextBox1.Text;
+                    if (guna2TextBox1.Text != "")
+                    {
+                      Itemid = guna2TextBox1.Text;
+                    }
+                    else
+                    {
+                    Itemid = itemid1;
+                    }
+                    
 
                     dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
                     dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
@@ -1005,7 +1014,6 @@ namespace sample
 
                     for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                     {
-
                         TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
                         txtsubtotal.Text = TA.ToString();
                         txtTotal.Text = TA.ToString();
@@ -1013,8 +1021,9 @@ namespace sample
                     }
                    
                 }
-               
-                cmbPaymentType.Focus();
+
+             
+
 
             }
             catch (Exception e1)
@@ -1024,6 +1033,9 @@ namespace sample
             finally
             {
                 clear_text_data();
+                textBox1.Text = "";
+                textBox1.Focus();
+
             }
         }
         private void cmbpartyname_KeyPress(object sender, KeyPressEventArgs e)
@@ -1619,7 +1631,7 @@ cal_Total();
             cal_ItemTotal();
         }
 
-
+        public string itemid1;
         public int chekpoint = 0;
         public void insertitem()
         {
@@ -1648,9 +1660,15 @@ cal_Total();
 
                 if (chekpoint != 1)
                 {
-                    string query = string.Format("insert into tbl_ItemMaster(ItemName, BasicUnit, ItemCode, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtUnit.Text + "'," + txtItemCode.Text + ", " + txtMRP.Text + "," + txtTax1.Text + "," + textBox1.Text + ",'0'," + NewCompany.company_id + ")");
+                    string query = string.Format("insert into tbl_ItemMaster(ItemName,ItemCode , BasicUnit, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', " + txtItemCode.Text + "," + txtUnit.Text + "," + txtMRP.Text + "," + txtTax1.Text + ",'" + textBox1.Text + "'," +txtOty.Text+ ",'"+ NewCompany.company_id + "')");
+
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
+
+                    string Query1 = String.Format("select ItemID from tbl_ItemMaster where ItemName='" + txtItemName.Text + "' and  DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+                    SqlCommand cmd1 = new SqlCommand(Query1, con);
+                     itemid1 =cmd1.ExecuteScalar().ToString();
+
                 }
             }
             catch( Exception e1)
@@ -1730,6 +1748,33 @@ cal_Total();
         private void txtItemCode_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int round = 0;
+
+                if (chkRoundOff.Checked == false)
+                {
+                    txtTotal.Clear();
+                    txtRoundup.Text = txtTotal.Text;            // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
+                }
+                else if (chkRoundOff.Checked == true)
+                {
+
+                    txtRoundup.Text = txtTotal.Text;
+                    txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                    round = Convert.ToInt32(txtTotal.Text);
+                    txtTotal.Text = round.ToString();
+
+                }
+            }
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
         }
 
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
