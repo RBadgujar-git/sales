@@ -742,7 +742,7 @@
     <value>Arial, 9.75pt, style=Bold</value>
   </data>
   <data name="btnminimize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1038, 5</value>
+    <value>1000, 3</value>
   </data>
   <data name="btnminimize.Size" type="System.Drawing.Size, System.Drawing">
     <value>29, 29</value>
@@ -862,7 +862,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1009, 8</value>
+    <value>1035, 7</value>
   </data>
   <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
     <value>27, 25</value>
