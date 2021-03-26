@@ -58,7 +58,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1.2,3.6,7.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>ba9b52195ceb4e289ccfee8a7b1415fc</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -74,7 +74,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,1.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>1d47b978dd19400da253a3b1a6ac6ec5</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -172,7 +172,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>8.4,3.6,5.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>b21931e5231245efa571b262ee707958</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -188,7 +188,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>13.8,3.6,5.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>b568d596c8fb4282ae5b1ce9bab406b2</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -513,10 +513,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:13:10 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:53:31 PM</ReportChanged>
   <ReportCreated>3/22/2021 4:02:04 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeItemData.mrt</ReportFile>
-  <ReportGuid>d320ad8936ea4fbeb9cf15cde963c195</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\OtherIncomeItemData.mrt</ReportFile>
+  <ReportGuid>f969756e2d8b4f5685fc16026cee0968</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

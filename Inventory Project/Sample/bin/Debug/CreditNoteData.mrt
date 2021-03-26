@@ -64,7 +64,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,1.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>429cdbb133084ba1a97de7026891fe2a</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -161,7 +161,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>5.2,3.6,2.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>4c8d03eef523493c9ab1e4b7f619d214</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -177,7 +177,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>3,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>07ba97ca66714590b146047e388b1836</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -193,7 +193,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>14.4,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>0161e4420e8c412dbcb5c220343724c8</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -209,7 +209,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>10,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>bc86f7b2c7e7480db2d62d0036ae3bb3</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -225,7 +225,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12.2,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>f6b2702998914c20b891d2bab8b450e0</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -241,7 +241,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>16.6,3.6,2.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>7d50ff9731114701ac2b187760bdfe46</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -257,14 +257,14 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1.8,3.6,1.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>8827a15c57cd42e58b19f2d722dc5ceb</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Reff
+              <Text>Ref
 No</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -274,7 +274,7 @@ No</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>7.8,3.6,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>7658b663383f4367bc0f8295ca479dc7</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -640,10 +640,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 4:26:53 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:41:09 PM</ReportChanged>
   <ReportCreated>3/23/2021 6:44:53 PM</ReportCreated>
-  <ReportFile>C:\Users\Idealtechinfo-7\source\repos\sales2\Inventory Project\Sample\bin\Debug\CreditNoteData.mrt</ReportFile>
-  <ReportGuid>f52d41bef12444f4a613cd09f81db014</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\CreditNoteData.mrt</ReportFile>
+  <ReportGuid>fe88186181de452ba5874cb1bedb2fd8</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

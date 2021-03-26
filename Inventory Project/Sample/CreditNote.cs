@@ -35,6 +35,7 @@ namespace sample
             comboBox1.Visible = false;
             comboBox2.Visible = false;
             comboBox3.Visible = false;
+            cmbCategory.Visible = false;
             fetchitem1();
 
 
@@ -83,7 +84,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                 //   MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -106,14 +107,16 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
+                    txtOty.Focus();
                 }
                 dr.Close();
-                txtDis.Focus();
+              //  txtDis.Focus();
                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
             }
             //finally
             //{
@@ -139,7 +142,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -162,7 +165,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                //    MessageBox.Show(e1.Message);
                 }
                
             }
@@ -183,13 +186,14 @@ namespace sample
                 {
                     txtbillingadd.Text = dr["BillingAddress"].ToString();
                     txtcon.Text = dr["ContactNo"].ToString();
+                  //  txtPoNo.Focus();
                 }
                 dr.Close();
-                txtInvoiceNo.Focus();
+              //  txtInvoiceNo.Focus();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
             //finally
             //{
@@ -306,7 +310,7 @@ namespace sample
 
         private void txtOty_TextChanged(object sender, EventArgs e)
         {
-            quantitcheek();
+       //     quantitcheek();
             cal_ItemTotal();
         }
 
@@ -352,7 +356,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+              //  MessageBox.Show(e1.Message);
             }
         }
 
@@ -491,7 +495,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -520,6 +524,7 @@ namespace sample
             }
             else { 
                          verfy = 1;
+
             }
 
         }
@@ -616,12 +621,12 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+              //  MessageBox.Show(e1.Message);
             }
             finally
             {
               //  con.Close();
-                insert_record_inner(id1.ToString());
+                insert_record_inner(txtReturnNo.ToString());
             }
         }
 
@@ -670,22 +675,40 @@ namespace sample
            
         }
 
-
+        int point = 0;
+        public void existingcheek()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            // con.Open();
+            string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+            SqlCommand cmd = new SqlCommand(str, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                point = 1;
+            }
+      }
         private void btnSave_Click(object sender, EventArgs e)
         {
             verfydata();
 
             if (verfy == 1)
             {
-
-                insertdata();
-                //  insert_record_inner();
-             //   bind_sale_details();
-                get_id();
-                cleardata();
-                clear_text_data();
-                printdata(id1.ToString());
-             //   dgvInnerCreditNote.Rows.Clear();
+                existingcheek();
+                if (point == 0)
+                {
+                    insertdata();
+                    //  insert_record_inner();
+                    //   bind_sale_details();
+                    get_id();
+                    cleardata();
+                    clear_text_data();
+                  printdata(txtReturnNo.ToString());
+                    //   dgvInnerCreditNote.Rows.Clear();
+                }
             }
 
         }
@@ -714,7 +737,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                 //   MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -788,6 +811,7 @@ namespace sample
                     }
 
                         clear_text_data();
+                    textBox1.Text = "";
                   
                 }
                 cmbPaymentType.Focus();
@@ -833,7 +857,7 @@ namespace sample
                 }    
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
         }
         public void cal_Total()
@@ -855,7 +879,7 @@ namespace sample
                 }
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+              //  MessageBox.Show(e1.Message);
             }
         }
 
@@ -911,7 +935,7 @@ namespace sample
            
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
                 
             }
            
@@ -952,7 +976,7 @@ namespace sample
         {
             try
             {
-                if (cmbpartyname.Text == "")
+                if (comboBox1.Text == "")
                 {
                     MessageBox.Show("Party Name Is Requried");
                 }
@@ -1038,7 +1062,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+              //  MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -1093,14 +1117,18 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            update();
-            //  insert_record_inner();
-         //   bind_sale_details();
-           get_id();
-            cleardata();
-            clear_text_data();
-          //  printdata(id1.ToString());
-            dgvInnerCreditNote.Rows.Clear();
+            existingcheek();
+            if (point == 1)
+            {
+                update();
+                //  insert_record_inner();
+                //   bind_sale_details();
+                get_id();
+                cleardata();
+                clear_text_data();
+                //  printdata(id1.ToString());
+                dgvInnerCreditNote.Rows.Clear();
+            }
         }
 
         private void Print_Click(object sender, EventArgs e)
@@ -1491,6 +1519,7 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
