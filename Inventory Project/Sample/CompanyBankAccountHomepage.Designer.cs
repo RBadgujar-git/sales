@@ -346,6 +346,7 @@
             this.btnprint.Size = new System.Drawing.Size(21, 21);
             this.btnprint.TabIndex = 466;
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Visible = false;
             // 
             // CompanyBankAccountHomepage
             // 
