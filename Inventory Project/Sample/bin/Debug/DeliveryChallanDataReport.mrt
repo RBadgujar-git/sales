@@ -75,7 +75,7 @@ No</Text>
             </Text19>
             <Text1 Ref="7" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,0,7.4,1</ClientRectangle>
+              <ClientRectangle>2.4,0,7.4,1</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,14,Bold</Font>
               <Guid>f9f758f9333d47569c5f95ced98bde80</Guid>
@@ -89,7 +89,7 @@ No</Text>
             </Text1>
             <Image1 Ref="8" type="Image" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,2.2,2.2</ClientRectangle>
+              <ClientRectangle>0.2,0.2,2,1.8</ClientRectangle>
               <Conditions isList="true" count="0" />
               <DataColumn>DeliveryChallan.AddLogo</DataColumn>
               <Guid>aa06d7d423c746b58c8df0fe7cf123f7</Guid>
@@ -100,7 +100,7 @@ No</Text>
             </Image1>
             <Text2 Ref="9" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,1,7.4,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>22454542cf8f4ef4b55e5f237b27b49e</Guid>
@@ -113,7 +113,7 @@ No</Text>
             </Text2>
             <Text3 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,1.6,7.4,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1.6,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,9,Bold</Font>
               <Guid>ce752b344d4f4f349d9baaa3d681a636</Guid>
@@ -539,10 +539,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 7:38:32 PM</ReportChanged>
+  <ReportChanged>3/26/2021 3:15:45 PM</ReportChanged>
   <ReportCreated>3/25/2021 7:01:22 PM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\DeliveryChallanDataReport.mrt</ReportFile>
-  <ReportGuid>7f91f4502cb14bb0894b839a5254ad20</ReportGuid>
+  <ReportGuid>7ec9864600d24ada93e5600710fe1a35</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

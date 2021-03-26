@@ -88,7 +88,7 @@
             </Text1>
             <Image1 Ref="8" type="Image" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,2.2,2.2</ClientRectangle>
+              <ClientRectangle>0.2,0.2,2,1.8</ClientRectangle>
               <Conditions isList="true" count="0" />
               <DataColumn>PaymentOut.AddLogo</DataColumn>
               <Guid>2f7c8ee97c7946798f0b4f36bf8dfa2d</Guid>
@@ -539,10 +539,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 8:54:34 PM</ReportChanged>
+  <ReportChanged>3/26/2021 3:37:16 PM</ReportChanged>
   <ReportCreated>3/25/2021 1:07:49 PM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\PaymentOutDataReport.mrt</ReportFile>
-  <ReportGuid>270e8314014a4346a0de38b57980e401</ReportGuid>
+  <ReportGuid>5a7e699a725f4e5c91f576d7e74b26f7</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

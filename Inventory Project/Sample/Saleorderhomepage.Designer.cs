@@ -90,6 +90,7 @@
             this.btnprint.Size = new System.Drawing.Size(21, 21);
             this.btnprint.TabIndex = 182;
             this.btnprint.UseVisualStyleBackColor = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // btnImport
             // 
@@ -258,6 +259,7 @@
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 451;
             this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // Saleorderhomepage

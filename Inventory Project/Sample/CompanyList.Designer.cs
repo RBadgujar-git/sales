@@ -81,6 +81,7 @@
             this.btnminimize.Size = new System.Drawing.Size(29, 29);
             this.btnminimize.TabIndex = 435;
             this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // button3

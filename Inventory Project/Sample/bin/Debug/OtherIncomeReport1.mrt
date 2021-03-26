@@ -14,7 +14,7 @@
           <value>PhoneNo,System.String</value>
           <value>Date,System.String</value>
           <value>ItemName,System.String</value>
-          <value>OtherCategory,System.String</value>
+          <value>IncomeCategory,System.String</value>
           <value>Qty,System.String</value>
           <value>SalePrice,System.String</value>
           <value>Paid,System.String</value>
@@ -39,7 +39,7 @@
     <Page1 Ref="3" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="11">
+      <Components isList="true" count="10">
         <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,0.4,19,5.6</ClientRectangle>
@@ -494,6 +494,7 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>1bebb34780f74bc09f127965863bbb43</Guid>
+              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text23</Name>
               <Page isRef="3" />
@@ -513,7 +514,7 @@ Category</Text>
               <Name>Text25</Name>
               <Page isRef="3" />
               <Parent isRef="38" />
-              <Text>{OtherIncome.OtherCategory}</Text>
+              <Text>{OtherIncome.IncomeCategory}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text25>
@@ -529,6 +530,7 @@ Category</Text>
               <Name>Text11</Name>
               <Page isRef="3" />
               <Parent isRef="38" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{OtherIncome.Date}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
@@ -586,7 +588,7 @@ Category</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,15.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>edaef890a60e416c890be7d458f64af8</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -633,7 +635,7 @@ Category</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0.6,15.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>20ef5c3559d74b8d98c45f24e2918899</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -648,7 +650,7 @@ Category</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,1.2,15.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>238e804d67db44e6b426266ff061fdbe</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -707,41 +709,28 @@ Category</Text>
           <Parent isRef="3" />
           <ReferenceToGuid>44198bb7bbca4d31b195c0ff264ff7e2</ReferenceToGuid>
         </EndPointPrimitive7>
-        <HorizontalLinePrimitive3 Ref="64" type="HorizontalLinePrimitive" isKey="true">
-          <ClientRectangle>0,27.6,19,0.0254</ClientRectangle>
-          <Color>Black</Color>
-          <EndCap Ref="65" type="Cap" isKey="true">
-            <Color>Black</Color>
-          </EndCap>
-          <Name>HorizontalLinePrimitive3</Name>
-          <Page isRef="3" />
-          <Parent isRef="3" />
-          <StartCap Ref="66" type="Cap" isKey="true">
-            <Color>Black</Color>
-          </StartCap>
-        </HorizontalLinePrimitive3>
-        <VerticalLinePrimitive2 Ref="67" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive2 Ref="64" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>19,0,0.0254,27.6</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="68" type="Cap" isKey="true">
+          <EndCap Ref="65" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>c812e6ff64a94697a2a325540e51c0d2</Guid>
           <Name>VerticalLinePrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="69" type="Cap" isKey="true">
+          <StartCap Ref="66" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive2>
-        <StartPointPrimitive8 Ref="70" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive8 Ref="67" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>19,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive8</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>c812e6ff64a94697a2a325540e51c0d2</ReferenceToGuid>
         </StartPointPrimitive8>
-        <EndPointPrimitive8 Ref="71" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive8 Ref="68" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>19.03,27.6,0,0</ClientRectangle>
           <Name>EndPointPrimitive8</Name>
           <Page isRef="3" />
@@ -756,13 +745,13 @@ Category</Text>
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="72" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="69" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="73" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="70" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -774,10 +763,10 @@ Category</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 6:32:34 PM</ReportChanged>
+  <ReportChanged>3/26/2021 5:30:21 PM</ReportChanged>
   <ReportCreated>3/25/2021 4:48:49 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeReport1.mrt</ReportFile>
-  <ReportGuid>eaecaecc281e452595e9f2d266eeffd6</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\OtherIncomeReport1.mrt</ReportFile>
+  <ReportGuid>106515fdbf93411eb3075ab4185ca75c</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

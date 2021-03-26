@@ -495,6 +495,7 @@ namespace sample
 
         private void dgvItemServices_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+             
 
         }
 
