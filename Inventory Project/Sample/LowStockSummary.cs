@@ -38,7 +38,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster", con);
+            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -139,6 +139,30 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StockDetails BA = new StockDetails();
+            //  BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StockSummary BA = new StockSummary();
+            //  BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
     }
 }

@@ -108,12 +108,6 @@ namespace sample
                 MessageBox.Show("Item Name Is  Required");
                 txtName.Focus();
             }
-            else if (cmbAdjustmenttype.Text == "")
-            {
-                MessageBox.Show("Adjustment Type Is Required");
-                cmbAdjustmenttype.Focus();
-
-            }
             else if (date.Text == "")
             {
                 MessageBox.Show("Date Is Required");
@@ -123,12 +117,7 @@ namespace sample
             {
                 MessageBox.Show("Price Is Required");
                 txtatprice.Focus();
-            }
-            else if (txtQuantity.Text == "")
-            {
-                MessageBox.Show("Item Quantity Is Category");
-                txtQuantity.Focus();
-            }      
+            } 
             else
             {
                 veryfi = 1;

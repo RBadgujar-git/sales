@@ -100,8 +100,8 @@ namespace sample
             }
             else
             {
-                Dashboard da = new Dashboard();
-                da.label1.Text = companyname;
+                //Dashboard da = new Dashboard();
+                //da.label1.Text = companyname;
                 InsertData();
                 this.Visible = false;
                

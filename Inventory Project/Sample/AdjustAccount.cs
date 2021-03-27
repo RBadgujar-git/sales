@@ -122,6 +122,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@compid", companyid);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data Successfully");
+                Cleardata();
                 }
             con.Close();
             

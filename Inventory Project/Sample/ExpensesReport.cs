@@ -34,6 +34,31 @@ namespace sample
         {
             fetchexpenses();
             bindbankdata();
+            fetchCompany();
+        }
+
+        private void fetchCompany()
+        {
+            if (cmballfirms.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmballfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
         }
         private void bindbankdata()
         {
@@ -181,6 +206,11 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void cmballfirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

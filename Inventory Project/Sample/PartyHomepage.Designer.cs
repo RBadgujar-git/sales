@@ -299,10 +299,10 @@
             this.btnPartyGroup.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPartyGroup.ForeColor = System.Drawing.Color.White;
             this.btnPartyGroup.HoverState.Parent = this.btnPartyGroup;
-            this.btnPartyGroup.Location = new System.Drawing.Point(607, 14);
+            this.btnPartyGroup.Location = new System.Drawing.Point(596, 14);
             this.btnPartyGroup.Name = "btnPartyGroup";
             this.btnPartyGroup.ShadowDecoration.Parent = this.btnPartyGroup;
-            this.btnPartyGroup.Size = new System.Drawing.Size(146, 34);
+            this.btnPartyGroup.Size = new System.Drawing.Size(157, 34);
             this.btnPartyGroup.TabIndex = 3;
             this.btnPartyGroup.Text = "+Add Party Group";
             this.btnPartyGroup.Click += new System.EventHandler(this.btnPartyGroup_Click);
