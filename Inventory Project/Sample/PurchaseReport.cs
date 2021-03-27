@@ -28,11 +28,10 @@ namespace sample
 
         private void fetchCampanyame()
         {
-            if (cmbFirm.Text != "System.Data.DataRowView")
-            {
+       
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -47,8 +46,10 @@ namespace sample
                 {
                     MessageBox.Show(e1.Message);
                 }
-            }
+            
         }
+        
+
         private void PurchaseReport_Load(object sender, EventArgs e)
         {
             fetchCampanyame();
@@ -65,14 +66,34 @@ namespace sample
             Data();
          
         }
+        private void Bindadata1(int m)
+        {
+
+            try
+            {
+                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + m + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPurchaseBill.DataSource = ds;
+                dgvPurchaseBill.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Bindadata()
         {
-            con.Open();
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand("select * from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-            con.Close();
+        
             dgvPurchaseBill.AutoGenerateColumns = false;
             dgvPurchaseBill.ColumnCount = 8;
             dgvPurchaseBill.Columns[0].HeaderText = "Date";
@@ -366,6 +387,33 @@ namespace sample
 
         private void cmbFirm_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if(cmbFirm.Text=="")
+            {
+                Bindadata1(Convert.ToInt32(NewCompany.company_id));
+            }
+            else
+            {
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("Select CompanyID from tbl_CompanyMaster where  CompanyName='"+cmbFirm.Text+"' and DeleteData='1' ", con);
+                int compid =Convert.ToInt32(cmd.ExecuteScalar());
+                Bindadata1(compid);
+
+            }
+
+
+
+       
+
+
+
 
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)

@@ -139,6 +139,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvInnerDebiteNote = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,9 +153,6 @@
             this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -305,6 +304,7 @@
             this.chkRoundOff.UncheckedState.BorderRadius = 0;
             this.chkRoundOff.UncheckedState.BorderThickness = 0;
             this.chkRoundOff.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkRoundOff.CheckedChanged += new System.EventHandler(this.chkRoundOff_CheckedChanged);
             // 
             // txtTotal
             // 
@@ -1671,7 +1671,7 @@
             "Cash",
             "Cheque",
             "Online Payment"});
-            this.cmbPaymentType.Location = new System.Drawing.Point(151, 401);
+            this.cmbPaymentType.Location = new System.Drawing.Point(152, 401);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(172, 24);
             this.cmbPaymentType.TabIndex = 23;
@@ -1994,20 +1994,6 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
-            this.dgvInnerDebiteNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sr_no,
-            this.txtItem,
-            this.Item_Code,
-            this.Unit,
-            this.MRP,
-            this.Tax,
-            this.Discount,
-            this.Qty,
-            this.FreeQty,
-            this.Tax_Amount,
-            this.Discount_Amount,
-            this.Amount,
-            this.ItemID1});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2051,10 +2037,24 @@
             this.dgvInnerDebiteNote.DoubleClick += new System.EventHandler(this.dgvInnerDebiteNote_DoubleClick);
             this.dgvInnerDebiteNote.Validating += new System.ComponentModel.CancelEventHandler(this.dgvInnerDebiteNote_Validating);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(63, 561);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 16);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Vehicle No :";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // sr_no
             // 
             this.sr_no.HeaderText = "sr_no";
             this.sr_no.Name = "sr_no";
+            this.sr_no.Width = 83;
             // 
             // txtItem
             // 
@@ -2063,6 +2063,7 @@
             this.txtItem.Name = "txtItem";
             this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.txtItem.Width = 82;
             // 
             // Item_Code
             // 
@@ -2078,12 +2079,14 @@
             this.Unit.HeaderText = "Unit";
             this.Unit.Name = "Unit";
             this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Unit.Width = 83;
             // 
             // MRP
             // 
             this.MRP.DataPropertyName = "SalePrice";
             this.MRP.HeaderText = "MRP";
             this.MRP.Name = "MRP";
+            this.MRP.Width = 82;
             // 
             // Tax
             // 
@@ -2098,6 +2101,7 @@
             this.Discount.DataPropertyName = "Discount";
             this.Discount.HeaderText = "Discount";
             this.Discount.Name = "Discount";
+            this.Discount.Width = 83;
             // 
             // Qty
             // 
@@ -2125,31 +2129,14 @@
             this.Discount_Amount.DataPropertyName = "DiscountAmount";
             this.Discount_Amount.HeaderText = "Discount Amount";
             this.Discount_Amount.Name = "Discount_Amount";
+            this.Discount_Amount.Width = 83;
             // 
             // Amount
             // 
             this.Amount.DataPropertyName = "ItemAmount";
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
-            // 
-            // ItemID1
-            // 
-            this.ItemID1.HeaderText = "ItemID1";
-            this.ItemID1.Name = "ItemID1";
-            this.ItemID1.Visible = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(63, 561);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 16);
-            this.label12.TabIndex = 26;
-            this.label12.Text = "Vehicle No :";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.Amount.Width = 82;
             // 
             // PurchaseBill
             // 
@@ -2298,6 +2285,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tax_Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount_Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID1;
     }
 }

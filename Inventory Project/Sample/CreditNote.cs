@@ -102,17 +102,20 @@ namespace sample
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    ItemId =Convert.ToInt32(dr["ItemID"]);
+                    //   ItemId =Convert.ToInt32(dr["ItemID"]);
+                    guna2TextBox1.Text = dr["ItemID"].ToString();
                     txtItemCode.Text = dr["ItemCode"].ToString();
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                  
                     txtOty.Text = 1.ToString();
-                    txtOty.Focus();
+                  //  txtOty.Focus();
                 }
                 dr.Close();
-              //  txtDis.Focus();
-               
+                txtOty.Focus();
+                //  txtDis.Focus();
+
             }
             catch (Exception ex)
             {
@@ -490,8 +493,9 @@ namespace sample
                         dgvInnerCreditNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
                         i++;
                     }
-                    dr1.Close();
+                  
                 }
+                dr1.Close();
             }
             catch (Exception ex)
             {
@@ -661,6 +665,38 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerCreditNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
+
+
+
+                    String ItemName = dgvInnerCreditNote.Rows[i].Cells["txtItem"].Value.ToString();
+                    float cureentstock = Convert.ToInt32(dgvInnerCreditNote.Rows[i].Cells["Qty"].Value.ToString());
+                    float freeqty = Convert.ToInt32(dgvInnerCreditNote.Rows[i].Cells["FreeQty"].Value.ToString());
+                    float Itemid = Convert.ToInt32(dgvInnerCreditNote.Rows[i].Cells["IdItem"].Value.ToString());
+
+
+                    
+                    ////   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
+
+                    SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.Parameters.AddWithValue("@Action", "backget");
+                    cmd1.Parameters.AddWithValue("@Itemcode", ItemName);
+                    cmd1.Parameters.AddWithValue("@ItemID", Itemid);
+
+                    float prestock = Convert.ToInt32(cmd1.ExecuteScalar());
+
+                    //   float freeqty = float.Parse(txtFreeQty.Text);
+
+                    float stockmangee = prestock + (cureentstock + freeqty);
+
+                    SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Parameters.AddWithValue("@Action", "UpdateMinimumstock");
+                    cmd2.Parameters.AddWithValue("@stock", stockmangee);
+                    cmd2.Parameters.AddWithValue("@Itemcode", ItemName);
+                    cmd2.Parameters.AddWithValue("@ItemID", Itemid);
+                    cmd2.ExecuteNonQuery();
+
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1)
@@ -678,18 +714,29 @@ namespace sample
         int point = 0;
         public void existingcheek()
         {
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                // con.Open();
+                string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                SqlCommand cmd = new SqlCommand(str, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    point = 1;
+                }
+                dr.Close();
             }
-            // con.Open();
-            string str = string.Format("SELECT * FROM tbl_CreditNote1 where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
-            SqlCommand cmd = new SqlCommand(str, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
+            catch(Exception ew)
             {
-                point = 1;
+               // MessageBox.Show(ew.Message);
+
             }
+
+           
       }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -758,8 +805,53 @@ namespace sample
         {
             this.Close();
         }
+        public string itemid1;
+        public int chekpoint = 0;
+        public void insertitem()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                chekpoint = 0;
+                string Query = String.Format("select ItemName from tbl_ItemMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    string itemname = ds.Tables["Temp"].Rows[i]["ItemName"].ToString();
+                    if (itemname.ToString() == txtItemName.Text.ToString())
+                    {
+                        chekpoint = 1;
+                    }
+                }
+                if (chekpoint != 1)
+                {
+
+                    string query = string.Format("insert into tbl_ItemMaster(ItemName,ItemCode , BasicUnit, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtItemCode.Text + "','" + txtUnit.Text + "'," + txtMRP.Text + "," + txtTax1.Text + ",'" + textBox1.Text + "'," + txtOty.Text + ",'" + NewCompany.company_id + "')");
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+
+                    string Query1 = String.Format("select ItemID from tbl_ItemMaster where ItemName='" + txtItemName.Text + "' and  DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+                    SqlCommand cmd1 = new SqlCommand(Query1, con);
+                    itemid1 = cmd1.ExecuteScalar().ToString();
+
+                }
+            }
+            catch (Exception e1)
+
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
 
         int row = 0;
+        string Itemid;
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
         {
            // if (txtItemCode.Text != "" && txtUnit.Text != "" && txtMRP.Text != "" && txtOty.Text != "" && txtFreeQty.Text != "" && txtTax1.Text != "" && txtTaxAMount1.Text != "" && txtDis.Text != "" && txtDisAmt.Text != "" && txtItemTotal.Text != "")
@@ -769,7 +861,9 @@ namespace sample
                 {
                     if (e.KeyCode == Keys.Enter)
                     {
-                        float TA = 0, TD = 0, TGST = 0;
+
+                    insertitem();
+                    float TA = 0, TD = 0, TGST = 0;
                         dgvInnerCreditNote.Rows.Add();
                         row = dgvInnerCreditNote.Rows.Count - 2;
                         dgvInnerCreditNote.Rows[row].Cells["sr_no"].Value = row + 1;
@@ -800,21 +894,37 @@ namespace sample
                         dgvInnerCreditNote.Rows[row].Cells[9].Value = gst_amt;
                         dgvInnerCreditNote.Rows[row].Cells[6].Value = dis;
                         dgvInnerCreditNote.Rows[row].Cells[10].Value = dis_amt;
-                        dgvInnerCreditNote.Rows[row].Cells[11].Value = Total;
+                        dgvInnerCreditNote.Rows[row].Cells[11].Value = Total;   
 
-                        txtItemName.Focus();
-                        for (int i = 0; i < dgvInnerCreditNote.Rows.Count; i++)
-                        {
+                        if (guna2TextBox1.Text != "")
+                       {
+                         Itemid = guna2TextBox1.Text;
+                        }
+                      else
+                       {
+                        Itemid = itemid1;
+                      }
+
+
+                    dgvInnerCreditNote.Rows[row].Cells[12].Value = Itemid;
+
+
+                    clear_text_data();
+                    textBox1.Text = "";
+                    guna2TextBox1.Text = "";
+
+                    for (int i = 0; i < dgvInnerCreditNote.Rows.Count; i++)
+                    {
                             TA += float.Parse(dgvInnerCreditNote.Rows[i].Cells["Amount"].Value?.ToString());
                         txtsubtotal.Text = TA.ToString();
                        
                     }
 
-                        clear_text_data();
-                    textBox1.Text = "";
+                    textBox1.Focus();
+                
                   
                 }
-                cmbPaymentType.Focus();
+               // cmbPaymentType.Focus();
 
             }
                 catch (Exception e1)
@@ -1056,13 +1166,15 @@ namespace sample
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     id1 = cmd.ExecuteScalar();
                     MessageBox.Show("Update Record Sucessfully");
+
                     //cleardata();
                     //clear_text_data();
+
                 }
             }
             catch (Exception e1)
             {
-              //  MessageBox.Show(e1.Message);
+               MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -1074,6 +1186,15 @@ namespace sample
         {
 
 
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("tbl_DebitNoteInnersp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Action", "inserdelete");
+            cmd.Parameters.AddWithValue("@returnNo", txtReturnNo.Text);
+            cmd.ExecuteNonQuery();
 
             for (int i = 0; i < dgvInnerCreditNote.Rows.Count; i++)
             {
@@ -1113,6 +1234,7 @@ namespace sample
                 }
 
             }
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -1128,6 +1250,9 @@ namespace sample
                 clear_text_data();
                 //  printdata(id1.ToString());
                 dgvInnerCreditNote.Rows.Clear();
+                cmbpartyname.Visible = true;
+                comboBox1.Visible = false;
+
             }
         }
 
@@ -1158,6 +1283,9 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
+            get_id();
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -1370,6 +1498,9 @@ namespace sample
         {
             cleardata();
             clear_text_data();
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
+            get_id();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -1519,6 +1650,8 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    guna2TextBox1.Text = dr["ItemID"].ToString();
+
                     txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
