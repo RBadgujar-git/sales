@@ -198,6 +198,7 @@
             this.cmballfirms.Size = new System.Drawing.Size(140, 36);
             this.cmballfirms.StartIndex = 0;
             this.cmballfirms.TabIndex = 163;
+            this.cmballfirms.SelectedIndexChanged += new System.EventHandler(this.cmballfirms_SelectedIndexChanged);
             // 
             // btncancel
             // 

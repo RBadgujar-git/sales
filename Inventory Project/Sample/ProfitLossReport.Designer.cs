@@ -111,6 +111,7 @@
             this.cmbAllFirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllFirms.StartIndex = 0;
             this.cmbAllFirms.TabIndex = 46;
+            this.cmbAllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllFirms_SelectedIndexChanged);
             // 
             // guna2ShadowPanel1
             // 

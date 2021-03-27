@@ -368,7 +368,6 @@ namespace sample
         {
 
         }
-
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             try
@@ -385,7 +384,6 @@ namespace sample
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
             try
