@@ -177,7 +177,8 @@ namespace sample
         
         public void cal_ItemTotal()
         {
-            try {
+            try
+            {
                 float qty = 0, freeqty = 0, rate = 0, sub_total = 0, dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0;
 
                 qty = float.Parse(txtOty.Text.ToString());
@@ -231,13 +232,62 @@ namespace sample
         }
         private void gst_devide()
         {
-            try {
-                float gst = 0, cgst = 0, sgst = 0;
-                gst = float.Parse(cmbtax.Text);
-                cgst = gst / 2;
-                sgst = gst / 2;
-                txtsgst.Text = sgst.ToString();
-                txtcgst.Text = cgst.ToString();
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+
+                //MessageBox.Show("dara"+NewCompany.company_id);
+                //   MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (State1 == cmbStatesupply.Text)
+                {
+
+                    //float gst = 0, cgst = 0, sgst = 0;
+                    //gst = float.Parse(cmbtax.Text);
+                    //cgst = gst / 2;
+                    //sgst = gst / 2;
+                    //txtsgst.Text = sgst.ToString();
+                    //txtcgst.Text = cgst.ToString();
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+
+                    txtsgst.Text = sgst.ToString();
+                    txtcgst.Text = cgst.ToString();
+                    //txtIGST.Text = 0.ToString();
+                }
+                else
+                {
+                    //float gst = 0;
+                    //gst = float.Parse(cmbtax.Text);
+                    //guna2TextBox1.Text = gst.ToString();
+                    //txtsgst.Text = 0.ToString();
+                    //txtcgst.Text = 0.ToString();
+
+                    float gst = 0;
+                    gst = float.Parse(cmbtax.Text);
+                    txtIGST.Text = gst.ToString();
+                    txtsgst.Text = 0.ToString();
+                    txtcgst.Text = 0.ToString();
+                }
+
+
+                //float gst = 0, cgst = 0, sgst = 0;
+                //gst = float.Parse(cmbtax.Text);
+                //cgst = gst / 2;
+                //sgst = gst / 2;
+               
+                //txtsgst.Text = sgst.ToString();
+                //txtcgst.Text = cgst.ToString();
+                //txtIGST.Text = gst.ToString();
+
             }
             catch (Exception e1) {
                 MessageBox.Show(e1.Message);
