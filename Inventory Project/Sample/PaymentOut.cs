@@ -59,12 +59,13 @@ namespace sample
         private void Cleardata()
         {
             cmbPartyName.Text = "";
-            cmbPayment.SelectedItem = "";
+            cmbPayment.Text= "";
             txtDescription.Text = "";
             txtReceiptNo.Text = "";
             txtReceived.Text = "0";
             txtDiscount.Text = "0";
             txtTotal.Text = "0";
+            comboBox1.Text = "";
      //       PictureBox1.Image = null;
         }
 
@@ -74,7 +75,7 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmd = new SqlCommand("select * from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select [CustomerName],[PaymentType],[ReceiptNo],[Date],[Description],[Paid],[Discount],[Total],[Status],[Company_ID] from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sdasql.Fill(ds);
@@ -94,7 +95,7 @@ namespace sample
                 {
                     MemoryStream ms = new MemoryStream();
                     PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat);
-                    byte[] arrImage2 = ms.GetBuffer();
+                    byte[] arrImage1 = ms.GetBuffer();
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
@@ -125,7 +126,7 @@ namespace sample
 
                     if (num > 0)
                     {
-                        MessageBox.Show("Insert data Successfully");
+                        MessageBox.Show("Insert Data Successfully");
                         Cleardata();
                     }
                     else
@@ -138,7 +139,8 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Imaage is needed !");
+                MessageBox.Show(ex.ToString());
+               // MessageBox.Show("Image is Required !");
             }
        }
         public int verify=0;
@@ -189,7 +191,7 @@ namespace sample
                 }
             }
            else {
-                MessageBox.Show("You no Permistin to save Staff !");
+                MessageBox.Show("You Don't Have Permission to Save This Record");
             }
 
         }
@@ -262,45 +264,48 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("You have Not Perrmistion ! ");
+                MessageBox.Show("No Permission ! ");
             }
 
         }
 
         public void Delete1()
         {
-            if (!string.IsNullOrEmpty(id))
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                try
+                if (!string.IsNullOrEmpty(id))
                 {
-                    if (con.State == ConnectionState.Closed)
+                    try
                     {
-                        con.Open();
+                        if (con.State == ConnectionState.Closed)
+                        {
+                            con.Open();
+                        }
+                        DataTable dt = new DataTable();
+                        SqlCommand cmd = new SqlCommand("tbl_Paymentoutselect", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Action", "Delete");
+                        cmd.Parameters.AddWithValue("@ID", id);
+                        int num = cmd.ExecuteNonQuery();
+                        if (num > 0)
+                        {
+                            MessageBox.Show("Delete data Successfully");
+                            Cleardata();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please Select Record");
+                        }
                     }
-                    DataTable dt = new DataTable();
-                    SqlCommand cmd = new SqlCommand("tbl_Paymentoutselect", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@Action", "Delete");
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    int num = cmd.ExecuteNonQuery();
-                    if (num > 0)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Delete data Successfully");
-                         Cleardata();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please Select Record");
+                        MessageBox.Show("error" + ex.Message);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show("error" + ex.Message);
+                    MessageBox.Show("Please Select Record");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please Select Record");
             }
         }
  
@@ -328,7 +333,7 @@ namespace sample
 
         private void dgvPaymentIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgvPaymentIn.SelectedRows[0].Cells["ID"].Value.ToString();
+           // id = dgvPaymentIn.SelectedRows[0].Cells["ID"].Value.ToString();
             cmbPartyName.Text = dgvPaymentIn.SelectedRows[0].Cells["CustomerName"].Value.ToString();
             cmbPayment.Text = dgvPaymentIn.SelectedRows[0].Cells["PaymentType"].Value.ToString();
             txtReceiptNo.Text = dgvPaymentIn.SelectedRows[0].Cells["ReceiptNo"].Value.ToString();
@@ -336,24 +341,24 @@ namespace sample
             txtDescription.Text = dgvPaymentIn.SelectedRows[0].Cells["Description"].Value.ToString();
             txtReceived.Text = dgvPaymentIn.SelectedRows[0].Cells["Paid"].Value.ToString();
             txtDiscount.Text = dgvPaymentIn.SelectedRows[0].Cells["Discount"].Value.ToString();
-          
-            SqlCommand cmd = new SqlCommand("select image from tbl_Paymentout", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["image"]);
-                ms.Seek(0, SeekOrigin.Begin);
-                PictureBox1.Image = Image.FromStream(ms);
-                PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-
             txtTotal.Text = dgvPaymentIn.SelectedRows[0].Cells["Total"].Value.ToString();
-            textBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["TableName"].Value.ToString();
+           // textBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["TableName"].Value.ToString();
             comboBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["Status"].Value.ToString();
+            //SqlCommand cmd = new SqlCommand("select image from tbl_Paymentout", con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds);
+            //if (ds.Tables[0].Rows.Count > 0)
+            //{
 
+            //    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["image"]);
+            //    ms.Seek(0, SeekOrigin.Begin);
+            //    PictureBox1.Image = Image.FromStream(ms);
+            //    PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            //}
+
+            int row = dgvPaymentIn.CurrentCell.RowIndex;
+            dgvPaymentIn.Rows.RemoveAt(row);
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
@@ -369,7 +374,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
         }
 
