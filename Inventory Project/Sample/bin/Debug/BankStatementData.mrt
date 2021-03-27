@@ -49,7 +49,7 @@
               <Name>Text6</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Purchase Bill Details</Text>
+              <Text>Bank Statement</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text6>
@@ -58,7 +58,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>2,3.6,5.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>b097d391f1fb4955a070d1c71c5634c3</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -74,15 +74,14 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>7.8,3.6,6.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>cfcd7bcf1e5f466ca6f20d56a2525a49</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text24</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Current
-Balence</Text>
+              <Text>Current Balance</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text24>
@@ -91,7 +90,7 @@ Balence</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.2,3.6,4.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>8aebc43fb9a94dbaaca43792262fa828</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -107,7 +106,7 @@ Balence</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>b2f781052871458e9b6d5a51a542f623</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -467,10 +466,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 4:21:17 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:35:49 PM</ReportChanged>
   <ReportCreated>3/23/2021 5:09:57 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\BankStatementData.mrt</ReportFile>
-  <ReportGuid>80e3d3204d30464eaed0b93f10909f7e</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\BankStatementData.mrt</ReportFile>
+  <ReportGuid>1e5e8ca46a2f435bac984c3f65c25c95</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

@@ -765,7 +765,7 @@
               <Name>HeaderText6</Name>
               <Page isRef="25" />
               <Parent isRef="38" />
-              <Text>Reamining Bal</Text>
+              <Text>Remaining Bal</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -979,10 +979,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/13/2021 3:56:47 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:32:42 PM</ReportChanged>
   <ReportCreated>3/13/2021 3:52:14 PM</ReportCreated>
-  <ReportFile>C:\Users\Rukmini\Desktop\shritej\shritej\AllTransactionReport.mrt</ReportFile>
-  <ReportGuid>2f7f8f1ca1a34b849f8dad0da8fa933f</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\AllTransactionReport.mrt</ReportFile>
+  <ReportGuid>1829ab0860204956a313a28445de2c53</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

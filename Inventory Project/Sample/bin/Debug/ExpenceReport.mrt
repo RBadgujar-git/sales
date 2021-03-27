@@ -39,7 +39,7 @@
     <Page1 Ref="3" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="11">
+      <Components isList="true" count="10">
         <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,0.4,19,5.6</ClientRectangle>
@@ -136,7 +136,7 @@
               <Name>Text6</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Expences </Text>
+              <Text>Expenses </Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text6>
@@ -403,7 +403,7 @@ Category</Text>
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
           <ClientRectangle>0,6.8,19,0.6</ClientRectangle>
-          <Components isList="true" count="10">
+          <Components isList="true" count="11">
             <Text8 Ref="39" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
@@ -494,6 +494,7 @@ Category</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>b61a6158695b44aaa3779ecce6552942</Guid>
+              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text23</Name>
               <Page isRef="3" />
@@ -551,6 +552,19 @@ Category</Text>
               <Parent isRef="38" />
               <ReferenceToGuid>2c38a55be56f4ae49d610f59e90a693b</ReferenceToGuid>
             </EndPointPrimitive6>
+            <HorizontalLinePrimitive4 Ref="49" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0.6,19,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="50" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive4</Name>
+              <Page isRef="3" />
+              <Parent isRef="38" />
+              <StartCap Ref="51" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive4>
           </Components>
           <Conditions isList="true" count="0" />
           <DataRelationName isNull="true" />
@@ -562,11 +576,11 @@ Category</Text>
           <Parent isRef="3" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <FooterBand1 Ref="49" type="FooterBand" isKey="true">
+        <FooterBand1 Ref="52" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,8.2,19,1.8</ClientRectangle>
           <Components isList="true" count="6">
-            <Text13 Ref="50" type="Text" isKey="true">
+            <Text13 Ref="53" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.8,0,4.2,0.6</ClientRectangle>
@@ -577,26 +591,26 @@ Category</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text13</Name>
               <Page isRef="3" />
-              <Parent isRef="49" />
+              <Parent isRef="52" />
               <Text>{Sum(Expences.ItemAmount)}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text13>
-            <Text14 Ref="51" type="Text" isKey="true">
+            <Text14 Ref="54" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,14.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text14</Name>
               <Page isRef="3" />
-              <Parent isRef="49" />
+              <Parent isRef="52" />
               <Text>Total</Text>
               <TextBrush>Black</TextBrush>
             </Text14>
-            <Text21 Ref="52" type="Text" isKey="true">
+            <Text21 Ref="55" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.8,0.6,4.2,0.6</ClientRectangle>
@@ -607,27 +621,27 @@ Category</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text21</Name>
               <Page isRef="3" />
-              <Parent isRef="49" />
+              <Parent isRef="52" />
               <Text>{Expences.Paid}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text21>
-            <Text15 Ref="53" type="Text" isKey="true">
+            <Text15 Ref="56" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0.6,14.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>d72c337300fd4d12bbadad31faa45829</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
               <Page isRef="3" />
-              <Parent isRef="49" />
+              <Parent isRef="52" />
               <Text>Received  Total </Text>
               <TextBrush>Black</TextBrush>
             </Text15>
-            <Text22 Ref="54" type="Text" isKey="true">
+            <Text22 Ref="57" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.8,1.2,4.2,0.6</ClientRectangle>
@@ -638,23 +652,23 @@ Category</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
               <Page isRef="3" />
-              <Parent isRef="49" />
+              <Parent isRef="52" />
               <Text>{Expences.Balance}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text22>
-            <Text17 Ref="55" type="Text" isKey="true">
+            <Text17 Ref="58" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,1.2,14.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>40a9ecddcd484654850a6e627c99f176</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
               <Page isRef="3" />
-              <Parent isRef="49" />
+              <Parent isRef="52" />
               <Text>Remaining Total</Text>
               <TextBrush>Black</TextBrush>
             </Text17>
@@ -664,89 +678,77 @@ Category</Text>
           <Name>FooterBand1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
+          <PrintAtBottom>True</PrintAtBottom>
         </FooterBand1>
-        <HorizontalLinePrimitive2 Ref="56" type="HorizontalLinePrimitive" isKey="true">
+        <HorizontalLinePrimitive2 Ref="59" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,19,0.0254</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="57" type="Cap" isKey="true">
+          <EndCap Ref="60" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Name>HorizontalLinePrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="58" type="Cap" isKey="true">
+          <StartCap Ref="61" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </HorizontalLinePrimitive2>
-        <VerticalLinePrimitive1 Ref="59" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive1 Ref="62" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>19,0,0.0254,27.6</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="60" type="Cap" isKey="true">
+          <EndCap Ref="63" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>83072d344e0a4119a8b8891d35b29228</Guid>
           <Name>VerticalLinePrimitive1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="61" type="Cap" isKey="true">
+          <StartCap Ref="64" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive1>
-        <StartPointPrimitive7 Ref="62" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive7 Ref="65" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>19,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive7</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>83072d344e0a4119a8b8891d35b29228</ReferenceToGuid>
         </StartPointPrimitive7>
-        <EndPointPrimitive7 Ref="63" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive7 Ref="66" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>19.03,27.6,0,0</ClientRectangle>
           <Name>EndPointPrimitive7</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>83072d344e0a4119a8b8891d35b29228</ReferenceToGuid>
         </EndPointPrimitive7>
-        <VerticalLinePrimitive2 Ref="64" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive2 Ref="67" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,0.0254,27.6</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="65" type="Cap" isKey="true">
+          <EndCap Ref="68" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>84264d7fd7ee4f5a9b6ba3900b961258</Guid>
           <Name>VerticalLinePrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="66" type="Cap" isKey="true">
+          <StartCap Ref="69" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive2>
-        <StartPointPrimitive8 Ref="67" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive8 Ref="70" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>0,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive8</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>84264d7fd7ee4f5a9b6ba3900b961258</ReferenceToGuid>
         </StartPointPrimitive8>
-        <EndPointPrimitive8 Ref="68" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive8 Ref="71" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>0.03,27.6,0,0</ClientRectangle>
           <Name>EndPointPrimitive8</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>84264d7fd7ee4f5a9b6ba3900b961258</ReferenceToGuid>
         </EndPointPrimitive8>
-        <HorizontalLinePrimitive3 Ref="69" type="HorizontalLinePrimitive" isKey="true">
-          <ClientRectangle>0,27.6,19,0.0254</ClientRectangle>
-          <Color>Black</Color>
-          <EndCap Ref="70" type="Cap" isKey="true">
-            <Color>Black</Color>
-          </EndCap>
-          <Name>HorizontalLinePrimitive3</Name>
-          <Page isRef="3" />
-          <Parent isRef="3" />
-          <StartCap Ref="71" type="Cap" isKey="true">
-            <Color>Black</Color>
-          </StartCap>
-        </HorizontalLinePrimitive3>
       </Components>
       <Conditions isList="true" count="0" />
       <Guid>e0b5b065f9ca4ce4a8e208535a738e2f</Guid>
@@ -773,10 +775,10 @@ Category</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 6:29:18 PM</ReportChanged>
+  <ReportChanged>3/26/2021 5:30:37 PM</ReportChanged>
   <ReportCreated>3/20/2021 4:29:51 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpenceReport.mrt</ReportFile>
-  <ReportGuid>2d49be5bc9684f848e1e08fa584b7a63</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\ExpenceReport.mrt</ReportFile>
+  <ReportGuid>d99e454f82db4ecfb40246998afa8684</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

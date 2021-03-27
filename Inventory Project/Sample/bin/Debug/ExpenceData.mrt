@@ -50,7 +50,7 @@
               <Name>Text6</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Expences Details</Text>
+              <Text>Expencses Details</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text6>
@@ -59,7 +59,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1.8,3.6,5.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>9d31dd1632c04aa9ba386b11783b8fd4</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -75,14 +75,14 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>7,3.6,6.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>0e3e0b46ff6349e9aa9134a8e2f4d5a4</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text20</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Expences Category</Text>
+              <Text>Expenses Category</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text20>
@@ -91,7 +91,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>13.2,3.6,5.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>1daa788a81654a88be7d99323c7eef6c</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -108,7 +108,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,3.6,1.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,14,Bold</Font>
+              <Font>Arial,12,Bold</Font>
               <Guid>708aaa2c5c6b42348fc3fa70c57fcede</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -511,10 +511,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/23/2021 6:16:04 PM</ReportChanged>
+  <ReportChanged>3/25/2021 8:48:17 PM</ReportChanged>
   <ReportCreated>3/22/2021 10:49:09 AM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpenceData.mrt</ReportFile>
-  <ReportGuid>ca83f21efc444dffaa12c5949024eb8c</ReportGuid>
+  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\ExpenceData.mrt</ReportFile>
+  <ReportGuid>c488301bb1f440a38e1f4a1f0b882e84</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

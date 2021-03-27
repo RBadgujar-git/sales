@@ -40,6 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dgvCategory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.OtherIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -47,7 +48,6 @@
             this.btnOtherIncome = new System.Windows.Forms.Button();
             this.dgvOtherincome = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.OtherIncome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
@@ -83,6 +83,7 @@
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 443;
             this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // btnCancel
@@ -185,6 +186,11 @@
             this.dgvCategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvCategory.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellDoubleClick);
+            // 
+            // OtherIncome
+            // 
+            this.OtherIncome.HeaderText = "OtherIncome";
+            this.OtherIncome.Name = "OtherIncome";
             // 
             // txtSearch
             // 
@@ -348,11 +354,6 @@
             this.txtSearch2.TabIndex = 14;
             this.txtSearch2.TextChanged += new System.EventHandler(this.txtSearch2_TextChanged);
             this.txtSearch2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch2_KeyPress);
-            // 
-            // OtherIncome
-            // 
-            this.OtherIncome.HeaderText = "OtherIncome";
-            this.OtherIncome.Name = "OtherIncome";
             // 
             // OtherIncomeHomepage1
             // 
