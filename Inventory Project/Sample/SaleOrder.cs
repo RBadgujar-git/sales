@@ -1320,7 +1320,7 @@ namespace sample
 
         private void txtItemTotal_ImeModeChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -1408,6 +1408,11 @@ namespace sample
         private void txtItemCode_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbtax_TextChanged(object sender, EventArgs e)
+        {
+            gst_devide();
         }
     }
     }

@@ -779,10 +779,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/26/2021 4:59:08 PM</ReportChanged>
+  <ReportChanged>3/27/2021 12:35:55 PM</ReportChanged>
   <ReportCreated>3/25/2021 5:16:03 PM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\DebitNoteDataReport.mrt</ReportFile>
-  <ReportGuid>507483f369334749a73205fdac859011</ReportGuid>
+  <ReportGuid>b02025a78c6f49ee8ec104a626021659</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
