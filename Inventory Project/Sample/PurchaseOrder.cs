@@ -77,8 +77,9 @@ namespace sample
             txtsubtotal.Enabled = false;
             cmbpartyname.Focus();
             fetchcustomername();
-            comboBox1.Visible = true;
-            label14.Visible = true;
+            comboBox1.Visible = false;
+
+            label14.Visible = false;
             //fetchitem();
             txtReturnNo.Enabled = false;
             fetchCategory();
@@ -106,6 +107,8 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
+
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
@@ -230,7 +233,7 @@ namespace sample
         {
             cal_ItemTotal();
         }
-        int row = 0;
+        int row = 0, dublication,ip;
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
         {
             try {
@@ -243,71 +246,150 @@ namespace sample
                 {
                     if (e.KeyCode == Keys.Enter)
                     {
-                        float TA = 0, TD = 0, TGST = 0;
-                        dgvInnerDebiteNote.Rows.Add();
-                        row = dgvInnerDebiteNote.Rows.Count - 2;
-                        dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
-                        dgvInnerDebiteNote.CurrentCell = dgvInnerDebiteNote[1, row];
 
-                        e.SuppressKeyPress = true;
-                        string txtItem = txtItemName.Text;
-
-                        string Item_code = txtItemCode.Text;
-                        string Unit = txtUnit.Text;
-                        string MRP = txtMRP.Text;
-                        string qty = txtOty.Text;
-                        string freeqty = txtFreeQty.Text;
-                        string gst = txtTax1.Text;
-                        string gst_amt = txtTaxAMount1.Text;
-                        string dis = txtDis.Text;
-                        string dis_amt = txtDisAmt.Text;
-                        string Total = txtItemTotal.Text;
-
-                        dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
-                        dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
-                        dgvInnerDebiteNote.Rows[row].Cells[3].Value = Unit;
-
-                        dgvInnerDebiteNote.Rows[row].Cells[4].Value = MRP;
-                        dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
-                        dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
-                        dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
-                        dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
-                        dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
-                        dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
-                        dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+                        dublication = 0;
+                        ip = 0;
                         for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                         {
-
-                            TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
-                            txtsubtotal.Text = TA.ToString();
-                            int total = Convert.ToInt32(TA);
-                            txtTotal.Text = total.ToString();
-
+                            String itemname = dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value?.ToString();
+                            if (txtItemName.Text == itemname)
+                            {
+                                dublication = 1;
+                                ip = i;
+                            }
 
                         }
-                        txtItemName.Focus();
 
-                        //for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
-                        //{
-                        //    TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
-                        //    //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
-                        //    //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                        if (dublication == 1)
+                        {
+                            dublicatiuonfunction();
+                        }
+                        else
+                        {
 
-                        //    txtsubtotal.Text = TA.ToString();
-                           
-                        //    //    txtTotal.Text = TA.ToString();
-                        //    //  //  txtDisAmt.Text = TD.ToString();
-                        //    //   // txtTaxAMount1.Text = TGST.ToString();
-                        //}
+                            float TA = 0, TD = 0, TGST = 0;
+                            dgvInnerDebiteNote.Rows.Add();
+                            row = dgvInnerDebiteNote.Rows.Count - 2;
+                            dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
+                            dgvInnerDebiteNote.CurrentCell = dgvInnerDebiteNote[1, row];
 
-                       
+                            e.SuppressKeyPress = true;
+                            string txtItem = txtItemName.Text;
+
+                            string Item_code = txtItemCode.Text;
+                            string Unit = txtUnit.Text;
+                            string MRP = txtMRP.Text;
+                            string qty = txtOty.Text;
+                            string freeqty = txtFreeQty.Text;
+                            string gst = txtTax1.Text;
+                            string gst_amt = txtTaxAMount1.Text;
+                            string dis = txtDis.Text;
+                            string dis_amt = txtDisAmt.Text;
+                            string Total = txtItemTotal.Text;
+
+                            dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
+                            dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
+                            dgvInnerDebiteNote.Rows[row].Cells[3].Value = Unit;
+
+                            dgvInnerDebiteNote.Rows[row].Cells[4].Value = MRP;
+                            dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
+                            dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
+                            dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
+                            dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
+                            dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
+                            dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
+                            dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+
+                            clear_text_data();
+
+
+                            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+                            {
+
+                                TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                                txtsubtotal.Text = TA.ToString();
+                                int total = Convert.ToInt32(TA);
+                                txtTotal.Text = total.ToString();
+
+
+                            }
+
+                            txtItemName.Focus();
+
+                            //for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+                            //{
+                            //    TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                            //    //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                            //    //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+
+                            //    txtsubtotal.Text = TA.ToString();
+
+                            //    //    txtTotal.Text = TA.ToString();
+                            //    //  //  txtDisAmt.Text = TD.ToString();
+                            //    //   // txtTaxAMount1.Text = TGST.ToString();
+                            //}
+
+                        }
                     }
                 }
-                clear_text_data();
+             
             }
             catch (Exception e1) {
                 string message = e1.Message;
             }
+        }
+        float TA;
+        public void dublicatiuonfunction()
+        {
+
+
+            float gst1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[5].Value.ToString());
+            float dis1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[6].Value.ToString());
+            float qty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[7].Value.ToString());
+            float freeqty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[8].Value.ToString());
+            float txamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[9].Value.ToString());
+            float discamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[10].Value.ToString());
+            float txtTotal1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[11].Value.ToString());
+
+
+
+            float qty = float.Parse(txtOty.Text) + qty1;
+            float freeqty = float.Parse(txtFreeQty.Text) + freeqty1;
+            float gst = float.Parse(txtTax1.Text) + gst1;
+            float gst_amt = float.Parse(txtTaxAMount1.Text) + txamount;
+            float dis = float.Parse(txtDis.Text) + dis1;
+            float dis_amt = float.Parse(txtDisAmt.Text) + discamount;
+            float Total = float.Parse(txtItemTotal.Text) + txtTotal1;
+
+
+
+            dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
+            dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
+            //     dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
+            dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
+            //      dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
+            dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
+            dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+
+
+
+
+
+
+            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+            {
+                TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+
+
+                txtsubtotal.Text = TA.ToString();
+                txtTotal.Text = TA.ToString();
+
+                //  //  txtDisAmt.Text = TD.ToString();
+                //   // txtTaxAMount1.Text = TGST.ToString();
+            }
+
         }
         private void clear_text_data()
         {
@@ -543,7 +625,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                 id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Added");
+                MessageBox.Show("Purchase Order Added ");
                 //cleardata();
             }
             catch (Exception e1)
@@ -715,7 +797,11 @@ namespace sample
                 // con.Close();
                 clear_text_data();
                     cleardata();
-                    get_id();
+
+                cmbpartyname.Visible = true;
+                cmbpartyname1.Visible = false;
+
+                get_id();
                 }
 
 
@@ -813,7 +899,7 @@ namespace sample
 
                     id1 = cmd.ExecuteScalar();
                     MessageBox.Show("Sale Record Update");
-
+                txtBallaance.Text = 0.ToString();
 
                 }
                 catch (Exception e1)
@@ -898,7 +984,7 @@ namespace sample
                 txtBallaance.Text = TP.ToString();             
             }
             catch (Exception e1) {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
         }
 
@@ -950,7 +1036,7 @@ namespace sample
                 }
                 dr.Close();
 
-                dtpInvoice.Focus();
+              //  dtpInvoice.Focus();
             }
             catch (Exception ex)
             {
@@ -1046,13 +1132,14 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
                    // dr.Close();
                 }
                dr.Close();
 
-                txtItemCode.Focus();
+                //txtItemCode.Focus();
             }
             catch (Exception ex)
             {
@@ -1157,12 +1244,12 @@ namespace sample
             txtItemCode.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[2].Value.ToString();
             txtUnit.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[3].Value.ToString();
             txtMRP.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[4].Value.ToString();
-           txtDis.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[5].Value.ToString();
-            txtTax1.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[6].Value.ToString();
+           txtDis.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[6].Value.ToString();
+            txtTax1.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[5].Value.ToString();
             txtOty.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[7].Value.ToString();
             txtFreeQty.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[8].Value.ToString();
-           txtDisAmt.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[9].Value.ToString();
-            txtTaxAmount.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[10].Value.ToString();
+           txtDisAmt.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[10].Value.ToString();
+            txtTaxAmount.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[9].Value.ToString();
            txtItemTotal.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[11].Value.ToString();
 
 
@@ -1206,7 +1293,12 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
+
+                
             }
+            cmbpartyname.Visible = true;
+            cmbpartyname1.Visible = false;
+
         }
 
 
@@ -1251,6 +1343,9 @@ namespace sample
             cleardata();
             clear_text_data();
             get_id();
+      cmbpartyname.Visible = true;
+            cmbpartyname1.Visible = false;
+      
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
@@ -1288,7 +1383,15 @@ namespace sample
 
         private void textBarcode_TextChanged(object sender, EventArgs e)
         {
-            fetchBarcode();
+            if (textBarcode.Text == "")
+            {
+                clear_text_data();
+               
+            }
+            else
+            {
+                fetchBarcode();
+            }
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -1311,9 +1414,32 @@ namespace sample
 
         }
 
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRoundOff.Checked == true)
+            {
+                int round = 0;
+                txtRoundup.Text = txtTotal.Text;
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                round = Convert.ToInt32(txtTotal.Text);
+                txtTotal.Text = round.ToString();
+
+            }
+            if (chkRoundOff.Checked == false)
+            {
+                cal_Total();
+                txtRoundup.Text = "";
+            }
+        }
+
         private void txtMRP_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void cmbpartyname1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
