@@ -1400,7 +1400,6 @@ C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\ADODB.dll
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
-C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\Barcode.xml
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
