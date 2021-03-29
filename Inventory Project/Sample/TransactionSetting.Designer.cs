@@ -172,6 +172,7 @@
             this.chkBillingname.UncheckedState.BorderRadius = 0;
             this.chkBillingname.UncheckedState.BorderThickness = 0;
             this.chkBillingname.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkBillingname.CheckedChanged += new System.EventHandler(this.chkBillingname_CheckedChanged);
             // 
             // chkCustomerPo
             // 
@@ -189,6 +190,7 @@
             this.chkCustomerPo.UncheckedState.BorderRadius = 0;
             this.chkCustomerPo.UncheckedState.BorderThickness = 0;
             this.chkCustomerPo.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkCustomerPo.CheckedChanged += new System.EventHandler(this.chkCustomerPo_CheckedChanged);
             // 
             // chkInvoicePreview
             // 
