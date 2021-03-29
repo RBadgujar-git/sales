@@ -383,6 +383,7 @@
             this.chkCashSale.UncheckedState.BorderRadius = 0;
             this.chkCashSale.UncheckedState.BorderThickness = 0;
             this.chkCashSale.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkCashSale.CheckedChanged += new System.EventHandler(this.chkCashSale_CheckedChanged);
             // 
             // chkDisplayPurchase
             // 

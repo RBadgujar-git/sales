@@ -138,7 +138,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvInnerDebiteNote = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -153,12 +152,26 @@
             this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BasicUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SalePrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaxforSale = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeQty1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaleTaxAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemID11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnlinkPayment
@@ -620,7 +633,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(585, 579);
+            this.btnUpdate.Location = new System.Drawing.Point(590, 579);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
             this.btnUpdate.TabIndex = 30;
@@ -1456,6 +1469,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.guna2DataGridView2);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label41);
@@ -1514,7 +1528,6 @@
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dgvInnerDebiteNote);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
@@ -1977,66 +1990,6 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Due Date :";
             // 
-            // dgvInnerDebiteNote
-            // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvInnerDebiteNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvInnerDebiteNote.BackgroundColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvInnerDebiteNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvInnerDebiteNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvInnerDebiteNote.EnableHeadersVisualStyles = false;
-            this.dgvInnerDebiteNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvInnerDebiteNote.Location = new System.Drawing.Point(4, 290);
-            this.dgvInnerDebiteNote.Name = "dgvInnerDebiteNote";
-            this.dgvInnerDebiteNote.RowHeadersVisible = false;
-            this.dgvInnerDebiteNote.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInnerDebiteNote.Size = new System.Drawing.Size(1075, 97);
-            this.dgvInnerDebiteNote.TabIndex = 46;
-            this.dgvInnerDebiteNote.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvInnerDebiteNote.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvInnerDebiteNote.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvInnerDebiteNote.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.dgvInnerDebiteNote.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvInnerDebiteNote.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvInnerDebiteNote.ThemeStyle.HeaderStyle.Height = 37;
-            this.dgvInnerDebiteNote.ThemeStyle.ReadOnly = false;
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvInnerDebiteNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDebiteNote_CellContentClick);
-            this.dgvInnerDebiteNote.DoubleClick += new System.EventHandler(this.dgvInnerDebiteNote_DoubleClick);
-            this.dgvInnerDebiteNote.Validating += new System.ComponentModel.CancelEventHandler(this.dgvInnerDebiteNote_Validating);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -2138,6 +2091,164 @@
             this.Amount.Name = "Amount";
             this.Amount.Width = 82;
             // 
+            // guna2DataGridView2
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.guna2DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.guna2DataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.guna2DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.guna2DataGridView2.ColumnHeadersHeight = 37;
+            this.guna2DataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.ItemName,
+            this.ItemCode,
+            this.BasicUnit,
+            this.SalePrice,
+            this.TaxforSale,
+            this.Discount1,
+            this.Qty1,
+            this.FreeQty1,
+            this.SaleTaxAmount,
+            this.DiscountAmount,
+            this.ItemAmount,
+            this.ItemID11});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.guna2DataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.guna2DataGridView2.EnableHeadersVisualStyles = false;
+            this.guna2DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.Location = new System.Drawing.Point(-1, 268);
+            this.guna2DataGridView2.Name = "guna2DataGridView2";
+            this.guna2DataGridView2.RowHeadersVisible = false;
+            this.guna2DataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.guna2DataGridView2.Size = new System.Drawing.Size(1084, 99);
+            this.guna2DataGridView2.TabIndex = 274455;
+            this.guna2DataGridView2.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView2.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.guna2DataGridView2.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.guna2DataGridView2.ThemeStyle.HeaderStyle.Height = 37;
+            this.guna2DataGridView2.ThemeStyle.ReadOnly = false;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.Height = 22;
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.guna2DataGridView2.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2DataGridView2.DoubleClick += new System.EventHandler(this.dgvInnerDebiteNote_DoubleClick_1);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "sr_no";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "Item";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ItemName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // ItemCode
+            // 
+            this.ItemCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ItemCode.DataPropertyName = "ItemCode";
+            this.ItemCode.HeaderText = "Item Code";
+            this.ItemCode.MinimumWidth = 50;
+            this.ItemCode.Name = "ItemCode";
+            // 
+            // BasicUnit
+            // 
+            this.BasicUnit.DataPropertyName = "BasicUnit";
+            this.BasicUnit.HeaderText = "Unit";
+            this.BasicUnit.Name = "BasicUnit";
+            this.BasicUnit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SalePrice
+            // 
+            this.SalePrice.DataPropertyName = "SalePrice";
+            this.SalePrice.HeaderText = "MRP";
+            this.SalePrice.Name = "SalePrice";
+            // 
+            // TaxforSale
+            // 
+            this.TaxforSale.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TaxforSale.DataPropertyName = "TaxforSale";
+            this.TaxforSale.HeaderText = "Tax% ";
+            this.TaxforSale.Name = "TaxforSale";
+            this.TaxforSale.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Discount1
+            // 
+            this.Discount1.DataPropertyName = "Discount";
+            this.Discount1.HeaderText = "Discount";
+            this.Discount1.Name = "Discount1";
+            // 
+            // Qty1
+            // 
+            this.Qty1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty1.DataPropertyName = "Qty";
+            this.Qty1.HeaderText = "Qty";
+            this.Qty1.Name = "Qty1";
+            // 
+            // FreeQty1
+            // 
+            this.FreeQty1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FreeQty1.DataPropertyName = "FreeQty";
+            this.FreeQty1.HeaderText = "Free Qty";
+            this.FreeQty1.Name = "FreeQty1";
+            // 
+            // SaleTaxAmount
+            // 
+            this.SaleTaxAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SaleTaxAmount.DataPropertyName = "SaleTaxAmount";
+            this.SaleTaxAmount.HeaderText = "Tax Amount";
+            this.SaleTaxAmount.Name = "SaleTaxAmount";
+            // 
+            // DiscountAmount
+            // 
+            this.DiscountAmount.DataPropertyName = "DiscountAmount";
+            this.DiscountAmount.HeaderText = "Discount Amount";
+            this.DiscountAmount.Name = "DiscountAmount";
+            // 
+            // ItemAmount
+            // 
+            this.ItemAmount.DataPropertyName = "ItemAmount";
+            this.ItemAmount.HeaderText = "Amount";
+            this.ItemAmount.Name = "ItemAmount";
+            // 
+            // ItemID11
+            // 
+            this.ItemID11.HeaderText = "ItemID";
+            this.ItemID11.Name = "ItemID11";
+            // 
             // PurchaseBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2158,8 +2269,8 @@
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2244,7 +2355,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvInnerDebiteNote;
         private System.Windows.Forms.Label label12;
         protected Guna.UI2.WinForms.Guna2TextBox txtBallaance;
         private System.Windows.Forms.Label label38;
@@ -2285,5 +2395,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tax_Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount_Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BasicUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SalePrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TaxforSale;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FreeQty1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaleTaxAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DiscountAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID11;
     }
 }

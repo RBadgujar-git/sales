@@ -24,9 +24,23 @@ namespace sample
             InitializeComponent();
             // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
-
+        public int gstint;
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select [CashSaleByDefault] from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            gstint = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            if (gstint == 1)
+            {
+                txtReceived.Hide();
+                txtBallaance.Hide();
+                ComboBox.Hide();
+            
+                label20.Hide();
+                label22.Hide();
+                label25.Hide();
+            }
             cmbpartyname.Focus();
             fetchcustomername();
             fetchBarcode();
@@ -46,8 +60,6 @@ namespace sample
                 label32.Hide();
                 label33.Hide();
              }
-
-
             if (ItemwisTax == 1)
             {
                 txtTax1.Hide();
@@ -61,7 +73,6 @@ namespace sample
                 txtOty.Width = 119;
                 txtOty.Height = 28;
             }
-
         }
 
         private void fetchBarcode()
@@ -359,7 +370,7 @@ namespace sample
                 MessageBox.Show("Party Name Required");
                 cmbpartyname.Focus();
 
-            }        
+            }
             else if (txtcon.Text == "")
             {
                 MessageBox.Show("Contact No. Is Required");
@@ -385,20 +396,21 @@ namespace sample
             {
                 MessageBox.Show("Invoice Date Is Required");
                 dtpInvoice.Focus();
-            }  
+            }
             else if (cmbPaymentType.Text == "Cheque" && txtrefNo.Text == "")
             {
 
                 MessageBox.Show("Cheque Ref No Is Required");
                 txtrefNo.Focus();
             }
-            else if (ComboBox.Text == "")
+            else if (cmbStatesupply.Visible == true)
             {
-                MessageBox.Show("Status Is Required");
-                comboBox1.Focus();
-
+                if (ComboBox.Text == "")
+                {
+                    MessageBox.Show("Status Is Required");
+                    comboBox1.Focus();
+                }
             }
-
             else
             {
                 veryfi = 1;
@@ -1653,8 +1665,7 @@ namespace sample
                     if (itemname.ToString() == txtItemName.Text.ToString())
                     {
                         chekpoint = 1;
-                    }
-                    
+                    }                 
                 }
 
                 if (chekpoint != 1)
@@ -1667,7 +1678,6 @@ namespace sample
                     string Query1 = String.Format("select ItemID from tbl_ItemMaster where ItemName='" + txtItemName.Text + "' and  DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
                     SqlCommand cmd1 = new SqlCommand(Query1, con);
                      itemid1 =cmd1.ExecuteScalar().ToString();
-
                 }
             }
             catch( Exception e1)

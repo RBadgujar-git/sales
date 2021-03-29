@@ -40,34 +40,49 @@ namespace sample
             BA.Visible = true;
             BA.BringToFront();
         }
+        private void Bindadata1(int m)
+        {
 
+            try
+            {
+                string Query = string.Format("select * from tbl_DebitNote where Company_ID='" + m + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvdebitNote.DataSource = ds;
+                dgvdebitNote.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void DebitNotehomepage_Load(object sender, EventArgs e)
         {
-            bindbankdata();
             fetchCompany();
+            bindbankdata();
+          
         }
         private void fetchCompany()
         {
-            if (cmbAllfirms.Text != "System.Data.DataRowView")
+            try
             {
-                try
+                string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster  where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by CompanyName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
+                   cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
                 }
             }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+
         }
         private void bindbankdata()
         {
@@ -144,7 +159,25 @@ namespace sample
 
         private void cmbAllfirms_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (cmbAllfirms.Text == "")
+            {
+                Bindadata1(Convert.ToInt32(NewCompany.company_id));
+            }
+            else
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("Select CompanyID from tbl_CompanyMaster where  CompanyName='" + cmbAllfirms.Text + "' and DeleteData='1' ", con);
+                int compid = Convert.ToInt32(cmd.ExecuteScalar());
+                Bindadata1(compid);
 
+            }
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
