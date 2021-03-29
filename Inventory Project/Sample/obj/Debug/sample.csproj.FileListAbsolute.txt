@@ -1590,6 +1590,7 @@ D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dl
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
 D:\Git project\sales\Inventory Project\sample\bin\Debug\ADODB.dll
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Barcode.xml
 D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
 D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
 D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
@@ -1621,6 +1622,7 @@ D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xm
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AddMore.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
@@ -1745,4 +1747,3 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.r
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
