@@ -35,6 +35,10 @@ namespace sample
             {
                 chkCustomerPo.Checked = true;
             }
+            if (billreport == 1)
+            {
+                chkBillingname.Checked = true;
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -159,12 +163,12 @@ namespace sample
 
         private void chkBillingname_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkCashSale.Checked == true)
+            if (chkBillingname.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set BillingNameByParties = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
-            else if (chkCashSale.Checked == false)
+            else if (chkBillingname.Checked == false)
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set BillingNameByParties = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();

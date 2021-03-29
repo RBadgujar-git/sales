@@ -1628,8 +1628,7 @@ namespace sample
         }
         public int report4;
         private void Print_Click(object sender, EventArgs e)
-        {
-           
+        {           
              con.Open();
             SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             report4 = Convert.ToInt32(cmd1.ExecuteScalar());
