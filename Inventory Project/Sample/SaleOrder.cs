@@ -460,6 +460,7 @@ namespace sample
                 {
                     cmd.Parameters.AddWithValue("@ItemCategory", comboBox3.Text);
                 }
+
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", txtIGST.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
@@ -774,6 +775,8 @@ namespace sample
                     //con.Close();
                 }
             }
+            cmbpartyname.Visible = true;
+            comboBox2.Visible = false;
         }
 
 
@@ -1038,8 +1041,8 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
-            comboBox1.Visible = true;
-            cmbpartyname.Visible = false;
+            cmbpartyname.Visible = true;
+            comboBox2.Visible = false;
             get_id();
 
         }
@@ -1158,6 +1161,8 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+
+
             invalid();
             if (checkid == 1)
             {
@@ -1179,6 +1184,8 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            cmbpartyname.Visible = true;
+            comboBox2.Visible = false;
             cleardata();
             clear_text_data();
         }

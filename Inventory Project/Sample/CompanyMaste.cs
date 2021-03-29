@@ -228,7 +228,8 @@ namespace sample
 
             SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values("+id+")", con);
             cmd.ExecuteNonQuery();
-            
+          
+              
     }
     private void btnsave_Click(object sender, EventArgs e)
         {
