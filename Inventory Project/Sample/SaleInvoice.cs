@@ -1286,8 +1286,7 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-
-cal_Total();
+            cal_Total();
             gst_devide();
         }
 

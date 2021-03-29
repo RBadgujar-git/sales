@@ -400,7 +400,9 @@
             this.txtPartyname.ShadowDecoration.Parent = this.txtPartyname;
             this.txtPartyname.Size = new System.Drawing.Size(200, 24);
             this.txtPartyname.TabIndex = 1;
+            this.txtPartyname.TextChanged += new System.EventHandler(this.txtPartyname_TextChanged);
             this.txtPartyname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartyname_KeyPress);
+            this.txtPartyname.Leave += new System.EventHandler(this.txtPartyname_Leave);
             // 
             // txtContactNo
             // 
@@ -773,7 +775,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(199, 24);
             this.comboBox2.TabIndex = 10;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // textBox1
             // 

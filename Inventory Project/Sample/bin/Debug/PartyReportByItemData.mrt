@@ -15,7 +15,7 @@
     <Page1 Ref="2" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="3">
+      <Components isList="true" count="2">
         <ReportTitleBand1 Ref="3" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,0.4,19,5.2</ClientRectangle>
@@ -47,7 +47,7 @@
               <Name>Text19</Name>
               <Page isRef="2" />
               <Parent isRef="3" />
-              <Text>Type</Text>
+              <Text>Table Name</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text19>
@@ -443,78 +443,6 @@ No.</Text>
           <Parent isRef="2" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <FooterBand1 Ref="36" type="FooterBand" isKey="true">
-          <Brush>Transparent</Brush>
-          <ClientRectangle>0,7.8,19,0.8</ClientRectangle>
-          <Components isList="true" count="4">
-            <Text25 Ref="37" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>17.4,0,1.6,0.8</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>1636924d9f1542a08c9815982fc3a173</Guid>
-              <HorAlignment>Right</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text25</Name>
-              <Page isRef="2" />
-              <Parent isRef="36" />
-              <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{Sum(DebitNote.Total)}</Text>
-              <TextBrush>Black</TextBrush>
-              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
-              <VertAlignment>Center</VertAlignment>
-            </Text25>
-            <Text24 Ref="38" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>14,0,3.4,0.8</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
-              <Guid>b21db639ebf840189c299a2a5f55cd4c</Guid>
-              <HorAlignment>Center</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text24</Name>
-              <Page isRef="2" />
-              <Parent isRef="36" />
-              <Text>Total</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text24>
-            <HorizontalLinePrimitive6 Ref="39" type="HorizontalLinePrimitive" isKey="true">
-              <ClientRectangle>0,0.8,19,0.0254</ClientRectangle>
-              <Color>Black</Color>
-              <EndCap Ref="40" type="Cap" isKey="true">
-                <Color>Black</Color>
-              </EndCap>
-              <Guid>aa8351f6ca8243739ed69de1e5d7e7a5</Guid>
-              <Name>HorizontalLinePrimitive6</Name>
-              <Page isRef="2" />
-              <Parent isRef="36" />
-              <StartCap Ref="41" type="Cap" isKey="true">
-                <Color>Black</Color>
-              </StartCap>
-            </HorizontalLinePrimitive6>
-            <HorizontalLinePrimitive1 Ref="42" type="HorizontalLinePrimitive" isKey="true">
-              <ClientRectangle>0,0.8,19,0.0254</ClientRectangle>
-              <Color>Black</Color>
-              <EndCap Ref="43" type="Cap" isKey="true">
-                <Color>Black</Color>
-              </EndCap>
-              <Name>HorizontalLinePrimitive1</Name>
-              <Page isRef="2" />
-              <Parent isRef="36" />
-              <StartCap Ref="44" type="Cap" isKey="true">
-                <Color>Black</Color>
-              </StartCap>
-            </HorizontalLinePrimitive1>
-          </Components>
-          <Conditions isList="true" count="0" />
-          <Guid>ca13fb6aa3ac40c9b249184bfa4202f1</Guid>
-          <Name>FooterBand1</Name>
-          <Page isRef="2" />
-          <Parent isRef="2" />
-        </FooterBand1>
       </Components>
       <Conditions isList="true" count="0" />
       <Guid>2b9ceb036556481095d1b3fef024b41f</Guid>
@@ -523,13 +451,13 @@ No.</Text>
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="45" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="36" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="46" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="37" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -541,10 +469,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/27/2021 5:08:11 PM</ReportChanged>
+  <ReportChanged>3/29/2021 2:29:11 PM</ReportChanged>
   <ReportCreated>3/27/2021 3:35:12 PM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\PartyReportByItemData.mrt</ReportFile>
-  <ReportGuid>b4b61dcb6474449794f3333a69dbd096</ReportGuid>
+  <ReportGuid>0af4b3ec5eb14bf899f53ca61bee79cc</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

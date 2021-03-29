@@ -163,6 +163,7 @@
             this.btPrint.Size = new System.Drawing.Size(24, 23);
             this.btPrint.TabIndex = 193;
             this.btPrint.UseVisualStyleBackColor = false;
+            this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // txtFilterBy
             // 

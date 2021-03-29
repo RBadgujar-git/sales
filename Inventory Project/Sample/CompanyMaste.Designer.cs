@@ -605,6 +605,7 @@
             this.txtBankName.Size = new System.Drawing.Size(165, 24);
             this.txtBankName.TabIndex = 12;
             this.txtBankName.SelectedIndexChanged += new System.EventHandler(this.txtBankName_SelectedIndexChanged);
+            this.txtBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBankName_KeyPress_1);
             this.txtBankName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBankName_KeyUp);
             // 
             // txtIFSCcode

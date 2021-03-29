@@ -89,42 +89,42 @@ namespace sample
         {
             if (txtcampanyName.Text == "")
             {
-                MessageBox.Show("Company Name Is Requried ");
+                MessageBox.Show("Company Name Is Required ");
                 txtcampanyName.Focus();
             }
             else if (txtAddress.Text == "")
             {
-                MessageBox.Show("Address Is Requried ");
+                MessageBox.Show("Address Is Required ");
                 txtAddress.Focus();
             }
             else if (txtContactNo.Text == "")
             {
-                MessageBox.Show(" Contact No. Is Requried ");
+                MessageBox.Show(" Contact No. Is Required ");
                 txtContactNo.Focus();
             }
             else if (txtemail.Text == "")
             {
-                MessageBox.Show("Email Id Is Requried ");
+                MessageBox.Show("Email Id Is Required ");
                 txtemail.Focus();
             }
             else if (txtbusinesstype.Text == "")
             {
-                MessageBox.Show("Bussness Type Is Requried ");
+                MessageBox.Show("Bussness Type Is Required ");
                 txtbusinesstype.Focus();
             }
             else if (txtGSTNo.Text == "")
             {
-                MessageBox.Show("GST NO. Is Requried ");
+                MessageBox.Show("GST NO. Is Required ");
                 txtGSTNo.Focus();
             }
             else if (txtCity.Text == "")
             {
-                MessageBox.Show("City Is Requried ");
+                MessageBox.Show("City Is Required ");
                 txtGSTNo.Focus();
             }
             else if (ownerName.Text == "")
             {
-                MessageBox.Show("Owner Name Is Requried ");
+                MessageBox.Show("Owner Name Is Required ");
                 ownerName.Focus();
             }
             else if (cmbState.Text == "")
@@ -134,7 +134,7 @@ namespace sample
             }
             else if (txtBankName.Text == "")
             {
-                MessageBox.Show("Bank Name Is Requried ");
+                MessageBox.Show("Bank Name Is Required ");
                 //txtCity.Focus();
             }
             else if (txtAccountNo.Text == "")
@@ -144,7 +144,7 @@ namespace sample
             }
             else if (txtIFSCcode.Text == "")
             {
-                MessageBox.Show("IFSC Code Is Requried ");
+                MessageBox.Show("IFSC Code Is Required ");
                 txtIFSCcode.Focus();
             }
 
@@ -238,6 +238,7 @@ namespace sample
                 if (verify == 1)
                 {
                     Insert1();
+                    txtcampanyName.Focus();
                     Seeting();
                     fetchdetails();
                 }
@@ -313,6 +314,7 @@ namespace sample
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Update1();
+            txtcampanyName.Focus();
             fetchdetails();
 
 
@@ -442,14 +444,15 @@ namespace sample
 
         private void txtcampanyName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -522,26 +525,28 @@ namespace sample
         }
         private void ownerName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
 
         private void txtCity_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         public void hidedata()
@@ -599,18 +604,6 @@ namespace sample
 
         }
 
-        private void txtBankName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
-        }
-
         private void txtAccountNo_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -658,14 +651,15 @@ namespace sample
 
         private void txtbusinesstype_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            {
-                e.Handled = true;
-            }
-            else
-            {
-                e.Handled = false;
-            }
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            //{
+            //    e.Handled = true;
+            //}
+            //else
+            //{
+            //    e.Handled = false;
+            //}
         }
         private void txtIFSCcode_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -766,6 +760,36 @@ namespace sample
         private void txtcampanyName_TextChanged(object sender, EventArgs e)
         {
 
+
+            if (txtcampanyName.Text != "")
+            {
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                //chekpoint = 0;
+                string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+
+                    string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+
+                    if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
+                    {
+                        //chekpoint = 1;
+                        MessageBox.Show("This Company Name is already Exist ");
+                        txtcampanyName.Clear();
+                        txtcampanyName.Focus();
+                    }
+
+                }
+            }
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -803,6 +827,11 @@ namespace sample
                 dgvComapnyMaster.DataSource = ds;
                 dgvComapnyMaster.DataMember = "temp";
             }
+        }
+
+        private void txtBankName_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }
