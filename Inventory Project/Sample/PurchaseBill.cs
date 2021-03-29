@@ -47,7 +47,7 @@ namespace sample
         }
         private void fetchdetails()
         {
-            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
+            for (int i = 0; i < guna2DataGridView2.Rows.Count; i++) {
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
@@ -56,18 +56,18 @@ namespace sample
                 cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ID", id);
-                cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@freeQty", dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@SalePrice", dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@TaxForSale", dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@SaleTaxAmount", dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@ItemName", guna2DataGridView2.Rows[i].Cells["txtItem"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@ItemCode", guna2DataGridView2.Rows[i].Cells["Item_Code"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@BasicUnit", guna2DataGridView2.Rows[i].Cells["Unit"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@Qty", guna2DataGridView2.Rows[i].Cells["Qty"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@freeQty", guna2DataGridView2.Rows[i].Cells["FreeQty"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@SalePrice", guna2DataGridView2.Rows[i].Cells["MRP"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@TaxForSale", guna2DataGridView2.Rows[i].Cells["Tax"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@SaleTaxAmount", guna2DataGridView2.Rows[i].Cells["Tax_Amount"].Value?.ToString());
                 ////cmd.Parameters.AddWithValue("@TaxType", dgvInnerDebiteNote.Rows[i].Cells["TaxType"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
-                cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@Discount", guna2DataGridView2.Rows[i].Cells["Discount"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["Amount"].Value?.ToString());
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                 cmd.Parameters.AddWithValue("@Action", "Select");
@@ -254,9 +254,9 @@ namespace sample
                         insertitem();
                         dublication = 0;
                         ip =0;
-                        for (int i = 0; i< dgvInnerDebiteNote.Rows.Count; i++)
+                        for (int i = 0; i< guna2DataGridView2.Rows.Count; i++)
                         {
-                          String  itemname =dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value?.ToString();
+                          String  itemname =guna2DataGridView2.Rows[i].Cells["ItemName"].Value?.ToString();
                            if(txtItemName.Text==itemname)
                             {
                                 dublication = 1;
@@ -272,10 +272,10 @@ namespace sample
                         else
                         {
                             float TA = 0, TD = 0, TGST = 0;
-                            dgvInnerDebiteNote.Rows.Add();
-                            row = dgvInnerDebiteNote.Rows.Count - 2;
-                            dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
-                            dgvInnerDebiteNote.CurrentCell = dgvInnerDebiteNote[1, row];
+                            guna2DataGridView2.Rows.Add();
+                            row = guna2DataGridView2.Rows.Count - 2;
+                            guna2DataGridView2.Rows[row].Cells["sr_no"].Value = row + 1;
+                            guna2DataGridView2.CurrentCell = guna2DataGridView2[1, row];
 
                             e.SuppressKeyPress = true;
                             string txtItem = txtItemName.Text;
@@ -301,25 +301,25 @@ namespace sample
                             }
 
                             
-                            dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
-                            dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
-                            dgvInnerDebiteNote.Rows[row].Cells[3].Value = Unit;
+                            guna2DataGridView2.Rows[row].Cells[1].Value = txtItem;
+                            guna2DataGridView2.Rows[row].Cells[2].Value = Item_code;
+                            guna2DataGridView2.Rows[row].Cells[3].Value = Unit;
 
 
-                            dgvInnerDebiteNote.Rows[row].Cells[4].Value = MRP;
-                            dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
-                            dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
-                            dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
-                            dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
-                            dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
-                            dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
-                            dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
-                            dgvInnerDebiteNote.Rows[row].Cells[12].Value = itemid11;
+                            guna2DataGridView2.Rows[row].Cells[4].Value = MRP;
+                            guna2DataGridView2.Rows[row].Cells[7].Value = qty;
+                            guna2DataGridView2.Rows[row].Cells[8].Value = freeqty;
+                            guna2DataGridView2.Rows[row].Cells[5].Value = gst;
+                            guna2DataGridView2.Rows[row].Cells[9].Value = gst_amt;
+                            guna2DataGridView2.Rows[row].Cells[6].Value = dis;
+                            guna2DataGridView2.Rows[row].Cells[10].Value = dis_amt;
+                            guna2DataGridView2.Rows[row].Cells[11].Value = Total;
+                            guna2DataGridView2.Rows[row].Cells[12].Value = itemid11;
                             txtItemName.Focus();
 
-                            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+                            for (int i = 0; i < guna2DataGridView2.Rows.Count; i++)
                             {
-                                TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                                TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());
                                 //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                                 //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
 
@@ -348,13 +348,13 @@ namespace sample
         {
 
 
-            float gst1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[5].Value.ToString());
-           float dis1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[6].Value.ToString());
-           float qty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[7].Value.ToString());
-          float freeqty1= float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[8].Value.ToString());
-          float txamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[9].Value.ToString());
-          float discamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[10].Value.ToString());
-           float  txtTotal1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[11].Value.ToString());
+            float gst1 = float.Parse(this.guna2DataGridView2.Rows[ip].Cells[5].Value.ToString());
+           float dis1 = float.Parse(this.guna2DataGridView2.Rows[ip].Cells[6].Value.ToString());
+           float qty1 = float.Parse(this.guna2DataGridView2.Rows[ip].Cells[7].Value.ToString());
+          float freeqty1= float.Parse(this.guna2DataGridView2.Rows[ip].Cells[8].Value.ToString());
+          float txamount = float.Parse(this.guna2DataGridView2.Rows[ip].Cells[9].Value.ToString());
+          float discamount = float.Parse(this.guna2DataGridView2.Rows[ip].Cells[10].Value.ToString());
+           float  txtTotal1 = float.Parse(this.guna2DataGridView2.Rows[ip].Cells[11].Value.ToString());
 
 
 
@@ -368,22 +368,22 @@ namespace sample
 
 
 
-                           dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
-                        dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
+                           guna2DataGridView2.Rows[row].Cells[7].Value = qty;
+                        guna2DataGridView2.Rows[row].Cells[8].Value = freeqty;
                    //     dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
-                        dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
+                        guna2DataGridView2.Rows[row].Cells[9].Value = gst_amt;
                   //      dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
-                        dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
-                        dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+                        guna2DataGridView2.Rows[row].Cells[10].Value = dis_amt;
+                        guna2DataGridView2.Rows[row].Cells[11].Value = Total;
                
             
             
             
             
                
-                        for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+                        for (int i = 0; i < guna2DataGridView2.Rows.Count; i++)
                         {
-                          TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                          TA += float.Parse(guna2DataGridView2.Rows[i].Cells["Amount"].Value?.ToString());
                 //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                 //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
 
@@ -497,14 +497,14 @@ namespace sample
         object id1;
         private void insert_record_inner(string id)
         {
-            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
+            for (int i = 0; i < guna2DataGridView2.Rows.Count; i++) {
                 try {
                     if (con.State == ConnectionState.Closed)
                     {
                         con.Open();
                     }
                     DataTable dtable = new DataTable();
-
+                        
                     cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Insert");
@@ -513,27 +513,27 @@ namespace sample
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
-                    cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
-                      cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@freeQty", dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SalePrice", dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@TaxForSale", dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SaleTaxAmount", dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemID", dgvInnerDebiteNote.Rows[i].Cells["ItemID1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemName", guna2DataGridView2.Rows[i].Cells["ItemName"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemCode", guna2DataGridView2.Rows[i].Cells["ItemCode"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@BasicUnit", guna2DataGridView2.Rows[i].Cells["BasicUnit"].Value.ToString());
+                      cmd.Parameters.AddWithValue("@Qty", guna2DataGridView2.Rows[i].Cells["Qty1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@freeQty", guna2DataGridView2.Rows[i].Cells["FreeQty1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SalePrice", guna2DataGridView2.Rows[i].Cells["SalePrice"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@TaxForSale", guna2DataGridView2.Rows[i].Cells["TaxforSale"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SaleTaxAmount", guna2DataGridView2.Rows[i].Cells["SaleTaxAmount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Discount", guna2DataGridView2.Rows[i].Cells["Discount1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemID", guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.Parameters.AddWithValue("@BillNo",id1);
 
 
                     
-                  String ItemName = dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString();
-                  float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
-                    float freeqty = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
-                    float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["ItemID1"].Value.ToString());
+                  String ItemName = guna2DataGridView2.Rows[i].Cells["txtItem"].Value.ToString();
+                  float cureentstock = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Qty"].Value.ToString());
+                    float freeqty = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["FreeQty"].Value.ToString());
+                    float Itemid = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["ItemID1"].Value.ToString());
 
                     ////   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
@@ -666,7 +666,7 @@ namespace sample
             guna2TextBox1.Text = "0";
             txtTax1.Text = "0";
            
-            dgvInnerDebiteNote.Rows.Clear();
+            guna2DataGridView2.Rows.Clear();
         }
         private void insertdata()
         {
@@ -871,20 +871,20 @@ namespace sample
                     int i = 0;
                     while (dr1.Read())
                     {
-                        dgvInnerDebiteNote.Rows.Add();
-                        dgvInnerDebiteNote.Rows[i].Cells["sr_no"].Value = i + 1;
-                        dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value = dr1["ItemCode"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value = dr1["BasicUnit"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value = dr1["SalePrice"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value = dr1["TaxForSale"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value = dr1["SaleTaxAmount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["ItemID1"].Value = dr1["ItemID"].ToString();
+                        guna2DataGridView2.Rows.Add();
+                        guna2DataGridView2.Rows[i].Cells["sr_no"].Value = i + 1;
+                        guna2DataGridView2.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Item_Code"].Value = dr1["ItemCode"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Unit"].Value = dr1["BasicUnit"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["MRP"].Value = dr1["SalePrice"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Tax"].Value = dr1["TaxForSale"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Tax_Amount"].Value = dr1["SaleTaxAmount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["ItemID1"].Value = dr1["ItemID"].ToString();
                         
                         i++;
                     }
@@ -896,10 +896,10 @@ namespace sample
                 }
 
                 TA =0;
-                for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+                for (int i = 0; i < guna2DataGridView2.Rows.Count; i++)
                 {
 
-                     TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                     TA += float.Parse(guna2DataGridView2.Rows[i].Cells["Amount"].Value?.ToString());
                     //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                     //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
 
@@ -932,7 +932,7 @@ namespace sample
             cmdn.Parameters.AddWithValue("@ID", txtReturnNo.Text);
             cmdn.ExecuteNonQuery();
 
-            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++) {
+            for (int i = 0; i < guna2DataGridView2.Rows.Count; i++) {
                 try {                   
                     cmd = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -942,26 +942,26 @@ namespace sample
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
-                    cmd.Parameters.AddWithValue("@ItemName", dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemCode", dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@BasicUnit", dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Qty", dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@freeQty", dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SalePrice", dgvInnerDebiteNote.Rows[i].Cells["MRP"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@TaxForSale", dgvInnerDebiteNote.Rows[i].Cells["Tax"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SaleTaxAmount", dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemID", dgvInnerDebiteNote.Rows[i].Cells["ItemID1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemName", guna2DataGridView2.Rows[i].Cells["txtItem"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemCode", guna2DataGridView2.Rows[i].Cells["Item_Code"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@BasicUnit", guna2DataGridView2.Rows[i].Cells["Unit"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Qty", guna2DataGridView2.Rows[i].Cells["Qty"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@freeQty", guna2DataGridView2.Rows[i].Cells["FreeQty"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SalePrice", guna2DataGridView2.Rows[i].Cells["MRP"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@TaxForSale", guna2DataGridView2.Rows[i].Cells["Tax"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SaleTaxAmount", guna2DataGridView2.Rows[i].Cells["Tax_Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Discount", guna2DataGridView2.Rows[i].Cells["Discount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["Discount_Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemID", guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.Parameters.AddWithValue("@BillNo",txtReturnNo.Text);
 
              
-                    String ItemName = dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString();
-                    float qtyy = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
-                    float freeqty = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
-                    float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["ItemID1"].Value.ToString());
+                    String ItemName = guna2DataGridView2.Rows[i].Cells["txtItem"].Value.ToString();
+                    float qtyy = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Qty"].Value.ToString());
+                    float freeqty = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["FreeQty"].Value.ToString());
+                    float Itemid = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["ItemID1"].Value.ToString());
 
 
                     //   MessageBox.Show("existing" +intemcode+" thtee"+ qty1+"   iifasfdsfsd"+txtReturnNo.Text);
@@ -1558,30 +1558,7 @@ namespace sample
         private void dgvInnerDebiteNote_DoubleClick(object sender, EventArgs e)
         {
 
-            try
-            {
-                txtItemName.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[1].Value.ToString();
-                txtItemCode.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[2].Value.ToString();
-                txtUnit.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[3].Value.ToString();
-                txtMRP.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[4].Value.ToString();
-                txtDis.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[6].Value.ToString();
-                txtTax1.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[5].Value.ToString();
-                txtOty.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[7].Value.ToString();
-                txtFreeQty.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[8].Value.ToString();
-                txtDisAmt.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[10].Value.ToString();
-                txtTaxAmount.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[9].Value.ToString();
-                txtItemTotal.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[11].Value.ToString();
-             guna2TextBox2.Text = this.dgvInnerDebiteNote.CurrentRow.Cells[12].Value.ToString();
-
-
-                int row = dgvInnerDebiteNote.CurrentCell.RowIndex;
-                dgvInnerDebiteNote.Rows.RemoveAt(row);
-            }
-            catch(Exception ew)
-            {
-                MessageBox.Show(ew.Message);
-            }
-
+           
         }
 
         private void txtMRP_TextChanged(object sender, EventArgs e)
@@ -1752,7 +1729,8 @@ namespace sample
 
         private void txtUnit_TextChanged(object sender, EventArgs e)
         {
-            
+          
+
         }
 
         private void txtDisAmt_TextChanged(object sender, EventArgs e)
@@ -1863,6 +1841,33 @@ namespace sample
             else
             {
                 fetchBarcode();
+            }
+        }
+
+        private void dgvInnerDebiteNote_DoubleClick_1(object sender, EventArgs e)
+        {
+            try
+            {
+                txtItemName.Text = this.guna2DataGridView2.CurrentRow.Cells[1].Value.ToString();
+                txtItemCode.Text = this.guna2DataGridView2.CurrentRow.Cells[2].Value.ToString();
+                txtUnit.Text = this.guna2DataGridView2.CurrentRow.Cells[3].Value.ToString();
+                txtMRP.Text = this.guna2DataGridView2.CurrentRow.Cells[4].Value.ToString();
+                txtDis.Text = this.guna2DataGridView2.CurrentRow.Cells[6].Value.ToString();
+                txtTax1.Text = this.guna2DataGridView2.CurrentRow.Cells[5].Value.ToString();
+                txtOty.Text = this.guna2DataGridView2.CurrentRow.Cells[7].Value.ToString();
+                txtFreeQty.Text = this.guna2DataGridView2.CurrentRow.Cells[8].Value.ToString();
+                txtDisAmt.Text = this.guna2DataGridView2.CurrentRow.Cells[10].Value.ToString();
+                txtTaxAmount.Text = this.guna2DataGridView2.CurrentRow.Cells[9].Value.ToString();
+                txtItemTotal.Text = this.guna2DataGridView2.CurrentRow.Cells[11].Value.ToString();
+                guna2TextBox2.Text = this.guna2DataGridView2.CurrentRow.Cells[12].Value.ToString();
+
+
+                int row = guna2DataGridView2.CurrentCell.RowIndex;
+                guna2DataGridView2.Rows.RemoveAt(row);
+            }
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
             }
         }
 

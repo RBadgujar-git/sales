@@ -128,6 +128,7 @@ namespace sample
             {
                 try
                 {
+
                     TA += float.Parse(dgvPurchaseBill.Rows[i].Cells["Paid"].Value.ToString());
                     txtPaid.Text = TA.ToString();
                     TD += float.Parse(dgvPurchaseBill.Rows[i].Cells["RemainingBal"].Value.ToString());

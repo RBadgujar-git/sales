@@ -109,7 +109,7 @@
             this.txtTotal.SelectionStart = 1;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
             this.txtTotal.Size = new System.Drawing.Size(200, 24);
-            this.txtTotal.TabIndex = 4;
+            this.txtTotal.TabIndex = 9;
             this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
@@ -141,7 +141,7 @@
             // txtReceived
             // 
             this.txtReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReceived.DefaultText = "";
+            this.txtReceived.DefaultText = "0";
             this.txtReceived.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtReceived.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtReceived.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -158,9 +158,10 @@
             this.txtReceived.PasswordChar = '\0';
             this.txtReceived.PlaceholderText = "";
             this.txtReceived.SelectedText = "";
+            this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(200, 24);
-            this.txtReceived.TabIndex = 5;
+            this.txtReceived.TabIndex = 7;
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
             // label9
@@ -213,7 +214,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(1000, 600);
-            this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // textBox1
@@ -221,7 +222,7 @@
             this.textBox1.Location = new System.Drawing.Point(163, 225);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 23);
-            this.textBox1.TabIndex = 11;
+            this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Payment Out";
             this.textBox1.Visible = false;
             // 
@@ -236,7 +237,7 @@
             this.comboBox1.Location = new System.Drawing.Point(524, 200);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 8;
+            this.comboBox1.TabIndex = 10;
             // 
             // label12
             // 
@@ -244,8 +245,8 @@
             this.label12.Location = new System.Drawing.Point(66, 228);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 16);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Tabel Name :";
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Table Name :";
             this.label12.Visible = false;
             // 
             // label11
@@ -266,7 +267,7 @@
             this.Print.Location = new System.Drawing.Point(715, 245);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 15;
+            this.Print.TabIndex = 14;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -279,7 +280,7 @@
             this.btnclear.Location = new System.Drawing.Point(811, 244);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(90, 42);
-            this.btnclear.TabIndex = 13;
+            this.btnclear.TabIndex = 15;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
             this.btnclear.Click += new System.EventHandler(this.button1_Click);
@@ -306,7 +307,7 @@
             this.dtpDate.Location = new System.Drawing.Point(525, 69);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 23);
-            this.dtpDate.TabIndex = 11;
+            this.dtpDate.TabIndex = 6;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // cmbPartyName
@@ -329,7 +330,7 @@
             this.btnExit.Location = new System.Drawing.Point(619, 245);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(90, 42);
-            this.btnExit.TabIndex = 1;
+            this.btnExit.TabIndex = 13;
             this.btnExit.Text = "Delete";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -368,7 +369,7 @@
             this.dgvPaymentIn.RowHeadersVisible = false;
             this.dgvPaymentIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPaymentIn.Size = new System.Drawing.Size(938, 261);
-            this.dgvPaymentIn.TabIndex = 8;
+            this.dgvPaymentIn.TabIndex = 16;
             this.dgvPaymentIn.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPaymentIn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvPaymentIn.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -402,7 +403,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(523, 245);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 10;
+            this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -415,7 +416,7 @@
             this.btnSave.Location = new System.Drawing.Point(427, 246);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -448,7 +449,7 @@
             // txtDiscount
             // 
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.DefaultText = "";
+            this.txtDiscount.DefaultText = "0";
             this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -465,9 +466,10 @@
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
             this.txtDiscount.SelectedText = "";
+            this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(200, 24);
-            this.txtDiscount.TabIndex = 6;
+            this.txtDiscount.TabIndex = 8;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
@@ -488,7 +490,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 16);
-            this.label7.TabIndex = 3;
+            this.label7.TabIndex = 20;
             this.label7.Text = "Receipt No :";
             // 
             // label6
@@ -498,7 +500,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 16);
-            this.label6.TabIndex = 3;
+            this.label6.TabIndex = 0;
             this.label6.Text = "Payment Type :";
             // 
             // label10
@@ -508,7 +510,7 @@
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(59, 16);
-            this.label10.TabIndex = 3;
+            this.label10.TabIndex = 23;
             this.label10.Text = "Image :";
             // 
             // label5
@@ -518,7 +520,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 16);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 19;
             this.label5.Text = "Description :";
             // 
             // label4
@@ -548,7 +550,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 3;
+            this.label2.TabIndex = 20;
             this.label2.Text = "Party Name :";
             // 
             // guna2Panel2
@@ -565,7 +567,7 @@
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
             this.guna2Panel2.Size = new System.Drawing.Size(1000, 44);
-            this.guna2Panel2.TabIndex = 0;
+            this.guna2Panel2.TabIndex = 22;
             // 
             // btnminimize
             // 
