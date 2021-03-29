@@ -56,8 +56,7 @@ namespace sample
         }
         private void fetchCompany()
         {
-            if (cmbAllfirms.Text != "System.Data.DataRowView")
-            {
+           
                 try
                 {
                     string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' and Company_ID='" + NewCompany.company_id + "' group by CompanyName ");
@@ -75,7 +74,7 @@ namespace sample
                 {
                     MessageBox.Show(e1.Message);
                 }
-            }
+            
         }
         private void bindbankdata()
         {

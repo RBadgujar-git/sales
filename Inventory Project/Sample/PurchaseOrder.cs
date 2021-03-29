@@ -802,7 +802,7 @@ namespace sample
                 cmbpartyname1.Visible = false;
 
                 get_id();
-                }
+           }
 
 
                 //try {
