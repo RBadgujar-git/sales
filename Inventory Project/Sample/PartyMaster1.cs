@@ -199,6 +199,7 @@ namespace sample
             if (verify == 1)
             {
                 InsertData();
+                txtPartyname.Focus();
                 fetchdetails();
             }
 
@@ -259,6 +260,7 @@ namespace sample
         private void Update_Click(object sender, EventArgs e)
         {
             Update1();
+
             fetchdetails();
             Cleardata();
         }
@@ -543,9 +545,76 @@ namespace sample
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtPartyname_TextChanged(object sender, EventArgs e)
         {
-            
+            //if (txtPartyname.Text != "")
+            //{
+            //    if (con.State == ConnectionState.Closed)
+            //    {
+            //        con.Open();
+            //    }
+            //    chekpoint = 0;
+            //    string Query = string.Format("select PartyName from tbl_PartyMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            //    SDA.Fill(ds, "Temp");
+            //    DataTable DT = new DataTable();
+            //    SDA.Fill(ds);
+            //    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //    {
+
+            //        string companyname = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+
+            //        if (companyname.ToLower().ToString() == txtPartyname.Text.ToLower().ToString())
+            //        {
+            //            //chekpoint = 1
+            //            MessageBox.Show("This Party Name is Already Exist ");
+            //            txtPartyname.Clear();
+            //            txtPartyname.Focus();
+            //        }
+
+            //    }
+            //}
+            //txtPartyname.Clear();
+            //txtPartyname.Focus();
         }
+
+        private void txtPartyname_Leave(object sender, EventArgs e)
+        {
+            if (txtPartyname.Text != "")
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                //chekpoint = 0;
+                string Query = string.Format("select PartyName from tbl_PartyMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+
+                    string companyname = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+                    int w = 0;
+                    if (companyname.ToLower().ToString() == txtPartyname.Text.ToLower().ToString())
+                    {
+                        //chekpoint = 1
+                        if (w == 0)
+                        {
+                            MessageBox.Show("This Party Name is Already Exist ");
+                        
+                            w =1;
+                        }
+                    }
+
+                }
+            }
+
+          
+        }
+
     }
 }

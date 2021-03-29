@@ -427,17 +427,37 @@ namespace sample
                 vald();
                 if (veryfy == 1)
                 {
+                   
                     InsertData();
                     fetchdetails();
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("No permission");
             }
+        }
+        public void insert()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }           
+            string Query = String.Format("select ItemName from tbl_ItemMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+                string itemname = ds.Tables["Temp"].Rows[i]["ItemName"].ToString();
+                if (itemname.ToString() == txtItemName.Text.ToString())
+                {
+                    MessageBox.Show("This Item Already Exist");
+                }
 
-           
-
-
+            }
         }
         public int veryfy = 0;
         public void vald()
@@ -939,7 +959,7 @@ namespace sample
 
         private void txtItemName_TextChanged(object sender, EventArgs e)
         {
-
+            insert();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -1746,3 +1746,5 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateRe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\Barcode.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Barcode.xml

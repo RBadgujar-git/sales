@@ -24,9 +24,36 @@ namespace sample
             InitializeComponent();
             // con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
         }
-
+        public int gstint;
+        public int cust;
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select [CashSaleByDefault] from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            gstint = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            if (gstint == 1)
+            {
+                txtReceived.Hide();
+                txtBallaance.Hide();
+                ComboBox.Hide();
+            
+                label20.Hide();
+                label22.Hide();
+                label25.Hide();
+            }
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand("Select CustomerPoDetails from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            cust = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            if (cust == 1)
+            {
+                txtPoNo.Hide();
+                dtpPodate.Hide();
+                label4.Hide();
+                label9.Hide();
+            }
+           
             cmbpartyname.Focus();
             fetchcustomername();
             fetchBarcode();
@@ -46,8 +73,6 @@ namespace sample
                 label32.Hide();
                 label33.Hide();
              }
-
-
             if (ItemwisTax == 1)
             {
                 txtTax1.Hide();
@@ -61,7 +86,6 @@ namespace sample
                 txtOty.Width = 119;
                 txtOty.Height = 28;
             }
-
         }
 
         private void fetchBarcode()
@@ -147,9 +171,7 @@ namespace sample
             textBox1.Text = "";
             cmbCategory.Text = "";
             dgvInnerDebiteNote.Rows.Clear();
-
         }
-
         private void get_id()
         {
             seeting();
@@ -252,7 +274,15 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
                 cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
-                cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                if (ComboBox.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@Status", "Paid");
+                }
+               
                 cmd.Parameters.AddWithValue("@TableName", Sale.Text);
                 // cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 if (cmbpartyname.Visible == true)
@@ -359,7 +389,7 @@ namespace sample
                 MessageBox.Show("Party Name Required");
                 cmbpartyname.Focus();
 
-            }        
+            }
             else if (txtcon.Text == "")
             {
                 MessageBox.Show("Contact No. Is Required");
@@ -385,20 +415,21 @@ namespace sample
             {
                 MessageBox.Show("Invoice Date Is Required");
                 dtpInvoice.Focus();
-            }  
+            }
             else if (cmbPaymentType.Text == "Cheque" && txtrefNo.Text == "")
             {
 
                 MessageBox.Show("Cheque Ref No Is Required");
                 txtrefNo.Focus();
             }
-            else if (ComboBox.Text == "")
+            else if (ComboBox.Visible == true)
             {
-                MessageBox.Show("Status Is Required");
-                comboBox1.Focus();
-
+                if (ComboBox.Text == "")
+                {
+                    MessageBox.Show("Status Is Required");
+                    comboBox1.Focus();
+                }
             }
-
             else
             {
                 veryfi = 1;
@@ -439,9 +470,20 @@ namespace sample
                     insrtparty();
                     clear_text_data();
                     cleardata();
-                 
-                //    bind_sale_details();
-                    printdata1();
+                    con.Open();
+                    SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+                    report4 = Convert.ToInt32(cmd1.ExecuteScalar());
+                    con.Close();
+                    if (report4 == 1)
+                    {
+                        printdata1();
+                    }
+                    else
+                    {
+                        printdata2();
+                    }
+                    //    bind_sale_details();
+
                     get_id();
 
                 }
@@ -497,6 +539,35 @@ namespace sample
                 catch (Exception ex)
                 {
                    // MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void printdata2()
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID, b.InvoiceID,b.Deliverydate,b.DeliveryLocation,b.TransportName,b.BillingName   , b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' and c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"SaleInvoiceCopy1Report.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("SaleInvoiceCopy1", "SaleInvoiceCopy1", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    // MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -1286,8 +1357,7 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-
-cal_Total();
+            cal_Total();
             gst_devide();
         }
 
@@ -1549,41 +1619,27 @@ cal_Total();
                 e.Handled = true;
             }
         }
+        
 
-       
 
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
+        public int report4;
         private void Print_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        {           
+             con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            report4 = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            if (report4 == 1)
             {
-
-                try
-                {
-                    DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID, b.InvoiceID,b.Deliverydate,b.DeliveryLocation,b.TransportName,b.BillingName, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' And c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
-                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                    SDA.Fill(ds);
-
-                    StiReport report = new StiReport();
-                    report.Load(@"SaleReport.mrt");
-
-                    report.Compile();
-                    StiPage page = report.Pages[0];
-                    report.RegData("SaleInvoice", "SaleInvoice", ds.Tables[0]);
-
-                    report.Dictionary.Synchronize();
-                    report.Render();
-                    report.Show(false);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                report1();
+            }
+            else
+            {
+                report();
             }
         }
 
@@ -1654,8 +1710,7 @@ cal_Total();
                     if (itemname.ToString() == txtItemName.Text.ToString())
                     {
                         chekpoint = 1;
-                    }
-                    
+                    }                 
                 }
 
                 if (chekpoint != 1)
@@ -1668,7 +1723,6 @@ cal_Total();
                     string Query1 = String.Format("select ItemID from tbl_ItemMaster where ItemName='" + txtItemName.Text + "' and  DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
                     SqlCommand cmd1 = new SqlCommand(Query1, con);
                      itemid1 =cmd1.ExecuteScalar().ToString();
-
                 }
             }
             catch( Exception e1)
@@ -1777,6 +1831,64 @@ cal_Total();
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public void report()
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID, b.InvoiceID,b.Deliverydate,b.DeliveryLocation,b.TransportName,b.BillingName, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' And c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"SaleReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("SaleInvoice", "SaleInvoice", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        public void report1()
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID, b.InvoiceID,b.Deliverydate,b.DeliveryLocation,b.TransportName,b.BillingName, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b,tbl_SaleInvoiceInner as c where b.InvoiceID='{0}' and c.InvoiceID='{1}' and a.CompanyID='" + NewCompany.company_id + "' And c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"SaleInvoiceCopy1Report.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("SaleInvoiceCopy1", "SaleInvoiceCopy1", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
