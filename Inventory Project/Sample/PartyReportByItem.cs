@@ -34,7 +34,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where DeleteData='1'group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+"' and DeleteData='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -94,7 +94,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("(select P.TableName, PI.ItemName, P.BillNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_PurchaseBill as P inner join tbl_PurchaseBillInner as PI on P.ID = PI.ID where  PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, PI.ItemName, P.OrderNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_PurchaseOrder as P inner join tbl_PurchaseOrderInner as PI on P.ID = PI.ID where  PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1') union all (select P.TableName, PI.ItemName, P.OrderNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_SaleOrder as P inner join tbl_SaleOrderInner as PI on P.ID = PI.ID where  PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, PI.ItemName, P.InvoiceID as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_SaleInvoice as P inner join tbl_SaleInvoiceInner as PI on P.ID = PI.ID where  PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')", cmbparty.Text);
+                string Query = string.Format("(select P.TableName,P.PartyName, PI.ItemName, P.BillNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_PurchaseBill as P inner join tbl_PurchaseBillInner as PI on P.ID = PI.ID where  P.PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName,P.PartyName, PI.ItemName, P.OrderNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_PurchaseOrder as P inner join tbl_PurchaseOrderInner as PI on P.ID = PI.ID where  P.PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1') union all (select P.TableName,P.PartyName, PI.ItemName, P.OrderNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_SaleOrder as P inner join tbl_SaleOrderInner as PI on P.ID = PI.ID where  P.PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName,P.PartyName, PI.ItemName, P.InvoiceID as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_SaleInvoice as P inner join tbl_SaleInvoiceInner as PI on P.ID = PI.ID where  P.PartyName = '{0}'  and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')", cmbparty.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

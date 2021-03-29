@@ -22,9 +22,14 @@ namespace sample
         private void TransactionSetting_Load(object sender, EventArgs e)
         {
             cheekpass();
-            if(InvoiveNumber==1)
+            cheekpass1();
+            if (InvoiveNumber==1)
             {
                 chkInvoiceBill.Checked = true;
+            }
+            else if (cashbydefault == 1)
+            {
+                chkCashSale.Checked = true;
             }
 
         }
@@ -34,6 +39,7 @@ namespace sample
             this.Visible = false;
         }
         public int InvoiveNumber;
+        public int cashbydefault;
         public void cheekpass()
         {
             try
@@ -51,7 +57,31 @@ namespace sample
 
                 }
                 dr.Close();
+            }
 
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+
+        }
+        public void cheekpass1()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd2 = new SqlCommand("Select * from TransactionTableSetting where Company_ID='" + NewCompany.company_id + "'", con);
+                SqlDataReader dr1 = cmd2.ExecuteReader();
+
+                while (dr1.Read())
+                {
+                    cashbydefault = Convert.ToInt32(dr1["CashSaleByDefault"]);
+
+                }
+                dr1.Close();
             }
 
             catch (Exception ew)
@@ -90,6 +120,20 @@ namespace sample
 
             }
 
+        }
+
+        private void chkCashSale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCashSale.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set [CashSaleByDefault] = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkCashSale.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set [CashSaleByDefault] = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }
