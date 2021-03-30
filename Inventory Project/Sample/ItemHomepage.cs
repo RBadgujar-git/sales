@@ -140,7 +140,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,OpeningQty from tbl_ItemMaster where ItemName like '%{0}%' where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
+                string Query = string.Format("select ItemName,OpeningQty from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -229,10 +229,9 @@ namespace sample
             label3.Visible = true;
             label4.Visible = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+              MessageBox.Show(ex.ToString());
             }
         }
 
