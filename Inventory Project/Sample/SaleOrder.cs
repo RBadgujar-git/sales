@@ -82,7 +82,7 @@ namespace sample
             txtReturnNo.Enabled = false;
             comboBox2.Visible = false;
           comboBox3.Visible = false;
-
+            comboBox1.Visible = false;
             comboBox1.Visible=false;
             label15.Hide();
             fetchCategory();
@@ -137,6 +137,58 @@ namespace sample
             cal_ItemTotal();
         }
         int row = 0, dublication,ip;
+        public void dublicatiuonfunction()
+        {
+
+
+            float gst1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[5].Value.ToString());
+            float dis1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[6].Value.ToString());
+            float qty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[7].Value.ToString());
+            float freeqty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[8].Value.ToString());
+            float txamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[9].Value.ToString());
+            float discamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[10].Value.ToString());
+            float txtTotal1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[11].Value.ToString());
+
+
+
+            float qty = float.Parse(txtOty.Text) + qty1;
+            float freeqty = float.Parse(txtFreeQty.Text) + freeqty1;
+            float gst = float.Parse(txtTax1.Text) + gst1;
+            float gst_amt = float.Parse(txtTaxAMount1.Text) + txamount;
+            float dis = float.Parse(txtDis.Text) + dis1;
+            float dis_amt = float.Parse(txtDisAmt.Text) + discamount;
+            float Total = float.Parse(txtItemTotal.Text) + txtTotal1;
+
+
+
+            dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
+            dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
+            //     dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
+            dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
+            //      dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
+            dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
+            dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+
+
+
+
+
+
+            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
+            {
+                TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+
+
+                txtsubtotal.Text = TA.ToString();
+                txtTotal.Text = TA.ToString();
+
+                //  //  txtDisAmt.Text = TD.ToString();
+                //   // txtTaxAMount1.Text = TGST.ToString();
+            }
+
+        }
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -160,6 +212,7 @@ namespace sample
 
                     if (dublication == 1)
                     {
+                        dublicatiuonfunction();
                     }
                     else
                     {
@@ -220,56 +273,7 @@ namespace sample
         }
 
         float TA;
-        public void dublicatiuonfunction()
-        {
-
-
-            float gst1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[5].Value.ToString());
-            float dis1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[6].Value.ToString());
-            float qty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[7].Value.ToString());
-            float freeqty1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[8].Value.ToString());
-            float txamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[9].Value.ToString());
-            float discamount = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[10].Value.ToString());
-            float txtTotal1 = float.Parse(this.dgvInnerDebiteNote.Rows[ip].Cells[11].Value.ToString());
-
-
-            float qty = float.Parse(txtOty.Text) + qty1;
-            float freeqty = float.Parse(txtFreeQty.Text) + freeqty1;
-            float gst = float.Parse(txtTax1.Text) + gst1;
-            float gst_amt = float.Parse(txtTaxAMount1.Text) + txamount;
-            float dis = float.Parse(txtDis.Text) + dis1;
-            float dis_amt = float.Parse(txtDisAmt.Text) + discamount;
-            float Total = float.Parse(txtItemTotal.Text) + txtTotal1;
-
-
-            dgvInnerDebiteNote.Rows[row].Cells[7].Value = qty;
-            dgvInnerDebiteNote.Rows[row].Cells[8].Value = freeqty;
-            //     dgvInnerDebiteNote.Rows[row].Cells[5].Value = gst;
-            dgvInnerDebiteNote.Rows[row].Cells[9].Value = gst_amt;
-            //      dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
-            dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
-            dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
-
-
-
-
-
-
-            for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
-            {
-                TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
-                //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
-                //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
-
-
-                txtsubtotal.Text = TA.ToString();
-                txtTotal.Text = TA.ToString();
-
-                //  //  txtDisAmt.Text = TD.ToString();
-                //   // txtTaxAMount1.Text = TGST.ToString();
-            }
-
-        }
+   
         private void clear_text_data()
         {
             txtItemName.Text = "";
@@ -870,6 +874,7 @@ namespace sample
             {
                 con.Open();
             }
+            
             string str = string.Format("SELECT * FROM tbl_SaleOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
             SqlCommand cmd = new SqlCommand(str, con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -916,16 +921,15 @@ namespace sample
         {
             if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleOrder as b,tbl_SaleOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", id1,id1);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.OrderNo, b.OrderDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SaleTaxAmount,c.SalePrice,c.DeleteData, c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_SaleOrder as b,tbl_SaleOrderInner as c where b.OrderNo='{0}' and c.OrderNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' and c.DeleteData='1' ", id1,id1);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
                     StiReport report = new StiReport();
-                    report.Load(@"Saleorder.mrt");
+                    report.Load(@"SaleOrderReport.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
@@ -939,7 +943,9 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
-            }
+            
+
+                  }
         }
 
         public int verfy = 0;
@@ -1409,8 +1415,8 @@ namespace sample
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
            
-            //cal_Total();
-            //gst_devide();
+           cal_Total();
+           gst_devide();
         }
 
         private void txtItemTotal_ImeModeChanged(object sender, EventArgs e)

@@ -83,10 +83,8 @@ namespace sample
         }
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
-               
                 string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -98,7 +96,6 @@ namespace sample
             {
                 MessageBox.Show("Data not" + ex);
             }
-           
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

@@ -112,6 +112,31 @@ namespace sample
             }
 
         }
+
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFilterBy.Text != "")
+            {
+                try
+                {
+                    //  string Query = string.Format("select OrderNo, PartyName, OrderDate, DueDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where  PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtFilterBy.Text);
+                    string Query = string.Format("select OrderNo,PartyName,ContactNo,OrderDate,Paid,Total,RemainingBal,Status from tbl_PurchaseOrder where PartyName like '%{0}%'  or OrderNo like '%{0}%' or OrderDate  like '%{0}%' and  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy.Text);
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                    da.Fill(ds, "temp");
+                    dgvPurchaseOrder.DataSource = ds;
+                    dgvPurchaseOrder.DataMember = "temp";
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                binddata();
+            }
+        }
     }
     }
 

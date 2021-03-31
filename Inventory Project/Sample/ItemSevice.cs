@@ -468,11 +468,6 @@ namespace sample
             }
         }
 
-        private void dgvItemServices_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
         private void Clear_Click(object sender, EventArgs e)
         {
             Cleardata();
@@ -555,6 +550,16 @@ namespace sample
                 cmbTaxRate.Enabled = true;
             }
            
+        }
+
+        private void cmbUnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbItemCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

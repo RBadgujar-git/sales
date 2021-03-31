@@ -617,6 +617,7 @@ namespace sample
                         dgvInnerDeliveryChallanNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
                         dgvInnerDeliveryChallanNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
                         dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
+
                         i++;
                     }
                     dr1.Close();
@@ -673,9 +674,9 @@ namespace sample
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[10].Value = dis_amt;
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[11].Value = Total;
 
-                        txtItemName.Focus();
+                    clear_text_data();
 
-                        for (int i = 0; i < dgvInnerDeliveryChallanNote.Rows.Count; i++) {
+                    for (int i = 0; i < dgvInnerDeliveryChallanNote.Rows.Count; i++) {
                             TA += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value?.ToString());
                             //   // TD += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                             //   // TGST += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
@@ -686,7 +687,7 @@ namespace sample
                         //  //  txtDisAmt.Text = TD.ToString();
                         //   // txtTaxAMount1.Text = TGST.ToString();
                     }
-                    clear_text_data();
+                
                 }              
             }
                 catch (Exception e1)
@@ -907,7 +908,7 @@ namespace sample
                 }
                 dr.Close();
 
-                txtBillingName.Focus();
+               
             }
             catch (Exception ex)
             {
@@ -989,6 +990,7 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
@@ -1231,7 +1233,8 @@ namespace sample
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cal_Total();
+            gst_devide();
         }
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
@@ -1267,8 +1270,8 @@ namespace sample
             txtDisAmt.Text = dgvInnerDeliveryChallanNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
             txtItemTotal.Text = dgvInnerDeliveryChallanNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();
 
-            int row = dgvInnerDeliveryChallanNote.CurrentCell.RowIndex;
-            dgvInnerDeliveryChallanNote.Rows.RemoveAt(row);
+            //int row = dgvInnerDeliveryChallanNote.CurrentCell.RowIndex;
+            //dgvInnerDeliveryChallanNote.Rows.RemoveAt(row);
         }
 
         private void txtDisAmt_TextChanged(object sender, EventArgs e)
@@ -1299,6 +1302,7 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 
@@ -1313,7 +1317,40 @@ namespace sample
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            fetchBarcode();
+
+            if (textBox1.Text == "")
+            {
+                clear_text_data();
+                //guna2TextBox2.Text = "";
+            }
+            else
+            {
+                fetchBarcode();
+            }
+          
+        }
+
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRoundOff.Checked == true)
+            {
+                int round = 0;
+                txtRoundup.Text = txtTotal.Text;
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                round = Convert.ToInt32(txtTotal.Text);
+                txtTotal.Text = round.ToString();
+
+            }
+            if (chkRoundOff.Checked == false)
+            {
+                cal_Total();
+                txtRoundup.Text = "";
+            }
+        }
+
+        private void dgvInnerDeliveryChallanNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     }
