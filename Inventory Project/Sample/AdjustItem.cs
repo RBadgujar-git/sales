@@ -137,8 +137,10 @@ namespace sample
                     fetchdetails();
                 }
             }
-            else {
-                MessageBox.Show("No permission");}
+            else
+            {
+                MessageBox.Show("No Permission");
+            }
            
         }
     

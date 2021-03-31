@@ -135,7 +135,7 @@ namespace sample
                 if (id == "")
                 {
                     Insert();
-                    txtaccountname.Focus();
+                    txtbankname.Focus();
                     fetchdetails();
                     cb.bindbankdata();
                 }
@@ -225,7 +225,7 @@ namespace sample
         private void btnupdate_Click(object sender, EventArgs e)
         {
             update();
-            txtaccountname.Focus();
+            txtbankname.Focus();
 
             clearData();
             fetchdetails();
@@ -454,7 +454,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select * from tbl_BankAccount where DeleteData = '1' and AccountName like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
+                string Query = string.Format("select * from tbl_BankAccount where AccountName like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "' DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

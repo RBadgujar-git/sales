@@ -300,7 +300,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select UnitID,UnitName,SubUnitName from tbl_UnitMaster where Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' and UnitName like '%{0}%' or UnitID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select UnitID,UnitName,SubUnitName from tbl_UnitMaster where UnitName like '%{0}%' or UnitID like '%{0}%' and Company_ID ='" + NewCompany.company_id + "' and DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

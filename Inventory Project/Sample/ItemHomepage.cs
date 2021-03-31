@@ -159,13 +159,6 @@ namespace sample
            
         }
 
-        private void dgvItem_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-          
-
-
-        }
-
         private void Stock_TextChanged(object sender, EventArgs e)
         {
           
@@ -218,16 +211,18 @@ namespace sample
                 // lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
                 // lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
 
-                string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where ItemName='{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where ItemName = '{0}')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where ItemName = '{0}')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where ItemName = '{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", lblItemName.Text);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(Query, con);
-            da.Fill(ds, "temp");
-            dgvItemDetails.DataSource = ds;
-            dgvItemDetails.DataMember = "temp";
-            label1.Visible = true;
-            label2.Visible = true;
-            label3.Visible = true;
-            label4.Visible = true;
+                string Query = string.Format(" select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where C.ItemName='{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where C.ItemName = '{0}' and and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1'", lblItemName.Text);
+
+                //string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where C.ItemName='{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where C.ItemName = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )union all (select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )", lblItemName.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemDetails.DataSource = ds;
+                dgvItemDetails.DataMember = "temp";
+                label1.Visible = true;
+                label2.Visible = true;
+                label3.Visible = true;
+                label4.Visible = true;
             }
             catch (Exception ex)
             {

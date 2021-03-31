@@ -65,7 +65,7 @@ namespace sample
             //PrincipleAmount,InterestAmount,Date,	TotalAmount,PaidFrom
             if (txtPrincipleAmount.Text == "")
             {
-                MessageBox.Show("Amount Requrid");
+                MessageBox.Show("Amount Required");
             }
             else
             {
@@ -81,8 +81,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AccountName", cmbCompanyName.Text);
                 cmd.Parameters.AddWithValue("@PrincipleAmount", txtPrincipleAmount.Text);
                 cmd.Parameters.AddWithValue("@InterestAmount", txtinterestAmout.Text);
-                DateTime now1 = DateTime.Today;
-                cmd.Parameters.AddWithValue("@Date", now1.ToShortDateString());
+                
+                cmd.Parameters.AddWithValue("@Date",dtpDate.Value);
                 cmd.Parameters.AddWithValue("@TotalAmount", txtTotalAmount.Text);
                 cmd.Parameters.AddWithValue("@PaidFrom", cmbPaidFrom.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
@@ -99,11 +99,13 @@ namespace sample
             txtTotalAmount.Text = "0";
             cmbPaidFrom.Text = "";
             txtcurrentbal.Text = "";
+            cmbCompanyName.Text = "";
         }
         private void dgvMakePayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvMakePayment.SelectedRows[0].Cells["ID"].Value.ToString();
             cmbCompanyName.Text = dgvMakePayment.SelectedRows[0].Cells["AccountName"].Value.ToString();
+            //txtcurrentbal.Text = dgvMakePayment.SelectedRows[0].Cells["CurrentBal"].Value.ToString();
             txtPrincipleAmount.Text = dgvMakePayment.SelectedRows[0].Cells["PrincipleAmount"].Value.ToString();
             txtinterestAmout.Text = dgvMakePayment.SelectedRows[0].Cells["InterestAmount"].Value.ToString();
             dtpDate.Text = dgvMakePayment.SelectedRows[0].Cells["Date"].Value.ToString();
@@ -119,7 +121,7 @@ namespace sample
                 {
                     if (Int32.Parse(txtcurrentbal.Text) < Int32.Parse(txtPrincipleAmount.Text))
                     {
-                        MessageBox.Show("Insuficient Balence");
+                        MessageBox.Show("Insufficient Balance");
                     }
                     else
                     {
@@ -137,7 +139,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                // MessageBox.Show("error"+ex);
+                MessageBox.Show("error"+ex);
             }
         }
         public void calopenbal()
@@ -154,6 +156,7 @@ namespace sample
         {
             try
             {
+                con.Close();
                 con.Open();
                 String query = string.Format("update tbl_LoanBank set LoanAmount='" + txtcurrentbal.Text + "' where (AccountName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -166,7 +169,7 @@ namespace sample
             }
             finally
             {
-
+                
             }
         }
         //public void calopenbal()
@@ -220,7 +223,8 @@ namespace sample
             TA = PA + IA;
             txtTotalAmount.Text = TA.ToString();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
 
                 //MessageBox.Show("error"+ex);
             }
@@ -296,8 +300,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@AccountName", cmbCompanyName.Text);
                     cmd.Parameters.AddWithValue("@PrincipleAmount", txtPrincipleAmount.Text);
                     cmd.Parameters.AddWithValue("@InterestAmount", txtinterestAmout.Text);
-                    DateTime now1 = DateTime.Today;
-                    cmd.Parameters.AddWithValue("@Date", now1.ToShortDateString());
+                   
+                    cmd.Parameters.AddWithValue("@Date", dtpDate.Value);
                     cmd.Parameters.AddWithValue("@TotalAmount", txtTotalAmount.Text);
                     cmd.Parameters.AddWithValue("@PaidFrom", cmbPaidFrom.Text);
                     int num = cmd.ExecuteNonQuery();
@@ -395,6 +399,7 @@ namespace sample
         {
             try
             {
+                con.Close();
                 con.Open();
                 string Query = String.Format("select LoanAmount from tbl_LoanBank where (AccountName='{0}') and Deletedata='1' and Company_ID='" + NewCompany.company_id + "' GROUP BY LoanAmount ", cmbCompanyName.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);

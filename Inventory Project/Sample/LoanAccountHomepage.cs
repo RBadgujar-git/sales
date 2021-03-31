@@ -93,7 +93,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName from tbl_LoanBank where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                string Query = string.Format("select AccountName, CurrentBal from tbl_LoanBank where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -118,12 +118,12 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountNo from tbl_LoanBank where AccountNo like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
+                string Query = string.Format("select AccountName,AccountNo,LendarBank,FirmName, CurrentBal,BalAsOf,Interest,Duration,PaidBy,LoanAmount,Total from tbl_LoanBank where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvLoanAccount.DataSource = ds;
-                dgvbankAccount.DataMember = "temp";
+                dgvLoanAccount.DataMember = "temp";
             }
             catch (Exception ex)
             {

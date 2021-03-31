@@ -31,7 +31,7 @@ namespace sample
             if (password == 0)
             {
 
-                 Application.Run(new Dashboard());
+                Application.Run(new Dashboard());
             }
             else
             {

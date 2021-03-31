@@ -101,9 +101,16 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            Insert();
-            fetchdetails();
-            cleardata();
+            if (id == "")
+            {
+                Insert();
+                fetchdetails();
+                cleardata();
+            }
+            else
+            {
+                MessageBox.Show("No Permission");
+            }
         }
      
         public void Update1()
@@ -258,7 +265,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' and CategoryName like '%{0}%' or CategoryID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where CategoryName like '%{0}%' or CategoryID like '%{0}%' and Company_ID ='" + NewCompany.company_id + "' and DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
