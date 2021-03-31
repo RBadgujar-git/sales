@@ -30,8 +30,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransactionSetting));
             this.NumericUpDown3 = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.chkTranscationWiseTax = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label6 = new System.Windows.Forms.Label();
             this.chkInvoiceBill = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkBillingname = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkCustomerPo = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -71,12 +69,20 @@
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             this.chkSendSMStoparty = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkSendSMStoSelf = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.guna2CheckBox1 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2CheckBox2 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2CheckBox3 = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -118,25 +124,7 @@
             this.chkTranscationWiseTax.UncheckedState.BorderRadius = 0;
             this.chkTranscationWiseTax.UncheckedState.BorderThickness = 0;
             this.chkTranscationWiseTax.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel4.Location = new System.Drawing.Point(30, 317);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
-            this.guna2Panel4.Size = new System.Drawing.Size(250, 2);
-            this.guna2Panel4.TabIndex = 276;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 287);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(227, 18);
-            this.label6.TabIndex = 275;
-            this.label6.Text = "More Transaction Features";
+            this.chkTranscationWiseTax.CheckedChanged += new System.EventHandler(this.chkTranscationWiseTax_CheckedChanged);
             // 
             // chkInvoiceBill
             // 
@@ -208,6 +196,7 @@
             this.chkInvoicePreview.UncheckedState.BorderRadius = 0;
             this.chkInvoicePreview.UncheckedState.BorderThickness = 0;
             this.chkInvoicePreview.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkInvoicePreview.CheckedChanged += new System.EventHandler(this.chkInvoicePreview_CheckedChanged);
             // 
             // chkEnablepasswordfortransaction
             // 
@@ -276,6 +265,7 @@
             this.chkDuedate.UncheckedState.BorderRadius = 0;
             this.chkDuedate.UncheckedState.BorderThickness = 0;
             this.chkDuedate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkDuedate.CheckedChanged += new System.EventHandler(this.chkDuedate_CheckedChanged);
             // 
             // guna2Panel3
             // 
@@ -403,6 +393,7 @@
             this.chkDisplayPurchase.UncheckedState.BorderRadius = 0;
             this.chkDisplayPurchase.UncheckedState.BorderThickness = 0;
             this.chkDisplayPurchase.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkDisplayPurchase.CheckedChanged += new System.EventHandler(this.chkDisplayPurchase_CheckedChanged);
             // 
             // chkTaxRaate
             // 
@@ -454,6 +445,7 @@
             this.chkDisplayfreeQty.UncheckedState.BorderRadius = 0;
             this.chkDisplayfreeQty.UncheckedState.BorderThickness = 0;
             this.chkDisplayfreeQty.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkDisplayfreeQty.CheckedChanged += new System.EventHandler(this.chkDisplayfreeQty_CheckedChanged);
             // 
             // Chkcount
             // 
@@ -471,6 +463,7 @@
             this.Chkcount.UncheckedState.BorderRadius = 0;
             this.Chkcount.UncheckedState.BorderThickness = 0;
             this.Chkcount.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.Chkcount.CheckedChanged += new System.EventHandler(this.Chkcount_CheckedChanged);
             // 
             // chkRound
             // 
@@ -488,6 +481,7 @@
             this.chkRound.UncheckedState.BorderRadius = 0;
             this.chkRound.UncheckedState.BorderThickness = 0;
             this.chkRound.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkRound.CheckedChanged += new System.EventHandler(this.chkRound_CheckedChanged);
             // 
             // chkTransactionWiseDiscount
             // 
@@ -505,6 +499,7 @@
             this.chkTransactionWiseDiscount.UncheckedState.BorderRadius = 0;
             this.chkTransactionWiseDiscount.UncheckedState.BorderThickness = 0;
             this.chkTransactionWiseDiscount.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkTransactionWiseDiscount.CheckedChanged += new System.EventHandler(this.chkTransactionWiseDiscount_CheckedChanged);
             // 
             // guna2ComboBox1
             // 
@@ -735,6 +730,7 @@
             // 
             this.guna2Button3.CheckedState.Parent = this.guna2Button3;
             this.guna2Button3.CustomImages.Parent = this.guna2Button3;
+            this.guna2Button3.Enabled = false;
             this.guna2Button3.FillColor = System.Drawing.Color.White;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Blue;
@@ -745,6 +741,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(124, 29);
             this.guna2Button3.TabIndex = 302;
             this.guna2Button3.Text = "Change Texts";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button1
             // 
@@ -769,27 +766,12 @@
             this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Blue;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(44, 548);
+            this.guna2Button2.Location = new System.Drawing.Point(181, 513);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 304;
             this.guna2Button2.Text = "Additinal Fields >>";
-            // 
-            // guna2Button4
-            // 
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.ForeColor = System.Drawing.Color.Blue;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Location = new System.Drawing.Point(45, 599);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button4.TabIndex = 305;
-            this.guna2Button4.Text = "Transaction Details >>";
             // 
             // guna2Button5
             // 
@@ -799,7 +781,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.Color.Blue;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(40, 650);
+            this.guna2Button5.Location = new System.Drawing.Point(193, 548);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(180, 45);
@@ -859,18 +841,145 @@
             this.label3.TabIndex = 309;
             this.label3.Text = " Transaction SMS";
             // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(484, 258);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.TabIndex = 311;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel4.Location = new System.Drawing.Point(42, 314);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.ShadowDecoration.Parent = this.guna2Panel4;
+            this.guna2Panel4.Size = new System.Drawing.Size(250, 2);
+            this.guna2Panel4.TabIndex = 313;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(49, 284);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(227, 18);
+            this.label6.TabIndex = 312;
+            this.label6.Text = "More Transaction Features";
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel6.Location = new System.Drawing.Point(35, 626);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.ShadowDecoration.Parent = this.guna2Panel6;
+            this.guna2Panel6.Size = new System.Drawing.Size(250, 2);
+            this.guna2Panel6.TabIndex = 315;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(42, 596);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 18);
+            this.label4.TabIndex = 314;
+            this.label4.Text = "Transportation Features";
+            // 
+            // guna2CheckBox1
+            // 
+            this.guna2CheckBox1.AutoSize = true;
+            this.guna2CheckBox1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox1.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox1.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox1.Location = new System.Drawing.Point(42, 653);
+            this.guna2CheckBox1.Name = "guna2CheckBox1";
+            this.guna2CheckBox1.Size = new System.Drawing.Size(164, 20);
+            this.guna2CheckBox1.TabIndex = 320;
+            this.guna2CheckBox1.Text = "Transportation Name";
+            this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox1.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox1.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
+            // 
+            // guna2CheckBox2
+            // 
+            this.guna2CheckBox2.AutoSize = true;
+            this.guna2CheckBox2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox2.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox2.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox2.Location = new System.Drawing.Point(42, 679);
+            this.guna2CheckBox2.Name = "guna2CheckBox2";
+            this.guna2CheckBox2.Size = new System.Drawing.Size(115, 20);
+            this.guna2CheckBox2.TabIndex = 319;
+            this.guna2CheckBox2.Text = "Delivary Date";
+            this.guna2CheckBox2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox2.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox2.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox2.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox2.CheckedChanged += new System.EventHandler(this.guna2CheckBox2_CheckedChanged);
+            // 
+            // guna2CheckBox3
+            // 
+            this.guna2CheckBox3.AutoSize = true;
+            this.guna2CheckBox3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox3.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox3.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox3.Location = new System.Drawing.Point(42, 705);
+            this.guna2CheckBox3.Name = "guna2CheckBox3";
+            this.guna2CheckBox3.Size = new System.Drawing.Size(140, 20);
+            this.guna2CheckBox3.TabIndex = 318;
+            this.guna2CheckBox3.Text = "Delivery Location";
+            this.guna2CheckBox3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox3.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox3.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox3.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox3.CheckedChanged += new System.EventHandler(this.guna2CheckBox3_CheckedChanged);
+            // 
+            // guna2CheckBox4
+            // 
+            this.guna2CheckBox4.AutoSize = true;
+            this.guna2CheckBox4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox4.CheckedState.BorderRadius = 0;
+            this.guna2CheckBox4.CheckedState.BorderThickness = 0;
+            this.guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CheckBox4.Location = new System.Drawing.Point(42, 731);
+            this.guna2CheckBox4.Name = "guna2CheckBox4";
+            this.guna2CheckBox4.Size = new System.Drawing.Size(100, 20);
+            this.guna2CheckBox4.TabIndex = 317;
+            this.guna2CheckBox4.Text = "Vehicle No.";
+            this.guna2CheckBox4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox4.UncheckedState.BorderRadius = 0;
+            this.guna2CheckBox4.UncheckedState.BorderThickness = 0;
+            this.guna2CheckBox4.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.guna2CheckBox4.CheckedChanged += new System.EventHandler(this.guna2CheckBox4_CheckedChanged);
+            // 
             // TransactionSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.guna2CheckBox1);
+            this.Controls.Add(this.guna2CheckBox2);
+            this.Controls.Add(this.guna2CheckBox3);
+            this.Controls.Add(this.guna2CheckBox4);
+            this.Controls.Add(this.guna2Panel6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.guna2Panel4);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.chkSendSMStoparty);
             this.Controls.Add(this.chkSendSMStoSelf);
             this.Controls.Add(this.guna2Button5);
-            this.Controls.Add(this.guna2Button4);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2Button3);
@@ -890,8 +999,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.NumericUpDown3);
             this.Controls.Add(this.chkTranscationWiseTax);
-            this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.chkInvoiceBill);
             this.Controls.Add(this.chkBillingname);
             this.Controls.Add(this.chkCustomerPo);
@@ -923,8 +1030,6 @@
 
         private Guna.UI2.WinForms.Guna2NumericUpDown NumericUpDown3;
         private Guna.UI2.WinForms.Guna2CheckBox chkTranscationWiseTax;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2CheckBox chkInvoiceBill;
         private Guna.UI2.WinForms.Guna2CheckBox chkBillingname;
         private Guna.UI2.WinForms.Guna2CheckBox chkCustomerPo;
@@ -964,11 +1069,19 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2CheckBox chkSendSMStoparty;
         private Guna.UI2.WinForms.Guna2CheckBox chkSendSMStoSelf;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Label label6;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
+        private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
     }
 }

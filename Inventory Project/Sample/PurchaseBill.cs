@@ -27,12 +27,24 @@ namespace sample
           //  con = new SqlConnection("Data Source=DESKTOP-V77UKDV;Initial Catalog=InventoryMgnt;Integrated Security=True");
 
         }
-      
+        public int dispurchase;
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
             cleardata();
             fetchCategory();
-            fetchitem();
+            con.Open();
+            SqlCommand cmd3 = new SqlCommand("Select DisplayPurchasePriseOnItem from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            dispurchase = Convert.ToInt32(cmd3.ExecuteScalar());
+            con.Close();
+            if (dispurchase == 1)
+            {
+                fetchitem();
+            }
+            else if (dispurchase == 0)
+            {
+                fetchitem1();
+            }
+           
                    // fetchitem();
             fetchcustomername();
           //  bind_sale_details();
@@ -44,6 +56,30 @@ namespace sample
             comboBox2.Visible = false;
             guna2TextBox2.Visible = true;
             guna2TextBox2.Hide();
+        }
+        private void fetchitem()
+        {
+            if (txtItemName.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select ItemName,PurchasePrice from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' group by ItemName,PurchasePrice");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        txtItemName.Items.Add(ds.Tables["Temp"].Rows[i]["ItemName"].ToString() + " " + ds.Tables["Temp"].Rows[i]["PurchasePrice"].ToString());
+
+                    }
+                }
+                catch (Exception e1)
+                {
+                    //  MessageBox.Show(e1.Message);
+                }
+            }
         }
         private void fetchdetails()
         {
@@ -76,7 +112,7 @@ namespace sample
             }
 
         }
-        public void fetchitem()
+        public void fetchitem1()
         {
             if (txtItemName.Text != "System.Data.DataRowView")
             {

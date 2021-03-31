@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
             this.label26 = new System.Windows.Forms.Label();
             this.txtVehicleNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,6 +64,8 @@
             this.cmbpartyname = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label42 = new System.Windows.Forms.Label();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.txtItemName = new System.Windows.Forms.ComboBox();
@@ -101,7 +103,6 @@
             this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtsubtotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
@@ -148,6 +149,10 @@
             this.btnCalculator = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
@@ -332,6 +337,10 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.label43);
+            this.panel1.Controls.Add(this.label44);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.txtadditional2);
@@ -740,6 +749,8 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label42);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox2);
             this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox1);
             this.guna2ShadowPanel1.Controls.Add(this.comboBox1);
             this.guna2ShadowPanel1.Controls.Add(this.txtItemName);
@@ -772,6 +783,40 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1074, 87);
             this.guna2ShadowPanel1.TabIndex = 8;
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(138, 18);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(54, 14);
+            this.label42.TabIndex = 104357;
+            this.label42.Text = "Count :";
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Location = new System.Drawing.Point(138, 44);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Size = new System.Drawing.Size(51, 27);
+            this.guna2TextBox2.TabIndex = 104356;
+            // 
             // guna2TextBox1
             // 
             this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
@@ -788,7 +833,7 @@
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(135, 47);
+            this.guna2TextBox1.Location = new System.Drawing.Point(132, 47);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
@@ -849,6 +894,7 @@
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             this.txtItemTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemTotal_KeyPress);
+            this.txtItemTotal.ImeModeChanged += new System.EventHandler(this.txtItemTotal_ImeModeChanged);
             // 
             // label34
             // 
@@ -903,7 +949,7 @@
             this.txtDis.ForeColor = System.Drawing.Color.Black;
             this.txtDis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDis.HoverState.Parent = this.txtDis;
-            this.txtDis.Location = new System.Drawing.Point(422, 43);
+            this.txtDis.Location = new System.Drawing.Point(433, 43);
             this.txtDis.Name = "txtDis";
             this.txtDis.PasswordChar = '\0';
             this.txtDis.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -987,7 +1033,7 @@
             this.txtTax1.ForeColor = System.Drawing.Color.Black;
             this.txtTax1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax1.HoverState.Parent = this.txtTax1;
-            this.txtTax1.Location = new System.Drawing.Point(516, 42);
+            this.txtTax1.Location = new System.Drawing.Point(526, 42);
             this.txtTax1.Name = "txtTax1";
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1025,14 +1071,14 @@
             this.txtMRP.ForeColor = System.Drawing.Color.Black;
             this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMRP.HoverState.Parent = this.txtMRP;
-            this.txtMRP.Location = new System.Drawing.Point(331, 43);
+            this.txtMRP.Location = new System.Drawing.Point(351, 43);
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.PasswordChar = '\0';
             this.txtMRP.PlaceholderText = "";
             this.txtMRP.SelectedText = "";
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
-            this.txtMRP.Size = new System.Drawing.Size(85, 28);
+            this.txtMRP.Size = new System.Drawing.Size(76, 28);
             this.txtMRP.TabIndex = 13;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
@@ -1040,7 +1086,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(337, 18);
+            this.label29.Location = new System.Drawing.Point(348, 18);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(42, 14);
             this.label29.TabIndex = 88;
@@ -1062,19 +1108,19 @@
             this.txtUnit.ForeColor = System.Drawing.Color.Black;
             this.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUnit.HoverState.Parent = this.txtUnit;
-            this.txtUnit.Location = new System.Drawing.Point(240, 44);
+            this.txtUnit.Location = new System.Drawing.Point(278, 43);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "";
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
-            this.txtUnit.Size = new System.Drawing.Size(85, 28);
+            this.txtUnit.Size = new System.Drawing.Size(67, 28);
             this.txtUnit.TabIndex = 12;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(242, 18);
+            this.label28.Location = new System.Drawing.Point(278, 17);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -1134,20 +1180,20 @@
             this.txtItemCode.ForeColor = System.Drawing.Color.Black;
             this.txtItemCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemCode.HoverState.Parent = this.txtItemCode;
-            this.txtItemCode.Location = new System.Drawing.Point(149, 43);
+            this.txtItemCode.Location = new System.Drawing.Point(194, 43);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.PasswordChar = '\0';
             this.txtItemCode.PlaceholderText = "";
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
-            this.txtItemCode.Size = new System.Drawing.Size(85, 28);
+            this.txtItemCode.Size = new System.Drawing.Size(78, 28);
             this.txtItemCode.TabIndex = 11;
             this.txtItemCode.TextChanged += new System.EventHandler(this.txtItemCode_TextChanged);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(147, 17);
+            this.label23.Location = new System.Drawing.Point(194, 17);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(78, 14);
             this.label23.TabIndex = 80;
@@ -1178,7 +1224,7 @@
             this.txtOty.ForeColor = System.Drawing.Color.Black;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(607, 42);
+            this.txtOty.Location = new System.Drawing.Point(617, 42);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1186,7 +1232,7 @@
             this.txtOty.SelectedText = "";
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
-            this.txtOty.Size = new System.Drawing.Size(89, 28);
+            this.txtOty.Size = new System.Drawing.Size(79, 28);
             this.txtOty.TabIndex = 16;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
@@ -1202,20 +1248,20 @@
             // 
             // dgvInnerDebiteNote
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInnerDebiteNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDebiteNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDebiteNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDebiteNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
             this.dgvInnerDebiteNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1229,16 +1275,15 @@
             this.FreeQty,
             this.Tax_Amount,
             this.Discount_Amount,
-            this.Amount,
-            this.ItemID});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Amount});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInnerDebiteNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDebiteNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDebiteNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1246,7 +1291,7 @@
             this.dgvInnerDebiteNote.Name = "dgvInnerDebiteNote";
             this.dgvInnerDebiteNote.RowHeadersVisible = false;
             this.dgvInnerDebiteNote.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvInnerDebiteNote.Size = new System.Drawing.Size(1097, 109);
+            this.dgvInnerDebiteNote.Size = new System.Drawing.Size(1089, 109);
             this.dgvInnerDebiteNote.TabIndex = 133;
             this.dgvInnerDebiteNote.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvInnerDebiteNote.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -1365,12 +1410,6 @@
             this.Amount.DataPropertyName = "ItemAmount";
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
-            // 
-            // ItemID
-            // 
-            this.ItemID.HeaderText = "ItemID";
-            this.ItemID.Name = "ItemID";
-            this.ItemID.Visible = false;
             // 
             // txtsubtotal
             // 
@@ -2106,6 +2145,47 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Cash",
+            "Cheque",
+            "Online Payment"});
+            this.comboBox3.Location = new System.Drawing.Point(462, 468);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(182, 24);
+            this.comboBox3.TabIndex = 104355;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/dd/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(462, 503);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(182, 23);
+            this.dateTimePicker1.TabIndex = 104357;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(349, 508);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(109, 16);
+            this.label43.TabIndex = 104358;
+            this.label43.Text = "Payment Terms";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(376, 471);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(80, 16);
+            this.label44.TabIndex = 104356;
+            this.label44.Text = "Due Date :";
+            // 
             // SaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2207,18 +2287,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtOty;
         private System.Windows.Forms.Label label39;
         private Guna.UI2.WinForms.Guna2DataGridView dgvInnerDebiteNote;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sr_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item_Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MRP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FreeQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tax_Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount_Amount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbpartyname;
         private System.Windows.Forms.Button Print;
@@ -2250,6 +2318,23 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.TextBox textBox1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        public System.Windows.Forms.Label label42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sr_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item_Code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MRP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FreeQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tax_Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount_Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
     }
 }
