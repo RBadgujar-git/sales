@@ -27,12 +27,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DayBook));
             this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dgvdaybook = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -51,9 +47,26 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdaybook)).BeginInit();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.Sale = new System.Windows.Forms.TabPage();
+            this.Purchase = new System.Windows.Forms.TabPage();
+            this.SaleOrder = new System.Windows.Forms.TabPage();
+            this.PurchaseOrder = new System.Windows.Forms.TabPage();
+            this.dgvSale = new System.Windows.Forms.DataGridView();
+            this.dgvpurchase = new System.Windows.Forms.DataGridView();
+            this.dgvsaleorder = new System.Windows.Forms.DataGridView();
+            this.dgvpurchaseorder = new System.Windows.Forms.DataGridView();
             this.guna2Panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.Sale.SuspendLayout();
+            this.Purchase.SuspendLayout();
+            this.SaleOrder.SuspendLayout();
+            this.PurchaseOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpurchase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvsaleorder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpurchaseorder)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAllfirms
@@ -77,66 +90,6 @@
             this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllfirms.StartIndex = 0;
             this.cmbAllfirms.TabIndex = 0;
-            // 
-            // dgvdaybook
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvdaybook.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvdaybook.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvdaybook.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvdaybook.BackgroundColor = System.Drawing.Color.White;
-            this.dgvdaybook.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvdaybook.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvdaybook.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvdaybook.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvdaybook.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvdaybook.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvdaybook.EnableHeadersVisualStyles = false;
-            this.dgvdaybook.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvdaybook.Location = new System.Drawing.Point(3, 119);
-            this.dgvdaybook.Name = "dgvdaybook";
-            this.dgvdaybook.RowHeadersVisible = false;
-            this.dgvdaybook.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdaybook.Size = new System.Drawing.Size(965, 397);
-            this.dgvdaybook.TabIndex = 2;
-            this.dgvdaybook.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgvdaybook.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvdaybook.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvdaybook.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvdaybook.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvdaybook.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvdaybook.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvdaybook.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvdaybook.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvdaybook.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvdaybook.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvdaybook.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvdaybook.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvdaybook.ThemeStyle.HeaderStyle.Height = 18;
-            this.dgvdaybook.ThemeStyle.ReadOnly = false;
-            this.dgvdaybook.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvdaybook.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvdaybook.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvdaybook.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvdaybook.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvdaybook.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvdaybook.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvdaybook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
             // 
             // label5
             // 
@@ -190,7 +143,7 @@
             this.txttotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotal.HoverState.Parent = this.txttotal;
-            this.txttotal.Location = new System.Drawing.Point(710, 13);
+            this.txttotal.Location = new System.Drawing.Point(807, 13);
             this.txttotal.Name = "txttotal";
             this.txttotal.PasswordChar = '\0';
             this.txttotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -217,7 +170,7 @@
             this.txtmoneyIn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtmoneyIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtmoneyIn.HoverState.Parent = this.txtmoneyIn;
-            this.txtmoneyIn.Location = new System.Drawing.Point(0, 13);
+            this.txtmoneyIn.Location = new System.Drawing.Point(138, 13);
             this.txtmoneyIn.Name = "txtmoneyIn";
             this.txtmoneyIn.PasswordChar = '\0';
             this.txtmoneyIn.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -244,7 +197,7 @@
             this.txtMoneyOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMoneyOut.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMoneyOut.HoverState.Parent = this.txtMoneyOut;
-            this.txtMoneyOut.Location = new System.Drawing.Point(343, 13);
+            this.txtMoneyOut.Location = new System.Drawing.Point(426, 13);
             this.txtMoneyOut.Name = "txtMoneyOut";
             this.txtMoneyOut.PasswordChar = '\0';
             this.txtMoneyOut.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -259,7 +212,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(695, 19);
+            this.label4.Location = new System.Drawing.Point(610, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 18);
             this.label4.TabIndex = 1;
@@ -270,7 +223,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(73, 22);
+            this.label1.Location = new System.Drawing.Point(26, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 38;
@@ -281,7 +234,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(407, 22);
+            this.label2.Location = new System.Drawing.Point(306, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 18);
             this.label2.TabIndex = 0;
@@ -401,11 +354,104 @@
             this.radioButton1.Text = "Sale";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.Sale);
+            this.tabControl1.Controls.Add(this.Purchase);
+            this.tabControl1.Controls.Add(this.SaleOrder);
+            this.tabControl1.Controls.Add(this.PurchaseOrder);
+            this.tabControl1.Location = new System.Drawing.Point(3, 126);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(965, 358);
+            this.tabControl1.TabIndex = 442;
+            this.tabControl1.Click += new System.EventHandler(this.Sale_Click);
+            // 
+            // Sale
+            // 
+            this.Sale.Controls.Add(this.dgvSale);
+            this.Sale.Location = new System.Drawing.Point(4, 25);
+            this.Sale.Name = "Sale";
+            this.Sale.Padding = new System.Windows.Forms.Padding(3);
+            this.Sale.Size = new System.Drawing.Size(957, 329);
+            this.Sale.TabIndex = 0;
+            this.Sale.Text = "Sale";
+            this.Sale.Click += new System.EventHandler(this.Sale_Click);
+            // 
+            // Purchase
+            // 
+            this.Purchase.Controls.Add(this.dgvpurchase);
+            this.Purchase.Location = new System.Drawing.Point(4, 25);
+            this.Purchase.Name = "Purchase";
+            this.Purchase.Padding = new System.Windows.Forms.Padding(3);
+            this.Purchase.Size = new System.Drawing.Size(957, 329);
+            this.Purchase.TabIndex = 1;
+            this.Purchase.Text = "Purchase";
+            this.Purchase.UseVisualStyleBackColor = true;
+            this.Purchase.Click += new System.EventHandler(this.Purchase_Click);
+            // 
+            // SaleOrder
+            // 
+            this.SaleOrder.Controls.Add(this.dgvsaleorder);
+            this.SaleOrder.Location = new System.Drawing.Point(4, 25);
+            this.SaleOrder.Name = "SaleOrder";
+            this.SaleOrder.Padding = new System.Windows.Forms.Padding(3);
+            this.SaleOrder.Size = new System.Drawing.Size(957, 329);
+            this.SaleOrder.TabIndex = 2;
+            this.SaleOrder.Text = "Sale Order";
+            this.SaleOrder.UseVisualStyleBackColor = true;
+            this.SaleOrder.Click += new System.EventHandler(this.SaleOrder_Click);
+            // 
+            // PurchaseOrder
+            // 
+            this.PurchaseOrder.Controls.Add(this.dgvpurchaseorder);
+            this.PurchaseOrder.Location = new System.Drawing.Point(4, 25);
+            this.PurchaseOrder.Name = "PurchaseOrder";
+            this.PurchaseOrder.Padding = new System.Windows.Forms.Padding(3);
+            this.PurchaseOrder.Size = new System.Drawing.Size(957, 329);
+            this.PurchaseOrder.TabIndex = 3;
+            this.PurchaseOrder.Text = "Purchase Order";
+            this.PurchaseOrder.UseVisualStyleBackColor = true;
+            this.PurchaseOrder.Click += new System.EventHandler(this.PurchaseOrder_Click);
+            // 
+            // dgvSale
+            // 
+            this.dgvSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSale.Location = new System.Drawing.Point(0, 0);
+            this.dgvSale.Name = "dgvSale";
+            this.dgvSale.Size = new System.Drawing.Size(951, 333);
+            this.dgvSale.TabIndex = 0;
+            // 
+            // dgvpurchase
+            // 
+            this.dgvpurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpurchase.Location = new System.Drawing.Point(3, -2);
+            this.dgvpurchase.Name = "dgvpurchase";
+            this.dgvpurchase.Size = new System.Drawing.Size(951, 333);
+            this.dgvpurchase.TabIndex = 1;
+            // 
+            // dgvsaleorder
+            // 
+            this.dgvsaleorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvsaleorder.Location = new System.Drawing.Point(3, -2);
+            this.dgvsaleorder.Name = "dgvsaleorder";
+            this.dgvsaleorder.Size = new System.Drawing.Size(951, 333);
+            this.dgvsaleorder.TabIndex = 1;
+            // 
+            // dgvpurchaseorder
+            // 
+            this.dgvpurchaseorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpurchaseorder.Location = new System.Drawing.Point(3, -2);
+            this.dgvpurchaseorder.Name = "dgvpurchaseorder";
+            this.dgvpurchaseorder.Size = new System.Drawing.Size(951, 333);
+            this.dgvpurchaseorder.TabIndex = 1;
+            // 
             // DayBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpdate);
@@ -416,18 +462,25 @@
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnimport);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dgvdaybook);
             this.Controls.Add(this.cmbAllfirms);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DayBook";
             this.Size = new System.Drawing.Size(981, 577);
             this.Load += new System.EventHandler(this.DayBook_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdaybook)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.Sale.ResumeLayout(false);
+            this.Purchase.ResumeLayout(false);
+            this.SaleOrder.ResumeLayout(false);
+            this.PurchaseOrder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpurchase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvsaleorder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvpurchaseorder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,7 +489,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvdaybook;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnimport;
@@ -455,5 +507,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage Sale;
+        private System.Windows.Forms.TabPage Purchase;
+        private System.Windows.Forms.TabPage SaleOrder;
+        private System.Windows.Forms.TabPage PurchaseOrder;
+        private System.Windows.Forms.DataGridView dgvSale;
+        private System.Windows.Forms.DataGridView dgvpurchase;
+        private System.Windows.Forms.DataGridView dgvsaleorder;
+        private System.Windows.Forms.DataGridView dgvpurchaseorder;
     }
 }
