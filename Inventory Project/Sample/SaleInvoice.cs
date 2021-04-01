@@ -38,6 +38,8 @@ namespace sample
         public int delloc;
         public int deldt;
         public int transname;
+        public int showadd;
+        public int printshowadd;
 
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
@@ -197,6 +199,14 @@ namespace sample
             {
                 txtDeliveryLoc.Show();
                 label11.Show();
+            }
+            con.Open();
+            SqlCommand cmd14 = new SqlCommand("Select ShippingAddress from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            showadd = Convert.ToInt32(cmd14.ExecuteScalar());
+            con.Close();
+            if (showadd == 1)
+            {
+                txtbillingadd.Enabled = true;
             }
             cmbpartyname.Focus();
             fetchcustomername();

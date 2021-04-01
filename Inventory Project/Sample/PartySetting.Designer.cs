@@ -77,6 +77,7 @@
             this.chkShippingAdd.UncheckedState.BorderRadius = 0;
             this.chkShippingAdd.UncheckedState.BorderThickness = 0;
             this.chkShippingAdd.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkShippingAdd.CheckedChanged += new System.EventHandler(this.chkShippingAdd_CheckedChanged);
             // 
             // label11
             // 
@@ -141,6 +142,7 @@
             this.chkPrintShipping.UncheckedState.BorderRadius = 0;
             this.chkPrintShipping.UncheckedState.BorderThickness = 0;
             this.chkPrintShipping.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkPrintShipping.CheckedChanged += new System.EventHandler(this.chkPrintShipping_CheckedChanged);
             // 
             // chkCustomerEnablePayment
             // 
@@ -325,6 +327,7 @@
             this.ToggleSwitch3.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.ToggleSwitch3.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.ToggleSwitch3.UncheckedState.Parent = this.ToggleSwitch3;
+            this.ToggleSwitch3.CheckedChanged += new System.EventHandler(this.ToggleSwitch3_CheckedChanged);
             // 
             // ToggleSwitch4
             // 

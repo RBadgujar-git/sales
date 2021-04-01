@@ -77,6 +77,7 @@
             this.chkEnableHSn.UncheckedState.BorderRadius = 0;
             this.chkEnableHSn.UncheckedState.BorderThickness = 0;
             this.chkEnableHSn.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEnableHSn.CheckedChanged += new System.EventHandler(this.chkEnableHSn_CheckedChanged);
             // 
             // chkAdditionalCases
             // 
@@ -87,9 +88,9 @@
             this.chkAdditionalCases.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkAdditionalCases.Location = new System.Drawing.Point(93, 162);
             this.chkAdditionalCases.Name = "chkAdditionalCases";
-            this.chkAdditionalCases.Size = new System.Drawing.Size(185, 20);
+            this.chkAdditionalCases.Size = new System.Drawing.Size(193, 20);
             this.chkAdditionalCases.TabIndex = 396;
-            this.chkAdditionalCases.Text = "Additinal Cases On Item";
+            this.chkAdditionalCases.Text = "Additional Cases On Item";
             this.chkAdditionalCases.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkAdditionalCases.UncheckedState.BorderRadius = 0;
             this.chkAdditionalCases.UncheckedState.BorderThickness = 0;
