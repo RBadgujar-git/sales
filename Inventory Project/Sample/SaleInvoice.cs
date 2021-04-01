@@ -579,12 +579,16 @@ namespace sample
                 MessageBox.Show("PO Date Is Requried Category");
                 dtpPodate.Focus();
             }
-            else if (cmbStatesupply.Text == "")
+            if (cmbStatesupply.Visible == true)
             {
-                MessageBox.Show("State Is Requried");
-                cmbStatesupply.Focus();
+                if (cmbStatesupply.Text == "")
+                {
+                    MessageBox.Show("State Is Requried");
+                    cmbStatesupply.Focus();
 
+                }
             }
+          
             else if (dtpInvoice.Text == "")
             {
                 MessageBox.Show("Invoice Date Is Required");
