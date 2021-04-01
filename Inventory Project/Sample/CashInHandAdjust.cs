@@ -452,13 +452,23 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select * from tbl_CashAdjustment where DeleteData = '1' and CashAdjustment like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
+                string Query = string.Format("select * from tbl_CashAdjustment where CashAdjustment like '%{0}%' or ID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvCashAdjustment.DataSource = ds;
                 dgvCashAdjustment.DataMember = "temp";
             }
+        }
+
+        private void cmbbankaccount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtCashadjustment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

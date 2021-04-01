@@ -195,13 +195,14 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            validfild();
-            if (verify == 1)
-            {
-                InsertData();
-                txtPartyname.Focus();
-                fetchdetails();
-            }
+                validfild();
+                if (verify == 1)
+                {
+                    InsertData();
+                    txtPartyname.Focus();
+                    fetchdetails();
+                }
+           
 
         }
 

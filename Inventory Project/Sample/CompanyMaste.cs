@@ -368,10 +368,6 @@ namespace sample
                 Delete1();
                 fetchdetails();
             }
-            else
-            {
-
-            }
         }
 
         private void CompanyMaste_Load(object sender, EventArgs e)
@@ -788,7 +784,7 @@ namespace sample
                     {
                         //chekpoint = 1;
                         MessageBox.Show("This Company Name is already Exist ");
-                        txtcampanyName.Clear();
+                        //txtcampanyName.Clear();
                         txtcampanyName.Focus();
                     }
 

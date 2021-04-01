@@ -102,8 +102,15 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();          
+            if (id == "")
+            {
+                InsertData();
+                fetchdetails();
+            }
+            else
+            {
+                MessageBox.Show("No Permission");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -257,7 +264,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("  select PartyGroupID,AddPartyGroup from tbl_PartyGroup where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AddPartyGroup like '%{0}%' or PartyGroupID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select PartyGroupID,AddPartyGroup from tbl_PartyGroup where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AddPartyGroup like '%{0}%' or PartyGroupID like '%{0}%' ", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -269,6 +276,39 @@ namespace sample
         private void txtPartyGroupName_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtPartyGroupName_TextChanged(object sender, EventArgs e)
+        {
+            //if (txtPartyGroupName.Text != "")
+            //{
+
+            //    if (con.State == ConnectionState.Closed)
+            //    {
+            //        con.Open();
+            //    }
+            //    //chekpoint = 0;
+            //    string Query = String.Format("select AddPartyGroup from tbl_PartyGroup where DeleteData ='1'");
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            //    SDA.Fill(ds, "Temp");
+            //    DataTable DT = new DataTable();
+            //    SDA.Fill(ds);
+            //    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //    {
+
+            //        string partyname = ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString();
+
+            //        if (partyname.ToLower().ToString() == txtPartyGroupName.Text.ToLower().ToString())
+            //        {
+            //            //chekpoint = 1;
+            //            MessageBox.Show("This Party Group Name is Already Exist ");
+            //            //txtcampanyName.Clear();
+            //            txtPartyGroupName.Focus();
+            //        }
+
+            //    }
+            //}
         }
     }
 }

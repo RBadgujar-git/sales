@@ -163,6 +163,7 @@
             this.txtPartyGroupName.ShadowDecoration.Parent = this.txtPartyGroupName;
             this.txtPartyGroupName.Size = new System.Drawing.Size(192, 31);
             this.txtPartyGroupName.TabIndex = 2;
+            this.txtPartyGroupName.TextChanged += new System.EventHandler(this.txtPartyGroupName_TextChanged);
             this.txtPartyGroupName.Load += new System.EventHandler(this.txtPartyGroupName_Load);
             this.txtPartyGroupName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPartyGroupName_KeyPress);
             // 
