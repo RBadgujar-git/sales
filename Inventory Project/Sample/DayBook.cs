@@ -43,48 +43,48 @@ namespace sample
 
         private void DayBook_Load(object sender, EventArgs e)
         {
-            if (radioButton1.Checked = true)
-            {
-                bind_sale();
-            }
-            else if (radioButton2.Checked = true)
-            {
-                bind_purchase();
-            }
-            else
-            {
-                dgvdaybook.Rows.Clear();
-            }
+            //if (radioButton1.Checked = true)
+            //{
+            //    bind_sale();
+            //}
+            //else if (radioButton2.Checked = true)
+            //{
+            //    bind_purchase();
+            //}
+            //else
+            //{
+            //    dgvdaybook.Rows.Clear();
+            //}
           // = DateTime.Now.ToShortDateString();
           
            // bind_purchase();
         }
-        private void bind_sale()
-        {
-            try
-            {
-                date1 = DateTime.Now.ToString("dd/MM/yyyy");
-                // string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_CreditNote1  where InvoiceDate='{0}'and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DebitNote  where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DeliveryChallan  where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,BillDate as Date,Total,Paid as 'Receievd/Paid',RemainingBal,Status from  tbl_PurchaseBill  where BillDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,OrderDate As Date,Total,Paid as 'Receievd/Paid',RemainingBal,Status from tbl_PurchaseOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from  tbl_SaleOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", date1);
-                string Query = string.Format("select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate='" + date1.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate='" + date1+ "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union  select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,BillDate as InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,OrderDate As InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseOrder where OrderDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,OrderDate as InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate='"+ date1 +"' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+        //private void bind_sale()
+        //{
+        //    try
+        //    {
+        //        date1 = DateTime.Now.ToString("dd/MM/yyyy");
+        //        // string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_CreditNote1  where InvoiceDate='{0}'and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DebitNote  where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,InvoiceDate,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_DeliveryChallan  where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,BillDate as Date,Total,Paid as 'Receievd/Paid',RemainingBal,Status from  tbl_PurchaseBill  where BillDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName,PartyName,OrderDate As Date,Total,Paid as 'Receievd/Paid',RemainingBal,Status from tbl_PurchaseOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as 'Receievd/Paid',RemainingBal,Status from  tbl_SaleOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", date1);
+        //        string Query = string.Format("select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate='" + date1.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate='" + date1+ "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union  select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,BillDate as InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,OrderDate As InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseOrder where OrderDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate='" + date1 + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName,PartyName,OrderDate as InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate='"+ date1 +"' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
 
-                //String Str = string.Format("Select PartyName as Name,InvoiceID as ReferenceNo,PaymentType as Type,Total as Total,Received as MoneyIn,RemainingBal as MoneyOut from tbl_SaleInvoice where InvoiceDate='{0}' and Company_ID='"+NewCompany.company_id+"' and DeleteData='1'",date1);
-                DataSet Ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(Ds, "Temp");
+        //        //String Str = string.Format("Select PartyName as Name,InvoiceID as ReferenceNo,PaymentType as Type,Total as Total,Received as MoneyIn,RemainingBal as MoneyOut from tbl_SaleInvoice where InvoiceDate='{0}' and Company_ID='"+NewCompany.company_id+"' and DeleteData='1'",date1);
+        //        DataSet Ds = new DataSet();
+        //        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+        //        SDA.Fill(Ds, "Temp");
                
-                dgvdaybook.DataSource = Ds;
-                dgvdaybook.DataMember = "Temp";
+        //        dgvdaybook.DataSource = Ds;
+        //        dgvdaybook.DataMember = "Temp";
                
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
-            finally
-            {
-                Bind_sale_TotalAmount();
-            }
-        }
+        //    }
+        //    catch (Exception e1)
+        //    {
+        //        MessageBox.Show(e1.Message);
+        //    }
+        //    finally
+        //    {
+        //        Bind_sale_TotalAmount();
+        //    }
+        //}
 
         //private void BindPurchase_TotalAmount()
         //{
@@ -103,46 +103,46 @@ namespace sample
         //        //MessageBox.Show(e1.Message);
         //    }
         //}
-        private void bind_purchase()
-        {
-            try
-            {
-                date1 = DateTime.Now.ToString("MM/dd/yyyy");
-                String Str = string.Format("Select PartyName as Name,BillNo as ReferenceNo,PaymentType as Type,Total as Total,Received as MoneyIn,RemainingBal as MoneyOut from tbl_PurchaseBill where BillDate='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", date1);
-                DataSet Ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Str, con);
-                SDA.Fill(Ds, "Temp");
+        //private void bind_purchase()
+        //{
+        //    try
+        //    {
+        //        date1 = DateTime.Now.ToString("MM/dd/yyyy");
+        //        String Str = string.Format("Select PartyName as Name,BillNo as ReferenceNo,PaymentType as Type,Total as Total,Received as MoneyIn,RemainingBal as MoneyOut from tbl_PurchaseBill where BillDate='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", date1);
+        //        DataSet Ds = new DataSet();
+        //        SqlDataAdapter SDA = new SqlDataAdapter(Str, con);
+        //        SDA.Fill(Ds, "Temp");
 
-                dgvdaybook.DataSource = Ds;
-                dgvdaybook.DataMember = "Temp";
+        //        dgvdaybook.DataSource = Ds;
+        //        dgvdaybook.DataMember = "Temp";
 
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
-            finally
-            {
-                Bind_sale_TotalAmount();
-            }
-        }
-        private void Bind_sale_TotalAmount()
-        {
-            try
-            {
-                float Sum = 0;
+        //    }
+        //    catch (Exception e1)
+        //    {
+        //        MessageBox.Show(e1.Message);
+        //    }
+        //    finally
+        //    {
+        //        Bind_sale_TotalAmount();
+        //    }
+        //}
+        //private void Bind_sale_TotalAmount()
+        //{
+        //    try
+        //    {
+        //        float Sum = 0;
 
-                for (int i = 0; i < dgvdaybook.Rows.Count; i++)
-                {
-                    Sum = Sum + float.Parse(dgvdaybook.Rows[i].Cells[3].Value.ToString());
-                    txtmoneyIn.Text = Sum.ToString();
-                }
-            }
-            catch (Exception e1)
-            {
-                //MessageBox.Show(e1.Message);
-            }
-        }
+        //        for (int i = 0; i < dgvdaybook.Rows.Count; i++)
+        //        {
+        //            Sum = Sum + float.Parse(dgvdaybook.Rows[i].Cells[3].Value.ToString());
+        //            txtmoneyIn.Text = Sum.ToString();
+        //        }
+        //    }
+        //    catch (Exception e1)
+        //    {
+        //        //MessageBox.Show(e1.Message);
+        //    }
+        //}
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -176,6 +176,40 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        public string todaydate;
+        private void Sale_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                todaydate = DateTime.Now.ToString("MM/dd/yyyy");
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,DiscountAmount1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvSale.DataSource = ds;
+                dgvSale.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Purchase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaleOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PurchaseOrder_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
