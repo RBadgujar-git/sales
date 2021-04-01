@@ -19,6 +19,7 @@ namespace sample
         // SqlConnection con;
         SqlCommand cmd;
         string id = "";
+        public int hns;
         public Itemmaster()
         {
             InitializeComponent();
@@ -158,7 +159,14 @@ namespace sample
             fetchcategory();
             dgvItemmaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             hidedatagri();
-
+           // con.Open();
+            SqlCommand cmd2 = new SqlCommand("Select HSN from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            hns = Convert.ToInt32(cmd2.ExecuteScalar());
+            con.Close();
+            if (hns == 1)
+            {
+                txtHSNcode.Enabled = true;
+            }
         }
 
         private void fetchcategory()
