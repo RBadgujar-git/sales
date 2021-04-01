@@ -159,7 +159,7 @@ namespace sample
             fetchcategory();
             dgvItemmaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             hidedatagri();
-            con.Open();
+           // con.Open();
             SqlCommand cmd2 = new SqlCommand("Select HSN from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             hns = Convert.ToInt32(cmd2.ExecuteScalar());
             con.Close();

@@ -28,10 +28,14 @@ namespace sample
 
         }
         public int dispurchase;
+        public int supplace;
+
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
             cleardata();
             fetchCategory();
+            cmbStatesupply.Hide();
+            label5.Hide();
             con.Open();
             SqlCommand cmd3 = new SqlCommand("Select DisplayPurchasePriseOnItem from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             dispurchase = Convert.ToInt32(cmd3.ExecuteScalar());
@@ -44,8 +48,15 @@ namespace sample
             {
                 fetchitem1();
             }
-           
-                   // fetchitem();
+            SqlCommand cmd4 = new SqlCommand("Select PlaceOfSupply from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            supplace = Convert.ToInt32(cmd4.ExecuteScalar());
+            con.Close();
+            if (supplace == 1)
+            {
+                cmbStatesupply.Show();
+                label5.Show();
+            }
+            // fetchitem();
             fetchcustomername();
           //  bind_sale_details();
             txtReturnNo.Enabled = false;

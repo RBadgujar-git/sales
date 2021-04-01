@@ -95,6 +95,7 @@
             this.chkAdditionalCases.UncheckedState.BorderRadius = 0;
             this.chkAdditionalCases.UncheckedState.BorderThickness = 0;
             this.chkAdditionalCases.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkAdditionalCases.CheckedChanged += new System.EventHandler(this.chkAdditionalCases_CheckedChanged);
             // 
             // chkRevesreCharges
             // 
@@ -163,6 +164,7 @@
             this.chkEWayBilling.UncheckedState.BorderRadius = 0;
             this.chkEWayBilling.UncheckedState.BorderThickness = 0;
             this.chkEWayBilling.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEWayBilling.CheckedChanged += new System.EventHandler(this.chkEWayBilling_CheckedChanged);
             // 
             // chkGenerateEWay
             // 

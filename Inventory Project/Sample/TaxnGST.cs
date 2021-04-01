@@ -16,8 +16,8 @@ namespace sample
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
 
         public int Hsn;
-        public int cashbydefault;
-        public int CustomerPoDetails;
+        public int supplace;
+        public int eway;
         public int billreport;
      
         public TaxnGST()
@@ -44,6 +44,14 @@ namespace sample
             {
                 chkEnableHSn.Checked = true;
             }
+            if (supplace == 1)
+            {
+                chkEnablePlace.Checked = true;
+            }
+            if (eway == 1)
+            {
+                chkEWayBilling.Checked = true;
+            }
         }
         public void cheekpass1()
         {
@@ -59,7 +67,9 @@ namespace sample
                 while (dr1.Read())
                 {
                     Hsn = Convert.ToInt32(dr1["HSN"]);
-                   // CustomerPoDetails = Convert.ToInt32(dr1["CustomerPoDetails"]);                   
+                    supplace = Convert.ToInt32(dr1["PlaceOfSupply"]);  
+                    eway = Convert.ToInt32(dr1["EwayBill"]);
+
                 }
                 dr1.Close();
             }
@@ -80,6 +90,34 @@ namespace sample
             else if (chkEnableHSn.Checked == false)
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set HSN = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void chkAdditionalCases_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEnablePlace.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PlaceOfSupply = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkEnablePlace.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PlaceOfSupply = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void chkEWayBilling_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEWayBilling.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set EwayBill = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkEWayBilling.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set EwayBill = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
         }

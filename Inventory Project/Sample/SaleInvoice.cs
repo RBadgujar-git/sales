@@ -40,6 +40,7 @@ namespace sample
         public int transname;
         public int showadd;
         public int printshowadd;
+        public int placesupp;
 
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
@@ -65,7 +66,8 @@ namespace sample
             txtcgst.Enabled = false;
             txtTaxAmount.Enabled = false;
             txtFreeQty.Enabled = false;
-            
+            cmbStatesupply.Hide();
+            label5.Hide();
             guna2TextBox2.Enabled = false;
             
             con.Open();
@@ -207,6 +209,15 @@ namespace sample
             if (showadd == 1)
             {
                 txtbillingadd.Enabled = true;
+            }
+            con.Open();
+            SqlCommand cmd15 = new SqlCommand("Select PlaceOfSupply from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            placesupp = Convert.ToInt32(cmd15.ExecuteScalar());
+            con.Close();
+            if (placesupp == 1)
+            {
+                cmbStatesupply.Enabled = true;
+                label5.Show();
             }
             cmbpartyname.Focus();
             fetchcustomername();
@@ -554,11 +565,15 @@ namespace sample
                 MessageBox.Show("Contact No. Is Required");
                 txtcon.Focus();
             }
-            else if (txtPoNo.Text == "")
+            else if (txtPoNo.Visible == true)
             {
-                MessageBox.Show("PO No Is Requried Required");
-                txtPoNo.Focus();
+                if (txtPoNo.Text == "")
+                {
+                    MessageBox.Show("PO No Is Requried Required");
+                    txtPoNo.Focus();
+                }
             }
+           
             else if (dtpPodate.Text == "")
             {
                 MessageBox.Show("PO Date Is Requried Category");
