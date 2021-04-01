@@ -1556,4 +1556,3 @@ C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\bin\Debug\Barcode.xml
