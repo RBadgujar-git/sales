@@ -119,9 +119,7 @@ namespace sample
 
                 cmd.Parameters.AddWithValue("@Action", "Select");
                // con.Close();
-
             }
-
         }
         public void fetchitem1()
         {
