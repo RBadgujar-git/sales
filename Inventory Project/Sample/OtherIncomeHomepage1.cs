@@ -84,7 +84,7 @@ namespace sample
         {
             lblBankAccount.Text = dgvCategory.Rows[e.RowIndex].Cells["OtherIncome"].Value.ToString();
 
-            string Query = string.Format("select Date,IncomeCategory,total,Paid,Balance from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by Date,IncomeCategory,total,Paid,Balance", lblBankAccount.Text);
+            string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by Date,IncomeCategory,total,Received,Balance", lblBankAccount.Text);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -99,7 +99,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select Date,IncomeCategory,total,Paid,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
+                string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -116,7 +116,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select Date,IncomeCategory,total,Paid,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
+                string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

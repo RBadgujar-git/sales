@@ -59,9 +59,14 @@ namespace sample
 
             // bind_purchase();
             Sale1();
+            OtherIncome1();
+            caltotalmoneyin();
             SaleOrder1();
             Purchase1();
             PurchaseOrder1();
+            Expenses1();
+            caltotalmoneyout();
+            TotalMoneyInOut();
         }
         //private void bind_sale()
         //{
@@ -90,23 +95,42 @@ namespace sample
         //    }
         //}
 
-        //private void BindPurchase_TotalAmount()
-        //{
-        //    try
-        //    {
-        //        float Sum = 0;
+        private void BindPurchase_TotalAmount()
+        {
+            try
+            {
+                float Sum = 0;
 
-        //        for (int i = 0; i < dgvdaybook.Rows.Count; i++)
-        //        {
-        //            Sum = Sum + float.Parse(dgvdaybook.Rows[i].Cells[2].Value.ToString());
-        //            txtMoneyOut.Text = Sum.ToString();
-        //        }
-        //    }
-        //    catch (Exception e1)
-        //    {
-        //        //MessageBox.Show(e1.Message);
-        //    }
-        //}
+                for (int i = 0; i < dgvpurchase.Rows.Count ; i++)
+                {
+                    Sum = Sum + float.Parse(dgvpurchase.Rows[i].Cells[4].Value.ToString());
+                  sumpurchase = Sum;
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
+
+        private void BindExpenses_TotalAmount()
+        {
+            try
+            {
+                float Sum = 0;
+
+                for (int i = 0; i < dgvExpenses.Rows.Count; i++)
+                {
+                    Sum = Sum + float.Parse(dgvExpenses.Rows[i].Cells[1].Value.ToString());
+                    sumexpenses = Sum;
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
+
         //private void bind_purchase()
         //{
         //    try
@@ -130,6 +154,33 @@ namespace sample
         //        Bind_sale_TotalAmount();
         //    }
         //}
+        float sumsale = 0;
+        float sumotherincome = 0;
+        float sumtotalmoneyin = 0;
+        private void caltotalmoneyin()
+        {
+            sumtotalmoneyin = sumsale + sumotherincome;
+            txtmoneyin.Text = sumtotalmoneyin.ToString();
+        }
+        private void BindOtherIncome_TotalAmount()
+        {
+            try
+            {
+                float Sum = 0;
+
+                for (int i = 0; i < dgvOtherIncome.Rows.Count; i++)
+                {
+                    Sum = Sum + float.Parse(dgvOtherIncome.Rows[i].Cells[2].Value.ToString());
+                    sumotherincome = Sum;
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
+
+
         private void Bind_sale_TotalAmount()
         {
             try
@@ -138,13 +189,13 @@ namespace sample
 
                 for (int i = 0; i < dgvSale.Rows.Count; i++)
                 {
-                    Sum = Sum + float.Parse(dgvSale.Rows[i].Cells[7].Value.ToString());
-                    txtmoneyIn.Text = Sum.ToString();
+                    Sum = Sum + float.Parse(dgvSale.Rows[i].Cells[5].Value.ToString());
+                    sumsale = Sum;
                 }
             }
             catch (Exception e1)
             {
-                //MessageBox.Show(e1.Message);
+                MessageBox.Show(e1.Message);
             }
         }
         private void btnminimize_Click(object sender, EventArgs e)
@@ -158,9 +209,11 @@ namespace sample
             {
                 try
                 {
-                    date = DateTime.Now.ToString("MM/dd/yyyy");
+                    date = DateTime.Now.ToString("yyyy/MM/dd");
+                    todaydate = DateTime.Now.ToString("yyyy/MM/dd");
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
+                    string Query = string.Format("SELECT a.PartyName,a.PaymentType, a.Received, a.InvoiceDate,b.PartyName,b.PaymentType,b.Paid,b.Total FROM tbl_SaleInvoice as a, tbl_PurchaseBill as b where a.InvoiceDate='{0}' and b.BillDate='{0}' ", date,todaydate);
+                    //string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -189,7 +242,7 @@ namespace sample
             try
             {
                 todaydate = DateTime.Now.ToString("yyyy/MM/dd");
-                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,DiscountAmount1,Received,RemainingBal,Total,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,DiscountAmount1,RemainingBal,Received,Total,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -216,12 +269,67 @@ namespace sample
             
         }
 
+        public void OtherIncome1()
+        {
+            try
+            {
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                string Query = string.Format("select IncomeCategory,Balance,Received,Total,Status from tbl_OtherIncome where Date = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvOtherIncome.DataSource = ds;
+                dgvOtherIncome.DataMember = "temp";
+                dgvOtherIncome.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                BindOtherIncome_TotalAmount();
+            }
+        }
+
+        float sumpurchase = 0;
+        float sumexpenses = 0;
+        float sumtotalmoneyout = 0;
+
+        private void caltotalmoneyout()
+        {
+            sumtotalmoneyout = sumexpenses + sumpurchase;
+            txtmoneyout.Text = sumtotalmoneyout.ToString();
+        }
+        public void Expenses1()
+        {
+            try
+            {
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                string Query = string.Format("select ExpenseCategory,Paid,Balance,Total,Status from tbl_Expenses where Date = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvExpenses.DataSource = ds;
+                dgvExpenses.DataMember = "temp";
+                dgvExpenses.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                BindExpenses_TotalAmount();
+            }
+        }
+
         public void Purchase1()
         {
             try
             {
                 todaydate = DateTime.Now.ToString("yyyy/MM/dd");
-                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,Paid,RemainingBal,Total,Status from tbl_PurchaseBill where BillDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,RemainingBal,Paid,Total,Status from tbl_PurchaseBill where BillDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -233,6 +341,18 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                BindPurchase_TotalAmount();
+            }
+        }
+
+        float moneyinout = 0;
+
+        private void TotalMoneyInOut()
+        {
+            moneyinout = sumtotalmoneyin - sumtotalmoneyout;
+            txttotalinout.Text = moneyinout.ToString();
         }
         public void PurchaseOrder1()
         {
@@ -284,5 +404,36 @@ namespace sample
         {
 
         }
+
+        private void Print_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    
+                    todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select PartyName,InvoiceDate,PaymentType,RemainingBal,Received,Total,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                    //string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"DayBookReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("DayBook", "DayBook", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
     }
 }

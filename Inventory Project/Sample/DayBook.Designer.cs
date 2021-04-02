@@ -32,9 +32,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txttotal = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtmoneyIn = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtMoneyOut = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,6 +52,12 @@
             this.dgvpurchaseorder = new System.Windows.Forms.DataGridView();
             this.OtherIncome = new System.Windows.Forms.TabPage();
             this.Expenses = new System.Windows.Forms.TabPage();
+            this.dgvOtherIncome = new System.Windows.Forms.DataGridView();
+            this.dgvExpenses = new System.Windows.Forms.DataGridView();
+            this.txtmoneyin = new System.Windows.Forms.TextBox();
+            this.txtmoneyout = new System.Windows.Forms.TextBox();
+            this.txttotalinout = new System.Windows.Forms.TextBox();
+            this.Print = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Sale.SuspendLayout();
@@ -65,6 +68,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvsaleorder)).BeginInit();
             this.PurchaseOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpurchaseorder)).BeginInit();
+            this.OtherIncome.SuspendLayout();
+            this.Expenses.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOtherIncome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAllfirms
@@ -111,9 +118,9 @@
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.txttotal);
-            this.guna2Panel1.Controls.Add(this.txtmoneyIn);
-            this.guna2Panel1.Controls.Add(this.txtMoneyOut);
+            this.guna2Panel1.Controls.Add(this.txttotalinout);
+            this.guna2Panel1.Controls.Add(this.txtmoneyout);
+            this.guna2Panel1.Controls.Add(this.txtmoneyin);
             this.guna2Panel1.Controls.Add(this.label4);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label2);
@@ -125,92 +132,11 @@
             this.guna2Panel1.TabIndex = 37;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
-            // txttotal
-            // 
-            this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txttotal.DefaultText = "";
-            this.txttotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txttotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txttotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttotal.DisabledState.Parent = this.txttotal;
-            this.txttotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txttotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttotal.FocusedState.Parent = this.txttotal;
-            this.txttotal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txttotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txttotal.HoverState.Parent = this.txttotal;
-            this.txttotal.Location = new System.Drawing.Point(719, 13);
-            this.txttotal.Name = "txttotal";
-            this.txttotal.PasswordChar = '\0';
-            this.txttotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txttotal.PlaceholderText = "0";
-            this.txttotal.SelectedText = "";
-            this.txttotal.ShadowDecoration.Parent = this.txttotal;
-            this.txttotal.Size = new System.Drawing.Size(142, 35);
-            this.txttotal.TabIndex = 41;
-            this.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtmoneyIn
-            // 
-            this.txtmoneyIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtmoneyIn.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtmoneyIn.DefaultText = "";
-            this.txtmoneyIn.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtmoneyIn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtmoneyIn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtmoneyIn.DisabledState.Parent = this.txtmoneyIn;
-            this.txtmoneyIn.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtmoneyIn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtmoneyIn.FocusedState.Parent = this.txtmoneyIn;
-            this.txtmoneyIn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtmoneyIn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtmoneyIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtmoneyIn.HoverState.Parent = this.txtmoneyIn;
-            this.txtmoneyIn.Location = new System.Drawing.Point(48, 13);
-            this.txtmoneyIn.Name = "txtmoneyIn";
-            this.txtmoneyIn.PasswordChar = '\0';
-            this.txtmoneyIn.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtmoneyIn.PlaceholderText = "0";
-            this.txtmoneyIn.SelectedText = "";
-            this.txtmoneyIn.ShadowDecoration.Parent = this.txtmoneyIn;
-            this.txtmoneyIn.Size = new System.Drawing.Size(142, 35);
-            this.txtmoneyIn.TabIndex = 40;
-            this.txtmoneyIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtMoneyOut
-            // 
-            this.txtMoneyOut.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMoneyOut.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMoneyOut.DefaultText = "";
-            this.txtMoneyOut.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMoneyOut.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMoneyOut.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMoneyOut.DisabledState.Parent = this.txtMoneyOut;
-            this.txtMoneyOut.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMoneyOut.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMoneyOut.FocusedState.Parent = this.txtMoneyOut;
-            this.txtMoneyOut.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMoneyOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtMoneyOut.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMoneyOut.HoverState.Parent = this.txtMoneyOut;
-            this.txtMoneyOut.Location = new System.Drawing.Point(329, 13);
-            this.txtMoneyOut.Name = "txtMoneyOut";
-            this.txtMoneyOut.PasswordChar = '\0';
-            this.txtMoneyOut.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtMoneyOut.PlaceholderText = "0";
-            this.txtMoneyOut.SelectedText = "";
-            this.txtMoneyOut.ShadowDecoration.Parent = this.txtMoneyOut;
-            this.txtMoneyOut.Size = new System.Drawing.Size(142, 35);
-            this.txtMoneyOut.TabIndex = 39;
-            this.txtMoneyOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(610, 22);
+            this.label4.Location = new System.Drawing.Point(599, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(191, 18);
             this.label4.TabIndex = 1;
@@ -287,6 +213,7 @@
             this.btnPrint.Size = new System.Drawing.Size(25, 26);
             this.btnPrint.TabIndex = 28;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Visible = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnimport
@@ -417,6 +344,8 @@
             // 
             // OtherIncome
             // 
+            this.OtherIncome.Controls.Add(this.Print);
+            this.OtherIncome.Controls.Add(this.dgvOtherIncome);
             this.OtherIncome.Location = new System.Drawing.Point(4, 25);
             this.OtherIncome.Name = "OtherIncome";
             this.OtherIncome.Padding = new System.Windows.Forms.Padding(3);
@@ -427,6 +356,7 @@
             // 
             // Expenses
             // 
+            this.Expenses.Controls.Add(this.dgvExpenses);
             this.Expenses.Location = new System.Drawing.Point(4, 25);
             this.Expenses.Name = "Expenses";
             this.Expenses.Padding = new System.Windows.Forms.Padding(3);
@@ -434,6 +364,56 @@
             this.Expenses.TabIndex = 5;
             this.Expenses.Text = "Expenses";
             this.Expenses.UseVisualStyleBackColor = true;
+            // 
+            // dgvOtherIncome
+            // 
+            this.dgvOtherIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOtherIncome.Location = new System.Drawing.Point(3, 37);
+            this.dgvOtherIncome.Name = "dgvOtherIncome";
+            this.dgvOtherIncome.Size = new System.Drawing.Size(951, 294);
+            this.dgvOtherIncome.TabIndex = 2;
+            // 
+            // dgvExpenses
+            // 
+            this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExpenses.Location = new System.Drawing.Point(3, -2);
+            this.dgvExpenses.Name = "dgvExpenses";
+            this.dgvExpenses.Size = new System.Drawing.Size(951, 333);
+            this.dgvExpenses.TabIndex = 2;
+            // 
+            // txtmoneyin
+            // 
+            this.txtmoneyin.Location = new System.Drawing.Point(128, 22);
+            this.txtmoneyin.Name = "txtmoneyin";
+            this.txtmoneyin.Size = new System.Drawing.Size(153, 23);
+            this.txtmoneyin.TabIndex = 42;
+            // 
+            // txtmoneyout
+            // 
+            this.txtmoneyout.Location = new System.Drawing.Point(426, 22);
+            this.txtmoneyout.Name = "txtmoneyout";
+            this.txtmoneyout.Size = new System.Drawing.Size(167, 23);
+            this.txtmoneyout.TabIndex = 43;
+            // 
+            // txttotalinout
+            // 
+            this.txttotalinout.Location = new System.Drawing.Point(793, 22);
+            this.txttotalinout.Name = "txttotalinout";
+            this.txttotalinout.Size = new System.Drawing.Size(172, 23);
+            this.txttotalinout.TabIndex = 44;
+            // 
+            // Print
+            // 
+            this.Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Print.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Print.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Print.Location = new System.Drawing.Point(6, 3);
+            this.Print.Name = "Print";
+            this.Print.Size = new System.Drawing.Size(90, 31);
+            this.Print.TabIndex = 31;
+            this.Print.Text = "Print";
+            this.Print.UseVisualStyleBackColor = false;
+            this.Print.Click += new System.EventHandler(this.Print_Click);
             // 
             // DayBook
             // 
@@ -467,6 +447,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvsaleorder)).EndInit();
             this.PurchaseOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpurchaseorder)).EndInit();
+            this.OtherIncome.ResumeLayout(false);
+            this.Expenses.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOtherIncome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,9 +468,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txttotal;
-        private Guna.UI2.WinForms.Guna2TextBox txtmoneyIn;
-        private Guna.UI2.WinForms.Guna2TextBox txtMoneyOut;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpdate;
         private System.Windows.Forms.Button btnminimize;
@@ -501,5 +482,11 @@
         private System.Windows.Forms.DataGridView dgvpurchaseorder;
         private System.Windows.Forms.TabPage OtherIncome;
         private System.Windows.Forms.TabPage Expenses;
+        private System.Windows.Forms.DataGridView dgvOtherIncome;
+        private System.Windows.Forms.DataGridView dgvExpenses;
+        private System.Windows.Forms.TextBox txtmoneyin;
+        private System.Windows.Forms.TextBox txtmoneyout;
+        private System.Windows.Forms.TextBox txttotalinout;
+        private System.Windows.Forms.Button Print;
     }
 }
