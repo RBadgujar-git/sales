@@ -55,9 +55,13 @@ namespace sample
             //{
             //    dgvdaybook.Rows.Clear();
             //}
-          // = DateTime.Now.ToShortDateString();
-          
-           // bind_purchase();
+            // = DateTime.Now.ToShortDateString();
+
+            // bind_purchase();
+            Sale1();
+            SaleOrder1();
+            Purchase1();
+            PurchaseOrder1();
         }
         //private void bind_sale()
         //{
@@ -71,10 +75,10 @@ namespace sample
         //        DataSet Ds = new DataSet();
         //        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
         //        SDA.Fill(Ds, "Temp");
-               
+
         //        dgvdaybook.DataSource = Ds;
         //        dgvdaybook.DataMember = "Temp";
-               
+
         //    }
         //    catch (Exception e1)
         //    {
@@ -126,23 +130,23 @@ namespace sample
         //        Bind_sale_TotalAmount();
         //    }
         //}
-        //private void Bind_sale_TotalAmount()
-        //{
-        //    try
-        //    {
-        //        float Sum = 0;
+        private void Bind_sale_TotalAmount()
+        {
+            try
+            {
+                float Sum = 0;
 
-        //        for (int i = 0; i < dgvdaybook.Rows.Count; i++)
-        //        {
-        //            Sum = Sum + float.Parse(dgvdaybook.Rows[i].Cells[3].Value.ToString());
-        //            txtmoneyIn.Text = Sum.ToString();
-        //        }
-        //    }
-        //    catch (Exception e1)
-        //    {
-        //        //MessageBox.Show(e1.Message);
-        //    }
-        //}
+                for (int i = 0; i < dgvSale.Rows.Count; i++)
+                {
+                    Sum = Sum + float.Parse(dgvSale.Rows[i].Cells[7].Value.ToString());
+                    txtmoneyIn.Text = Sum.ToString();
+                }
+            }
+            catch (Exception e1)
+            {
+                //MessageBox.Show(e1.Message);
+            }
+        }
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -179,35 +183,104 @@ namespace sample
         }
 
         public string todaydate;
-        private void Sale_Click(object sender, EventArgs e)
+
+        public void Sale1()
         {
             try
             {
-                todaydate = DateTime.Now.ToString("MM/dd/yyyy");
-                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,DiscountAmount1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,DiscountAmount1,Received,RemainingBal,Total,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvSale.DataSource = ds;
                 dgvSale.DataMember = "temp";
+                dgvSale.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Bind_sale_TotalAmount();
+            }
+        }
+        private void Sale_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Purchase_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void Purchase1()
+        {
+            try
+            {
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,Paid,RemainingBal,Total,Status from tbl_PurchaseBill where BillDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvpurchase.DataSource = ds;
+                dgvpurchase.DataMember = "temp";
+                dgvpurchase.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void Purchase_Click(object sender, EventArgs e)
+        public void PurchaseOrder1()
         {
-
+            try
+            {
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,Paid,RemainingBal,Total,Status from tbl_PurchaseOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvpurchaseorder.DataSource = ds;
+                dgvpurchaseorder.DataMember = "temp";
+                dgvpurchaseorder.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
+        public void SaleOrder1()
+        {
+            try
+            {
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                string Query = string.Format("select PartyName,PaymentType,TaxAmount1,Received,RemainingBal,Total,Status from tbl_SaleOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvsaleorder.DataSource = ds;
+                dgvsaleorder.DataMember = "temp";
+                dgvsaleorder.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void SaleOrder_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void PurchaseOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvpurchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
