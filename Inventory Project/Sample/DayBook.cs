@@ -468,5 +468,126 @@ namespace sample
                 }
             }
         }
+
+        private void PirntSaleOrder_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                DataSet ds = new DataSet();
+                string Query = string.Format("select PartyName,PaymentType,OrderDate,Received,RemainingBal,Total from tbl_SaleOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds);
+
+                StiReport report = new StiReport();
+                report.Load(@"DayBookSaleOrder.mrt");
+
+                report.Compile();
+                StiPage page = report.Pages[0];
+                report.RegData("DayBookSaleOrder", "DayBookSaleOrder", ds.Tables[0]);
+
+                report.Dictionary.Synchronize();
+                report.Render();
+                report.Show(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void PrintPurchaseOrder_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+
+                    todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select PartyName,PaymentType,OrderDate,Paid,RemainingBal,Total from tbl_PurchaseOrder where OrderDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"DayBookPurchaseOrder.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("DayBookPurchaseOrder", "DayBookPurchaseOrder", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void PrintOtherIcome_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+
+                    todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select IncomeCategory,Balance,Received,Total,Date from tbl_OtherIncome where Date = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"DayBookOtherIncome.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("DayBookOtherIncome", "DayBookOtherIncome", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void PrintExpenses_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+
+                    todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select ExpenseCategory,Paid,Balance,Total,Date from tbl_Expenses where Date = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"DayBookExpenses.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("DayBookExpenses", "DayBookExpenses", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
     }
 }

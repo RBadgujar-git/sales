@@ -78,18 +78,25 @@ namespace sample
 
         private void dgvcategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Category"].Value.ToString();
+            try
+            {
+                lblCategory.Text = dgvcategory.Rows[e.RowIndex].Cells["Category"].Value.ToString();
 
 
-            string Query = string.Format("select Date,ExpenseCategory,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by Date, ExpenseCategory, Total,Paid,Balance", lblCategory.Text);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(Query, con);
-            da.Fill(ds, "temp");
-            dgvExxpenses.DataSource = ds;
-            dgvExxpenses.DataMember = "temp";
-            this.dgvcategory.AllowUserToAddRows = false;
-            this.dgvExxpenses.AllowUserToAddRows = false;
-            lblCategory.Visible = true;
+                string Query = string.Format("select Date,ExpenseCategory,Total,Paid,Balance from tbl_Expenses where ExpenseCategory = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by Date, ExpenseCategory, Total,Paid,Balance", lblCategory.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvExxpenses.DataSource = ds;
+                dgvExxpenses.DataMember = "temp";
+                this.dgvcategory.AllowUserToAddRows = false;
+                this.dgvExxpenses.AllowUserToAddRows = false;
+                lblCategory.Visible = true;
+            }
+            catch(Exception ex)
+            {
+               //MessageBox.Show(ex.Message);
+            }
 
         }
 

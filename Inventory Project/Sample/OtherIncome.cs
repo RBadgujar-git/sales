@@ -254,9 +254,10 @@ namespace sample
 
                     txtItem.Focus();
 
-                    for (int i = 0; i < dgvinnerexpenses.Rows.Count; i++)
+                    for (int i = 0; i < dgvinnerexpenses.RowCount; i++)
                     {
                         TA += float.Parse(dgvinnerexpenses.Rows[i].Cells["Amount"].Value?.ToString());
+
                         txtTotal.Text = TA.ToString();
 
                     }
@@ -269,7 +270,7 @@ namespace sample
             }
             finally
             {
-                // clear_text_data();
+                clear_text_data();
             }
         }
         private void clear_text_data()
@@ -510,7 +511,7 @@ namespace sample
                 {
                     con.Open();
                 }
-                validdata();
+               // validdata();
                 if (veryfi == 1)
                 {
                     string str = string.Format("SELECT * FROM tbl_OtherIncome where Id =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");

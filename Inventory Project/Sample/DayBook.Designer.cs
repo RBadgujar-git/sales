@@ -421,6 +421,7 @@
             this.PrintExpenses.TabIndex = 3;
             this.PrintExpenses.Text = "Print";
             this.PrintExpenses.UseVisualStyleBackColor = false;
+            this.PrintExpenses.Click += new System.EventHandler(this.PrintExpenses_Click);
             // 
             // PrintSale1
             // 
@@ -453,6 +454,7 @@
             this.PirntSaleOrder.TabIndex = 4;
             this.PirntSaleOrder.Text = "Print";
             this.PirntSaleOrder.UseVisualStyleBackColor = false;
+            this.PirntSaleOrder.Click += new System.EventHandler(this.PirntSaleOrder_Click);
             // 
             // PrintPurchaseOrder
             // 
@@ -463,6 +465,7 @@
             this.PrintPurchaseOrder.TabIndex = 4;
             this.PrintPurchaseOrder.Text = "Print";
             this.PrintPurchaseOrder.UseVisualStyleBackColor = false;
+            this.PrintPurchaseOrder.Click += new System.EventHandler(this.PrintPurchaseOrder_Click);
             // 
             // PrintOtherIcome
             // 
@@ -473,6 +476,7 @@
             this.PrintOtherIcome.TabIndex = 4;
             this.PrintOtherIcome.Text = "Print";
             this.PrintOtherIcome.UseVisualStyleBackColor = false;
+            this.PrintOtherIcome.Click += new System.EventHandler(this.PrintOtherIcome_Click);
             // 
             // DayBook
             // 

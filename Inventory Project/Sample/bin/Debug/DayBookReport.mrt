@@ -172,7 +172,7 @@ Bal</Text>
             <Text2 Ref="13" type="Text" isKey="true">
               <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.8,1,5,0.8</ClientRectangle>
+              <ClientRectangle>2.2,1,5,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>a0c7a63a12db48529fdb934de52d4623</Guid>
@@ -340,7 +340,7 @@ Bal</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>2600c2f347034053abf7358b5b67c0d8</Guid>
-              <HorAlignment>Right</HorAlignment>
+              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text3</Name>
               <Page isRef="3" />
@@ -571,10 +571,10 @@ Bal</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/3/2021 12:06:05 PM</ReportChanged>
+  <ReportChanged>4/3/2021 12:16:27 PM</ReportChanged>
   <ReportCreated>3/23/2021 11:45:24 AM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\DayBookReport.mrt</ReportFile>
-  <ReportGuid>996bd0a34d3546dd9f15654330276302</ReportGuid>
+  <ReportGuid>365b8a0a99de4fb9bcacb8919601e749</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

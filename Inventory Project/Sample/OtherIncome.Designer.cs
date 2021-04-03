@@ -123,7 +123,7 @@
             // txtitemamount
             // 
             this.txtitemamount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtitemamount.DefaultText = "0";
+            this.txtitemamount.DefaultText = "00";
             this.txtitemamount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtitemamount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtitemamount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -141,7 +141,6 @@
             this.txtitemamount.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtitemamount.PlaceholderText = "";
             this.txtitemamount.SelectedText = "";
-            this.txtitemamount.SelectionStart = 1;
             this.txtitemamount.ShadowDecoration.Parent = this.txtitemamount;
             this.txtitemamount.Size = new System.Drawing.Size(150, 25);
             this.txtitemamount.TabIndex = 5;
