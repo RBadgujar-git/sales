@@ -164,7 +164,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@IncomeCategory", cmbexpenses.Text);
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtdescritpition.Text);           
-                cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
+                cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
@@ -194,7 +194,7 @@ namespace sample
             {
                 con.Open();
             }
-            string str = string.Format("SELECT * FROM tbl_Expenses where ID1 =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
+            string str = string.Format("SELECT * FROM tbl_OtherIncome where Id =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
             SqlCommand cmd = new SqlCommand(str, con);
 
             SqlDataReader dr = cmd.ExecuteReader();
@@ -323,7 +323,7 @@ namespace sample
                         txtdescritpition.Text = dr["Description"].ToString();
 
                         txtTotal.Text = dr["Total"].ToString();
-                        txtReceived.Text = dr["Paid"].ToString();
+                        txtReceived.Text = dr["Received"].ToString();
                         txtBalance.Text = dr["Balance"].ToString();
                         //txtrefNo.Text = dr["AdditionalFeild1"].ToString();
                         //txtAdditional1.Text = dr["Additional2"].ToString();
@@ -439,7 +439,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Date", dtpDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtdescritpition.Text);
                 // cmd.Parameters.AddWithValue("@Description", .Text);
-                cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
+                cmd.Parameters.AddWithValue("@Received", txtReceived.Text);
                 cmd.Parameters.AddWithValue("@Balance", txtBalance.Text);
                 cmd.Parameters.AddWithValue("@Total", txtTotal.Text);
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
@@ -740,7 +740,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select a.Id,a.ItemName,a.SalePrice,a.DeleteData,a.Qty,a.ItemAmount,b.Id,b.IncomeCategory,b.Date,b.Balance,b.Paid,b.Status,b.Company_ID,b.DeleteData,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber  from tbl_OtherIncomeInner3 as a,tbl_OtherIncome as b,tbl_CompanyMaster as c where a.Id={0} and b.Id={1} and c.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.DeleteData='1'", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("select a.Id,a.ItemName,a.SalePrice,a.DeleteData,a.Qty,a.ItemAmount,b.Id,b.IncomeCategory,b.Date,b.Balance,b.Received,b.Status,b.Company_ID,b.DeleteData,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber  from tbl_OtherIncomeInner3 as a,tbl_OtherIncome as b,tbl_CompanyMaster as c where a.Id={0} and b.Id={1} and c.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.DeleteData='1'", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

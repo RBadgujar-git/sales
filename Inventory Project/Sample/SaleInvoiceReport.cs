@@ -297,9 +297,9 @@ namespace sample
         }
         private void Bindadata()
         {
-            if (con.State == ConnectionState.Closed)
+            if(con.State == ConnectionState.Closed)
             {
-                con.Open();
+                 con.Open();
             }
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
