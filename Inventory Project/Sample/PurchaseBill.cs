@@ -48,6 +48,7 @@ namespace sample
             {
                 fetchitem1();
             }
+            con.Open();
             SqlCommand cmd4 = new SqlCommand("Select PlaceOfSupply from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             supplace = Convert.ToInt32(cmd4.ExecuteScalar());
             con.Close();

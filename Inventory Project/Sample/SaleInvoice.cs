@@ -41,6 +41,7 @@ namespace sample
         public int showadd;
         public int printshowadd;
         public int placesupp;
+        public int eway;
 
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
@@ -66,10 +67,10 @@ namespace sample
             txtcgst.Enabled = false;
             txtTaxAmount.Enabled = false;
             txtFreeQty.Enabled = false;
-            cmbStatesupply.Hide();
-            label5.Hide();
+            cmbStatesupply.Enabled=false;          
             guna2TextBox2.Enabled = false;
-            
+            textBox2.Hide();
+            label45.Hide();
             con.Open();
             SqlCommand cmd1 = new SqlCommand("Select [CashSaleByDefault] from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             gstint = Convert.ToInt32(cmd1.ExecuteScalar());
@@ -90,10 +91,10 @@ namespace sample
             con.Close();
             if (cust == 1)
             {
-                txtPoNo.Hide();
-                dtpPodate.Hide();
-                label4.Hide();
-                label9.Hide();
+                txtPoNo.Enabled=true;
+                dtpPodate.Enabled = true;
+                label4.Enabled = true;
+                label9.Enabled = true;
             }
             con.Open();
             SqlCommand cmd3 = new SqlCommand("Select DisplayPurchasePriseOnItem from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
@@ -216,8 +217,16 @@ namespace sample
             con.Close();
             if (placesupp == 1)
             {
-                cmbStatesupply.Enabled = true;
-                label5.Show();
+                cmbStatesupply.Enabled = true;              
+            }
+            con.Open();
+            SqlCommand cmd16 = new SqlCommand("Select EwayBill from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            eway = Convert.ToInt32(cmd16.ExecuteScalar());
+            con.Close();
+            if (eway == 1)
+            {
+                textBox2.Show();
+                label45.Show();
             }
             cmbpartyname.Focus();
             fetchcustomername();
@@ -1840,10 +1849,10 @@ namespace sample
         public int report4;
         private void Print_Click(object sender, EventArgs e)
         {           
-             con.Open();
+            
             SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             report4 = Convert.ToInt32(cmd1.ExecuteScalar());
-            con.Close();
+           
             if (report4 == 1)
             {
                 report1();
