@@ -486,7 +486,7 @@ namespace sample
             }
         }
 
-        private void insert_record_inner(string id)
+        private void insert_record_inner(string id1)
         {
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
             {
@@ -526,7 +526,7 @@ namespace sample
                    String ItemName = dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString();
                     float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
                     float freeqty = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
-                    float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["ItemID"].Value.ToString());
+                    //float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["ItemID"].Value.ToString());
 
                     ////   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
@@ -555,7 +555,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                  // MessageBox.Show(e1.Message);
+                   MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -1850,8 +1850,8 @@ namespace sample
         }
         public int report4;
         private void Print_Click(object sender, EventArgs e)
-        {           
-            
+        {
+            con.Open();
             SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             report4 = Convert.ToInt32(cmd1.ExecuteScalar());
            
@@ -1863,6 +1863,7 @@ namespace sample
             {
                 report();
             }
+            con.Close();
         }
         private void cmbpartyname1_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -29,6 +29,24 @@ namespace sample
         }
         public int dispurchase;
         public int supplace;
+        public int gstint;
+        public int cust;
+       // public int dispurchase;
+        public int displayfree;
+        public int count1;
+        public int taxwise;
+        public int diswise;
+        public int show;
+        public int duedate;
+        public int round;
+        public int vehicle;
+        public int delloc;
+        public int deldt;
+        public int transname;
+        public int showadd;
+        public int printshowadd;
+        public int placesupp;
+        public int eway;
 
         private void PurchaseBill_Load(object sender, EventArgs e)
         {
@@ -36,6 +54,26 @@ namespace sample
             fetchCategory();
             cmbStatesupply.Hide();
             label5.Hide();
+            chkRoundOff.Hide();
+            txtRoundup.Hide();          
+            txtVehicleNo.Hide();
+            txtTransportName.Hide();
+            DtpdeliveryDate.Hide();
+            txtDeliveryLoc.Hide();
+            label8.Hide();
+            label12.Hide();
+            label11.Hide();
+            label16.Hide();
+            txtDiscount.Enabled = false;
+            txtDisAmount.Enabled = false;
+            cmbtax.Enabled = false;
+            guna2TextBox1.Enabled = false;
+            txtsgst.Enabled = false;
+            txtcgst.Enabled = false;
+            txtTaxAmount.Enabled = false;
+            txtFreeQty.Enabled = false;
+            cmbStatesupply.Enabled = false;
+            guna2TextBox2.Enabled = false;
             con.Open();
             SqlCommand cmd3 = new SqlCommand("Select DisplayPurchasePriseOnItem from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             dispurchase = Convert.ToInt32(cmd3.ExecuteScalar());
@@ -56,6 +94,59 @@ namespace sample
             {
                 cmbStatesupply.Show();
                 label5.Show();
+            }
+            con.Open();
+            SqlCommand cmd9 = new SqlCommand("Select RoundOff from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            round = Convert.ToInt32(cmd9.ExecuteScalar());
+            con.Close();
+            if (round == 1)
+            {
+                chkRoundOff.Show();
+                txtRoundup.Show();
+            }
+            con.Open();
+            SqlCommand cmd10 = new SqlCommand("Select VehicleNo from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            vehicle = Convert.ToInt32(cmd10.ExecuteScalar());
+            con.Close();
+            if (vehicle == 1)
+            {
+                txtVehicleNo.Show();
+                label12.Show();
+            }
+            con.Open();
+            SqlCommand cmd11 = new SqlCommand("Select TransportName from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            transname = Convert.ToInt32(cmd11.ExecuteScalar());
+            con.Close();
+            if (transname == 1)
+            {
+                txtTransportName.Show();
+                label8.Show();
+            }
+            con.Open();
+            SqlCommand cmd12 = new SqlCommand("Select DeliveryDate from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            deldt = Convert.ToInt32(cmd12.ExecuteScalar());
+            con.Close();
+            if (deldt == 1)
+            {
+                DtpdeliveryDate.Show();
+                label16.Show();
+            }
+            con.Open();
+            SqlCommand cmd13 = new SqlCommand("Select DeliveryLocation from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            delloc = Convert.ToInt32(cmd13.ExecuteScalar());
+            con.Close();
+            if (delloc == 1)
+            {
+                txtDeliveryLoc.Show();
+                label11.Show();
+            }
+            con.Open();
+            SqlCommand cmd14 = new SqlCommand("Select ShippingAddress from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            showadd = Convert.ToInt32(cmd14.ExecuteScalar());
+            con.Close();
+            if (showadd == 1)
+            {
+                txtbillingadd.Enabled = true;
             }
             // fetchitem();
             fetchcustomername();
@@ -155,12 +246,14 @@ namespace sample
                     SDA.Fill(ds, "Temp");
                     DataTable DT = new DataTable();
                     SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
                         cmbpartyname.Items.Add(ds.Tables["Temp"].Rows[i]["PartyName"].ToString());
 
                     }
                 }
-                catch (Exception e1) {
+                catch (Exception e1)
+                {
                    // MessageBox.Show(e1.Message);
                 }
                
@@ -285,6 +378,7 @@ namespace sample
         int row = 0;
         public int dublication, ip;
         private void txtItemTotal_KeyDown(object sender, KeyEventArgs e)
+
         {
             try {
 
@@ -350,8 +444,6 @@ namespace sample
                             guna2DataGridView2.Rows[row].Cells[1].Value = txtItem;
                             guna2DataGridView2.Rows[row].Cells[2].Value = Item_code;
                             guna2DataGridView2.Rows[row].Cells[3].Value = Unit;
-
-
                             guna2DataGridView2.Rows[row].Cells[4].Value = MRP;
                             guna2DataGridView2.Rows[row].Cells[7].Value = qty;
                             guna2DataGridView2.Rows[row].Cells[8].Value = freeqty;
@@ -386,7 +478,9 @@ namespace sample
                 }
             }
             catch (Exception e1) {
-              //  string message = e1.Message;
+                string message = e1.Message;
+                   MessageBox.Show(e1.Message);
+
             }
         }
 

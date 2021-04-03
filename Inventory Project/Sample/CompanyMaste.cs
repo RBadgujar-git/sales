@@ -235,20 +235,52 @@ namespace sample
         }
     private void btnsave_Click(object sender, EventArgs e)
         {
-            if (id == "")
+            if (txtcampanyName.Text != "")
             {
-                validfild();
-                if (verify == 1)
+
+                if (con.State == ConnectionState.Closed)
                 {
-                    Insert1();
-                    txtcampanyName.Focus();
-                    Seeting();
-                    fetchdetails();
+                    con.Open();
+                }
+                //chekpoint = 0;
+                string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+
+                    string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+
+                    if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
+                    {
+                        //chekpoint = 1;
+                        MessageBox.Show("This Company Name is already Exist ");
+                        //txtcampanyName.Clear();
+                        txtcampanyName.Focus();
+                    }
+
                 }
             }
             else
             {
-                MessageBox.Show("No Permission");
+                if (id == "")
+                {
+                    validfild();
+                    if (verify == 1)
+                    {
+                        Insert1();
+                        txtcampanyName.Focus();
+                        Seeting();
+                        fetchdetails();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No Permission");
+                }
             }
         }
 
@@ -386,26 +418,29 @@ namespace sample
         byte[] arrImage1 = null;
         private void picCompanyLogo_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
-            openFileDialog1.Multiselect = true;
-            openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (MessageBox.Show("Are You Sure To Change The Company Logo ??? This Will Affect All Reports And Receipts", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
+                openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
+                openFileDialog1.Multiselect = true;
+                openFileDialog1.RestoreDirectory = true;
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
+                    int count = 1;
+                    foreach (String file in openFileDialog1.FileNames)
                     {
-                        picCompanyLogo.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        picCompanyLogo.Image.Save(ms, picCompanyLogo.Image.RawFormat);
-                        arrImage1 = ms.GetBuffer();
+                        PictureBox pb = new PictureBox();
+                        Image loadedImage = Image.FromFile(file);
+
+                        if (count == 1)
+                        {
+                            picCompanyLogo.Image = Image.FromFile(file);
+                            //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                            picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+                            MemoryStream ms = new MemoryStream();
+                            picCompanyLogo.Image.Save(ms, picCompanyLogo.Image.RawFormat);
+                            arrImage1 = ms.GetBuffer();
+                        }
                     }
                 }
             }
@@ -417,26 +452,30 @@ namespace sample
 
         private void picSignature_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (MessageBox.Show("Are You Sure To Change The Signature ??? \n This Will Affect All Reports And Receipts", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
             openFileDialog1.Multiselect = true;
             openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                int count = 1;
-                foreach (String file in openFileDialog1.FileNames)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    PictureBox pb = new PictureBox();
-                    Image loadedImage = Image.FromFile(file);
-
-                    if (count == 1)
+                    int count = 1;
+                    foreach (String file in openFileDialog1.FileNames)
                     {
-                        picSignature.Image = Image.FromFile(file);
-                        //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
-                        picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
-                        MemoryStream ms = new MemoryStream();
-                        picSignature.Image.Save(ms, picSignature.Image.RawFormat);
-                        arrImage2 = ms.GetBuffer();
+                        PictureBox pb = new PictureBox();
+                        Image loadedImage = Image.FromFile(file);
+
+                        if (count == 1)
+                        {
+                            picSignature.Image = Image.FromFile(file);
+                            //   pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                            picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
+                            MemoryStream ms = new MemoryStream();
+                            picSignature.Image.Save(ms, picSignature.Image.RawFormat);
+                            arrImage2 = ms.GetBuffer();
+                        }
                     }
                 }
             }
@@ -759,41 +798,12 @@ namespace sample
 
         private void txtcampanyName_TextChanged(object sender, EventArgs e)
         {
-
-
-            if (txtcampanyName.Text != "")
-            {
-
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                //chekpoint = 0;
-                string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(ds, "Temp");
-                DataTable DT = new DataTable();
-                SDA.Fill(ds);
-                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                {
-
-                    string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
-
-                    if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
-                    {
-                        //chekpoint = 1;
-                        MessageBox.Show("This Company Name is already Exist ");
-                        //txtcampanyName.Clear();
-                        txtcampanyName.Focus();
-                    }
-
-                }
-            }
+           
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
+
         }
 
         private void txtserach_TextChanged(object sender, EventArgs e)
