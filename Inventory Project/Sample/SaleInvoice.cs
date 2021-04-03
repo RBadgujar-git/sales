@@ -574,7 +574,7 @@ namespace sample
                 MessageBox.Show("Contact No. Is Required");
                 txtcon.Focus();
             }
-            else if (txtPoNo.Visible == true)
+            else if (txtPoNo.Enabled == true)
             {
                 if (txtPoNo.Text == "")
                 {
@@ -582,19 +582,21 @@ namespace sample
                     txtPoNo.Focus();
                 }
             }
-           
-            else if (dtpPodate.Text == "")
+            else if (dtpPodate.Enabled == true)
             {
-                MessageBox.Show("PO Date Is Requried Category");
-                dtpPodate.Focus();
+                 if (dtpPodate.Text == "")
+                {
+                    MessageBox.Show("PO Date Is Requried Category");
+                    dtpPodate.Focus();
+                }
             }
-            if (cmbStatesupply.Visible == true)
+           
+            if (cmbStatesupply.Enabled == true)
             {
                 if (cmbStatesupply.Text == "")
                 {
                     MessageBox.Show("State Is Requried");
                     cmbStatesupply.Focus();
-
                 }
             }
           
