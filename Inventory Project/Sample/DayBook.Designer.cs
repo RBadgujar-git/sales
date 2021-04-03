@@ -32,6 +32,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txttotalinout = new System.Windows.Forms.TextBox();
+            this.txtmoneyout = new System.Windows.Forms.TextBox();
+            this.txtmoneyin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,13 +54,15 @@
             this.PurchaseOrder = new System.Windows.Forms.TabPage();
             this.dgvpurchaseorder = new System.Windows.Forms.DataGridView();
             this.OtherIncome = new System.Windows.Forms.TabPage();
-            this.Expenses = new System.Windows.Forms.TabPage();
             this.dgvOtherIncome = new System.Windows.Forms.DataGridView();
+            this.Expenses = new System.Windows.Forms.TabPage();
             this.dgvExpenses = new System.Windows.Forms.DataGridView();
-            this.txtmoneyin = new System.Windows.Forms.TextBox();
-            this.txtmoneyout = new System.Windows.Forms.TextBox();
-            this.txttotalinout = new System.Windows.Forms.TextBox();
-            this.Print = new System.Windows.Forms.Button();
+            this.PrintExpenses = new System.Windows.Forms.Button();
+            this.PrintSale1 = new System.Windows.Forms.Button();
+            this.PrintPurchase1 = new System.Windows.Forms.Button();
+            this.PirntSaleOrder = new System.Windows.Forms.Button();
+            this.PrintPurchaseOrder = new System.Windows.Forms.Button();
+            this.PrintOtherIcome = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.Sale.SuspendLayout();
@@ -69,8 +74,8 @@
             this.PurchaseOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpurchaseorder)).BeginInit();
             this.OtherIncome.SuspendLayout();
-            this.Expenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherIncome)).BeginInit();
+            this.Expenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +136,27 @@
             this.guna2Panel1.Size = new System.Drawing.Size(981, 68);
             this.guna2Panel1.TabIndex = 37;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // txttotalinout
+            // 
+            this.txttotalinout.Location = new System.Drawing.Point(793, 22);
+            this.txttotalinout.Name = "txttotalinout";
+            this.txttotalinout.Size = new System.Drawing.Size(172, 23);
+            this.txttotalinout.TabIndex = 44;
+            // 
+            // txtmoneyout
+            // 
+            this.txtmoneyout.Location = new System.Drawing.Point(426, 22);
+            this.txtmoneyout.Name = "txtmoneyout";
+            this.txtmoneyout.Size = new System.Drawing.Size(167, 23);
+            this.txtmoneyout.TabIndex = 43;
+            // 
+            // txtmoneyin
+            // 
+            this.txtmoneyin.Location = new System.Drawing.Point(128, 22);
+            this.txtmoneyin.Name = "txtmoneyin";
+            this.txtmoneyin.Size = new System.Drawing.Size(153, 23);
+            this.txtmoneyin.TabIndex = 42;
             // 
             // label4
             // 
@@ -255,7 +281,7 @@
             this.tabControl1.Controls.Add(this.PurchaseOrder);
             this.tabControl1.Controls.Add(this.OtherIncome);
             this.tabControl1.Controls.Add(this.Expenses);
-            this.tabControl1.Location = new System.Drawing.Point(3, 126);
+            this.tabControl1.Location = new System.Drawing.Point(7, 113);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(965, 358);
@@ -264,6 +290,7 @@
             // 
             // Sale
             // 
+            this.Sale.Controls.Add(this.PrintSale1);
             this.Sale.Controls.Add(this.dgvSale);
             this.Sale.Location = new System.Drawing.Point(4, 25);
             this.Sale.Name = "Sale";
@@ -276,13 +303,14 @@
             // dgvSale
             // 
             this.dgvSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSale.Location = new System.Drawing.Point(0, 0);
+            this.dgvSale.Location = new System.Drawing.Point(3, 34);
             this.dgvSale.Name = "dgvSale";
-            this.dgvSale.Size = new System.Drawing.Size(951, 333);
+            this.dgvSale.Size = new System.Drawing.Size(951, 289);
             this.dgvSale.TabIndex = 0;
             // 
             // Purchase
             // 
+            this.Purchase.Controls.Add(this.PrintPurchase1);
             this.Purchase.Controls.Add(this.dgvpurchase);
             this.Purchase.Location = new System.Drawing.Point(4, 25);
             this.Purchase.Name = "Purchase";
@@ -296,14 +324,15 @@
             // dgvpurchase
             // 
             this.dgvpurchase.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvpurchase.Location = new System.Drawing.Point(3, -2);
+            this.dgvpurchase.Location = new System.Drawing.Point(3, 33);
             this.dgvpurchase.Name = "dgvpurchase";
-            this.dgvpurchase.Size = new System.Drawing.Size(951, 333);
+            this.dgvpurchase.Size = new System.Drawing.Size(951, 293);
             this.dgvpurchase.TabIndex = 1;
             this.dgvpurchase.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpurchase_CellContentClick);
             // 
             // SaleOrder
             // 
+            this.SaleOrder.Controls.Add(this.PirntSaleOrder);
             this.SaleOrder.Controls.Add(this.dgvsaleorder);
             this.SaleOrder.Location = new System.Drawing.Point(4, 25);
             this.SaleOrder.Name = "SaleOrder";
@@ -317,13 +346,14 @@
             // dgvsaleorder
             // 
             this.dgvsaleorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvsaleorder.Location = new System.Drawing.Point(3, -2);
+            this.dgvsaleorder.Location = new System.Drawing.Point(3, 32);
             this.dgvsaleorder.Name = "dgvsaleorder";
-            this.dgvsaleorder.Size = new System.Drawing.Size(951, 333);
+            this.dgvsaleorder.Size = new System.Drawing.Size(951, 293);
             this.dgvsaleorder.TabIndex = 1;
             // 
             // PurchaseOrder
             // 
+            this.PurchaseOrder.Controls.Add(this.PrintPurchaseOrder);
             this.PurchaseOrder.Controls.Add(this.dgvpurchaseorder);
             this.PurchaseOrder.Location = new System.Drawing.Point(4, 25);
             this.PurchaseOrder.Name = "PurchaseOrder";
@@ -337,14 +367,14 @@
             // dgvpurchaseorder
             // 
             this.dgvpurchaseorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvpurchaseorder.Location = new System.Drawing.Point(3, -2);
+            this.dgvpurchaseorder.Location = new System.Drawing.Point(3, 31);
             this.dgvpurchaseorder.Name = "dgvpurchaseorder";
-            this.dgvpurchaseorder.Size = new System.Drawing.Size(951, 333);
+            this.dgvpurchaseorder.Size = new System.Drawing.Size(951, 295);
             this.dgvpurchaseorder.TabIndex = 1;
             // 
             // OtherIncome
             // 
-            this.OtherIncome.Controls.Add(this.Print);
+            this.OtherIncome.Controls.Add(this.PrintOtherIcome);
             this.OtherIncome.Controls.Add(this.dgvOtherIncome);
             this.OtherIncome.Location = new System.Drawing.Point(4, 25);
             this.OtherIncome.Name = "OtherIncome";
@@ -354,8 +384,17 @@
             this.OtherIncome.Text = "Other Income";
             this.OtherIncome.UseVisualStyleBackColor = true;
             // 
+            // dgvOtherIncome
+            // 
+            this.dgvOtherIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOtherIncome.Location = new System.Drawing.Point(3, 31);
+            this.dgvOtherIncome.Name = "dgvOtherIncome";
+            this.dgvOtherIncome.Size = new System.Drawing.Size(951, 294);
+            this.dgvOtherIncome.TabIndex = 2;
+            // 
             // Expenses
             // 
+            this.Expenses.Controls.Add(this.PrintExpenses);
             this.Expenses.Controls.Add(this.dgvExpenses);
             this.Expenses.Location = new System.Drawing.Point(4, 25);
             this.Expenses.Name = "Expenses";
@@ -365,55 +404,79 @@
             this.Expenses.Text = "Expenses";
             this.Expenses.UseVisualStyleBackColor = true;
             // 
-            // dgvOtherIncome
-            // 
-            this.dgvOtherIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOtherIncome.Location = new System.Drawing.Point(3, 37);
-            this.dgvOtherIncome.Name = "dgvOtherIncome";
-            this.dgvOtherIncome.Size = new System.Drawing.Size(951, 294);
-            this.dgvOtherIncome.TabIndex = 2;
-            // 
             // dgvExpenses
             // 
             this.dgvExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExpenses.Location = new System.Drawing.Point(3, -2);
+            this.dgvExpenses.Location = new System.Drawing.Point(4, 34);
             this.dgvExpenses.Name = "dgvExpenses";
-            this.dgvExpenses.Size = new System.Drawing.Size(951, 333);
+            this.dgvExpenses.Size = new System.Drawing.Size(951, 293);
             this.dgvExpenses.TabIndex = 2;
             // 
-            // txtmoneyin
+            // PrintExpenses
             // 
-            this.txtmoneyin.Location = new System.Drawing.Point(128, 22);
-            this.txtmoneyin.Name = "txtmoneyin";
-            this.txtmoneyin.Size = new System.Drawing.Size(153, 23);
-            this.txtmoneyin.TabIndex = 42;
+            this.PrintExpenses.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PrintExpenses.Location = new System.Drawing.Point(6, 6);
+            this.PrintExpenses.Name = "PrintExpenses";
+            this.PrintExpenses.Size = new System.Drawing.Size(75, 23);
+            this.PrintExpenses.TabIndex = 3;
+            this.PrintExpenses.Text = "Print";
+            this.PrintExpenses.UseVisualStyleBackColor = false;
+            this.PrintExpenses.Click += new System.EventHandler(this.PrintExpenses_Click);
             // 
-            // txtmoneyout
+            // PrintSale1
             // 
-            this.txtmoneyout.Location = new System.Drawing.Point(426, 22);
-            this.txtmoneyout.Name = "txtmoneyout";
-            this.txtmoneyout.Size = new System.Drawing.Size(167, 23);
-            this.txtmoneyout.TabIndex = 43;
+            this.PrintSale1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PrintSale1.Location = new System.Drawing.Point(8, 6);
+            this.PrintSale1.Name = "PrintSale1";
+            this.PrintSale1.Size = new System.Drawing.Size(75, 23);
+            this.PrintSale1.TabIndex = 4;
+            this.PrintSale1.Text = "Print";
+            this.PrintSale1.UseVisualStyleBackColor = false;
+            this.PrintSale1.Click += new System.EventHandler(this.PrintSale1_Click);
             // 
-            // txttotalinout
+            // PrintPurchase1
             // 
-            this.txttotalinout.Location = new System.Drawing.Point(793, 22);
-            this.txttotalinout.Name = "txttotalinout";
-            this.txttotalinout.Size = new System.Drawing.Size(172, 23);
-            this.txttotalinout.TabIndex = 44;
+            this.PrintPurchase1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PrintPurchase1.Location = new System.Drawing.Point(9, 6);
+            this.PrintPurchase1.Name = "PrintPurchase1";
+            this.PrintPurchase1.Size = new System.Drawing.Size(75, 23);
+            this.PrintPurchase1.TabIndex = 4;
+            this.PrintPurchase1.Text = "Print";
+            this.PrintPurchase1.UseVisualStyleBackColor = false;
+            this.PrintPurchase1.Click += new System.EventHandler(this.PrintPurchase1_Click);
             // 
-            // Print
+            // PirntSaleOrder
             // 
-            this.Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Print.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Print.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Print.Location = new System.Drawing.Point(6, 3);
-            this.Print.Name = "Print";
-            this.Print.Size = new System.Drawing.Size(90, 31);
-            this.Print.TabIndex = 31;
-            this.Print.Text = "Print";
-            this.Print.UseVisualStyleBackColor = false;
-            this.Print.Click += new System.EventHandler(this.Print_Click);
+            this.PirntSaleOrder.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PirntSaleOrder.Location = new System.Drawing.Point(6, 5);
+            this.PirntSaleOrder.Name = "PirntSaleOrder";
+            this.PirntSaleOrder.Size = new System.Drawing.Size(75, 23);
+            this.PirntSaleOrder.TabIndex = 4;
+            this.PirntSaleOrder.Text = "Print";
+            this.PirntSaleOrder.UseVisualStyleBackColor = false;
+            this.PirntSaleOrder.Click += new System.EventHandler(this.PirntSaleOrder_Click);
+            // 
+            // PrintPurchaseOrder
+            // 
+            this.PrintPurchaseOrder.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PrintPurchaseOrder.Location = new System.Drawing.Point(6, 5);
+            this.PrintPurchaseOrder.Name = "PrintPurchaseOrder";
+            this.PrintPurchaseOrder.Size = new System.Drawing.Size(75, 23);
+            this.PrintPurchaseOrder.TabIndex = 4;
+            this.PrintPurchaseOrder.Text = "Print";
+            this.PrintPurchaseOrder.UseVisualStyleBackColor = false;
+            this.PrintPurchaseOrder.Click += new System.EventHandler(this.PrintPurchaseOrder_Click);
+            // 
+            // PrintOtherIcome
+            // 
+            this.PrintOtherIcome.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.PrintOtherIcome.Location = new System.Drawing.Point(6, 5);
+            this.PrintOtherIcome.Name = "PrintOtherIcome";
+            this.PrintOtherIcome.Size = new System.Drawing.Size(75, 23);
+            this.PrintOtherIcome.TabIndex = 4;
+            this.PrintOtherIcome.Text = "Print";
+            this.PrintOtherIcome.UseVisualStyleBackColor = false;
+            this.PrintOtherIcome.Click += new System.EventHandler(this.PrintOtherIcome_Click);
             // 
             // DayBook
             // 
@@ -448,8 +511,8 @@
             this.PurchaseOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpurchaseorder)).EndInit();
             this.OtherIncome.ResumeLayout(false);
-            this.Expenses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherIncome)).EndInit();
+            this.Expenses.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpenses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -487,6 +550,15 @@
         private System.Windows.Forms.TextBox txtmoneyin;
         private System.Windows.Forms.TextBox txtmoneyout;
         private System.Windows.Forms.TextBox txttotalinout;
+        private System.Windows.Forms.Button PrintOtherIncome;
+        private System.Windows.Forms.Button PrintSale;
+        private System.Windows.Forms.Button PrintPurchase;
         private System.Windows.Forms.Button Print;
+        private System.Windows.Forms.Button PrintExpenses;
+        private System.Windows.Forms.Button PrintSale1;
+        private System.Windows.Forms.Button PrintPurchase1;
+        private System.Windows.Forms.Button PirntSaleOrder;
+        private System.Windows.Forms.Button PrintPurchaseOrder;
+        private System.Windows.Forms.Button PrintOtherIcome;
     }
 }
