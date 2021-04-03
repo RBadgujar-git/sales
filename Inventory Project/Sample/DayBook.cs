@@ -39,7 +39,7 @@ namespace sample
         {
 
         }
-       
+
 
         private void DayBook_Load(object sender, EventArgs e)
         {
@@ -101,10 +101,10 @@ namespace sample
             {
                 float Sum = 0;
 
-                for (int i = 0; i < dgvpurchase.Rows.Count ; i++)
+                for (int i = 0; i < dgvpurchase.Rows.Count; i++)
                 {
                     Sum = Sum + float.Parse(dgvpurchase.Rows[i].Cells[4].Value.ToString());
-                  sumpurchase = Sum;
+                    sumpurchase = Sum;
                 }
             }
             catch (Exception e1)
@@ -212,7 +212,7 @@ namespace sample
                     date = DateTime.Now.ToString("yyyy/MM/dd");
                     todaydate = DateTime.Now.ToString("yyyy/MM/dd");
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.PartyName,a.PaymentType, a.Received, a.InvoiceDate,b.PartyName,b.PaymentType,b.Paid,b.Total FROM tbl_SaleInvoice as a, tbl_PurchaseBill as b where a.InvoiceDate='{0}' and b.BillDate='{0}' ", date,todaydate);
+                    string Query = string.Format("SELECT a.PartyName,a.PaymentType, a.Received, a.InvoiceDate,b.PartyName,b.PaymentType,b.Paid,b.Total FROM tbl_SaleInvoice as a, tbl_PurchaseBill as b where a.InvoiceDate='{0}' and b.BillDate='{0}' ", date, todaydate);
                     //string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
@@ -261,12 +261,12 @@ namespace sample
         }
         private void Sale_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Purchase_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public void OtherIncome1()
@@ -392,7 +392,7 @@ namespace sample
         }
         private void SaleOrder_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void PurchaseOrder_Click(object sender, EventArgs e)
@@ -411,7 +411,7 @@ namespace sample
             {
                 try
                 {
-                    
+
                     todaydate = DateTime.Now.ToString("yyyy/MM/dd");
                     DataSet ds = new DataSet();
                     string Query = string.Format("select PartyName,InvoiceDate,PaymentType,RemainingBal,Received,Total,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
@@ -435,5 +435,6 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
     }
 }
