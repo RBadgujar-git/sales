@@ -147,6 +147,7 @@
             this.chkEnablleGSt.UncheckedState.BorderRadius = 0;
             this.chkEnablleGSt.UncheckedState.BorderThickness = 0;
             this.chkEnablleGSt.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEnablleGSt.CheckedChanged += new System.EventHandler(this.chkEnablleGSt_CheckedChanged);
             // 
             // chkEWayBilling
             // 

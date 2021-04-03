@@ -18,8 +18,9 @@ namespace sample
         public int Hsn;
         public int supplace;
         public int eway;
-        public int billreport;
-     
+        public int enablegst;
+        public int enablegst1;
+
         public TaxnGST()
         {
             InitializeComponent();
@@ -39,6 +40,15 @@ namespace sample
 
         private void TaxnGST_Load(object sender, EventArgs e)
         {
+            chkEnableHSn.Hide();
+            chkEnablePlace.Hide();
+            chkEWayBilling.Hide();
+            chkGenerateEWay.Hide();
+            chkRevesreCharges.Hide();
+            chkAdditionalCases.Hide();
+            chkComposite.Hide();
+            txtRemainder.Hide();
+            guna2Button2.Hide();
             cheekpass1();
             if (Hsn == 1)
             {
@@ -69,7 +79,7 @@ namespace sample
                     Hsn = Convert.ToInt32(dr1["HSN"]);
                     supplace = Convert.ToInt32(dr1["PlaceOfSupply"]);  
                     eway = Convert.ToInt32(dr1["EwayBill"]);
-
+                    enablegst = Convert.ToInt32(dr1["EnableGst"]);
                 }
                 dr1.Close();
             }
@@ -78,7 +88,7 @@ namespace sample
             {
                 MessageBox.Show(ew.Message);
             }
-
+            finally {  }
         }
         private void chkEnableHSn_CheckedChanged(object sender, EventArgs e)
         {
@@ -119,6 +129,34 @@ namespace sample
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set EwayBill = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void chkEnablleGSt_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEnablleGSt.Checked == true)
+            {
+                chkEnableHSn.Show();
+                chkEnablePlace.Show();
+                chkEWayBilling.Show();
+                chkGenerateEWay.Show();
+                chkRevesreCharges.Show();
+                chkAdditionalCases.Show();
+                chkComposite.Show();
+                txtRemainder.Show();
+                guna2Button2.Show();
+            }
+            if (chkEnablleGSt.Checked == false)
+            {
+                chkEnableHSn.Hide();
+                chkEnablePlace.Hide();
+                chkEWayBilling.Hide();
+                chkGenerateEWay.Hide();
+                chkRevesreCharges.Hide();
+                chkAdditionalCases.Hide();
+                chkComposite.Hide();
+                txtRemainder.Hide();
+                guna2Button2.Hide();
             }
         }
     }
