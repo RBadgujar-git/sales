@@ -4,20 +4,20 @@
     <BusinessObjects isList="true" count="0" />
     <Databases isList="true" count="0" />
     <DataSources isList="true" count="1">
-      <DayBook Ref="2" type="DataTableSource" isKey="true">
-        <Alias>DayBook</Alias>
+      <DayBookSale Ref="2" type="DataTableSource" isKey="true">
+        <Alias>DayBookSale</Alias>
         <Columns isList="true" count="6">
-          <value>PaymentType,System.String</value>
-          <value>Received,System.String</value>
           <value>PartyName,System.String</value>
-          <value>Date,System.String</value>
-          <value>Total,System.String</value>
+          <value>InvoiceDate,System.String</value>
+          <value>PaymentType,System.String</value>
           <value>RemainingBal,System.String</value>
+          <value>Received,System.String</value>
+          <value>Total,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
-        <Name>DayBook</Name>
-        <NameInSource>DayBook</NameInSource>
-      </DayBook>
+        <Name>DayBookSale</Name>
+        <NameInSource>DayBookSale</NameInSource>
+      </DayBookSale>
     </DataSources>
     <Relations isList="true" count="0" />
     <Report isRef="0" />
@@ -30,7 +30,7 @@
     <Page1 Ref="3" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="12">
+      <Components isList="true" count="11">
         <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,0.4,19,5.2</ClientRectangle>
@@ -39,7 +39,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>6,2.4,7.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,16,Bold</Font>
+              <Font>Arial,18,Bold</Font>
               <Guid>a7bd1791e5934a9a80c48e1b1387a1d0</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -113,8 +113,8 @@ Type
               <Name>Text11</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Money In
-</Text>
+              <Text>Remaining
+Bal</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text11>
@@ -130,7 +130,7 @@ Type
               <Name>Text14</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>Money Out
+              <Text>Received
 </Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -153,7 +153,7 @@ Type
               <VertAlignment>Center</VertAlignment>
             </Text9>
             <Text1 Ref="12" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,1,2.2,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -170,7 +170,7 @@ Type
               <VertAlignment>Center</VertAlignment>
             </Text1>
             <Text2 Ref="13" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>2.8,1,5,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -180,7 +180,7 @@ Type
               <Name>Text2</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
-              <Text>{DayBook.Date}</Text>
+              <Text>{DayBookSale.InvoiceDate}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text2>
@@ -262,7 +262,7 @@ Type
               <Page isRef="3" />
               <Parent isRef="22" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{DayBook.PartyName}</Text>
+              <Text>{DayBookSale.PartyName}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -285,22 +285,7 @@ Type
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text27>
-            <Text15 Ref="25" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>6.6,0,3.4,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>9975f929ceb54b0da0993de69f5643bc</Guid>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text15</Name>
-              <Page isRef="3" />
-              <Parent isRef="22" />
-              <Text>{DayBook.PaymentType}</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text15>
-            <Text17 Ref="26" type="Text" isKey="true">
+            <Text17 Ref="25" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>10,0,3,0.6</ClientRectangle>
@@ -312,11 +297,11 @@ Type
               <Name>Text17</Name>
               <Page isRef="3" />
               <Parent isRef="22" />
-              <Text>{DayBook.Received}</Text>
+              <Text>{DayBookSale.RemainingBal}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text17>
-            <Text18 Ref="27" type="Text" isKey="true">
+            <Text18 Ref="26" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>13,0,3,0.6</ClientRectangle>
@@ -328,11 +313,11 @@ Type
               <Name>Text18</Name>
               <Page isRef="3" />
               <Parent isRef="22" />
-              <Text>{DayBook.RemainingBal}</Text>
+              <Text>{DayBookSale.Received}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text18>
-            <Text16 Ref="28" type="Text" isKey="true">
+            <Text16 Ref="27" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>16,0,3,0.6</ClientRectangle>
@@ -344,10 +329,26 @@ Type
               <Name>Text16</Name>
               <Page isRef="3" />
               <Parent isRef="22" />
-              <Text>{DayBook.Total}</Text>
+              <Text>{DayBookSale.Total}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text16>
+            <Text3 Ref="28" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.6,0,3.4,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>2600c2f347034053abf7358b5b67c0d8</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="22" />
+              <Text>{DayBookSale.PaymentType}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
             <EndPointPrimitive1 Ref="29" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>6.4,0,0,0</ClientRectangle>
               <Guid>82d328c53247449f948846310f8b9956</Guid>
@@ -367,7 +368,7 @@ Type
           </Components>
           <Conditions isList="true" count="0" />
           <DataRelationName isNull="true" />
-          <DataSourceName>DayBook</DataSourceName>
+          <DataSourceName>DayBookSale</DataSourceName>
           <Filters isList="true" count="0" />
           <Guid>8cdfe038a27a4a4e99f26b969bd078aa</Guid>
           <Name>DataBand1</Name>
@@ -378,20 +379,20 @@ Type
         <FooterBand1 Ref="31" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>0,7.8,19,0.6</ClientRectangle>
-          <Components isList="true" count="4">
+          <Components isList="true" count="5">
             <Text10 Ref="32" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,10,0.6</ClientRectangle>
+              <ClientRectangle>6.6,0,3.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,14,Bold</Font>
               <Guid>63154e23c65449fe8ac1daefe6fb385e</Guid>
-              <HorAlignment>Right</HorAlignment>
+              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text10</Name>
               <Page isRef="3" />
               <Parent isRef="31" />
-              <Text>Total    </Text>
+              <Text>Total        </Text>
               <TextBrush>Black</TextBrush>
             </Text10>
             <Text20 Ref="33" type="Text" isKey="true">
@@ -406,7 +407,7 @@ Type
               <Name>Text20</Name>
               <Page isRef="3" />
               <Parent isRef="31" />
-              <Text>{Sum(DayBook.Received)}</Text>
+              <Text>{Sum(DayBookSale.RemainingBal)}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text20>
@@ -422,7 +423,7 @@ Type
               <Name>Text22</Name>
               <Page isRef="3" />
               <Parent isRef="31" />
-              <Text>{Sum(DayBook.RemainingBal)}</Text>
+              <Text>{Sum(DayBookSale.Received)}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text22>
@@ -438,10 +439,23 @@ Type
               <Name>Text4</Name>
               <Page isRef="3" />
               <Parent isRef="31" />
-              <Text>{Sum(DayBook.Total)}</Text>
+              <Text>{Sum(DayBookSale.Total)}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text4>
+            <HorizontalLinePrimitive4 Ref="36" type="HorizontalLinePrimitive" isKey="true">
+              <ClientRectangle>0,0.6,19,0.0254</ClientRectangle>
+              <Color>Black</Color>
+              <EndCap Ref="37" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </EndCap>
+              <Name>HorizontalLinePrimitive4</Name>
+              <Page isRef="3" />
+              <Parent isRef="31" />
+              <StartCap Ref="38" type="Cap" isKey="true">
+                <Color>Black</Color>
+              </StartCap>
+            </HorizontalLinePrimitive4>
           </Components>
           <Conditions isList="true" count="0" />
           <Guid>6d33639004004fc1821eeb3c295da84e</Guid>
@@ -449,215 +463,85 @@ Type
           <Page isRef="3" />
           <Parent isRef="3" />
         </FooterBand1>
-        <DataBand2 Ref="36" type="DataBand" isKey="true">
-          <Brush>Transparent</Brush>
-          <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,9.2,19,0.6</ClientRectangle>
-          <Components isList="true" count="8">
-            <Text3 Ref="37" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>1,0,5.6,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>cd1e016494cd4328b384e4dec006c6b9</Guid>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text3</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{DayBook.PartyName}</Text>
-              <TextBrush>Black</TextBrush>
-              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
-              <VertAlignment>Center</VertAlignment>
-            </Text3>
-            <Text5 Ref="38" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,1,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>ccb1dfd8fb814a379f9542edd89cf5d8</Guid>
-              <HorAlignment>Center</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text5</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{Line}</Text>
-              <TextBrush>Black</TextBrush>
-              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
-              <VertAlignment>Center</VertAlignment>
-            </Text5>
-            <Text12 Ref="39" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>6.6,0,3.4,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>0895e56087fc45e78f53449a21a7b426</Guid>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text12</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <Text>{DayBook.PaymentType}</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text12>
-            <Text13 Ref="40" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>10,0,3,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>249b641cd60c4fa19c5dffb0fabfe7bb</Guid>
-              <HorAlignment>Right</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text13</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <Text>{DayBook.Received}</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text13>
-            <Text21 Ref="41" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>13,0,3,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>7996c071020a45558bc6fb784f622db2</Guid>
-              <HorAlignment>Right</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text21</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <Text>{DayBook.Paid}</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text21>
-            <Text23 Ref="42" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>16,0,3,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>0650fe8c47bd4ed697a9d59f78a34f7d</Guid>
-              <HorAlignment>Right</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text23</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <Text>{DayBook.Total}</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text23>
-            <EndPointPrimitive6 Ref="43" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
-              <ClientRectangle>6.4,0,0,0</ClientRectangle>
-              <Guid>08a7c803ded945cf9938497e7a6ecf8d</Guid>
-              <Name>EndPointPrimitive6</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <ReferenceToGuid>de0f8a896c4b47d3b25631449e4bd398</ReferenceToGuid>
-            </EndPointPrimitive6>
-            <EndPointPrimitive7 Ref="44" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
-              <ClientRectangle>13,0,0,0</ClientRectangle>
-              <Guid>0e13f4ec8da14fa58beb101713629d73</Guid>
-              <Name>EndPointPrimitive7</Name>
-              <Page isRef="3" />
-              <Parent isRef="36" />
-              <ReferenceToGuid>2c38a55be56f4ae49d610f59e90a693b</ReferenceToGuid>
-            </EndPointPrimitive7>
-          </Components>
-          <Conditions isList="true" count="0" />
-          <DataRelationName isNull="true" />
-          <DataSourceName>DayBook</DataSourceName>
-          <Filters isList="true" count="0" />
-          <Guid>3199b028e7984bea8c4560a0b69685b3</Guid>
-          <Name>DataBand2</Name>
-          <Page isRef="3" />
-          <Parent isRef="3" />
-          <Sort isList="true" count="0" />
-        </DataBand2>
-        <VerticalLinePrimitive1 Ref="45" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive1 Ref="39" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,0.0254,27.6</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="46" type="Cap" isKey="true">
+          <EndCap Ref="40" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>4a7d04d7c1f14f91ab1d6caf463b995a</Guid>
           <Name>VerticalLinePrimitive1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="47" type="Cap" isKey="true">
+          <StartCap Ref="41" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive1>
-        <StartPointPrimitive2 Ref="48" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive2 Ref="42" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>0,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>4a7d04d7c1f14f91ab1d6caf463b995a</ReferenceToGuid>
         </StartPointPrimitive2>
-        <EndPointPrimitive4 Ref="49" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive4 Ref="43" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>0.03,27.6,0,0</ClientRectangle>
           <Name>EndPointPrimitive4</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>4a7d04d7c1f14f91ab1d6caf463b995a</ReferenceToGuid>
         </EndPointPrimitive4>
-        <HorizontalLinePrimitive1 Ref="50" type="HorizontalLinePrimitive" isKey="true">
+        <HorizontalLinePrimitive1 Ref="44" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,19,0.0254</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="51" type="Cap" isKey="true">
+          <EndCap Ref="45" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Name>HorizontalLinePrimitive1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="52" type="Cap" isKey="true">
+          <StartCap Ref="46" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </HorizontalLinePrimitive1>
-        <VerticalLinePrimitive2 Ref="53" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive2 Ref="47" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>19,0,0.0254,27.6</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="54" type="Cap" isKey="true">
+          <EndCap Ref="48" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>738256d9f50a43d4a5e614960eeeb5cf</Guid>
           <Name>VerticalLinePrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="55" type="Cap" isKey="true">
+          <StartCap Ref="49" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive2>
-        <StartPointPrimitive6 Ref="56" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive6 Ref="50" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>19,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive6</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>738256d9f50a43d4a5e614960eeeb5cf</ReferenceToGuid>
         </StartPointPrimitive6>
-        <EndPointPrimitive5 Ref="57" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive5 Ref="51" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>19.03,27.6,0,0</ClientRectangle>
           <Name>EndPointPrimitive5</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>738256d9f50a43d4a5e614960eeeb5cf</ReferenceToGuid>
         </EndPointPrimitive5>
-        <HorizontalLinePrimitive3 Ref="58" type="HorizontalLinePrimitive" isKey="true">
+        <HorizontalLinePrimitive3 Ref="52" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,27.6,19,0.0254</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="59" type="Cap" isKey="true">
+          <EndCap Ref="53" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Name>HorizontalLinePrimitive3</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="60" type="Cap" isKey="true">
+          <StartCap Ref="54" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </HorizontalLinePrimitive3>
@@ -669,13 +553,13 @@ Type
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="61" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="55" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="62" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="56" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -687,10 +571,10 @@ Type
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/2/2021 7:01:27 PM</ReportChanged>
+  <ReportChanged>4/3/2021 12:06:05 PM</ReportChanged>
   <ReportCreated>3/23/2021 11:45:24 AM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\DayBookReport.mrt</ReportFile>
-  <ReportGuid>2f9eb2ab5cfe4c70b2627aa50f1278e9</ReportGuid>
+  <ReportGuid>996bd0a34d3546dd9f15654330276302</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

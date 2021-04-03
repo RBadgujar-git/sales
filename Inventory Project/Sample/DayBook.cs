@@ -405,7 +405,7 @@ namespace sample
 
         }
 
-        private void Print_Click(object sender, EventArgs e)
+        private void PrintSale1_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -414,7 +414,7 @@ namespace sample
 
                     todaydate = DateTime.Now.ToString("yyyy/MM/dd");
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select PartyName,InvoiceDate,PaymentType,RemainingBal,Received,Total,Status from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                    string Query = string.Format("select InvoiceDate,PartyName,PaymentType,RemainingBal,Received,Total from tbl_SaleInvoice where InvoiceDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
                     //string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
@@ -424,7 +424,39 @@ namespace sample
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("DayBook", "DayBook", ds.Tables[0]);
+                    report.RegData("DayBookSale", "DayBookSale", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void PrintPurchase1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+
+                    todaydate = DateTime.Now.ToString("yyyy/MM/dd");
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select PartyName,PaymentType,RemainingBal,Paid,BillDate,Total from tbl_PurchaseBill where BillDate = '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", todaydate);
+                    //string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"DayBookPurchase1.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("DayBookPurchase1", "DayBookPurchase1", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
