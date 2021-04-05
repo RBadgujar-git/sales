@@ -179,7 +179,7 @@ namespace sample
                 //cmd.Parameters.AddWithValue("@AdditinalFeild1", txtrefNo.Text);
                 //cmd.Parameters.AddWithValue("@AdditionalFeild2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
-                //cmd.Parameters.AddWithValue("@TableName", Expences.Text);
+                cmd.Parameters.AddWithValue("@TableName", Expences.Text);
 
                 cmd.Parameters.Add("@Image", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);

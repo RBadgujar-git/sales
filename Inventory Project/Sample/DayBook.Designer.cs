@@ -210,7 +210,6 @@
             this.btnPrint.Size = new System.Drawing.Size(25, 26);
             this.btnPrint.TabIndex = 28;
             this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Visible = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnimport
@@ -246,10 +245,11 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 107);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(951, 396);
+            this.dataGridView1.Size = new System.Drawing.Size(753, 396);
             this.dataGridView1.TabIndex = 438;
             // 
             // DayBook

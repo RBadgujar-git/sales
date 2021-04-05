@@ -171,7 +171,7 @@ namespace sample
                 //cmd.Parameters.AddWithValue("@AdditionalFeild1", txtrefNo.Text);
                 //cmd.Parameters.AddWithValue("@Additional2", txtAdditional1.Text);
                 cmd.Parameters.AddWithValue("@Status",ComboBox.Text);
-                //cmd.Parameters.AddWithValue("@TableName", Income.Text);
+                cmd.Parameters.AddWithValue("@TableName", Income.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 id1 = cmd.ExecuteScalar();
                 MessageBox.Show("Other Income Record Added");

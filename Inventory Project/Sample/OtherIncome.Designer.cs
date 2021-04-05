@@ -141,6 +141,7 @@
             this.txtitemamount.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtitemamount.PlaceholderText = "";
             this.txtitemamount.SelectedText = "";
+            this.txtitemamount.SelectionStart = 2;
             this.txtitemamount.ShadowDecoration.Parent = this.txtitemamount;
             this.txtitemamount.Size = new System.Drawing.Size(150, 25);
             this.txtitemamount.TabIndex = 5;
@@ -770,6 +771,7 @@
             this.Income.Name = "Income";
             this.Income.Size = new System.Drawing.Size(119, 23);
             this.Income.TabIndex = 3;
+            this.Income.Text = "Other Income";
             this.Income.Visible = false;
             // 
             // label5
