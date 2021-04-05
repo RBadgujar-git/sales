@@ -9,13 +9,13 @@
         <Columns isList="true" count="9">
           <value>LoanAmount,System.String</value>
           <value>CurrentBal,System.String</value>
-          <value>Interest_x0020_,System.String</value>
           <value>CompanyName,System.String</value>
           <value>AddLogo,System.String</value>
           <value>GSTNumber,System.String</value>
           <value>Address,System.String</value>
           <value>PhoneNo,System.String</value>
           <value>EmailID,System.String</value>
+          <value>Interest,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
         <Name>BankStatement</Name>
@@ -36,7 +36,7 @@
       <Components isList="true" count="10">
         <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,19,5.2</ClientRectangle>
+          <ClientRectangle>0,0.4,19,4.8</ClientRectangle>
           <Components isList="true" count="19">
             <Text6 Ref="5" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -201,7 +201,7 @@ No</Text>
             </Text13>
             <Text4 Ref="16" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>12.2,0,2.2,0.6</ClientRectangle>
+              <ClientRectangle>12.8,0,2.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>5fa568123d7544f0b15924338fc18d82</Guid>
@@ -216,7 +216,7 @@ No</Text>
             </Text4>
             <Text7 Ref="17" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>12.2,0.6,2.2,0.6</ClientRectangle>
+              <ClientRectangle>12.8,0.6,2.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>1467822501aa46da92d82fb0e459286d</Guid>
@@ -293,7 +293,7 @@ No</Text>
         <DataBand1 Ref="26" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,6.4,19,0.6</ClientRectangle>
+          <ClientRectangle>0,6,19,0.6</ClientRectangle>
           <Components isList="true" count="6">
             <Text17 Ref="27" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -311,23 +311,7 @@ No</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text17>
-            <Text35 Ref="28" type="Text" isKey="true">
-              <Border>All;Black;1;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>14.2,0,4.8,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
-              <Guid>0792b52189654ebab3c33256fa7cdcda</Guid>
-              <HorAlignment>Right</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text35</Name>
-              <Page isRef="3" />
-              <Parent isRef="26" />
-              <Text>{BankStatement.Interest_}</Text>
-              <TextBrush>Black</TextBrush>
-              <VertAlignment>Center</VertAlignment>
-            </Text35>
-            <Text27 Ref="29" type="Text" isKey="true">
+            <Text27 Ref="28" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,2,0.6</ClientRectangle>
@@ -345,7 +329,7 @@ No</Text>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text27>
-            <Text11 Ref="30" type="Text" isKey="true">
+            <Text11 Ref="29" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>7.8,0,6.4,0.6</ClientRectangle>
@@ -361,6 +345,22 @@ No</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text11>
+            <Text8 Ref="30" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.2,0,4.8,0.6</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>e9b90eb9faf64e6c9ae5ac3c28460e5b</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="26" />
+              <Text>{BankStatement.Interest}</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
             <EndPointPrimitive1 Ref="31" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>6.4,0,0,0</ClientRectangle>
               <Guid>c5ac79915cce4d1e835dd640144df979</Guid>
@@ -496,10 +496,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/3/2021 4:59:14 PM</ReportChanged>
+  <ReportChanged>4/5/2021 5:36:06 PM</ReportChanged>
   <ReportCreated>3/23/2021 5:09:57 PM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\BankStatementData.mrt</ReportFile>
-  <ReportGuid>231ff3a55d0047ce9652bb892a29fb20</ReportGuid>
+  <ReportGuid>cc8d132081c6413bac6f026c4fdb69f0</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

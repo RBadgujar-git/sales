@@ -65,7 +65,8 @@ namespace sample
                 con.Open();
             }
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Feild1 IS NOT Null and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where Feild1 IS NOT Null and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", con);
+            SqlCommand cmd = new SqlCommand("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", con);
+            //SqlCommand cmd = new SqlCommand("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Feild1 IS NOT Null and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where Feild1 IS NOT Null and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dgvSaleOrder.DataSource = dt;
@@ -96,7 +97,8 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1 as Ref No,Total,Received,RemainingBal,Status  from tbl_SaleInvoice where Feild1 IS NOT Null  InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Feild1 as Ref No,Total,Received,RemainingBal,Status  from tbl_SaleOrder where Feild1 IS NOT Null OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                //string SelectQuery = string.Format("select TableName,InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1 as Ref No,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Feild1 IS NOT Null InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Feild1 as Ref No,Total,Received,RemainingBal,Status from tbl_SaleOrder where Feild1 IS NOT Null OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select TableName,InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFrom.Value.ToString("MM/dd/yyyy") + "' and '" + dtpTo.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate between '" + dtpFrom.Value.ToString("MM/dd/yyyy") + "' and '" + dtpTo.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);     
                 SDA.Fill(ds, "temp");
@@ -105,7 +107,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data not" + ex);
+                MessageBox.Show("Data not Available" + ex);
             }
         }
 

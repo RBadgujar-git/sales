@@ -39,7 +39,7 @@
       <Components isList="true" count="10">
         <ReportTitleBand1 Ref="4" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,19,5.2</ClientRectangle>
+          <ClientRectangle>0,0.4,19,4.8</ClientRectangle>
           <Components isList="true" count="20">
             <Text6 Ref="5" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -108,7 +108,7 @@ No.</Text>
             </Text26>
             <Text1 Ref="9" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,0,7.4,1</ClientRectangle>
+              <ClientRectangle>2.4,0,8,1</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,14,Bold</Font>
               <Guid>b57313377f2b42209ba7c126fb03edd1</Guid>
@@ -122,7 +122,7 @@ No.</Text>
             </Text1>
             <Image1 Ref="10" type="Image" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0,2.2,2.2</ClientRectangle>
+              <ClientRectangle>0.2,0.2,2,1.8</ClientRectangle>
               <Conditions isList="true" count="0" />
               <DataColumn>ItemTrackingData.AddLogo</DataColumn>
               <Guid>0ed03209910443fb9d3ad581e95a55ee</Guid>
@@ -133,7 +133,7 @@ No.</Text>
             </Image1>
             <Text2 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,1,7.4,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>c3e78f665c7d4d15bc42625d99d4fac4</Guid>
@@ -146,7 +146,7 @@ No.</Text>
             </Text2>
             <Text3 Ref="12" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,1.6,7.4,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1.6,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,9,Bold</Font>
               <Guid>2e5d69fd7c064146ab5fe0ac0fb42007</Guid>
@@ -319,7 +319,7 @@ No.</Text>
         <DataBand1 Ref="27" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,6.4,19,0.6</ClientRectangle>
+          <ClientRectangle>0,6,19,0.6</ClientRectangle>
           <Components isList="true" count="9">
             <Text8 Ref="28" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -580,10 +580,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/25/2021 8:50:36 PM</ReportChanged>
+  <ReportChanged>4/5/2021 5:20:52 PM</ReportChanged>
   <ReportCreated>3/22/2021 12:34:26 PM</ReportCreated>
   <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\ItemTrackingData.mrt</ReportFile>
-  <ReportGuid>9a90eb1c42a04af8b4c0ab2ab8ca1f25</ReportGuid>
+  <ReportGuid>af6432e474674f9abe599540583310ca</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

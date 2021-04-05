@@ -37,6 +37,11 @@ namespace sample
         {
 
             fetchCompany();
+
+        }
+        private void BindData()
+        {
+
         }
         private void fetchCompany()
         {
@@ -60,6 +65,7 @@ namespace sample
                     MessageBox.Show(e1.Message);
                 }
             }
+            
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
