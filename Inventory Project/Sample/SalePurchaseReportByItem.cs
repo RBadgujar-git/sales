@@ -26,7 +26,7 @@ namespace sample
         {
             fetchCompany();
             con.Open();
-            SqlCommand cmd = new SqlCommand("select TableName,ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseBillInner union all select TableName, ItemName,Qty,freeQty,ItemAmount from tbl_SaleInvoiceInner where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select a.TableName,b.ItemName,b.Qty,b.freeQty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1'union ( select a.TableName,b.ItemName,b.Qty,b.freeQty,b.ItemAmount from tbl_SaleInvoiceInner as b,tbl_saleinvoice as a where b.Company_ID='" + NewCompany.company_id+"' and b.DeleteData='1')", con);
             DataSet ds = new DataSet();
             SqlDataAdapter SDA = new SqlDataAdapter(cmd);
             SDA.Fill(ds, "temp");
