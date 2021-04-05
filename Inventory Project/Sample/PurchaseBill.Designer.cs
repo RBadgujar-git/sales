@@ -1328,6 +1328,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Enabled = false;
             this.label9.Location = new System.Drawing.Point(406, 95);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 16);
@@ -1373,6 +1374,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(418, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 16);
@@ -1730,6 +1732,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(181, 24);
             this.comboBox1.TabIndex = 12;
+            this.comboBox1.Visible = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label41
@@ -1740,6 +1743,7 @@
             this.label41.Size = new System.Drawing.Size(114, 16);
             this.label41.TabIndex = 130;
             this.label41.Text = "Item Category :";
+            this.label41.Visible = false;
             // 
             // label10
             // 
@@ -1827,6 +1831,7 @@
             // dtpPODate
             // 
             this.dtpPODate.CustomFormat = "MM/dd/yyyy";
+            this.dtpPODate.Enabled = false;
             this.dtpPODate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpPODate.Location = new System.Drawing.Point(480, 91);
             this.dtpPODate.Name = "dtpPODate";
@@ -2028,6 +2033,7 @@
             this.txtPONo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtPONo.DisabledState.Parent = this.txtPONo;
             this.txtPONo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPONo.Enabled = false;
             this.txtPONo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPONo.FocusedState.Parent = this.txtPONo;
             this.txtPONo.Font = new System.Drawing.Font("Segoe UI", 9F);

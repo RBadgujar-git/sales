@@ -93,7 +93,7 @@ namespace sample
             }
             if (vehicle == 1)
             {
-                guna2CheckBox1.Checked = true;
+                guna2CheckBox4.Checked = true;
             }
             if (deldt == 1)
             {
@@ -105,7 +105,7 @@ namespace sample
             }
             if (transname == 1)
             {
-                guna2CheckBox4.Checked = true;
+                guna2CheckBox1.Checked = true;
             }
         }
 
