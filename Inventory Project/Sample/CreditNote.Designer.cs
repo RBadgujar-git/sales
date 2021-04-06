@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreditNote));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.txtcon = new Guna.UI2.WinForms.Guna2TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtItemName = new System.Windows.Forms.ComboBox();
             this.txtItemTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label34 = new System.Windows.Forms.Label();
@@ -100,7 +101,6 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbtax = new System.Windows.Forms.ComboBox();
             this.chkenble = new System.Windows.Forms.CheckBox();
-            this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TxtIGST = new Guna.UI2.WinForms.Guna2TextBox();
@@ -134,6 +134,7 @@
             this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtsubtotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -147,8 +148,7 @@
             this.label40 = new System.Windows.Forms.Label();
             this.Credit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.IdItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerCreditNote)).BeginInit();
@@ -309,6 +309,32 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1098, 81);
             this.guna2ShadowPanel1.TabIndex = 10;
+            // 
+            // guna2TextBox1
+            // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox1.DefaultText = "";
+            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Location = new System.Drawing.Point(116, 41);
+            this.guna2TextBox1.Name = "guna2TextBox1";
+            this.guna2TextBox1.PasswordChar = '\0';
+            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.ReadOnly = true;
+            this.guna2TextBox1.SelectedText = "";
+            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
+            this.guna2TextBox1.Size = new System.Drawing.Size(10, 24);
+            this.guna2TextBox1.TabIndex = 99;
             // 
             // txtItemName
             // 
@@ -782,6 +808,7 @@
             this.chkRoundOff.UncheckedState.BorderRadius = 0;
             this.chkRoundOff.UncheckedState.BorderThickness = 0;
             this.chkRoundOff.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkRoundOff.CheckedChanged += new System.EventHandler(this.chkRoundOff_CheckedChanged);
             // 
             // txtBallaance
             // 
@@ -1471,34 +1498,6 @@
             this.chkenble.UseVisualStyleBackColor = true;
             this.chkenble.CheckedChanged += new System.EventHandler(this.chkenble_CheckedChanged_1);
             // 
-            // txtReturnNo
-            // 
-            this.txtReturnNo.BorderColor = System.Drawing.Color.Gray;
-            this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReturnNo.DefaultText = "";
-            this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtReturnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtReturnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReturnNo.DisabledState.Parent = this.txtReturnNo;
-            this.txtReturnNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReturnNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReturnNo.FocusedState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(952, 52);
-            this.txtReturnNo.Name = "txtReturnNo";
-            this.txtReturnNo.PasswordChar = '\0';
-            this.txtReturnNo.PlaceholderText = "";
-            this.txtReturnNo.SelectedText = "";
-            this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
-            this.txtReturnNo.Size = new System.Drawing.Size(82, 24);
-            this.txtReturnNo.TabIndex = 9;
-            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
-            this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown_1);
-            this.txtReturnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReturnNo_KeyPress);
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1759,20 +1758,20 @@
             // 
             // dgvInnerCreditNote
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvInnerCreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvInnerCreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInnerCreditNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerCreditNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerCreditNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerCreditNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerCreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerCreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInnerCreditNote.ColumnHeadersHeight = 37;
             this.dgvInnerCreditNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1788,14 +1787,14 @@
             this.Discount_Amount,
             this.Amount,
             this.IdItem});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerCreditNote.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerCreditNote.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInnerCreditNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerCreditNote.EnableHeadersVisualStyles = false;
             this.dgvInnerCreditNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1910,6 +1909,11 @@
             this.Amount.DataPropertyName = "ItemAmount";
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
+            // 
+            // IdItem
+            // 
+            this.IdItem.HeaderText = "Iditem";
+            this.IdItem.Name = "IdItem";
             // 
             // txtsubtotal
             // 
@@ -2070,36 +2074,33 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // guna2TextBox1
+            // txtReturnNo
             // 
-            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(116, 41);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.ReadOnly = true;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(10, 24);
-            this.guna2TextBox1.TabIndex = 99;
-            // 
-            // IdItem
-            // 
-            this.IdItem.HeaderText = "Iditem";
-            this.IdItem.Name = "IdItem";
+            this.txtReturnNo.BorderColor = System.Drawing.Color.Gray;
+            this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtReturnNo.DefaultText = "";
+            this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtReturnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtReturnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReturnNo.DisabledState.Parent = this.txtReturnNo;
+            this.txtReturnNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReturnNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReturnNo.FocusedState.Parent = this.txtReturnNo;
+            this.txtReturnNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
+            this.txtReturnNo.Location = new System.Drawing.Point(952, 52);
+            this.txtReturnNo.Name = "txtReturnNo";
+            this.txtReturnNo.PasswordChar = '\0';
+            this.txtReturnNo.PlaceholderText = "";
+            this.txtReturnNo.SelectedText = "";
+            this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
+            this.txtReturnNo.Size = new System.Drawing.Size(82, 24);
+            this.txtReturnNo.TabIndex = 9;
+            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
+            this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown_1);
+            this.txtReturnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReturnNo_KeyPress);
             // 
             // CreditNote
             // 
@@ -2239,12 +2240,12 @@
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.ComboBox cmbtax;
         private System.Windows.Forms.CheckBox chkenble;
-        private Guna.UI2.WinForms.Guna2TextBox txtReturnNo;
         private System.Windows.Forms.Label label20;
         private Guna.UI2.WinForms.Guna2TextBox txtItemTotal;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdItem;
+        private Guna.UI2.WinForms.Guna2TextBox txtReturnNo;
     }
 }

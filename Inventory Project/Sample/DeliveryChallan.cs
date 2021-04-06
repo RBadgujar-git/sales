@@ -524,7 +524,7 @@ namespace sample
                 cmbpartyname.Visible = false;
                 comboBox1.Visible = true;
                 cmbCategory.Visible = false;
-                comboBox2.Visible = true;
+                comboBox2.Visible =false;
                 cmbtax.Visible = false;
                 comboBox3.Visible = true;
                 bind_sale_details();
@@ -580,8 +580,8 @@ namespace sample
                         txtadditional2.Text = dr["Feild3"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
                         Delivery.Text=dr["TableName"].ToString();
-                        comboBox2.Text= dr["ItemCategory"].ToString();
-                        textBox1.Text = dr["Barcode"].ToString();
+                     //   comboBox2.Text= dr["ItemCategory"].ToString();
+                        //textBox1.Text = dr["Barcode"].ToString();
                        
                         // lblsgst.Text = dr["ContactNo"].ToString();
 
@@ -590,6 +590,14 @@ namespace sample
 
 
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Id !");
+                    cleardata();
+                    get_id();
+                    cmbpartyname.Visible = true;
+                    comboBox1.Visible = false;
                 }
                 dr.Close();
                 // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
@@ -828,8 +836,9 @@ namespace sample
                 insertdata();
                 clear_text_data();
                 cleardata();
+             
+                printdata(txtReturnNo.Text.ToString());
                 get_id();
-                printdata(id1.ToString());
 
             }
         }
@@ -837,11 +846,10 @@ namespace sample
         {
             if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.PartyAddress,b.ContactNo, b.ChallanNo, b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster  as a, tbl_DeliveryChallan as b,tbl_DeliveryChallanInner as c where b.ChallanNo='{0}' and c.ChallanNo='{1}' and CompanyID='" + NewCompany.company_id + "' ", id1,id1);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.BillingName,b.ContactNo, b.ChallanNo,b.Deliverydate,b.DeliveryLocation,b.TransportName ,b.BillingAddress  , b.InvoiceDate, b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_DeliveryChallan as b,tbl_DeliveryChallanInner as c where b.ChallanNo='{0}' and c.ChallanNo='{1}' and c.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.CompanyID='" + NewCompany.company_id + "' ", id1,id1);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -858,7 +866,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                  //  MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -997,7 +1005,7 @@ namespace sample
                 }
                 dr.Close();
 
-                txtItemCode.Focus();
+                txtOty.Focus();
             }
             catch (Exception ex)
             {
@@ -1102,6 +1110,7 @@ namespace sample
             }
             cmbpartyname.Visible = true;
             comboBox1.Visible = false;
+            get_id();
         }
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1210,8 +1219,11 @@ namespace sample
 
         private void butClear_Click(object sender, EventArgs e)
         {
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
             cleardata();
             clear_text_data();
+            get_id();
         }
 
         private void txtDisAmount_TextChanged(object sender, EventArgs e)
@@ -1239,8 +1251,8 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-            cal_Total();
-            gst_devide();
+            //cal_Total();
+            //gst_devide();
         }
 
         private void txtReceived_KeyPress(object sender, KeyPressEventArgs e)
@@ -1303,6 +1315,7 @@ namespace sample
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
                     txtOty.Text = 1.ToString();
+                    txtOty.Focus();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
 

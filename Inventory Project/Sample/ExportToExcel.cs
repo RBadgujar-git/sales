@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Office.Interop;
-using Microsoft.Office.Core;
+using Microsoft.Office;
 using System.IO;
 namespace sample
 {
