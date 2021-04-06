@@ -270,7 +270,7 @@ namespace sample
             }
             finally
             {
-                clear_text_data();
+                //clear_text_data();
             }
         }
         private void clear_text_data()
@@ -476,22 +476,22 @@ namespace sample
                 cmbexpenses.Focus();
 
             }
-            else if (txtItem.Text == "")
-            {
-                MessageBox.Show("Item Name Is Required");
-                txtItem.Focus();
+            //else if (txtItem.Text == "")
+            //{
+            //    MessageBox.Show("Item Name Is Required");
+            //    txtItem.Focus();
 
-            }
-            else if (txtMRP.Text == "")
-            {
-                MessageBox.Show("Please Enter the MRP of Item");
-                txtMRP.Focus();
-            }
-            else if (txtOty.Text == "")
-            {
-                MessageBox.Show("Quantity is Required");
-                txtOty.Focus();
-            }
+            //}
+            //else if (txtMRP.Text == "")
+            //{
+            //    MessageBox.Show("Please Enter the MRP of Item");
+            //    txtMRP.Focus();
+            //}
+            //else if (txtOty.Text == "")
+            //{
+            //    MessageBox.Show("Quantity is Required");
+            //    txtOty.Focus();
+            //}
             else if (ComboBox.Text == "")
             {
                 MessageBox.Show("Payment Status is Required");
