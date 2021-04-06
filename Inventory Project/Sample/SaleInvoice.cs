@@ -514,7 +514,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
-                    if(guna2TextBox2.Visible==true)
+                    cmd.Parameters.AddWithValue("@ItemID", dgvInnerDebiteNote.Rows[i].Cells["IDItem"].Value.ToString());
+                    if (guna2TextBox2.Visible==true)
                     {
                         cmd.Parameters.AddWithValue("@count",guna2TextBox2.Text);
                     }
@@ -526,7 +527,7 @@ namespace sample
                    String ItemName = dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString();
                     float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
                     float freeqty = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
-                    //float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["ItemID"].Value.ToString());
+                   float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["IDItem"].Value.ToString());
 
                     ////   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
@@ -538,9 +539,9 @@ namespace sample
 
                     float prestock = Convert.ToInt32(cmd1.ExecuteScalar());
 
-                    //   float freeqty = float.Parse(txtFreeQty.Text);
+                     float freeqty1 = float.Parse(txtFreeQty.Text);
 
-                    float stockmangee = prestock - (cureentstock + freeqty);
+                    float stockmangee = prestock - (cureentstock + freeqty1);
 
                     SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
@@ -555,7 +556,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                   MessageBox.Show(e1.Message);
+                  // MessageBox.Show(e1.Message);
                 }
             }
         }
@@ -828,7 +829,7 @@ namespace sample
                     }
                 }
                 dr.Close();
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleInvoiceInner where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleInvoiceInner where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 //r.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -839,6 +840,8 @@ namespace sample
                     {
                         dgvInnerDebiteNote.Rows.Add();
                         dgvInnerDebiteNote.Rows[i].Cells["sr_no"].Value = i + 1;
+                        dgvInnerDebiteNote.Rows[i].Cells["IDItem"].Value = dr1["ItemID"].ToString();
+
                         dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Unit"].Value = dr1["BasicUnit"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Item_Code"].Value = dr1["ItemCode"].ToString();
@@ -849,7 +852,11 @@ namespace sample
                         dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
-                        dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();                        
+                        dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
+                       
+                        
+
+
                         i++;
                     }
                     dr1.Close();
@@ -857,7 +864,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -1304,11 +1311,11 @@ namespace sample
                     dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
                     dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
                     dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
-                   // dgvInnerDebiteNote.Rows[row].Cells[12].Value = Itemid;
-                   
+                    dgvInnerDebiteNote.Rows[row].Cells[12].Value = Itemid;
 
-                    txtItemName.Focus();
 
+                    //txtItemName.Focus();
+                    guna2TextBox1.Text = "";
                     for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                     {
                         TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
@@ -1332,7 +1339,7 @@ namespace sample
                 clear_text_data();
                 textBox1.Text = "";
                 textBox1.Focus();
-
+                txtItemName.Focus();
             }
         }
         private void cmbpartyname_KeyPress(object sender, KeyPressEventArgs e)
@@ -1519,8 +1526,13 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            cmbpartyname.Visible = true;
+            cmbpartyname1.Visible = false;
+
             cleardata();
             clear_text_data();
+            get_id();
+            chkenble.Checked = false;
 
         }
 
@@ -1583,8 +1595,8 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-            cal_Total();
-            gst_devide();
+           // cal_Total();
+            //gst_devide();
         }
 
        
@@ -1864,6 +1876,10 @@ namespace sample
                 report();
             }
             con.Close();
+            cmbpartyname.Visible = true;
+            cmbpartyname1.Visible = false;
+            get_id();
+
         }
         private void cmbpartyname1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1924,7 +1940,7 @@ namespace sample
                 }
                 if (chekpoint != 1)
                 {
-                    string query = string.Format("insert into tbl_ItemMaster(ItemName,ItemCode , BasicUnit, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', " + txtItemCode.Text + "," + txtUnit.Text + "," + txtMRP.Text + "," + txtTax1.Text + ",'" + textBox1.Text + "'," +txtOty.Text+ ",'"+ NewCompany.company_id + "')");
+                    string query = string.Format("insert into tbl_ItemMaster(ItemName,ItemCode , BasicUnit, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtItemCode.Text + "','" + txtUnit.Text + "'," + txtMRP.Text + "," + txtTax1.Text + ",'" + textBox1.Text + "'," +txtOty.Text+ ",'"+ NewCompany.company_id + "')");
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();
@@ -1996,7 +2012,15 @@ namespace sample
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            fetchBarcode();
+            if (textBox1.Text == "")
+            {
+                guna2TextBox1.Text = "";
+                clear_text_data();
+            }
+            else
+            {
+                fetchBarcode();
+            }
         }
         private void txtItemCode_TextChanged(object sender, EventArgs e)
         {

@@ -142,16 +142,15 @@ namespace sample
 
         private void txtfilter_TextChanged(object sender, EventArgs e)
         {
+           
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate  from tbl_CreditNote1 where PartyName like '%{0}%' andCompany_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate  from tbl_CreditNote1 where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvcreditNote.DataSource = ds;
                 dgvcreditNote.DataMember = "temp";
-
-
 
             }
             catch (Exception ex)

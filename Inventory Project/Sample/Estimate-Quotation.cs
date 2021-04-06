@@ -652,6 +652,9 @@ namespace sample
             clear_text_data();
             cleardata();
             get_id();
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
+           // cleardata();
             //printdata(id1.ToString());
             dgvInnerQuotation.Rows.Clear();
         }
@@ -853,8 +856,9 @@ namespace sample
 
         private void cmbtax_SelectedIndexChanged(object sender, EventArgs e)
         {
-            gst_devide();
             cal_Total();
+            gst_devide();
+            
         }
 
         private void txtRoundup_TextChanged(object sender, EventArgs e)
@@ -1056,18 +1060,20 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                 }
                 dr.Close();
-                txtDis.Focus();
+                
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+              //  MessageBox.Show(ex.Message);
             }
             finally
             {
                 con.Close();
+                txtOty.Focus();
             }
         }
         private void cmbCategory_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1092,7 +1098,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -1127,6 +1133,11 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+
+            get_id();
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
+            cleardata();
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -1159,6 +1170,9 @@ namespace sample
         {
             cleardata();
             clear_text_data();
+            get_id();
+            cmbpartyname.Visible = true;
+            comboBox1.Visible = false;
         }
 
         private void cmbpartyname_KeyPress(object sender, KeyPressEventArgs e)
@@ -1314,7 +1328,7 @@ namespace sample
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            fetchBarcode();
+
         }
         private void fetchBarcode()
         {
@@ -1336,6 +1350,7 @@ namespace sample
                     txtUnit.Text = dr["BasicUnit"].ToString();
                     txtMRP.Text = dr["SalePrice"].ToString();
                     txtTax1.Text = dr["TaxForSale"].ToString();
+                    txtOty.Text = 1.ToString();
                     //txtTaxAMount1.Text = dr["SaleTaxAmount"].ToString();
                     //  txtTaxType.Text = dr["TaxType"].ToString();
                    // dr.Close();
@@ -1461,7 +1476,20 @@ namespace sample
                 e.Handled = true;
             }
         }
-        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                clear_text_data();
+
+            }
+            else
+            {
+                fetchBarcode();
+            }
+
+        }
     }
     
 }
