@@ -27,12 +27,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpenseCategory));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpenseCategory));
             this.btnSave = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.txtSearch1);
             this.guna2Panel1.Controls.Add(this.btnDelete);
             this.guna2Panel1.Controls.Add(this.btnClear);
             this.guna2Panel1.Controls.Add(this.btnupdate);
@@ -80,6 +82,33 @@
             this.guna2Panel1.Size = new System.Drawing.Size(700, 400);
             this.guna2Panel1.TabIndex = 3;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // txtSearch1
+            // 
+            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch1.DefaultText = "";
+            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.DisabledState.Parent = this.txtSearch1;
+            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.FocusedState.Parent = this.txtSearch1;
+            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.HoverState.Parent = this.txtSearch1;
+            this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
+            this.txtSearch1.Location = new System.Drawing.Point(53, 209);
+            this.txtSearch1.Name = "txtSearch1";
+            this.txtSearch1.PasswordChar = '\0';
+            this.txtSearch1.PlaceholderText = "";
+            this.txtSearch1.SelectedText = "";
+            this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
+            this.txtSearch1.Size = new System.Drawing.Size(241, 27);
+            this.txtSearch1.TabIndex = 186;
+            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
+            this.txtSearch1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch1_KeyPress);
             // 
             // btnDelete
             // 
@@ -122,6 +151,7 @@
             // 
             // txtaddcategory
             // 
+            this.txtaddcategory.BorderColor = System.Drawing.Color.Gray;
             this.txtaddcategory.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtaddcategory.DefaultText = "";
             this.txtaddcategory.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -173,11 +203,11 @@
             this.dgvExpenseCaategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvExpenseCaategory.EnableHeadersVisualStyles = false;
             this.dgvExpenseCaategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvExpenseCaategory.Location = new System.Drawing.Point(53, 243);
+            this.dgvExpenseCaategory.Location = new System.Drawing.Point(53, 242);
             this.dgvExpenseCaategory.Name = "dgvExpenseCaategory";
             this.dgvExpenseCaategory.RowHeadersVisible = false;
             this.dgvExpenseCaategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExpenseCaategory.Size = new System.Drawing.Size(548, 333);
+            this.dgvExpenseCaategory.Size = new System.Drawing.Size(548, 334);
             this.dgvExpenseCaategory.TabIndex = 20;
             this.dgvExpenseCaategory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvExpenseCaategory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -308,5 +338,6 @@
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch1;
     }
 }

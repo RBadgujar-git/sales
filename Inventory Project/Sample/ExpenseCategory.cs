@@ -75,7 +75,7 @@ namespace sample
             {
                 if (txtaddcategory.Text == "")
                 {
-                    MessageBox.Show("Category Name Requried");
+                    MessageBox.Show("Category Name Required");
                 }
                 else
                 {
@@ -158,7 +158,7 @@ namespace sample
 
         public void Delete()
         {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("DO YOU WANT DELETE??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (!string.IsNullOrEmpty(id))
                 {
@@ -279,6 +279,28 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtSearch1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select CategoryID,CategoryName from tbl_ExpenseCategory where CategoryName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvExpenseCaategory.DataSource = ds;
+                dgvExpenseCaategory.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtSearch1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }
