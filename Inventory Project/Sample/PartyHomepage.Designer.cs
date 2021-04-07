@@ -337,11 +337,11 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(294, 236);
+            this.dgvParty.Location = new System.Drawing.Point(294, 213);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvParty.Size = new System.Drawing.Size(794, 347);
+            this.dgvParty.Size = new System.Drawing.Size(794, 415);
             this.dgvParty.TabIndex = 4;
             this.dgvParty.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -388,7 +388,7 @@
             this.txtSearch2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
-            this.txtSearch2.Location = new System.Drawing.Point(302, 203);
+            this.txtSearch2.Location = new System.Drawing.Point(293, 181);
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
             this.txtSearch2.PlaceholderText = "";

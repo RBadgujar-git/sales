@@ -524,13 +524,13 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+           if (textBox1.Text == "")
             {
                 fetchdetails();
             }
             else
             {
-                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ServiceID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and ItemName like '%{0}%' or ServiceID like '%{0}%' and DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 namespace sample
-{
+{ 
     public partial class ItemHomepage : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
@@ -128,7 +128,7 @@ namespace sample
             dgvItem.Columns[1].HeaderText = "Quantity";
             dgvItem.Columns[1].DataPropertyName = "OpeningQty";
             dgvItem.DataSource = dtable;
-
+            dgvItem.AllowUserToAddRows = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -150,13 +150,25 @@ namespace sample
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+
             }
         }
-      
         
         private void guna2TextBox2_TextChanged(object sender, EventArgs e)
         {
-           
+            try
+            {
+                string Query = string.Format("(select TableName,PartyName,SalePrice,Qty,freeQty,Status from tbl_CreditNote1 union all select TableName, PartyName,SalePrice,Qty,freeQty,Status from tbl_DebitNote union all select TableName, PartyName, SalePrice, Qty, freeQty, Status from tbl_DeliveryChallan union all select TableName, PartyName, SalePrice,Qty,freeQty,Status from tbl_PurchaseBill union all select TableName, PartyName, SalePrice,Qty,freeQty,Status from tbl_PurchaseOrder union all select TableName, PartyName, SalePrice, Qty, freeQty, Status from tblQuotation union all select TableName, PartyName, SalePrice,Qty, freeQty, Status from tbl_SaleInvoice union all select TableName, PartyName, SalePrice, Qty, freeQty, Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and PartyName = '%{0}%' or TableName like '%{0}%' and DeleteData='1')", guna2TextBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItem.DataSource = ds;
+                dgvItem.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Stock_TextChanged(object sender, EventArgs e)
@@ -206,16 +218,32 @@ namespace sample
             try
             {
 
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
-                lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
+                string itemname= dgvItem.Rows[e.RowIndex].Cells["Column1"].Value.ToString();
+                //label3.Text = dgvItem.Rows[e.RowIndex].Cells["Column2"].Value.ToString();
                 // lblItemName.Text = dgvItem.Rows[e.RowIndex].Cells["ItemName"].Value.ToString();
-                // lblStock.Text = dgvItem.Rows[e.RowIndex].Cells["OpeningQty"].Value.ToString();
+                //SalePrice.Text = dgvItem.Rows[e.RowIndex].Cells["SalePrice"].Value.ToString();
+                string Query = String.Format("select SalePrice,atPrice,PurchasePrice,MinimumStock,OpeningQty from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", itemname);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    label1.Text = dr["SalePrice"].ToString();
+                    label2.Text = dr["PurchasePrice"].ToString();
+                    label4.Text = dr["MinimumStock"].ToString();
+                    label3.Text = dr["OpeningQty"].ToString();
 
+                }
+                dr.Close();
                 //string Query = string.Format(" select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P Inner Join tbl_CreditNoteInner as C on P.ID=C.ID where ItemName='{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P Inner Join tbl_DebitNoteInner as C on P.ID = C.ID  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P Inner Join tbl_DeliveryChallanInner as C on P.ID = C.ID  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice,C.ItemName, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P Inner Join tbl_PurchaseBillInner as C on P.ID = C.ID  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P Inner Join tbl_PurchaseOrderInner as C on P.ID = C.ID  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P Inner Join tbl_QuotationInner as C on P.ID = C.ID  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P Inner Join tbl_SaleInvoiceInner as C on P.ID = C.ID  where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' union all select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P Inner Join tbl_SaleOrderInner as C on P.ID = C.ID where C.ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1'", lblItemName.Text);
 
-                string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P, tbl_CreditNoteInner as C  where ItemName='{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P , tbl_DebitNoteInner as C   where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P , tbl_DeliveryChallanInner as C    where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P , tbl_PurchaseBillInner as C where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P ,tbl_PurchaseOrderInner as C  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P , tbl_QuotationInner as C where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P , tbl_SaleInvoiceInner as C   where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )union all (select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P , tbl_SaleOrderInner as C  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )", lblItemName.Text);
+                string Query1 = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P, tbl_CreditNoteInner as C  where ItemName='{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P , tbl_DebitNoteInner as C   where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P , tbl_DeliveryChallanInner as C    where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P , tbl_PurchaseBillInner as C where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P ,tbl_PurchaseOrderInner as C  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P , tbl_QuotationInner as C where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P , tbl_SaleInvoiceInner as C   where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )union all (select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P , tbl_SaleOrderInner as C  where ItemName = '{0}' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )", lblItemName.Text);
                 DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                SqlDataAdapter da = new SqlDataAdapter(Query1, con);
                 da.Fill(ds, "temp");
                 dgvItemDetails.DataSource = ds;
                 dgvItemDetails.DataMember = "temp";
@@ -243,6 +271,11 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
