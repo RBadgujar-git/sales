@@ -110,6 +110,7 @@ namespace sample
             dgvEstimate.ColumnCount = 9;
             dgvEstimate.Columns[0].HeaderText = "Name";
             dgvEstimate.Columns[0].DataPropertyName = "PartyName";
+
             dgvEstimate.Columns[1].HeaderText = "Date";
             dgvEstimate.Columns[1].DataPropertyName = "Date";
             

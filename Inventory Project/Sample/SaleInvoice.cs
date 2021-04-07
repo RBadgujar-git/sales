@@ -477,7 +477,7 @@ namespace sample
                 MessageBox.Show("Insert Record Added");
 
 
-                cashinand();
+               // cashinand();
 
             }
             catch (Exception e1)
@@ -1088,7 +1088,7 @@ namespace sample
                 cmbpartyname.Visible = false;
                 cmbpartyname1.Visible = true;
                 cmbCategory.Visible = false;
-                comboBox2.Visible = true;
+                comboBox2.Visible = false;
                 //cmbtax.Visible = false;
                 //  comboBox3.Visible = true;
                 bind_sale_details();
@@ -1880,7 +1880,10 @@ namespace sample
         public int report4;
         private void Print_Click(object sender, EventArgs e)
         {
-            con.Open();
+           if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
             SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             report4 = Convert.ToInt32(cmd1.ExecuteScalar());
            
