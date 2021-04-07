@@ -211,6 +211,7 @@
             // 
             // txtReturnNo
             // 
+            this.txtReturnNo.BorderColor = System.Drawing.Color.Gray;
             this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReturnNo.DefaultText = "";
             this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -267,6 +268,7 @@
             // 
             // txtitemamount
             // 
+            this.txtitemamount.BorderColor = System.Drawing.Color.Gray;
             this.txtitemamount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtitemamount.DefaultText = "0";
             this.txtitemamount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -304,6 +306,7 @@
             // 
             // txtMRP
             // 
+            this.txtMRP.BorderColor = System.Drawing.Color.Gray;
             this.txtMRP.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMRP.DefaultText = "0";
             this.txtMRP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -340,6 +343,7 @@
             // 
             // txtItem
             // 
+            this.txtItem.BorderColor = System.Drawing.Color.Gray;
             this.txtItem.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItem.DefaultText = "";
             this.txtItem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -375,6 +379,7 @@
             // 
             // txtOty
             // 
+            this.txtOty.BorderColor = System.Drawing.Color.Gray;
             this.txtOty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOty.DefaultText = "0";
             this.txtOty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -412,6 +417,7 @@
             // 
             // txtAdditional1
             // 
+            this.txtAdditional1.BorderColor = System.Drawing.Color.Gray;
             this.txtAdditional1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAdditional1.DefaultText = "";
             this.txtAdditional1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -438,6 +444,7 @@
             // 
             // txtrefNo
             // 
+            this.txtrefNo.BorderColor = System.Drawing.Color.Gray;
             this.txtrefNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtrefNo.DefaultText = "";
             this.txtrefNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -465,6 +472,7 @@
             // 
             // txtBalance
             // 
+            this.txtBalance.BorderColor = System.Drawing.Color.Gray;
             this.txtBalance.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtBalance.DefaultText = "0";
             this.txtBalance.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -493,6 +501,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.BorderColor = System.Drawing.Color.Gray;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotal.DefaultText = "0";
             this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -520,6 +529,7 @@
             // 
             // txtReceived
             // 
+            this.txtReceived.BorderColor = System.Drawing.Color.Gray;
             this.txtReceived.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtReceived.DefaultText = "0";
             this.txtReceived.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -548,6 +558,7 @@
             // 
             // txtdescritpition
             // 
+            this.txtdescritpition.BorderColor = System.Drawing.Color.Gray;
             this.txtdescritpition.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdescritpition.DefaultText = "";
             this.txtdescritpition.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

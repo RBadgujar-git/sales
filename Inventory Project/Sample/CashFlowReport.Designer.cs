@@ -36,13 +36,6 @@
             this.txtcrnote = new Guna.UI2.WinForms.Guna2TextBox();
             this.chkamounttransaction = new Guna.UI2.WinForms.Guna2CheckBox();
             this.dgvCashflow = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtclosing = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTotalcashIn = new Guna.UI2.WinForms.Guna2TextBox();
@@ -116,7 +109,6 @@
             this.txtcrnote.Size = new System.Drawing.Size(91, 36);
             this.txtcrnote.TabIndex = 65;
             this.txtcrnote.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtcrnote.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // chkamounttransaction
             // 
@@ -135,7 +127,6 @@
             this.chkamounttransaction.UncheckedState.BorderRadius = 0;
             this.chkamounttransaction.UncheckedState.BorderThickness = 0;
             this.chkamounttransaction.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkamounttransaction.CheckedChanged += new System.EventHandler(this.guna2CheckBox1_CheckedChanged);
             // 
             // dgvCashflow
             // 
@@ -155,14 +146,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCashflow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCashflow.ColumnHeadersHeight = 34;
-            this.dgvCashflow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column9,
-            this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -201,42 +184,6 @@
             this.dgvCashflow.ThemeStyle.RowsStyle.Height = 22;
             this.dgvCashflow.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvCashflow.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvCashflow.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.guna2DataGridView1_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Date";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Reference no ";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Name";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Type";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Cash In";
-            this.Column5.Name = "Column5";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Cash Out";
-            this.Column9.Name = "Column9";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Running Cash in Hand";
-            this.Column6.Name = "Column6";
             // 
             // guna2Panel1
             // 
@@ -252,7 +199,6 @@
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
             this.guna2Panel1.Size = new System.Drawing.Size(977, 58);
             this.guna2Panel1.TabIndex = 72;
-            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // txtclosing
             // 
@@ -331,8 +277,7 @@
             this.txtTotalCashout.Size = new System.Drawing.Size(113, 36);
             this.txtTotalCashout.TabIndex = 66;
             this.txtTotalCashout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtTotalCashout.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
-            // 
+           // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -364,7 +309,6 @@
             this.label1.Size = new System.Drawing.Size(176, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Cash-In Amount :";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dtpdate
             // 
@@ -473,13 +417,6 @@
         private System.Windows.Forms.Button btnImport;
         private Guna.UI2.WinForms.Guna2CheckBox chkamounttransaction;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCashflow;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2TextBox txtclosing;
         private Guna.UI2.WinForms.Guna2TextBox txtTotalcashIn;
