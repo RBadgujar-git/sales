@@ -100,7 +100,7 @@
             this.dgvItemDetails.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItemDetails.EnableHeadersVisualStyles = false;
             this.dgvItemDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvItemDetails.Location = new System.Drawing.Point(289, 245);
+            this.dgvItemDetails.Location = new System.Drawing.Point(295, 225);
             this.dgvItemDetails.Name = "dgvItemDetails";
             this.dgvItemDetails.RowHeadersVisible = false;
             this.dgvItemDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
