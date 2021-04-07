@@ -414,7 +414,7 @@ namespace sample
                             float TA = 0, TD = 0, TGST = 0;
                             guna2DataGridView2.Rows.Add();
                             row = guna2DataGridView2.Rows.Count - 2;
-                            guna2DataGridView2.Rows[row].Cells["sr_no"].Value = row + 1;
+                            guna2DataGridView2.Rows[row].Cells["sr_no1"].Value = row + 1;
                             guna2DataGridView2.CurrentCell = guna2DataGridView2[1, row];
 
                             e.SuppressKeyPress = true;
@@ -474,12 +474,12 @@ namespace sample
                         
                     }
 
-                    
+                  
                 }
             }
             catch (Exception e1) {
                 string message = e1.Message;
-                   MessageBox.Show(e1.Message);
+                 //  MessageBox.Show(e1.Message);
 
             }
         }
