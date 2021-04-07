@@ -53,7 +53,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select PartyName from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select PartyName,Date,Total,Status from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

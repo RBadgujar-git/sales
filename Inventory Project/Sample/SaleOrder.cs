@@ -246,7 +246,8 @@ namespace sample
                         dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
                         dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
                         dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
-                        txtItemName.Focus();
+                        //           txtItemName.Focus();
+                        clear_text_data();
                         for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                         {
                             TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
@@ -261,7 +262,7 @@ namespace sample
                         }
                     }
 
-                    clear_text_data();
+                   
                 }
                 txtItemName.Focus();
                 textBox1.Text = "";
@@ -715,8 +716,9 @@ namespace sample
             {
                 cmbpartyname.Visible = false;
                 comboBox2.Visible = true;
-                comboBox1.Visible = true;
-                comboBox3.Visible = true;
+                comboBox1.Visible = false;
+                comboBox3.Visible = false;
+
                 bind_sale_details();
             }
         }
@@ -772,7 +774,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                    MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
                 finally
                 {
@@ -781,6 +783,7 @@ namespace sample
             }
             cmbpartyname.Visible = true;
             comboBox2.Visible = false;
+            get_id();
         }
 
 
@@ -1130,7 +1133,7 @@ namespace sample
                 }
                 dr.Close();
                 
-                txtItemCode.Focus();
+                txtOty.Focus();
             }
             catch (Exception ex)
             {
@@ -1537,7 +1540,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message);
+               // MessageBox.Show(ex.Message);
             }
 
         }

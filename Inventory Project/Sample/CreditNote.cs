@@ -462,14 +462,14 @@ namespace sample
                         txtadditional2.Text = dr["Feild3"].ToString();
                         Credit.Text = dr["TableName"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
-                        comboBox3.Text = dr["ItemCategory"].ToString();
-                        textBox1.Text = dr["Barcode"].ToString();                                           
+                      //  comboBox3.Text = dr["ItemCategory"].ToString();
+                    //    textBox1.Text = dr["Barcode"].ToString();                                           
                         id = dr["ReturnNo"].ToString();
                     }
                 }
                 dr.Close();
                 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ItemID,ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                // dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -491,6 +491,8 @@ namespace sample
                         dgvInnerCreditNote.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
                         dgvInnerCreditNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();                      
                         dgvInnerCreditNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
+                        dgvInnerCreditNote.Rows[i].Cells["IdItem"].Value = dr1["ItemID"].ToString();
+
                         i++;
                     }
                   
@@ -663,6 +665,8 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerCreditNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerCreditNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerCreditNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemID", dgvInnerCreditNote.Rows[i].Cells["IdItem"].Value.ToString());
+
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
 
@@ -705,6 +709,8 @@ namespace sample
                 }
                 
             }
+           
+
         }
         private void dgvInnerCreditNote_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1245,14 +1251,14 @@ namespace sample
                 update();
                 //  insert_record_inner();
                 //   bind_sale_details();
-                get_id();
+            
                 cleardata();
                 clear_text_data();
-                //  printdata(id1.ToString());
+                printdata(txtReturnNo.Text.ToString());
                 dgvInnerCreditNote.Rows.Clear();
                 cmbpartyname.Visible = true;
                 comboBox1.Visible = false;
-
+                get_id();
             }
         }
 
@@ -1629,8 +1635,16 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            fetchBarcode();
-        }
+            if (textBox1.Text == "")
+            {
+                clear_text_data();
+                guna2TextBox1.Text = "";
+            }
+            else
+            {
+                fetchBarcode();
+            }
+            }
         private void fetchBarcode()
         {
             try
@@ -1663,6 +1677,25 @@ namespace sample
             catch (Exception ex)
             {
                 //MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRoundOff.Checked == true)
+            {
+                int round = 0;
+                txtRoundup.Text = txtTotal.Text;
+                txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+                round = Convert.ToInt32(txtTotal.Text);
+                txtTotal.Text = round.ToString();
+
+            }
+            if (chkRoundOff.Checked == false)
+            {
+                cal_Total();
+                txtRoundup.Text = "";
             }
 
         }
