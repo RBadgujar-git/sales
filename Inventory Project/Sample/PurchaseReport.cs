@@ -124,6 +124,7 @@ namespace sample
 
             //e.SuppressKeyPress = true;
 
+
             for (int i = 0; i < dgvPurchaseBill.Rows.Count; i++)
             {
                 try

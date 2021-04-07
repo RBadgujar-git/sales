@@ -89,7 +89,7 @@ namespace sample
             {
                // string SelectQuery = string.Format("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Feild1 IS NOT Null and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PaymentType='Cheque' and PartyName='"+txtFilterBy.Text+"')union all(select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where Feild1 IS NOT Null and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PaymentType='Cheque' and PartyName='" + txtFilterBy.Text + "')", con);
 
-                string SelectQuery = string.Format("(select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleInvoice where InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where  OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                string SelectQuery = string.Format("(select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleInvoice where InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union (select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
@@ -121,10 +121,10 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("(select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PartyName='"+txtFilterBy.Text+"') union all (select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PartyName='" + txtFilterBy.Text + "')");
+                string SelectQuery = string.Format("(select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleInvoice where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status  from tbl_SaleOrder where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')",txtFilterBy.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                SDA.Fill(ds, "temp");   
                 dgvSaleOrder.DataSource = ds;
                 dgvSaleOrder.DataMember = "temp";
             }

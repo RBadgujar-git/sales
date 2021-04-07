@@ -118,7 +118,19 @@ namespace sample
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
 
         {
-
+            if (txtFilterBy.Text == "")
+            {
+                Bindadata();
+            }
+            else
+            {
+                string SelectQuery = string.Format("select TableName,InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate as Date,OrderNo as Number,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleOrder where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')",txtFilterBy.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(SelectQuery, con);
+                da.Fill(ds, "temp");
+                dgvSaleOrder.DataSource = ds;
+                dgvSaleOrder.DataMember = "temp";
+            }
         }
 
         private void btnprint_Click(object sender, EventArgs e)

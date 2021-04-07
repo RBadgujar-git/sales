@@ -215,7 +215,7 @@ namespace sample
         {
             try
             {
-                // con.Open();
+                 con.Open();
                 string Query = String.Format("select SubUnitName from tbl_UnitMaster where (UnitName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SubUnitName", cmbUnit.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -224,7 +224,7 @@ namespace sample
                     txtsubunit.Text = dr["SubUnitName"].ToString();
                 }
                 dr.Close();
-                txtItemCode.Focus();
+               // txtItemCode.Focus();
             }
             catch (Exception ex)
             {
@@ -232,7 +232,7 @@ namespace sample
             }
             finally
             {
-                //con.Close();
+                con.Close();
             }
         }
 
@@ -660,15 +660,8 @@ namespace sample
             dgvItemmaster.Columns["Barcode"].Visible = false;
             dgvItemmaster.Columns["Company_ID"].Visible = false;
             dgvItemmaster.Columns["Barcode"].Visible = false;
-
-
-
-
-
-
-
-
-
+            dgvItemmaster.Columns["BatchNo"].Visible=false;
+            dgvItemmaster.Columns["UnitID"].Visible = false;
         }
         private void dgvItemmaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -982,13 +975,14 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox2.Text == "")
             {
                 fetchdetails();
+                hidedatagri();
             }
             else
             {
-                string Query = string.Format("select @ItemID,ItemName,HSNCode ,BasicUnit,SecondaryUnit,ItemCode ,ItemCategory,SalePrice,TaxForSale ,SaleTaxAmount ,TaxForPurchase ,PurchasePrice,PurchaseTaxAmount ,OpeningQty,atPrice ,Date,ItemLocation,TrackingMRP,BatchNo,SerialNo,MFgdate,Expdate,Size ,Description ,MinimumStock ,Image1,Barcode from tbl_ItemMaster where DeleteData = '1' and ItemName like '%{0}%' or ItemID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where DeleteData = '1' and ItemName like '%{0}%' or ItemID like '%{0}%' and Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

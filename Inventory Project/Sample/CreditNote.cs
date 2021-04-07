@@ -273,11 +273,8 @@ namespace sample
 
         private void txtDis_TextChanged(object sender, EventArgs e)
         {
-            cal_ItemTotal();
+                cal_ItemTotal();
         }
-
-
-
 
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
@@ -705,7 +702,7 @@ namespace sample
                 }
                 catch (Exception e1)
                 {
-                   // MessageBox.Show(e1.Message);
+                  // MessageBox.Show(e1.Message);
                 }
                 
             }
@@ -1529,6 +1526,9 @@ namespace sample
             {
                 txtReturnNo.Enabled = false;
                 cleardata();
+                cmbpartyname.Visible = true;
+                comboBox1.Visible = false;
+                get_id();
             }
         }
 
@@ -1549,9 +1549,9 @@ namespace sample
                 cmbpartyname.Visible = false;
                 comboBox1.Visible = true;
                 cmbCategory.Visible = false;
-                comboBox2.Visible = true;
+                comboBox2.Visible = false;
                 cmbtax.Visible = false;
-                comboBox3.Visible = true;
+                comboBox3.Visible = false;
                 //  comboBox1.Text = "";
                 bind_sale_details();
             }

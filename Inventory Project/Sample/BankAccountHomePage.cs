@@ -76,19 +76,20 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' And DeleteData='1'  ", con);
+            SqlCommand cmd = new SqlCommand("select AccountName,OpeningBal from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' And DeleteData='1'  ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
-            dgvBankAccount.AutoGenerateColumns = false;
-            dgvBankAccount.ColumnCount = 2;
-            dgvBankAccount.Columns[0].HeaderText = "AccountName";
-            dgvBankAccount.Columns[0].DataPropertyName = "AccountName";
-            dgvBankAccount.Columns[1].HeaderText = "Opening Balance";
-            dgvBankAccount.Columns[1].DataPropertyName = "OpeningBal";
-
-
+           
             dgvBankAccount.DataSource = dt;
+            //dgvBankAccount.AutoGenerateColumns = false;
+            //dgvBankAccount.ColumnCount = 2;
+            //dgvBankAccount.Columns[0].HeaderText = "AccountName";
+            //dgvBankAccount.Columns[0].DataPropertyName = "AccountName";
+            //dgvBankAccount.Columns[1].HeaderText = "Opening Balance";
+            //dgvBankAccount.Columns[1].DataPropertyName = "OpeningBal";
+            //dgvBankAccount.DataSource = dt;
+            dgvBankAccount.AllowUserToAddRows = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -130,8 +131,6 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvBankAccount.DataSource = ds;
                 dgvBankAccount.DataMember = "temp";
-
-
              
             }
             catch (Exception ex)
@@ -141,21 +140,16 @@ namespace sample
         }
 
         private void txtSearch2_TextChanged(object sender, EventArgs e)
-        {
-            try
+
             {
-                string Query = string.Format("select AccountNo,AccountName,BankName,Date,OpeningBal from tbl_BankAccount where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id+"' and DeleteData='1'", txtSearch2.Text);
+                string Query = string.Format("select AccountNo,AccountName,BankName,Date,OpeningBal from tbl_BankAccount where DeleteData='1' and AccountName like '%{0}%' and  Company_ID ='" + NewCompany.company_id + "'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvBankAcc.DataSource = ds;
                 dgvBankAcc.DataMember = "temp";
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
 
         private void dgvBankAcc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

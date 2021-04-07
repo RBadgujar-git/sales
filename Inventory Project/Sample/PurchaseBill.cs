@@ -414,7 +414,7 @@ namespace sample
                             float TA = 0, TD = 0, TGST = 0;
                             guna2DataGridView2.Rows.Add();
                             row = guna2DataGridView2.Rows.Count - 2;
-                            guna2DataGridView2.Rows[row].Cells["sr_no"].Value = row + 1;
+                            guna2DataGridView2.Rows[row].Cells["sr_no1"].Value = row + 1;
                             guna2DataGridView2.CurrentCell = guna2DataGridView2[1, row];
 
                             e.SuppressKeyPress = true;
@@ -474,12 +474,12 @@ namespace sample
                         
                     }
 
-                    
+                  
                 }
             }
             catch (Exception e1) {
                 string message = e1.Message;
-                   MessageBox.Show(e1.Message);
+                 //  MessageBox.Show(e1.Message);
 
             }
         }
@@ -854,10 +854,10 @@ namespace sample
 
 
                     
-                  String ItemName = guna2DataGridView2.Rows[i].Cells["txtItem"].Value.ToString();
-                  float cureentstock = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Qty"].Value.ToString());
-                    float freeqty = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["FreeQty"].Value.ToString());
-                    float Itemid = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["ItemID1"].Value.ToString());
+                  String ItemName = guna2DataGridView2.Rows[i].Cells["ItemName"].Value.ToString();
+                  float cureentstock = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Qty1"].Value.ToString());
+                    float freeqty = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["FreeQty1"].Value.ToString());
+                    float Itemid = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
 
                     ////   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
@@ -883,7 +883,7 @@ namespace sample
 
                 }
                 catch (Exception e1) {
-                  //MessageBox.Show(e1.Message);
+                 // MessageBox.Show(e1.Message);
                 }
                 finally {
                    con.Close();
@@ -1097,7 +1097,6 @@ namespace sample
            
                 if (e.KeyCode == Keys.Enter)
                 {
-
                     cmbpartyname.Visible = false;
                     comboBox2.Visible = true;
                     bind_sale_details();
@@ -1195,20 +1194,21 @@ namespace sample
                     int i = 0;
                     while (dr1.Read())
                     {
+                        
                         guna2DataGridView2.Rows.Add();
-                        guna2DataGridView2.Rows[i].Cells["sr_no"].Value = i + 1;
-                        guna2DataGridView2.Rows[i].Cells["txtItem"].Value = dr1["ItemName"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Item_Code"].Value = dr1["ItemCode"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Unit"].Value = dr1["BasicUnit"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["MRP"].Value = dr1["SalePrice"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Tax"].Value = dr1["TaxForSale"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Tax_Amount"].Value = dr1["SaleTaxAmount"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
-                        guna2DataGridView2.Rows[i].Cells["ItemID1"].Value = dr1["ItemID"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["sr_no1"].Value = i + 1;
+                        guna2DataGridView2.Rows[i].Cells["ItemName"].Value = dr1["ItemName"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["ItemCode"].Value = dr1["ItemCode"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["BasicUnit"].Value = dr1["BasicUnit"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["SalePrice"].Value = dr1["SalePrice"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["TaxforSale"].Value = dr1["TaxForSale"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["SaleTaxAmount"].Value = dr1["SaleTaxAmount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Discount1"].Value = dr1["Discount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value = dr1["DiscountAmount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["Qty1"].Value = dr1["Qty"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["FreeQty1"].Value = dr1["freeQty"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value = dr1["ItemAmount"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["ItemID11"].Value = dr1["ItemID"].ToString();
                         
                         i++;
                     }
@@ -1223,7 +1223,7 @@ namespace sample
                 for (int i = 0; i < guna2DataGridView2.Rows.Count; i++)
                 {
 
-                     TA += float.Parse(guna2DataGridView2.Rows[i].Cells["Amount"].Value?.ToString());
+                     TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());
                     //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                     //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
 
@@ -1266,26 +1266,26 @@ namespace sample
                     // ItemName,HSNCode ,BasicUnit,ItemCode ,ItemCategory,SalePrice
                     //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
-                    cmd.Parameters.AddWithValue("@ItemName", guna2DataGridView2.Rows[i].Cells["txtItem"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemCode", guna2DataGridView2.Rows[i].Cells["Item_Code"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@BasicUnit", guna2DataGridView2.Rows[i].Cells["Unit"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Qty", guna2DataGridView2.Rows[i].Cells["Qty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@freeQty", guna2DataGridView2.Rows[i].Cells["FreeQty"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SalePrice", guna2DataGridView2.Rows[i].Cells["MRP"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@TaxForSale", guna2DataGridView2.Rows[i].Cells["Tax"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@SaleTaxAmount", guna2DataGridView2.Rows[i].Cells["Tax_Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@Discount", guna2DataGridView2.Rows[i].Cells["Discount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["Discount_Amount"].Value.ToString());
-                    cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemName", guna2DataGridView2.Rows[i].Cells["ItemName"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemCode", guna2DataGridView2.Rows[i].Cells["ItemCode"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@BasicUnit", guna2DataGridView2.Rows[i].Cells["BasicUnit"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Qty", guna2DataGridView2.Rows[i].Cells["Qty1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@freeQty", guna2DataGridView2.Rows[i].Cells["FreeQty1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SalePrice", guna2DataGridView2.Rows[i].Cells["SalePrice"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@TaxForSale", guna2DataGridView2.Rows[i].Cells["TaxforSale"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SaleTaxAmount", guna2DataGridView2.Rows[i].Cells["SaleTaxAmount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@Discount", guna2DataGridView2.Rows[i].Cells["Discount1"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemID", guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                    cmd.Parameters.AddWithValue("@BillNo",txtReturnNo.Text);
+                    cmd.Parameters.AddWithValue("@BillNo", txtReturnNo.Text);
 
-             
-                    String ItemName = guna2DataGridView2.Rows[i].Cells["txtItem"].Value.ToString();
-                    float qtyy = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Qty"].Value.ToString());
-                    float freeqty = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["FreeQty"].Value.ToString());
-                    float Itemid = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["ItemID1"].Value.ToString());
+                    String ItemName = guna2DataGridView2.Rows[i].Cells["ItemName"].Value.ToString();
+                    float cureentstock = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["Qty1"].Value.ToString());
+                    float freeqty = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["FreeQty1"].Value.ToString());
+                    float Itemid = Convert.ToInt32(guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
+
 
 
                     //   MessageBox.Show("existing" +intemcode+" thtee"+ qty1+"   iifasfdsfsd"+txtReturnNo.Text);
@@ -1303,12 +1303,12 @@ namespace sample
                     float prestock = float.Parse(cmdw.ExecuteScalar().ToString());
 
 
-                    MessageBox.Show("exsing " + existingQty + "new qty" + qtyy+"stock"+prestock);
+                   // MessageBox.Show("exsing " + existingQty + "new qty" + qtyy+"stock"+prestock);
 
-                    if (existingQty > qtyy)
+                    if (existingQty > cureentstock)
                     {
 
-                        float finalqty = existingQty - qtyy;
+                        float finalqty = existingQty - cureentstock;
                          float stockmange = prestock - finalqty;
 
                            SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
@@ -1320,10 +1320,10 @@ namespace sample
                            cmd2.ExecuteNonQuery();
 
                          }
-                          else if (existingQty < qtyy)
+                          else if (existingQty < cureentstock)
                          {
 
-                            float finalqty = qtyy - existingQty ;
+                            float finalqty = cureentstock - existingQty ;
 
                           float stockmange = prestock + finalqty;
                               SqlCommand cmd2 = new SqlCommand("tbl_PurchaseBillInnersp", con);
@@ -1342,7 +1342,7 @@ namespace sample
 
                 }
                 catch (Exception ew) {
-                MessageBox.Show(ew.Message);
+             //   MessageBox.Show(ew.Message);
                 }
                 finally {
                     //  con.Close();
@@ -1574,8 +1574,7 @@ namespace sample
                 {
 
                     insertdata();
-
-                      print();
+                     print();
                     //  bind_sale_details();
                     Clear_Text_data();
                     cleardata();
@@ -1658,9 +1657,9 @@ namespace sample
             }
             catch (Exception ex)
             {
-                //
+               
 
-                MessageBox.Show(ex.Message);
+             //   MessageBox.Show(ex.Message);
             }
         }
 

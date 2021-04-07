@@ -57,7 +57,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(996, 1);
+            this.btnminimize.Location = new System.Drawing.Point(984, 5);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 464;
@@ -68,7 +68,7 @@
             // 
             this.dtpTo.CustomFormat = "MM/dd/yyyy";
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(603, 48);
+            this.dtpTo.Location = new System.Drawing.Point(590, 48);
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(147, 20);
             this.dtpTo.TabIndex = 463;
@@ -78,7 +78,7 @@
             // 
             this.dtpFrom.CustomFormat = "MM/dd/yyyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(421, 49);
+            this.dtpFrom.Location = new System.Drawing.Point(408, 49);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(145, 20);
             this.dtpFrom.TabIndex = 462;
@@ -86,7 +86,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(572, 49);
+            this.label5.Location = new System.Drawing.Point(559, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(20, 13);
             this.label5.TabIndex = 461;
@@ -95,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(375, 49);
+            this.label1.Location = new System.Drawing.Point(362, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 13);
             this.label1.TabIndex = 460;
@@ -116,13 +116,13 @@
             this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Location = new System.Drawing.Point(99, 123);
+            this.txtFilterBy.Location = new System.Drawing.Point(92, 121);
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.PasswordChar = '\0';
             this.txtFilterBy.PlaceholderText = "";
             this.txtFilterBy.SelectedText = "";
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
-            this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
+            this.txtFilterBy.Size = new System.Drawing.Size(197, 32);
             this.txtFilterBy.TabIndex = 459;
             this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
@@ -213,7 +213,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1019, 1);
+            this.btncancel.Location = new System.Drawing.Point(1019, 5);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 454;
@@ -227,7 +227,7 @@
             this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnprint.FlatAppearance.BorderSize = 0;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Location = new System.Drawing.Point(955, 48);
+            this.btnprint.Location = new System.Drawing.Point(944, 48);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(21, 21);
             this.btnprint.TabIndex = 453;
@@ -241,7 +241,7 @@
             this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Location = new System.Drawing.Point(920, 46);
+            this.btnImport.Location = new System.Drawing.Point(909, 46);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(21, 23);
             this.btnImport.TabIndex = 452;

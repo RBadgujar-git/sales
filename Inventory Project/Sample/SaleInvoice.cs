@@ -475,6 +475,10 @@ namespace sample
                 id1 = cmd.ExecuteScalar();
 
                 MessageBox.Show("Insert Record Added");
+
+
+               // cashinand();
+
             }
             catch (Exception e1)
             {
@@ -485,7 +489,20 @@ namespace sample
                 insert_record_inner(id1.ToString());
             }
         }
-
+        public void cashinand()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmdw = new SqlCommand("Select Amount  from tbl_CashInhand where Company_ID='"+NewCompany.company_id+"' ",con);
+            float amount =Convert.ToInt32 (cmdw.ExecuteScalar());
+            float resu = float.Parse(txtReceived.Text);
+            float updatecash1 = amount + resu;
+           
+            SqlCommand cmdw1 = new SqlCommand("Update tbl_CashInhand SET Amount ="+ updatecash1+" where Company_ID='" + NewCompany.company_id + "' ", con);
+            cmdw1.ExecuteNonQuery();
+                }
         private void insert_record_inner(string id1)
         {
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
@@ -1071,7 +1088,7 @@ namespace sample
                 cmbpartyname.Visible = false;
                 cmbpartyname1.Visible = true;
                 cmbCategory.Visible = false;
-                comboBox2.Visible = true;
+                comboBox2.Visible = false;
                 //cmbtax.Visible = false;
                 //  comboBox3.Visible = true;
                 bind_sale_details();
@@ -1863,7 +1880,10 @@ namespace sample
         public int report4;
         private void Print_Click(object sender, EventArgs e)
         {
-            con.Open();
+           if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
             SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             report4 = Convert.ToInt32(cmd1.ExecuteScalar());
            
