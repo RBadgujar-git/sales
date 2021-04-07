@@ -100,11 +100,19 @@ namespace sample
             }
             else
             {
-                //Dashboard da = new Dashboard();
-                //da.label1.Text = companyname;
-                InsertData();
-                this.Visible = false;
                
+                InsertData();
+ 
+
+               Dashboard da = new Dashboard();
+                da.Close();
+
+                //System.Windows.Forms.Application.Exit();
+                Dashboard da1 = new Dashboard();
+                da1.Show();
+
+
+                //da.label1.Text = companyname;
                 //this.Visible = false;
                 //th = new Thread(openingform);
                 //th.SetApartmentState(ApartmentState.STA);

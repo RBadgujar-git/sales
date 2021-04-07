@@ -75,13 +75,13 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmd = new SqlCommand("select [CustomerName],[PaymentType],[ReceiptNo],[Date],[Description],[Paid],[Discount],[Total],[Status],[Company_ID] from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select [ID],[CustomerName],[PaymentType],[ReceiptNo],[Date],[Description],[Paid],[Discount],[Total],[Status],[Company_ID] from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sdasql.Fill(ds);
             dgvPaymentIn.DataSource = ds.Tables[0].DefaultView;        
         }
-
+        
         private void InsertData()
         {
          
@@ -334,7 +334,7 @@ namespace sample
 
         private void dgvPaymentIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-           // id = dgvPaymentIn.SelectedRows[0].Cells["ID"].Value.ToString();
+            id = dgvPaymentIn.SelectedRows[0].Cells["ID"].Value.ToString();
             cmbPartyName.Text = dgvPaymentIn.SelectedRows[0].Cells["CustomerName"].Value.ToString();
             cmbPayment.Text = dgvPaymentIn.SelectedRows[0].Cells["PaymentType"].Value.ToString();
             txtReceiptNo.Text = dgvPaymentIn.SelectedRows[0].Cells["ReceiptNo"].Value.ToString();
@@ -345,6 +345,7 @@ namespace sample
             txtTotal.Text = dgvPaymentIn.SelectedRows[0].Cells["Total"].Value.ToString();
            // textBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["TableName"].Value.ToString();
             comboBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["Status"].Value.ToString();
+         
             //SqlCommand cmd = new SqlCommand("select image from tbl_Paymentout", con);
             //SqlDataAdapter da = new SqlDataAdapter(cmd);
             //DataSet ds = new DataSet();
@@ -510,8 +511,8 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
-            //get_id();
-
+         
+          
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)

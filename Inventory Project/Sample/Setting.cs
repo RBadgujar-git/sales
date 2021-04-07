@@ -190,7 +190,7 @@ namespace sample
             guna2Button1.Hide();
             fetchcustomername();
 
-            panel2.Hide();
+           // panel2.Hide();
 
 
             //for (int i = 0; i <= 4; i++)
@@ -303,14 +303,19 @@ namespace sample
                     btn.Name = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
                     btn.Location = new Point(3, 14 + x);           
                     btn.Text = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
-                  //  btn.Checked += new EventHandler("checked",);
- 
+
+                   
+
+                 
+
+                    //  btn.Checked += new EventHandler("checked",);
+
                     //btn.Checked += new EventHandler();
                     //////btn.Click += new EventHandler();
-                 //   btn.Add("onclick", "MyFunction()");
+                    //   btn.Add("onclick", "MyFunction()");
 
                     //btn.Checked.Add(
-                      // ", "MyFunction()");
+                    // ", "MyFunction()");
 
                     Panel panel = new Panel();
                     panel.Location = new Point(3, 35 + w);
