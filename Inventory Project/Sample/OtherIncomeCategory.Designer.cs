@@ -28,10 +28,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OtherIncomeCategory));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnminimize = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +42,7 @@
             this.btnupdate = new Guna.UI2.WinForms.Guna2Button();
             this.btndelete = new Guna.UI2.WinForms.Guna2Button();
             this.dgvcategory = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.btnminimize = new System.Windows.Forms.Button();
+            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategory)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +59,23 @@
             this.guna2Panel1.Size = new System.Drawing.Size(826, 43);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(723, 9);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 0;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
+            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
             // button3
             // 
@@ -97,6 +115,7 @@
             // 
             // txtOtherIncome
             // 
+            this.txtOtherIncome.BorderColor = System.Drawing.Color.Gray;
             this.txtOtherIncome.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOtherIncome.DefaultText = "";
             this.txtOtherIncome.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -198,37 +217,37 @@
             // 
             // dgvcategory
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvcategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvcategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvcategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcategory.BackgroundColor = System.Drawing.Color.White;
             this.dgvcategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvcategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvcategory.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcategory.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvcategory.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvcategory.EnableHeadersVisualStyles = false;
             this.dgvcategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvcategory.Location = new System.Drawing.Point(105, 195);
+            this.dgvcategory.Location = new System.Drawing.Point(105, 222);
             this.dgvcategory.Name = "dgvcategory";
             this.dgvcategory.RowHeadersVisible = false;
             this.dgvcategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcategory.Size = new System.Drawing.Size(557, 288);
+            this.dgvcategory.Size = new System.Drawing.Size(557, 261);
             this.dgvcategory.TabIndex = 6;
             this.dgvcategory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvcategory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -254,28 +273,39 @@
             this.dgvcategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvcategory.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcategory_CellContentDoubleClick);
             // 
-            // btnminimize
+            // txtSearch1
             // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(723, 9);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 0;
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Visible = false;
-            this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch1.DefaultText = "";
+            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.DisabledState.Parent = this.txtSearch1;
+            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.FocusedState.Parent = this.txtSearch1;
+            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch1.HoverState.Parent = this.txtSearch1;
+            this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
+            this.txtSearch1.Location = new System.Drawing.Point(105, 190);
+            this.txtSearch1.Name = "txtSearch1";
+            this.txtSearch1.PasswordChar = '\0';
+            this.txtSearch1.PlaceholderText = "";
+            this.txtSearch1.SelectedText = "";
+            this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
+            this.txtSearch1.Size = new System.Drawing.Size(241, 27);
+            this.txtSearch1.TabIndex = 187;
+            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
+            this.txtSearch1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch1_KeyPress);
             // 
             // OtherIncomeCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtSearch1);
             this.Controls.Add(this.dgvcategory);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnupdate);
@@ -311,5 +341,6 @@
         private Guna.UI2.WinForms.Guna2Button btndelete;
         private Guna.UI2.WinForms.Guna2DataGridView dgvcategory;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch1;
     }
 }
