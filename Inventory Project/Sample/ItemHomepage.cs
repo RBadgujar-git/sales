@@ -158,12 +158,12 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("(select TableName,PartyName,SalePrice,Qty,freeQty,Status from tbl_CreditNote1 union all select TableName, PartyName,SalePrice,Qty,freeQty,Status from tbl_DebitNote union all select TableName, PartyName, SalePrice, Qty, freeQty, Status from tbl_DeliveryChallan union all select TableName, PartyName, SalePrice,Qty,freeQty,Status from tbl_PurchaseBill union all select TableName, PartyName, SalePrice,Qty,freeQty,Status from tbl_PurchaseOrder union all select TableName, PartyName, SalePrice, Qty, freeQty, Status from tblQuotation union all select TableName, PartyName, SalePrice,Qty, freeQty, Status from tbl_SaleInvoice union all select TableName, PartyName, SalePrice, Qty, freeQty, Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and PartyName = '%{0}%' or TableName like '%{0}%' and DeleteData='1')", guna2TextBox2.Text);
+                string Query = string.Format("(select P.TableName,P.PartyName,C.SalePrice,C.Qty,C.freeQty,P.Status from tbl_CreditNote1 as P, tbl_CreditNoteInner as C  where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DebitNote as P , tbl_DebitNoteInner as C   where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_DeliveryChallan as P , tbl_DeliveryChallanInner as C where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseBill as P , tbl_PurchaseBillInner as C where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_PurchaseOrder as P ,tbl_PurchaseOrderInner as C  where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1')union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tblQuotation as P , tbl_QuotationInner as C where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )Union all(select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleInvoice as P , tbl_SaleInvoiceInner as C   where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )union all (select P.TableName, P.PartyName, C.SalePrice, C.Qty, C.freeQty, P.Status from tbl_SaleOrder as P , tbl_SaleOrderInner as C  where P.PartyName like '%{0}%' and P.Company_ID='" + NewCompany.company_id + "' and P.DeleteData='1' )", guna2TextBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
-                dgvItem.DataSource = ds;
-                dgvItem.DataMember = "temp";
+                dgvItemDetails.DataSource = ds;
+                dgvItemDetails.DataMember = "temp";
             }
             catch (Exception ex)
             {
@@ -188,37 +188,36 @@ namespace sample
 
         private void ItemName_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                 con.Open();
-                string Query = String.Format("select SalePrice,atPrice,PurchasePrice from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SalePrice,atPrice,PurchasePrice", lblItemName.Text);
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    SalePrice.Text = dr["SalePrice"].ToString();
-                    PurchasePrice.Text = dr["PurchasePrice"].ToString();
-                    StockPrice.Text = dr["atPrice"].ToString();
-                }
-                dr.Close();
-                // txtItemCode.Focus();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+            //try
+            //{
+            ////     con.Open();
+            ////    string Query = String.Format("select SalePrice,atPrice,PurchasePrice from tbl_ItemMaster where (ItemName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SalePrice,atPrice,PurchasePrice", lblItemName.Text);
+            ////    SqlCommand cmd = new SqlCommand(Query, con);
+            ////    SqlDataReader dr = cmd.ExecuteReader();
+            ////    if (dr.Read())
+            ////    {
+            ////        SalePrice.Text = dr["SalePrice"].ToString();
+            ////        PurchasePrice.Text = dr["PurchasePrice"].ToString();
+            ////        StockPrice.Text = dr["atPrice"].ToString();
+            ////    }
+            ////    dr.Close();
+            ////    // txtItemCode.Focus();
+            ////}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    con.Close();
+            //}
         }
 
         private void dgvItem_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-
-                if(con.State==ConnectionState.Closed)
+                if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
@@ -274,6 +273,11 @@ namespace sample
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvItemDetails_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

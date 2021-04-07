@@ -181,12 +181,20 @@ namespace sample
        
         private void btnsave_Click(object sender, EventArgs e)
         {
-            validdata();
-            if (veryfi == 1)
+            if (id == "")
             {
-                InsertData();
-                fetchdetails();
+                validdata();
+                if (veryfi == 1)
+                {
+
+                    InsertData();
+                    fetchdetails();
+                }
             }
+            else
+            {
+                MessageBox.Show("No permission");
+            }              
         }
 
         private void Update1()

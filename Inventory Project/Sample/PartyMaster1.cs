@@ -195,6 +195,8 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (id == "")
+            {
                 validfild();
                 if (verify == 1)
                 {
@@ -202,8 +204,11 @@ namespace sample
                     txtPartyname.Focus();
                     fetchdetails();
                 }
-           
-
+            }
+            else
+            {
+                MessageBox.Show("No permission");
+            }                
         }
 
         private void Update1()
