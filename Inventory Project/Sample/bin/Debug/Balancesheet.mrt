@@ -304,7 +304,6 @@
               <Page isRef="3" />
               <Parent isRef="31" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{AllTransaction.PartyName}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -321,7 +320,6 @@
               <Name>Text19</Name>
               <Page isRef="3" />
               <Parent isRef="31" />
-              <Text>{AllTransaction.RemainingBal}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text19>
@@ -338,7 +336,8 @@
               <Page isRef="3" />
               <Parent isRef="31" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{AllTransaction.Total}</Text>
+              <Text>
+</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -355,7 +354,6 @@
               <Page isRef="3" />
               <Parent isRef="31" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>{AllTransaction.PartyName}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -403,7 +401,6 @@
               <Name>Text4</Name>
               <Page isRef="3" />
               <Parent isRef="38" />
-              <Text>{AllTransaction.RemainingBal}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text4>
@@ -419,7 +416,6 @@
               <Name>Text7</Name>
               <Page isRef="3" />
               <Parent isRef="38" />
-              <Text>{AllTransaction.RemainingBal}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text7>
@@ -573,10 +569,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/6/2021 11:59:44 AM</ReportChanged>
+  <ReportChanged>4/7/2021 3:05:32 PM</ReportChanged>
   <ReportCreated>4/6/2021 11:22:01 AM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\Balancesheet.mrt</ReportFile>
-  <ReportGuid>a9b5b043bcd74c8e9b7f30f7a9583a91</ReportGuid>
+  <ReportGuid>49725736ba444407bb88bd6a5195d75b</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
