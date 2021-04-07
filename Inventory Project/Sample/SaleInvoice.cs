@@ -475,6 +475,10 @@ namespace sample
                 id1 = cmd.ExecuteScalar();
 
                 MessageBox.Show("Insert Record Added");
+
+
+                cashinand();
+
             }
             catch (Exception e1)
             {
@@ -485,7 +489,20 @@ namespace sample
                 insert_record_inner(id1.ToString());
             }
         }
-
+        public void cashinand()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmdw = new SqlCommand("Select Amount  from tbl_CashInhand where Company_ID='"+NewCompany.company_id+"' ",con);
+            float amount =Convert.ToInt32 (cmdw.ExecuteScalar());
+            float resu = float.Parse(txtReceived.Text);
+            float updatecash1 = amount + resu;
+           
+            SqlCommand cmdw1 = new SqlCommand("Update tbl_CashInhand SET Amount ="+ updatecash1+" where Company_ID='" + NewCompany.company_id + "' ", con);
+            cmdw1.ExecuteNonQuery();
+                }
         private void insert_record_inner(string id1)
         {
             for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
