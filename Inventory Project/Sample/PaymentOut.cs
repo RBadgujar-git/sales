@@ -75,11 +75,12 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmd = new SqlCommand("select [ID],[CustomerName],[PaymentType],[ReceiptNo],[Date],[Description],[Paid],[Discount],[Total],[Status],[Company_ID] from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select [ID],[CustomerName],[PaymentType],[ReceiptNo],[Date],[Description],[Paid],[Discount],[Total],[image],[Status] from tbl_Paymentout where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             sdasql.Fill(ds);
-            dgvPaymentIn.DataSource = ds.Tables[0].DefaultView;        
+            dgvPaymentIn.DataSource = ds.Tables[0].DefaultView;
+            dgvPaymentIn.AllowUserToAddRows = false;
         }
         
         private void InsertData()
@@ -272,8 +273,7 @@ namespace sample
 
         public void Delete1()
         {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
+          
                 if (!string.IsNullOrEmpty(id))
                 {
                     try
@@ -308,7 +308,7 @@ namespace sample
                     MessageBox.Show("Please Select Record");
                 }
             }
-        }
+        
  
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -342,25 +342,21 @@ namespace sample
             txtDescription.Text = dgvPaymentIn.SelectedRows[0].Cells["Description"].Value.ToString();
             txtReceived.Text = dgvPaymentIn.SelectedRows[0].Cells["Paid"].Value.ToString();
             txtDiscount.Text = dgvPaymentIn.SelectedRows[0].Cells["Discount"].Value.ToString();
-            txtTotal.Text = dgvPaymentIn.SelectedRows[0].Cells["Total"].Value.ToString();
-           // textBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["TableName"].Value.ToString();
+            txtTotal.Text = dgvPaymentIn.SelectedRows[0].Cells["Total"].Value.ToString();        
             comboBox1.Text = dgvPaymentIn.SelectedRows[0].Cells["Status"].Value.ToString();
-         
-            //SqlCommand cmd = new SqlCommand("select image from tbl_Paymentout", con);
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //DataSet ds = new DataSet();
-            //da.Fill(ds);
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
 
-            //    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["image"]);
-            //    ms.Seek(0, SeekOrigin.Begin);
-            //    PictureBox1.Image = Image.FromStream(ms);
-            //    PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            //}
+            SqlCommand cmd2 = new SqlCommand("select image from tbl_Paymentout where DeleteData='1' and Company_ID = '" + NewCompany.company_id + "'", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd2);
+            DataSet dds = new DataSet();
+            sda.Fill(dds);
+            if (dds.Tables[0].Rows.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream((byte[])dds.Tables[0].Rows[e.RowIndex]["image"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                PictureBox1.Image = Image.FromStream(ms);
+                PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
 
-            int row = dgvPaymentIn.CurrentCell.RowIndex;
-            dgvPaymentIn.Rows.RemoveAt(row);
         }
 
         private void txtDiscount_TextChanged(object sender, EventArgs e)
@@ -552,6 +548,23 @@ namespace sample
             //{
             //    MessageBox.Show(ex.Message);
             //}
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select ID,CustomerName,PaymentType,ReceiptNo,Date,Description,Paid,Discount,Total,image,Status from tbl_Paymentout where Company_ID ='" + NewCompany.company_id + "' and CustomerName like '%{0}%' or ID like '%{0}%' and  DeleteData='1'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPaymentIn.DataSource = ds;
+                dgvPaymentIn.DataMember = "temp";
+            }
         }
     }
 }

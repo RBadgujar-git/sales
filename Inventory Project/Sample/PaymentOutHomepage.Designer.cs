@@ -63,6 +63,7 @@
             // 
             // txtFilterBy
             // 
+            this.txtFilterBy.BorderColor = System.Drawing.Color.Gray;
             this.txtFilterBy.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFilterBy.DefaultText = "";
             this.txtFilterBy.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -76,15 +77,14 @@
             this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Location = new System.Drawing.Point(140, 96);
+            this.txtFilterBy.Location = new System.Drawing.Point(139, 98);
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.PasswordChar = '\0';
             this.txtFilterBy.PlaceholderText = "";
             this.txtFilterBy.SelectedText = "";
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
-            this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
+            this.txtFilterBy.Size = new System.Drawing.Size(201, 32);
             this.txtFilterBy.TabIndex = 180;
-            this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
             // 
             // label3
@@ -124,11 +124,11 @@
             this.dgvPaymentOut.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPaymentOut.EnableHeadersVisualStyles = false;
             this.dgvPaymentOut.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPaymentOut.Location = new System.Drawing.Point(16, 178);
+            this.dgvPaymentOut.Location = new System.Drawing.Point(16, 160);
             this.dgvPaymentOut.Name = "dgvPaymentOut";
             this.dgvPaymentOut.RowHeadersVisible = false;
             this.dgvPaymentOut.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaymentOut.Size = new System.Drawing.Size(1019, 402);
+            this.dgvPaymentOut.Size = new System.Drawing.Size(1019, 420);
             this.dgvPaymentOut.TabIndex = 188;
             this.dgvPaymentOut.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPaymentOut.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

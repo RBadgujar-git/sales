@@ -44,7 +44,7 @@ namespace sample
         {
             fetchCompany();
             fetchLoanAccount();
-
+            dgvLoanStatement.AllowUserToAddRows = false;
         }
     private void fetchCompany()
         {

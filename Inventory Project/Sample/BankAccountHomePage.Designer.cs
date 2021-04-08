@@ -64,7 +64,7 @@
             this.guna2ShadowPanel3.Controls.Add(this.button1);
             this.guna2ShadowPanel3.Controls.Add(this.button4);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(296, 61);
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(296, 57);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(772, 130);
@@ -115,10 +115,10 @@
             this.guna2ShadowPanel2.Controls.Add(this.guna2Button1);
             this.guna2ShadowPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(0, 59);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(0, 53);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(289, 611);
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(289, 617);
             this.guna2ShadowPanel2.TabIndex = 11;
             this.guna2ShadowPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel2_Paint);
             // 
@@ -255,7 +255,7 @@
             this.txtSearch2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
-            this.txtSearch2.Location = new System.Drawing.Point(303, 203);
+            this.txtSearch2.Location = new System.Drawing.Point(303, 197);
             this.txtSearch2.MaxLength = 20;
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
@@ -294,7 +294,7 @@
             this.dgvBankAcc.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBankAcc.EnableHeadersVisualStyles = false;
             this.dgvBankAcc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvBankAcc.Location = new System.Drawing.Point(296, 245);
+            this.dgvBankAcc.Location = new System.Drawing.Point(296, 236);
             this.dgvBankAcc.Name = "dgvBankAcc";
             this.dgvBankAcc.RowHeadersVisible = false;
             this.dgvBankAcc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -335,7 +335,7 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1068, 59);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1068, 53);
             this.guna2ShadowPanel1.TabIndex = 10;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
@@ -349,7 +349,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(1013, 13);
+            this.btnminimize.Location = new System.Drawing.Point(1013, 10);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 441;
@@ -367,7 +367,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(1034, 13);
+            this.btnCancel.Location = new System.Drawing.Point(1034, 10);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(27, 27);
@@ -379,7 +379,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(543, 22);
+            this.label1.Location = new System.Drawing.Point(538, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 18);
             this.label1.TabIndex = 0;

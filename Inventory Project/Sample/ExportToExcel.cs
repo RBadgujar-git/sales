@@ -73,6 +73,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvExportData.DataSource = dtable;
+            dgvExportData.AllowUserToAddRows = false;
         }
 
         private void tbnExport_Click(object sender, EventArgs e)
@@ -111,6 +112,28 @@ namespace sample
             bw.Flush();
             bw.Close();
             fs.Close();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select ItemID,ItemName,HSNCode ,BasicUnit,SecondaryUnit,ItemCode ,ItemCategory,SalePrice,TaxForSale ,SaleTaxAmount ,TaxForPurchase ,PurchasePrice,PurchaseTaxAmount ,OpeningQty,atPrice ,Date,ItemLocation,TrackingMRP,BatchNo,SerialNo,MFgdate,Expdate,Size ,Description ,MinimumStock ,Image1,Barcode from tbl_ItemMaster where ItemName like '%{0}%' or ItemID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData = '1'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvExportData.DataSource = ds;
+                dgvExportData.DataMember = "temp";
+            }
         }
     }
 }

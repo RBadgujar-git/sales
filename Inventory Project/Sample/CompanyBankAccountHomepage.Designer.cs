@@ -37,20 +37,11 @@
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcompanybank = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnminimize = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
@@ -67,10 +58,10 @@
             this.btnSaleorder.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleorder.ForeColor = System.Drawing.Color.White;
             this.btnSaleorder.HoverState.Parent = this.btnSaleorder;
-            this.btnSaleorder.Location = new System.Drawing.Point(626, 128);
+            this.btnSaleorder.Location = new System.Drawing.Point(591, 128);
             this.btnSaleorder.Name = "btnSaleorder";
             this.btnSaleorder.ShadowDecoration.Parent = this.btnSaleorder;
-            this.btnSaleorder.Size = new System.Drawing.Size(145, 45);
+            this.btnSaleorder.Size = new System.Drawing.Size(161, 37);
             this.btnSaleorder.TabIndex = 468;
             this.btnSaleorder.Text = "+ Comapnay Bank Account";
             this.btnSaleorder.Click += new System.EventHandler(this.btnSaleorder_Click);
@@ -96,52 +87,30 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.label5.Location = new System.Drawing.Point(393, 63);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 13);
+            this.label5.Size = new System.Drawing.Size(24, 16);
             this.label5.TabIndex = 474;
             this.label5.Text = "To";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.label1.Location = new System.Drawing.Point(196, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 473;
             this.label1.Text = "From";
-            // 
-            // txtFilterBy
-            // 
-            this.txtFilterBy.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtFilterBy.DefaultText = "";
-            this.txtFilterBy.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtFilterBy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtFilterBy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFilterBy.DisabledState.Parent = this.txtFilterBy;
-            this.txtFilterBy.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtFilterBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterBy.FocusedState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Location = new System.Drawing.Point(138, 133);
-            this.txtFilterBy.Name = "txtFilterBy";
-            this.txtFilterBy.PasswordChar = '\0';
-            this.txtFilterBy.PlaceholderText = "";
-            this.txtFilterBy.SelectedText = "";
-            this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
-            this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
-            this.txtFilterBy.TabIndex = 472;
-            this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F);
             this.label3.Location = new System.Drawing.Point(54, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 471;
             this.label3.Text = " Filter by :";
             // 
@@ -154,11 +123,6 @@
             this.label6.Size = new System.Drawing.Size(103, 18);
             this.label6.TabIndex = 470;
             this.label6.Text = "Transaction";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Status";
-            this.Column8.Name = "Column8";
             // 
             // dgvcompanybank
             // 
@@ -178,16 +142,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvcompanybank.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvcompanybank.ColumnHeadersHeight = 18;
-            this.dgvcompanybank.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column5,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column7,
-            this.Column6,
-            this.Column8,
-            this.Column9});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -202,7 +156,7 @@
             this.dgvcompanybank.Name = "dgvcompanybank";
             this.dgvcompanybank.RowHeadersVisible = false;
             this.dgvcompanybank.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcompanybank.Size = new System.Drawing.Size(764, 312);
+            this.dgvcompanybank.Size = new System.Drawing.Size(764, 324);
             this.dgvcompanybank.TabIndex = 469;
             this.dgvcompanybank.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvcompanybank.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -226,49 +180,12 @@
             this.dgvcompanybank.ThemeStyle.RowsStyle.Height = 22;
             this.dgvcompanybank.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvcompanybank.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Party";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Ref No";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Date";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Due date";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total Amount";
-            this.Column4.Name = "Column4";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Balance ";
-            this.Column7.Name = "Column7";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Type";
-            this.Column6.Name = "Column6";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Action";
-            this.Column9.Name = "Column9";
+            this.dgvcompanybank.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcompanybank_CellContentClick);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.btnminimize);
             this.panel1.Controls.Add(this.btnSaleorder);
             this.panel1.Controls.Add(this.btncancel);
@@ -277,7 +194,6 @@
             this.panel1.Controls.Add(this.dtpFrom);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.txtFilterBy);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.dgvcompanybank);
@@ -286,6 +202,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(777, 506);
             this.panel1.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(132, 137);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(127, 20);
+            this.textBox1.TabIndex = 478;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnminimize
             // 
@@ -333,6 +257,8 @@
             this.btnImport.Size = new System.Drawing.Size(21, 23);
             this.btnImport.TabIndex = 465;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnprint
             // 
@@ -347,6 +273,7 @@
             this.btnprint.TabIndex = 466;
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Visible = false;
+            this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
             // 
             // CompanyBankAccountHomepage
             // 
@@ -355,6 +282,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "CompanyBankAccountHomepage";
             this.Size = new System.Drawing.Size(780, 517);
+            this.Load += new System.EventHandler(this.CompanyBankAccountHomepage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvcompanybank)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -372,20 +300,11 @@
         private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private Guna.UI2.WinForms.Guna2DataGridView dgvcompanybank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
