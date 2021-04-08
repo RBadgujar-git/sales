@@ -1920,3 +1920,7 @@ C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.R
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.pdb
