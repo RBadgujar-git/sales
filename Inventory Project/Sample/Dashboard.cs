@@ -67,6 +67,8 @@ namespace sample
                 cmd.Parameters.AddWithValue("@State", "India");
                 cmd.Parameters.AddWithValue("@GSTNumber", "12AAAAA4561A1Z2");
                 cmd.Parameters.AddWithValue("@OwnerName", "Demo User");
+                cmd.Parameters.AddWithValue("@def",1);
+
                 // cmd.Parameters.Add("@Signature", SqlDbType.Image, arrImage2.Length).Value = arrImage2;
                 // cmd.Parameters.Add("@AddLogo", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                 cmd.Parameters.AddWithValue("@AdditinalFeild1", "12345678910");
@@ -97,7 +99,7 @@ namespace sample
             {
                 con.Open();
             }
-            SqlCommand cmd = new SqlCommand("Select CompanyID,CompanyName from tbl_CompanyMaster Where CompanyName = 'My Company' ", con);
+            SqlCommand cmd = new SqlCommand("Select CompanyID,CompanyName from tbl_CompanyMaster Where Defulatcompany = '1' ", con);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
