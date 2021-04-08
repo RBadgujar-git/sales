@@ -33,11 +33,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashInHandHomepage));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCashInHand = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdjustcah = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashInHand)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(468, 22);
+            this.label1.Location = new System.Drawing.Point(468, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 18);
             this.label1.TabIndex = 0;
@@ -70,8 +71,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCashInHand.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCashInHand.ColumnHeadersHeight = 18;
-            this.dgvCashInHand.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,11 +81,11 @@
             this.dgvCashInHand.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCashInHand.EnableHeadersVisualStyles = false;
             this.dgvCashInHand.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCashInHand.Location = new System.Drawing.Point(3, 154);
+            this.dgvCashInHand.Location = new System.Drawing.Point(3, 120);
             this.dgvCashInHand.Name = "dgvCashInHand";
             this.dgvCashInHand.RowHeadersVisible = false;
             this.dgvCashInHand.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCashInHand.Size = new System.Drawing.Size(1071, 564);
+            this.dgvCashInHand.Size = new System.Drawing.Size(1071, 571);
             this.dgvCashInHand.TabIndex = 18;
             this.dgvCashInHand.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvCashInHand.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -112,11 +111,6 @@
             this.dgvCashInHand.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvCashInHand.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCashInHand_CellContentClick);
             // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
-            // 
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -128,7 +122,7 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1077, 59);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1077, 46);
             this.guna2ShadowPanel1.TabIndex = 15;
             // 
             // btnminimize
@@ -140,7 +134,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(964, 15);
+            this.btnminimize.Location = new System.Drawing.Point(964, 8);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 443;
@@ -158,7 +152,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(996, 14);
+            this.btnCancel.Location = new System.Drawing.Point(996, 7);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 28);
             this.btnCancel.TabIndex = 4;
@@ -170,7 +164,7 @@
             this.btnAdjustcah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnAdjustcah.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdjustcah.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAdjustcah.Location = new System.Drawing.Point(916, 78);
+            this.btnAdjustcah.Location = new System.Drawing.Point(914, 57);
             this.btnAdjustcah.Name = "btnAdjustcah";
             this.btnAdjustcah.Size = new System.Drawing.Size(118, 42);
             this.btnAdjustcah.TabIndex = 21;
@@ -178,11 +172,37 @@
             this.btnAdjustcah.UseVisualStyleBackColor = false;
             this.btnAdjustcah.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::sample.Properties.Resources.icons8_search_1001;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(15, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(18, 18);
+            this.button1.TabIndex = 80;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(41, 78);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 23);
+            this.textBox1.TabIndex = 79;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // CashInHandHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnAdjustcah);
             this.Controls.Add(this.dgvCashInHand);
             this.Controls.Add(this.guna2ShadowPanel1);
@@ -195,6 +215,7 @@
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,7 +226,8 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.Button btnAdjustcah;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

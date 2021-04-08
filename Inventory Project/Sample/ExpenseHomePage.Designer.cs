@@ -233,7 +233,7 @@
             this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch1.HoverState.Parent = this.txtSearch1;
             this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
-            this.txtSearch1.Location = new System.Drawing.Point(292, 203);
+            this.txtSearch1.Location = new System.Drawing.Point(298, 203);
             this.txtSearch1.Name = "txtSearch1";
             this.txtSearch1.PasswordChar = '\0';
             this.txtSearch1.PlaceholderText = "";
@@ -300,6 +300,7 @@
             this.dgvExxpenses.ThemeStyle.RowsStyle.Height = 22;
             this.dgvExxpenses.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvExxpenses.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvExxpenses.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExxpenses_CellContentClick);
             this.dgvExxpenses.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExxpenses_CellDoubleClick);
             // 
             // guna2ShadowPanel1

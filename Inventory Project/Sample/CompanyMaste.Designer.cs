@@ -68,7 +68,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.Label = new System.Windows.Forms.Label();
             this.txtCity = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvComapnyMaster = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.txtbusinesstype = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbState = new System.Windows.Forms.ComboBox();
@@ -78,13 +77,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.picSignature = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picCompanyLogo = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.dgvComapnyMaster = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComapnyMaster)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSignature)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComapnyMaster)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -490,6 +490,7 @@
             this.btnsave.Text = "Save ";
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
+            this.btnsave.Leave += new System.EventHandler(this.btnsave_Leave);
             // 
             // label13
             // 
@@ -705,65 +706,6 @@
             this.txtCity.TabIndex = 9;
             this.txtCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCity_KeyPress);
             // 
-            // dgvComapnyMaster
-            // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvComapnyMaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvComapnyMaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvComapnyMaster.BackgroundColor = System.Drawing.Color.White;
-            this.dgvComapnyMaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvComapnyMaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvComapnyMaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvComapnyMaster.ColumnHeadersHeight = 37;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvComapnyMaster.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvComapnyMaster.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvComapnyMaster.EnableHeadersVisualStyles = false;
-            this.dgvComapnyMaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvComapnyMaster.Location = new System.Drawing.Point(11, 394);
-            this.dgvComapnyMaster.Name = "dgvComapnyMaster";
-            this.dgvComapnyMaster.RowHeadersVisible = false;
-            this.dgvComapnyMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvComapnyMaster.Size = new System.Drawing.Size(1030, 264);
-            this.dgvComapnyMaster.TabIndex = 30;
-            this.dgvComapnyMaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvComapnyMaster.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvComapnyMaster.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.Height = 37;
-            this.dgvComapnyMaster.ThemeStyle.ReadOnly = false;
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvComapnyMaster.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvComapnyMaster.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComapnyMaster_CellContentClick);
-            this.dgvComapnyMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComapnyMaster_CellDoubleClick_1);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -858,13 +800,13 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dgvComapnyMaster);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.butnclear);
             this.panel1.Controls.Add(this.cmbState);
             this.panel1.Controls.Add(this.txtbusinesstype);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.dgvComapnyMaster);
             this.panel1.Controls.Add(this.txtCity);
             this.panel1.Controls.Add(this.Label);
             this.panel1.Controls.Add(this.guna2GroupBox1);
@@ -952,6 +894,64 @@
             this.picCompanyLogo.TabStop = false;
             this.picCompanyLogo.Click += new System.EventHandler(this.picCompanyLogo_Click);
             // 
+            // dgvComapnyMaster
+            // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvComapnyMaster.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvComapnyMaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvComapnyMaster.BackgroundColor = System.Drawing.Color.White;
+            this.dgvComapnyMaster.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvComapnyMaster.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComapnyMaster.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvComapnyMaster.ColumnHeadersHeight = 53;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComapnyMaster.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvComapnyMaster.EnableHeadersVisualStyles = false;
+            this.dgvComapnyMaster.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvComapnyMaster.Location = new System.Drawing.Point(21, 390);
+            this.dgvComapnyMaster.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvComapnyMaster.Name = "dgvComapnyMaster";
+            this.dgvComapnyMaster.RowHeadersVisible = false;
+            this.dgvComapnyMaster.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvComapnyMaster.Size = new System.Drawing.Size(1016, 263);
+            this.dgvComapnyMaster.TabIndex = 69;
+            this.dgvComapnyMaster.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvComapnyMaster.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvComapnyMaster.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvComapnyMaster.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
+            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvComapnyMaster.ThemeStyle.HeaderStyle.Height = 53;
+            this.dgvComapnyMaster.ThemeStyle.ReadOnly = false;
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvComapnyMaster.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvComapnyMaster.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComapnyMaster_CellDoubleClick);
+            // 
             // CompanyMaste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -968,11 +968,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComapnyMaster)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSignature)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompanyLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComapnyMaster)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1014,7 +1014,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label Label;
         private Guna.UI2.WinForms.Guna2TextBox txtCity;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvComapnyMaster;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2TextBox txtbusinesstype;
         private System.Windows.Forms.ComboBox cmbState;
@@ -1024,5 +1023,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox picCompanyLogo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvComapnyMaster;
     }
 }

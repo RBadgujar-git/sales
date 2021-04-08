@@ -265,13 +265,18 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where CategoryName like '%{0}%' or CategoryID like '%{0}%' and Company_ID ='" + NewCompany.company_id + "' and DeleteData='1'", textBox1.Text);
+                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where Company_ID ='" + NewCompany.company_id + "' and CategoryName like '%{0}%' or CategoryID like '%{0}%' and DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvCategory.DataSource = ds;
                 dgvCategory.DataMember = "temp";
             }
+        }
+
+        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

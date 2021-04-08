@@ -235,7 +235,7 @@ namespace sample
         }
     private void btnsave_Click(object sender, EventArgs e)
         {
-            if (txtcampanyName.Text != "")
+            if (txtcampanyName.Text == "")
             {
 
                 if (con.State == ConnectionState.Closed)
@@ -243,28 +243,9 @@ namespace sample
                     con.Open();
                 }
                 //chekpoint = 0;
-                string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(ds, "Temp");
-                DataTable DT = new DataTable();
-                SDA.Fill(ds);
-                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                {
 
-                    string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
-
-                    if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
-                    {
-                        //chekpoint = 1;
-                        MessageBox.Show("This Company Name is already Exist ");
-                        //txtcampanyName.Clear();
-                        txtcampanyName.Focus();
-                    }
-
-                }
             }
-            else
+           else
             {
                 if (id == "")
                 {
@@ -599,48 +580,7 @@ namespace sample
         }
         private void dgvComapnyMaster_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
-            txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
-            txtAddress.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["Address"].Value.ToString();
-            txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ContactNo"].Value.ToString();
-            txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
-            txtreferralcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ReferaleCode"].Value.ToString();
-            txtbusinesstype.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BusinessType"].Value.ToString();
-            ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
-            txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
-            txtCity.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["City"].Value.ToString();
-            cmbState.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["State"].Value.ToString();
-       
-      
-
-            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Signature"]);
-                ms.Seek(0, SeekOrigin.Begin);
-                picSignature.Image = Image.FromStream(ms);
-                picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-
-            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData='1'", con);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd2);
-            DataSet dds = new DataSet();
-            sda.Fill(dds);
-            if (dds.Tables[0].Rows.Count > 0)
-            {
-                MemoryStream ms = new MemoryStream((byte[])dds.Tables[0].Rows[e.RowIndex]["AddLogo"]);
-                ms.Seek(0, SeekOrigin.Begin);
-                picCompanyLogo.Image = Image.FromStream(ms);
-                picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-            }
-
-            txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BankName"].Value.ToString();
-            txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AccountNo"].Value.ToString();
-            txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["IFSC_Code"].Value.ToString();
-
+           
         }
 
         private void txtAccountNo_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -685,6 +625,7 @@ namespace sample
 
         private void butnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -842,6 +783,76 @@ namespace sample
         private void txtBankName_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void dgvComapnyMaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
+            txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
+            txtAddress.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ContactNo"].Value.ToString();
+            txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
+            txtreferralcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ReferaleCode"].Value.ToString();
+            txtbusinesstype.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BusinessType"].Value.ToString();
+            ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
+            txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
+            txtCity.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["City"].Value.ToString();
+            cmbState.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["State"].Value.ToString();
+
+
+
+            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Signature"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                picSignature.Image = Image.FromStream(ms);
+                picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData='1'", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd2);
+            DataSet dds = new DataSet();
+            sda.Fill(dds);
+            if (dds.Tables[0].Rows.Count > 0)
+            {
+                MemoryStream ms = new MemoryStream((byte[])dds.Tables[0].Rows[e.RowIndex]["AddLogo"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                picCompanyLogo.Image = Image.FromStream(ms);
+                picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+            txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BankName"].Value.ToString();
+            txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AccountNo"].Value.ToString();
+            txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["IFSC_Code"].Value.ToString();
+
+        }
+
+        private void btnsave_Leave(object sender, EventArgs e)
+        {
+            string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+
+                string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+
+                if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
+                {
+                    //chekpoint = 1;
+                    MessageBox.Show("This Company Name is already Exist ");
+                    //txtcampanyName.Clear();
+                    txtcampanyName.Focus();
+                }
+
+            }
         }
     }
 }

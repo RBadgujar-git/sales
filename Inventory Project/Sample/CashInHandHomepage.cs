@@ -86,5 +86,24 @@ namespace sample
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+            
+            if (textBox1.Text == "")
+            {
+                bindbankdata();
+            }
+            else
+            {
+                string Query = string.Format("(select TableName as Type, PartyName, InvoiceDate as Date, Total from tbl_SaleInvoice where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName as Type, PartyName, OrderDate as Date, Total from tbl_SaleOrder where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName as Type, PartyName, BillDate as Date, Total from tbl_PurchaseBill where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select TableName as Type, PartyName, OrderDate as Date, Total from tbl_PurchaseOrder where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName as Type, CustomerName as PartyName, Date as Date, TOTAL as Total from tbl_PaymentIn where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')union all(select TableName as Type, CustomerName as PartyName, Date as Date, TOTAL as Total  from tbl_Paymentout where TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')Union all(select CashAdjustment as Type, Description as PartyName, Date as Date, CashAmount from tbl_CashAdjustment where CashAdjustment like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvCashInHand.DataSource = ds;
+                dgvCashInHand.DataMember = "temp";
+            }
+        }
     }
 }
