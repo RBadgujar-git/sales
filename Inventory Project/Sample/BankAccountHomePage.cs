@@ -90,6 +90,7 @@ namespace sample
             //dgvBankAccount.Columns[1].DataPropertyName = "OpeningBal";
             //dgvBankAccount.DataSource = dt;
             dgvBankAccount.AllowUserToAddRows = false;
+            dgvBankAcc.AllowUserToAddRows = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -125,7 +126,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName,OpeningBal from tbl_BankAccount where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                string Query = string.Format("select AccountName,OpeningBal from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AccountName like '%{0}%'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -141,14 +142,14 @@ namespace sample
 
         private void txtSearch2_TextChanged(object sender, EventArgs e)
 
-            {
-                string Query = string.Format("select AccountNo,AccountName,BankName,Date,OpeningBal from tbl_BankAccount where DeleteData='1' and AccountName like '%{0}%' and  Company_ID ='" + NewCompany.company_id + "'", txtSearch2.Text);
+            {                           
+                string Query = string.Format("select AccountNo,AccountName,BankName,Date,OpeningBal from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'and AccountName like '%{0}%'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvBankAcc.DataSource = ds;
-                dgvBankAcc.DataMember = "temp";
-            }
+                dgvBankAcc.DataMember = "temp";          
+           }
         
 
         private void dgvBankAcc_CellContentClick(object sender, DataGridViewCellEventArgs e)
