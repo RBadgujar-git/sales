@@ -146,6 +146,7 @@ namespace sample
 
 
 
+        
         private void Setting_Load(object sender, EventArgs e)
         {
             cheekpass();
@@ -190,9 +191,9 @@ namespace sample
             guna2Button1.Hide();
             fetchcustomername();
 
-           // panel2.Hide();
-
-
+           panel2.Hide();
+            fetchCampanyame();
+            defualt();
             //for (int i = 0; i <= 4; i++)
             //{
             //    RadioButton rdo = new RadioButton();
@@ -204,6 +205,41 @@ namespace sample
             //}
         }
 
+        public void defualt()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("Select CompanyName  from tbl_CompanyMaster where Defulatcompany=1", con);
+            label12.Text = cmd.ExecuteScalar().ToString();
+            btnlogin.Hide();
+            con.Close();
+
+        }
+        private void fetchCampanyame()
+        {
+            if (cmbCompanyName.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1'");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbCompanyName.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
         private void chkSaleOrder_CheckedChanged(object sender, EventArgs e)
         {
             if (chkSaleOrder.Checked == true)
@@ -263,6 +299,38 @@ namespace sample
         private void radiobtnFirmName_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbCompanyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            label12.Text = cmbCompanyName.Text;
+            btnlogin.Show();
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("Update tbl_CompanyMaster set Defulatcompany='0' ", con);
+                cmd.ExecuteNonQuery();
+
+                SqlCommand cmd1 = new SqlCommand("Update tbl_CompanyMaster set Defulatcompany='1' where CompanyName='" + label12.Text + "' and DeleteData='1'", con);
+                cmd1.ExecuteNonQuery();
+
+                MessageBox.Show(label12.Text+"Set as defualt ");
+                btnlogin.Hide();
+                con.Close();
+            }
+            catch (Exception w)
+            {
+                MessageBox.Show(w.Message);
+            }
         }
 
         private void chkAutoBackup_CheckedChanged(object sender, EventArgs e)

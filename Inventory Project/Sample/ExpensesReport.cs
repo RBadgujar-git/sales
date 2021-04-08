@@ -89,12 +89,14 @@ namespace sample
                     SDA.Fill(ds, "Temp");
                     DataTable DT = new DataTable();
                     SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
                         cmbexpenses.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
 
                     }
                 }
-                catch (Exception e1) {
+                catch (Exception e1)
+                {
                     MessageBox.Show(e1.Message);
                 }
             }
@@ -109,7 +111,8 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select CategoryName from tbl_Expenses where CategoryName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
+                //string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
+                string Query = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where ExpenseCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -134,7 +137,10 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select Date,CategoryName,Total from tbl_Expenses  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DateTime date1 = Convert.ToDateTime(dtpFromDate.Text);
+                DateTime date2 = Convert.ToDateTime(dtpTodate.Text);
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + date1.ToString("yyyy-MM-dd") + "' and '" + date2.ToString("yyyy-MM-dd") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                //string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '{0}' and '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", date1.ToString("yyyy-MM-dd"), date2.ToString("yyyy-MM-dd"));
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -143,7 +149,7 @@ namespace sample
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data not" + ex);
+                MessageBox.Show("Data not Available" + ex);
             }
         }
 
