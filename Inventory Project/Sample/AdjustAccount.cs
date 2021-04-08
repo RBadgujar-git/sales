@@ -262,6 +262,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -490,7 +491,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,BankAccount,EntryType,Amount,Date,Description from tbl_BankAdjustment where BankAccount like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "' and DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,BankAccount,EntryType,Amount,Date,Description from tbl_BankAdjustment where Company_ID='" + NewCompany.company_id + "' and BankAccount like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
