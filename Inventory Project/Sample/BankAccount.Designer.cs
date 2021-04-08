@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BankAccount));
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -99,7 +99,7 @@
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(230, 209);
+            this.button1.Location = new System.Drawing.Point(48, 167);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(24, 23);
             this.button1.TabIndex = 441;
@@ -108,7 +108,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(48, 209);
+            this.textBox2.Location = new System.Drawing.Point(76, 168);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(180, 23);
             this.textBox2.TabIndex = 440;
@@ -119,9 +119,9 @@
             this.btnclick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnclick.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclick.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnclick.Location = new System.Drawing.Point(675, 155);
+            this.btnclick.Location = new System.Drawing.Point(656, 155);
             this.btnclick.Name = "btnclick";
-            this.btnclick.Size = new System.Drawing.Size(90, 35);
+            this.btnclick.Size = new System.Drawing.Size(85, 35);
             this.btnclick.TabIndex = 9;
             this.btnclick.Text = "Clear";
             this.btnclick.UseVisualStyleBackColor = false;
@@ -131,7 +131,7 @@
             // 
             this.dtpdate.CustomFormat = "MM/dd/yyyy";
             this.dtpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpdate.Location = new System.Drawing.Point(467, 104);
+            this.dtpdate.Location = new System.Drawing.Point(473, 94);
             this.dtpdate.Name = "dtpdate";
             this.dtpdate.Size = new System.Drawing.Size(200, 23);
             this.dtpdate.TabIndex = 5;
@@ -144,7 +144,7 @@
             this.btnsave.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnsave.Location = new System.Drawing.Point(380, 156);
             this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(90, 35);
+            this.btnsave.Size = new System.Drawing.Size(85, 35);
             this.btnsave.TabIndex = 6;
             this.btnsave.Text = "Save ";
             this.btnsave.UseVisualStyleBackColor = false;
@@ -155,9 +155,9 @@
             this.btnupdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnupdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnupdate.Location = new System.Drawing.Point(479, 155);
+            this.btnupdate.Location = new System.Drawing.Point(470, 155);
             this.btnupdate.Name = "btnupdate";
-            this.btnupdate.Size = new System.Drawing.Size(90, 35);
+            this.btnupdate.Size = new System.Drawing.Size(85, 35);
             this.btnupdate.TabIndex = 7;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
@@ -168,9 +168,9 @@
             this.btnprint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnprint.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprint.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnprint.Location = new System.Drawing.Point(577, 155);
+            this.btnprint.Location = new System.Drawing.Point(564, 155);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(90, 35);
+            this.btnprint.Size = new System.Drawing.Size(85, 35);
             this.btnprint.TabIndex = 8;
             this.btnprint.Text = "Delete";
             this.btnprint.UseVisualStyleBackColor = false;
@@ -193,7 +193,7 @@
             this.txtopeningbal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtopeningbal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtopeningbal.HoverState.Parent = this.txtopeningbal;
-            this.txtopeningbal.Location = new System.Drawing.Point(467, 65);
+            this.txtopeningbal.Location = new System.Drawing.Point(473, 54);
             this.txtopeningbal.MaxLength = 1000;
             this.txtopeningbal.Name = "txtopeningbal";
             this.txtopeningbal.PasswordChar = '\0';
@@ -223,7 +223,7 @@
             this.txtaccountno.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtaccountno.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtaccountno.HoverState.Parent = this.txtaccountno;
-            this.txtaccountno.Location = new System.Drawing.Point(144, 166);
+            this.txtaccountno.Location = new System.Drawing.Point(144, 115);
             this.txtaccountno.MaxLength = 20;
             this.txtaccountno.Name = "txtaccountno";
             this.txtaccountno.PasswordChar = '\0';
@@ -251,7 +251,7 @@
             this.txtbankname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtbankname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbankname.HoverState.Parent = this.txtbankname;
-            this.txtbankname.Location = new System.Drawing.Point(144, 68);
+            this.txtbankname.Location = new System.Drawing.Point(143, 51);
             this.txtbankname.MaxLength = 50;
             this.txtbankname.Name = "txtbankname";
             this.txtbankname.PasswordChar = '\0';
@@ -279,7 +279,7 @@
             this.txtaccountname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtaccountname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtaccountname.HoverState.Parent = this.txtaccountname;
-            this.txtaccountname.Location = new System.Drawing.Point(144, 116);
+            this.txtaccountname.Location = new System.Drawing.Point(144, 83);
             this.txtaccountname.MaxLength = 50;
             this.txtaccountname.Name = "txtaccountname";
             this.txtaccountname.PasswordChar = '\0';
@@ -294,7 +294,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(368, 68);
+            this.label7.Location = new System.Drawing.Point(374, 57);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 16);
@@ -305,7 +305,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 119);
+            this.label6.Location = new System.Drawing.Point(26, 86);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 16);
@@ -316,7 +316,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 169);
+            this.label5.Location = new System.Drawing.Point(45, 118);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 16);
@@ -327,7 +327,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(413, 107);
+            this.label4.Location = new System.Drawing.Point(419, 97);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
@@ -338,7 +338,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 71);
+            this.label2.Location = new System.Drawing.Point(49, 54);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 16);
@@ -348,38 +348,38 @@
             // 
             // dgvbankaccount
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvbankaccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvbankaccount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvbankaccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvbankaccount.BackgroundColor = System.Drawing.Color.White;
             this.dgvbankaccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvbankaccount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvbankaccount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvbankaccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvbankaccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvbankaccount.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvbankaccount.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvbankaccount.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvbankaccount.EnableHeadersVisualStyles = false;
             this.dgvbankaccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvbankaccount.Location = new System.Drawing.Point(29, 239);
+            this.dgvbankaccount.Location = new System.Drawing.Point(29, 201);
             this.dgvbankaccount.Margin = new System.Windows.Forms.Padding(4);
             this.dgvbankaccount.Name = "dgvbankaccount";
             this.dgvbankaccount.RowHeadersVisible = false;
             this.dgvbankaccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvbankaccount.Size = new System.Drawing.Size(788, 270);
+            this.dgvbankaccount.Size = new System.Drawing.Size(788, 311);
             this.dgvbankaccount.TabIndex = 0;
             this.dgvbankaccount.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvbankaccount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

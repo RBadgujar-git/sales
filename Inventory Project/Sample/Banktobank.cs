@@ -524,7 +524,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,FromBank,ToBank,Amount,	Date,Descripition from tbl_BanktoBankTransfer where FromBank like '%{0}%' or ID like '%{0}%' and DeleteData='1' and Company_ID='" + NewCompany.company_id + "'  ", textBox2.Text);
+                string Query = string.Format("select ID,FromBank,ToBank,Amount,	Date,Descripition from tbl_BanktoBankTransfer where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' and FromBank like '%{0}%' or ID like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
