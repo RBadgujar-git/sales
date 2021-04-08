@@ -173,6 +173,7 @@
             this.txtaddcategory.ShadowDecoration.Parent = this.txtaddcategory;
             this.txtaddcategory.Size = new System.Drawing.Size(250, 30);
             this.txtaddcategory.TabIndex = 1;
+            this.txtaddcategory.TextChanged += new System.EventHandler(this.txtaddcategory_TextChanged);
             this.txtaddcategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtaddcategory_KeyPress);
             // 
             // dgvExpenseCaategory
