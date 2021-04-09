@@ -466,6 +466,7 @@
             this.txtHSNcode.Name = "txtHSNcode";
             this.txtHSNcode.PasswordChar = '\0';
             this.txtHSNcode.PlaceholderText = "";
+            this.txtHSNcode.ReadOnly = true;
             this.txtHSNcode.SelectedText = "";
             this.txtHSNcode.ShadowDecoration.Parent = this.txtHSNcode;
             this.txtHSNcode.Size = new System.Drawing.Size(200, 24);

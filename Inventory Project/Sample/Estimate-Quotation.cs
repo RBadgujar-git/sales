@@ -109,6 +109,7 @@ namespace sample
         {
             cmbCategory.Visible = false;
             comboBox2.Visible = false;
+            comboBox3.Visible = false;
             cmbpartyname.Focus();             
             txtReturnNo.Enabled = false;        
             get_id();
@@ -371,7 +372,16 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Date", dtpInvoice.Text);
                 cmd.Parameters.AddWithValue("@StateofSupply", cmbStatesupply.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-                cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+              //  cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                if (cmbtax.Visible == true)
+                {
+                    cmd.Parameters.AddWithValue("@Tax1", cmbpartyname.Text);
+                }
+                else
+
+                {
+                    cmd.Parameters.AddWithValue("@Tax1", comboBox3.Text);
+                }
                 cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
                 cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
                 cmd.Parameters.AddWithValue("@TaxAmount1", txtTaxAmount.Text);
@@ -570,6 +580,7 @@ namespace sample
         private void cleardata()
         {
             comboBox2.Visible = false;
+            comboBox3.Visible = false;
             txtcon.Text = "";
             cmbpartyname.Text = "";
             txtBillingAdd.Text = "";
@@ -730,8 +741,8 @@ namespace sample
         
             if (e.KeyCode == Keys.Enter)
             {
-                cmbCategory.Visible = false;
-                comboBox2.Visible =false;
+                cmbtax.Visible = false;
+                comboBox3.Visible = true;
                 cmbpartyname.Visible = false;
                 comboBox1.Visible = true;
                 bind_sale_details();
@@ -758,7 +769,7 @@ namespace sample
                         dtpInvoice.Text = dr["Date"].ToString();
                         cmbStatesupply.Text = dr["StateofSupply"].ToString();
                         txtDescription.Text = dr["Description"].ToString();
-                        cmbtax.Text = dr["Tax1"].ToString();
+                        comboBox2.Text = dr["Tax1"].ToString();
                         txtcgst.Text = dr["CGST"].ToString();
                         txtsgst.Text = dr["SGST"].ToString();
                         txtTaxAmount.Text = dr["TaxAmount1"].ToString();
@@ -843,8 +854,9 @@ namespace sample
                     txtTotal.Text = total.ToString();
                 }
             
-            catch (Exception ex) {
-               // MessageBox.Show(ex.Message);
+            catch (Exception ex)
+            {
+               //MessageBox.Show(ex.Message);
             }
         }
 
@@ -912,18 +924,25 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            validdata();
-            if (verify == 1)
+            if (id == "")
             {
-                insertdata();
-                insertitem();
-                insrtparty();
-                //bind_sale_details();
-                clear_text_data();
-                cleardata();
-                get_id();
-                //printdata(id1.ToString());
-                dgvInnerQuotation.Rows.Clear();
+                validdata();
+                if (verify == 1)
+                {
+                    insertdata();
+                    insertitem();
+                    insrtparty();
+                    //bind_sale_details();
+                    clear_text_data();
+                    cleardata();
+                    get_id();
+                    //printdata(id1.ToString());
+                    dgvInnerQuotation.Rows.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No permission");
             }
         }
 
@@ -1168,6 +1187,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
             clear_text_data();
             get_id();
@@ -1242,7 +1262,7 @@ namespace sample
         private void cmbtax_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             gst_devide();
-            cal_ItemTotal();
+            cal_Total();
         }
 
         private void txtDis_KeyPress(object sender, KeyPressEventArgs e)
@@ -1286,25 +1306,38 @@ namespace sample
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
         {
-            int round = 0;
+            //int round = 0;
 
-            if (chkRoundOff.Checked == false)
+            //if (chkRoundOff.Checked == false)
+            //{
+            //    txtTotal.Clear();
+            //    txtRoundup.Text = txtTotal.Text;            // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
+            //}
+            //else if (chkRoundOff.Checked == true)
+            //{
+
+            //    txtRoundup.Text = txtTotal.Text;
+            //    txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
+            //    round = Convert.ToInt32(txtTotal.Text);
+
+            //    txtTotal.Text = round.ToString();
+
+            //}
+            /// Math.Round(Convert.ToDouble(txtTotal.Text));
+            if (chkRoundOff.Checked == true)
             {
-                txtTotal.Clear();
-                txtRoundup.Text = txtTotal.Text;            // +Math.Round(double.Parse(txtTotal.Text)).ToString();;
-            }
-            else if (chkRoundOff.Checked == true)
-            {
-                
+                int round = 0;
                 txtRoundup.Text = txtTotal.Text;
                 txtTotal.Text = Math.Round(double.Parse(txtTotal.Text)).ToString();
                 round = Convert.ToInt32(txtTotal.Text);
-
                 txtTotal.Text = round.ToString();
 
             }
-            // Math.Round(Convert.ToDouble(txtTotal.Text));
-            
+            if (chkRoundOff.Checked == false)
+            {
+                cal_Total();
+                txtRoundup.Text = "";
+            }
         }
         private void dgvInnerQuotation_DoubleClick(object sender, EventArgs e)
         {
@@ -1488,6 +1521,21 @@ namespace sample
             {
                 fetchBarcode();
             }
+
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtTaxAmount_TextChanged(object sender, EventArgs e)
+        {
+            cal_Total();
+        }
+
+        private void txtDisAmount_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

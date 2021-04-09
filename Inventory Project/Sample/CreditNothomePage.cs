@@ -145,7 +145,7 @@ namespace sample
            
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate  from tbl_CreditNote1 where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate  from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

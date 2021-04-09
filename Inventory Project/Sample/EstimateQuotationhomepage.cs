@@ -59,9 +59,6 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvEstimate.DataSource = ds;
                 dgvEstimate.DataMember = "temp";
-
-
-
             }
             catch (Exception ex)
             {
@@ -106,8 +103,8 @@ namespace sample
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
-            dgvEstimate.AutoGenerateColumns = false;
-            dgvEstimate.ColumnCount = 9;
+           
+            dgvEstimate.ColumnCount = 4;
             dgvEstimate.Columns[0].HeaderText = "Name";
             dgvEstimate.Columns[0].DataPropertyName = "PartyName";
 
@@ -119,11 +116,8 @@ namespace sample
            
             dgvEstimate.Columns[3].HeaderText = "Status";
             dgvEstimate.Columns[3].DataPropertyName = "Status";
-
-          
-
-
             dgvEstimate.DataSource = dt;
+            dgvEstimate.AutoGenerateColumns = false;
         }
 
         private void dtpto_ValueChanged(object sender, EventArgs e)

@@ -13,7 +13,8 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null)) {
+            if (disposing && (components != null))
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -101,6 +102,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbtax = new System.Windows.Forms.ComboBox();
             this.chkenble = new System.Windows.Forms.CheckBox();
+            this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TxtIGST = new Guna.UI2.WinForms.Guna2TextBox();
@@ -148,7 +150,6 @@
             this.label40 = new System.Windows.Forms.Label();
             this.Credit = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerCreditNote)).BeginInit();
@@ -212,6 +213,7 @@
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
             this.txtsgst.Size = new System.Drawing.Size(59, 25);
             this.txtsgst.TabIndex = 0;
+            this.txtsgst.TextChanged += new System.EventHandler(this.txtsgst_TextChanged);
             // 
             // txtcgst
             // 
@@ -239,6 +241,7 @@
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
             this.txtcgst.Size = new System.Drawing.Size(57, 25);
             this.txtcgst.TabIndex = 0;
+            this.txtcgst.TextChanged += new System.EventHandler(this.txtcgst_TextChanged);
             this.txtcgst.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcgst_KeyPress);
             // 
             // txtcon
@@ -1490,13 +1493,41 @@
             // chkenble
             // 
             this.chkenble.AutoSize = true;
-            this.chkenble.Location = new System.Drawing.Point(1039, 56);
+            this.chkenble.Location = new System.Drawing.Point(870, 32);
             this.chkenble.Name = "chkenble";
             this.chkenble.Size = new System.Drawing.Size(70, 20);
             this.chkenble.TabIndex = 210;
             this.chkenble.Text = "Enable";
             this.chkenble.UseVisualStyleBackColor = true;
             this.chkenble.CheckedChanged += new System.EventHandler(this.chkenble_CheckedChanged_1);
+            // 
+            // txtReturnNo
+            // 
+            this.txtReturnNo.BorderColor = System.Drawing.Color.Gray;
+            this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtReturnNo.DefaultText = "";
+            this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtReturnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtReturnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReturnNo.DisabledState.Parent = this.txtReturnNo;
+            this.txtReturnNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReturnNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReturnNo.FocusedState.Parent = this.txtReturnNo;
+            this.txtReturnNo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
+            this.txtReturnNo.Location = new System.Drawing.Point(952, 52);
+            this.txtReturnNo.Name = "txtReturnNo";
+            this.txtReturnNo.PasswordChar = '\0';
+            this.txtReturnNo.PlaceholderText = "";
+            this.txtReturnNo.SelectedText = "";
+            this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
+            this.txtReturnNo.Size = new System.Drawing.Size(82, 24);
+            this.txtReturnNo.TabIndex = 9;
+            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
+            this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown_1);
+            this.txtReturnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReturnNo_KeyPress);
             // 
             // label20
             // 
@@ -1542,6 +1573,7 @@
             this.TxtIGST.ShadowDecoration.Parent = this.TxtIGST;
             this.TxtIGST.Size = new System.Drawing.Size(57, 25);
             this.TxtIGST.TabIndex = 0;
+            this.TxtIGST.TextChanged += new System.EventHandler(this.TxtIGST_TextChanged);
             this.TxtIGST.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIGST_KeyPress);
             // 
             // dtpInvoice
@@ -1655,6 +1687,7 @@
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(143, 24);
             this.cmbCategory.TabIndex = 9;
+            this.cmbCategory.Visible = false;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged_1);
             this.cmbCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCategory_KeyPress);
             // 
@@ -2073,34 +2106,6 @@
             this.button3.TabIndex = 2;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // txtReturnNo
-            // 
-            this.txtReturnNo.BorderColor = System.Drawing.Color.Gray;
-            this.txtReturnNo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtReturnNo.DefaultText = "";
-            this.txtReturnNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtReturnNo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtReturnNo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReturnNo.DisabledState.Parent = this.txtReturnNo;
-            this.txtReturnNo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtReturnNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReturnNo.FocusedState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(952, 52);
-            this.txtReturnNo.Name = "txtReturnNo";
-            this.txtReturnNo.PasswordChar = '\0';
-            this.txtReturnNo.PlaceholderText = "";
-            this.txtReturnNo.SelectedText = "";
-            this.txtReturnNo.ShadowDecoration.Parent = this.txtReturnNo;
-            this.txtReturnNo.Size = new System.Drawing.Size(82, 24);
-            this.txtReturnNo.TabIndex = 9;
-            this.txtReturnNo.TextChanged += new System.EventHandler(this.txtReturnNo_TextChanged_1);
-            this.txtReturnNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReturnNo_KeyDown_1);
-            this.txtReturnNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReturnNo_KeyPress);
             // 
             // CreditNote
             // 
