@@ -35,6 +35,7 @@ namespace sample
             fetchexpenses();
             bindbankdata();
             fetchCompany();
+            Data();
         }
 
         private void fetchCompany()
@@ -78,6 +79,8 @@ namespace sample
             dgvexpenses.Columns[2].DataPropertyName = "Total";
             
             dgvexpenses.DataSource = dt;
+            dgvexpenses.AllowUserToAddRows = false;
+
         }
         private void fetchexpenses()
         {
@@ -155,7 +158,7 @@ namespace sample
 
         private void dgvexpenses_TabIndexChanged(object sender, EventArgs e)
         {
-            Data();
+            //Data();
         }
         private void Data()
         {

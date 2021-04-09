@@ -140,7 +140,7 @@
             this.dtpDate.Location = new System.Drawing.Point(720, 103);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(186, 23);
-            this.dtpDate.TabIndex = 3;
+            this.dtpDate.TabIndex = 2;
             // 
             // Print
             // 
@@ -150,7 +150,7 @@
             this.Print.Location = new System.Drawing.Point(786, 551);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 16;
+            this.Print.TabIndex = 14;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -163,7 +163,7 @@
             this.Clear.Location = new System.Drawing.Point(885, 551);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(90, 42);
-            this.Clear.TabIndex = 17;
+            this.Clear.TabIndex = 15;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -179,7 +179,7 @@
             this.ComboBox.Location = new System.Drawing.Point(823, 512);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(143, 24);
-            this.ComboBox.TabIndex = 13;
+            this.ComboBox.TabIndex = 11;
             // 
             // label4
             // 
@@ -197,6 +197,7 @@
             this.cmbexpenses.Name = "cmbexpenses";
             this.cmbexpenses.Size = new System.Drawing.Size(173, 24);
             this.cmbexpenses.TabIndex = 1;
+            this.cmbexpenses.SelectedIndexChanged += new System.EventHandler(this.cmbexpenses_SelectedIndexChanged);
             // 
             // chkenble
             // 
@@ -204,7 +205,7 @@
             this.chkenble.Location = new System.Drawing.Point(836, 60);
             this.chkenble.Name = "chkenble";
             this.chkenble.Size = new System.Drawing.Size(70, 20);
-            this.chkenble.TabIndex = 1;
+            this.chkenble.TabIndex = 144444;
             this.chkenble.Text = "Enable";
             this.chkenble.UseVisualStyleBackColor = true;
             this.chkenble.CheckedChanged += new System.EventHandler(this.chkenble_CheckedChanged);
@@ -291,7 +292,7 @@
             this.txtitemamount.SelectionStart = 1;
             this.txtitemamount.ShadowDecoration.Parent = this.txtitemamount;
             this.txtitemamount.Size = new System.Drawing.Size(150, 26);
-            this.txtitemamount.TabIndex = 8;
+            this.txtitemamount.TabIndex = 6;
             this.txtitemamount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtitemamount_KeyDown);
             this.txtitemamount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtitemamount_KeyPress);
             // 
@@ -328,7 +329,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(150, 26);
-            this.txtMRP.TabIndex = 6;
+            this.txtMRP.TabIndex = 4;
             this.txtMRP.Click += new System.EventHandler(this.txtMRP_Click);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
@@ -365,7 +366,7 @@
             this.txtItem.SelectedText = "";
             this.txtItem.ShadowDecoration.Parent = this.txtItem;
             this.txtItem.Size = new System.Drawing.Size(200, 28);
-            this.txtItem.TabIndex = 2;
+            this.txtItem.TabIndex = 3;
             this.txtItem.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItem_KeyPress);
             // 
             // label18
@@ -402,7 +403,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(150, 26);
-            this.txtOty.TabIndex = 7;
+            this.txtOty.TabIndex = 5;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -496,7 +497,7 @@
             this.txtBalance.SelectionStart = 1;
             this.txtBalance.ShadowDecoration.Parent = this.txtBalance;
             this.txtBalance.Size = new System.Drawing.Size(143, 25);
-            this.txtBalance.TabIndex = 12;
+            this.txtBalance.TabIndex = 10;
             this.txtBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBalance_KeyPress);
             // 
             // txtTotal
@@ -525,7 +526,7 @@
             this.txtTotal.SelectionStart = 1;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
             this.txtTotal.Size = new System.Drawing.Size(143, 25);
-            this.txtTotal.TabIndex = 91;
+            this.txtTotal.TabIndex = 8;
             // 
             // txtReceived
             // 
@@ -552,13 +553,14 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(143, 25);
-            this.txtReceived.TabIndex = 11;
+            this.txtReceived.TabIndex = 9;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
             // txtdescritpition
             // 
             this.txtdescritpition.BorderColor = System.Drawing.Color.Gray;
+            this.txtdescritpition.BorderThickness = 7;
             this.txtdescritpition.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdescritpition.DefaultText = "";
             this.txtdescritpition.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -579,7 +581,7 @@
             this.txtdescritpition.PlaceholderText = "";
             this.txtdescritpition.SelectedText = "";
             this.txtdescritpition.ShadowDecoration.Parent = this.txtdescritpition;
-            this.txtdescritpition.Size = new System.Drawing.Size(166, 70);
+            this.txtdescritpition.Size = new System.Drawing.Size(174, 115);
             this.txtdescritpition.TabIndex = 10;
             // 
             // label25
@@ -617,7 +619,7 @@
             this.btnSave.Location = new System.Drawing.Point(588, 551);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 14;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.button5_Click);
@@ -630,7 +632,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(686, 552);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 15;
+            this.btnUpdate.TabIndex = 13;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -682,7 +684,7 @@
             this.dgvinnerexpenses.Name = "dgvinnerexpenses";
             this.dgvinnerexpenses.RowHeadersVisible = false;
             this.dgvinnerexpenses.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvinnerexpenses.Size = new System.Drawing.Size(903, 128);
+            this.dgvinnerexpenses.Size = new System.Drawing.Size(903, 125);
             this.dgvinnerexpenses.TabIndex = 9;
             this.dgvinnerexpenses.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvinnerexpenses.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
