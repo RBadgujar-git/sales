@@ -68,6 +68,8 @@ namespace sample
             dgvExpensecategory.Columns[1].HeaderText = " Paid Amount";
             dgvExpensecategory.Columns[1].DataPropertyName = "Paid";
             dgvExpensecategory.DataSource = dt;
+
+            dgvExpensecategory.AllowUserToAddRows = false;
         }
 
 
