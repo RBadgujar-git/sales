@@ -163,9 +163,16 @@ namespace sample
        
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            Update1();
-            fetchdetails();
-            cleardata();
+            if (txtOtherIncome.Text != "")
+            {
+                Update1();
+                fetchdetails();
+                cleardata();
+            }
+            else
+            {
+                MessageBox.Show("please Select data ");
+            } 
         }
         public void Delete()
         {
@@ -209,15 +216,18 @@ namespace sample
         }
         private void btndelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            cleardata();
+            if (txtOtherIncome.Text != "")
+            {
+                Delete();
+                fetchdetails();
+                cleardata();
+            }
         }
 
         private void dgvcategory_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgvcategory.SelectedRows[0].Cells["ID"].Value.ToString();
-            txtOtherIncome.Text = dgvcategory.SelectedRows[0].Cells["OtherIncome"].Value.ToString();
+            id = dgvcategory.SelectedRows[0].Cells[0].Value.ToString();
+            txtOtherIncome.Text = dgvcategory.SelectedRows[0].Cells[1].Value.ToString();
         }
 
         private void btnclear_Click(object sender, EventArgs e)
@@ -260,6 +270,18 @@ namespace sample
         private void txtSearch1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void dgvcategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvcategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id = dgvcategory.SelectedRows[0].Cells[0].Value.ToString();
+            txtOtherIncome.Text = dgvcategory.SelectedRows[0].Cells[1].Value.ToString();
+
         }
     }
 }
