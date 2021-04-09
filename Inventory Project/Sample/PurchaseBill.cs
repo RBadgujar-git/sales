@@ -1564,31 +1564,23 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (con.State == ConnectionState.Closed)
+            if (id == "")
             {
-                con.Open();
-            }
-          
                 verfydata();
                 if (verify == 1)
                 {
-
                     insertdata();
-                     print();
+                    print();
                     //  bind_sale_details();
                     Clear_Text_data();
                     cleardata();
-
-
-
-
-
                     get_id();
-
-
-
                 }
-            
+            }
+            else
+            {
+                MessageBox.Show("No permission");
+            }
         }
 
         private void cmbPaymentType_SelectedIndexChanged(object sender, EventArgs e)
@@ -1627,12 +1619,12 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
             Clear_Text_data();
             get_id();
             comboBox2.Visible = false;
             cmbpartyname.Visible = true;
-
         }
 
         private void cmbpartyname_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1677,6 +1669,10 @@ namespace sample
                 txtrefNo.Visible = true;
             }
             else if (cmbPaymentType.SelectedItem == "Cash")
+            {
+                txtrefNo.Visible = false;
+            }
+            else if (cmbPaymentType.SelectedItem == "Online Payment")
             {
                 txtrefNo.Visible = false;
             }
@@ -2191,6 +2187,100 @@ namespace sample
             catch (Exception ew)
             {
                 MessageBox.Show(ew.Message);
+            }
+        }
+
+        private void comboBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbStatesupply_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtItemName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtUnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtDisAmt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTaxAMount1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtrefNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbtax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtReceived_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+          else
+            {
+                e.Handled = false;
             }
         }
 

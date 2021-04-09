@@ -79,9 +79,9 @@ namespace sample
             dgvbankAccount.Columns[0].DataPropertyName = "AccountName";
             dgvbankAccount.Columns[1].HeaderText = "Amount";
             dgvbankAccount.Columns[1].DataPropertyName = "CurrentBal";
-
-
             dgvbankAccount.DataSource = dt;
+            dgvbankAccount.AllowUserToAddRows = false;
+            dgvLoanAccount.AllowUserToAddRows = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName,AccountNo,LendarBank,FirmName, CurrentBal,BalAsOf,Interest,Duration,PaidBy,LoanAmount,Total from tbl_LoanBank where AccountName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
+                string Query = string.Format("select AccountName,AccountNo,LendarBank,FirmName, CurrentBal,BalAsOf,Interest,Duration,PaidBy,LoanAmount,Total from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

@@ -47,6 +47,7 @@ namespace sample
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             sda.Fill(dtable);
             dgvReferral.DataSource = dtable;
+            dgvReferral.AllowUserToAddRows = false;
         }
 
         public void Insert1()
@@ -116,15 +117,15 @@ namespace sample
 
         private void btnDone_Click_2(object sender, EventArgs e)
         {
-            if (txtReferralcode.Text == "")
-            {
-                MessageBox.Show("Please Insert Contact No");
-           }
-            else
+            if (id == "")
             {
                 Insert1();
                 fetchdtails();
                 cleardata();
+            }
+            else
+            {
+                MessageBox.Show("Same data not inserted");
             }
         }
 
@@ -235,12 +236,30 @@ namespace sample
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
         }
 
         private void dgvReferral_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdtails();
+            }
+            else
+            {
+                string Query = string.Format("select ID,ReferralCode from ReferralCode1 where Company_ID ='" + NewCompany.company_id + "' and ID like '%{0}%' and  DeleteData='1'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvReferral.DataSource = ds;
+                dgvReferral.DataMember = "temp";
+            }
         }
     }
 }

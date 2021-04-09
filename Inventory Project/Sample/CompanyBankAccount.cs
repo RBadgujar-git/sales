@@ -24,9 +24,17 @@ namespace sample
 
         private void btnsave_Click(object sender, EventArgs e)
         {
-            Insert();
+            if (id == "")
+            {
+                Insert();
             clearData();
             fetchdetails();
+
+            }
+            else
+            {
+                MessageBox.Show("You Have To No Permission To Insert This Record");
+            }
         }
         public void Insert()
         {
@@ -112,8 +120,7 @@ namespace sample
 
             sdasql.Fill(dtable);
             dgvbankaccount.DataSource = dtable;
-
-
+            dgvbankaccount.AllowUserToAddRows = false;
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -327,7 +334,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where DeleteData = '1' and BankName like '%{0}%' or ID like '%{0}%' and Company_ID='" + NewCompany.company_id+"'", textBox2.Text);
+                string Query = string.Format("select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where Company_ID='" + NewCompany.company_id + "' and BankName like '%{0}%' or ID like '%{0}%' and  DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -339,6 +346,12 @@ namespace sample
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnclick_Click(object sender, EventArgs e)
+        {
+            id = "";
+            clearData();
         }
     }
 }

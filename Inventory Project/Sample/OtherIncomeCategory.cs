@@ -163,16 +163,9 @@ namespace sample
        
         private void btnupdate_Click(object sender, EventArgs e)
         {
-            if (txtOtherIncome.Text != "")
-            {
-                Update1();
-                fetchdetails();
-                cleardata();
-            }
-            else
-            {
-                MessageBox.Show("please Select data ");
-            } 
+            Update1();
+            fetchdetails();
+            cleardata();
         }
         public void Delete()
         {
@@ -216,18 +209,15 @@ namespace sample
         }
         private void btndelete_Click(object sender, EventArgs e)
         {
-            if (txtOtherIncome.Text != "")
-            {
-                Delete();
-                fetchdetails();
-                cleardata();
-            }
+            Delete();
+            fetchdetails();
+            cleardata();
         }
 
         private void dgvcategory_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dgvcategory.SelectedRows[0].Cells[0].Value.ToString();
-            txtOtherIncome.Text = dgvcategory.SelectedRows[0].Cells[1].Value.ToString();
+            id = dgvcategory.SelectedRows[0].Cells["ID"].Value.ToString();
+            txtOtherIncome.Text = dgvcategory.SelectedRows[0].Cells["OtherIncome"].Value.ToString();
         }
 
         private void btnclear_Click(object sender, EventArgs e)
@@ -272,16 +262,34 @@ namespace sample
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
-        private void dgvcategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        private void insertCategory()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string Query = String.Format("select OtherIncome from tbl_otherIncomeCaategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+                string catname = ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString();
+                if (catname.ToLower().ToString() == txtOtherIncome.Text.ToLower().ToString())
+                {
+                    MessageBox.Show("This Category Already Exist");
+                }
+
+            }
+        }
+        private void txtOtherIncome_TextChanged(object sender, EventArgs e)
+        {
+            insertCategory();
+            txtOtherIncome.Focus();
         }
 
-        private void dgvcategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id = dgvcategory.SelectedRows[0].Cells[0].Value.ToString();
-            txtOtherIncome.Text = dgvcategory.SelectedRows[0].Cells[1].Value.ToString();
-
-        }
     }
 }

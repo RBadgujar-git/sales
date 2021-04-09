@@ -141,6 +141,7 @@ namespace sample
         private void txtaddcategory_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            
             //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
             //{
             //    e.Handled = true;
@@ -182,7 +183,7 @@ namespace sample
                             int num = cmd.ExecuteNonQuery();
                             if (num > 0)
                             {
-                                MessageBox.Show("Delete data Successfully");
+                                MessageBox.Show("Delete Data Successfully");
                                 cleardata();
                             }
                             else
@@ -193,7 +194,7 @@ namespace sample
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("error" + ex.Message);
+                        MessageBox.Show("Error" + ex.Message);
                     }
                 }
                 else
@@ -235,7 +236,7 @@ namespace sample
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
-                            MessageBox.Show("Update data Successfully");
+                            MessageBox.Show("Update Data Successfully");
                             cleardata();
                         }
                         else
@@ -301,6 +302,37 @@ namespace sample
         private void txtSearch1_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void Insertcategory()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string Query = String.Format("select CategoryName from tbl_ExpenseCategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+                string catname = ds.Tables["Temp"].Rows[i]["CategoryName"].ToString();
+                if (catname.ToLower().ToString() == txtaddcategory.Text.ToLower().ToString())
+                {
+
+                    MessageBox.Show("This Category Already Exist");
+                }
+
+            }
+        }
+
+        private void txtaddcategory_TextChanged(object sender, EventArgs e)
+        {
+            Insertcategory();
+            txtaddcategory.Focus();
+            //cleardata();
         }
     }
 }
