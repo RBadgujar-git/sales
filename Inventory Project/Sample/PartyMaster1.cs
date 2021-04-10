@@ -82,6 +82,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvParty.DataSource = dtable;
+            dgvParty.AllowUserToAddRows = false;
         }
 
         private void InsertData()
@@ -207,7 +208,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No permission");
+                MessageBox.Show("Same Record Not Insert");
             }                
         }
 
@@ -311,9 +312,12 @@ namespace sample
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            Delete1();
-            fetchdetails();
-            Cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete1();
+                fetchdetails();
+                Cleardata();
+            }
         }
         public int gstint; 
         private void PartyMaster1_Load(object sender, EventArgs e)
@@ -477,6 +481,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
         private void fetchgroup()

@@ -187,7 +187,8 @@ namespace sample
 
         private void fetchUnit()
         {
-            if (cmbUnit.Text != "System.Data.DataRowView") {
+            if (cmbUnit.Text != "System.Data.DataRowView")
+            {
                 try {
                     string SelectQuery = string.Format("select UnitName from tbl_UnitMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by UnitName");
                     DataSet ds = new DataSet();
@@ -209,7 +210,10 @@ namespace sample
         {
             try
             {
-                 con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
                 string Query = String.Format("select SubUnitName from tbl_UnitMaster where (UnitName='{0}') and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' GROUP BY SubUnitName", cmbUnit.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -224,10 +228,10 @@ namespace sample
             {
                 MessageBox.Show(ex.Message);
             }
-            finally
-            {
-                con.Close();
-            }
+            //finally
+            //{
+            //    con.Close();
+            //}
         }
 
         private void Cleardata()
@@ -811,9 +815,9 @@ namespace sample
             {
                 e.Handled = true;
             }
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+          else
             {
-                e.Handled = true;
+                e.Handled = false;
             }
         }
 
@@ -992,7 +996,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and ItemName like '%{0}%' or ItemID like '%{0}%' and  DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and  DeleteData = '1' and ItemName like '%{0}%' or ItemID like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
