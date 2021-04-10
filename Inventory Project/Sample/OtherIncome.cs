@@ -790,5 +790,10 @@ namespace sample
         {
 
         }
+
+        private void txtitemamount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

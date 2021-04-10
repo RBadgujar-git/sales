@@ -313,6 +313,7 @@
             this.chkEnableItem.UncheckedState.BorderRadius = 0;
             this.chkEnableItem.UncheckedState.BorderThickness = 0;
             this.chkEnableItem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEnableItem.CheckedChanged += new System.EventHandler(this.chkEnableItem_CheckedChanged);
             // 
             // chkShowLowstockDailog
             // 

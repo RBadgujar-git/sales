@@ -160,13 +160,7 @@ namespace sample
             dgvItemmaster.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             hidedatagri();
            // con.Open();
-            SqlCommand cmd2 = new SqlCommand("Select HSN from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            hns = Convert.ToInt32(cmd2.ExecuteScalar());
-            con.Close();
-            if (hns == 1)
-            {
-                txtHSNcode.Enabled = true;
-            }
+          
         }
 
         private void fetchcategory()
@@ -288,13 +282,17 @@ namespace sample
 
         private void txtOpeningqty_TextChanged(object sender, EventArgs e)
         {
-            if (txtOpeningqty.Text != "" && txtOpeningqty.Text != "" && txtatPrice.Text != "")
+           try
             {
                 float gst = 0, gst_amt = 0, TA = 0;
                 TA = float.Parse(txtTaxAmountPurchase.Text.ToString());
                 gst = float.Parse(txtOpeningqty.Text.ToString());
                 gst_amt = TA * gst;
                 txtatPrice.Text = gst_amt.ToString();
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show("error" + ex.Message);
             }
         }
         private void fetchdetails()
@@ -442,7 +440,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No permission");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
         public void insert()
@@ -450,7 +448,7 @@ namespace sample
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
-            }           
+            }
             string Query = String.Format("select ItemName from tbl_ItemMaster where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
             DataSet ds = new DataSet();
             SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
@@ -462,7 +460,7 @@ namespace sample
                 string itemname = ds.Tables["Temp"].Rows[i]["ItemName"].ToString();
                 if (itemname.ToString() == txtItemName.Text.ToString())
                 {
-                    MessageBox.Show("This Item Already Exist");
+                   // MessageBox.Show("This Item Already Exist");
                 }
 
             }
@@ -521,10 +519,10 @@ namespace sample
                         {
                             con.Open();
                         }
-                    //MemoryStream ms = new MemoryStream();
-                    //picturebox.Image.Save(ms, picturebox.Image.RawFormat);
-                    //byte[] arrImage1 = ms.GetBuffer();
-                    //DataTable dt = new DataTable();
+                 MemoryStream ms = new MemoryStream();
+                   picturebox.Image.Save(ms, picturebox.Image.RawFormat);
+                   byte[] arrImage1 = ms.GetBuffer();
+                    DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_ItemMasterSelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Update");
@@ -555,6 +553,7 @@ namespace sample
                         cmd.Parameters.AddWithValue("@MinimumStock", txtminimumStock.Text);
                         cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                         cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
+                        cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
@@ -629,9 +628,11 @@ namespace sample
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-           
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+            }
         }
         public void hidedatagri()
         {
@@ -655,7 +656,8 @@ namespace sample
             dgvItemmaster.Columns["Expdate"].Visible = false;
             dgvItemmaster.Columns["Size"].Visible = false;
             dgvItemmaster.Columns["DeleteData"].Visible = false;
-            dgvItemmaster.Columns["Image1"].Visible = false;
+             dgvItemmaster.Columns["Image1"].Visible = false;
+          //  cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1=false;
             dgvItemmaster.Columns["CategoryID"].Visible = false;
             dgvItemmaster.Columns["Barcode"].Visible = false;
             dgvItemmaster.Columns["Company_ID"].Visible = false;
@@ -691,17 +693,24 @@ namespace sample
             txtDescritption.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Description"].Value.ToString();
             txtminimumStock.Text = dgvItemmaster.Rows[e.RowIndex].Cells["MinimumStock"].Value.ToString();
             textBox1.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Barcode"].Value.ToString();
-            SqlCommand cmd = new SqlCommand("select Image1 from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"' and DeleteData='1'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Image1"]);
-                ms.Seek(0, SeekOrigin.Begin);
-                picturebox.Image = Image.FromStream(ms);
-                picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
-            }          
+                SqlCommand cmd = new SqlCommand("select Image1 from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Image1"]);
+                    ms.Seek(0, SeekOrigin.Begin);
+                    picturebox.Image = Image.FromStream(ms);
+                    picturebox.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+            }
+            catch (Exception ex)
+            {
+               // MessageBox.Show("error" + ex.Message);
+            }
         }
        
 
@@ -810,6 +819,7 @@ namespace sample
 
         private void button2_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -982,7 +992,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where DeleteData = '1' and ItemName like '%{0}%' or ItemID like '%{0}%' and Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
+                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and ItemName like '%{0}%' or ItemID like '%{0}%' and  DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

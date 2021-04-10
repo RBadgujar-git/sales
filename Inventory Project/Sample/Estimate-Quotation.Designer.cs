@@ -121,6 +121,7 @@
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerQuotation)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -269,7 +270,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(985, 7);
+            this.button3.Location = new System.Drawing.Point(984, 6);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(26, 27);
             this.button3.TabIndex = 0;
@@ -301,7 +302,7 @@
             this.txtReturnNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtReturnNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtReturnNo.HoverState.Parent = this.txtReturnNo;
-            this.txtReturnNo.Location = new System.Drawing.Point(819, 61);
+            this.txtReturnNo.Location = new System.Drawing.Point(831, 61);
             this.txtReturnNo.Name = "txtReturnNo";
             this.txtReturnNo.PasswordChar = '\0';
             this.txtReturnNo.PlaceholderText = "";
@@ -327,7 +328,7 @@
             this.txtBillingAdd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtBillingAdd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtBillingAdd.HoverState.Parent = this.txtBillingAdd;
-            this.txtBillingAdd.Location = new System.Drawing.Point(150, 86);
+            this.txtBillingAdd.Location = new System.Drawing.Point(150, 83);
             this.txtBillingAdd.MaxLength = 300;
             this.txtBillingAdd.Multiline = true;
             this.txtBillingAdd.Name = "txtBillingAdd";
@@ -341,7 +342,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(572, 446);
+            this.label24.Location = new System.Drawing.Point(612, 457);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(35, 16);
             this.label24.TabIndex = 66;
@@ -350,7 +351,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(748, 415);
+            this.label19.Location = new System.Drawing.Point(748, 421);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(76, 16);
             this.label19.TabIndex = 56;
@@ -359,7 +360,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(861, 515);
+            this.label17.Location = new System.Drawing.Point(861, 523);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 16);
             this.label17.TabIndex = 52;
@@ -533,7 +534,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(754, 70);
+            this.label20.Location = new System.Drawing.Point(766, 70);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(62, 16);
             this.label20.TabIndex = 41;
@@ -542,7 +543,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(436, 61);
+            this.label13.Location = new System.Drawing.Point(459, 61);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(50, 16);
             this.label13.TabIndex = 42;
@@ -560,7 +561,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(365, 94);
+            this.label5.Location = new System.Drawing.Point(388, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 16);
             this.label5.TabIndex = 21;
@@ -569,7 +570,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 90);
+            this.label3.Location = new System.Drawing.Point(35, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 16);
             this.label3.TabIndex = 19;
@@ -653,7 +654,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(957, 7);
+            this.button2.Location = new System.Drawing.Point(955, 7);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(25, 25);
             this.button2.TabIndex = 0;
@@ -692,6 +693,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.comboBox3);
             this.panel1.Controls.Add(this.txtIGST);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label1);
@@ -763,7 +765,7 @@
             this.txtIGST.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtIGST.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIGST.HoverState.Parent = this.txtIGST;
-            this.txtIGST.Location = new System.Drawing.Point(660, 465);
+            this.txtIGST.Location = new System.Drawing.Point(702, 476);
             this.txtIGST.Name = "txtIGST";
             this.txtIGST.PasswordChar = '\0';
             this.txtIGST.PlaceholderText = "";
@@ -771,13 +773,13 @@
             this.txtIGST.SelectedText = "";
             this.txtIGST.SelectionStart = 1;
             this.txtIGST.ShadowDecoration.Parent = this.txtIGST;
-            this.txtIGST.Size = new System.Drawing.Size(78, 25);
+            this.txtIGST.Size = new System.Drawing.Size(65, 25);
             this.txtIGST.TabIndex = 153;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(668, 446);
+            this.label10.Location = new System.Drawing.Point(707, 457);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 16);
             this.label10.TabIndex = 152;
@@ -786,7 +788,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(851, 551);
+            this.label1.Location = new System.Drawing.Point(851, 568);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 16);
             this.label1.TabIndex = 129;
@@ -802,7 +804,7 @@
             "Paid",
             "Partial",
             "Unpaid"});
-            this.ComboBox.Location = new System.Drawing.Point(917, 547);
+            this.ComboBox.Location = new System.Drawing.Point(917, 564);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(89, 24);
             this.ComboBox.TabIndex = 12;
@@ -821,7 +823,7 @@
             "18",
             "24",
             "30"});
-            this.cmbtax.Location = new System.Drawing.Point(569, 465);
+            this.cmbtax.Location = new System.Drawing.Point(609, 475);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(85, 24);
             this.cmbtax.TabIndex = 10;
@@ -834,7 +836,7 @@
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(819, 123);
+            this.comboBox2.Location = new System.Drawing.Point(831, 123);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(163, 24);
             this.comboBox2.TabIndex = 5;
@@ -844,7 +846,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(566, 416);
+            this.label8.Location = new System.Drawing.Point(566, 422);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 16);
             this.label8.TabIndex = 127;
@@ -860,11 +862,12 @@
             this.comboBox1.Size = new System.Drawing.Size(163, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(353, 130);
+            this.label6.Location = new System.Drawing.Point(376, 130);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(137, 16);
             this.label6.TabIndex = 126;
@@ -872,7 +875,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(493, 126);
+            this.textBox1.Location = new System.Drawing.Point(516, 126);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 23);
             this.textBox1.TabIndex = 4;
@@ -884,10 +887,11 @@
             this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(819, 123);
+            this.cmbCategory.Location = new System.Drawing.Point(831, 123);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(163, 24);
             this.cmbCategory.TabIndex = 4;
+            this.cmbCategory.Visible = false;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged_1);
             // 
             // cmbStatesupply
@@ -924,7 +928,7 @@
             "Uttar Pradesh",
             "Uttarakhand",
             "West Bengal"});
-            this.cmbStatesupply.Location = new System.Drawing.Point(493, 90);
+            this.cmbStatesupply.Location = new System.Drawing.Point(516, 90);
             this.cmbStatesupply.Name = "cmbStatesupply";
             this.cmbStatesupply.Size = new System.Drawing.Size(160, 24);
             this.cmbStatesupply.TabIndex = 3;
@@ -934,7 +938,7 @@
             // 
             this.dtpInvoice.CustomFormat = "MM/dd/yyyy";
             this.dtpInvoice.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpInvoice.Location = new System.Drawing.Point(492, 57);
+            this.dtpInvoice.Location = new System.Drawing.Point(515, 57);
             this.dtpInvoice.Name = "dtpInvoice";
             this.dtpInvoice.Size = new System.Drawing.Size(160, 23);
             this.dtpInvoice.TabIndex = 2;
@@ -981,7 +985,7 @@
             // 
             this.chkenble.AutoSize = true;
             this.chkenble.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.chkenble.Location = new System.Drawing.Point(912, 67);
+            this.chkenble.Location = new System.Drawing.Point(924, 67);
             this.chkenble.Name = "chkenble";
             this.chkenble.Size = new System.Drawing.Size(70, 20);
             this.chkenble.TabIndex = 28;
@@ -992,7 +996,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(702, 127);
+            this.label38.Location = new System.Drawing.Point(714, 127);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(114, 16);
             this.label38.TabIndex = 112;
@@ -1015,7 +1019,7 @@
             this.txtsubtotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsubtotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsubtotal.HoverState.Parent = this.txtsubtotal;
-            this.txtsubtotal.Location = new System.Drawing.Point(648, 414);
+            this.txtsubtotal.Location = new System.Drawing.Point(648, 420);
             this.txtsubtotal.Name = "txtsubtotal";
             this.txtsubtotal.PasswordChar = '\0';
             this.txtsubtotal.PlaceholderText = "";
@@ -1043,7 +1047,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(833, 446);
+            this.label37.Location = new System.Drawing.Point(848, 457);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(44, 16);
             this.label37.TabIndex = 106;
@@ -1052,7 +1056,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(747, 446);
+            this.label35.Location = new System.Drawing.Point(774, 457);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(44, 16);
             this.label35.TabIndex = 105;
@@ -1074,7 +1078,7 @@
             this.txtsgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtsgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtsgst.HoverState.Parent = this.txtsgst;
-            this.txtsgst.Location = new System.Drawing.Point(830, 465);
+            this.txtsgst.Location = new System.Drawing.Point(845, 476);
             this.txtsgst.Name = "txtsgst";
             this.txtsgst.PasswordChar = '\0';
             this.txtsgst.PlaceholderText = "";
@@ -1082,7 +1086,7 @@
             this.txtsgst.SelectedText = "";
             this.txtsgst.SelectionStart = 1;
             this.txtsgst.ShadowDecoration.Parent = this.txtsgst;
-            this.txtsgst.Size = new System.Drawing.Size(80, 24);
+            this.txtsgst.Size = new System.Drawing.Size(67, 24);
             this.txtsgst.TabIndex = 0;
             // 
             // txtcgst
@@ -1101,7 +1105,7 @@
             this.txtcgst.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcgst.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcgst.HoverState.Parent = this.txtcgst;
-            this.txtcgst.Location = new System.Drawing.Point(744, 465);
+            this.txtcgst.Location = new System.Drawing.Point(772, 476);
             this.txtcgst.Name = "txtcgst";
             this.txtcgst.PasswordChar = '\0';
             this.txtcgst.PlaceholderText = "";
@@ -1109,7 +1113,7 @@
             this.txtcgst.SelectedText = "";
             this.txtcgst.SelectionStart = 1;
             this.txtcgst.ShadowDecoration.Parent = this.txtcgst;
-            this.txtcgst.Size = new System.Drawing.Size(80, 24);
+            this.txtcgst.Size = new System.Drawing.Size(67, 24);
             this.txtcgst.TabIndex = 0;
             // 
             // txtcon
@@ -1128,7 +1132,7 @@
             this.txtcon.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcon.HoverState.Parent = this.txtcon;
-            this.txtcon.Location = new System.Drawing.Point(150, 137);
+            this.txtcon.Location = new System.Drawing.Point(150, 133);
             this.txtcon.MaxLength = 10;
             this.txtcon.Name = "txtcon";
             this.txtcon.PasswordChar = '\0';
@@ -1142,7 +1146,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(53, 143);
+            this.label36.Location = new System.Drawing.Point(53, 137);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(94, 16);
             this.label36.TabIndex = 101;
@@ -1175,7 +1179,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.label23);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel1.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(26, 172);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(26, 170);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(990, 88);
@@ -1389,7 +1393,7 @@
             // 
             this.txtOty.BorderColor = System.Drawing.Color.Gray;
             this.txtOty.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtOty.DefaultText = "1";
+            this.txtOty.DefaultText = "0";
             this.txtOty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtOty.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtOty.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1430,7 +1434,7 @@
             this.chkRoundOff.CheckedState.BorderRadius = 0;
             this.chkRoundOff.CheckedState.BorderThickness = 0;
             this.chkRoundOff.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkRoundOff.Location = new System.Drawing.Point(651, 516);
+            this.chkRoundOff.Location = new System.Drawing.Point(651, 524);
             this.chkRoundOff.Name = "chkRoundOff";
             this.chkRoundOff.Size = new System.Drawing.Size(103, 20);
             this.chkRoundOff.TabIndex = 11;
@@ -1457,7 +1461,7 @@
             this.txtTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotal.HoverState.Parent = this.txtTotal;
-            this.txtTotal.Location = new System.Drawing.Point(917, 512);
+            this.txtTotal.Location = new System.Drawing.Point(917, 520);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.PasswordChar = '\0';
             this.txtTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1486,7 +1490,7 @@
             this.txtRoundup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtRoundup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRoundup.HoverState.Parent = this.txtRoundup;
-            this.txtRoundup.Location = new System.Drawing.Point(755, 514);
+            this.txtRoundup.Location = new System.Drawing.Point(755, 522);
             this.txtRoundup.Name = "txtRoundup";
             this.txtRoundup.PasswordChar = '\0';
             this.txtRoundup.PlaceholderText = "";
@@ -1514,7 +1518,7 @@
             this.txtTaxAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxAmount.HoverState.Parent = this.txtTaxAmount;
-            this.txtTaxAmount.Location = new System.Drawing.Point(917, 465);
+            this.txtTaxAmount.Location = new System.Drawing.Point(917, 476);
             this.txtTaxAmount.Name = "txtTaxAmount";
             this.txtTaxAmount.PasswordChar = '\0';
             this.txtTaxAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1525,6 +1529,7 @@
             this.txtTaxAmount.ShadowDecoration.Parent = this.txtTaxAmount;
             this.txtTaxAmount.Size = new System.Drawing.Size(90, 24);
             this.txtTaxAmount.TabIndex = 0;
+            this.txtTaxAmount.TextChanged += new System.EventHandler(this.txtTaxAmount_TextChanged);
             // 
             // txtDisAmount
             // 
@@ -1542,7 +1547,7 @@
             this.txtDisAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDisAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDisAmount.HoverState.Parent = this.txtDisAmount;
-            this.txtDisAmount.Location = new System.Drawing.Point(917, 412);
+            this.txtDisAmount.Location = new System.Drawing.Point(917, 418);
             this.txtDisAmount.Name = "txtDisAmount";
             this.txtDisAmount.PasswordChar = '\0';
             this.txtDisAmount.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1553,6 +1558,7 @@
             this.txtDisAmount.ShadowDecoration.Parent = this.txtDisAmount;
             this.txtDisAmount.Size = new System.Drawing.Size(90, 24);
             this.txtDisAmount.TabIndex = 0;
+            this.txtDisAmount.TextChanged += new System.EventHandler(this.txtDisAmount_TextChanged);
             // 
             // txtDiscount
             // 
@@ -1570,7 +1576,7 @@
             this.txtDiscount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscount.HoverState.Parent = this.txtDiscount;
-            this.txtDiscount.Location = new System.Drawing.Point(820, 412);
+            this.txtDiscount.Location = new System.Drawing.Point(820, 418);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.PasswordChar = '\0';
             this.txtDiscount.PlaceholderText = "";
@@ -1605,8 +1611,28 @@
             this.txtDescription.PlaceholderText = "";
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
-            this.txtDescription.Size = new System.Drawing.Size(163, 54);
+            this.txtDescription.Size = new System.Drawing.Size(163, 46);
             this.txtDescription.TabIndex = 8;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "0",
+            "2",
+            "3",
+            "5",
+            "9",
+            "12",
+            "15",
+            "18",
+            "24",
+            "30"});
+            this.comboBox3.Location = new System.Drawing.Point(609, 475);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(85, 24);
+            this.comboBox3.TabIndex = 154;
+            this.comboBox3.Text = "0";
             // 
             // Estimate_Quotation
             // 
@@ -1725,5 +1751,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2TextBox txtIGST;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }

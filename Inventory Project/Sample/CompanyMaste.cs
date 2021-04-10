@@ -235,18 +235,6 @@ namespace sample
         }
     private void btnsave_Click(object sender, EventArgs e)
         {
-            if (txtcampanyName.Text == "")
-            {
-
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                //chekpoint = 0;
-
-            }
-           else
-            {
                 if (id == "")
                 {
                     validfild();
@@ -260,10 +248,10 @@ namespace sample
                 }
                 else
                 {
-                    MessageBox.Show("No Permission");
+                    MessageBox.Show("Same Record Not Insert");
                 }
             }
-        }
+        
 
 
         public void Update1()
@@ -833,26 +821,26 @@ namespace sample
 
         private void btnsave_Leave(object sender, EventArgs e)
         {
-            string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
-            DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.Fill(ds, "Temp");
-            DataTable DT = new DataTable();
-            SDA.Fill(ds);
-            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-            {
+            //string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
+            //DataSet ds = new DataSet();
+            //SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            //SDA.Fill(ds, "Temp");
+            //DataTable DT = new DataTable();
+            //SDA.Fill(ds);
+            //for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //{
 
-                string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+            //    string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
 
-                if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
-                {
-                    //chekpoint = 1;
-                    MessageBox.Show("This Company Name is already Exist ");
-                    //txtcampanyName.Clear();
-                    txtcampanyName.Focus();
-                }
+            //    if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
+            //    {
+            //        //chekpoint = 1;
+            //       // MessageBox.Show("This Company Name is already Exist ");
+            //        //txtcampanyName.Clear();
+            //        txtcampanyName.Focus();
+            //    }
 
-            }
+            //}
         }
     }
 }

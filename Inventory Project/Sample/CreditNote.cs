@@ -348,11 +348,7 @@ namespace sample
                     TxtIGST.Text = gst.ToString();
                     txtsgst.Text = 0.ToString();
                     txtcgst.Text = 0.ToString();
-
                 }
-
-
-
             }
             catch (Exception e1)
             {
@@ -743,24 +739,30 @@ namespace sample
       }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            verfydata();
-
-            if (verfy == 1)
+            if (id == "")
             {
-                existingcheek();
-                if (point == 0)
+                verfydata();
+
+                if (verfy == 1)
                 {
-                    insertdata();
-                    //  insert_record_inner();
-                    //   bind_sale_details();
-                    get_id();
-                    cleardata();
-                    clear_text_data();
-                  printdata(id1.ToString());
-                    //   dgvInnerCreditNote.Rows.Clear();
+                    existingcheek();
+                    if (point == 0)
+                    {
+                        insertdata();
+                        //  insert_record_inner();
+                        //   bind_sale_details();
+                        get_id();
+                        cleardata();
+                        clear_text_data();
+                        printdata(id1.ToString());
+                        //   dgvInnerCreditNote.Rows.Clear();
+                    }
                 }
             }
-
+            else
+            {
+                MessageBox.Show("No permission");
+            }
         }
         private void printdata(string id1)
         {
@@ -1499,6 +1501,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
             clear_text_data();
             cmbpartyname.Visible = true;
@@ -1548,10 +1551,9 @@ namespace sample
             {
                 cmbpartyname.Visible = false;
                 comboBox1.Visible = true;
-                cmbCategory.Visible = false;
-                comboBox2.Visible = false;
+               
                 cmbtax.Visible = false;
-                comboBox3.Visible = false;
+                comboBox3.Visible = true;
                 //  comboBox1.Text = "";
                 bind_sale_details();
             }
@@ -1623,8 +1625,9 @@ namespace sample
 
         private void txtReturnNo_TextChanged_1(object sender, EventArgs e)
         {
-            //cal_Total();
-            //gst_devide();
+            gst_devide();
+            cal_Total();
+          
         }
 
         private void cmbtax_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -1697,6 +1700,21 @@ namespace sample
                 cal_Total();
                 txtRoundup.Text = "";
             }
+
+        }
+
+        private void TxtIGST_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsgst_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

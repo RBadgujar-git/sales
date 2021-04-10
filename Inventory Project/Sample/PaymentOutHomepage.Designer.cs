@@ -195,6 +195,7 @@
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 181;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // label5
             // 

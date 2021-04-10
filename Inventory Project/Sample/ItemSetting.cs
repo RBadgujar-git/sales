@@ -255,6 +255,11 @@ namespace sample
             }
         }
 
+        private void chkEnableItem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void chkItemWiseTax_CheckedChanged(object sender, EventArgs e)
         {
             if (guna2CheckBox16.Checked == true)

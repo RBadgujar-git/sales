@@ -90,14 +90,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvcreditNote.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvcreditNote.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvcreditNote.EnableHeadersVisualStyles = false;
             this.dgvcreditNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvcreditNote.Location = new System.Drawing.Point(0, 171);
+            this.dgvcreditNote.Location = new System.Drawing.Point(0, 161);
             this.dgvcreditNote.Name = "dgvcreditNote";
             this.dgvcreditNote.RowHeadersVisible = false;
             this.dgvcreditNote.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvcreditNote.Size = new System.Drawing.Size(1071, 445);
+            this.dgvcreditNote.Size = new System.Drawing.Size(1071, 455);
             this.dgvcreditNote.TabIndex = 201;
             this.dgvcreditNote.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvcreditNote.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -199,6 +198,7 @@
             // 
             // txtfilter
             // 
+            this.txtfilter.BorderColor = System.Drawing.Color.Gray;
             this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfilter.DefaultText = "";
             this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -259,7 +259,7 @@
             this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbAllfirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbAllfirms.FocusedState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
             this.cmbAllfirms.ForeColor = System.Drawing.Color.Blue;
             this.cmbAllfirms.HoverState.Parent = this.cmbAllfirms;
             this.cmbAllfirms.ItemHeight = 30;
@@ -272,6 +272,7 @@
             this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllfirms.StartIndex = 0;
             this.cmbAllfirms.TabIndex = 212;
+            this.cmbAllfirms.Visible = false;
             this.cmbAllfirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllfirms_SelectedIndexChanged);
             // 
             // btnminimize
