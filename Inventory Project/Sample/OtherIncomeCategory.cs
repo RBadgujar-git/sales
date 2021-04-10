@@ -83,15 +83,22 @@ namespace sample
         {
             
         }
-       // tbl_otherIncomeCategorySelect
+        // tbl_otherIncomeCategorySelect
         private void btnSave_Click(object sender, EventArgs e)
         {
-            InsertData();
-            fetchdetails();
-            cleardata();
-        }
+            if (id == "")
+            {
+                InsertData();
+                fetchdetails();
+                cleardata();
+            }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+            else
+            {
+                MessageBox.Show("Same Record Not Insert");
+            }
+        }
+    private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -169,17 +176,17 @@ namespace sample
         }
         public void Delete()
         {
-            if (MessageBox.Show("DO YOU WANT DELETE??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (!string.IsNullOrEmpty(id))
             {
-                if (!string.IsNullOrEmpty(id))
-                        {
-                    try
+                try
+                {
+                    
+                    if (con.State == ConnectionState.Closed)
                     {
-                        if (con.State == ConnectionState.Closed)
-                        {
-                            con.Open();
-                        }
-                        DataTable dt = new DataTable();
+                        con.Open();
+                    }
+                    DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_otherIncomeCategorySelect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Delete");
@@ -187,31 +194,34 @@ namespace sample
 
                         int num = cmd.ExecuteNonQuery();
                         if (num > 0)
-                        {
-                            MessageBox.Show("Delete Data Successfully");
-                            cleardata();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
-                    }
-                    catch (Exception ex)
                     {
-                        MessageBox.Show("error" + ex.Message);
+                        MessageBox.Show("Delete data Successfully");
+                        cleardata();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Record");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                MessageBox.Show("Please Select Record");
+                    MessageBox.Show("error" + ex.Message);
                 }
             }
+            else
+            {
+                MessageBox.Show("Please Select Record");
+            }
         }
+        
         private void btndelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                cleardata();
+            }
         }
 
         private void dgvcategory_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -222,6 +232,7 @@ namespace sample
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
         }
 
@@ -265,25 +276,25 @@ namespace sample
 
         private void insertCategory()
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            string Query = String.Format("select OtherIncome from tbl_otherIncomeCaategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
-            DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.Fill(ds, "Temp");
-            DataTable DT = new DataTable();
-            SDA.Fill(ds);
-            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-            {
-                string catname = ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString();
-                if (catname.ToLower().ToString() == txtOtherIncome.Text.ToLower().ToString())
-                {
-                    MessageBox.Show("This Category Already Exist");
-                }
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
+            //string Query = String.Format("select OtherIncome from tbl_otherIncomeCaategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            //DataSet ds = new DataSet();
+            //SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            //SDA.Fill(ds, "Temp");
+            //DataTable DT = new DataTable();
+            //SDA.Fill(ds);
+            //for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //{
+            //    string catname = ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString();
+            //    if (catname.ToLower().ToString() == txtOtherIncome.Text.ToLower().ToString())
+            //    {
+            //        MessageBox.Show("This Category Already Exist");
+            //    }
 
-            }
+            //}
         }
         private void txtOtherIncome_TextChanged(object sender, EventArgs e)
         {

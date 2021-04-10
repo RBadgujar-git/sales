@@ -141,7 +141,7 @@ namespace sample
                 }
                 else
                 {
-                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                    MessageBox.Show("Same Record Not Insert");
                 }
             }
             catch (Exception ex)
@@ -286,10 +286,13 @@ namespace sample
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            Delete();
-            txtaccountname.Focus();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                txtaccountname.Focus();
 
-            fetchdetails();
+                fetchdetails();
+            }
         }
         private void btnexit_Click(object sender, EventArgs e)
         {
@@ -357,6 +360,7 @@ namespace sample
 
         private void btn_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 

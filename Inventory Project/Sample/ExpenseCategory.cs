@@ -112,8 +112,15 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Insertdata();
-            fetchdetails();
+            if (id == "")
+            {
+                Insertdata();
+                fetchdetails();
+            }
+            else
+            {
+                MessageBox.Show("Same Record Not Insert");
+            }
         }
 
         private void ExpenseCategory_Load(object sender, EventArgs e)
@@ -154,6 +161,7 @@ namespace sample
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
         }
 
@@ -306,26 +314,26 @@ namespace sample
 
         private void Insertcategory()
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            string Query = String.Format("select CategoryName from tbl_ExpenseCategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
-            DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.Fill(ds, "Temp");
-            DataTable DT = new DataTable();
-            SDA.Fill(ds);
-            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-            {
-                string catname = ds.Tables["Temp"].Rows[i]["CategoryName"].ToString();
-                if (catname.ToLower().ToString() == txtaddcategory.Text.ToLower().ToString())
-                {
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
+            //string Query = String.Format("select CategoryName from tbl_ExpenseCategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            //DataSet ds = new DataSet();
+            //SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            //SDA.Fill(ds, "Temp");
+            //DataTable DT = new DataTable();
+            //SDA.Fill(ds);
+            //for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //{
+            //    string catname = ds.Tables["Temp"].Rows[i]["CategoryName"].ToString();
+            //    if (catname.ToLower().ToString() == txtaddcategory.Text.ToLower().ToString())
+            //    {
 
-                    MessageBox.Show("This Category Already Exist");
-                }
+            //        MessageBox.Show("This Category Already Exist");
+            //    }
 
-            }
+            //}
         }
 
         private void txtaddcategory_TextChanged(object sender, EventArgs e)

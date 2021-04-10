@@ -203,7 +203,7 @@
             // 
             this.saleInvoiceToolStripMenuItem.Name = "saleInvoiceToolStripMenuItem";
             this.saleInvoiceToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.saleInvoiceToolStripMenuItem.Text = "sale Invoice";
+            this.saleInvoiceToolStripMenuItem.Text = "Sale Invoice";
             this.saleInvoiceToolStripMenuItem.Click += new System.EventHandler(this.saleInvoiceToolStripMenuItem_Click);
             // 
             // paymentInToolStripMenuItem

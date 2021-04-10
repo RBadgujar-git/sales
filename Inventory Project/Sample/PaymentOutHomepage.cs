@@ -46,7 +46,7 @@ namespace sample
         {
 
             binddaata();
-
+            dgvPaymentOut.AllowUserToAddRows = false;
             //try
             //{
             //    con.Open();

@@ -65,10 +65,9 @@ namespace sample
             con.Close();
             this.dgvcategory.AllowUserToAddRows = false;
             dgvcategory.ColumnCount = 1;
-            dgvcategory.Columns[0].DataPropertyName = "CategoryName";
-            
-
+            dgvcategory.Columns[0].DataPropertyName = "CategoryName"; 
             dgvcategory.DataSource = dt;
+            dgvExxpenses.AllowUserToAddRows = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

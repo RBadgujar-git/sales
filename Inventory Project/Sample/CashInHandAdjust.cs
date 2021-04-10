@@ -61,6 +61,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvCashAdjustment.DataSource = dtable;
+            dgvCashAdjustment.AllowUserToAddRows = false;
             con.Close();
         }
 
@@ -147,7 +148,7 @@ namespace sample
                 }
                 else
                 {
-                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                    MessageBox.Show("Same Record Not Insert");
                 }
             }
             catch (Exception ex)
@@ -292,9 +293,12 @@ namespace sample
         }
         private void btndelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            Cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                Cleardata();
+            }
         }
         public void Update1()
         {
@@ -371,6 +375,7 @@ namespace sample
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -452,7 +457,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select * from tbl_CashAdjustment where CashAdjustment like '%{0}%' or ID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,CashAdjustment,CashAmount,Date,Description,BankName from tbl_CashAdjustment where Company_ID='" + NewCompany.company_id + "' and DeleteData = '1' and CashAdjustment like '%{0}%' or ID like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
