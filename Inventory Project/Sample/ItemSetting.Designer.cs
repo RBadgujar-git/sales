@@ -443,6 +443,7 @@
             this.chkBarcodeScan.UncheckedState.BorderRadius = 0;
             this.chkBarcodeScan.UncheckedState.BorderThickness = 0;
             this.chkBarcodeScan.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkBarcodeScan.CheckedChanged += new System.EventHandler(this.chkBarcodeScan_CheckedChanged);
             // 
             // chkDirectBarcodescan
             // 

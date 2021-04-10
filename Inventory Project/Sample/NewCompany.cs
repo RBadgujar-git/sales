@@ -102,9 +102,7 @@ namespace sample
             {
                
                 InsertData();
- 
-
-               Dashboard da = new Dashboard();
+                Dashboard da = new Dashboard();
                 da.Close();
 
                 //System.Windows.Forms.Application.Exit();
