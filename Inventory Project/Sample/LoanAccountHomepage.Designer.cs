@@ -50,7 +50,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvLoanAccount = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel3.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbankAccount)).BeginInit();
@@ -65,7 +64,7 @@
             this.guna2ShadowPanel3.Controls.Add(this.guna2Button4);
             this.guna2ShadowPanel3.Controls.Add(this.btnMakePayment);
             this.guna2ShadowPanel3.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(295, 61);
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(295, 58);
             this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
             this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel3.Size = new System.Drawing.Size(766, 130);
@@ -120,10 +119,10 @@
             this.guna2ShadowPanel2.Controls.Add(this.guna2Button1);
             this.guna2ShadowPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(0, 59);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(0, 53);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(289, 566);
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(289, 572);
             this.guna2ShadowPanel2.TabIndex = 199;
             this.guna2ShadowPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel2_Paint);
             // 
@@ -162,7 +161,7 @@
             this.dgvbankAccount.Name = "dgvbankAccount";
             this.dgvbankAccount.RowHeadersVisible = false;
             this.dgvbankAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvbankAccount.Size = new System.Drawing.Size(259, 398);
+            this.dgvbankAccount.Size = new System.Drawing.Size(259, 443);
             this.dgvbankAccount.TabIndex = 3;
             this.dgvbankAccount.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvbankAccount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -252,7 +251,7 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1067, 59);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1067, 53);
             this.guna2ShadowPanel1.TabIndex = 198;
             // 
             // btnminimize
@@ -265,7 +264,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(1007, 13);
+            this.btnminimize.Location = new System.Drawing.Point(1007, 10);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 439;
@@ -283,7 +282,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(1030, 13);
+            this.btnCancel.Location = new System.Drawing.Point(1030, 10);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(31, 27);
             this.btnCancel.TabIndex = 5;
@@ -294,7 +293,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(481, 22);
+            this.label1.Location = new System.Drawing.Point(481, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(126, 18);
             this.label1.TabIndex = 0;
@@ -316,7 +315,7 @@
             this.txtSearch2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch2.HoverState.Parent = this.txtSearch2;
             this.txtSearch2.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch2.IconLeft")));
-            this.txtSearch2.Location = new System.Drawing.Point(302, 203);
+            this.txtSearch2.Location = new System.Drawing.Point(302, 200);
             this.txtSearch2.Name = "txtSearch2";
             this.txtSearch2.PasswordChar = '\0';
             this.txtSearch2.PlaceholderText = "";
@@ -344,8 +343,6 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvLoanAccount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLoanAccount.ColumnHeadersHeight = 18;
-            this.dgvLoanAccount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -356,7 +353,7 @@
             this.dgvLoanAccount.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLoanAccount.EnableHeadersVisualStyles = false;
             this.dgvLoanAccount.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLoanAccount.Location = new System.Drawing.Point(295, 245);
+            this.dgvLoanAccount.Location = new System.Drawing.Point(295, 239);
             this.dgvLoanAccount.Name = "dgvLoanAccount";
             this.dgvLoanAccount.RowHeadersVisible = false;
             this.dgvLoanAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -385,11 +382,6 @@
             this.dgvLoanAccount.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLoanAccount.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvLoanAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoanAccount_CellContentClick);
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Name = "Column7";
             // 
             // LoanAccountHomepage
             // 
@@ -434,7 +426,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblBankAccount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.Button btnminimize;
     }
 }

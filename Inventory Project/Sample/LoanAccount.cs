@@ -116,6 +116,7 @@ namespace sample
             sdasql.Fill(dtable);
            
               dgvDescription.DataSource = dtable;
+            dgvDescription.AllowUserToAddRows = false;
             con.Close();
         }
 
@@ -125,7 +126,7 @@ namespace sample
             txtAccountNo.Text = "";
             txtDescription.Text = "";
             txtLenderBank.Text = "";
-            txtcompanyname.Text = "";
+            
             txtCurrentBal.Text = "";
             cmbLoanReceive.Text = "";
             txtinterest.Text = "";
@@ -192,7 +193,7 @@ namespace sample
             txtLenderBank.Text = dgvDescription.SelectedRows[0].Cells["LendarBank"].Value.ToString();
             txtcompanyname.Text = dgvDescription.SelectedRows[0].Cells["FirmName"].Value.ToString();
             txtCurrentBal.Text= dgvDescription.SelectedRows[0].Cells["CurrentBal"].Value.ToString();
-          dtpdate.Text= dgvDescription.SelectedRows[0].Cells["BalAsOf"].Value.ToString();
+             dtpdate.Text= dgvDescription.SelectedRows[0].Cells["BalAsOf"].Value.ToString();
             cmbLoanReceive.Text = dgvDescription.SelectedRows[0].Cells["LoanReceive"].Value.ToString();
             txtinterest.Text= dgvDescription.SelectedRows[0].Cells["Interest"].Value.ToString();        
             txtTermDuration.Text= dgvDescription.SelectedRows[0].Cells["Duration"].Value.ToString();
@@ -302,13 +303,17 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //calopenbal();
-            //update_opening_bal();
-            InsertData();
-                    cmbAccount.Focus();
-
+            if (id == "")
+            {
+                InsertData();
+            cmbAccount.Focus();
             fetchdetails();
             cleardata();
+            }
+            else
+            {
+                MessageBox.Show("You Have To No Permission To Insert This Record");
+            }
         }
         public void calopenbal()
         {
@@ -471,6 +476,7 @@ namespace sample
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
         }
 
@@ -570,7 +576,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,AccountName,AccountNo,Description,LendarBank,FirmName,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,PaidBy,LoanAmount,Total,BalAsOf from tbl_LoanBank where AccountName like '%{0}%' or ID like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,AccountName,AccountNo,Description,LendarBank,FirmName,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,PaidBy,LoanAmount,Total,BalAsOf from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

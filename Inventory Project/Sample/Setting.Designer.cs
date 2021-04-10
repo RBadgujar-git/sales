@@ -70,6 +70,9 @@
             this.chkprintAmount = new Guna.UI2.WinForms.Guna2CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbCompanyName = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnlogin = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
@@ -639,16 +642,59 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(367, 121);
+            this.panel2.Location = new System.Drawing.Point(367, 289);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 313);
+            this.panel2.Size = new System.Drawing.Size(267, 10);
             this.panel2.TabIndex = 453;
+            // 
+            // cmbCompanyName
+            // 
+            this.cmbCompanyName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbCompanyName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCompanyName.BackColor = System.Drawing.Color.White;
+            this.cmbCompanyName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCompanyName.ForeColor = System.Drawing.Color.Black;
+            this.cmbCompanyName.FormattingEnabled = true;
+            this.cmbCompanyName.Location = new System.Drawing.Point(382, 106);
+            this.cmbCompanyName.Name = "cmbCompanyName";
+            this.cmbCompanyName.Size = new System.Drawing.Size(224, 26);
+            this.cmbCompanyName.TabIndex = 454;
+            this.cmbCompanyName.Text = "Select Company";
+            this.cmbCompanyName.SelectedIndexChanged += new System.EventHandler(this.cmbCompanyName_SelectedIndexChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(381, 153);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 16);
+            this.label12.TabIndex = 455;
+            this.label12.Text = "label12";
+            // 
+            // btnlogin
+            // 
+            this.btnlogin.CheckedState.Parent = this.btnlogin;
+            this.btnlogin.CustomImages.Parent = this.btnlogin;
+            this.btnlogin.FillColor = System.Drawing.Color.Purple;
+            this.btnlogin.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.ForeColor = System.Drawing.Color.White;
+            this.btnlogin.HoverState.Parent = this.btnlogin;
+            this.btnlogin.Location = new System.Drawing.Point(488, 175);
+            this.btnlogin.Name = "btnlogin";
+            this.btnlogin.ShadowDecoration.Parent = this.btnlogin;
+            this.btnlogin.Size = new System.Drawing.Size(115, 27);
+            this.btnlogin.TabIndex = 456;
+            this.btnlogin.Text = "Set Defualt";
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnlogin);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.cmbCompanyName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -748,5 +794,8 @@
         private Guna.UI2.WinForms.Guna2CheckBox chkprintAmount;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox cmbCompanyName;
+        private System.Windows.Forms.Label label12;
+        private Guna.UI2.WinForms.Guna2Button btnlogin;
     }
 }

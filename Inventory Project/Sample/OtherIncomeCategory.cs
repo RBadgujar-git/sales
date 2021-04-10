@@ -261,5 +261,35 @@ namespace sample
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
+
+
+        private void insertCategory()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string Query = String.Format("select OtherIncome from tbl_otherIncomeCaategory where DeleteData ='1' and Company_ID='" + NewCompany.company_id + "'");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+                string catname = ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString();
+                if (catname.ToLower().ToString() == txtOtherIncome.Text.ToLower().ToString())
+                {
+                    MessageBox.Show("This Category Already Exist");
+                }
+
+            }
+        }
+        private void txtOtherIncome_TextChanged(object sender, EventArgs e)
+        {
+            insertCategory();
+            txtOtherIncome.Focus();
+        }
+
     }
 }

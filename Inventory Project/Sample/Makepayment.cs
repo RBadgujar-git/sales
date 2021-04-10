@@ -58,6 +58,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);     
             dgvMakePayment.DataSource = dtable;
+            dgvMakePayment.AllowUserToAddRows = false;
             con.Close();
         }
         private void InsertData()
@@ -382,6 +383,7 @@ namespace sample
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -430,7 +432,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,PrincipleAmount,InterestAmount,Date,TotalAmount,PaidFrom,AccountName from tbl_MakePayment where DeleteData = '1' and AccountName like '%{0}%' or ID like '%{0}%' and  Company_ID='" + NewCompany.company_id + "'", textBox2.Text);
+                string Query = string.Format("select ID,AccountName,PrincipleAmount,InterestAmount,Date,TotalAmount,PaidFrom from tbl_MakePayment where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' or ID like '%{0}%' and  DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

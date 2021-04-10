@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace sample
 {
     public partial class CompanyBankAccountHomepage : UserControl
     {
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         public CompanyBankAccountHomepage()
         {
             InitializeComponent();
@@ -28,10 +29,65 @@ namespace sample
             BA.Visible = true;
             BA.BringToFront();
         }
-
+        private void fetchdetails()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand("(select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            dgvcompanybank.DataSource = dt;
+            dgvcompanybank.AllowUserToAddRows = false;
+        }
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+        }
+
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+               
+           
+        }
+
+        private void CompanyBankAccountHomepage_Load(object sender, EventArgs e)
+        {
+            fetchdetails();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnprint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("(select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where BankName like '%{0}%' or  ID like '%{0}%' and Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' )", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvcompanybank.DataSource = ds;
+                dgvcompanybank.DataMember = "temp";
+            }
+        }
+
+        private void dgvcompanybank_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

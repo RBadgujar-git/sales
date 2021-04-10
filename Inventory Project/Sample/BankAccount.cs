@@ -67,8 +67,8 @@ namespace sample
 
             sdasql.Fill(dtable);
             dgvbankaccount.DataSource = dtable;
-           
-            
+            dgvbankaccount.AllowUserToAddRows = false;
+
         }
         public void Insert()
         {
