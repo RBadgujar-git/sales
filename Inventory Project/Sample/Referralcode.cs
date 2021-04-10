@@ -125,7 +125,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("Same data not inserted");
+                MessageBox.Show("Same Record Not Inserted");
             }
         }
 
@@ -201,11 +201,16 @@ namespace sample
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Action", "Delete");
                     cmd.Parameters.AddWithValue("@ID", id);
-
-                   
+                    int num = cmd.ExecuteNonQuery();
+                    if (num > 0)
+                    {
                         MessageBox.Show("Delete data Successfully");
                         cleardata();
-                    
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Record");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -216,17 +221,13 @@ namespace sample
             {
                 MessageBox.Show("Please Select Record");
             }
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (txtReferralcode.Text == "")
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Please Select Record");
-            }
-            else
-            {
+                
                 Delete();
                 fetchdtails();
                 cleardata();

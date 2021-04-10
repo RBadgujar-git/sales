@@ -63,6 +63,7 @@ namespace sample
             sdasql.Fill(dtable);
 
             dgvAdjustaccount.DataSource = dtable;
+            dgvAdjustaccount.AllowUserToAddRows = false;
             con.Close();
             ////dgvAdjustaccount.DataBind();
             //try
@@ -215,7 +216,7 @@ namespace sample
                 }
                 else
                 {
-                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                    MessageBox.Show("Same Record Not Insert");
                 }
             }
             catch (Exception ex)
@@ -389,11 +390,13 @@ namespace sample
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            Cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                Cleardata();
+            }
         }
-
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

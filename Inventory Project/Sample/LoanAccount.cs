@@ -312,7 +312,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("You Have To No Permission To Insert This Record");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
         public void calopenbal()
@@ -469,9 +469,12 @@ namespace sample
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                cleardata();
+            }
         }
 
         private void btnclear_Click(object sender, EventArgs e)

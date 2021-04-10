@@ -56,6 +56,7 @@ namespace sample
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
             sdasql.Fill(dtable);
             dgvbanktobank.DataSource = dtable;
+            dgvbanktobank.AllowUserToAddRows = false;
             con.Close();
         }
 
@@ -164,14 +165,13 @@ namespace sample
                         calopenbal();
                         update_opening_bal();
                         Insert();
-                    cmbfrombank.Focus();
-
+                       cmbfrombank.Focus();
                         fetchdetails();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                    MessageBox.Show("Same Record Not Insert");
                 }
             }
             catch (Exception ex)
@@ -415,13 +415,17 @@ namespace sample
         private void btndelete_Click(object sender, EventArgs e)
         {
             //  validdata();
-            Delete();
-            fetchdetails();
-            Cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                Cleardata();
+            }
         }
 
         private void btnclear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 

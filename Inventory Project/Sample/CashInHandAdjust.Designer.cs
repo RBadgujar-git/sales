@@ -160,7 +160,7 @@
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.button1.Location = new System.Drawing.Point(80, 188);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(21, 21);
+            this.button1.Size = new System.Drawing.Size(19, 19);
             this.button1.TabIndex = 445;
             this.button1.UseVisualStyleBackColor = false;
             // 
