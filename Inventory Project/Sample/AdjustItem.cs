@@ -139,7 +139,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No Permission");
+                MessageBox.Show("Same Record Not Insert");
             }
            
         }
@@ -231,6 +231,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
         public void Update1()
@@ -336,11 +337,13 @@ namespace sample
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            //tbl_ItemAdjustement();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                //tbl_ItemAdjustement();
+            }
         }
-
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
 

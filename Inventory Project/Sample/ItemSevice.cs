@@ -145,7 +145,7 @@ namespace sample
             {
                 MessageBox.Show("Item Unit Required");
                 cmbUnit.Focus();
-            }        
+            }
             else if (txtitemcode.Text == "")
             {
                 MessageBox.Show("Item unit code Required");
@@ -164,12 +164,9 @@ namespace sample
             }
             else if (cmbTaxType.Text == "")
             {
-                MessageBox.Show(" select Tax Type !");              
-             }
-            else if (cmbTaxRate.Text == "")
-            {
-                MessageBox.Show(" select Tax Rate !");
+                MessageBox.Show(" select Tax Type !");
             }
+                
             else
             {
                 veryfi = 1;
@@ -193,7 +190,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No permission");
+                MessageBox.Show("Same Record Not Insert");
             }              
         }
 
@@ -303,10 +300,12 @@ namespace sample
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+            }
         }
-        
         private void ItemSevice_Load(object sender, EventArgs e)
         {
             txtItemName.Focus();
@@ -478,6 +477,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -538,7 +538,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and ItemName like '%{0}%' or ServiceID like '%{0}%' and DeleteData='1'", textBox1.Text);
+                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ServiceID like '%{0}%'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

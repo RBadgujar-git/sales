@@ -79,7 +79,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ReferralCode", txtReferralCode.Text);
                     cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Login Company Successfully !!!");
+                  //  MessageBox.Show("Login Company Successfully !!!");
                     con.Close();
                     ClearData();
                 
@@ -93,28 +93,33 @@ namespace sample
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            if (cmbCompanyName.Text == "")
+            if (MessageBox.Show("DO YOU WANT LOGIN", "Login successfully", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Company Name Is Requried");
-               
-            }
-            else
-            {
-               
-                InsertData();
-                Dashboard da = new Dashboard();
-                da.Close();
+                if (cmbCompanyName.Text == "")
+                {
+                    MessageBox.Show("Company Name Is Requried");
 
-                //System.Windows.Forms.Application.Exit();
-                Dashboard da1 = new Dashboard();
-                da1.Show();
+                }
+                else
+                {
+
+                    InsertData();
 
 
-                //da.label1.Text = companyname;
-                //this.Visible = false;
-                //th = new Thread(openingform);
-                //th.SetApartmentState(ApartmentState.STA);
-                //th.Start();
+                    Dashboard da = new Dashboard();
+                    da.Close();
+
+                    //System.Windows.Forms.Application.Exit();
+                    Dashboard da1 = new Dashboard();
+                    da1.Show();
+
+
+                    //da.label1.Text = companyname;
+                    //this.Visible = false;
+                    //th = new Thread(openingform);
+                    //th.SetApartmentState(ApartmentState.STA);
+                    //th.Start();
+                }
             }
         }
 

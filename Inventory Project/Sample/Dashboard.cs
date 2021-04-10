@@ -136,7 +136,7 @@ namespace sample
         private void Form1_Load(object sender, EventArgs e)
         {
 
-
+            panel1.Focus();
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();

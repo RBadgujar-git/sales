@@ -71,7 +71,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1007, 12);
+            this.btncancel.Location = new System.Drawing.Point(968, 12);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 183;
@@ -137,7 +137,7 @@
             this.dgvSaleOrder.Name = "dgvSaleOrder";
             this.dgvSaleOrder.RowHeadersVisible = false;
             this.dgvSaleOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSaleOrder.Size = new System.Drawing.Size(971, 344);
+            this.dgvSaleOrder.Size = new System.Drawing.Size(971, 387);
             this.dgvSaleOrder.TabIndex = 196;
             this.dgvSaleOrder.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvSaleOrder.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -202,6 +202,7 @@
             // 
             // txtFilterBy
             // 
+            this.txtFilterBy.BorderColor = System.Drawing.Color.Gray;
             this.txtFilterBy.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFilterBy.DefaultText = "";
             this.txtFilterBy.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -221,7 +222,7 @@
             this.txtFilterBy.PlaceholderText = "";
             this.txtFilterBy.SelectedText = "";
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
-            this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
+            this.txtFilterBy.Size = new System.Drawing.Size(176, 32);
             this.txtFilterBy.TabIndex = 205;
             this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
@@ -254,7 +255,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(975, 12);
+            this.btnminimize.Location = new System.Drawing.Point(936, 12);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 451;

@@ -109,7 +109,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No Permission");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
      
@@ -213,9 +213,12 @@ namespace sample
         }
         private void butDelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                cleardata();
+            }
         }
 
         private void dgvCategory_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -244,6 +247,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             cleardata();
         }
 
@@ -265,7 +269,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where Company_ID ='" + NewCompany.company_id + "' and CategoryName like '%{0}%' or CategoryID like '%{0}%' and DeleteData='1'", textBox1.Text);
+                string Query = string.Format("select CategoryID,CategoryName from tbl_CategoryMaster where Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' and CategoryName like '%{0}%' or CategoryID like '%{0}%'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
