@@ -74,6 +74,7 @@ namespace sample
             dgvPaymentIn.Columns[5].HeaderText = "Total";
             dgvPaymentIn.Columns[5].DataPropertyName = "Total";
             dgvPaymentIn.DataSource = dt;
+            dgvPaymentIn.AllowUserToAddRows = false;
         }
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {

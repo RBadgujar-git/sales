@@ -135,7 +135,7 @@ namespace sample
                 }
                 else
                 {
-                    MessageBox.Show("You Have To No Permission To Insert This Record");
+                    MessageBox.Show("Same record Not Insert");
                 }
             }
             catch (Exception ex)
@@ -376,11 +376,13 @@ namespace sample
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            Cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                Cleardata();
+            }
         }
-
         private void btnclear_Click(object sender, EventArgs e)
         {
             id = "";
@@ -432,7 +434,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,AccountName,PrincipleAmount,InterestAmount,Date,TotalAmount,PaidFrom from tbl_MakePayment where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' or ID like '%{0}%' and  DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,AccountName,PrincipleAmount,InterestAmount,Date,TotalAmount,PaidFrom from tbl_MakePayment where Company_ID='" + NewCompany.company_id + "' and DeleteData = '1' and AccountName like '%{0}%' or ID like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

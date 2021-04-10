@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<StiSerializer version="1.0" application="StiReport">
+<StiSerializer version="1.02" type="Net" application="StiReport">
   <Dictionary Ref="1" type="Dictionary" isKey="true">
     <BusinessObjects isList="true" count="0" />
     <Databases isList="true" count="0" />
@@ -172,7 +172,7 @@
         </PageFooterBand1>
         <ReportTitleBand1 Ref="13" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,19,8.4</ClientRectangle>
+          <ClientRectangle>0,0.4,19,7.8</ClientRectangle>
           <Components isList="true" count="34">
             <Text1 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -685,7 +685,7 @@ No.</Text>
         <DataBand2 Ref="48" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,9.6,19,0.6</ClientRectangle>
+          <ClientRectangle>0,9,19,0.6</ClientRectangle>
           <Components isList="true" count="12">
             <Text19 Ref="49" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -894,7 +894,7 @@ No.</Text>
         </DataBand2>
         <FooterBand1 Ref="61" type="FooterBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,11,19,4.6</ClientRectangle>
+          <ClientRectangle>0,10.4,19,4.6</ClientRectangle>
           <Components isList="true" count="0" />
           <Conditions isList="true" count="0" />
           <Name>FooterBand1</Name>
@@ -942,13 +942,13 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>3/18/2021 7:12:07 PM</ReportChanged>
+  <ReportChanged>4/10/2021 3:54:36 PM</ReportChanged>
   <ReportCreated>3/18/2021 5:53:27 PM</ReportCreated>
-  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\EstimateReport.mrt</ReportFile>
-  <ReportGuid>466e0015914c4c7b986dd8b12abba7ca</ReportGuid>
+  <ReportFile>C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\Sample\bin\Debug\EstimateReport.mrt</ReportFile>
+  <ReportGuid>c3250a457b3f47efb259db7f4045eddb</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
-  <ReportVersion>2010.1.700</ReportVersion>
+  <ReportVersion>2012.3.1500</ReportVersion>
   <Script>using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -969,7 +969,8 @@ namespace Reports
         {
             this.InitializeComponent();
         }
-        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
     }
 }
 </Script>

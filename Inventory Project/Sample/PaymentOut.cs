@@ -66,7 +66,7 @@ namespace sample
             txtDiscount.Text = "0";
             txtTotal.Text = "0";
             comboBox1.Text = "";
-     //       PictureBox1.Image = null;
+            PictureBox1.Image = Properties.Resources.No_Image_Available;
         }
 
         private void fetchdetails()
@@ -159,7 +159,7 @@ namespace sample
             }
             else if (txtReceiptNo.Text == "")
             {
-                MessageBox.Show("Please Insert Paid Payment ");
+                MessageBox.Show("Please Insert Receipt No");
 
             }
 
@@ -193,7 +193,7 @@ namespace sample
                 }
             }
            else {
-                MessageBox.Show("You Don't Have Permission to Save This Record");
+                MessageBox.Show("Same Record Not Insert");
             }
 
         }
@@ -253,84 +253,67 @@ namespace sample
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (id != "")
-            {
-                valid();
-                if (verify == 1)
-                {
+           
                     Update1();
                     Cleardata();
                     fetchdetails();
                     id = "";
-                }
-            }
-            else
-            {
-                MessageBox.Show("No Permission ! ");
-            }
+          
 
         }
 
         public void Delete1()
         {
-          
-                if (!string.IsNullOrEmpty(id))
+
+            if (!string.IsNullOrEmpty(id))
+            {
+                try
                 {
-                    try
+                    //  if (dr == DialogResult.Yes)
+                    // {
+                    if (con.State == ConnectionState.Closed)
                     {
-                        if (con.State == ConnectionState.Closed)
-                        {
-                            con.Open();
-                        }
-                        DataTable dt = new DataTable();
+                        con.Open();
+                    }
+                    DataTable dt = new DataTable();
                         SqlCommand cmd = new SqlCommand("tbl_Paymentoutselect", con);
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Action", "Delete");
                         cmd.Parameters.AddWithValue("@ID", id);
-                        int num = cmd.ExecuteNonQuery();
-                        if (num > 0)
-                        {
-                            MessageBox.Show("Delete data Successfully");
-                            Cleardata();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please Select Record");
-                        }
-                    }
-                    catch (Exception ex)
+                    int num = cmd.ExecuteNonQuery();
+                    if (num > 0)
                     {
-                        MessageBox.Show("error" + ex.Message);
+                        MessageBox.Show("Delete data Successfully");
+                        Cleardata();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Record");
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Please Select Record");
-                }
-            }
-        
- 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            if (id != "")
-            {
-                if (cmbPartyName.Text != "")
-                {
-
-                    Delete1();
-                    fetchdetails();
-                    id = "";
-                }
-                else
-                {
-                    MessageBox.Show("Please Select Record ");
+                    MessageBox.Show("error" + ex.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Indavlid Data !");
+                MessageBox.Show("Please Select Record");
             }
         }
+
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                Delete1();
+                fetchdetails();
+                id = "";
+            }
+        }
+        
 
         private void dgvPaymentIn_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -476,8 +459,9 @@ namespace sample
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cleardata();
             id = "";
+            Cleardata();
+           
         }
 
         private void Print_Click(object sender, EventArgs e)

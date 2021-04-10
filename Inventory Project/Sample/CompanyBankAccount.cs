@@ -33,7 +33,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("You Have To No Permission To Insert This Record");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
         public void Insert()
@@ -258,8 +258,11 @@ namespace sample
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+            }
         }
 
         private void dgvbankaccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -334,7 +337,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where Company_ID='" + NewCompany.company_id + "' and BankName like '%{0}%' or ID like '%{0}%' and  DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData = '1' and  BankName like '%{0}%' or ID like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
