@@ -128,7 +128,7 @@ namespace sample
             cmd.ExecuteNonQuery();
 
             SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSeeting(Company_ID)values(" + id + ")", con);
-            cmd.ExecuteNonQuery();
+            cmd1.ExecuteNonQuery();
 
         }
 
@@ -203,7 +203,7 @@ namespace sample
         {
             
         }
-
+        
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -772,6 +772,7 @@ namespace sample
                 Estiment = Convert.ToInt32(dr["Estiment"]);
                 Estiment1 = Convert.ToInt32(dr["Sale_purches"]);
                 deleverychallan = Convert.ToInt32(dr["Delliverychallen"]);
+
             }
             dr.Close();
                 //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);

@@ -119,6 +119,12 @@ namespace sample
             comboBox1.Visible = false;
             dgvInnerQuotation.AllowUserToAddRows = false;
 
+            seeting();
+            if(barcode==1)
+            {
+                label6.Visible = false;
+                textBox1.Visible = false;
+            }
 
             //if (chkRoundOff.Checked == false)
             //{
@@ -1162,7 +1168,26 @@ namespace sample
         {
 
         }
+        public int barcode;
+        public void seeting()
+        {
 
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                barcode = Convert.ToInt32(dr["barcode"]);
+
+            }
+            dr.Close();
+        }
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
 

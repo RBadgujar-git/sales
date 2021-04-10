@@ -42,7 +42,12 @@ namespace sample
             comboBox3.Visible = false;
             cmbCategory.Visible = false;
             label38.Visible = false;
-
+            seeting();
+            if(barcode==1)
+            {
+                label40.Visible = false;
+                textBox1.Visible = false;
+            }
         }
         private void fetchitem()
         {
@@ -1297,7 +1302,26 @@ namespace sample
         {
 
         }
-        
+        public int barcode;
+        public void seeting()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                barcode = Convert.ToInt32(dr["barcode"]);
+
+            }
+            dr.Close();
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

@@ -45,6 +45,9 @@ namespace sample
 
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
+
+
+
             chkRoundOff.Hide();
             txtRoundup.Hide();
             comboBox3.Hide();
@@ -255,11 +258,17 @@ namespace sample
 
                 txtDis.Width = 130;
                 txtDis.Height = 28;
-
                 txtOty.Location = new Point(567, 42);
                 txtOty.Width = 119;
                 txtOty.Height = 28;
             }
+            if (barcode == 1)
+            {
+                textBox1.Visible = false;
+                label41.Visible = false;
+            }
+
+
         }
 
         private void fetchBarcode()
@@ -710,9 +719,10 @@ namespace sample
             else
             {
                 printdata2();
+               // ItemSetting.checkbarcode();
             }
         }
-        public int investment,discountcheck, ItemwisTax;
+        public int investment,discountcheck, ItemwisTax,barcode;
         public void seeting()
         {
 
@@ -729,6 +739,8 @@ namespace sample
                 investment = Convert.ToInt32(dr["InvoiceNo"]);
                 discountcheck= Convert.ToInt32(dr["ItemWiseDiscount"]);
                 ItemwisTax= Convert.ToInt32(dr["ItemwisTax"]);
+                barcode=Convert.ToInt32(dr["barcode"]);
+
             }
             dr.Close();
         }
@@ -1187,8 +1199,7 @@ namespace sample
         {
             try
             {
-                if (txtReceived.Text != "" && txtTotal.Text != "" && txtBallaance.Text != "")
-                {
+               
                     float receive_bank = 0, receive_cash = 0, pending_amt = 0, TP = 0, GT = 0;
 
 
@@ -1197,7 +1208,7 @@ namespace sample
 
                     TP = GT - receive_cash;
                     txtBallaance.Text = TP.ToString();
-                }
+                
             }
             catch(Exception ew)
             {
@@ -2076,6 +2087,11 @@ namespace sample
         }
 
         private void txtItemTotal_ImeModeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
