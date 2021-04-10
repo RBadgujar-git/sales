@@ -53,7 +53,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+ "'and DeleteData='1' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='"+NewCompany.company_id+ "' and DeleteData='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -329,6 +329,10 @@ namespace sample
                     fetchdetails();
                 }
             }
+            else
+            {
+                MessageBox.Show("No Permission");
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -379,8 +383,9 @@ namespace sample
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            Cleardata();
             id = "";
+            Cleardata();
+           
         }
         byte[] arrImage1 = null;
         private void PictureBox1_Click(object sender, EventArgs e)
@@ -525,7 +530,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where DeleteData = '1' and CustomerName like '%{0}%' or ID like '%{0}%'", textBox2.Text);
+                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and CustomerName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

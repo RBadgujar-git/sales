@@ -109,7 +109,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No Permission");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
 
@@ -148,6 +148,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             Cleardata();
         }
 
@@ -242,11 +243,13 @@ namespace sample
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            Delete();
-            fetchdetails();
-            Cleardata();
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Delete();
+                fetchdetails();
+                Cleardata();
+            }
         }
-
         private void btncancel_Click_1(object sender, EventArgs e)
         {
             this.Visible = false;

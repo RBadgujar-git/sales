@@ -830,16 +830,22 @@ namespace sample
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            verifydata();
-            if (verifyid == 1)
+            if (id == "")
             {
-                insertdata();
-                clear_text_data();
-                cleardata();
-             
-                printdata(txtReturnNo.Text.ToString());
-                get_id();
+                verifydata();
+                if (verifyid == 1)
+                {
+                    insertdata();
+                    clear_text_data();
+                    cleardata();
 
+                    printdata(txtReturnNo.Text.ToString());
+                    get_id();
+                }
+            }
+            else
+            {
+                MessageBox.Show("No permission");
             }
         }
         private void printdata(string id1)
@@ -1219,6 +1225,7 @@ namespace sample
 
         private void butClear_Click(object sender, EventArgs e)
         {
+            id = "";
             cmbpartyname.Visible = true;
             comboBox1.Visible = false;
             cleardata();

@@ -41,6 +41,7 @@ namespace sample
 
         private void get_id()
         {
+
             if (txtReturnNo.Text != "0" || txtReturnNo.Text != "")
             {
                 SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
@@ -359,7 +360,7 @@ namespace sample
             }
             finally
             {
-                // clear_text_data();
+                clear_text_data();
             }
         }
 
@@ -813,6 +814,10 @@ namespace sample
                 e.Handled = true;
             }
         }
- 
+
+        private void cmbexpenses_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

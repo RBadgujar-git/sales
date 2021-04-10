@@ -354,22 +354,19 @@ namespace sample
 
         private void gst_devide()
         {
-
             try
             {
-
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
                 }
-                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "'", con);
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
                 string State1 = cd.ExecuteScalar().ToString();
                 con.Close();
                 // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
                 if (State1 == cmbStatesupply.Text)
                 {
-
                     float gst = 0, cgst = 0, sgst = 0;
                     gst = float.Parse(cmbtax.Text);
                     cgst = gst / 2;
@@ -384,13 +381,11 @@ namespace sample
                     txtIGST.Text = gst.ToString();
                     txtsgst.Text = 0.ToString();
                     txtcgst.Text = 0.ToString();
-
                 }
-
             }
             catch (Exception e1)
             {
-                // MessageBox.Show(e1.Message);
+                //  MessageBox.Show(e1.Message);
             }
         }
 
@@ -808,24 +803,22 @@ namespace sample
         public void cal_Total()
        {
             try
-            //if (txtsubtotal.Text != "" && cmbtax.Text != "")
-            //&& txtDiscount.Text != "" && txtDisAmount.Text != "" && cmbtax.Text != "" && txtTaxAmount.Text != "" && txtTotal.Text != "")
             {
-                float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
-                TA = float.Parse(txtsubtotal.Text.ToString());
-
-                dis = float.Parse(txtDiscount.Text.ToString());
-                gst = float.Parse(cmbtax.Text.ToString());
-                dis_amt = TA * dis / 100;
-                txtDisAmount.Text = dis_amt.ToString();
-
-                gst_amt = TA * gst / 100;
-                txtTaxAmount.Text = gst_amt.ToString();
-
-                total = (TA + gst_amt) - dis_amt;
-                txtTotal.Text = total.ToString();
+                if (txtDiscount.Text != "")
+                {
+                    float dis = 0, gst = 0, total = 0, dis_amt = 0, gst_amt = 0, TA = 0, DC = 0;
+                    TA = float.Parse(txtsubtotal.Text.ToString());
+                    dis = float.Parse(txtDiscount.Text.ToString());
+                    gst = float.Parse(cmbtax.Text.ToString());
+                    dis_amt = TA * dis / 100;
+                    txtDisAmount.Text = dis_amt.ToString();
+                    gst_amt = TA * gst / 100;
+                    txtTaxAmount.Text = gst_amt.ToString();
+                    total = (TA + gst_amt) - dis_amt;
+                    txtTotal.Text = total.ToString();
+                }
             }
-            catch(Exception e1)
+            catch (Exception e1)
             {
                 //MessageBox.Show(e1.Message);
             }
@@ -892,22 +885,9 @@ namespace sample
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if(con.State==ConnectionState.Closed)
+            if (id == "")
             {
-                con.Open();
-            }
-            string str = string.Format("SELECT * FROM tbl_SaleOrder where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
-            SqlCommand cmd = new SqlCommand(str, con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.HasRows)
-            {
-                dr.Close();
-                MessageBox.Show("Invalid Data !");
-            }
-            else
-            {
-                dr.Close();
-                validdata();
+               validdata();
                 if (verfy == 1)
                 {
                     insertdata();
@@ -918,6 +898,10 @@ namespace sample
                     printdata(id1.ToString());
                     dgvInnerDebiteNote.Rows.Clear();
                 }
+            }
+            else
+            {
+                MessageBox.Show("No permission");
             }
         }
         private void printdata(string id1)
@@ -1193,6 +1177,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             cmbpartyname.Visible = true;
             comboBox2.Visible = false;
             cleardata();
@@ -1417,9 +1402,9 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-           
-           cal_Total();
-           gst_devide();
+            gst_devide();
+            cal_Total();
+         
         }
 
         private void txtItemTotal_ImeModeChanged(object sender, EventArgs e)
@@ -1497,18 +1482,18 @@ namespace sample
 
         private void txtIGST_TextChanged(object sender, EventArgs e)
         {
-            cal_Total();
-            gst_devide();
+           // cal_Total();
+           // gst_devide();
         }
 
         private void txtcgst_TextChanged(object sender, EventArgs e)
         {
-            cal_Total();
+            //cal_Total();
         }
 
         private void txtsgst_TextChanged(object sender, EventArgs e)
         {
-            cal_Total();
+            //cal_Total();
         }
         private void fetchBarcode()
      {
