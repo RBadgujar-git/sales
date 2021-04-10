@@ -270,12 +270,11 @@ namespace sample
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (id != "")
-            {
+           
                 Update1();
                fetchdetails();
                 id = "";
-            }        
+                  
         }
         public int verify = 0;
 
@@ -331,7 +330,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No Permission");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
 
@@ -354,7 +353,7 @@ namespace sample
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (id != "")
+            if (MessageBox.Show("DO YOU WANT Delete??", "Delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Delete1();
                 fetchdetails();

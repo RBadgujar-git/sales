@@ -108,11 +108,11 @@
             this.dgvPaymentIn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPaymentIn.EnableHeadersVisualStyles = false;
             this.dgvPaymentIn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPaymentIn.Location = new System.Drawing.Point(30, 168);
+            this.dgvPaymentIn.Location = new System.Drawing.Point(30, 149);
             this.dgvPaymentIn.Name = "dgvPaymentIn";
             this.dgvPaymentIn.RowHeadersVisible = false;
             this.dgvPaymentIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaymentIn.Size = new System.Drawing.Size(1029, 387);
+            this.dgvPaymentIn.Size = new System.Drawing.Size(1029, 406);
             this.dgvPaymentIn.TabIndex = 176;
             this.dgvPaymentIn.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPaymentIn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -206,7 +206,7 @@
             this.btnaddPaymentIn.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddPaymentIn.ForeColor = System.Drawing.Color.White;
             this.btnaddPaymentIn.HoverState.Parent = this.btnaddPaymentIn;
-            this.btnaddPaymentIn.Location = new System.Drawing.Point(894, 98);
+            this.btnaddPaymentIn.Location = new System.Drawing.Point(894, 87);
             this.btnaddPaymentIn.Name = "btnaddPaymentIn";
             this.btnaddPaymentIn.ShadowDecoration.Parent = this.btnaddPaymentIn;
             this.btnaddPaymentIn.Size = new System.Drawing.Size(145, 45);
