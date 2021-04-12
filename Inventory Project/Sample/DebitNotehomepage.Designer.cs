@@ -170,6 +170,7 @@
             this.btnimport.Size = new System.Drawing.Size(22, 23);
             this.btnimport.TabIndex = 210;
             this.btnimport.UseVisualStyleBackColor = false;
+            this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
             // 
             // label6
             // 

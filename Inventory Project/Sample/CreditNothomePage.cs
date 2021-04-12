@@ -189,7 +189,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,b.InvoiceDate,b.PartyName,b.ReturnNo,b.TableName,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,a.GSTNumber,b.InvoiceDate,b.PartyName,b.ReturnNo,b.TableName,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

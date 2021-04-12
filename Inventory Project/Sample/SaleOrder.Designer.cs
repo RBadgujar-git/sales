@@ -776,6 +776,7 @@
             this.txtItemTotal.Size = new System.Drawing.Size(88, 26);
             this.txtItemTotal.TabIndex = 19;
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
+            this.txtItemTotal.Enter += new System.EventHandler(this.txtItemTotal_Enter);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             this.txtItemTotal.ImeModeChanged += new System.EventHandler(this.txtItemTotal_ImeModeChanged);
             // 

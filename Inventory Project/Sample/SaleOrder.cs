@@ -1575,6 +1575,11 @@ namespace sample
           
         }
 
+        private void txtItemTotal_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
         {
             if (chkRoundOff.Checked == true)
