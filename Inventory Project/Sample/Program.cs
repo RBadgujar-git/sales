@@ -24,7 +24,7 @@ namespace sample
             SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
                      
                 con.Open();
-           
+          
             SqlCommand cmd = new SqlCommand("Select count(*)  from PasswordCheek   ", con);
            int  password = Convert.ToInt32(cmd.ExecuteScalar());          
             con.Close();
