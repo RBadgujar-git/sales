@@ -1421,7 +1421,7 @@ No.</Text>
             <Text57 Ref="132" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,0.4,2.8,0.8</ClientRectangle>
+              <ClientRectangle>13,0.6,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>8fc496dc486b494a9996bb66cea11987</Guid>
@@ -1483,7 +1483,7 @@ No.</Text>
             <Text62 Ref="136" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,0.4,3.2,0.8</ClientRectangle>
+              <ClientRectangle>15.8,0.6,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>24e9c4c6ab1348709306ffbbcacc9a3f</Guid>
@@ -2126,10 +2126,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/10/2021 4:24:16 PM</ReportChanged>
+  <ReportChanged>4/10/2021 5:21:24 PM</ReportChanged>
   <ReportCreated>3/18/2021 4:25:09 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\SaleOrderReport.mrt</ReportFile>
-  <ReportGuid>9e83ec008c6541c19ef483190361f619</ReportGuid>
+  <ReportGuid>463cb7b9422d473880cb5789949ac712</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
