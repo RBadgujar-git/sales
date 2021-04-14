@@ -87,8 +87,36 @@ namespace sample
             label15.Hide();
             fetchCategory();
             get_id();
-        }
+            seeting();
+            if (barcode==1)
+            {
+                label38.Visible = false;
+                textBox1.Visible = false;
 
+            }
+
+
+        }
+       public int barcode;
+        public void seeting()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+             
+                barcode = Convert.ToInt32(dr["barcode"]);
+
+            }
+            dr.Close();
+        }
 
         public void cal_ItemTotal()
         {
@@ -1545,6 +1573,11 @@ namespace sample
                 fetchBarcode();
             }
           
+        }
+
+        private void txtItemTotal_Enter(object sender, EventArgs e)
+        {
+
         }
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)

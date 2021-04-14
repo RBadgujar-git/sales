@@ -141,6 +141,11 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dgvEstimate_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     
 }

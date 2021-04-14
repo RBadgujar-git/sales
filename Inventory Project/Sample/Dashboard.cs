@@ -85,6 +85,10 @@ namespace sample
                 //NewCompany.company_id = CompanyIDD.ToString();
                 ////  MessageBox.Show("Id "+NewCompany.company_id);
 
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -110,7 +114,25 @@ namespace sample
             con.Close();
           
         }
-     public string compnAMAE;
+
+        public void Seeting1()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmdn = new SqlCommand("Select Max(CompanyID) from tbl_CompanyMaster ", con);
+            string id = cmdn.ExecuteScalar().ToString();
+
+            SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values(" + id + ")", con);
+            cmd.ExecuteNonQuery();
+
+            SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSeeting(Company_ID)values(" + id + ")", con);
+            cmd1.ExecuteNonQuery();
+
+        }
+
+        public string compnAMAE;
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -128,6 +150,7 @@ namespace sample
                 if (CompantId == 0.ToString())
                 {
                     Insert1();
+                    Seeting1();
                 }
                 else
                 {
@@ -180,7 +203,7 @@ namespace sample
         {
             
         }
-
+        
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -749,6 +772,7 @@ namespace sample
                 Estiment = Convert.ToInt32(dr["Estiment"]);
                 Estiment1 = Convert.ToInt32(dr["Sale_purches"]);
                 deleverychallan = Convert.ToInt32(dr["Delliverychallen"]);
+
             }
             dr.Close();
                 //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);

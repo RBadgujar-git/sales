@@ -134,7 +134,7 @@ namespace sample
             txtsubtotal.Enabled = false;
             cmbpartyname.Focus(); 
             fetchcustomername();
-            fetchCategory();
+         //   fetchCategory();
             fetchitem1();
             txtReturnNo.Enabled = false;
             get_id();
@@ -305,7 +305,7 @@ namespace sample
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1) {
-                  // MessageBox.Show(e1.Message);
+                   MessageBox.Show(e1.Message);
                 }
                 finally {
                   //  con.Close();
@@ -323,14 +323,14 @@ namespace sample
                 {
                     con.Open();
                 }
-                string query = string.Format("insert into tbl_DebitNote(InvoiceNo,PONumber,PartyName, BillingName,  PODate, InvoiceDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Received, RemainingBal, ContactNo, Feild1, Feild2, Feild3, Status, TableName, Barcode,ItemCategory,Company_ID,IGST) Values (@InvoiceNo, @PONumber, @PartyName, @BillingName, @PODate, @InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,  @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal,@ContactNo, @Feild1, @Feild2, @Feild3,@Status, @TableName, @Barcode,@ItemCategory,@compid,@IGST);SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_DebitNote(InvoiceNo,PONumber,PartyName, BillingName,  PODate, InvoiceDate, DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1, CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total, Received, RemainingBal, ContactNo, Feild1, Feild2, Feild3, Status, TableName, Barcode,Company_ID,IGST) Values (@InvoiceNo, @PONumber, @PartyName, @BillingName, @PODate, @InvoiceDate, @DueDate, @StateofSupply,  @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,  @Tax1, @CGST, @SGST, @TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Received, @RemainingBal,@ContactNo, @Feild1, @Feild2, @Feild3,@Status, @TableName, @Barcode,@compid,@IGST);SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
 
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_DebitNoteSelect", con);
                 //cmd.CommandType = CommandType.StoredProcedure;
                 //cmd.Parameters.AddWithValue("@Action", "Insert");
-                //   cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
+                //cmd.Parameters.AddWithValue("@ReturnNo", txtReturnNo.Text);
                 if (cmbpartyname.Visible == true)
                 {
                     cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
@@ -371,28 +371,20 @@ namespace sample
                 cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
+                cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Debit.Text);
-                cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
-                //if (cmbpartyname.Visible == true)
-                //{
-                //    cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
-                //}
-                //else
-                //{
-                //    cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
-                //}
-                //cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
+                cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);                                        
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                 cmd.Parameters.AddWithValue("@IGST",TxtIGST.Text);
      
                 id1 = cmd.ExecuteScalar();
-                MessageBox.Show("Sale Record Added");
+                MessageBox.Show("Debit Record Added");
             }
-            catch (Exception e1) {
-                //MessageBox.Show(e1.Message);
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
             }
             finally {
               //  con.Close();
@@ -701,6 +693,8 @@ namespace sample
             cmbbarcode.Text = "";
             //cmbCategory.Text = "";
             txtsubtotal.Text = "0";
+            cmbtax.Text = "0";
+            TxtIGST.Text = "";
             dgvInnerDebiteNote.Rows.Clear();
 
         }
@@ -726,7 +720,7 @@ namespace sample
             }      
             else if (txtInvoiceNo.Text == "")
             {
-                MessageBox.Show("Party Refrence No Is Requueird !");
+                MessageBox.Show("Party Invoice No Is Requueird !");
                 txtInvoiceNo.Focus();
             }
             else if (cmbPaymentType.Text == "")
@@ -891,7 +885,7 @@ namespace sample
 
                         cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                         cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
-                        cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
+                        cmd.Parameters.AddWithValue("@Feild2", txtsubtotal.Text);
                         cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                         cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                         cmd.Parameters.AddWithValue("@TableName", Debit.Text);
@@ -933,16 +927,50 @@ namespace sample
                 if (verfy == 1)
                 {
                         insertdata();
-                        // bind_sale_details();
-                        //     clear_text_data();
-                        cleardata();
-                        get_id();
-                    }
+                    print();
+                    //  bind_sale_details();
+                    clear_text_data();
+                    cleardata();
+                    get_id();
+                }
                 }
                 else
                 {
                     MessageBox.Show("No permission");
-                }   
+                }
+        }
+        private void print()
+        { 
+        if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address,a.AddLogo,a.GSTNumber, a.PhoneNo, a.EmailID,a.AdditinalFeild1,a.AdditinalFeild2,a.AdditinalFeild3,b.PartyName,b.BillingName,b.ContactNo, b.ReturnNo, b.InvoiceDate, b.DeliveryLocation,b.DeliveryDate,b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.BsicUnit,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.DeleteData FROM tbl_CompanyMaster  as a, tbl_DebitNote as b,tbl_DebitNoteInner as c where b.ReturnNo='{0}' and c.ReturnNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' and c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
+        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+        SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+        report.Load(@"DebitNoteReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+        report.RegData("DebitNote", "DebitNote", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ew)
+                {
+                    // MessageBox.Show(ew.Message);
+                }
+                get_id();
+                cleardata();
+cmbpartyname1.Visible = false;
+                cmbpartyname.Visible = true;
+
+            }
         }
 
         private void txtDis_TextChanged(object sender, EventArgs e)
@@ -1009,11 +1037,12 @@ namespace sample
                         txtRoundup.Text = dr["RoundFigure"].ToString();
                         txtTotal.Text = dr["Total"].ToString();
                         //, , , , , , , , , , , , , , , , , , , , , , , , , , , , , , 
-
+                        txtsubtotal.Text = dr["Feild2"].ToString();
+                        txtTotal.Text = dr["Total"].ToString();
                         txtReceived.Text = dr["Received"].ToString();
                         txtBallaance.Text = dr["RemainingBal"].ToString();
                         txtrefNo.Text = dr["Feild1"].ToString();
-                        txtadditional1.Text = dr["Feild2"].ToString();
+                        //txtadditional1.Text = dr["Feild2"].ToString();
                         txtadditional2.Text = dr["Feild3"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
                         Debit.Text = dr["TableName"].ToString();
@@ -1156,6 +1185,7 @@ namespace sample
 
                 total = (TA + gst_amt) - dis_amt;
                 txtTotal.Text = total.ToString();
+               // txtsubtotal.Text = total.ToString();
             }
             catch(Exception ee)
             {
@@ -1197,7 +1227,8 @@ namespace sample
 
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
-
+            gst_devide();
+            cal_Total();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1348,38 +1379,40 @@ namespace sample
 
         private void Print_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                DataSet ds = new DataSet();
-                string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address,a.AddLogo,a.GSTNumber, a.PhoneNo, a.EmailID,b.PartyName,b.BillingName,b.ContactNo, b.ReturnNo, b.InvoiceDate, b.DeliveryLocation,b.DeliveryDate,b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.DeleteData FROM tbl_CompanyMaster  as a, tbl_DebitNote as b,tbl_DebitNoteInner as c where b.ReturnNo='{0}' and c.ReturnNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' and c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(ds);
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address,a.AddLogo,a.GSTNumber, a.PhoneNo, a.EmailID,a.AdditinalFeild1,a.AdditinalFeild2,a.AdditinalFeild3,b.PartyName,b.BillingName,b.ContactNo, b.ReturnNo, b.InvoiceDate, b.DeliveryLocation,b.DeliveryDate,b.DueDate, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Received,b.RemainingBal,c.ID,c.ItemName,c.ItemCode,c.BsicUnit,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.DeleteData FROM tbl_CompanyMaster  as a, tbl_DebitNote as b,tbl_DebitNoteInner as c where b.ReturnNo='{0}' and c.ReturnNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' and c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
-                StiReport report = new StiReport();
-                report.Load(@"DebitNoteReport.mrt");
+                    StiReport report = new StiReport();
+                    report.Load(@"DebitNoteReport.mrt");
 
-                report.Compile();
-                StiPage page = report.Pages[0];
-                report.RegData("DebitNote", "DebitNote", ds.Tables[0]);
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("DebitNote", "DebitNote", ds.Tables[0]);
 
-                report.Dictionary.Synchronize();
-                report.Render();
-                report.Show(false);
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ew)
+                {
+                    // MessageBox.Show(ew.Message);
+                }
+                get_id();
+                cleardata();
+                cmbpartyname1.Visible = false;
+                cmbpartyname.Visible = true;
+
             }
-            catch(Exception ew)
-            {
-               // MessageBox.Show(ew.Message);
-            }
-            get_id();
-            cleardata();          
-            cmbpartyname1.Visible = false;
-            cmbpartyname.Visible = true;
-
         }
-
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
         {
-
+            cal_ItemTotal();
         }
 
         private void txtsubtotal_TextChanged(object sender, EventArgs e)

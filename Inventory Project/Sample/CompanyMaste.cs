@@ -230,7 +230,7 @@ namespace sample
             cmd.ExecuteNonQuery();
 
             SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSeeting(Company_ID)values(" + id + ")", con);
-            cmd.ExecuteNonQuery();
+            cmd1.ExecuteNonQuery();
 
         }
     private void btnsave_Click(object sender, EventArgs e)

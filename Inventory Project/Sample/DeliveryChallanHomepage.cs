@@ -175,7 +175,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.ChallanNo,b.PartyName,b.BillingName,b.InvoiceDate,b.Total,b.Received,b.DeleteData FROM tbl_CompanyMaster as a, tbl_DeliveryChallan as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.ChallanNo,b.PartyName,b.BillingName,b.InvoiceDate,b.Total,b.Received,b.RemainingBal,b.DeleteData FROM tbl_CompanyMaster as a, tbl_DeliveryChallan as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

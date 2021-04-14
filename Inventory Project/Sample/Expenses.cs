@@ -131,6 +131,7 @@ namespace sample
 
         private void clear_text_data()
         {      
+            id="";
             txtItem.Text = "";
             txtMRP.Text = "0";
             txtOty.Text = "0";
@@ -139,13 +140,13 @@ namespace sample
         }
         private void cleardata()
         {
-           
+            id = "";
             cmbexpenses.Text= "";
             txtdescritpition.Text = "";
             txtTotal.Text = "0";
             txtrefNo.Text = "";
             txtAdditional1.Text = "";
-            picImage.Image = null;
+            picImage.Image = Properties.Resources.No_Image_Available;
             txtReceived.Text = "0";
             txtBalance.Text = "0";
             ComboBox.Text = "";
@@ -256,22 +257,22 @@ namespace sample
                 cmbexpenses.Focus();
 
             }
-            else if (txtItem.Text == "")
-            {
-                MessageBox.Show("Item Name Is Required");
-                txtItem.Focus();
+            //else if (txtItem.Text == "")
+            //{
+            //    MessageBox.Show("Item Name Is Required");
+            //    txtItem.Focus();
 
-            }
-            else if (txtMRP.Text == "")
-            {
-                MessageBox.Show("Please Enter the MRP of Item");
-                txtMRP.Focus();
-            }
-            else if (txtOty.Text == "")
-            {
-                MessageBox.Show("Quantity is Required");
-                txtOty.Focus();
-            }
+            //}
+            //else if (txtMRP.Text == "")
+            //{
+            //    MessageBox.Show("Please Enter the MRP of Item");
+            //    txtMRP.Focus();
+            //}
+            //else if (txtOty.Text == "")
+            //{
+            //    MessageBox.Show("Quantity is Required");
+            //    txtOty.Focus();
+            //}
             else if (ComboBox.Text == "")
             {
                 MessageBox.Show("Payment Status is Required");
@@ -290,13 +291,12 @@ namespace sample
             }
             string str = string.Format("SELECT * FROM tbl_Expenses where ID1 =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
             SqlCommand cmd = new SqlCommand(str, con);
-
             SqlDataReader dr = cmd.ExecuteReader();
             if (id == "")
             {
                 if (dr.HasRows)
                 {
-                    MessageBox.Show("You Have To No Permission To Save This Record !");
+                    MessageBox.Show("Same Record Not Insert");
                     dr.Close();
                 }
                 else
@@ -315,7 +315,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("You Have To No Permission To Insert This Record");
+                MessageBox.Show("Same Record Not Insert");
             }
         }
 
@@ -360,7 +360,11 @@ namespace sample
             }
             finally
             {
-                clear_text_data();
+                //clear_text_data();
+                txtItem.Text = "";
+                txtMRP.Text = "";
+                txtOty.Text = "";
+                txtitemamount.Text = "";
             }
         }
 
@@ -737,6 +741,7 @@ namespace sample
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            id = "";
             cmbexpenses.Text = "";
             //txtReturnNo.Text = "";
             txtitemamount.Text = "0";
@@ -745,7 +750,7 @@ namespace sample
             txtdescritpition.Text = "";
             txtTotal.Text = "0";
             txtReceived.Text = "0";
-            picImage.Image = null;
+            picImage.Image = Properties.Resources.No_Image_Available;
             txtBalance.Text = "0";
             ComboBox.Text = "";
             dgvinnerexpenses.Rows.Clear();
@@ -801,7 +806,6 @@ namespace sample
         {
 
         }
-
         private void txtReturnNo_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
