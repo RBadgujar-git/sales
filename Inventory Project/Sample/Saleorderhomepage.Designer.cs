@@ -104,6 +104,7 @@
             this.btnImport.Size = new System.Drawing.Size(21, 23);
             this.btnImport.TabIndex = 181;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // dgvSaleOrder
             // 
@@ -171,7 +172,10 @@
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(147, 23);
             this.dtpTo.TabIndex = 209;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             this.dtpTo.Enter += new System.EventHandler(this.dtpTo_Enter);
+            this.dtpTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpTo_KeyPress);
+            this.dtpTo.MouseEnter += new System.EventHandler(this.dtpTo_MouseEnter);
             // 
             // dtpFrom
             // 
@@ -240,11 +244,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(60, 58);
+            this.label6.Location = new System.Drawing.Point(46, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 18);
+            this.label6.Size = new System.Drawing.Size(128, 18);
             this.label6.TabIndex = 203;
-            this.label6.Text = "Transaction";
+            this.label6.Text = "All Transaction";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // btnminimize
             // 

@@ -74,16 +74,41 @@ namespace sample
                 }
             }
         }
+        private void party()
+        {
+            if (comboBox2.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by PartyName");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbpartyname.Items.Add(ds.Tables["Temp"].Rows[i]["PartyName"].ToString());
+
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
+            }
+        }
         private void SaleOrder_Load(object sender, EventArgs e)
         {
 
             fetchcustomername();
+           
             fetchitem();
             txtReturnNo.Enabled = false;
             comboBox2.Visible = false;
-          comboBox3.Visible = false;
+            comboBox3.Visible = false;
             comboBox1.Visible = false;
-            comboBox1.Visible=false;
+          //  comboBox1.Visible=false;
             label15.Hide();
             fetchCategory();
             get_id();
@@ -351,6 +376,8 @@ namespace sample
             txtIGST.Text = "0";
             txtBallaance.Text = "";
             dgvInnerDebiteNote.Rows.Clear();
+            txtrefNo.Visible = false;
+            cmbpartyname.Focus();
         }
 
         private void get_id()
@@ -737,11 +764,10 @@ namespace sample
          {
             if (e.KeyCode == Keys.Enter)
             {
-                cmbpartyname.Visible = false;
+                cmbpartyname.Visible=false;
                 comboBox2.Visible = true;
-                comboBox1.Visible = false;
-                comboBox3.Visible = false;
-
+              //  comboBox1.Visible = false;
+               // comboBox3.Visible = false;
                 bind_sale_details();
             }
         }
@@ -929,7 +955,7 @@ namespace sample
             }
             else
             {
-                MessageBox.Show("No permission");
+                MessageBox.Show("Same Record Not Added");
             }
         }
         private void printdata(string id1)
@@ -1145,7 +1171,7 @@ namespace sample
                 }
                 dr.Close();
                 
-                txtOty.Focus();
+              //  txtOty.Focus();
             }
             catch (Exception ex)
             {
@@ -1578,6 +1604,68 @@ namespace sample
         private void txtItemTotal_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtMRP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTax1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDisAmt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTaxAMount1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)
