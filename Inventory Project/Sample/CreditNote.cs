@@ -1742,5 +1742,10 @@ namespace sample
         {
 
         }
+
+        private void txtDisAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

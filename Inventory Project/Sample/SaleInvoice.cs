@@ -1338,9 +1338,9 @@ namespace sample
                     dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
                     dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
                     dgvInnerDebiteNote.Rows[row].Cells[12].Value = Itemid;
+                    clear_text_data();
 
-
-                    //txtItemName.Focus();
+                    txtItemName.Focus();
                     guna2TextBox1.Text = "";
                     for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                     {
@@ -2085,6 +2085,11 @@ namespace sample
         }
 
         private void txtItemTotal_ImeModeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDisAmount_TextChanged(object sender, EventArgs e)
         {
 
         }

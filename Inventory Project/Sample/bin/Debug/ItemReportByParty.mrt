@@ -282,7 +282,7 @@ Amount</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>3.6,0,6.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>a100edf3c2d84ff3827cc850f6f3697a</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
@@ -299,7 +299,7 @@ Amount</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>9.8,0,2.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>c43c4e476ed3491db61b2f87c519e50c</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -317,7 +317,7 @@ Amount</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>15.6,0,3.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>231da8c06a9740e29141268f2ff4111f</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -335,7 +335,7 @@ Amount</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>88e5e40927704b4ab84483063827914b</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -353,7 +353,7 @@ Amount</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>12.4,0,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>7b717ea4a3834e2aab39b929135e174c</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -503,10 +503,10 @@ Amount</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/6/2021 6:01:16 PM</ReportChanged>
+  <ReportChanged>4/14/2021 6:06:09 PM</ReportChanged>
   <ReportCreated>4/5/2021 4:22:59 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ItemReportByParty.mrt</ReportFile>
-  <ReportGuid>224df8c235514489b56f019e4b967517</ReportGuid>
+  <ReportGuid>567e8812d50d406ca370cd70e4e36333</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
