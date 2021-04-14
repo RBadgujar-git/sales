@@ -246,6 +246,7 @@
             this.label3.Size = new System.Drawing.Size(52, 16);
             this.label3.TabIndex = 191;
             this.label3.Text = "FILTER";
+            this.label3.Visible = false;
             // 
             // dtpFromDate
             // 

@@ -38,7 +38,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("(select * from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select * from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
+            SqlCommand cmd = new SqlCommand("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -110,7 +110,7 @@ namespace sample
             try
             {
                 //TableName
-                string SelectQuery = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where InvoiceDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
+                string SelectQuery = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where OrderDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where OrderDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
