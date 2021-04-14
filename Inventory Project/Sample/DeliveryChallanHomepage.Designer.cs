@@ -36,7 +36,6 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvdeliveryChallan = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtptodate = new System.Windows.Forms.DateTimePicker();
             this.dtpfromdate = new System.Windows.Forms.DateTimePicker();
             this.txtFilter = new Guna.UI2.WinForms.Guna2TextBox();
@@ -45,6 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdeliveryChallan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +109,7 @@
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 191;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // dgvdeliveryChallan
             // 
@@ -167,28 +168,6 @@
             this.dgvdeliveryChallan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvdeliveryChallan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
-            // cmbAllfirms
-            // 
-            this.cmbAllfirms.BackColor = System.Drawing.Color.Transparent;
-            this.cmbAllfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbAllfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllfirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllfirms.FocusedState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbAllfirms.ForeColor = System.Drawing.Color.Blue;
-            this.cmbAllfirms.HoverState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.ItemHeight = 30;
-            this.cmbAllfirms.Items.AddRange(new object[] {
-            "All Firms"});
-            this.cmbAllfirms.ItemsAppearance.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Location = new System.Drawing.Point(36, 31);
-            this.cmbAllfirms.Name = "cmbAllfirms";
-            this.cmbAllfirms.ShadowDecoration.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
-            this.cmbAllfirms.StartIndex = 0;
-            this.cmbAllfirms.TabIndex = 234;
-            // 
             // dtptodate
             // 
             this.dtptodate.CustomFormat = "MM/dd/yyyy";
@@ -210,6 +189,7 @@
             // 
             // txtFilter
             // 
+            this.txtFilter.BorderColor = System.Drawing.Color.Gray;
             this.txtFilter.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFilter.DefaultText = "";
             this.txtFilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -288,13 +268,24 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(39, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 16);
+            this.label6.TabIndex = 460;
+            this.label6.Text = "All Transaction";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // DeliveryChallanHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.cmbAllfirms);
             this.Controls.Add(this.dtptodate);
             this.Controls.Add(this.dtpfromdate);
             this.Controls.Add(this.txtFilter);
@@ -325,7 +316,6 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnImport;
         private Guna.UI2.WinForms.Guna2DataGridView dgvdeliveryChallan;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
         private System.Windows.Forms.DateTimePicker dtptodate;
         private System.Windows.Forms.DateTimePicker dtpfromdate;
         private Guna.UI2.WinForms.Guna2TextBox txtFilter;
@@ -334,5 +324,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label6;
     }
 }

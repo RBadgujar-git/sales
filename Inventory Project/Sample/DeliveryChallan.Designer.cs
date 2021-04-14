@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryChallan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlinkPayment = new System.Windows.Forms.Button();
             this.txtadditional2 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -224,6 +224,7 @@
             this.txtrefNo.Size = new System.Drawing.Size(131, 24);
             this.txtrefNo.TabIndex = 11;
             this.txtrefNo.Visible = false;
+            this.txtrefNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrefNo_KeyPress);
             // 
             // chkRoundOff
             // 
@@ -235,7 +236,7 @@
             this.chkRoundOff.Location = new System.Drawing.Point(728, 479);
             this.chkRoundOff.Name = "chkRoundOff";
             this.chkRoundOff.Size = new System.Drawing.Size(103, 20);
-            this.chkRoundOff.TabIndex = 20;
+            this.chkRoundOff.TabIndex = 19;
             this.chkRoundOff.Text = "Round OFF ";
             this.chkRoundOff.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkRoundOff.UncheckedState.BorderRadius = 0;
@@ -339,7 +340,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(95, 24);
-            this.txtReceived.TabIndex = 24;
+            this.txtReceived.TabIndex = 20;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
@@ -396,7 +397,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(95, 24);
-            this.txtDiscount.TabIndex = 17565;
+            this.txtDiscount.TabIndex = 17;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
@@ -424,7 +425,7 @@
             this.txtVehicleNo.SelectedText = "";
             this.txtVehicleNo.ShadowDecoration.Parent = this.txtVehicleNo;
             this.txtVehicleNo.Size = new System.Drawing.Size(180, 24);
-            this.txtVehicleNo.TabIndex = 23;
+            this.txtVehicleNo.TabIndex = 15;
             this.txtVehicleNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVehicleNo_KeyPress);
             // 
             // txtDeliveryLoc
@@ -451,7 +452,7 @@
             this.txtDeliveryLoc.SelectedText = "";
             this.txtDeliveryLoc.ShadowDecoration.Parent = this.txtDeliveryLoc;
             this.txtDeliveryLoc.Size = new System.Drawing.Size(180, 24);
-            this.txtDeliveryLoc.TabIndex = 22;
+            this.txtDeliveryLoc.TabIndex = 14;
             this.txtDeliveryLoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDeliveryLoc_KeyPress);
             // 
             // txtTransportName
@@ -478,7 +479,7 @@
             this.txtTransportName.SelectedText = "";
             this.txtTransportName.ShadowDecoration.Parent = this.txtTransportName;
             this.txtTransportName.Size = new System.Drawing.Size(180, 24);
-            this.txtTransportName.TabIndex = 21;
+            this.txtTransportName.TabIndex = 13;
             this.txtTransportName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTransportName_KeyPress);
             // 
             // txtDescription
@@ -506,7 +507,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(180, 51);
-            this.txtDescription.TabIndex = 21;
+            this.txtDescription.TabIndex = 12;
             // 
             // sr_no
             // 
@@ -539,7 +540,7 @@
             this.txtTaxAmount.SelectionStart = 1;
             this.txtTaxAmount.ShadowDecoration.Parent = this.txtTaxAmount;
             this.txtTaxAmount.Size = new System.Drawing.Size(95, 24);
-            this.txtTaxAmount.TabIndex = 23;
+            this.txtTaxAmount.TabIndex = 53;
             this.txtTaxAmount.TextChanged += new System.EventHandler(this.txtTaxAmount_TextChanged);
             // 
             // Item_Code
@@ -611,7 +612,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(582, 552);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
-            this.btnUpdate.TabIndex = 24;
+            this.btnUpdate.TabIndex = 23;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -847,7 +848,7 @@
             this.txtItemName.Location = new System.Drawing.Point(10, 49);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(95, 22);
-            this.txtItemName.TabIndex = 9;
+            this.txtItemName.TabIndex = 1;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
@@ -877,7 +878,8 @@
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(90, 28);
-            this.txtItemTotal.TabIndex = 19;
+            this.txtItemTotal.TabIndex = 11;
+            this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             // 
             // label34
@@ -915,8 +917,9 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(90, 28);
-            this.txtDisAmt.TabIndex = 17;
+            this.txtDisAmt.TabIndex = 9;
             this.txtDisAmt.TextChanged += new System.EventHandler(this.txtDisAmt_TextChanged);
+            this.txtDisAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisAmt_KeyPress);
             // 
             // txtDis
             // 
@@ -943,7 +946,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(90, 28);
-            this.txtDis.TabIndex = 13;
+            this.txtDis.TabIndex = 5;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
             // 
@@ -991,7 +994,8 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(90, 28);
-            this.txtTaxAMount1.TabIndex = 18;
+            this.txtTaxAMount1.TabIndex = 10;
+            this.txtTaxAMount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxAMount1_KeyPress);
             // 
             // label31
             // 
@@ -1027,8 +1031,9 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(90, 28);
-            this.txtTax1.TabIndex = 14;
+            this.txtTax1.TabIndex = 6;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
+            this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
             // 
             // label30
             // 
@@ -1063,8 +1068,9 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(90, 28);
-            this.txtMRP.TabIndex = 12;
+            this.txtMRP.TabIndex = 4;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
+            this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
             // label29
             // 
@@ -1098,7 +1104,8 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(90, 28);
-            this.txtUnit.TabIndex = 11;
+            this.txtUnit.TabIndex = 3;
+            this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
             // 
@@ -1134,7 +1141,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(90, 28);
-            this.txtFreeQty.TabIndex = 16;
+            this.txtFreeQty.TabIndex = 8;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
             // 
@@ -1170,7 +1177,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(90, 28);
-            this.txtItemCode.TabIndex = 10;
+            this.txtItemCode.TabIndex = 2;
             // 
             // label21
             // 
@@ -1215,7 +1222,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(90, 28);
-            this.txtOty.TabIndex = 15;
+            this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -1237,20 +1244,20 @@
             // 
             // dgvInnerDeliveryChallanNote
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDeliveryChallanNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDeliveryChallanNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInnerDeliveryChallanNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDeliveryChallanNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDeliveryChallanNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDeliveryChallanNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDeliveryChallanNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDeliveryChallanNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInnerDeliveryChallanNote.ColumnHeadersHeight = 37;
             this.dgvInnerDeliveryChallanNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1265,14 +1272,14 @@
             this.Tax_Amount,
             this.Discount_Amount,
             this.Amount});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDeliveryChallanNote.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDeliveryChallanNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInnerDeliveryChallanNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDeliveryChallanNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDeliveryChallanNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1413,7 +1420,7 @@
             this.panel1.Location = new System.Drawing.Point(-1, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1094, 605);
-            this.panel1.TabIndex = 65456;
+            this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // comboBox3
@@ -1433,9 +1440,10 @@
             this.comboBox3.Location = new System.Drawing.Point(696, 433);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(71, 24);
-            this.comboBox3.TabIndex = 691;
+            this.comboBox3.TabIndex = 18;
             this.comboBox3.Text = "0";
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox3_KeyPress);
             // 
             // comboBox2
             // 
@@ -1551,7 +1559,7 @@
             this.buttprint.Location = new System.Drawing.Point(677, 552);
             this.buttprint.Name = "buttprint";
             this.buttprint.Size = new System.Drawing.Size(90, 42);
-            this.buttprint.TabIndex = 25;
+            this.buttprint.TabIndex = 24;
             this.buttprint.Text = "Print";
             this.buttprint.UseVisualStyleBackColor = false;
             this.buttprint.Click += new System.EventHandler(this.buttprint_Click);
@@ -1564,7 +1572,7 @@
             this.butClear.Location = new System.Drawing.Point(773, 552);
             this.butClear.Name = "butClear";
             this.butClear.Size = new System.Drawing.Size(90, 42);
-            this.butClear.TabIndex = 26;
+            this.butClear.TabIndex = 25;
             this.butClear.Text = "Clear";
             this.butClear.UseVisualStyleBackColor = false;
             this.butClear.Click += new System.EventHandler(this.butClear_Click);
@@ -1592,6 +1600,7 @@
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(98, 24);
             this.ComboBox.TabIndex = 21;
+            this.ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // cmbPaymentType
             // 
@@ -1605,7 +1614,7 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(139, 381);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(180, 24);
-            this.cmbPaymentType.TabIndex = 20;
+            this.cmbPaymentType.TabIndex = 10;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             this.cmbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaymentType_KeyPress);
             // 
@@ -1668,7 +1677,7 @@
             this.DtpdeliveryDate.Location = new System.Drawing.Point(139, 571);
             this.DtpdeliveryDate.Name = "DtpdeliveryDate";
             this.DtpdeliveryDate.Size = new System.Drawing.Size(180, 23);
-            this.DtpdeliveryDate.TabIndex = 24;
+            this.DtpdeliveryDate.TabIndex = 16;
             // 
             // dtpInvoice
             // 
@@ -1829,11 +1838,11 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(909, 539);
+            this.label25.Location = new System.Drawing.Point(897, 539);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(70, 16);
+            this.label25.Size = new System.Drawing.Size(84, 16);
             this.label25.TabIndex = 68;
-            this.label25.Text = "Balance :";
+            this.label25.Text = "Remaining :";
             // 
             // label24
             // 
@@ -1888,7 +1897,7 @@
             this.btnSave.Location = new System.Drawing.Point(487, 552);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
-            this.btnSave.TabIndex = 23;
+            this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -1926,7 +1935,7 @@
             this.label12.Location = new System.Drawing.Point(49, 549);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 16);
-            this.label12.TabIndex = 26;
+            this.label12.TabIndex = 52;
             this.label12.Text = "Vehicle No :";
             // 
             // label9
@@ -1935,7 +1944,7 @@
             this.label9.Location = new System.Drawing.Point(392, 73);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 16);
-            this.label9.TabIndex = 25;
+            this.label9.TabIndex = 47;
             this.label9.Text = "Billing Address:";
             // 
             // label8
@@ -1944,7 +1953,7 @@
             this.label8.Location = new System.Drawing.Point(18, 477);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 16);
-            this.label8.TabIndex = 24;
+            this.label8.TabIndex = 51;
             this.label8.Text = "Transport Name:";
             // 
             // label7
@@ -1953,7 +1962,7 @@
             this.label7.Location = new System.Drawing.Point(44, 419);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
-            this.label7.TabIndex = 23;
+            this.label7.TabIndex = 50;
             this.label7.Text = "Description :";
             // 
             // label6
@@ -1962,7 +1971,7 @@
             this.label6.Location = new System.Drawing.Point(23, 384);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 16);
-            this.label6.TabIndex = 22;
+            this.label6.TabIndex = 49;
             this.label6.Text = "Payment Type :";
             // 
             // label5
@@ -1971,7 +1980,7 @@
             this.label5.Location = new System.Drawing.Point(373, 127);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 16);
-            this.label5.TabIndex = 21;
+            this.label5.TabIndex = 48;
             this.label5.Text = "State Of Supply :";
             // 
             // label4
@@ -1980,7 +1989,7 @@
             this.label4.Location = new System.Drawing.Point(408, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 16);
-            this.label4.TabIndex = 20;
+            this.label4.TabIndex = 46;
             this.label4.Text = "Billing Name:";
             // 
             // label3
@@ -1989,7 +1998,7 @@
             this.label3.Location = new System.Drawing.Point(2, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 16);
-            this.label3.TabIndex = 19;
+            this.label3.TabIndex = 45;
             this.label3.Text = "Party Address :";
             // 
             // label2
@@ -1998,7 +2007,7 @@
             this.label2.Location = new System.Drawing.Point(18, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 44;
             this.label2.Text = "Party Name :";
             // 
             // panel3
@@ -2015,7 +2024,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1094, 38);
-            this.panel3.TabIndex = 16;
+            this.panel3.TabIndex = 0;
             // 
             // btnminimize
             // 
@@ -2039,8 +2048,9 @@
             this.Delivery.Name = "Delivery";
             this.Delivery.Size = new System.Drawing.Size(159, 23);
             this.Delivery.TabIndex = 75;
-            this.Delivery.Text = "Delivery";
+            this.Delivery.Text = "Delivery Challan";
             this.Delivery.Visible = false;
+            this.Delivery.TextChanged += new System.EventHandler(this.Delivery_TextChanged);
             // 
             // label39
             // 

@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreditNothomePage));
             this.btnCredit = new Guna.UI2.WinForms.Guna2Button();
             this.dgvcreditNote = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -43,8 +43,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtpfrom = new System.Windows.Forms.DateTimePicker();
             this.dtpto = new System.Windows.Forms.DateTimePicker();
-            this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcreditNote)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,30 +66,30 @@
             // 
             // dgvcreditNote
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvcreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvcreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvcreditNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcreditNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvcreditNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcreditNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvcreditNote.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvcreditNote.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcreditNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvcreditNote.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvcreditNote.EnableHeadersVisualStyles = false;
             this.dgvcreditNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvcreditNote.Location = new System.Drawing.Point(0, 161);
@@ -167,12 +167,13 @@
             this.btnimport.Size = new System.Drawing.Size(22, 23);
             this.btnimport.TabIndex = 197;
             this.btnimport.UseVisualStyleBackColor = false;
+            this.btnimport.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 93);
+            this.label6.Location = new System.Drawing.Point(50, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 18);
             this.label6.TabIndex = 200;
@@ -212,7 +213,7 @@
             this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfilter.HoverState.Parent = this.txtfilter;
-            this.txtfilter.Location = new System.Drawing.Point(127, 128);
+            this.txtfilter.Location = new System.Drawing.Point(132, 116);
             this.txtfilter.Name = "txtfilter";
             this.txtfilter.PasswordChar = '\0';
             this.txtfilter.PlaceholderText = "";
@@ -226,7 +227,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 131);
+            this.label3.Location = new System.Drawing.Point(48, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 207;
@@ -249,31 +250,8 @@
             this.dtpto.Name = "dtpto";
             this.dtpto.Size = new System.Drawing.Size(155, 23);
             this.dtpto.TabIndex = 211;
+            this.dtpto.ValueChanged += new System.EventHandler(this.dtpto_ValueChanged);
             this.dtpto.Enter += new System.EventHandler(this.dtpto_Enter);
-            // 
-            // cmbAllfirms
-            // 
-            this.cmbAllfirms.BackColor = System.Drawing.Color.Transparent;
-            this.cmbAllfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbAllfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllfirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllfirms.FocusedState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.cmbAllfirms.ForeColor = System.Drawing.Color.Blue;
-            this.cmbAllfirms.HoverState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.ItemHeight = 30;
-            this.cmbAllfirms.Items.AddRange(new object[] {
-            "All Firms"});
-            this.cmbAllfirms.ItemsAppearance.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Location = new System.Drawing.Point(46, 26);
-            this.cmbAllfirms.Name = "cmbAllfirms";
-            this.cmbAllfirms.ShadowDecoration.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
-            this.cmbAllfirms.StartIndex = 0;
-            this.cmbAllfirms.TabIndex = 212;
-            this.cmbAllfirms.Visible = false;
-            this.cmbAllfirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllfirms_SelectedIndexChanged);
             // 
             // btnminimize
             // 
@@ -291,13 +269,24 @@
             this.btnminimize.UseVisualStyleBackColor = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(48, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 16);
+            this.label2.TabIndex = 438;
+            this.label2.Text = "All Transaction";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // CreditNothomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.cmbAllfirms);
             this.Controls.Add(this.dtpto);
             this.Controls.Add(this.dtpfrom);
             this.Controls.Add(this.txtfilter);
@@ -335,7 +324,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpfrom;
         private System.Windows.Forms.DateTimePicker dtpto;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label2;
     }
 }

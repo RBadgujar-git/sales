@@ -138,7 +138,19 @@ namespace sample
 
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                string Query = string.Format("select OrderNo, PartyName, OrderDate, DueDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvSaleOrder.DataSource = ds;
+                dgvSaleOrder.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dtpTo_KeyPress(object sender, KeyPressEventArgs e)
@@ -166,19 +178,7 @@ namespace sample
 
         private void dtpTo_MouseEnter(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select OrderNo, PartyName, OrderDate, DueDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvSaleOrder.DataSource = ds;
-                dgvSaleOrder.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
     }
 }

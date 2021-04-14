@@ -301,6 +301,7 @@ namespace sample
                         dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
                         //           txtItemName.Focus();
                         clear_text_data();
+                        txtItemName.Focus();
                         for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                         {
                             TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
