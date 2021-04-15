@@ -34,14 +34,6 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.dgvPurchaseBill = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.BillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BillNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PartyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RemainingBal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnaddPurchase = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -105,7 +97,7 @@
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button2.Image")));
             this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button2.Location = new System.Drawing.Point(39, 26);
+            this.guna2Button2.Location = new System.Drawing.Point(42, 26);
             this.guna2Button2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
@@ -130,15 +122,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvPurchaseBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPurchaseBill.ColumnHeadersHeight = 37;
-            this.dgvPurchaseBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.BillDate,
-            this.BillNo,
-            this.PartyName,
-            this.PaymentType,
-            this.Total,
-            this.Paid,
-            this.RemainingBal,
-            this.Status});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,7 +130,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvPurchaseBill.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPurchaseBill.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvPurchaseBill.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvPurchaseBill.EnableHeadersVisualStyles = false;
             this.dgvPurchaseBill.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -156,7 +138,7 @@
             this.dgvPurchaseBill.Name = "dgvPurchaseBill";
             this.dgvPurchaseBill.RowHeadersVisible = false;
             this.dgvPurchaseBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvPurchaseBill.Size = new System.Drawing.Size(1085, 278);
+            this.dgvPurchaseBill.Size = new System.Drawing.Size(1085, 309);
             this.dgvPurchaseBill.TabIndex = 47;
             this.dgvPurchaseBill.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPurchaseBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -182,46 +164,6 @@
             this.dgvPurchaseBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvPurchaseBill.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseBill_CellContentClick);
             // 
-            // BillDate
-            // 
-            this.BillDate.HeaderText = "Date";
-            this.BillDate.Name = "BillDate";
-            // 
-            // BillNo
-            // 
-            this.BillNo.HeaderText = "Bill No";
-            this.BillNo.Name = "BillNo";
-            // 
-            // PartyName
-            // 
-            this.PartyName.HeaderText = "Party Name";
-            this.PartyName.Name = "PartyName";
-            // 
-            // PaymentType
-            // 
-            this.PaymentType.HeaderText = "Payment Type";
-            this.PaymentType.Name = "PaymentType";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            // 
-            // Paid
-            // 
-            this.Paid.HeaderText = "Paid";
-            this.Paid.Name = "Paid";
-            // 
-            // RemainingBal
-            // 
-            this.RemainingBal.HeaderText = "Remaining Bal";
-            this.RemainingBal.Name = "RemainingBal";
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
             // btnaddPurchase
             // 
             this.btnaddPurchase.BorderRadius = 20;
@@ -231,7 +173,7 @@
             this.btnaddPurchase.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaddPurchase.ForeColor = System.Drawing.Color.White;
             this.btnaddPurchase.HoverState.Parent = this.btnaddPurchase;
-            this.btnaddPurchase.Location = new System.Drawing.Point(922, 14);
+            this.btnaddPurchase.Location = new System.Drawing.Point(922, 12);
             this.btnaddPurchase.Margin = new System.Windows.Forms.Padding(4);
             this.btnaddPurchase.Name = "btnaddPurchase";
             this.btnaddPurchase.ShadowDecoration.Parent = this.btnaddPurchase;
@@ -331,7 +273,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(1054, 4);
+            this.btncancel.Location = new System.Drawing.Point(1011, 8);
             this.btncancel.Margin = new System.Windows.Forms.Padding(4);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(27, 27);
@@ -488,7 +430,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1010, 70);
+            this.label5.Location = new System.Drawing.Point(1010, 85);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 13);
@@ -500,12 +442,13 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(908, 67);
+            this.label4.Location = new System.Drawing.Point(851, 59);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 13);
             this.label4.TabIndex = 25;
             this.label4.Text = "Graph";
+            this.label4.Visible = false;
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // btnPrint
@@ -515,10 +458,10 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(1013, 34);
+            this.btnPrint.Location = new System.Drawing.Point(1013, 49);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(25, 24);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 23;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.button3_Click);
@@ -530,12 +473,13 @@
             this.btnExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExcel.FlatAppearance.BorderSize = 0;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Location = new System.Drawing.Point(966, 34);
+            this.btnExcel.Location = new System.Drawing.Point(909, 26);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(20, 20);
             this.btnExcel.TabIndex = 22;
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Visible = false;
             this.btnExcel.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnGraph
@@ -546,12 +490,13 @@
             this.btnGraph.FlatAppearance.BorderSize = 0;
             this.btnGraph.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGraph.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnGraph.Location = new System.Drawing.Point(922, 33);
+            this.btnGraph.Location = new System.Drawing.Point(865, 25);
             this.btnGraph.Margin = new System.Windows.Forms.Padding(4);
             this.btnGraph.Name = "btnGraph";
             this.btnGraph.Size = new System.Drawing.Size(20, 21);
             this.btnGraph.TabIndex = 21;
             this.btnGraph.UseVisualStyleBackColor = false;
+            this.btnGraph.Visible = false;
             this.btnGraph.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
@@ -599,12 +544,13 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(961, 65);
+            this.label3.Location = new System.Drawing.Point(904, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 26);
             this.label3.TabIndex = 26;
             this.label3.Text = "Excel\r\nReport";
+            this.label3.Visible = false;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dtpFrom
@@ -649,6 +595,7 @@
             this.label14.Size = new System.Drawing.Size(80, 16);
             this.label14.TabIndex = 59;
             this.label14.Text = "All Firms :";
+            this.label14.Visible = false;
             // 
             // cmbFirm
             // 
@@ -657,6 +604,7 @@
             this.cmbFirm.Name = "cmbFirm";
             this.cmbFirm.Size = new System.Drawing.Size(121, 24);
             this.cmbFirm.TabIndex = 60;
+            this.cmbFirm.Visible = false;
             this.cmbFirm.SelectedIndexChanged += new System.EventHandler(this.cmbFirm_SelectedIndexChanged);
             // 
             // btnminimize
@@ -668,7 +616,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(1030, 4);
+            this.btnminimize.Location = new System.Drawing.Point(960, 7);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 446;
@@ -756,14 +704,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmbFirm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BillDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BillNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PartyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Paid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RemainingBal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.Button btnminimize;
     }
 }

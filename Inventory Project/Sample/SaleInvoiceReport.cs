@@ -325,14 +325,10 @@ namespace sample
             dgvsaleInvoice.Columns[7].HeaderText = " Status";
             dgvsaleInvoice.Columns[7].DataPropertyName = "Status";
             dgvsaleInvoice.DataSource = dt;
+            dgvsaleInvoice.AllowUserToAddRows = false;
         }//BillDate,BillNo,PartyName,PaymentType,Total,Paid,Rema
 
         private void dtpTodate_ValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpTodate_Enter_1(object sender, EventArgs e)
         {
             try
             {
@@ -345,8 +341,13 @@ namespace sample
             }
             catch (Exception ex)
             {
-             //   MessageBox.Show("Data not" + ex);
+                  MessageBox.Show("Data not" + ex);
             }
+        }
+
+        private void dtpTodate_Enter_1(object sender, EventArgs e)
+        {
+            
         }
 
         private void cmbFirm_SelectedIndexChanged(object sender, EventArgs e)
