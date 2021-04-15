@@ -66,7 +66,7 @@ namespace sample
                 da.Fill(ds, "temp");
                dgvPurchaseOrder.DataSource = ds;
                 dgvPurchaseOrder.DataMember = "temp";
-
+                dgvPurchaseOrder.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -135,6 +135,28 @@ namespace sample
             else
             {
                 binddata();
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            binddata();
+        }
+
+        private void dtpTodate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("select OrderNo,PartyName,ContactNo,OrderDate,Paid,Total,RemainingBal,Status from tbl_PurchaseOrder where OrderDate between '" + dtpFrom.Text + "' and '" + dtpTodate.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvPurchaseOrder.DataSource = ds;
+                dgvPurchaseOrder.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
             }
         }
     }

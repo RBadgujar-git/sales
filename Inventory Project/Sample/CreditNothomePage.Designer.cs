@@ -27,24 +27,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreditNothomePage));
             this.btnCredit = new Guna.UI2.WinForms.Guna2Button();
             this.dgvcreditNote = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btncalcel = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpfrom = new System.Windows.Forms.DateTimePicker();
             this.dtpto = new System.Windows.Forms.DateTimePicker();
-            this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcreditNote)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.btnCredit.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCredit.ForeColor = System.Drawing.Color.White;
             this.btnCredit.HoverState.Parent = this.btnCredit;
-            this.btnCredit.Location = new System.Drawing.Point(890, 102);
+            this.btnCredit.Location = new System.Drawing.Point(882, 100);
             this.btnCredit.Name = "btnCredit";
             this.btnCredit.ShadowDecoration.Parent = this.btnCredit;
             this.btnCredit.Size = new System.Drawing.Size(145, 45);
@@ -66,30 +66,30 @@
             // 
             // dgvcreditNote
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvcreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvcreditNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvcreditNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvcreditNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvcreditNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvcreditNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvcreditNote.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvcreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvcreditNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvcreditNote.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvcreditNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvcreditNote.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvcreditNote.EnableHeadersVisualStyles = false;
             this.dgvcreditNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvcreditNote.Location = new System.Drawing.Point(0, 161);
@@ -132,7 +132,7 @@
             this.btncalcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncalcel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncalcel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncalcel.Location = new System.Drawing.Point(1032, 3);
+            this.btncalcel.Location = new System.Drawing.Point(993, 6);
             this.btncalcel.Name = "btncalcel";
             this.btncalcel.Size = new System.Drawing.Size(28, 26);
             this.btncalcel.TabIndex = 199;
@@ -147,9 +147,9 @@
             this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnprint.FlatAppearance.BorderSize = 0;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Location = new System.Drawing.Point(977, 48);
+            this.btnprint.Location = new System.Drawing.Point(993, 41);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(24, 23);
+            this.btnprint.Size = new System.Drawing.Size(25, 25);
             this.btnprint.TabIndex = 198;
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
@@ -167,32 +167,25 @@
             this.btnimport.Size = new System.Drawing.Size(22, 23);
             this.btnimport.TabIndex = 197;
             this.btnimport.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 18);
-            this.label6.TabIndex = 200;
-            this.label6.Text = "Transaction";
+            this.btnimport.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(197, 34);
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(192, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 204;
             this.label1.Text = "From";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(397, 35);
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(398, 46);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 16);
+            this.label5.Size = new System.Drawing.Size(25, 16);
             this.label5.TabIndex = 206;
             this.label5.Text = "To";
             // 
@@ -212,23 +205,23 @@
             this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfilter.HoverState.Parent = this.txtfilter;
-            this.txtfilter.Location = new System.Drawing.Point(127, 128);
+            this.txtfilter.Location = new System.Drawing.Point(132, 116);
             this.txtfilter.Name = "txtfilter";
             this.txtfilter.PasswordChar = '\0';
             this.txtfilter.PlaceholderText = "";
             this.txtfilter.SelectedText = "";
             this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
-            this.txtfilter.Size = new System.Drawing.Size(227, 27);
+            this.txtfilter.Size = new System.Drawing.Size(203, 27);
             this.txtfilter.TabIndex = 208;
-            this.txtfilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 131);
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(47, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 207;
             this.label3.Text = " Filter by :";
             // 
@@ -236,7 +229,7 @@
             // 
             this.dtpfrom.CustomFormat = "MM/dd/yyyy";
             this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfrom.Location = new System.Drawing.Point(241, 30);
+            this.dtpfrom.Location = new System.Drawing.Point(242, 42);
             this.dtpfrom.Name = "dtpfrom";
             this.dtpfrom.Size = new System.Drawing.Size(150, 23);
             this.dtpfrom.TabIndex = 210;
@@ -245,35 +238,12 @@
             // 
             this.dtpto.CustomFormat = "MM/dd/yyyy";
             this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpto.Location = new System.Drawing.Point(427, 30);
+            this.dtpto.Location = new System.Drawing.Point(428, 42);
             this.dtpto.Name = "dtpto";
             this.dtpto.Size = new System.Drawing.Size(155, 23);
             this.dtpto.TabIndex = 211;
+            this.dtpto.ValueChanged += new System.EventHandler(this.dtpto_ValueChanged);
             this.dtpto.Enter += new System.EventHandler(this.dtpto_Enter);
-            // 
-            // cmbAllfirms
-            // 
-            this.cmbAllfirms.BackColor = System.Drawing.Color.Transparent;
-            this.cmbAllfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbAllfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllfirms.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbAllfirms.FocusedState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold);
-            this.cmbAllfirms.ForeColor = System.Drawing.Color.Blue;
-            this.cmbAllfirms.HoverState.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.ItemHeight = 30;
-            this.cmbAllfirms.Items.AddRange(new object[] {
-            "All Firms"});
-            this.cmbAllfirms.ItemsAppearance.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Location = new System.Drawing.Point(46, 26);
-            this.cmbAllfirms.Name = "cmbAllfirms";
-            this.cmbAllfirms.ShadowDecoration.Parent = this.cmbAllfirms;
-            this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
-            this.cmbAllfirms.StartIndex = 0;
-            this.cmbAllfirms.TabIndex = 212;
-            this.cmbAllfirms.Visible = false;
-            this.cmbAllfirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllfirms_SelectedIndexChanged);
             // 
             // btnminimize
             // 
@@ -284,20 +254,42 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(1000, 3);
+            this.btnminimize.Location = new System.Drawing.Point(933, 6);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 437;
             this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(48, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 16);
+            this.label2.TabIndex = 438;
+            this.label2.Text = "All Transaction";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1018, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 16);
+            this.label4.TabIndex = 439;
+            this.label4.Text = "Print";
             // 
             // CreditNothomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.cmbAllfirms);
             this.Controls.Add(this.dtpto);
             this.Controls.Add(this.dtpfrom);
             this.Controls.Add(this.txtfilter);
@@ -309,7 +301,6 @@
             this.Controls.Add(this.btncalcel);
             this.Controls.Add(this.btnprint);
             this.Controls.Add(this.btnimport);
-            this.Controls.Add(this.label6);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreditNothomePage";
@@ -328,14 +319,14 @@
         private System.Windows.Forms.Button btncalcel;
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Button btnimport;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtfilter;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpfrom;
         private System.Windows.Forms.DateTimePicker dtpto;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -40,7 +40,7 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvcreditNote.DataSource = ds;
                 dgvcreditNote.DataMember = "temp";
-
+                dgvcreditNote.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -56,26 +56,26 @@ namespace sample
 
         private void fetchCompany()
         {
-            if (cmbAllfirms.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //if (cmbAllfirms.Text != "System.Data.DataRowView")
+            //{
+            //    try
+            //    {
+            //        string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
+            //            cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+            //        }
+            //    }
+            //    catch (Exception e1)
+            //    {
+            //        MessageBox.Show(e1.Message);
+            //    }
+            //}
         }
 
 
@@ -109,43 +109,29 @@ namespace sample
         }
         private void bindbankdata()
         {
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            con.Close();
-            dgvcreditNote.AutoGenerateColumns = false;
-            dgvcreditNote.ColumnCount =9;
-            dgvcreditNote.Columns[0].HeaderText = "Type";
-            dgvcreditNote.Columns[0].DataPropertyName = "TableName";
-            dgvcreditNote.Columns[1].HeaderText = "Date";
-            dgvcreditNote.Columns[1].DataPropertyName = "InvoiceDate";
-            dgvcreditNote.Columns[2].HeaderText = "Ref No";
-            dgvcreditNote.Columns[2].DataPropertyName = "ReturnNo";
-            dgvcreditNote.Columns[3].HeaderText = "Party";
-            dgvcreditNote.Columns[3].DataPropertyName = "PartyName";
-            dgvcreditNote.Columns[4].HeaderText = "Total";
-            dgvcreditNote.Columns[4].DataPropertyName = "Total";
-            dgvcreditNote.Columns[5].HeaderText = "Paid/Recieved";
-            dgvcreditNote.Columns[5].DataPropertyName = "Received";
-            dgvcreditNote.Columns[6].HeaderText = "Balance";
-            dgvcreditNote.Columns[6].DataPropertyName = "RemainingBal";
-            dgvcreditNote.Columns[7].HeaderText = "Status";
-            dgvcreditNote.Columns[7].DataPropertyName = "Status";
-          
-            dgvcreditNote.Columns[8].HeaderText = "Due Date";
-            dgvcreditNote.Columns[8].DataPropertyName = "DueDate";
-           
-            dgvcreditNote.DataSource = dt;
-        }
+            try
+            {
+                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvcreditNote.DataSource = ds;
+                dgvcreditNote.DataMember = "temp";
+                dgvcreditNote.AllowUserToAddRows = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        } 
 
         private void txtfilter_TextChanged(object sender, EventArgs e)
         {
            
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate  from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -161,19 +147,6 @@ namespace sample
 
         private void dtpto_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvcreditNote.DataSource = ds;
-                dgvcreditNote.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -189,7 +162,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,b.InvoiceDate,b.PartyName,b.ReturnNo,b.TableName,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,a.GSTNumber,b.InvoiceDate,b.PartyName,b.ReturnNo,b.TableName,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -214,6 +187,30 @@ namespace sample
 
         private void dgvcreditNote_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            bind();
+        }
+
+        private void dtpto_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvcreditNote.DataSource = ds;
+                dgvcreditNote.DataMember = "temp";
+                dgvcreditNote.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
 
         }
     }
