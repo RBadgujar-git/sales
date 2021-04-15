@@ -41,7 +41,25 @@ namespace sample
         private void TaxRateReport_Load(object sender, EventArgs e)
         {
             fetchCompany();
-
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                string Query = String.Format("Select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvTaxRate.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         private void fetchCompany()
         {
@@ -153,7 +171,32 @@ namespace sample
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("Select a.CompanyName,a.AddLogo,a.GSTNumber,a.EmailID,a.PhoneNo,a.Address,b.ItemName,b.TaxForSale,b.SaleTaxAmount,b.TaxForPurchase,b.PurchaseTaxAmount from tbl_ItemMaster as b,tbl_CompanyMaster as a where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1'");
+                    //string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.InvoiceID,b.PaymentType,b.Company_ID,b.Received,b.RemainingBal,b.Total,b.InvoiceDate FROM tbl_CompanyMaster as a, tbl_SaleInvoice as b where b.InvoiceDate='{0}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "'",date1);
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
+                    StiReport report = new StiReport();
+                    report.Load(@"TaxRateReport1.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("TaxRateReport", "TaxRateReport", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }
