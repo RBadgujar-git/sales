@@ -46,7 +46,7 @@ namespace sample
         {
 
             binddaata();
-            dgvPaymentOut.AllowUserToAddRows = false;
+           // dgvPaymentOut.AllowUserToAddRows = false;
             //try
             //{
             //    con.Open();
@@ -80,19 +80,7 @@ namespace sample
 
         private void dtpTo_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                string SelectQuery = string.Format("select ReceiptNo,CustomerName,PaymentType,Total,Paid,Discount from tbl_Paymentout where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvPaymentOut.DataSource = ds;
-                dgvPaymentOut.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-               // MessageBox.Show("Data not" + ex);
-            }
+            
         }
         public void binddaata()
         {
@@ -104,10 +92,11 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvPaymentOut.DataSource = ds;
                 dgvPaymentOut.DataMember = "temp";
+                dgvPaymentOut.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
-            //    MessageBox.Show(ex.Message);
+              MessageBox.Show(ex.Message);
             }
         }
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
@@ -129,7 +118,19 @@ namespace sample
 
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                string SelectQuery = string.Format("select ReceiptNo,CustomerName,PaymentType,Total,Paid,Discount from tbl_Paymentout where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvPaymentOut.DataSource = ds;
+                dgvPaymentOut.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Data not" + ex);
+            }
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -165,6 +166,26 @@ namespace sample
                 }
             }
 
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            binddaata();
         }
     }
 }

@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleOrder)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.btnSaleorder.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleorder.ForeColor = System.Drawing.Color.White;
             this.btnSaleorder.HoverState.Parent = this.btnSaleorder;
-            this.btnSaleorder.Location = new System.Drawing.Point(874, 116);
+            this.btnSaleorder.Location = new System.Drawing.Point(850, 124);
             this.btnSaleorder.Name = "btnSaleorder";
             this.btnSaleorder.ShadowDecoration.Parent = this.btnSaleorder;
             this.btnSaleorder.Size = new System.Drawing.Size(145, 45);
@@ -87,7 +88,7 @@
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprint.Location = new System.Drawing.Point(968, 59);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(21, 21);
+            this.btnprint.Size = new System.Drawing.Size(25, 25);
             this.btnprint.TabIndex = 182;
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
@@ -134,7 +135,7 @@
             this.dgvSaleOrder.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleOrder.EnableHeadersVisualStyles = false;
             this.dgvSaleOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSaleOrder.Location = new System.Drawing.Point(48, 190);
+            this.dgvSaleOrder.Location = new System.Drawing.Point(34, 190);
             this.dgvSaleOrder.Name = "dgvSaleOrder";
             this.dgvSaleOrder.RowHeadersVisible = false;
             this.dgvSaleOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -181,7 +182,7 @@
             // 
             this.dtpFrom.CustomFormat = "MM/dd/yyyy";
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(233, 59);
+            this.dtpFrom.Location = new System.Drawing.Point(233, 58);
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(145, 23);
             this.dtpFrom.TabIndex = 208;
@@ -189,18 +190,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 59);
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(384, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 16);
+            this.label5.Size = new System.Drawing.Size(25, 16);
             this.label5.TabIndex = 207;
             this.label5.Text = "To";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 59);
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(183, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 16);
+            this.label1.Size = new System.Drawing.Size(46, 16);
             this.label1.TabIndex = 206;
             this.label1.Text = "From";
             // 
@@ -234,19 +237,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 134);
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(47, 136);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 204;
             this.label3.Text = " Filter by :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 58);
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(42, 61);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 18);
+            this.label6.Size = new System.Drawing.Size(115, 16);
             this.label6.TabIndex = 203;
             this.label6.Text = "All Transaction";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -268,11 +272,21 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(961, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 452;
+            this.label2.Text = "Print";
+            // 
             // Saleorderhomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.dtpFrom);
@@ -312,5 +326,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label2;
     }
 }

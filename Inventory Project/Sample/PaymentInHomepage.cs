@@ -53,35 +53,23 @@ namespace sample
         }
         private void binddata()
         {
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            con.Close();
-            dgvPaymentIn.AutoGenerateColumns = false;
-            dgvPaymentIn.ColumnCount = 6;
-            dgvPaymentIn.Columns[0].HeaderText = "Receipt No";
-            dgvPaymentIn.Columns[0].DataPropertyName = "ReceiptNo";
-            dgvPaymentIn.Columns[1].HeaderText = " Party Name";
-            dgvPaymentIn.Columns[1].DataPropertyName = "CustomerName";
-            dgvPaymentIn.Columns[2].HeaderText = "Payment Type";
-            dgvPaymentIn.Columns[2].DataPropertyName = "PaymentType";
-            dgvPaymentIn.Columns[3].HeaderText = "Received Amount";
-            dgvPaymentIn.Columns[3].DataPropertyName = "ReceivedAmount";
-            dgvPaymentIn.Columns[4].HeaderText = "Unused Amount";
-            dgvPaymentIn.Columns[4].DataPropertyName = "UnusedAmount";
-            dgvPaymentIn.Columns[5].HeaderText = "Total";
-            dgvPaymentIn.Columns[5].DataPropertyName = "Total";
-            dgvPaymentIn.DataSource = dt;
-            dgvPaymentIn.AllowUserToAddRows = false;
+            try
+            {
+                string Query = string.Format("SELECT ReceiptNo,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPaymentIn.DataSource = ds;
+                dgvPaymentIn.DataMember = "temp";
+                dgvPaymentIn.AllowUserToAddRows = false;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }       
         }
         private void dtpTo_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpTo_Enter(object sender, EventArgs e)
         {
             try
             {
@@ -96,6 +84,11 @@ namespace sample
             {
                 MessageBox.Show("Data not" + ex);
             }
+        }
+
+        private void dtpTo_Enter(object sender, EventArgs e)
+        {
+           
         }
 
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
@@ -156,6 +149,11 @@ namespace sample
 
 
                
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            binddata();
         }
     }
 }

@@ -52,7 +52,7 @@ namespace sample
 
         private void PurchaseReport_Load(object sender, EventArgs e)
         {
-            fetchCampanyame();
+            //fetchCampanyame();
            
             Bindadata();
             //con.Open();
@@ -85,34 +85,25 @@ namespace sample
         }
         private void Bindadata()
         {
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPurchaseBill.DataSource = ds;
+                dgvPurchaseBill.DataMember = "temp";
+                dgvPurchaseBill.AllowUserToAddRows = false;
             }
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  ", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-        
-            dgvPurchaseBill.AutoGenerateColumns = false;
-            dgvPurchaseBill.ColumnCount = 8;
-            dgvPurchaseBill.Columns[0].HeaderText = "Date";
-            dgvPurchaseBill.Columns[0].DataPropertyName = "BillDate";
-            dgvPurchaseBill.Columns[1].HeaderText = " Bill No";
-            dgvPurchaseBill.Columns[1].DataPropertyName = "BillNo";
-            dgvPurchaseBill.Columns[2].HeaderText = "Party Name";
-            dgvPurchaseBill.Columns[2].DataPropertyName = "PartyName";
-            dgvPurchaseBill.Columns[3].HeaderText = " PaymentType";
-            dgvPurchaseBill.Columns[3].DataPropertyName = "PaymentType";
-            dgvPurchaseBill.Columns[4].HeaderText = "Total";
-            dgvPurchaseBill.Columns[4].DataPropertyName = "Total";
-            dgvPurchaseBill.Columns[5].HeaderText = " Paid";
-            dgvPurchaseBill.Columns[5].DataPropertyName = "Paid";
-            dgvPurchaseBill.Columns[6].HeaderText = "Remaining Bal";
-            dgvPurchaseBill.Columns[6].DataPropertyName = "RemainingBal";
-            dgvPurchaseBill.Columns[7].HeaderText = " Status";
-            dgvPurchaseBill.Columns[7].DataPropertyName = "Status";
-            dgvPurchaseBill.DataSource = dt;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }//BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status 
         private void Data()
         {
@@ -261,14 +252,17 @@ namespace sample
                 {
                     date = DateTime.Now.Month.ToString();
                     //MessageBox.Show("moth o" + date);
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where month(BillDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                    con.Close();
+                    //con.Close();
                    // Data();
                 }
                 catch (Exception ex)
@@ -282,15 +276,18 @@ namespace sample
                 try
                 {
                     date = DateTime.Now.Year.ToString();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
 
-                    con.Open();
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where year(BillDate)=" + date + " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                    con.Close();
+                   // con.Close();
                 //    Data();
                 }
                 catch (Exception ex)
@@ -304,14 +301,17 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill WHERE DATEPART(m, BillDate) = DATEPART(m, DATEADD(m, -1, getdate())) AND DATEPART(yy, BillDate) = DATEPART(yy, DATEADD(m, -1, getdate())) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                    con.Close();
+                    //con.Close();
              //       Data();
 
                 }
@@ -325,14 +325,17 @@ namespace sample
             {
                 try
                 {
-                    con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill WHERE BillDate>= DATEADD(M, -3, GETDATE()) and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                    con.Close();
+                  
                //     Data();
                 }
                 catch (Exception ex)
@@ -344,14 +347,17 @@ namespace sample
             {
                 try
                 {
-                   con.Open();
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
                     SqlCommand cmd = new SqlCommand("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                     SDA.Fill(ds, "temp");
                     dgvPurchaseBill.DataSource = ds;
                     dgvPurchaseBill.DataMember = "temp";
-                  con.Close();
+                 
                 //    Data();
                 }
                 catch (Exception ex)
