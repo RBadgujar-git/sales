@@ -72,7 +72,7 @@ No.</Text>
             <Text34 Ref="7" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>1,1.8,6.6,1.2</ClientRectangle>
+              <ClientRectangle>1,1.8,6.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>88d65d3cf88146c2aeaa0306bdae0b80</Guid>
@@ -88,7 +88,7 @@ No.</Text>
             <Text36 Ref="8" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>7.6,1.8,2.8,1.2</ClientRectangle>
+              <ClientRectangle>7.2,1.8,2.8,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>23b0a594b36144cc97cd7643327dea7d</Guid>
@@ -104,7 +104,7 @@ No.</Text>
             <Text37 Ref="9" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>14.8,1.8,4.2,1.2</ClientRectangle>
+              <ClientRectangle>14.4,1.8,4.6,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>668d6da161684cb683f4bb93da05f6ac</Guid>
@@ -121,7 +121,7 @@ Balance</Text>
             <Text38 Ref="10" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>10.4,1.8,4.4,1.2</ClientRectangle>
+              <ClientRectangle>10,1.8,4.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>6343274fc5c541e3a4b94593f5bea81c</Guid>
@@ -187,7 +187,7 @@ Balance</Text>
             <Text8 Ref="17" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>1,0,6.6,0.6</ClientRectangle>
+              <ClientRectangle>1,0,6.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>d53d071f507d4667bc3b51dfac6dc536</Guid>
@@ -204,7 +204,7 @@ Balance</Text>
             <Text4 Ref="18" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>7.6,0,2.8,0.6</ClientRectangle>
+              <ClientRectangle>7.2,0,2.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>a7fac73e0eb146d5a36a87d5e223a086</Guid>
@@ -222,7 +222,7 @@ Balance</Text>
             <Text9 Ref="19" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>14.8,0,4.2,0.6</ClientRectangle>
+              <ClientRectangle>14.4,0,4.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>bdcd9ee944c74bf2b2ad40b552485a8a</Guid>
@@ -239,7 +239,7 @@ Balance</Text>
             <Text35 Ref="20" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>10.4,0,4.4,0.6</ClientRectangle>
+              <ClientRectangle>10,0,4.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>db463503c39e4355ab16783f0096d2c2</Guid>
@@ -462,10 +462,10 @@ Balance</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/14/2021 5:36:16 PM</ReportChanged>
+  <ReportChanged>4/14/2021 5:42:10 PM</ReportChanged>
   <ReportCreated>3/20/2021 12:28:28 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\AllPartiesReport.mrt</ReportFile>
-  <ReportGuid>aa1b5fce89dd4ad0ad02175d3f0c39cb</ReportGuid>
+  <ReportGuid>dc0b25943d1a4e548e1333ab409eb8c9</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
