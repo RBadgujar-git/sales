@@ -45,7 +45,7 @@ namespace sample
 
             try
             {
-                string Query = string.Format("select * from tbl_DebitNote where Company_ID='" + m + "' and DeleteData='1'");
+                string Query = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + m + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -59,61 +59,48 @@ namespace sample
         }
         private void DebitNotehomepage_Load(object sender, EventArgs e)
         {
-            fetchCompany();
+           // fetchCompany();
             bindbankdata();
           
         }
         private void fetchCompany()
         {
-            try
-            {
-                string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "Temp");
-                DataTable DT = new DataTable();
-                SDA.Fill(ds);
-                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                {
-                   cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                }
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
+            //try
+            //{
+            //    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //    SDA.Fill(ds, "Temp");
+            //    DataTable DT = new DataTable();
+            //    SDA.Fill(ds);
+            //    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //    {
+            //       cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+            //    }
+            //}
+            //catch (Exception e1)
+            //{
+            //    MessageBox.Show(e1.Message);
+            //}
 
         }
         private void bindbankdata()
         {
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_DebitNote where DeleteData='1' and Company_ID='" + NewCompany.company_id + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            con.Close();
-            dgvdebitNote.AutoGenerateColumns = false;
-            dgvdebitNote.ColumnCount = 9;
-            dgvdebitNote.Columns[0].HeaderText = "Type";
-            dgvdebitNote.Columns[0].DataPropertyName = "TableName";
-            dgvdebitNote.Columns[1].HeaderText = "Date";
-            dgvdebitNote.Columns[1].DataPropertyName = "InvoiceDate";
-            dgvdebitNote.Columns[2].HeaderText = "Ref No";
-            dgvdebitNote.Columns[2].DataPropertyName = "ReturnNo";
-            dgvdebitNote.Columns[3].HeaderText = "Party";
-            dgvdebitNote.Columns[3].DataPropertyName = "PartyName";
-            dgvdebitNote.Columns[4].HeaderText = "Total";
-            dgvdebitNote.Columns[4].DataPropertyName = "Total";
-            dgvdebitNote.Columns[5].HeaderText = "Paid/Recieved";
-            dgvdebitNote.Columns[5].DataPropertyName = "Received";
-            dgvdebitNote.Columns[6].HeaderText = "Balance";
-            dgvdebitNote.Columns[6].DataPropertyName = "RemainingBal";
-            dgvdebitNote.Columns[7].HeaderText = "Status";
-            dgvdebitNote.Columns[7].DataPropertyName = "Status";
+            try
+            {
+                string Query = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvdebitNote.DataSource = ds;
+                dgvdebitNote.DataMember = "temp";
+                dgvdebitNote.AllowUserToAddRows = false;
 
-            dgvdebitNote.Columns[8].HeaderText = "Due Date";
-            dgvdebitNote.Columns[8].DataPropertyName = "DueDate";
-            dgvdebitNote.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -126,7 +113,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select * from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
+                string Query = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -141,10 +128,10 @@ namespace sample
         }
 
         private void dtptodate_ValueChanged(object sender, EventArgs e)
-        { 
+        {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between " +dtpfromdate.Value.ToString() + " and " + dtptodate.Value.ToString()+ " and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -155,29 +142,30 @@ namespace sample
             {
                 MessageBox.Show("Data not" + ex);
             }
+
         }
 
         private void cmbAllfirms_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            if (cmbAllfirms.Text == "")
-            {
-                Bindadata1(Convert.ToInt32(NewCompany.company_id));
-            }
-            else
-            {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                }
-                SqlCommand cmd = new SqlCommand("Select CompanyID from tbl_CompanyMaster where  CompanyName='" + cmbAllfirms.Text + "' and DeleteData='1' ", con);
-                int compid = Convert.ToInt32(cmd.ExecuteScalar());
-                Bindadata1(compid);
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
+            //if (cmbAllfirms.Text == "")
+            //{
+            //    Bindadata1(Convert.ToInt32(NewCompany.company_id));
+            //}
+            //else
+            //{
+            //    if (con.State == ConnectionState.Closed)
+            //    {
+            //        con.Open();
+            //    }
+            //    SqlCommand cmd = new SqlCommand("Select CompanyID from tbl_CompanyMaster where  CompanyName='" + cmbAllfirms.Text + "' and DeleteData='1' ", con);
+            //    int compid = Convert.ToInt32(cmd.ExecuteScalar());
+            //    Bindadata1(compid);
 
-            }
+            //}
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -218,6 +206,11 @@ namespace sample
         private void btnimport_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            bindbankdata();
         }
     }
 }

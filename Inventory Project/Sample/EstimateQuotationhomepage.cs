@@ -53,7 +53,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select PartyName,Date,Total,Status from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select TableName,Date,PartyName,Total,Status from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -74,57 +74,50 @@ namespace sample
 
         private void fetchCompany()
         {
-            if (cmbAllfirms.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  group by CompanyName ");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //if (cmbAllfirms.Text != "System.Data.DataRowView")
+            //{
+            //    try
+            //    {
+            //        string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'  group by CompanyName ");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
+            //            cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+            //        }
+            //    }
+            //    catch (Exception e1)
+            //    {
+            //        MessageBox.Show(e1.Message);
+            //    }
+            //}
         }
         private void bindbankdata()
         {
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tblQuotation where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            con.Close();
-           
-            dgvEstimate.ColumnCount = 4;
-            dgvEstimate.Columns[0].HeaderText = "Name";
-            dgvEstimate.Columns[0].DataPropertyName = "PartyName";
-
-            dgvEstimate.Columns[1].HeaderText = "Date";
-            dgvEstimate.Columns[1].DataPropertyName = "Date";
-            
-            dgvEstimate.Columns[2].HeaderText = "Total";
-            dgvEstimate.Columns[2].DataPropertyName = "Total";
-           
-            dgvEstimate.Columns[3].HeaderText = "Status";
-            dgvEstimate.Columns[3].DataPropertyName = "Status";
-            dgvEstimate.DataSource = dt;
-            dgvEstimate.AutoGenerateColumns = false;
+            try
+            {
+                string Query = string.Format("select TableName,Date,PartyName,Total,Status from tblQuotation where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvEstimate.DataSource = ds;
+                dgvEstimate.DataMember = "temp";
+                dgvEstimate.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dtpto_ValueChanged(object sender, EventArgs e)
         {
             try
             {
-                string SelectQuery = string.Format("select Date,PartyName,ReturnNo,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select TableName,Date,PartyName,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -145,6 +138,11 @@ namespace sample
         private void dgvEstimate_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            bindbankdata();
         }
     }
     
