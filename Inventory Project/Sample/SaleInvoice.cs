@@ -70,7 +70,7 @@ namespace sample
             txtcgst.Enabled = false;
             txtTaxAmount.Enabled = false;
             txtFreeQty.Enabled = false;
-            cmbStatesupply.Enabled=false;          
+            cmbStatesupply.Enabled = false;
             guna2TextBox2.Enabled = false;
             textBox2.Hide();
             label45.Hide();
@@ -107,7 +107,7 @@ namespace sample
             {
                 fetchitem();
             }
-            else if(dispurchase==0)
+            else if (dispurchase == 0)
             {
                 fetchitem1();
             }
@@ -2092,6 +2092,24 @@ namespace sample
         private void txtDisAmount_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtUnit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void cmbtax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+           (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
