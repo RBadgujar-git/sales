@@ -595,6 +595,7 @@ namespace sample
             cmbStatesupply.Text = "";
             txtDescription.Text = "";
             //cmbtax.Text = "0";
+            txtIGST.Text = "0";
             txtcgst.Text = "0";
             txtsgst.Text = "0";
             txtDiscount.Text = "0";
