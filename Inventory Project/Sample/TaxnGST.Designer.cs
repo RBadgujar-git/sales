@@ -113,6 +113,7 @@
             this.chkRevesreCharges.UncheckedState.BorderRadius = 0;
             this.chkRevesreCharges.UncheckedState.BorderThickness = 0;
             this.chkRevesreCharges.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkRevesreCharges.CheckedChanged += new System.EventHandler(this.chkRevesreCharges_CheckedChanged);
             // 
             // chkEnablePlace
             // 
