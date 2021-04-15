@@ -101,6 +101,9 @@ namespace sample
             }
         }
 
+
+
+
         private void fetchcustomername()
         {
             if (cmbpartyname.Text != "System.Data.DataRowView") {
