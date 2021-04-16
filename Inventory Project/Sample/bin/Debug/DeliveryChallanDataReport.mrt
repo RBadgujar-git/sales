@@ -666,10 +666,10 @@ Bal</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/16/2021 1:20:06 PM</ReportChanged>
+  <ReportChanged>4/16/2021 2:59:45 PM</ReportChanged>
   <ReportCreated>3/25/2021 7:01:22 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\DeliveryChallanDataReport.mrt</ReportFile>
-  <ReportGuid>f3c2fd5029464279bfb5bbee59386995</ReportGuid>
+  <ReportGuid>0460073243054ee882a8b2c05360b8cb</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
