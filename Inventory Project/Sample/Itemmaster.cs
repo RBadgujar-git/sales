@@ -30,7 +30,7 @@ namespace sample
 
 
         public int NameMrp, batchno, Serealno, MFd, exd, size;
-
+        public int hsnid;
         public void chekpoint()
         {
             if (con.State == ConnectionState.Closed)
@@ -51,6 +51,19 @@ namespace sample
                 size = Convert.ToInt32(dr["Size"]);
             }
             dr.Close();
+
+
+
+
+            SqlCommand cmd12 = new SqlCommand("Select * from TransactionTableSetting where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr1 = cmd12.ExecuteReader();
+
+            while (dr1.Read())
+            {
+                hsnid = Convert.ToInt32(dr1["HSN"]);
+               
+            }
+            dr1.Close();
 
         }
 
@@ -96,6 +109,11 @@ namespace sample
                 m++;
             }
 
+            if(hsnid==1)
+            {
+                label3.Visible = false;
+                txtHSNcode.Visible = false;
+            }
             if (m == 6)
             {
                 guna2Button2.Hide();
@@ -931,6 +949,11 @@ namespace sample
         private void cmbItemLocation_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtHSNcode_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)

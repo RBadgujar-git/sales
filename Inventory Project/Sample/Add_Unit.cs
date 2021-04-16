@@ -283,7 +283,7 @@ namespace sample
         {
 
         }
-
+    
         private void guna2Panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
@@ -313,6 +313,11 @@ namespace sample
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

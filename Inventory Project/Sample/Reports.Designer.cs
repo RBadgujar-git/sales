@@ -450,7 +450,7 @@
             this.guna2Button10.Location = new System.Drawing.Point(2, 186);
             this.guna2Button10.Name = "guna2Button10";
             this.guna2Button10.ShadowDecoration.Parent = this.guna2Button10;
-            this.guna2Button10.Size = new System.Drawing.Size(193, 30);
+            this.guna2Button10.Size = new System.Drawing.Size(193, 28);
             this.guna2Button10.TabIndex = 9;
             this.guna2Button10.Text = "Cash Flow";
             this.guna2Button10.Click += new System.EventHandler(this.guna2Button10_Click);
@@ -495,7 +495,7 @@
             this.guna2Button5.Location = new System.Drawing.Point(3, 104);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
-            this.guna2Button5.Size = new System.Drawing.Size(193, 28);
+            this.guna2Button5.Size = new System.Drawing.Size(193, 32);
             this.guna2Button5.TabIndex = 5;
             this.guna2Button5.Text = "Day Book";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button5_Click);

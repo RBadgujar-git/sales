@@ -101,6 +101,7 @@ namespace sample
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set HSN = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+
             }
         }
 
@@ -158,6 +159,11 @@ namespace sample
                 txtRemainder.Hide();
                 guna2Button2.Hide();
             }
+        }
+
+        private void chkRevesreCharges_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
