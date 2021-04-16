@@ -495,6 +495,12 @@
     <Compile Include="Feedback.Designer.cs">
       <DependentUpon>Feedback.cs</DependentUpon>
     </Compile>
+    <Compile Include="GSTR1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR1.Designer.cs">
+      <DependentUpon>GSTR1.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportExcel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1080,6 +1086,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR1.resx">
+      <DependentUpon>GSTR1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportExcel.resx">
       <DependentUpon>ImportExcel.cs</DependentUpon>
