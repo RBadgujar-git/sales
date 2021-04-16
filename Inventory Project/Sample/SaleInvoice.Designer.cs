@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
             this.label26 = new System.Windows.Forms.Label();
             this.txtVehicleNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -194,7 +194,7 @@
             this.txtVehicleNo.SelectedText = "";
             this.txtVehicleNo.ShadowDecoration.Parent = this.txtVehicleNo;
             this.txtVehicleNo.Size = new System.Drawing.Size(180, 24);
-            this.txtVehicleNo.TabIndex = 25;
+            this.txtVehicleNo.TabIndex = 15;
             // 
             // txtDeliveryLoc
             // 
@@ -219,7 +219,7 @@
             this.txtDeliveryLoc.SelectedText = "";
             this.txtDeliveryLoc.ShadowDecoration.Parent = this.txtDeliveryLoc;
             this.txtDeliveryLoc.Size = new System.Drawing.Size(180, 24);
-            this.txtDeliveryLoc.TabIndex = 24;
+            this.txtDeliveryLoc.TabIndex = 14;
             // 
             // txtTransportName
             // 
@@ -244,7 +244,7 @@
             this.txtTransportName.SelectedText = "";
             this.txtTransportName.ShadowDecoration.Parent = this.txtTransportName;
             this.txtTransportName.Size = new System.Drawing.Size(180, 24);
-            this.txtTransportName.TabIndex = 23;
+            this.txtTransportName.TabIndex = 13;
             // 
             // txtDescription
             // 
@@ -270,7 +270,7 @@
             this.txtDescription.SelectedText = "";
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(180, 45);
-            this.txtDescription.TabIndex = 22;
+            this.txtDescription.TabIndex = 12;
             // 
             // txtReturnNo
             // 
@@ -577,10 +577,10 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(372, 130);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(147, 16);
+            this.label41.Size = new System.Drawing.Size(137, 16);
             this.label41.TabIndex = 202;
             this.label41.Text = "Barcode Scanning :";
             // 
@@ -592,7 +592,7 @@
             this.cmbpartyname1.Location = new System.Drawing.Point(153, 47);
             this.cmbpartyname1.Name = "cmbpartyname1";
             this.cmbpartyname1.Size = new System.Drawing.Size(200, 24);
-            this.cmbpartyname1.TabIndex = 232;
+            this.cmbpartyname1.TabIndex = 1;
             this.cmbpartyname1.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             this.cmbpartyname1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbpartyname1_KeyPress);
             this.cmbpartyname1.ParentChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
@@ -650,9 +650,10 @@
             this.cmbtax.Location = new System.Drawing.Point(723, 439);
             this.cmbtax.Name = "cmbtax";
             this.cmbtax.Size = new System.Drawing.Size(63, 24);
-            this.cmbtax.TabIndex = 17;
+            this.cmbtax.TabIndex = 18;
             this.cmbtax.Text = "0";
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
+            this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
             // 
             // cmbPaymentType
             // 
@@ -666,7 +667,7 @@
             this.cmbPaymentType.Location = new System.Drawing.Point(151, 380);
             this.cmbPaymentType.Name = "cmbPaymentType";
             this.cmbPaymentType.Size = new System.Drawing.Size(182, 24);
-            this.cmbPaymentType.TabIndex = 21;
+            this.cmbPaymentType.TabIndex = 10;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged);
             this.cmbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaymentType_KeyPress);
             // 
@@ -677,7 +678,7 @@
             this.DtpdeliveryDate.Location = new System.Drawing.Point(151, 558);
             this.DtpdeliveryDate.Name = "DtpdeliveryDate";
             this.DtpdeliveryDate.Size = new System.Drawing.Size(182, 23);
-            this.DtpdeliveryDate.TabIndex = 26;
+            this.DtpdeliveryDate.TabIndex = 16;
             // 
             // cmbStatesupply
             // 
@@ -746,7 +747,7 @@
             this.Print.Location = new System.Drawing.Point(684, 544);
             this.Print.Name = "Print";
             this.Print.Size = new System.Drawing.Size(77, 42);
-            this.Print.TabIndex = 29;
+            this.Print.TabIndex = 23;
             this.Print.Text = "Print";
             this.Print.UseVisualStyleBackColor = false;
             this.Print.Click += new System.EventHandler(this.Print_Click);
@@ -759,7 +760,7 @@
             this.Clear.Location = new System.Drawing.Point(767, 544);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(78, 42);
-            this.Clear.TabIndex = 30;
+            this.Clear.TabIndex = 24;
             this.Clear.Text = "Clear";
             this.Clear.UseVisualStyleBackColor = false;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
@@ -786,7 +787,7 @@
             this.ComboBox.Location = new System.Drawing.Point(994, 560);
             this.ComboBox.Name = "ComboBox";
             this.ComboBox.Size = new System.Drawing.Size(100, 24);
-            this.ComboBox.TabIndex = 21;
+            this.ComboBox.TabIndex = 20;
             this.ComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ComboBox_KeyPress);
             // 
             // cmbpartyname
@@ -845,7 +846,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1074, 87);
-            this.guna2ShadowPanel1.TabIndex = 8;
+            this.guna2ShadowPanel1.TabIndex = 9;
             // 
             // label42
             // 
@@ -924,7 +925,7 @@
             this.txtItemName.Location = new System.Drawing.Point(11, 47);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(119, 22);
-            this.txtItemName.TabIndex = 10;
+            this.txtItemName.TabIndex = 1;
             this.txtItemName.SelectedIndexChanged += new System.EventHandler(this.txtItemName_SelectedIndexChanged_1);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
@@ -954,7 +955,7 @@
             this.txtItemTotal.SelectionStart = 1;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
             this.txtItemTotal.Size = new System.Drawing.Size(85, 28);
-            this.txtItemTotal.TabIndex = 20;
+            this.txtItemTotal.TabIndex = 11;
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
             this.txtItemTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemTotal_KeyPress);
@@ -994,7 +995,7 @@
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
             this.txtDisAmt.Size = new System.Drawing.Size(85, 28);
-            this.txtDisAmt.TabIndex = 17;
+            this.txtDisAmt.TabIndex = 9;
             this.txtDisAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisAmt_KeyPress);
             // 
             // txtDis
@@ -1022,7 +1023,7 @@
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
             this.txtDis.Size = new System.Drawing.Size(85, 28);
-            this.txtDis.TabIndex = 14;
+            this.txtDis.TabIndex = 5;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
             // 
@@ -1069,7 +1070,7 @@
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
             this.txtTaxAMount1.Size = new System.Drawing.Size(85, 28);
-            this.txtTaxAMount1.TabIndex = 19;
+            this.txtTaxAMount1.TabIndex = 10;
             this.txtTaxAMount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxAMount1_KeyPress);
             // 
             // label31
@@ -1106,7 +1107,7 @@
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
             this.txtTax1.Size = new System.Drawing.Size(85, 28);
-            this.txtTax1.TabIndex = 15;
+            this.txtTax1.TabIndex = 6;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
             // 
@@ -1143,7 +1144,7 @@
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
             this.txtMRP.Size = new System.Drawing.Size(76, 28);
-            this.txtMRP.TabIndex = 13;
+            this.txtMRP.TabIndex = 4;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
             // 
@@ -1179,7 +1180,8 @@
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(67, 28);
-            this.txtUnit.TabIndex = 12;
+            this.txtUnit.TabIndex = 3;
+            this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
             // 
@@ -1215,7 +1217,7 @@
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
             this.txtFreeQty.Size = new System.Drawing.Size(85, 28);
-            this.txtFreeQty.TabIndex = 17;
+            this.txtFreeQty.TabIndex = 8;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
             // 
@@ -1251,7 +1253,7 @@
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
             this.txtItemCode.Size = new System.Drawing.Size(78, 28);
-            this.txtItemCode.TabIndex = 11;
+            this.txtItemCode.TabIndex = 2;
             this.txtItemCode.TextChanged += new System.EventHandler(this.txtItemCode_TextChanged);
             // 
             // label23
@@ -1297,7 +1299,7 @@
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
             this.txtOty.Size = new System.Drawing.Size(79, 28);
-            this.txtOty.TabIndex = 16;
+            this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
             // 
@@ -1312,20 +1314,20 @@
             // 
             // dgvInnerDebiteNote
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInnerDebiteNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDebiteNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDebiteNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDebiteNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
             this.dgvInnerDebiteNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1341,14 +1343,14 @@
             this.Discount_Amount,
             this.Amount,
             this.IDItem});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInnerDebiteNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDebiteNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDebiteNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1518,7 +1520,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(601, 545);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(77, 42);
-            this.btnUpdate.TabIndex = 28;
+            this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -1603,7 +1605,7 @@
             this.btnlinkPayment.Location = new System.Drawing.Point(388, 546);
             this.btnlinkPayment.Name = "btnlinkPayment";
             this.btnlinkPayment.Size = new System.Drawing.Size(117, 41);
-            this.btnlinkPayment.TabIndex = 21;
+            this.btnlinkPayment.TabIndex = 28;
             this.btnlinkPayment.Text = "Link Payment";
             this.btnlinkPayment.UseVisualStyleBackColor = false;
             // 
@@ -1652,7 +1654,7 @@
             this.txtBallaance.SelectionStart = 1;
             this.txtBallaance.ShadowDecoration.Parent = this.txtBallaance;
             this.txtBallaance.Size = new System.Drawing.Size(100, 24);
-            this.txtBallaance.TabIndex = 125;
+            this.txtBallaance.TabIndex = 26;
             // 
             // txtTotal
             // 
@@ -1709,7 +1711,7 @@
             this.txtRoundup.SelectedText = "";
             this.txtRoundup.ShadowDecoration.Parent = this.txtRoundup;
             this.txtRoundup.Size = new System.Drawing.Size(67, 25);
-            this.txtRoundup.TabIndex = 18;
+            this.txtRoundup.TabIndex = 45;
             // 
             // txtReceived
             // 
@@ -1736,7 +1738,7 @@
             this.txtReceived.SelectionStart = 1;
             this.txtReceived.ShadowDecoration.Parent = this.txtReceived;
             this.txtReceived.Size = new System.Drawing.Size(100, 24);
-            this.txtReceived.TabIndex = 20;
+            this.txtReceived.TabIndex = 19;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
             // 
@@ -1821,7 +1823,7 @@
             this.txtDiscount.SelectionStart = 1;
             this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
             this.txtDiscount.Size = new System.Drawing.Size(88, 24);
-            this.txtDiscount.TabIndex = 16;
+            this.txtDiscount.TabIndex = 17;
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscount_KeyPress);
             // 
@@ -1858,7 +1860,7 @@
             this.label19.Location = new System.Drawing.Point(813, 388);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(76, 16);
-            this.label19.TabIndex = 22;
+            this.label19.TabIndex = 43;
             this.label19.Text = "Discount :";
             // 
             // label17
@@ -1878,7 +1880,7 @@
             this.btnSave.Location = new System.Drawing.Point(511, 545);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 42);
-            this.btnSave.TabIndex = 27;
+            this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Save ";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -1953,7 +1955,7 @@
             this.txtrefNo.SelectedText = "";
             this.txtrefNo.ShadowDecoration.Parent = this.txtrefNo;
             this.txtrefNo.Size = new System.Drawing.Size(126, 24);
-            this.txtrefNo.TabIndex = 104354;
+            this.txtrefNo.TabIndex = 11;
             this.txtrefNo.Visible = false;
             this.txtrefNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtrefNo_KeyPress);
             // 
@@ -1990,7 +1992,7 @@
             this.label16.Location = new System.Drawing.Point(43, 562);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(107, 16);
-            this.label16.TabIndex = 50;
+            this.label16.TabIndex = 42;
             this.label16.Text = "Delivery Date :";
             // 
             // label14
@@ -2008,7 +2010,7 @@
             this.label11.Location = new System.Drawing.Point(19, 500);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 16);
-            this.label11.TabIndex = 36;
+            this.label11.TabIndex = 40;
             this.label11.Text = "Delivery Location :";
             // 
             // label12
@@ -2017,7 +2019,7 @@
             this.label12.Location = new System.Drawing.Point(63, 532);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 16);
-            this.label12.TabIndex = 26;
+            this.label12.TabIndex = 41;
             this.label12.Text = "Vehicle No :";
             // 
             // label9
@@ -2026,7 +2028,7 @@
             this.label9.Location = new System.Drawing.Point(446, 75);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 16);
-            this.label9.TabIndex = 25;
+            this.label9.TabIndex = 36;
             this.label9.Text = "PO Date :";
             // 
             // label8
@@ -2035,7 +2037,7 @@
             this.label8.Location = new System.Drawing.Point(33, 469);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 16);
-            this.label8.TabIndex = 24;
+            this.label8.TabIndex = 39;
             this.label8.Text = "Transport Name:";
             // 
             // label7
@@ -2044,7 +2046,7 @@
             this.label7.Location = new System.Drawing.Point(59, 417);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(92, 16);
-            this.label7.TabIndex = 23;
+            this.label7.TabIndex = 38;
             this.label7.Text = "Description :";
             // 
             // label6
@@ -2053,7 +2055,7 @@
             this.label6.Location = new System.Drawing.Point(38, 383);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 16);
-            this.label6.TabIndex = 22;
+            this.label6.TabIndex = 37;
             this.label6.Text = "Payment Type :";
             // 
             // label3
@@ -2062,7 +2064,7 @@
             this.label3.Location = new System.Drawing.Point(38, 85);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 16);
-            this.label3.TabIndex = 19;
+            this.label3.TabIndex = 32;
             this.label3.Text = "Billing Address :";
             // 
             // label2
@@ -2071,7 +2073,7 @@
             this.label2.Location = new System.Drawing.Point(53, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 16);
-            this.label2.TabIndex = 18;
+            this.label2.TabIndex = 30;
             this.label2.Text = "Party Name :";
             // 
             // panel3
@@ -2090,7 +2092,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1078, 38);
-            this.panel3.TabIndex = 16;
+            this.panel3.TabIndex = 34;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label21

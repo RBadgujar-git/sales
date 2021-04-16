@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace sample
 {
@@ -16,7 +17,7 @@ namespace sample
         {
             InitializeComponent();
         }
-
+        SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         private void Reports_Load(object sender, EventArgs e)
         {
 
@@ -68,10 +69,42 @@ namespace sample
         {
             
         }
+        public int Stockmantance;
+        public void cheekpass()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID=" + NewCompany.company_id + "", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+
+                while (dr.Read())
+                {
+                   
+                    Stockmantance = Convert.ToInt32(dr["Stockmantance"]);
+                }
+                dr.Close();
+
+            }
+
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+        }
 
         private void Reports_Load_1(object sender, EventArgs e)
         {
-
+            cheekpass();
+            if(Stockmantance==1)
+            {
+                guna2Button25.Visible = false;
+                guna2Button28.Visible = false;
+            }
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)
