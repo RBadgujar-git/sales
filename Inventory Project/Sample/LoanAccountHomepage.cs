@@ -100,8 +100,6 @@ namespace sample
                 dgvbankAccount.DataSource = ds;
                 dgvbankAccount.DataMember = "temp";
 
-
-
             }
             catch (Exception ex)
             {
@@ -118,7 +116,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountName,AccountNo,LendarBank,FirmName, CurrentBal,BalAsOf,Interest,Duration,PaidBy,LoanAmount,Total from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' and DeleteData='1'", txtSearch2.Text);
+                string Query = string.Format("select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName='"+lblBankAccount+"' and LendarBank like '%{0}%' and DeleteData='1'", txtSearch2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

@@ -29,21 +29,31 @@ namespace sample
         private void OtherIncomeHomepage1_Load(object sender, EventArgs e)
         {
             bindbankdata();
-            search2();
+         //   search2();
         }
         private void bindbankdata()
         {
+           
             con.Open();
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand("select OtherIncome from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
-             con.Close();
-            this.dgvCategory.AllowUserToAddRows = false;
-            dgvCategory.ColumnCount = 1;
-            dgvCategory.Columns[0].DataPropertyName = "OtherIncome";
+            con.Close();
+
             dgvCategory.DataSource = dt;
-          
+
+            //con.Open();
+            //DataTable dt = new DataTable();
+            //SqlCommand cmd = new SqlCommand("select OtherIncome from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.Fill(dt);
+            // con.Close();
+            dgvCategory.AllowUserToAddRows = false;
+            //dgvCategory.ColumnCount = 1;
+            //dgvCategory.Columns[0].DataPropertyName = "OtherIncome";
+            //dgvCategory.DataSource = dt;
+            dgvOtherincome.AllowUserToAddRows = false;
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -93,40 +103,55 @@ namespace sample
             this.dgvCategory.AllowUserToAddRows = false;
             this.dgvOtherincome.AllowUserToAddRows = false;
             lblBankAccount.Visible = true;
+
+            //con.Open();
+            //DataTable dt = new DataTable();
+            //SqlCommand cmd = new SqlCommand("select OtherIncome from tbl_otherIncomeCaategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.Fill(dt);
+            //con.Close();
+
+            con.Open();
+            DataTable dt = new DataTable();
+            SqlCommand Query1 = new SqlCommand("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",con);
+           
+            SqlDataAdapter da1 = new SqlDataAdapter(Query1);
+            da.Fill(dt);
+            con.Close();
         }
 
         public void search2()
         {
-            try
-            {
-                string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvOtherincome.DataSource = ds;
-                dgvOtherincome.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvOtherincome.DataSource = ds;
+            //    dgvOtherincome.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void txtSearch2_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvOtherincome.DataSource = ds;
-                dgvOtherincome.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    string Query = string.Format("select Date,IncomeCategory,total,Received,Balance from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch2.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvOtherincome.DataSource = ds;
+            //    dgvOtherincome.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -173,7 +198,41 @@ namespace sample
 
         private void dgvOtherincome_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dgvOtherincome.AllowUserToAddRows = false;
+            
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+           try
+            {
+                string SelectQuery = string.Format("(select Date, IncomeCategory, total, Received, Balance from tbl_OtherIncome where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and IncomeCategory='"+lblBankAccount.Text+"' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvOtherincome.DataSource = ds;
+                dgvOtherincome.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("(select Date, IncomeCategory, total, Received, Balance from tbl_OtherIncome where IncomeCategory='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvOtherincome.DataSource = ds;
+                dgvOtherincome.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }
