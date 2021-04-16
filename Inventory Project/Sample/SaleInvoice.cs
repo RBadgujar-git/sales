@@ -46,8 +46,6 @@ namespace sample
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
 
-
-
             chkRoundOff.Hide();
             txtRoundup.Hide();
             comboBox3.Hide();

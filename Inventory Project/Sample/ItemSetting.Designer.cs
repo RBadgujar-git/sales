@@ -74,6 +74,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -361,6 +362,7 @@
             this.chkItemsUnit.UncheckedState.BorderThickness = 0;
             this.chkItemsUnit.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkItemsUnit.CheckedChanged += new System.EventHandler(this.chkItemsUnit_CheckedChanged);
+            this.chkItemsUnit.Leave += new System.EventHandler(this.chkItemsUnit_Leave);
             // 
             // guna2Panel2
             // 
@@ -564,7 +566,6 @@
             this.chkItemWiseTax.UncheckedState.BorderRadius = 0;
             this.chkItemWiseTax.UncheckedState.BorderThickness = 0;
             this.chkItemWiseTax.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkItemWiseTax.CheckedChanged += new System.EventHandler(this.chkItemWiseTax_CheckedChanged);
             // 
             // guna2CheckBox16
             // 
@@ -820,12 +821,26 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(187, 372);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(177, 16);
+            this.label6.TabIndex = 443;
+            this.label6.Text = "Not Permission to Change";
+            this.label6.Visible = false;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // ItemSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.expcomb);
@@ -871,7 +886,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ItemSetting";
             this.Size = new System.Drawing.Size(1066, 689);
-            this.Load += new System.EventHandler(this.ItemSetting_Load);
+            this.Load += new System.EventHandler(this.s);
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -926,5 +941,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.Label label6;
     }
 }

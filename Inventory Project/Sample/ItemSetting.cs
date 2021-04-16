@@ -28,6 +28,7 @@ namespace sample
             cheekpass();
             fatchname();
             panel1.Visible = false;
+            chkItemsUnit.Checked = true;
             guna2Button3.Visible = true;
             if (NameMrp == 0)
             {
@@ -77,9 +78,16 @@ namespace sample
             {
                 chkStockMaintance.Checked = true;
             }
-
+            if(ItemCategory==1)
+            {
+                chkItemsCategory.Checked = true;
+            }
             chkDescription.Text = description;
             chkDescription.Checked = true;
+
+
+            label6.Visible = false;
+
         }
 
 
@@ -135,7 +143,7 @@ namespace sample
         }
     
         public int NameMrp,batchno,Serealno,MFd,exd,size,itemwise, ItemwisTax,barcode;
-        public int Stockmantance;
+        public int Stockmantance, ItemCategory;
 
         public void cheekpass()
         {
@@ -161,6 +169,7 @@ namespace sample
                     ItemwisTax=Convert.ToInt32(dr["ItemwisTax"]);
                     barcode= Convert.ToInt32(dr["barcode"]);
                     Stockmantance= Convert.ToInt32(dr["Stockmantance"]);
+                    ItemCategory = Convert.ToInt32(dr["ItemCategory"]);
                 }
                 dr.Close();
             
@@ -345,7 +354,9 @@ namespace sample
 
         private void chkItemsUnit_CheckedChanged(object sender, EventArgs e)
         {
-
+            chkItemsUnit.Checked = true;
+            label6.Visible = true;
+         
         }
 
         private void chkShowLowstockDailog_CheckedChanged(object sender, EventArgs e)
@@ -355,7 +366,18 @@ namespace sample
 
         private void chkItemsCategory_CheckedChanged(object sender, EventArgs e)
         {
+            if (chkItemsCategory.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemCategory = '1' where  Company_ID=" + NewCompany.company_id + "", con);
+                cmd.ExecuteNonQuery();
 
+            }
+            else if (chkItemsCategory.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemCategory = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+               
+            }
         }
 
         private void chkPartyWiseItem_CheckedChanged(object sender, EventArgs e)
@@ -374,6 +396,21 @@ namespace sample
             SqlCommand cmd = new SqlCommand("update Item_Seeting Set Description='"+textBox1.Text+"' where  Company_ID=" + NewCompany.company_id + "", con);
             cmd.ExecuteNonQuery();
             panel1.Visible = false;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chkItemsUnit_Leave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void s(object sender, EventArgs e)
+        {
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
