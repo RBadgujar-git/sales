@@ -127,6 +127,7 @@
             this.txtmoneyin.Name = "txtmoneyin";
             this.txtmoneyin.Size = new System.Drawing.Size(153, 23);
             this.txtmoneyin.TabIndex = 42;
+            this.txtmoneyin.Text = "0";
             // 
             // label4
             // 

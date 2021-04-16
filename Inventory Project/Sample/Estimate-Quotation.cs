@@ -1567,6 +1567,11 @@ namespace sample
         {
 
         }
+
+        private void ComboBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
     }
     
 }

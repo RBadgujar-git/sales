@@ -55,7 +55,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("SELECT ReceiptNo,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string Query = string.Format("SELECT ReceiptNo,Date,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -73,7 +73,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("SELECT ReceiptNo,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("SELECT ReceiptNo,Date,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -95,7 +95,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ReceiptNo, CustomerName, PaymentType, ReceivedAmount,UnusedAmount,Total from tbl_PaymentIn where  CustomerName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy.Text);
+                string Query = string.Format("select ReceiptNo,Date, CustomerName, PaymentType, ReceivedAmount,UnusedAmount,Total from tbl_PaymentIn where  CustomerName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

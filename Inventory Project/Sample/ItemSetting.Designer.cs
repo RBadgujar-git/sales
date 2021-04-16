@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemSetting));
             this.cmbmgfdate = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtSerialNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -67,7 +68,14 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
             this.expcomb = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbmgfdate
@@ -266,6 +274,7 @@
             this.chkStockMaintance.UncheckedState.BorderRadius = 0;
             this.chkStockMaintance.UncheckedState.BorderThickness = 0;
             this.chkStockMaintance.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkStockMaintance.CheckedChanged += new System.EventHandler(this.chkStockMaintance_CheckedChanged);
             // 
             // label11
             // 
@@ -300,10 +309,12 @@
             // chkEnableItem
             // 
             this.chkEnableItem.AutoSize = true;
+            this.chkEnableItem.Checked = true;
             this.chkEnableItem.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkEnableItem.CheckedState.BorderRadius = 0;
             this.chkEnableItem.CheckedState.BorderThickness = 0;
             this.chkEnableItem.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkEnableItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEnableItem.Location = new System.Drawing.Point(84, 84);
             this.chkEnableItem.Name = "chkEnableItem";
             this.chkEnableItem.Size = new System.Drawing.Size(105, 20);
@@ -331,6 +342,7 @@
             this.chkShowLowstockDailog.UncheckedState.BorderRadius = 0;
             this.chkShowLowstockDailog.UncheckedState.BorderThickness = 0;
             this.chkShowLowstockDailog.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkShowLowstockDailog.CheckedChanged += new System.EventHandler(this.chkShowLowstockDailog_CheckedChanged);
             // 
             // chkItemsUnit
             // 
@@ -348,6 +360,7 @@
             this.chkItemsUnit.UncheckedState.BorderRadius = 0;
             this.chkItemsUnit.UncheckedState.BorderThickness = 0;
             this.chkItemsUnit.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkItemsUnit.CheckedChanged += new System.EventHandler(this.chkItemsUnit_CheckedChanged);
             // 
             // guna2Panel2
             // 
@@ -461,6 +474,7 @@
             this.chkDirectBarcodescan.UncheckedState.BorderRadius = 0;
             this.chkDirectBarcodescan.UncheckedState.BorderThickness = 0;
             this.chkDirectBarcodescan.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkDirectBarcodescan.CheckedChanged += new System.EventHandler(this.chkDirectBarcodescan_CheckedChanged);
             // 
             // chkCustomerEnable
             // 
@@ -478,6 +492,7 @@
             this.chkCustomerEnable.UncheckedState.BorderRadius = 0;
             this.chkCustomerEnable.UncheckedState.BorderThickness = 0;
             this.chkCustomerEnable.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkCustomerEnable.CheckedChanged += new System.EventHandler(this.chkCustomerEnable_CheckedChanged);
             // 
             // chkItemsCategory
             // 
@@ -495,6 +510,7 @@
             this.chkItemsCategory.UncheckedState.BorderRadius = 0;
             this.chkItemsCategory.UncheckedState.BorderThickness = 0;
             this.chkItemsCategory.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkItemsCategory.CheckedChanged += new System.EventHandler(this.chkItemsCategory_CheckedChanged);
             // 
             // chkPartyWiseItem
             // 
@@ -512,6 +528,7 @@
             this.chkPartyWiseItem.UncheckedState.BorderRadius = 0;
             this.chkPartyWiseItem.UncheckedState.BorderThickness = 0;
             this.chkPartyWiseItem.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkPartyWiseItem.CheckedChanged += new System.EventHandler(this.chkPartyWiseItem_CheckedChanged);
             // 
             // chkDescription
             // 
@@ -590,6 +607,7 @@
             this.guna2Button3.Size = new System.Drawing.Size(124, 29);
             this.guna2Button3.TabIndex = 385;
             this.guna2Button3.Text = "Change Texts";
+            this.guna2Button3.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // txtmfgdate
             // 
@@ -752,12 +770,64 @@
             this.expcomb.TabIndex = 438;
             this.expcomb.SelectedIndexChanged += new System.EventHandler(this.expcomb_SelectedIndexChanged);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(210, 85);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(177, 16);
+            this.label5.TabIndex = 439;
+            this.label5.Text = "Not Permission to Change";
+            this.label5.Visible = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Location = new System.Drawing.Point(306, 455);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 442;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(60, 64);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 26);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(158, 23);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // ItemSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.expcomb);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.label4);
@@ -803,6 +873,8 @@
             this.Size = new System.Drawing.Size(1066, 689);
             this.Load += new System.EventHandler(this.ItemSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -848,5 +920,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnminimize;
         private Guna.UI2.WinForms.Guna2ComboBox expcomb;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }

@@ -2300,3 +2300,5 @@ C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\s
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.cache
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.compiled

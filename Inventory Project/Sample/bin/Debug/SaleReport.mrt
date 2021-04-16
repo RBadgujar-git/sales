@@ -2106,10 +2106,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/12/2021 12:22:02 PM</ReportChanged>
+  <ReportChanged>4/14/2021 2:07:49 PM</ReportChanged>
   <ReportCreated>3/17/2021 9:22:05 PM</ReportCreated>
   <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\SaleReport.mrt</ReportFile>
-  <ReportGuid>152851ce292244649ffb0515865f0438</ReportGuid>
+  <ReportGuid>27000ec39b474bb195b09f893d203ac6</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

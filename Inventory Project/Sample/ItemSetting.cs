@@ -23,11 +23,12 @@ namespace sample
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         private void ItemSetting_Load(object sender, EventArgs e)
         {
-
+            chkDirectBarcodescan.Visible = false;
             demo();
             cheekpass();
             fatchname();
-        
+            panel1.Visible = false;
+            guna2Button3.Visible = true;
             if (NameMrp == 0)
             {
                 chkMRP.Checked = true;
@@ -72,7 +73,13 @@ namespace sample
             {
                 chkBarcodeScan.Checked = true;
             }
+            if(Stockmantance==0)
+            {
+                chkStockMaintance.Checked = true;
+            }
 
+            chkDescription.Text = description;
+            chkDescription.Checked = true;
         }
 
 
@@ -86,7 +93,7 @@ namespace sample
            int idd=Convert.ToInt32(cmd.ExecuteScalar());
            if(idd==0)
             {
-                SqlCommand cmd1 = new SqlCommand("Insert into Item_Seeting(MRP,Batch_No,Serial_No,Mef_Date,Exp_date,Size,Company_ID) values('MRP','Batch No','Serial No.','Mfg Date','Exp Date','Size',"+NewCompany.company_id+")", con);
+                SqlCommand cmd1 = new SqlCommand("Insert into Item_Seeting(MRP,Batch_No,Serial_No,Mef_Date,Exp_date,Size,Company_ID,Expdaate,MFDAte,Description) values('MRP','Batch No','Serial No.','Mfg Date','Exp Date','Size'," + NewCompany.company_id+",'0','0','Description')", con);
                 cmd1.ExecuteNonQuery();
             }     
 
@@ -94,6 +101,7 @@ namespace sample
         }
 
         public String MRPtext, batchNotext, SeriealText, Mfddatetext, Expdatetext,Sizename;
+        public string description;
         public void fatchname()
         {
             try
@@ -114,7 +122,7 @@ namespace sample
                     Mfddatetext= dr["Mef_Date"].ToString();
                     Expdatetext= dr["Exp_date"].ToString();
                     Sizename= dr["Size"].ToString();
-
+                    description = dr["Description"].ToString();
                 }
                 dr.Close();
 
@@ -127,7 +135,7 @@ namespace sample
         }
     
         public int NameMrp,batchno,Serealno,MFd,exd,size,itemwise, ItemwisTax,barcode;
-
+        public int Stockmantance;
 
         public void cheekpass()
         {
@@ -152,7 +160,7 @@ namespace sample
                     size = Convert.ToInt32(dr["Size"]);
                     ItemwisTax=Convert.ToInt32(dr["ItemwisTax"]);
                     barcode= Convert.ToInt32(dr["barcode"]);
-
+                    Stockmantance= Convert.ToInt32(dr["Stockmantance"]);
                 }
                 dr.Close();
             
@@ -169,6 +177,15 @@ namespace sample
         private void guna2CheckBox14_CheckedChanged(object sender, EventArgs e)
         {
 
+            if (chkDescription.Checked == true)
+            {
+                guna2Button3.Visible = true;
+            }
+            else if (chkDescription.Checked == false)
+            {
+                guna2Button3.Visible = false;
+                panel1.Visible = false;
+            }
         }
 
         private void guna2CheckBox4_CheckedChanged(object sender, EventArgs e)
@@ -263,9 +280,16 @@ namespace sample
 
         private void chkEnableItem_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkBarcodeScan.Checked == true)
+            {
+                chkEnableItem.Checked = true;
+            }
+            else if (chkBarcodeScan.Checked == false)
+            {
+                chkEnableItem.Checked = true;
+                label5.Visible = true;
+            }
         }
-
         private void chkBarcodeScan_CheckedChanged(object sender, EventArgs e)
         {
             if (chkBarcodeScan.Checked == true)
@@ -278,21 +302,85 @@ namespace sample
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set barcode = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
+
         }
 
         private void chkItemWiseTax_CheckedChanged(object sender, EventArgs e)
         {
-            if (guna2CheckBox16.Checked == true)
+            if (chkItemWiseTax.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
-            else if (guna2CheckBox16.Checked == false)
+            else if (chkItemWiseTax.Checked == false)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
         }
+
+        private void chkCustomerEnable_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkStockMaintance_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkStockMaintance.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set Stockmantance = '0' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkStockMaintance.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set Stockmantance = '1' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void chkDirectBarcodescan_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkItemsUnit_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkShowLowstockDailog_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkItemsCategory_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkPartyWiseItem_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            textBox1.Text = description;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("update Item_Seeting Set Description='"+textBox1.Text+"' where  Company_ID=" + NewCompany.company_id + "", con);
+            cmd.ExecuteNonQuery();
+            panel1.Visible = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public static int checkbarcode = 0;
         public static void chekpoint()
         {

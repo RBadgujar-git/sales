@@ -30,7 +30,7 @@ namespace sample
 
 
         public int NameMrp, batchno, Serealno, MFd, exd, size;
-
+        public int hsnid, Cess;
         public void chekpoint()
         {
             if (con.State == ConnectionState.Closed)
@@ -51,6 +51,21 @@ namespace sample
                 size = Convert.ToInt32(dr["Size"]);
             }
             dr.Close();
+
+
+
+
+            SqlCommand cmd12 = new SqlCommand("Select * from TransactionTableSetting where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr1 = cmd12.ExecuteReader();
+
+            while (dr1.Read())
+            {
+                hsnid = Convert.ToInt32(dr1["HSN"]);
+                Cess= Convert.ToInt32(dr1["cess"]);
+
+
+            }
+            dr1.Close();
 
         }
 
@@ -96,14 +111,24 @@ namespace sample
                 m++;
             }
 
+            if(hsnid==1)
+            {
+                label3.Visible = false;
+                txtHSNcode.Visible = false;
+            }
             if (m == 6)
             {
                 guna2Button2.Hide();
             }
+            if(Cess==0)
+            {
+                label26.Visible = false;
+                Cesstxt.Visible = false;
+            }
         }
 
         public String MRPtext, batchNotext, SeriealText, Mfddatetext, Expdatetext, Sizename;
-
+        public string Decription;
 
         public void fatchname()
         {
@@ -125,7 +150,7 @@ namespace sample
                     Mfddatetext = dr["Mef_Date"].ToString();
                     Expdatetext = dr["Exp_date"].ToString();
                     Sizename = dr["Size"].ToString();
-
+                    Decription = dr["Description"].ToString();
                 }
                 dr.Close();
 
@@ -145,6 +170,8 @@ namespace sample
             label20.Text = Mfddatetext;
             label14.Text = Mfddatetext;
             label21.Text = Sizename;
+            label17.Text = Decription;
+
         }
 
         private void Itemmaster_Load(object sender, EventArgs e)
@@ -258,7 +285,8 @@ namespace sample
             txtDescritption.Text = "";
             txtminimumStock.Text = "";
             textBox1.Text = "";
-            picturebox.Image = Properties.Resources.No_Image_Available;
+            Cesstxt.Text = "";
+           picturebox.Image = Properties.Resources.No_Image_Available;
         }
         private void cmbSaleTax_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -399,6 +427,9 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                     cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
+                    cmd.Parameters.AddWithValue("@Cess",Cesstxt.Text);
+
+
                     int num = cmd.ExecuteNonQuery();
                     if (num > 0)
                     {
@@ -558,7 +589,11 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                         cmd.Parameters.Add("@Image1", SqlDbType.Image, arrImage1.Length).Value = arrImage1;
                         cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-                        int num = cmd.ExecuteNonQuery();
+                    if (Cesstxt.Visible == true)
+                    {
+                        cmd.Parameters.AddWithValue("@Cess", Cesstxt.Text);
+                    }
+                    int num = cmd.ExecuteNonQuery();
                         if (num > 0)
                         {
                             MessageBox.Show("Update data Successfully");
@@ -697,6 +732,9 @@ namespace sample
             txtDescritption.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Description"].Value.ToString();
             txtminimumStock.Text = dgvItemmaster.Rows[e.RowIndex].Cells["MinimumStock"].Value.ToString();
             textBox1.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Barcode"].Value.ToString();
+            Cesstxt.Text = dgvItemmaster.Rows[e.RowIndex].Cells["Cess"].Value.ToString();
+
+
             try
             {
                 SqlCommand cmd = new SqlCommand("select Image1 from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
@@ -931,6 +969,11 @@ namespace sample
         private void cmbItemLocation_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtHSNcode_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void txtSerialNo_KeyPress(object sender, KeyPressEventArgs e)

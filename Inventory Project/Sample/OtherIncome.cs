@@ -741,7 +741,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select a.Id,a.ItemName,a.SalePrice,a.DeleteData,a.Qty,a.ItemAmount,b.Id,b.IncomeCategory,b.Date,b.Balance,b.Received,b.Status,b.Company_ID,b.DeleteData,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber  from tbl_OtherIncomeInner3 as a,tbl_OtherIncome as b,tbl_CompanyMaster as c where a.Id={0} and b.Id={1} and c.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.DeleteData='1'", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("select c.AdditinalFeild1,c.AdditinalFeild2,c.AdditinalFeild3,a.Id,a.ItemName,a.SalePrice,a.DeleteData,a.Qty,a.ItemAmount,b.Id,b.IncomeCategory,b.Date,b.Balance,b.Received,b.Status,b.Company_ID,b.DeleteData,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber  from tbl_OtherIncomeInner3 as a,tbl_OtherIncome as b,tbl_CompanyMaster as c where a.Id={0} and b.Id={1} and c.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.DeleteData='1'", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
