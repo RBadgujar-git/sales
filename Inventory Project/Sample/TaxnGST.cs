@@ -53,16 +53,25 @@ namespace sample
             if (Hsn == 1)
             {
                 chkEnableHSn.Checked = true;
+                chkEnablleGSt.Checked = true;
             }
             if (supplace == 1)
             {
                 chkEnablePlace.Checked = true;
+                chkEnablleGSt.Checked = true;
             }
             if (eway == 1)
             {
                 chkEWayBilling.Checked = true;
+                chkEnablleGSt.Checked = true;
+            }
+            if(Cess==1)
+            {
+                chkAdditionalCases.Checked = true;
+                chkEnablleGSt.Checked = true;
             }
         }
+        public int Cess;
         public void cheekpass1()
         {
             try
@@ -79,6 +88,7 @@ namespace sample
                     Hsn = Convert.ToInt32(dr1["HSN"]);
                     supplace = Convert.ToInt32(dr1["PlaceOfSupply"]);  
                     eway = Convert.ToInt32(dr1["EwayBill"]);
+                    Cess = Convert.ToInt32(dr1["Cess"]);
                     enablegst = Convert.ToInt32(dr1["EnableGst"]);
                 }
                 dr1.Close();
@@ -104,17 +114,17 @@ namespace sample
 
             }
         }
-
+        public int checkpoint=0;
         private void chkAdditionalCases_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEnablePlace.Checked == true)
+            if (chkAdditionalCases.Checked == true)
             {
-                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PlaceOfSupply = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set Cess = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
-            else if (chkEnablePlace.Checked == false)
+            else if (chkAdditionalCases.Checked == false)
             {
-                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PlaceOfSupply = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set Cess = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
         }

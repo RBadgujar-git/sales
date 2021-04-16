@@ -102,7 +102,7 @@ namespace sample
         private void ExpenseHomePage_Load(object sender, EventArgs e)
         {
             bindbankdata();
-            search1();
+            //search1();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -123,37 +123,37 @@ namespace sample
         }
         public void search1()
         {
-            try
-            {
-                string Query = string.Format("select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvExxpenses.DataSource = ds;
-                dgvExxpenses.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    string Query = string.Format("select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvExxpenses.DataSource = ds;
+            //    dgvExxpenses.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void txtSearch1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvExxpenses.DataSource = ds;
-                dgvExxpenses.DataMember = "temp";
+            //try
+            //{
+            //    string Query = string.Format("select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvExxpenses.DataSource = ds;
+            //    dgvExxpenses.DataMember = "temp";
                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
@@ -189,6 +189,40 @@ namespace sample
         private void dgvExxpenses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvExxpenses.DataSource = ds;
+                dgvExxpenses.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvExxpenses.DataSource = ds;
+                dgvExxpenses.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }

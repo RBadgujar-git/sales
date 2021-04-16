@@ -200,6 +200,7 @@
             // 
             // txtSearch1
             // 
+            this.txtSearch1.BorderColor = System.Drawing.Color.Gray;
             this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch1.DefaultText = "";
             this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -301,6 +302,7 @@
             // 
             // txtSearch2
             // 
+            this.txtSearch2.BorderColor = System.Drawing.Color.Gray;
             this.txtSearch2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch2.DefaultText = "";
             this.txtSearch2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
