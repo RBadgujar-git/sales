@@ -33,9 +33,10 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -113,18 +114,6 @@
             this.cmbAllFirms.TabIndex = 46;
             this.cmbAllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllFirms_SelectedIndexChanged);
             // 
-            // guna2ShadowPanel1
-            // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(51, 132);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1021, 444);
-            this.guna2ShadowPanel1.TabIndex = 52;
-            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
-            // 
             // dtpDate
             // 
             this.dtpDate.CustomFormat = "MM/dd/yyyy";
@@ -152,14 +141,23 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(67, 139);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(887, 391);
+            this.dataGridView1.TabIndex = 461;
+            // 
             // ProfitLossReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrint);
@@ -170,6 +168,7 @@
             this.Name = "ProfitLossReport";
             this.Size = new System.Drawing.Size(1027, 569);
             this.Load += new System.EventHandler(this.ProfitLossReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,8 +181,8 @@
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnImport;
         private Guna.UI2.WinForms.Guna2ComboBox cmbAllFirms;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

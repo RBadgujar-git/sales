@@ -28,7 +28,7 @@ namespace sample
             cheekpass();
             fatchname();
             panel1.Visible = false;
-
+            guna2Button3.Visible = true;
             if (NameMrp == 0)
             {
                 chkMRP.Checked = true;
@@ -78,6 +78,8 @@ namespace sample
                 chkStockMaintance.Checked = true;
             }
 
+            chkDescription.Text = description;
+            chkDescription.Checked = true;
         }
 
 
@@ -91,7 +93,7 @@ namespace sample
            int idd=Convert.ToInt32(cmd.ExecuteScalar());
            if(idd==0)
             {
-                SqlCommand cmd1 = new SqlCommand("Insert into Item_Seeting(MRP,Batch_No,Serial_No,Mef_Date,Exp_date,Size,Company_ID) values('MRP','Batch No','Serial No.','Mfg Date','Exp Date','Size',"+NewCompany.company_id+")", con);
+                SqlCommand cmd1 = new SqlCommand("Insert into Item_Seeting(MRP,Batch_No,Serial_No,Mef_Date,Exp_date,Size,Company_ID,Expdaate,MFDAte,Description) values('MRP','Batch No','Serial No.','Mfg Date','Exp Date','Size'," + NewCompany.company_id+",'0','0','Description')", con);
                 cmd1.ExecuteNonQuery();
             }     
 
@@ -99,6 +101,7 @@ namespace sample
         }
 
         public String MRPtext, batchNotext, SeriealText, Mfddatetext, Expdatetext,Sizename;
+        public string description;
         public void fatchname()
         {
             try
@@ -119,7 +122,7 @@ namespace sample
                     Mfddatetext= dr["Mef_Date"].ToString();
                     Expdatetext= dr["Exp_date"].ToString();
                     Sizename= dr["Size"].ToString();
-
+                    description = dr["Description"].ToString();
                 }
                 dr.Close();
 
@@ -174,16 +177,13 @@ namespace sample
         private void guna2CheckBox14_CheckedChanged(object sender, EventArgs e)
         {
 
-
-
-
             if (chkDescription.Checked == true)
             {
-                guna2Button3.Visible = false;
+                guna2Button3.Visible = true;
             }
             else if (chkDescription.Checked == false)
             {
-                guna2Button3.Visible = true;
+                guna2Button3.Visible = false;
                 panel1.Visible = false;
             }
         }
@@ -365,14 +365,15 @@ namespace sample
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            panel1.Visible = false;
+            panel1.Visible = true;
+            textBox1.Text = description;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand("update Item_Seeting Set MRP='" + txtMRP.Text + "',Batch_No='" + txtBatchNo.Text + "',Serial_No='" + txtSerialNo.Text + "',Mef_Date='" + txtmfgdate.Text + "', Exp_date='" + txtexpdate.Text + "', Size='" + txtSize.Text + "' where  Company_ID=" + NewCompany.company_id + "", con);
+            SqlCommand cmd = new SqlCommand("update Item_Seeting Set Description='"+textBox1.Text+"' where  Company_ID=" + NewCompany.company_id + "", con);
             cmd.ExecuteNonQuery();
-            panel1.Visible = true;
+            panel1.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
