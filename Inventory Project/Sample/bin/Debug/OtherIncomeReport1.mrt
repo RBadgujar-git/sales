@@ -80,7 +80,7 @@
             </Text19>
             <Text66 Ref="7" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0.5,4.8,0.4</ClientRectangle>
+              <ClientRectangle>0,0.5,7.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>b7b29b6bbee04907a0b21b43401b8b65</Guid>
@@ -93,7 +93,7 @@
             </Text66>
             <Text67 Ref="8" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,0.9,4.8,0.4</ClientRectangle>
+              <ClientRectangle>0,0.9,7.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>72e857eb0ebb4e428158c73f80be09f2</Guid>
@@ -106,7 +106,7 @@
             </Text67>
             <Text68 Ref="9" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,1.3,4.8,0.4</ClientRectangle>
+              <ClientRectangle>0,1.3,7.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>ec5116fefaaf4c1bbc43afc9b158925e</Guid>
@@ -119,7 +119,7 @@
             </Text68>
             <Text69 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,1.7,4.8,0.4</ClientRectangle>
+              <ClientRectangle>0,1.7,7.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>d6472c98022d415c8afe72eadab0e481</Guid>
@@ -132,7 +132,7 @@
             </Text69>
             <Text70 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>0,2.1,4.8,0.4</ClientRectangle>
+              <ClientRectangle>0,2.1,7.8,0.4</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>5dbb7a2acc4b4e2593dfc42978d64f28</Guid>
@@ -145,7 +145,7 @@
             </Text70>
             <Text71 Ref="12" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.6,1.9,4.8,0.6</ClientRectangle>
+              <ClientRectangle>13.2,1.9,5.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>4e94d5a2234b41e89bbec3b5227796b2</Guid>
@@ -204,7 +204,7 @@
               </StartCap>
             </HorizontalLinePrimitive4>
             <EndPointPrimitive10 Ref="18" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
-              <ClientRectangle>5.63,2.5,0,0</ClientRectangle>
+              <ClientRectangle>7.83,2.5,0,0</ClientRectangle>
               <Name>EndPointPrimitive10</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
@@ -980,7 +980,7 @@ Category</Text>
             </Text86>
             <Text87 Ref="83" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,0,5.4,0.6</ClientRectangle>
+              <ClientRectangle>2.2,0,5.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>c151465ccc294cffb661b5aac2e904d0</Guid>
@@ -994,7 +994,7 @@ Category</Text>
             </Text87>
             <Text88 Ref="84" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,0.6,5.4,0.6</ClientRectangle>
+              <ClientRectangle>2.2,0.6,5.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>552de27506ee4912a416dc12930cc105</Guid>
@@ -1008,7 +1008,7 @@ Category</Text>
             </Text88>
             <Text89 Ref="85" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1.2,5.4,0.6</ClientRectangle>
+              <ClientRectangle>2.2,1.2,5.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>8162331617b246e59915a5bb803962f5</Guid>
@@ -1204,7 +1204,7 @@ Category</Text>
           <ReferenceToGuid>999a5a4d854148be9771d931d65b58cc</ReferenceToGuid>
         </EndPointPrimitive19>
         <VerticalLinePrimitive4 Ref="118" type="VerticalLinePrimitive" isKey="true">
-          <ClientRectangle>5.6,24.4,0.0254,2.6</ClientRectangle>
+          <ClientRectangle>7.8,24.4,0.0254,2.6</ClientRectangle>
           <Color>Black</Color>
           <EndCap Ref="119" type="Cap" isKey="true">
             <Color>Black</Color>
@@ -1239,7 +1239,7 @@ Category</Text>
           <ReferenceToGuid>015fa34b550441b286cf50189a222fa8</ReferenceToGuid>
         </StartPointPrimitive11>
         <StartPointPrimitive10 Ref="125" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
-          <ClientRectangle>5.6,24.4,0,0</ClientRectangle>
+          <ClientRectangle>7.8,24.4,0,0</ClientRectangle>
           <Name>StartPointPrimitive10</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
@@ -1439,10 +1439,10 @@ Category</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/14/2021 3:45:59 PM</ReportChanged>
+  <ReportChanged>4/16/2021 11:08:06 AM</ReportChanged>
   <ReportCreated>3/25/2021 4:48:49 PM</ReportCreated>
   <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\OtherIncomeReport1.mrt</ReportFile>
-  <ReportGuid>52c89034a8bd45c49195446f75d77848</ReportGuid>
+  <ReportGuid>410d896688224886842994d5de88c536</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

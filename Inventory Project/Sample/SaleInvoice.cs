@@ -352,6 +352,8 @@ namespace sample
             textBox1.Text = "";
             cmbCategory.Text = "";
             dgvInnerDebiteNote.Rows.Clear();
+            textBox3.Text = "";
+            textBox4.Text = "";
         }
         private void get_id()
         {
@@ -476,6 +478,9 @@ namespace sample
                 }
                 cmd.Parameters.AddWithValue("@Barcode", textBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", TxtIGST.Text);
+                cmd.Parameters.AddWithValue("@TaxAmountShow", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
 
@@ -1293,7 +1298,7 @@ namespace sample
                 {
                     
                     insertitem();
-                    float TA = 0, TD = 0, TGST = 0;
+                    float TA = 0, TD = 0, TGST = 0,tax=0,dis1=0;
                     dgvInnerDebiteNote.Rows.Add();
                     row = dgvInnerDebiteNote.Rows.Count - 2;
                     dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
@@ -1337,17 +1342,22 @@ namespace sample
                     dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
                     dgvInnerDebiteNote.Rows[row].Cells[12].Value = Itemid;
                     clear_text_data();
-
+                   
                     txtItemName.Focus();
                     guna2TextBox1.Text = "";
+                   
                     for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                     {
-                        TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
+                        dis1 += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                        textBox4.Text = dis1.ToString();
+                        tax += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                        textBox3.Text = tax.ToString();
+                        TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                         txtsubtotal.Text = TA.ToString();
-                        txtTotal.Text = TA.ToString();
-                    
+                        txtTotal.Text = TA.ToString();                  
                     }
                    
+
                 }
 
              
@@ -1357,6 +1367,7 @@ namespace sample
             catch (Exception e1)
             {
                 string message = e1.Message;
+               // MessageBox.Show("Test"+e1);
             }
             finally
             {
@@ -2108,6 +2119,11 @@ namespace sample
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

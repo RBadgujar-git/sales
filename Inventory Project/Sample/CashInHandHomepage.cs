@@ -75,6 +75,7 @@ namespace sample
             da.Fill(dt);
             con.Close();
             dgvCashInHand.DataSource = dt;
+            dgvCashInHand.AllowUserToAddRows = false;
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
