@@ -2302,3 +2302,4 @@ C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\s
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.cache
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.compiled
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR1.resources

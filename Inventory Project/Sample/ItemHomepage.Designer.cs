@@ -178,6 +178,7 @@
             // 
             // guna2TextBox1
             // 
+            this.guna2TextBox1.BorderColor = System.Drawing.Color.Gray;
             this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2TextBox1.DefaultText = "";
             this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -509,6 +510,7 @@
             // 
             // guna2TextBox2
             // 
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gray;
             this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2TextBox2.DefaultText = "";
             this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));

@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
             this.label26 = new System.Windows.Forms.Label();
             this.txtVehicleNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -155,6 +155,8 @@
             this.btnCalculator = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
@@ -340,6 +342,8 @@
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label45);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.comboBox3);
@@ -347,7 +351,6 @@
             this.panel1.Controls.Add(this.label43);
             this.panel1.Controls.Add(this.label44);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.txtadditional2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label10);
@@ -494,9 +497,9 @@
             this.comboBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(863, 122);
+            this.comboBox2.Location = new System.Drawing.Point(881, -25);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(184, 24);
+            this.comboBox2.Size = new System.Drawing.Size(184, 22);
             this.comboBox2.TabIndex = 9;
             this.comboBox2.Visible = false;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
@@ -653,7 +656,6 @@
             this.cmbtax.TabIndex = 18;
             this.cmbtax.Text = "0";
             this.cmbtax.SelectedIndexChanged += new System.EventHandler(this.txtReturnNo_TextChanged);
-            this.cmbtax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtax_KeyPress);
             // 
             // cmbPaymentType
             // 
@@ -821,6 +823,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.txtItemName);
             this.guna2ShadowPanel1.Controls.Add(this.txtItemTotal);
             this.guna2ShadowPanel1.Controls.Add(this.label34);
+            this.guna2ShadowPanel1.Controls.Add(this.comboBox2);
             this.guna2ShadowPanel1.Controls.Add(this.txtDisAmt);
             this.guna2ShadowPanel1.Controls.Add(this.txtDis);
             this.guna2ShadowPanel1.Controls.Add(this.label32);
@@ -1181,7 +1184,6 @@
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
             this.txtUnit.Size = new System.Drawing.Size(67, 28);
             this.txtUnit.TabIndex = 3;
-            this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
             // 
@@ -1314,20 +1316,20 @@
             // 
             // dgvInnerDebiteNote
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInnerDebiteNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDebiteNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDebiteNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDebiteNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
             this.dgvInnerDebiteNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1343,14 +1345,14 @@
             this.Discount_Amount,
             this.Amount,
             this.IDItem});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInnerDebiteNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDebiteNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDebiteNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -1662,7 +1664,7 @@
             this.txtTotal.BorderRadius = 1;
             this.txtTotal.BorderThickness = 0;
             this.txtTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTotal.DefaultText = "00";
+            this.txtTotal.DefaultText = "0";
             this.txtTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -1681,10 +1683,10 @@
             this.txtTotal.PlaceholderText = "";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.SelectedText = "";
-            this.txtTotal.SelectionStart = 2;
             this.txtTotal.ShadowDecoration.Parent = this.txtTotal;
             this.txtTotal.Size = new System.Drawing.Size(100, 24);
             this.txtTotal.TabIndex = 124;
+            this.txtTotal.TextChanged += new System.EventHandler(this.txtTotal_TextChanged);
             this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress);
             // 
             // txtRoundup
@@ -2203,6 +2205,22 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(540, 380);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(53, 23);
+            this.textBox3.TabIndex = 104361;
+            this.textBox3.Text = "0";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(599, 380);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(53, 23);
+            this.textBox4.TabIndex = 104362;
+            this.textBox4.Text = "0";
+            // 
             // SaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2355,5 +2373,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDItem;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }

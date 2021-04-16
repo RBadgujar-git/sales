@@ -27,26 +27,26 @@ namespace sample
         }
         private void fetchCompany()
         {
-            if (cmbAllfirms.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+        //    if (cmbAllfirms.Text != "System.Data.DataRowView")
+        //    {
+        //        try
+        //        {
+        //            string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+        //            DataSet ds = new DataSet();
+        //            SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+        //            SDA.Fill(ds, "Temp");
+        //            DataTable DT = new DataTable();
+        //            SDA.Fill(ds);
+        //            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+        //            {
+        //                cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+        //            }
+        //        }
+        //        catch (Exception e1)
+        //        {
+        //            MessageBox.Show(e1.Message);
+        //        }
+        //    }
         }
         private void Bindadata()
         {
@@ -65,9 +65,18 @@ namespace sample
 
         private void dtpTo_Enter(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
             try
             {
-                
                 string SelectQuery = string.Format("(select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -79,16 +88,6 @@ namespace sample
             {
                 MessageBox.Show("Data not" + ex);
             }
-        }
-
-        private void btncancel_Click(object sender, EventArgs e)
-        {
-            this.Visible = false;
-        }
-
-        private void dtpTo_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void dtpTo_KeyDown(object sender, KeyEventArgs e)
@@ -109,7 +108,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where DeleteData = '1' and TableName like '%{0}%' or PartyName like '%{0}%' and PaymentType='Cheque' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where DeleteData ='1' and TableName like '%{0}%' or PartyName like '%{0}%' and PaymentType='Cheque')", textBox1.Text);
+                string Query = string.Format("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where TableName like '%{0}%' or PartyName like '%{0}%' and PaymentType='Cheque' and Company_ID='" + NewCompany.company_id + "' and  DeleteData = '1' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where TableName like '%{0}%' or PartyName like '%{0}%' and PaymentType='Cheque' and Company_ID='" + NewCompany.company_id + "' and DeleteData ='1')", textBox1.Text);
                
               //  string Query = string.Format("select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
@@ -120,6 +119,26 @@ namespace sample
             }
            
            
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Bindadata();
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

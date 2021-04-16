@@ -76,7 +76,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("(select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where BankName like '%{0}%' or  ID like '%{0}%' and Company_ID ='" + NewCompany.company_id + "' and DeleteData='1' )", textBox1.Text);
+                string Query = string.Format("(select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where Company_ID ='" + NewCompany.company_id + "' and DeleteData='1'  and BankName like '%{0}%' or  ID like '%{0}%')", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -88,6 +88,28 @@ namespace sample
         private void dgvcompanybank_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select ID,BankName,AccountName,AccountNo,OpeningBal,Date from CompanyBankAccount where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvcompanybank.DataSource = ds;
+                dgvcompanybank.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            fetchdetails();
         }
     }
 }

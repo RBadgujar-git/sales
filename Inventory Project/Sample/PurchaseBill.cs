@@ -419,7 +419,7 @@ namespace sample
                         }
                         else
                         {
-                            float TA = 0, TD = 0, TGST = 0;
+                            float TA = 0, TD = 0, TGST = 0,dis1=0,tax=0;
                             guna2DataGridView2.Rows.Add();
                             row = guna2DataGridView2.Rows.Count - 2;
                             guna2DataGridView2.Rows[row].Cells["sr_no1"].Value = row + 1;
@@ -465,14 +465,13 @@ namespace sample
 
                             for (int i = 0; i < guna2DataGridView2.Rows.Count; i++)
                             {
-                                TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());
-                                //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
-                                //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
-
+                                dis1 += float.Parse(guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value?.ToString());
+                                textBox4.Text = dis1.ToString();
+                                tax += float.Parse(guna2DataGridView2.Rows[i].Cells["SaleTaxAmount"].Value?.ToString());
+                                textBox3.Text = tax.ToString();
+                                TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());                              
                                 txtsubtotal.Text = TA.ToString();
                                 txtTotal.Text = TA.ToString();
-                                //  //  txtDisAmt.Text = TD.ToString();
-                                //   // txtTaxAMount1.Text = TGST.ToString();
                             }
                         }
                         guna2TextBox2.Text = "";
@@ -828,7 +827,7 @@ namespace sample
                 }
                 seeting();
 
-                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID,Discount,TaxShow) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid,@Discount,@TaxShow); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
@@ -882,6 +881,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
                 cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", guna2TextBox1.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+
+                cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
 

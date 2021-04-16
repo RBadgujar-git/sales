@@ -50,7 +50,7 @@ namespace sample
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            SaleInvoiceReport BA = new SaleInvoiceReport();
+            GSTR1 BA = new GSTR1();
             //  BA.TopLevel = false;
           //  BA.AutoScroll = true;
             this.Controls.Add(BA);

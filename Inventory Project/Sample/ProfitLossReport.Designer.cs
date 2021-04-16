@@ -28,15 +28,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfitLossReport));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.btnminimize = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.dgvProfitnlossReport = new Guna.UI2.WinForms.Guna2DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfitnlossReport)).BeginInit();
             this.SuspendLayout();
             // 
             // label13
@@ -48,48 +51,6 @@
             this.label13.Size = new System.Drawing.Size(167, 16);
             this.label13.TabIndex = 51;
             this.label13.Text = "Profit and Loss Report";
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(983, 7);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(29, 26);
-            this.btnCancel.TabIndex = 50;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(936, 39);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(28, 22);
-            this.btnPrint.TabIndex = 49;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            // 
-            // btnImport
-            // 
-            this.btnImport.BackColor = System.Drawing.Color.Transparent;
-            this.btnImport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImport.BackgroundImage")));
-            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImport.FlatAppearance.BorderSize = 0;
-            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Location = new System.Drawing.Point(902, 42);
-            this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(23, 19);
-            this.btnImport.TabIndex = 48;
-            this.btnImport.UseVisualStyleBackColor = false;
             // 
             // cmbAllFirms
             // 
@@ -141,21 +102,112 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
-            // dataGridView1
+            // btnCancel
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(67, 139);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(887, 391);
-            this.dataGridView1.TabIndex = 461;
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.Location = new System.Drawing.Point(983, 7);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(29, 26);
+            this.btnCancel.TabIndex = 50;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Location = new System.Drawing.Point(936, 39);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(28, 22);
+            this.btnPrint.TabIndex = 49;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnImport
+            // 
+            this.btnImport.BackColor = System.Drawing.Color.Transparent;
+            this.btnImport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImport.BackgroundImage")));
+            this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImport.FlatAppearance.BorderSize = 0;
+            this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImport.Location = new System.Drawing.Point(902, 42);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(23, 19);
+            this.btnImport.TabIndex = 48;
+            this.btnImport.UseVisualStyleBackColor = false;
+            // 
+            // dgvProfitnlossReport
+            // 
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvProfitnlossReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProfitnlossReport.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvProfitnlossReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvProfitnlossReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProfitnlossReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvProfitnlossReport.ColumnHeadersHeight = 18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProfitnlossReport.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvProfitnlossReport.EnableHeadersVisualStyles = false;
+            this.dgvProfitnlossReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvProfitnlossReport.Location = new System.Drawing.Point(29, 130);
+            this.dgvProfitnlossReport.Name = "dgvProfitnlossReport";
+            this.dgvProfitnlossReport.RowHeadersVisible = false;
+            this.dgvProfitnlossReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProfitnlossReport.Size = new System.Drawing.Size(983, 421);
+            this.dgvProfitnlossReport.TabIndex = 461;
+            this.dgvProfitnlossReport.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
+            this.dgvProfitnlossReport.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvProfitnlossReport.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvProfitnlossReport.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvProfitnlossReport.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvProfitnlossReport.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvProfitnlossReport.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvProfitnlossReport.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvProfitnlossReport.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProfitnlossReport.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvProfitnlossReport.ThemeStyle.HeaderStyle.Height = 18;
+            this.dgvProfitnlossReport.ThemeStyle.ReadOnly = false;
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvProfitnlossReport.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
             // ProfitLossReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProfitnlossReport);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.label13);
@@ -168,7 +220,7 @@
             this.Name = "ProfitLossReport";
             this.Size = new System.Drawing.Size(1027, 569);
             this.Load += new System.EventHandler(this.ProfitLossReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProfitnlossReport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +235,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbAllFirms;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnminimize;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvProfitnlossReport;
     }
 }
