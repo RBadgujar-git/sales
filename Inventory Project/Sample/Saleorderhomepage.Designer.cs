@@ -231,7 +231,6 @@
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
             this.txtFilterBy.Size = new System.Drawing.Size(176, 32);
             this.txtFilterBy.TabIndex = 205;
-            this.txtFilterBy.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
             // 
             // label3

@@ -42,5 +42,25 @@ namespace sample
             POS ps = new POS();
             ps.Show();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            //barcode_print.BARCODE rp = new barcode_print.BARCODE();
+
+            //barcode dss = new barcode(); //dataset name
+
+            //string Query = string.Format("SELECT id, net_rate, mrp, model_name from item where model_name like '%{0}%'", txtsearch.Text);
+
+            //SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //da.Fill(dss, "item");
+            //rp.SetDataSource(dss);
+
+            //barcode_viewer PV = new barcode_viewer();
+            //PV.crystalReportViewer1.ReportSource = rp;
+
+            //PV.crystalReportViewer1.BringToFront();
+            //PV.crystalReportViewer1.Visible = true;
+            //PV.ShowDialog();
+        }
     }
 }

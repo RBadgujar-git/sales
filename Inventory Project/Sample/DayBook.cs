@@ -60,14 +60,15 @@ namespace sample
             // bind_purchase();
             //Sale1();
             //OtherIncome1();
-            caltotalmoneyin();
             //SaleOrder1();
             //Purchase1();
             //PurchaseOrder1();
             //Expenses1();
-            caltotalmoneyout();
-            TotalMoneyInOut();
+           // caltotalmoneyout();
+           // TotalMoneyInOut();
             bind_sale();
+           // caltotalmoneyin();
+
         }
         private void bind_sale()
         {
@@ -92,9 +93,7 @@ namespace sample
             }
             finally
             {
-               Bind_sale_TotalAmount();
-                
-
+                Bind_sale_TotalAmount();
             }
         }
 
@@ -103,10 +102,15 @@ namespace sample
             try
             {
                 float Sum = 0;
-
+                string SelectQuery=string.Format("select Received from tbl_SaleInvoice where InvoiceDate='" + date + "'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    Sum = Sum + float.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    Sum = Sum + float.Parse(ds.Tables["Temp"].Rows[i]["Received"].ToString());
                     sumpurchase = Sum;
                 }
             }
@@ -120,11 +124,11 @@ namespace sample
         {
             try
             {
-                float Sum = 0;
+                int Sum = 0;
 
                 for (int i = 1; i < dataGridView1.Rows.Count; i++)
                 {
-                    Sum = Sum + float.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    Sum = Sum + Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                     sumexpenses = Sum;
                 }
             }
@@ -169,11 +173,11 @@ namespace sample
         {
             try
             {
-                float Sum = 0;
+                int Sum = 0;
 
                 for (int i = 1; i < dataGridView1.Rows.Count; i++)
                 {
-                    Sum = Sum + float.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
+                    Sum = Sum + Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
                     sumotherincome = Sum;
                 }
             }
@@ -188,17 +192,52 @@ namespace sample
         {
             try
             {
-                float Sum = 0;
-
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                con.Open();
+                string Sum ;
+                string SelectQuery = string.Format("select Received from tbl_SaleInvoice where InvoiceDate='" + date + "' and Company_ID='"+NewCompany.company_id+"' Group By Received");
+                SqlCommand cmd = new SqlCommand(SelectQuery, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+               while(dr.Read())
                 {
-                    Sum = Sum + float.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
-                    sumsale = Sum;
+                    Sum = dr["Received"].ToString();
+                    txtmoneyin.Text = Sum.ToString() ;
                 }
+                dr.Close();
+                con.Close();
             }
             catch (Exception e1)
             {
                 MessageBox.Show(e1.Message);
+            }
+        }
+        private void Data()
+        {
+            try
+            {
+                float TA = 0, TD = 0, total = 0, TG = 0, qty = 0, rate = 0;
+                //dgvexpense.Rows.Add();
+                //row = dgvexpense.Rows.Count - 2;
+                ////dgvinnerexpenses.Rows[row].Cells["sr_no"].Value = row + 1;
+                //dgvexpense.CurrentCell = dgvexpense[1, row];
+                //e.SuppressKeyPress = true;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    TA += float.Parse(dataGridView1.Rows[i].Cells["Received"].Value?.ToString());
+                    txtmoneyin.Text = TA.ToString();
+                    //TD += float.Parse(dataGridView1.Rows[i].Cells["RemainingBal"].Value?.ToString());
+                    //txtmoneyout.Text = TD.ToString();
+
+                    //qty = float.Parse(txtmoneyout.Text.ToString());
+                    //rate = float.Parse(txtmoneyout.Text.ToString());
+                    //total = qty + rate;
+                    //txttotalinout.Text = total.ToString();
+
+                }
+            }
+
+            catch (Exception ex)
+            {
+                   MessageBox.Show(ex.Message);
             }
         }
         private void btnminimize_Click(object sender, EventArgs e)
@@ -299,11 +338,11 @@ namespace sample
         float sumexpenses = 0;
         float sumtotalmoneyout = 0;
 
-        private void caltotalmoneyout()
-        {
-            sumtotalmoneyout = sumexpenses + sumpurchase;
-            txtmoneyout.Text = sumtotalmoneyout.ToString();
-        }
+        //private void caltotalmoneyout()
+        //{
+        //    sumtotalmoneyout = sumexpenses + sumpurchase;
+        //    txtmoneyout.Text = sumtotalmoneyout.ToString();
+        //}
         //public void Expenses1()
         //{
         //    try
