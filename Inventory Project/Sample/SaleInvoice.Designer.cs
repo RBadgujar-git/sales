@@ -1097,7 +1097,7 @@
             this.txtTax1.ForeColor = System.Drawing.Color.Black;
             this.txtTax1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax1.HoverState.Parent = this.txtTax1;
-            this.txtTax1.Location = new System.Drawing.Point(526, 42);
+            this.txtTax1.Location = new System.Drawing.Point(523, 42);
             this.txtTax1.Name = "txtTax1";
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1214,7 +1214,7 @@
             this.txtFreeQty.SelectedText = "";
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
-            this.txtFreeQty.Size = new System.Drawing.Size(85, 28);
+            this.txtFreeQty.Size = new System.Drawing.Size(70, 28);
             this.txtFreeQty.TabIndex = 17;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
@@ -1288,7 +1288,7 @@
             this.txtOty.ForeColor = System.Drawing.Color.Black;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(617, 42);
+            this.txtOty.Location = new System.Drawing.Point(616, 42);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;

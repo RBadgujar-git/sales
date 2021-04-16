@@ -71,9 +71,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -789,12 +789,23 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Location = new System.Drawing.Point(285, 455);
+            this.panel1.Location = new System.Drawing.Point(306, 455);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 442;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(60, 64);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(73, 26);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -808,16 +819,6 @@
             // 
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(59, 63);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 26);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ItemSetting
             // 
