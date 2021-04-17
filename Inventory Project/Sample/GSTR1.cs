@@ -75,16 +75,16 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select InoiveId,InvoiceDate,");
+                    string Query = string.Format("Select InvoiceID,InvoiceDate,CalTotal,TaxAmountShow,PartyName,Total from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id+"' and DeleteData='1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
                     StiReport report = new StiReport();
-                    report.Load(@"GSTR1Data.mrt");
+                    report.Load(@"GSTRReport.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("GSTR1Data", "GSTR1Data", ds.Tables[0]);
+                    report.RegData("GSTRReport", "GSTRReport", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
@@ -92,7 +92,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    //   MessageBox.Show(ex.Message);
+                       MessageBox.Show(ex.Message);
                 }
             }
         }

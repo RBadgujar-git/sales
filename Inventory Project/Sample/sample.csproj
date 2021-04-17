@@ -505,6 +505,24 @@
     <Compile Include="GSTR1.Designer.cs">
       <DependentUpon>GSTR1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GSTR2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR2.Designer.cs">
+      <DependentUpon>GSTR2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR3B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR3B.Designer.cs">
+      <DependentUpon>GSTR3B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR9.Designer.cs">
+      <DependentUpon>GSTR9.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImportExcel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1093,6 +1111,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GSTR1.resx">
       <DependentUpon>GSTR1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR2.resx">
+      <DependentUpon>GSTR2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR3B.resx">
+      <DependentUpon>GSTR3B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR9.resx">
+      <DependentUpon>GSTR9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportExcel.resx">
       <DependentUpon>ImportExcel.cs</DependentUpon>

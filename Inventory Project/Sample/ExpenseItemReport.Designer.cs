@@ -41,10 +41,6 @@
             this.txtqty = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvexpense = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btncancel = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
@@ -52,6 +48,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvexpense)).BeginInit();
             this.SuspendLayout();
@@ -133,6 +132,7 @@
             this.txtfreeqty.Size = new System.Drawing.Size(124, 36);
             this.txtfreeqty.TabIndex = 140;
             this.txtfreeqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtfreeqty.Visible = false;
             this.txtfreeqty.TextChanged += new System.EventHandler(this.txtfreeqty_TextChanged);
             // 
             // label4
@@ -143,6 +143,7 @@
             this.label4.Size = new System.Drawing.Size(77, 16);
             this.label4.TabIndex = 139;
             this.label4.Text = "Free Qty :";
+            this.label4.Visible = false;
             // 
             // txttotal
             // 
@@ -240,7 +241,6 @@
             this.dgvexpense.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column1,
-            this.FreeQty,
             this.Column2});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -281,26 +281,6 @@
             this.dgvexpense.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvexpense.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvexpense.TabIndexChanged += new System.EventHandler(this.dgvexpense_TabIndexChanged);
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Expense Item";
-            this.Column5.Name = "Column5";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Quantity";
-            this.Column1.Name = "Column1";
-            // 
-            // FreeQty
-            // 
-            this.FreeQty.HeaderText = "Free Qty";
-            this.FreeQty.Name = "FreeQty";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Amount";
-            this.Column2.Name = "Column2";
             // 
             // cmbAllfirms
             // 
@@ -423,6 +403,21 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Expense Item";
+            this.Column5.Name = "Column5";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Quantity";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Amount";
+            this.Column2.Name = "Column2";
+            // 
             // ExpenseItemReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,10 +462,9 @@
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox txtfreeqty;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FreeQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button btnminimize;
     }
 }
