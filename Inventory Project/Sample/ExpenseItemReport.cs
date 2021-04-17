@@ -80,10 +80,10 @@ namespace sample
             dgvexpense.Columns[0].DataPropertyName = "ItemName";
             dgvexpense.Columns[1].HeaderText = "Quantity";
             dgvexpense.Columns[1].DataPropertyName = "Qty";
-            dgvexpense.Columns[2].HeaderText = "Free Qty";
-            dgvexpense.Columns[2].DataPropertyName = "freeQty";
-            dgvexpense.Columns[3].HeaderText = "Amount";
-            dgvexpense.Columns[3].DataPropertyName = "ItemAmount";
+            //dgvexpense.Columns[2].HeaderText = "Free Qty";
+            //dgvexpense.Columns[2].DataPropertyName = "freeQty";
+            dgvexpense.Columns[2].HeaderText = "Amount";
+            dgvexpense.Columns[2].DataPropertyName = "ItemAmount";
             dgvexpense.DataSource = dt;
         }
         private void fetchCategory()
@@ -124,7 +124,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -160,10 +160,10 @@ namespace sample
                 txttotal.Text = TA.ToString();
                 TD+= float.Parse(dgvexpense.Rows[i].Cells["Column1"].Value?.ToString());
                 txtqty.Text = TD.ToString();
-                TG += float.Parse(dgvexpense.Rows[i].Cells["FreeQty"].Value?.ToString());
-                txtfreeqty.Text = TG.ToString();
+                //TG += float.Parse(dgvexpense.Rows[i].Cells["FreeQty"].Value?.ToString());
+                //txtfreeqty.Text = TG.ToString();
                 qty = float.Parse(txtqty.Text.ToString());
-                rate = float.Parse(txtfreeqty.Text.ToString());
+                //rate = float.Parse(txtfreeqty.Text.ToString());
                 total = qty + rate;
                 txtTotalQty.Text = total.ToString();
             }
@@ -197,7 +197,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.ItemName,b.Qty,b.freeQty,b.ItemAmount,b.Company_ID from tbl_ExpensesInner as b,tbl_CompanyMaster as c where b.Company_ID = '" + NewCompany.company_id + "' and c.CompanyID='" + NewCompany.company_id + "' and b.DeleteData = '1'");
+                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.ItemName,b.Qty,b.ItemAmount,b.Company_ID from tbl_ExpensesInner as b,tbl_CompanyMaster as c where b.Company_ID = '" + NewCompany.company_id + "' and c.CompanyID='" + NewCompany.company_id + "' and b.DeleteData = '1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

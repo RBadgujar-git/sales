@@ -35,8 +35,6 @@
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvincomeCategory = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,6 +46,8 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvincomeCategory)).BeginInit();
             this.SuspendLayout();
@@ -158,16 +158,6 @@
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvincomeCategory.TabIndexChanged += new System.EventHandler(this.dgvincomeCategory_TabIndexChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = " Income Category";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = " Paid Amount";
-            this.Column2.Name = "Column2";
             // 
             // cmbAllFirms
             // 
@@ -318,6 +308,16 @@
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = " Income Category";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Received";
+            this.Column2.Name = "Column2";
+            // 
             // OtherIncomeCategoryReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -365,8 +365,8 @@
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private Guna.UI2.WinForms.Guna2ComboBox cmbExpensecategory;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button btnminimize;
     }
 }

@@ -43,7 +43,6 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.Print = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.cmbPayment = new System.Windows.Forms.ComboBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -188,7 +187,6 @@
             this.guna2Panel1.Controls.Add(this.comboBox1);
             this.guna2Panel1.Controls.Add(this.label12);
             this.guna2Panel1.Controls.Add(this.label11);
-            this.guna2Panel1.Controls.Add(this.Print);
             this.guna2Panel1.Controls.Add(this.btnclear);
             this.guna2Panel1.Controls.Add(this.cmbPayment);
             this.guna2Panel1.Controls.Add(this.dtpDate);
@@ -288,26 +286,12 @@
             this.label11.TabIndex = 16;
             this.label11.Text = "Status :";
             // 
-            // Print
-            // 
-            this.Print.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Print.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Print.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Print.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Print.Location = new System.Drawing.Point(715, 245);
-            this.Print.Name = "Print";
-            this.Print.Size = new System.Drawing.Size(90, 42);
-            this.Print.TabIndex = 14;
-            this.Print.Text = "Print";
-            this.Print.UseVisualStyleBackColor = false;
-            this.Print.Click += new System.EventHandler(this.Print_Click);
-            // 
             // btnclear
             // 
             this.btnclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnclear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnclear.Location = new System.Drawing.Point(811, 244);
+            this.btnclear.Location = new System.Drawing.Point(715, 246);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(90, 42);
             this.btnclear.TabIndex = 15;
@@ -714,7 +698,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cmbPayment;
         private System.Windows.Forms.Button btnclear;
-        private System.Windows.Forms.Button Print;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;

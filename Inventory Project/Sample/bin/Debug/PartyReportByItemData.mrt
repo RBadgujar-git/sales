@@ -465,7 +465,6 @@ No.</Text>
           </Components>
           <Conditions isList="true" count="0" />
           <DataRelationName isNull="true" />
-          <DataSourceName>DebitNote</DataSourceName>
           <Filters isList="true" count="0" />
           <Guid>e41b6d9f8dd2476c9e9403160c88d17f</Guid>
           <Name>DataBand1</Name>
@@ -499,10 +498,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/3/2021 3:54:19 PM</ReportChanged>
+  <ReportChanged>4/17/2021 4:12:58 PM</ReportChanged>
   <ReportCreated>3/27/2021 3:35:12 PM</ReportCreated>
-  <ReportFile>C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\Sample\bin\Debug\PartyReportByItemData.mrt</ReportFile>
-  <ReportGuid>2c46845a24194846900e8b91f60d1170</ReportGuid>
+  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PartyReportByItemData.mrt</ReportFile>
+  <ReportGuid>02525a41e92a4327aa8c2f8236a2d31a</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
