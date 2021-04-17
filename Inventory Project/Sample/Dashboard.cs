@@ -10,6 +10,7 @@ using DevExpress.XtraReports.Parameters;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using Tulpep.NotificationWindow;
 
 namespace sample
 {
@@ -136,6 +137,9 @@ namespace sample
         private void Form1_Load(object sender, EventArgs e)
         {
 
+
+           
+
             panel1.Focus();
             if (con.State == ConnectionState.Closed)
             {
@@ -162,12 +166,14 @@ namespace sample
             {
                 toolStripMenuItem5.Text = NewCompany.companyname;
             }
-               // companyID();
-            
-          
+            // companyID();
+
+            setting();
             //toolStripMenuItem5.Text = "Select Company";
-
-
+            if(otherincome==1)
+            {
+                otherIncomeToolStripMenuItem.Visible = false;
+            }
             //     NewCompany.company_id = 4.ToString();
 
 
@@ -192,8 +198,35 @@ namespace sample
             //{
 
             //
+            reinder();
         }
 
+        public void reinder()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string result = DateTime.Today.AddDays(-10).ToString("yyyy-MM-dd");
+
+            string SelectQuery = string.Format("select PartyName from tbl_SaleInvoice where RemainingBal!=0 and InvoiceDate='" + DateTime.Today.AddDays(-11).ToString("yyyy-MM-dd") + "' ");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+                // cmballparties.Items.Add();
+                PopupNotifier po = new PopupNotifier();
+                po.TitleText = "Payment Reminder ";
+                po.ContentText = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+                //  po.ContentText = "he baburav";
+                po.Popup();
+
+            }
+        }                   
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -750,10 +783,9 @@ namespace sample
             PB.BringToFront();
             // PB.Show();
         }
-        public int Estiment1,deleverychallan;
-        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
+        public int Estiment1,deleverychallan,otherincome;
+        public void setting()
         {
-            //con.Open();
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
@@ -772,13 +804,18 @@ namespace sample
                 Estiment = Convert.ToInt32(dr["Estiment"]);
                 Estiment1 = Convert.ToInt32(dr["Sale_purches"]);
                 deleverychallan = Convert.ToInt32(dr["Delliverychallen"]);
-
+                otherincome = Convert.ToInt32(dr["OtheIncome"]);
             }
             dr.Close();
-                //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);
-                //int  Estiment1 = Convert.ToInt32(cmd4.ExecuteScalar());
+            //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);
 
+        }
+        private void saleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //con.Open();
+            //int  Estiment1 = Convert.ToInt32(cmd4.ExecuteScalar());
 
+            setting();
                 //    con.Close();
                 if (Estiment == 1)
             {
