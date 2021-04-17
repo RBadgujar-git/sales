@@ -131,6 +131,7 @@
             this.chkEnablePlace.UncheckedState.BorderRadius = 0;
             this.chkEnablePlace.UncheckedState.BorderThickness = 0;
             this.chkEnablePlace.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkEnablePlace.CheckedChanged += new System.EventHandler(this.chkEnablePlace_CheckedChanged);
             // 
             // chkEnablleGSt
             // 

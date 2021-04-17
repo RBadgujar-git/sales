@@ -75,7 +75,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select InoiveId,InvoiceDate,");
+                    string Query = string.Format("select a.InvoiceId,a.InvoiceDate,a.CalTotal,a.TaxAmountShow,a.PartyName,a.Total,c.CompanyName,c.PhoneNo,c.EmailID,c.Address,c.AddLogo,c.GSTNumber from tbl_SaleInvoice as a,tbl_CompanyMaster as c where a.Company_ID='"+NewCompany.company_id+"' and a.DeleteData='1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -92,7 +92,7 @@ namespace sample
                 }
                 catch (Exception ex)
                 {
-                    //   MessageBox.Show(ex.Message);
+                       MessageBox.Show(ex.Message);
                 }
             }
         }

@@ -6,7 +6,7 @@
     <DataSources isList="true" count="1">
       <GSTR1Data Ref="2" type="DataTableSource" isKey="true">
         <Alias>GSTR1Data</Alias>
-        <Columns isList="true" count="7">
+        <Columns isList="true" count="14">
           <value>AddLogo,System.String</value>
           <value>Address,System.String</value>
           <value>GSTNumber,System.String</value>
@@ -14,6 +14,13 @@
           <value>PhoneNo,System.String</value>
           <value>EmailID,System.String</value>
           <value>PartyName,System.String</value>
+          <value>GSTNumber,System.String</value>
+          <value>InvoiceID,System.String</value>
+          <value>InvoiceDate,System.String</value>
+          <value>Total,System.String</value>
+          <value>TaxAmountShow,System.String</value>
+          <value>Column,System.String</value>
+          <value>CalTotal,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
         <Name>GSTR1Data</Name>
@@ -434,7 +441,7 @@ No</Text>
               <Page isRef="3" />
               <Parent isRef="33" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>
+              <Text>{GSTR1Data.InvoiceDate}
 </Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
@@ -452,6 +459,7 @@ No</Text>
               <Page isRef="3" />
               <Parent isRef="33" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
+              <Text>{GSTR1Data.CalTotal}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -468,6 +476,7 @@ No</Text>
               <Page isRef="3" />
               <Parent isRef="33" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
+              <Text>{GSTR1Data.GSTNumber}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -484,6 +493,7 @@ No</Text>
               <Page isRef="3" />
               <Parent isRef="33" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
+              <Text>{GSTR1Data.InvoiceID}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
@@ -501,7 +511,7 @@ No</Text>
               <Page isRef="3" />
               <Parent isRef="33" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>
+              <Text>{GSTR1Data.TaxAmountShow}
 </Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
@@ -520,7 +530,7 @@ No</Text>
               <Page isRef="3" />
               <Parent isRef="33" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>
+              <Text>{GSTR1Data.Total}
 </Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
@@ -680,10 +690,10 @@ No</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/16/2021 5:37:14 PM</ReportChanged>
+  <ReportChanged>4/17/2021 11:12:28 AM</ReportChanged>
   <ReportCreated>4/7/2021 6:11:46 PM</ReportCreated>
   <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\GSTR1Data.mrt</ReportFile>
-  <ReportGuid>f33b15c70f0149afa45217a53b653a4b</ReportGuid>
+  <ReportGuid>c1c294186c1d4131894919288c17e064</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
