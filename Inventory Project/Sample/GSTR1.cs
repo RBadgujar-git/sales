@@ -75,16 +75,16 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select a.InvoiceId,a.InvoiceDate,a.CalTotal,a.TaxAmountShow,a.PartyName,a.Total,c.CompanyName,c.PhoneNo,c.EmailID,c.Address,c.AddLogo,c.GSTNumber from tbl_SaleInvoice as a,tbl_CompanyMaster as c where a.Company_ID='"+NewCompany.company_id+"' and a.DeleteData='1'");
+                    string Query = string.Format("Select InvoiceID,InvoiceDate,CalTotal,TaxAmountShow,PartyName,Total from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id+"' and DeleteData='1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
                     StiReport report = new StiReport();
-                    report.Load(@"GSTR1Data.mrt");
+                    report.Load(@"GSTRReport.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("GSTR1Data", "GSTR1Data", ds.Tables[0]);
+                    report.RegData("GSTRReport", "GSTRReport", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();

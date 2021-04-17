@@ -549,6 +549,9 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemID", dgvInnerDebiteNote.Rows[i].Cells["IDItem"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemTotal", dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@cgst", dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@sgst", dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@igst", dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value.ToString());
 
                     //if (guna2TextBox2.Visible==true)
                     //{
@@ -1154,7 +1157,44 @@ namespace sample
                 MessageBox.Show(e1.Message);
             }
         }
+        private void gst_devide1()
+        {
 
+            try
+            {
+                
+                    //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                    //string State1 = cd.ExecuteScalar().ToString();
+                    //con.Close();
+                    //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                    if (cmbStatesupply.SelectedItem=="Maharashtra")
+                    {
+
+                        float gst = 0, cgst = 0, sgst = 0;
+                        gst = float.Parse(txtTax1.Text);
+                        cgst = gst / 2;
+                        sgst = gst / 2;
+                        guna2TextBox2.Text = sgst.ToString();
+                        guna2TextBox3.Text = cgst.ToString();
+                        guna2TextBox4.Text = 0.ToString();
+
+                }
+                else
+                    {
+                        float gst = 0;
+                        gst = float.Parse(txtTax1.Text);
+                        guna2TextBox4.Text = gst.ToString();
+                        guna2TextBox2.Text = 0.ToString();
+                        guna2TextBox3.Text = 0.ToString();
+                    }
+                
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
         private void btnSetting_Click(object sender, EventArgs e)
         {
             Settings BA = new Settings();
@@ -1290,11 +1330,14 @@ namespace sample
         private void txtOty_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide1();
+
         }
 
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide1();
         }
 
         private void txtFreeQty_TextChanged(object sender, EventArgs e)
@@ -1333,6 +1376,9 @@ namespace sample
                     string dis_amt = txtDisAmt.Text;
                     string Total = txtItemTotal.Text;
                     string ItemTotal = textBox5.Text;
+                    string cgst = guna2TextBox2.Text;
+                    string sgst = guna2TextBox3.Text;
+                    string igst = guna2TextBox4.Text;
 
                     if (guna2TextBox1.Text != "")
                     {
@@ -1358,6 +1404,9 @@ namespace sample
                     dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
                     dgvInnerDebiteNote.Rows[row].Cells[12].Value = Itemid;
                     dgvInnerDebiteNote.Rows[row].Cells[13].Value = ItemTotal;
+                    dgvInnerDebiteNote.Rows[row].Cells[14].Value = cgst;
+                    dgvInnerDebiteNote.Rows[row].Cells[15].Value = sgst;
+                    dgvInnerDebiteNote.Rows[row].Cells[16].Value = igst;
 
                     clear_text_data();
                    
@@ -2167,6 +2216,26 @@ namespace sample
         }
 
         private void txtsgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label49_Click(object sender, EventArgs e)
         {
 
         }
