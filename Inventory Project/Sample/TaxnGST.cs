@@ -40,15 +40,7 @@ namespace sample
 
         private void TaxnGST_Load(object sender, EventArgs e)
         {
-            chkEnableHSn.Hide();
-            chkEnablePlace.Hide();
-            chkEWayBilling.Hide();
-            chkGenerateEWay.Hide();
-            chkRevesreCharges.Hide();
-            chkAdditionalCases.Hide();
-            chkComposite.Hide();
-            txtRemainder.Hide();
-            guna2Button2.Hide();
+           
             cheekpass1();
             if (Hsn == 1)
             {
@@ -145,35 +137,27 @@ namespace sample
 
         private void chkEnablleGSt_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkEnablleGSt.Checked == true)
-            {
-                chkEnableHSn.Show();
-                chkEnablePlace.Show();
-                chkEWayBilling.Show();
-                chkGenerateEWay.Show();
-                chkRevesreCharges.Show();
-                chkAdditionalCases.Show();
-                chkComposite.Show();
-                txtRemainder.Show();
-                guna2Button2.Show();
-            }
-            if (chkEnablleGSt.Checked == false)
-            {
-                chkEnableHSn.Hide();
-                chkEnablePlace.Hide();
-                chkEWayBilling.Hide();
-                chkGenerateEWay.Hide();
-                chkRevesreCharges.Hide();
-                chkAdditionalCases.Hide();
-                chkComposite.Hide();
-                txtRemainder.Hide();
-                guna2Button2.Hide();
-            }
+           
         }
 
         private void chkRevesreCharges_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkEnablePlace_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkEnablePlace.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PlaceOfSupply = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkEnablePlace.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PlaceOfSupply = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+
+            }
         }
     }
 }

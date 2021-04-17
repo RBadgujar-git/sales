@@ -69,7 +69,7 @@ namespace sample
             txtTaxAmount.Enabled = false;
             txtFreeQty.Enabled = false;
             cmbStatesupply.Enabled = false;
-            guna2TextBox2.Enabled = false;
+            //guna2TextBox2.Enabled = false;
             textBox2.Hide();
             label45.Hide();
             con.Open();
@@ -118,15 +118,15 @@ namespace sample
                 txtFreeQty.Enabled = true;
                 label27.Enabled = true;
             }
-            con.Open();
-            SqlCommand cmd5 = new SqlCommand("Select Count from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            count1 = Convert.ToInt32(cmd5.ExecuteScalar());
-            con.Close();
-            if (count1 == 1)
-            {
-                guna2TextBox2.Enabled = true;
-                label42.Enabled = true;
-            }
+            //con.Open();
+            ////SqlCommand cmd5 = new SqlCommand("Select Count from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            ////count1 = Convert.ToInt32(cmd5.ExecuteScalar());
+            ////con.Close();
+            ////if (count1 == 1)
+            ////{
+            ////    guna2TextBox2.Enabled = true;
+            ////    label42.Enabled = true;
+            ////}
             con.Open();
             SqlCommand cmd6 = new SqlCommand("Select [TransactionWiseTax] from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             taxwise = Convert.ToInt32(cmd6.ExecuteScalar());
@@ -315,6 +315,7 @@ namespace sample
             txtDisAmt.Text = "0";
             txtItemTotal.Text = "0";
             guna2TextBox1.Text = "";
+            textBox5.Text = "0";
         }
 
         private void cleardata()
@@ -352,8 +353,10 @@ namespace sample
             textBox1.Text = "";
             cmbCategory.Text = "";
             dgvInnerDebiteNote.Rows.Clear();
-            textBox3.Text = "";
-            textBox4.Text = "";
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
+
         }
         private void get_id()
         {
@@ -480,6 +483,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@IGST", TxtIGST.Text);
                 cmd.Parameters.AddWithValue("@TaxAmountShow", textBox3.Text);
                 cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+                cmd.Parameters.AddWithValue("@Caltotal", textBox6.Text);
 
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
@@ -544,10 +548,15 @@ namespace sample
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemID", dgvInnerDebiteNote.Rows[i].Cells["IDItem"].Value.ToString());
-                    if (guna2TextBox2.Visible==true)
-                    {
-                        cmd.Parameters.AddWithValue("@count",guna2TextBox2.Text);
-                    }
+                    cmd.Parameters.AddWithValue("@ItemTotal", dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@cgst", dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@sgst", dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@igst", dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value.ToString());
+
+                    //if (guna2TextBox2.Visible==true)
+                    //{
+                    //    cmd.Parameters.AddWithValue("@count",guna2TextBox2.Text);
+                    //}
 
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
@@ -1140,7 +1149,6 @@ namespace sample
                         TxtIGST.Text = gst.ToString();
                         txtsgst.Text = 0.ToString();
                         txtcgst.Text = 0.ToString();
-
                     }
                 }
             }
@@ -1149,7 +1157,44 @@ namespace sample
                 MessageBox.Show(e1.Message);
             }
         }
+        private void gst_devide1()
+        {
 
+            try
+            {
+                
+                    //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                    //string State1 = cd.ExecuteScalar().ToString();
+                    //con.Close();
+                    //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                    if (cmbStatesupply.SelectedItem=="Maharashtra")
+                    {
+
+                        float gst = 0, cgst = 0, sgst = 0;
+                        gst = float.Parse(txtTax1.Text);
+                        cgst = gst / 2;
+                        sgst = gst / 2;
+                        guna2TextBox2.Text = sgst.ToString();
+                        guna2TextBox3.Text = cgst.ToString();
+                        guna2TextBox4.Text = 0.ToString();
+
+                }
+                else
+                    {
+                        float gst = 0;
+                        gst = float.Parse(txtTax1.Text);
+                        guna2TextBox4.Text = gst.ToString();
+                        guna2TextBox2.Text = 0.ToString();
+                        guna2TextBox3.Text = 0.ToString();
+                    }
+                
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
         private void btnSetting_Click(object sender, EventArgs e)
         {
             Settings BA = new Settings();
@@ -1248,7 +1293,7 @@ namespace sample
                     gst = float.Parse(txtTax1.Text);
 
                     sub_total = (qty + freeqty) * rate;
-                    //txtsub_total.Text = sub_total.ToString();
+                    textBox5.Text = sub_total.ToString();
 
                     dis_amt = sub_total * dis / 100;
                     txtDisAmt.Text = dis_amt.ToString();
@@ -1266,7 +1311,17 @@ namespace sample
                 MessageBox.Show(es.Message);
             }
         }
+       // public void itemtotal()
+       // {
+       //         float qty = 0, freeqty = 0, rate = 0, sub_total = 0;
 
+       //         qty = float.Parse(txtOty.Text);
+       //         freeqty = float.Parse(txtFreeQty.Text.ToString());
+       //         rate = float.Parse(txtMRP.Text.ToString());
+       //         sub_total = (qty + freeqty) * rate;
+       //         guna2TextBox2.Text = sub_total.ToString();
+
+       //}
         private void txtDis_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
@@ -1275,11 +1330,14 @@ namespace sample
         private void txtOty_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide1();
+
         }
 
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide1();
         }
 
         private void txtFreeQty_TextChanged(object sender, EventArgs e)
@@ -1298,7 +1356,7 @@ namespace sample
                 {
                     
                     insertitem();
-                    float TA = 0, TD = 0, TGST = 0,tax=0,dis1=0;
+                    float TA = 0, TD = 0, TGST = 0,tax=0,dis1=0,caltotal=0;
                     dgvInnerDebiteNote.Rows.Add();
                     row = dgvInnerDebiteNote.Rows.Count - 2;
                     dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
@@ -1317,7 +1375,11 @@ namespace sample
                     string dis = txtDis.Text;
                     string dis_amt = txtDisAmt.Text;
                     string Total = txtItemTotal.Text;
-                  
+                    string ItemTotal = textBox5.Text;
+                    string cgst = guna2TextBox2.Text;
+                    string sgst = guna2TextBox3.Text;
+                    string igst = guna2TextBox4.Text;
+
                     if (guna2TextBox1.Text != "")
                     {
                       Itemid = guna2TextBox1.Text;
@@ -1341,6 +1403,11 @@ namespace sample
                     dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
                     dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
                     dgvInnerDebiteNote.Rows[row].Cells[12].Value = Itemid;
+                    dgvInnerDebiteNote.Rows[row].Cells[13].Value = ItemTotal;
+                    dgvInnerDebiteNote.Rows[row].Cells[14].Value = cgst;
+                    dgvInnerDebiteNote.Rows[row].Cells[15].Value = sgst;
+                    dgvInnerDebiteNote.Rows[row].Cells[16].Value = igst;
+
                     clear_text_data();
                    
                     txtItemName.Focus();
@@ -1352,6 +1419,8 @@ namespace sample
                         textBox4.Text = dis1.ToString();
                         tax += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
                         textBox3.Text = tax.ToString();
+                        caltotal += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value?.ToString());
+                        textBox6.Text = caltotal.ToString();
                         TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                         txtsubtotal.Text = TA.ToString();
                         txtTotal.Text = TA.ToString();                  
@@ -2124,6 +2193,51 @@ namespace sample
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            cal_ItemTotal();
+        }
+
+        private void TxtIGST_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsgst_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox2_TextChanged_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void label42_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label49_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
