@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using Tulpep.NotificationWindow;
+using System.Threading;
 
 namespace sample
 {
@@ -218,14 +219,16 @@ namespace sample
             SDA.Fill(ds);
             for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
             {
+            
                 // cmballparties.Items.Add();
-                PopupNotifier po = new PopupNotifier();
+                PopupNotifier po= new PopupNotifier();
                 po.TitleText = "Payment Reminder ";
-                po.ContentText = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+                po.ContentText ="YOU NEED COOLECT PAYMENT FROM  "+ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
                 //  po.ContentText = "he baburav";
+             //   po.ContentFont = "Verdana, 13p";
                 po.Popup();
 
-            }
+             }
         }                   
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

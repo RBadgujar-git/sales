@@ -63,13 +63,19 @@ namespace sample
             {
                 chkPartyGrouping.Checked = true;
             }
+            if(REMINDER==1)
+                {
+                chkCustomerEnablePayment.Checked = true;
+            }
+
+
         }
 
         private void ToggleSwitch3_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-        public int Partygroup;
+        public int Partygroup, REMINDER,dayreminder;
         public void cheekpass1()
         {
             try
@@ -95,8 +101,10 @@ namespace sample
                 {
 
                     Partygroup = Convert.ToInt32(dr["Partygroup"]);
-                   
-                 }
+                    REMINDER= Convert.ToInt32(dr["REMINDER"]);
+                    dayreminder = Convert.ToInt32(dr["dayreminder"]);
+
+                }
                 dr.Close();
 
             }
@@ -157,6 +165,20 @@ namespace sample
 
         private void chkCustomerEnablePayment_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (chkCustomerEnablePayment.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set REMINDER = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkCustomerEnablePayment.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set REMINDER = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
 
         }
     }
