@@ -2306,3 +2306,8 @@ C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\s
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll

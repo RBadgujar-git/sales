@@ -111,7 +111,7 @@ namespace sample
             cmd.Parameters.AddWithValue("@ProcessingFees", "");
             cmd.Parameters.AddWithValue("@PaidBy", "");
             cmd.Parameters.AddWithValue("@loanamount", "");
-            cmd.Parameters.AddWithValue("@total", "");
+        //    cmd.Parameters.AddWithValue("@total", "");
             cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
             cmd.Parameters.AddWithValue("@Action", "Select");
             SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
@@ -128,7 +128,7 @@ namespace sample
             txtAccountNo.Text = "";
             txtDescription.Text = "";
             txtLenderBank.Text = "";
-            
+            txtcompanyname.Text = "";
             txtCurrentBal.Text = "";
             cmbLoanReceive.Text = "";
             txtinterest.Text = "";
@@ -173,7 +173,7 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ProcessingFees", txtProcessingFees.Text);
                     cmd.Parameters.AddWithValue("@PaidBy", cmbfees.Text);
                     cmd.Parameters.AddWithValue("@loanamount", txtLoanAmount.Text);
-                    cmd.Parameters.AddWithValue("@total", txtTotal.Text);
+                   // cmd.Parameters.AddWithValue("@total", txtTotal.Text);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Insert data Successfully");
@@ -190,6 +190,7 @@ namespace sample
             dgvDescription.Columns["Description"].Visible = false;
             dgvDescription.Columns["FirmName"].Visible = false;
             dgvDescription.Columns["PaidBy"].Visible = false;
+            dgvDescription.Columns["Total"].Visible = false;
         }
         private void dgvDescription_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -207,7 +208,7 @@ namespace sample
             txtProcessingFees.Text= dgvDescription.SelectedRows[0].Cells["ProcessingFees"].Value.ToString();
             cmbfees.Text= dgvDescription.SelectedRows[0].Cells["PaidBy"].Value.ToString();
             txtLoanAmount.Text = dgvDescription.SelectedRows[0].Cells["LoanAmount"].Value.ToString();
-            txtTotal.Text = dgvDescription.SelectedRows[0].Cells["Total"].Value.ToString();
+            //txtTotal.Text = dgvDescription.SelectedRows[0].Cells["Total"].Value.ToString();
         }
         public void Update1()
         {
