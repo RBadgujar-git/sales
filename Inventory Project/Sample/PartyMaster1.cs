@@ -144,49 +144,7 @@ namespace sample
                 MessageBox.Show("Party Name Is Requried ");
                 txtPartyname.Focus();
             }
-            else if (txtBillingAdd.Text == "")
-            {
-                MessageBox.Show("Address Is Requried ");
-                txtBillingAdd.Focus();
-            }
-            else if (txtContactNo.Text == "")
-            {
-                MessageBox.Show(" Contact No. Is Requried ");
-                txtContactNo.Focus();
-            }
-            else if (txtEmailID.Text == "")
-            {
-                MessageBox.Show("Email Id Is Requried ");
-                txtEmailID.Focus();
-            }
-           
-            else if (txtPartyType.Text == "")
-            {
-                MessageBox.Show("Party Type Is Requried ");
-                txtPartyType.Focus();
-            }
-            else if (comboBox1.Text == "")
-            {
-                MessageBox.Show("Party Group Is Requried ");
-                comboBox1.Focus();
-            }
-            else if (txtState.Text == "")
-            {
-                MessageBox.Show("State Is Requried ");
-                txtState.Focus();
-            }
-            else if (txtOpeningBal.Text == "")
-            {
-                MessageBox.Show("Opening Balance Required");
-                txtState.Focus();
-            }
-            else if (comboBox2.Text == "")
-            {
-                MessageBox.Show("Status Is Requried ");
-                comboBox2.Focus();
-            }
-        
-
+          
             else
             {
                 verify = 1;
@@ -319,19 +277,42 @@ namespace sample
                 Cleardata();
             }
         }
-        public int gstint; 
+
+        public void seeting()
+        {
+            if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+
+                Partygroup = Convert.ToInt32(dr["Partygroup"]);
+                gstint = Convert.ToInt32(dr["Gst_In"]);
+            }
+            dr.Close();
+            con.Close();
+        }
+        public int gstint, Partygroup; 
         private void PartyMaster1_Load(object sender, EventArgs e)
         {
-            con.Open();
-            SqlCommand cmd1 = new SqlCommand("Select Gst_In from Setting_Table where Company_ID="+NewCompany.company_id+" ",con);
-            gstint = Convert.ToInt32(cmd1.ExecuteScalar());
-            con.Close();
-            if(gstint==1)
+           
+            seeting();
+            label14.Visible = false;
+            comboBox1.Visible = false;
+            if (gstint==1)
             {
                 txtGSTType.Hide();
                 label6.Hide();
             }
-
+            if(Partygroup==1)
+            {
+                label14.Visible = true;
+                comboBox1.Visible = true;
+            }
             fetchdetails();
             fetchgroup();
         }

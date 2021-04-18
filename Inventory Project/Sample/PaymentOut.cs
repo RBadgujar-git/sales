@@ -464,36 +464,36 @@ namespace sample
            
         }
 
-        private void Print_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-                    DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.CustomerName,b.ReceiptNo,b.PaymentType,b.Discount,b.Total,b.Paid,b.Company_ID,b.DeleteData FROM tbl_CompanyMaster as a, tbl_Paymentout as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
-                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                    SDA.Fill(ds);
+        //private void Print_Click(object sender, EventArgs e)
+        //{
+        //    if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        //    {
+        //        try
+        //        {
+        //            DataSet ds = new DataSet();
+        //            string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.CustomerName,b.ReceiptNo,b.PaymentType,b.Discount,b.Total,b.Paid,b.Company_ID,b.DeleteData FROM tbl_CompanyMaster as a, tbl_Paymentout as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
+        //            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+        //            SDA.Fill(ds);
 
-                    StiReport report = new StiReport();
-                    report.Load(@"PaymentOutDataReport.mrt");
+        //            StiReport report = new StiReport();
+        //            report.Load(@"PaymentOutDataReport.mrt");
 
-                    report.Compile();
-                    StiPage page = report.Pages[0];
-                    report.RegData("PaymentOut", "PaymentOut", ds.Tables[0]);
+        //            report.Compile();
+        //            StiPage page = report.Pages[0];
+        //            report.RegData("PaymentOut", "PaymentOut", ds.Tables[0]);
 
-                    report.Dictionary.Synchronize();
-                    report.Render();
-                    report.Show(false);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
+        //            report.Dictionary.Synchronize();
+        //            report.Render();
+        //            report.Show(false);
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.Message);
+        //        }
+        //    }
          
           
-        }
+        //}
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -53,8 +53,8 @@ namespace sample
             dgvincomeCategory.ColumnCount = 2;
             dgvincomeCategory.Columns[0].HeaderText = "Category Name";
             dgvincomeCategory.Columns[0].DataPropertyName = "IncomeCategory";
-            dgvincomeCategory.Columns[1].HeaderText = " Paid";
-            dgvincomeCategory.Columns[1].DataPropertyName = "Paid";
+            dgvincomeCategory.Columns[1].HeaderText = "Received";
+            dgvincomeCategory.Columns[1].DataPropertyName = "Received";
             dgvincomeCategory.DataSource = dt;
         }
         private void fetchCategory()
@@ -108,7 +108,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select IncomeCategory,Paid from tbl_OtherIncome  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -125,7 +125,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select IncomeCategory,Paid  from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbExpensecategory.Text);
+                string Query = string.Format("select IncomeCategory,Received  from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbExpensecategory.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -186,7 +186,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.IncomeCategory,b.Paid,b.Company_ID from tbl_OtherIncome as b,tbl_CompanyMaster as c where b.Company_ID = '" + NewCompany.company_id + "' and c.CompanyID='" + NewCompany.company_id + "' and b.DeleteData = '1'");
+                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.IncomeCategory,b.Received,b.Company_ID from tbl_OtherIncome as b,tbl_CompanyMaster as c where b.Company_ID = '" + NewCompany.company_id + "' and c.CompanyID='" + NewCompany.company_id + "' and b.DeleteData = '1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

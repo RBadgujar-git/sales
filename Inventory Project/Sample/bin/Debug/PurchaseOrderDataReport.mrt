@@ -41,9 +41,9 @@
       <Components isList="true" count="12">
         <Text83 Ref="4" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>4.8,26.8,9.8,0.8</ClientRectangle>
+          <ClientRectangle>4.6,27.6,9.8,0.8</ClientRectangle>
           <Conditions isList="true" count="0" />
-          <Font>Arial,12</Font>
+          <Font>Arial,10,Bold</Font>
           <Guid>f5282e94b66748b8bdf712396ead3841</Guid>
           <HorAlignment>Center</HorAlignment>
           <Margins>0,0,0,0</Margins>
@@ -286,7 +286,7 @@ Bal</Text>
             </Text16>
             <Text77 Ref="21" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>14,0,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.4,0,1.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>c1ed6c34a35e42e3a2e99f9d0c365549</Guid>
@@ -326,7 +326,7 @@ Bal</Text>
             </Text81>
             <Text90 Ref="24" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>14,0.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.4,0.6,1.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>b497a86da2304da08cf9d9dc00da4786</Guid>
@@ -448,7 +448,7 @@ Bal</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>8,0,3.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,16</Font>
+              <Font>Arial,10</Font>
               <Guid>42419929a3e94a648e04faeca96ac609</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -718,10 +718,10 @@ Bal</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/15/2021 5:52:00 PM</ReportChanged>
+  <ReportChanged>4/17/2021 4:54:30 PM</ReportChanged>
   <ReportCreated>3/25/2021 4:16:17 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PurchaseOrderDataReport.mrt</ReportFile>
-  <ReportGuid>c097febcfd72453ea8a032f8ffe9cc1a</ReportGuid>
+  <ReportGuid>e0b2f039fa4f42f8ac0ae427576f4d1c</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

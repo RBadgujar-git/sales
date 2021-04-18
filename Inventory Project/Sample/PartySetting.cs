@@ -48,6 +48,7 @@ namespace sample
 
         private void PartySetting_Load(object sender, EventArgs e)
         {
+
             cheekpass1();
             if (shipadd == 1)
             {
@@ -57,12 +58,24 @@ namespace sample
             {
                 chkPrintShipping.Checked = true;
             }
+
+            if(Partygroup==1)
+            {
+                chkPartyGrouping.Checked = true;
+            }
+            if(REMINDER==1)
+                {
+                chkCustomerEnablePayment.Checked = true;
+            }
+
+
         }
 
         private void ToggleSwitch3_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+        public int Partygroup, REMINDER,dayreminder;
         public void cheekpass1()
         {
             try
@@ -79,6 +92,21 @@ namespace sample
                     printship = Convert.ToInt32(dr1["PrintShippingAddress"]);
                 }
                 dr1.Close();
+
+
+                SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+                SqlDataReader dr = cmd1.ExecuteReader();
+
+                while (dr.Read())
+                {
+
+                    Partygroup = Convert.ToInt32(dr["Partygroup"]);
+                    REMINDER= Convert.ToInt32(dr["REMINDER"]);
+                    dayreminder = Convert.ToInt32(dr["dayreminder"]);
+
+                }
+                dr.Close();
+
             }
 
             catch (Exception ew)
@@ -113,6 +141,45 @@ namespace sample
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PrintShippingAddress = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void chkPartyGrouping_CheckedChanged(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (chkPartyGrouping.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set Partygroup = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkPartyGrouping.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set Partygroup = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+
+            
+        }
+
+        private void chkCustomerEnablePayment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (chkCustomerEnablePayment.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set REMINDER = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkCustomerEnablePayment.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set REMINDER = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+
         }
     }
 }

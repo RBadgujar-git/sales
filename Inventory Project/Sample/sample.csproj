@@ -209,6 +209,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.38.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tulpep.NotificationWindow.1.1.38\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -494,6 +498,30 @@
     </Compile>
     <Compile Include="Feedback.Designer.cs">
       <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR1.Designer.cs">
+      <DependentUpon>GSTR1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR2.Designer.cs">
+      <DependentUpon>GSTR2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR3B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR3B.Designer.cs">
+      <DependentUpon>GSTR3B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GSTR9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GSTR9.Designer.cs">
+      <DependentUpon>GSTR9.cs</DependentUpon>
     </Compile>
     <Compile Include="ImportExcel.cs">
       <SubType>UserControl</SubType>
@@ -1080,6 +1108,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR1.resx">
+      <DependentUpon>GSTR1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR2.resx">
+      <DependentUpon>GSTR2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR3B.resx">
+      <DependentUpon>GSTR3B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GSTR9.resx">
+      <DependentUpon>GSTR9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImportExcel.resx">
       <DependentUpon>ImportExcel.cs</DependentUpon>

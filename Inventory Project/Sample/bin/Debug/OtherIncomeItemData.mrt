@@ -36,9 +36,9 @@
       <Components isList="true" count="12">
         <Text83 Ref="4" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>4.4,26.8,9.8,0.8</ClientRectangle>
+          <ClientRectangle>4.4,27.6,9.8,0.8</ClientRectangle>
           <Conditions isList="true" count="0" />
-          <Font>Arial,12</Font>
+          <Font>Arial,10,Bold</Font>
           <Guid>0aa6af9c77fb496d905d9482c0416130</Guid>
           <HorAlignment>Center</HorAlignment>
           <Margins>0,0,0,0</Margins>
@@ -156,7 +156,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>15.4,0.6,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,11</Font>
+              <Font>Arial,10</Font>
               <Guid>30e8182edbee4595b6c296b679557d32</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -171,7 +171,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>15.4,0,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,11</Font>
+              <Font>Arial,10</Font>
               <Guid>181fae1ba1af4ad7b82f5818ac6bf14d</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -221,7 +221,6 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>c89d918ef9754e5daa486bd63828d558</Guid>
-              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text77</Name>
               <Page isRef="3" />
@@ -254,7 +253,7 @@ No.</Text>
               <Name>Text81</Name>
               <Page isRef="3" />
               <Parent isRef="5" />
-              <Text>GSTIN :</Text>
+              <Text>GSTIN     :</Text>
               <TextBrush>Black</TextBrush>
             </Text81>
             <Text90 Ref="20" type="Text" isKey="true">
@@ -263,12 +262,11 @@ No.</Text>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>e32eaea97d9f407da1e89f7491f9a041</Guid>
-              <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text90</Name>
               <Page isRef="3" />
               <Parent isRef="5" />
-              <Text>Email :</Text>
+              <Text>Email      :</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Bottom</VertAlignment>
             </Text90>
@@ -329,7 +327,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>1.2,0,7.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>3ded7581aa31484691bcdf5079fddc76</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
@@ -346,7 +344,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>13.8,0,5.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>e9e7cb8df00a42bd8d8514fd92dca4d7</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -362,7 +360,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,1.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>1022110d150444f69687802ee0913810</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -380,7 +378,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>8.4,0,5.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>4ecab3dcebaf4116a3ae6a5b76c0949a</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -429,7 +427,7 @@ No.</Text>
               <Brush>Transparent</Brush>
               <ClientRectangle>13.8,0,5.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>fc72c005e7cf43a9a9713a5f377f7e3c</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -452,7 +450,7 @@ No.</Text>
               <Name>Text10</Name>
               <Page isRef="3" />
               <Parent isRef="33" />
-              <Text>Total  -</Text>
+              <Text>Total  </Text>
               <TextBrush>Black</TextBrush>
             </Text10>
           </Components>
@@ -571,10 +569,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/15/2021 10:09:14 AM</ReportChanged>
+  <ReportChanged>4/17/2021 4:11:07 PM</ReportChanged>
   <ReportCreated>3/22/2021 4:02:04 PM</ReportCreated>
-  <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\OtherIncomeItemData.mrt</ReportFile>
-  <ReportGuid>71d5feb928da41868ccaafda675965cf</ReportGuid>
+  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeItemData.mrt</ReportFile>
+  <ReportGuid>cde7459e47a8404d9714d68c22c8ddbf</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

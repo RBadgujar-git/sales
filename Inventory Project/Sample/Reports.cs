@@ -50,7 +50,7 @@ namespace sample
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
-            SaleInvoiceReport BA = new SaleInvoiceReport();
+            GSTR1 BA = new GSTR1();
             //  BA.TopLevel = false;
           //  BA.AutoScroll = true;
             this.Controls.Add(BA);
@@ -507,6 +507,42 @@ namespace sample
         private void guna2Button12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button8_Click_1(object sender, EventArgs e)
+        {
+            GSTR2 BA = new GSTR2();
+            //  BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
+        }
+
+        private void guna2Button9_Click(object sender, EventArgs e)
+        {
+            GSTR3B BA = new GSTR3B();
+            //  BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
+        }
+
+        private void guna2Button17_Click(object sender, EventArgs e)
+        {
+            GSTR9 BA = new GSTR9();
+            //  BA.TopLevel = false;
+            //  BA.AutoScroll = true;
+            this.Controls.Add(BA);
+            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            BA.Dock = DockStyle.Fill;
+            BA.Visible = true;
+            BA.BringToFront();
         }
     }
 }

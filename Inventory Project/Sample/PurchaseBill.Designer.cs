@@ -28,13 +28,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseBill));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PurchaseBill));
             this.btnlinkPayment = new System.Windows.Forms.Button();
             this.txtadditional2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtadditional1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,7 +44,6 @@
             this.txtTotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRoundup = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtReceived = new Guna.UI2.WinForms.Guna2TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtTaxAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtVehicleNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDeliveryLoc = new Guna.UI2.WinForms.Guna2TextBox();
@@ -85,7 +84,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtOty = new Guna.UI2.WinForms.Guna2TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.txtReturnNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -101,11 +99,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnminimize = new System.Windows.Forms.Button();
             this.Purchase = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.sr_no1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -166,6 +164,26 @@
             this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnminimize = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2TextBox6 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -403,22 +421,6 @@
             this.txtReceived.TabIndex = 274454;
             this.txtReceived.TextChanged += new System.EventHandler(this.txtReceived_TextChanged);
             this.txtReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceived_KeyPress);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(1020, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 653;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtTaxAmount
             // 
@@ -769,6 +771,14 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox6);
+            this.guna2ShadowPanel1.Controls.Add(this.label45);
+            this.guna2ShadowPanel1.Controls.Add(this.label44);
+            this.guna2ShadowPanel1.Controls.Add(this.label43);
+            this.guna2ShadowPanel1.Controls.Add(this.label42);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox5);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox4);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox3);
             this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox2);
             this.guna2ShadowPanel1.Controls.Add(this.txtItemName);
             this.guna2ShadowPanel1.Controls.Add(this.txtItemTotal);
@@ -816,7 +826,7 @@
             this.guna2TextBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(114, 12);
+            this.guna2TextBox2.Location = new System.Drawing.Point(99, 12);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderText = "";
@@ -831,7 +841,7 @@
             this.txtItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtItemName.FormattingEnabled = true;
-            this.txtItemName.Location = new System.Drawing.Point(19, 47);
+            this.txtItemName.Location = new System.Drawing.Point(4, 47);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(106, 22);
             this.txtItemName.TabIndex = 13;
@@ -854,7 +864,7 @@
             this.txtItemTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemTotal.HoverState.Parent = this.txtItemTotal;
-            this.txtItemTotal.Location = new System.Drawing.Point(970, 50);
+            this.txtItemTotal.Location = new System.Drawing.Point(995, 47);
             this.txtItemTotal.Name = "txtItemTotal";
             this.txtItemTotal.PasswordChar = '\0';
             this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -863,7 +873,7 @@
             this.txtItemTotal.SelectedText = "";
             this.txtItemTotal.SelectionStart = 2;
             this.txtItemTotal.ShadowDecoration.Parent = this.txtItemTotal;
-            this.txtItemTotal.Size = new System.Drawing.Size(85, 24);
+            this.txtItemTotal.Size = new System.Drawing.Size(77, 24);
             this.txtItemTotal.TabIndex = 22;
             this.txtItemTotal.TextChanged += new System.EventHandler(this.txtItemTotal_TextChanged);
             this.txtItemTotal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtItemTotal_KeyDown);
@@ -893,7 +903,7 @@
             this.txtDisAmt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDisAmt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDisAmt.HoverState.Parent = this.txtDisAmt;
-            this.txtDisAmt.Location = new System.Drawing.Point(780, 51);
+            this.txtDisAmt.Location = new System.Drawing.Point(817, 47);
             this.txtDisAmt.Name = "txtDisAmt";
             this.txtDisAmt.PasswordChar = '\0';
             this.txtDisAmt.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -923,7 +933,7 @@
             this.txtDis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDis.HoverState.Parent = this.txtDis;
-            this.txtDis.Location = new System.Drawing.Point(415, 49);
+            this.txtDis.Location = new System.Drawing.Point(345, 47);
             this.txtDis.Name = "txtDis";
             this.txtDis.PasswordChar = '\0';
             this.txtDis.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -931,7 +941,7 @@
             this.txtDis.SelectedText = "";
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
-            this.txtDis.Size = new System.Drawing.Size(85, 24);
+            this.txtDis.Size = new System.Drawing.Size(51, 24);
             this.txtDis.TabIndex = 17;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
@@ -939,7 +949,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(422, 21);
+            this.label32.Location = new System.Drawing.Point(336, 21);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(66, 14);
             this.label32.TabIndex = 94;
@@ -948,7 +958,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(777, 24);
+            this.label33.Location = new System.Drawing.Point(815, 22);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(87, 14);
             this.label33.TabIndex = 96;
@@ -970,7 +980,7 @@
             this.txtTaxAMount1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxAMount1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxAMount1.HoverState.Parent = this.txtTaxAMount1;
-            this.txtTaxAMount1.Location = new System.Drawing.Point(872, 51);
+            this.txtTaxAMount1.Location = new System.Drawing.Point(908, 47);
             this.txtTaxAMount1.Name = "txtTaxAMount1";
             this.txtTaxAMount1.PasswordChar = '\0';
             this.txtTaxAMount1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -979,14 +989,15 @@
             this.txtTaxAMount1.SelectedText = "";
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
-            this.txtTaxAMount1.Size = new System.Drawing.Size(85, 24);
+            this.txtTaxAMount1.Size = new System.Drawing.Size(80, 24);
             this.txtTaxAMount1.TabIndex = 21;
+            this.txtTaxAMount1.TextChanged += new System.EventHandler(this.txtTaxAMount1_TextChanged);
             this.txtTaxAMount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxAMount1_KeyPress);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(872, 22);
+            this.label31.Location = new System.Drawing.Point(905, 21);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(85, 14);
             this.label31.TabIndex = 92;
@@ -1008,7 +1019,7 @@
             this.txtTax1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTax1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax1.HoverState.Parent = this.txtTax1;
-            this.txtTax1.Location = new System.Drawing.Point(506, 50);
+            this.txtTax1.Location = new System.Drawing.Point(464, 47);
             this.txtTax1.Name = "txtTax1";
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1016,7 +1027,7 @@
             this.txtTax1.SelectedText = "";
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
-            this.txtTax1.Size = new System.Drawing.Size(85, 24);
+            this.txtTax1.Size = new System.Drawing.Size(44, 24);
             this.txtTax1.TabIndex = 18;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
@@ -1024,7 +1035,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(525, 24);
+            this.label30.Location = new System.Drawing.Point(461, 21);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 14);
             this.label30.TabIndex = 90;
@@ -1046,14 +1057,14 @@
             this.txtMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMRP.HoverState.Parent = this.txtMRP;
-            this.txtMRP.Location = new System.Drawing.Point(324, 48);
+            this.txtMRP.Location = new System.Drawing.Point(278, 47);
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.PasswordChar = '\0';
             this.txtMRP.PlaceholderText = "";
             this.txtMRP.SelectedText = "";
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
-            this.txtMRP.Size = new System.Drawing.Size(85, 24);
+            this.txtMRP.Size = new System.Drawing.Size(61, 24);
             this.txtMRP.TabIndex = 16;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
@@ -1061,7 +1072,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(342, 22);
+            this.label29.Location = new System.Drawing.Point(278, 21);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(42, 14);
             this.label29.TabIndex = 88;
@@ -1083,14 +1094,14 @@
             this.txtUnit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUnit.HoverState.Parent = this.txtUnit;
-            this.txtUnit.Location = new System.Drawing.Point(233, 47);
+            this.txtUnit.Location = new System.Drawing.Point(206, 47);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "";
             this.txtUnit.SelectedText = "";
             this.txtUnit.SelectionStart = 1;
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
-            this.txtUnit.Size = new System.Drawing.Size(85, 24);
+            this.txtUnit.Size = new System.Drawing.Size(66, 24);
             this.txtUnit.TabIndex = 15;
             this.txtUnit.TextChanged += new System.EventHandler(this.txtUnit_TextChanged);
             this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
@@ -1098,7 +1109,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(258, 21);
+            this.label28.Location = new System.Drawing.Point(216, 21);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -1120,7 +1131,7 @@
             this.txtFreeQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFreeQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFreeQty.HoverState.Parent = this.txtFreeQty;
-            this.txtFreeQty.Location = new System.Drawing.Point(689, 51);
+            this.txtFreeQty.Location = new System.Drawing.Point(746, 47);
             this.txtFreeQty.Name = "txtFreeQty";
             this.txtFreeQty.PasswordChar = '\0';
             this.txtFreeQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1128,7 +1139,7 @@
             this.txtFreeQty.SelectedText = "";
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
-            this.txtFreeQty.Size = new System.Drawing.Size(85, 24);
+            this.txtFreeQty.Size = new System.Drawing.Size(65, 24);
             this.txtFreeQty.TabIndex = 19;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
@@ -1136,7 +1147,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(695, 21);
+            this.label27.Location = new System.Drawing.Point(743, 22);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(70, 14);
             this.label27.TabIndex = 84;
@@ -1158,19 +1169,19 @@
             this.txtItemCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemCode.HoverState.Parent = this.txtItemCode;
-            this.txtItemCode.Location = new System.Drawing.Point(139, 47);
+            this.txtItemCode.Location = new System.Drawing.Point(114, 47);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.PasswordChar = '\0';
             this.txtItemCode.PlaceholderText = "";
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
-            this.txtItemCode.Size = new System.Drawing.Size(85, 24);
+            this.txtItemCode.Size = new System.Drawing.Size(86, 24);
             this.txtItemCode.TabIndex = 14;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(143, 18);
+            this.label21.Location = new System.Drawing.Point(128, 18);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 14);
             this.label21.TabIndex = 80;
@@ -1179,7 +1190,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(56, 21);
+            this.label18.Location = new System.Drawing.Point(41, 21);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 14);
             this.label18.TabIndex = 78;
@@ -1201,7 +1212,7 @@
             this.txtOty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(598, 51);
+            this.txtOty.Location = new System.Drawing.Point(684, 47);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1209,7 +1220,7 @@
             this.txtOty.SelectedText = "";
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
-            this.txtOty.Size = new System.Drawing.Size(85, 24);
+            this.txtOty.Size = new System.Drawing.Size(58, 24);
             this.txtOty.TabIndex = 14;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
@@ -1217,27 +1228,11 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(618, 24);
+            this.label23.Location = new System.Drawing.Point(686, 22);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(38, 14);
             this.label23.TabIndex = 82;
             this.label23.Text = "Qty :";
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(983, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 34);
-            this.button4.TabIndex = 444;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // txtReturnNo
             // 
@@ -1450,23 +1445,6 @@
             this.panel3.Size = new System.Drawing.Size(1082, 38);
             this.panel3.TabIndex = 16;
             // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnminimize.Location = new System.Drawing.Point(951, 4);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 757;
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Visible = false;
-            // 
             // Purchase
             // 
             this.Purchase.Location = new System.Drawing.Point(118, 8);
@@ -1486,26 +1464,16 @@
             this.label40.Text = "Bill :";
             this.label40.Visible = false;
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(1051, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 432;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label48);
+            this.panel1.Controls.Add(this.label47);
+            this.panel1.Controls.Add(this.label46);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.guna2DataGridView2);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.comboBox1);
@@ -1588,6 +1556,22 @@
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             this.panel1.Validating += new System.ComponentModel.CancelEventHandler(this.panel1_Validating);
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(547, 415);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(53, 23);
+            this.textBox4.TabIndex = 274457;
+            this.textBox4.Text = "0";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(488, 415);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(53, 23);
+            this.textBox3.TabIndex = 274456;
+            this.textBox3.Text = "0";
+            // 
             // guna2DataGridView2
             // 
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
@@ -1618,7 +1602,11 @@
             this.SaleTaxAmount,
             this.DiscountAmount,
             this.ItemAmount,
-            this.ItemID11});
+            this.ItemID11,
+            this.CGST,
+            this.SGST,
+            this.IGST,
+            this.CalTotal});
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1890,7 +1878,6 @@
             this.cmbPaymentType.Size = new System.Drawing.Size(172, 24);
             this.cmbPaymentType.TabIndex = 23;
             this.cmbPaymentType.SelectedIndexChanged += new System.EventHandler(this.cmbPaymentType_SelectedIndexChanged_1);
-            this.cmbPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaymentType_KeyPress);
             this.cmbPaymentType.Validating += new System.ComponentModel.CancelEventHandler(this.cmbPaymentType_Validating);
             // 
             // cmbPaymentTrems
@@ -1913,7 +1900,6 @@
             this.cmbPaymentTrems.Name = "cmbPaymentTrems";
             this.cmbPaymentTrems.Size = new System.Drawing.Size(180, 24);
             this.cmbPaymentTrems.TabIndex = 6;
-            this.cmbPaymentTrems.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaymentTrems_KeyPress);
             // 
             // DtpdeliveryDate
             // 
@@ -2004,7 +1990,6 @@
             this.cmbpartyname.Size = new System.Drawing.Size(180, 24);
             this.cmbpartyname.TabIndex = 1;
             this.cmbpartyname.SelectedIndexChanged += new System.EventHandler(this.cmbpartyname_SelectedIndexChanged_1);
-            this.cmbpartyname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbpartyname_KeyPress);
             this.cmbpartyname.Validating += new System.ComponentModel.CancelEventHandler(this.cmbpartyname_Validating);
             // 
             // chkenble
@@ -2021,7 +2006,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(687, 395);
+            this.label38.Location = new System.Drawing.Point(690, 390);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 16);
             this.label38.TabIndex = 111;
@@ -2299,6 +2284,271 @@
             this.Amount.Name = "Amount";
             this.Amount.Width = 82;
             // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnminimize.BackgroundImage")));
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnminimize.Location = new System.Drawing.Point(951, 4);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 757;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Location = new System.Drawing.Point(983, 0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(31, 34);
+            this.button4.TabIndex = 444;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(1020, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.TabIndex = 653;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(1051, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(26, 27);
+            this.button3.TabIndex = 432;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(602, 390);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(87, 16);
+            this.label48.TabIndex = 274461;
+            this.label48.Text = "Item Total :";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(546, 390);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(38, 16);
+            this.label47.TabIndex = 274460;
+            this.label47.Text = "Dis :";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(489, 390);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 16);
+            this.label46.TabIndex = 274458;
+            this.label46.Text = "Tax :";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(605, 415);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(53, 23);
+            this.textBox6.TabIndex = 274459;
+            this.textBox6.Text = "0";
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "0";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Location = new System.Drawing.Point(514, 47);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.SelectionStart = 1;
+            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Size = new System.Drawing.Size(53, 24);
+            this.guna2TextBox3.TabIndex = 24446;
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "0";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Location = new System.Drawing.Point(573, 47);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.SelectionStart = 1;
+            this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Size = new System.Drawing.Size(53, 24);
+            this.guna2TextBox4.TabIndex = 24447;
+            // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "0";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.FocusedState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Location = new System.Drawing.Point(629, 47);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox5.PlaceholderText = "";
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.SelectionStart = 1;
+            this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Size = new System.Drawing.Size(53, 24);
+            this.guna2TextBox5.TabIndex = 24448;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(520, 22);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(49, 14);
+            this.label42.TabIndex = 24449;
+            this.label42.Text = "CGST :";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(576, 22);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(48, 14);
+            this.label43.TabIndex = 24450;
+            this.label43.Text = "SGST :";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(632, 21);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(45, 14);
+            this.label44.TabIndex = 24451;
+            this.label44.Text = "IGST :";
+            // 
+            // CGST
+            // 
+            this.CGST.HeaderText = "Item CGST";
+            this.CGST.Name = "CGST";
+            // 
+            // SGST
+            // 
+            this.SGST.HeaderText = "ItemSGST";
+            this.SGST.Name = "SGST";
+            // 
+            // IGST
+            // 
+            this.IGST.HeaderText = "Item IGST";
+            this.IGST.Name = "IGST";
+            // 
+            // guna2TextBox6
+            // 
+            this.guna2TextBox6.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox6.DefaultText = "0";
+            this.guna2TextBox6.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox6.DisabledState.Parent = this.guna2TextBox6;
+            this.guna2TextBox6.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox6.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox6.FocusedState.Parent = this.guna2TextBox6;
+            this.guna2TextBox6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox6.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox6.HoverState.Parent = this.guna2TextBox6;
+            this.guna2TextBox6.Location = new System.Drawing.Point(405, 47);
+            this.guna2TextBox6.Name = "guna2TextBox6";
+            this.guna2TextBox6.PasswordChar = '\0';
+            this.guna2TextBox6.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox6.PlaceholderText = "";
+            this.guna2TextBox6.SelectedText = "";
+            this.guna2TextBox6.SelectionStart = 1;
+            this.guna2TextBox6.ShadowDecoration.Parent = this.guna2TextBox6;
+            this.guna2TextBox6.Size = new System.Drawing.Size(53, 24);
+            this.guna2TextBox6.TabIndex = 24452;
+            this.guna2TextBox6.TextChanged += new System.EventHandler(this.guna2TextBox6_TextChanged);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(399, 22);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(64, 14);
+            this.label45.TabIndex = 24453;
+            this.label45.Text = "Item Amt";
+            // 
+            // CalTotal
+            // 
+            this.CalTotal.HeaderText = "Item Amount";
+            this.CalTotal.Name = "CalTotal";
+            // 
             // PurchaseBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2459,5 +2709,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiscountAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID11;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CGST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SGST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IGST;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox6;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CalTotal;
     }
 }

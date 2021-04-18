@@ -30,7 +30,7 @@ namespace sample
 
 
         public int NameMrp, batchno, Serealno, MFd, exd, size;
-        public int hsnid, Cess;
+        public int hsnid, Cess, Category;
         public void chekpoint()
         {
             if (con.State == ConnectionState.Closed)
@@ -49,6 +49,7 @@ namespace sample
                 MFd = Convert.ToInt32(dr["MnfDate"]);
                 exd = Convert.ToInt32(dr["ExpDate"]);
                 size = Convert.ToInt32(dr["Size"]);
+                Category = Convert.ToInt32(dr["ItemCategory"]);
             }
             dr.Close();
 
@@ -125,6 +126,11 @@ namespace sample
                 label26.Visible = false;
                 Cesstxt.Visible = false;
             }
+            if(Category==1)
+            {
+                cmbCategry.Visible = true;
+                label6.Visible = true;
+            }
         }
 
         public String MRPtext, batchNotext, SeriealText, Mfddatetext, Expdatetext, Sizename;
@@ -176,6 +182,9 @@ namespace sample
 
         private void Itemmaster_Load(object sender, EventArgs e)
         {
+            cmbCategry.Visible = false;
+            label6.Visible = false;
+
             chekpoint();
             setting();
             fatchname();
@@ -493,15 +502,7 @@ namespace sample
             {
                 MessageBox.Show("Please Select ItemUnit");
 
-            }
-            else if (txtItemCode.Text == "")
-            {
-                MessageBox.Show("Please Insert Itemcode ");
-            }
-            else if (txtHSNcode.Text == "")
-            {
-                MessageBox.Show("Please Insert HSN No ");
-            }
+            }         
             else if (txtpurchasseprice.Text == "0 "||txtpurchasseprice.Text=="")
             {
                 MessageBox.Show("Please Insert Item Puchess Amount ");

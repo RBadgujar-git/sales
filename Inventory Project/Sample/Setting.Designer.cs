@@ -54,7 +54,6 @@
             this.chkAutoBackup = new Guna.UI2.WinForms.Guna2CheckBox();
             this.radiobtnFirmName = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2DateTimePicker1 = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -77,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
@@ -271,10 +271,12 @@
             // chkEnableLaunch
             // 
             this.chkEnableLaunch.AutoSize = true;
+            this.chkEnableLaunch.Checked = true;
             this.chkEnableLaunch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkEnableLaunch.CheckedState.BorderRadius = 0;
             this.chkEnableLaunch.CheckedState.BorderThickness = 0;
             this.chkEnableLaunch.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.chkEnableLaunch.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkEnableLaunch.Location = new System.Drawing.Point(41, 239);
             this.chkEnableLaunch.Name = "chkEnableLaunch";
             this.chkEnableLaunch.Size = new System.Drawing.Size(122, 20);
@@ -293,7 +295,7 @@
             this.chkEnablePassword.CheckedState.BorderRadius = 0;
             this.chkEnablePassword.CheckedState.BorderThickness = 0;
             this.chkEnablePassword.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkEnablePassword.Location = new System.Drawing.Point(51, 83);
+            this.chkEnablePassword.Location = new System.Drawing.Point(50, 83);
             this.chkEnablePassword.Name = "chkEnablePassword";
             this.chkEnablePassword.Size = new System.Drawing.Size(137, 20);
             this.chkEnablePassword.TabIndex = 226;
@@ -312,7 +314,7 @@
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button3.ForeColor = System.Drawing.Color.Blue;
             this.guna2Button3.HoverState.Parent = this.guna2Button3;
-            this.guna2Button3.Location = new System.Drawing.Point(190, 79);
+            this.guna2Button3.Location = new System.Drawing.Point(189, 80);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.ShadowDecoration.Parent = this.guna2Button3;
             this.guna2Button3.Size = new System.Drawing.Size(124, 29);
@@ -423,7 +425,7 @@
             this.radiobtnFirmName.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.radiobtnFirmName.CheckedState.InnerColor = System.Drawing.Color.White;
             this.radiobtnFirmName.CheckedState.InnerOffset = -4;
-            this.radiobtnFirmName.Location = new System.Drawing.Point(390, 79);
+            this.radiobtnFirmName.Location = new System.Drawing.Point(31, 22);
             this.radiobtnFirmName.Name = "radiobtnFirmName";
             this.radiobtnFirmName.Size = new System.Drawing.Size(93, 20);
             this.radiobtnFirmName.TabIndex = 241;
@@ -443,20 +445,11 @@
             this.guna2Button4.ForeColor = System.Drawing.Color.Blue;
             this.guna2Button4.HoverState.Parent = this.guna2Button4;
             this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.Location = new System.Drawing.Point(575, 76);
+            this.guna2Button4.Location = new System.Drawing.Point(185, 13);
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
             this.guna2Button4.Size = new System.Drawing.Size(38, 29);
             this.guna2Button4.TabIndex = 242;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.Black;
-            this.guna2Panel5.Location = new System.Drawing.Point(398, 106);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.ShadowDecoration.Parent = this.guna2Panel5;
-            this.guna2Panel5.Size = new System.Drawing.Size(200, 1);
-            this.guna2Panel5.TabIndex = 215;
             // 
             // label7
             // 
@@ -642,9 +635,11 @@
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(367, 289);
+            this.panel2.Controls.Add(this.radiobtnFirmName);
+            this.panel2.Controls.Add(this.guna2Button4);
+            this.panel2.Location = new System.Drawing.Point(390, 147);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(267, 10);
+            this.panel2.Size = new System.Drawing.Size(200, 2);
             this.panel2.TabIndex = 453;
             // 
             // cmbCompanyName
@@ -655,9 +650,9 @@
             this.cmbCompanyName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCompanyName.ForeColor = System.Drawing.Color.Black;
             this.cmbCompanyName.FormattingEnabled = true;
-            this.cmbCompanyName.Location = new System.Drawing.Point(382, 106);
+            this.cmbCompanyName.Location = new System.Drawing.Point(390, 58);
             this.cmbCompanyName.Name = "cmbCompanyName";
-            this.cmbCompanyName.Size = new System.Drawing.Size(224, 26);
+            this.cmbCompanyName.Size = new System.Drawing.Size(200, 26);
             this.cmbCompanyName.TabIndex = 454;
             this.cmbCompanyName.Text = "Select Company";
             this.cmbCompanyName.SelectedIndexChanged += new System.EventHandler(this.cmbCompanyName_SelectedIndexChanged);
@@ -665,7 +660,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(381, 153);
+            this.label12.Location = new System.Drawing.Point(392, 93);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(54, 16);
             this.label12.TabIndex = 455;
@@ -679,7 +674,7 @@
             this.btnlogin.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnlogin.ForeColor = System.Drawing.Color.White;
             this.btnlogin.HoverState.Parent = this.btnlogin;
-            this.btnlogin.Location = new System.Drawing.Point(488, 175);
+            this.btnlogin.Location = new System.Drawing.Point(475, 115);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.ShadowDecoration.Parent = this.btnlogin;
             this.btnlogin.Size = new System.Drawing.Size(115, 27);
@@ -708,9 +703,6 @@
             this.Controls.Add(this.guna2DateTimePicker1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.guna2Panel5);
-            this.Controls.Add(this.guna2Button4);
-            this.Controls.Add(this.radiobtnFirmName);
             this.Controls.Add(this.chkAutoBackup);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.label6);
@@ -745,6 +737,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,7 +772,6 @@
         private Guna.UI2.WinForms.Guna2CheckBox chkAutoBackup;
         private Guna.UI2.WinForms.Guna2RadioButton radiobtnFirmName;
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2DateTimePicker guna2DateTimePicker1;

@@ -57,6 +57,7 @@
             this.New4.TabIndex = 4;
             this.New4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.New4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.New4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.New4_KeyDown);
             // 
             // New3
             // 
@@ -147,6 +148,7 @@
             this.Con1.TabIndex = 5;
             this.Con1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Con1.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.Con1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Con1_KeyDown);
             // 
             // label1
             // 
@@ -176,7 +178,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(286, 36);
+            this.panel1.Size = new System.Drawing.Size(287, 36);
             this.panel1.TabIndex = 15;
             // 
             // btnCancel
@@ -233,7 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(286, 269);
+            this.ClientSize = new System.Drawing.Size(287, 276);
             this.ControlBox = false;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);

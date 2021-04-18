@@ -34,6 +34,7 @@
             this.Pass4 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pass1
@@ -61,6 +62,7 @@
             this.Pass2.TabIndex = 2;
             this.Pass2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Pass2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.Pass2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pass2_KeyDown);
             // 
             // pass3
             // 
@@ -74,6 +76,7 @@
             this.pass3.TabIndex = 3;
             this.pass3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.pass3.TextChanged += new System.EventHandler(this.pass3_TextChanged);
+            this.pass3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pass3_KeyDown);
             // 
             // Pass4
             // 
@@ -88,6 +91,7 @@
             this.Pass4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Pass4.TextChanged += new System.EventHandler(this.Pass4_TextChanged);
             this.Pass4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Pass4_KeyDown);
+            this.Pass4.MouseEnter += new System.EventHandler(this.Pass4_MouseEnter);
             // 
             // linkLabel1
             // 
@@ -111,6 +115,22 @@
             this.label4.TabIndex = 993;
             this.label4.Text = "label4";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(278, 0);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(28, 30);
+            this.btnCancel.TabIndex = 994;
+            this.btnCancel.Text = "X";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +138,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(305, 207);
             this.ControlBox = false;
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.Pass4);
@@ -127,6 +148,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +162,6 @@
         private System.Windows.Forms.TextBox Pass4;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

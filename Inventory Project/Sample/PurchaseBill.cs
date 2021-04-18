@@ -92,6 +92,8 @@ namespace sample
             con.Close();
             if (supplace == 1)
             {
+                cmbStatesupply.Enabled = true;
+                cmbStatesupply.Visible = true;
                 cmbStatesupply.Show();
                 label5.Show();
             }
@@ -343,7 +345,7 @@ namespace sample
                     gst = float.Parse(txtTax1.Text.ToString());
 
                     sub_total = (qty + freeqty) * rate;
-                    //txtsub_total.Text = sub_total.ToString();
+                    guna2TextBox6.Text = sub_total.ToString();
 
                     dis_amt = sub_total * dis / 100;
                     txtDisAmt.Text = dis_amt.ToString();
@@ -419,7 +421,7 @@ namespace sample
                         }
                         else
                         {
-                            float TA = 0, TD = 0, TGST = 0;
+                            float TA = 0, TD = 0, TGST = 0,dis1=0,tax=0,itotal=0;
                             guna2DataGridView2.Rows.Add();
                             row = guna2DataGridView2.Rows.Count - 2;
                             guna2DataGridView2.Rows[row].Cells["sr_no1"].Value = row + 1;
@@ -438,6 +440,11 @@ namespace sample
                             string dis = txtDis.Text;
                             string dis_amt = txtDisAmt.Text;
                             string Total = txtItemTotal.Text;
+                            string caltotal = guna2TextBox6.Text;
+                            string cgst = guna2TextBox3.Text;
+                            string sgst = guna2TextBox4.Text;
+                            string igst = guna2TextBox5.Text;
+
                             string itemid11;
                             if(guna2TextBox2.Text== "")
                             {
@@ -461,18 +468,24 @@ namespace sample
                             guna2DataGridView2.Rows[row].Cells[10].Value = dis_amt;
                             guna2DataGridView2.Rows[row].Cells[11].Value = Total;
                             guna2DataGridView2.Rows[row].Cells[12].Value = itemid11;
+                            guna2DataGridView2.Rows[row].Cells[13].Value = cgst;
+                            guna2DataGridView2.Rows[row].Cells[14].Value = sgst;
+                            guna2DataGridView2.Rows[row].Cells[15].Value = igst;
+                            guna2DataGridView2.Rows[row].Cells[16].Value = caltotal;
+
                             txtItemName.Focus();
 
                             for (int i = 0; i < guna2DataGridView2.Rows.Count; i++)
                             {
-                                TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());
-                                //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
-                                //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
-
+                                dis1 += float.Parse(guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value?.ToString());
+                                textBox4.Text = dis1.ToString();
+                                tax += float.Parse(guna2DataGridView2.Rows[i].Cells["SaleTaxAmount"].Value?.ToString());
+                                textBox3.Text = tax.ToString();
+                                itotal += float.Parse(guna2DataGridView2.Rows[i].Cells["CalTotal"].Value?.ToString());
+                                textBox6.Text = itotal.ToString();
+                                TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());                              
                                 txtsubtotal.Text = TA.ToString();
                                 txtTotal.Text = TA.ToString();
-                                //  //  txtDisAmt.Text = TD.ToString();
-                                //   // txtTaxAMount1.Text = TGST.ToString();
                             }
                         }
                         guna2TextBox2.Text = "";
@@ -673,6 +686,11 @@ namespace sample
                     cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemID", guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@cgst", guna2DataGridView2.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@sgst", guna2DataGridView2.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@igst", guna2DataGridView2.Rows[i].Cells["IGST"].Value.ToString());
+                   // cmd.Parameters.AddWithValue("@caltotal", guna2DataGridView2.Rows[i].Cells["CalTotal"].Value.ToString());
+
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.Parameters.AddWithValue("@BillNo",id1);
 
@@ -828,7 +846,7 @@ namespace sample
                 }
                 seeting();
 
-                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID,Discount,TaxShow,CalTotal) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid,@Discount,@TaxShow,@CalTotal); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
@@ -882,9 +900,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
                 cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
                 cmd.Parameters.AddWithValue("@IGST", guna2TextBox1.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+                cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
                 cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-
-
                 id1 = cmd.ExecuteScalar();
 
                 //if (investment == 0)
@@ -1832,9 +1851,46 @@ namespace sample
         {
            
                 cal_ItemTotal();
-            
+            gst_devide1();
         }
+        private void gst_devide1()
+        {
 
+            try
+            {
+
+                //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                //string State1 = cd.ExecuteScalar().ToString();
+                //con.Close();
+                //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (cmbStatesupply.SelectedItem == "Maharashtra")
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    guna2TextBox3.Text=sgst.ToString();
+                    guna2TextBox4.Text= cgst.ToString();
+                    guna2TextBox5.Text = 0.ToString();
+
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    guna2TextBox5.Text = gst.ToString();
+                    guna2TextBox3.Text = 0.ToString();
+                    guna2TextBox4.Text = 0.ToString();
+                }
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
         private void txtsubtotal_TextChanged(object sender, EventArgs e)
         {
 
@@ -2096,19 +2152,14 @@ namespace sample
             }
         }
 
-        private void cmbpartyname_KeyPress(object sender, KeyPressEventArgs e)
+        private void guna2TextBox6_TextChanged(object sender, EventArgs e)
         {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            cal_ItemTotal();
         }
 
-        private void cmbPaymentTrems_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtTaxAMount1_TextChanged(object sender, EventArgs e)
         {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-        }
 
-        private void cmbPaymentType_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
         private void txtReceived_KeyPress(object sender, KeyPressEventArgs e)

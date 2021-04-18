@@ -44,41 +44,96 @@ namespace sample
         {
             New1.Focus();
         }
-
+        public int p=0;
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-            
+          if(p==0)
+            {
+                New2.Focus();
+                p = 0;
+            }
+          if(p==1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-           
+            if (p == 0)
+            {
+                New3.Focus();
+                p = 0;
+            }
+            if (p == 1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            if (p == 0)
+            {
+                New4.Focus();
+                p = 0;
+            }
+            if (p == 1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-          
+            if (p == 0)
+            {
+                Con1.Focus();
+                p = 0;
+            }
+            if (p == 1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
-         
+            if (p == 0)
+            {
+                Con2.Focus();
+                p = 0;
+            }
+            if (p == 1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-           
+            if (p == 0)
+            {
+                Con3.Focus();
+                p = 0;
+            }
+            if (p == 1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-         
+            if (p == 0)
+            {
+                Con4.Focus();
+                p = 0;
+            }
+            if (p == 1)
+            {
+                p = 0;
+            }
         }
 
         private void textBox9_KeyPress(object sender, KeyPressEventArgs e)
@@ -122,8 +177,9 @@ namespace sample
         {
             if (e.KeyCode == Keys.Back)
             {
-              New1.Focus();
-                e.Handled = true;
+                New1.Clear();
+                New1.Focus();
+                p = 1;
             }
         }
 
@@ -131,8 +187,9 @@ namespace sample
         {
             if (e.KeyCode == Keys.Back)
             {
+                New2.Clear();
                 New2.Focus();
-                e.Handled = true;
+                p = 1;
             }
         }
 
@@ -162,8 +219,10 @@ namespace sample
         {
             if (e.KeyCode == Keys.Back)
             {
-                Con3.Focus();
+                Con3.Clear();
+                Con3.Focus();       
                 e.Handled = true;
+                p = 1;
                 button1.Hide();
               //  label4.Hide();
             }
@@ -173,8 +232,10 @@ namespace sample
         {
             if (e.KeyCode == Keys.Back)
             {
+                Con2.Clear();
                 Con2.Focus();
                 e.Handled = true;
+                p = 1;
             }
         }
 
@@ -182,8 +243,10 @@ namespace sample
         {
             if (e.KeyCode == Keys.Back)
             {
+                Con1.Clear();
                 Con1.Focus();
-                e.Handled = true;
+                // e.Handled = true;
+                p = 1;
             }
         }
 
@@ -234,6 +297,26 @@ namespace sample
             
             insert();
 
+        }
+
+        private void New4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                New3.Clear();
+                New3.Focus();
+               p = 1;
+           }
+       }
+
+        private void Con1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Back)
+            {
+                New4.Clear();
+                New4.Focus();
+                p = 1;
+            }
         }
     }
 }
