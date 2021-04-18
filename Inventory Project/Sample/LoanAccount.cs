@@ -31,33 +31,35 @@ namespace sample
 
         private void LoanAccount_Load(object sender, EventArgs e)
         {
+            cmbAccount.Focus();
             fetchdetails();
             //fetchCompany();
-            bankfetch();
+           // bankfetch();
             companyfetch();
+            hidedata();
         }
         private void bankfetch()
         {
-            if (cmbAccount.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbAccount.Items.Add(ds.Tables["Temp"].Rows[i]["BankName"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //if (cmbAccount.Text != "System.Data.DataRowView")
+            //{
+            //    try
+            //    {
+            //        string SelectQuery = string.Format("select BankName from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by BankName");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
+            //            cmbAccount.Items.Add(ds.Tables["Temp"].Rows[i]["BankName"].ToString());
+            //        }
+            //    }
+            //    catch (Exception e1)
+            //    {
+            //        MessageBox.Show(e1.Message);
+            //    }
+            //}
         }
         //private void fetchCompany()
         //{
@@ -183,7 +185,12 @@ namespace sample
                 throw;
             }
         }
-
+        private void hidedata()
+        {
+            dgvDescription.Columns["Description"].Visible = false;
+            dgvDescription.Columns["FirmName"].Visible = false;
+            dgvDescription.Columns["PaidBy"].Visible = false;
+        }
         private void dgvDescription_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             id = dgvDescription.SelectedRows[0].Cells["ID"].Value.ToString();
@@ -442,7 +449,8 @@ namespace sample
             //    SqlDataReader dr = cmd.ExecuteReader();
             //    if (dr.Read())
             //    {
-            //        txtcompanyname.Text = dr["CompanyName"].ToString();
+            //        //txtcompanyname.Text = dr["CompanyName"].ToString();
+            //        txtcompanyname.Text = NewCompany.companyname;
             //    }
             //    dr.Close();
             //    con.Close();
@@ -450,12 +458,12 @@ namespace sample
             //catch (Exception ex)
             //{
             //    MessageBox.Show(ex.Message);
-            //}
+           // }
             //finally
             //{
 
             //}
-            txtcompanyname.Text = NewCompany.companyname;
+           
         }
         private void cmbLoanReceive_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -575,11 +583,11 @@ namespace sample
             if (textBox2.Text == "")
             {
                 fetchdetails();
-                // hidedata();
+                hidedata();
             }
             else
             {
-                string Query = string.Format("select ID,AccountName,AccountNo,Description,LendarBank,FirmName,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,PaidBy,LoanAmount,Total,BalAsOf from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,AccountName,AccountNo,LendarBank,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,LoanAmount,Total,BalAsOf from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -606,6 +614,33 @@ namespace sample
         private void txtcompanyname_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtLoanAmount_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtLoanAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvDescription_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+
+        }
+
+        private void cmbAccount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

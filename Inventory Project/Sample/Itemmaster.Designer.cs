@@ -80,6 +80,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Cesstxt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.txtHSNcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -101,8 +103,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.Cesstxt = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label26 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -445,6 +445,7 @@
             this.txtItemName.TabIndex = 1;
             this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
             this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
+            this.txtItemName.Leave += new System.EventHandler(this.txtItemName_Leave);
             // 
             // txtsubunit
             // 
@@ -912,6 +913,42 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // Cesstxt
+            // 
+            this.Cesstxt.BorderColor = System.Drawing.Color.Gray;
+            this.Cesstxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Cesstxt.DefaultText = "";
+            this.Cesstxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Cesstxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Cesstxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Cesstxt.DisabledState.Parent = this.Cesstxt;
+            this.Cesstxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Cesstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Cesstxt.FocusedState.Parent = this.Cesstxt;
+            this.Cesstxt.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Cesstxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Cesstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Cesstxt.HoverState.Parent = this.Cesstxt;
+            this.Cesstxt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.Cesstxt.Location = new System.Drawing.Point(509, 300);
+            this.Cesstxt.MaxLength = 15;
+            this.Cesstxt.Name = "Cesstxt";
+            this.Cesstxt.PasswordChar = '\0';
+            this.Cesstxt.PlaceholderText = "";
+            this.Cesstxt.SelectedText = "";
+            this.Cesstxt.ShadowDecoration.Parent = this.Cesstxt;
+            this.Cesstxt.Size = new System.Drawing.Size(200, 24);
+            this.Cesstxt.TabIndex = 72;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(424, 305);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(69, 16);
+            this.label26.TabIndex = 73;
+            this.label26.Text = "Add Cess";
+            // 
             // txtHSNcode
             // 
             this.txtHSNcode.BorderColor = System.Drawing.Color.Gray;
@@ -1276,42 +1313,6 @@
             this.label25.Size = new System.Drawing.Size(136, 18);
             this.label25.TabIndex = 0;
             this.label25.Text = "Item Tracking ";
-            // 
-            // Cesstxt
-            // 
-            this.Cesstxt.BorderColor = System.Drawing.Color.Gray;
-            this.Cesstxt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Cesstxt.DefaultText = "";
-            this.Cesstxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Cesstxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Cesstxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Cesstxt.DisabledState.Parent = this.Cesstxt;
-            this.Cesstxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Cesstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Cesstxt.FocusedState.Parent = this.Cesstxt;
-            this.Cesstxt.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Cesstxt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Cesstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Cesstxt.HoverState.Parent = this.Cesstxt;
-            this.Cesstxt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.Cesstxt.Location = new System.Drawing.Point(509, 300);
-            this.Cesstxt.MaxLength = 15;
-            this.Cesstxt.Name = "Cesstxt";
-            this.Cesstxt.PasswordChar = '\0';
-            this.Cesstxt.PlaceholderText = "";
-            this.Cesstxt.SelectedText = "";
-            this.Cesstxt.ShadowDecoration.Parent = this.Cesstxt;
-            this.Cesstxt.Size = new System.Drawing.Size(200, 24);
-            this.Cesstxt.TabIndex = 72;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(424, 305);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(69, 16);
-            this.label26.TabIndex = 73;
-            this.label26.Text = "Add Cess";
             // 
             // Itemmaster
             // 
