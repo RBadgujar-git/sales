@@ -130,7 +130,7 @@ namespace sample
                 gst = float.Parse(txtTax1.Text.ToString());
 
                 sub_total = (qty + freeqty) * rate;
-                //txtsub_total.Text = sub_total.ToString();
+                guna2TextBox5.Text = sub_total.ToString();
 
                 dis_amt = sub_total * dis / 100;
                 txtDisAmt.Text = dis_amt.ToString();
@@ -293,6 +293,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Delivery.Text);
+                cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
+                cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+
                 //  cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                 if (cmbpartyname.Visible == true)
                 {
@@ -351,13 +355,18 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@CGST", dgvInnerDeliveryChallanNote.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SGST", dgvInnerDeliveryChallanNote.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@IGST", dgvInnerDeliveryChallanNote.Rows[i].Cells["IGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@CalTotal", dgvInnerDeliveryChallanNote.Rows[i].Cells["CalTotal"].Value.ToString());
+
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1)
                 {
-                    //MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
                 //finally
                 //{
@@ -655,7 +664,7 @@ namespace sample
                 try {
                 if (e.KeyCode == Keys.Enter)
                 {
-                        float TA = 0, TD = 0, TGST = 0;
+                        float TA = 0, TD = 0, TGST = 0, dis1 = 0, tax = 0, itotal = 0;
                         dgvInnerDeliveryChallanNote.Rows.Add();
                         row = dgvInnerDeliveryChallanNote.Rows.Count - 2;
                         dgvInnerDeliveryChallanNote.Rows[row].Cells["sr_no"].Value = row + 1;
@@ -674,8 +683,12 @@ namespace sample
                         string dis = txtDis.Text;
                         string dis_amt = txtDisAmt.Text;
                         string Total = txtItemTotal.Text;
+                    string caltotal = guna2TextBox5.Text;
+                    string cgst = guna2TextBox2.Text;
+                    string sgst = guna2TextBox3.Text;
+                    string igst = guna2TextBox4.Text;
 
-                        dgvInnerDeliveryChallanNote.Rows[row].Cells[1].Value = txtItem;
+                    dgvInnerDeliveryChallanNote.Rows[row].Cells[1].Value = txtItem;
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[2].Value = Item_code;
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[3].Value = Unit;
 
@@ -687,12 +700,22 @@ namespace sample
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[6].Value = dis;
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[10].Value = dis_amt;
                         dgvInnerDeliveryChallanNote.Rows[row].Cells[11].Value = Total;
+                    dgvInnerDeliveryChallanNote.Rows[row].Cells[12].Value = cgst;
+                    dgvInnerDeliveryChallanNote.Rows[row].Cells[13].Value = sgst;
+                    dgvInnerDeliveryChallanNote.Rows[row].Cells[14].Value = igst;
+                    dgvInnerDeliveryChallanNote.Rows[row].Cells[15].Value = caltotal;
 
                     clear_text_data();
                     txtItemName.Focus();
 
                     for (int i = 0; i < dgvInnerDeliveryChallanNote.Rows.Count; i++) {
-                            TA += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value?.ToString());
+                        dis1 += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                        textBox4.Text = dis1.ToString();
+                        tax += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                        textBox3.Text = tax.ToString();
+                        itotal += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["CalTotal"].Value?.ToString());
+                        textBox6.Text = itotal.ToString();
+                        TA += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value?.ToString());
                             //   // TD += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                             //   // TGST += float.Parse(dgvInnerDeliveryChallanNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
 
@@ -1257,8 +1280,47 @@ namespace sample
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide1();
         }
+        private void gst_devide1()
+        {
 
+            try
+            {
+
+                //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                //string State1 = cd.ExecuteScalar().ToString();
+                //con.Close();
+                //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (cmbStatesupply.SelectedItem == "Maharashtra")
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    guna2TextBox2.Text = sgst.ToString();
+                    guna2TextBox3.Text = cgst.ToString();
+                    guna2TextBox4.Text = 0.ToString();
+
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    guna2TextBox4.Text = gst.ToString();
+                    guna2TextBox2.Text = 0.ToString();
+                    guna2TextBox3.Text = 0.ToString();
+                }
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+
+        }
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             gst_devide();
@@ -1498,6 +1560,11 @@ namespace sample
         private void txtItemTotal_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
+        {
+            cal_ItemTotal();
         }
     }
     }
