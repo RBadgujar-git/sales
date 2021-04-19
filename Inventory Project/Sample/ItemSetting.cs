@@ -82,6 +82,10 @@ namespace sample
             {
                 chkItemsCategory.Checked = true;
             }
+            if(itemwisetax==1)
+            {
+                chkItemWiseTax.Checked = true;
+            }
             chkDescription.Text = description;
             chkDescription.Checked = true;
 
@@ -143,7 +147,7 @@ namespace sample
         }
     
         public int NameMrp,batchno,Serealno,MFd,exd,size,itemwise, ItemwisTax,barcode;
-        public int Stockmantance, ItemCategory;
+        public int Stockmantance, ItemCategory, itemwisetax;
 
         public void cheekpass()
         {
@@ -170,6 +174,7 @@ namespace sample
                     barcode= Convert.ToInt32(dr["barcode"]);
                     Stockmantance= Convert.ToInt32(dr["Stockmantance"]);
                     ItemCategory = Convert.ToInt32(dr["ItemCategory"]);
+                    itemwisetax = Convert.ToInt32(dr["itemwisetax"]);
                 }
                 dr.Close();
             
@@ -231,6 +236,11 @@ namespace sample
 
       public void updatename()
         {
+
+            if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
             SqlCommand cmd = new SqlCommand("update Item_Seeting Set MRP='"+txtMRP.Text+"',Batch_No='"+txtBatchNo.Text+"',Serial_No='"+txtSerialNo.Text+"',Mef_Date='"+txtmfgdate.Text+"', Exp_date='"+txtexpdate.Text+"', Size='"+txtSize.Text+"' where  Company_ID=" + NewCompany.company_id + "", con);
             cmd.ExecuteNonQuery();
 
@@ -289,11 +299,11 @@ namespace sample
 
         private void chkEnableItem_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkBarcodeScan.Checked == true)
+            if (chkEnableItem.Checked == true)
             {
                 chkEnableItem.Checked = true;
             }
-            else if (chkBarcodeScan.Checked == false)
+            else if (chkEnableItem.Checked == false)
             {
                 chkEnableItem.Checked = true;
                 label5.Visible = true;
@@ -301,6 +311,10 @@ namespace sample
         }
         private void chkBarcodeScan_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkBarcodeScan.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set barcode = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
@@ -335,6 +349,10 @@ namespace sample
 
         private void chkStockMaintance_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkStockMaintance.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set Stockmantance = '0' where  Company_ID=" + NewCompany.company_id + " ", con);
@@ -366,6 +384,10 @@ namespace sample
 
         private void chkItemsCategory_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkItemsCategory.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemCategory = '1' where  Company_ID=" + NewCompany.company_id + "", con);
@@ -413,6 +435,25 @@ namespace sample
 
         }
 
+        private void chkItemWiseTax_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (chkItemWiseTax.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set itemwisetax = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkItemWiseTax.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set itemwisetax = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -444,6 +485,10 @@ namespace sample
 
         private void guna2CheckBox16_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (guna2CheckBox16.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemWiseDiscount = '1' where  Company_ID=" + NewCompany.company_id + " ", con);

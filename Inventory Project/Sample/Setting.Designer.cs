@@ -373,7 +373,12 @@
             this.NumericUpDown1.FocusedState.Parent = this.NumericUpDown1;
             this.NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NumericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.NumericUpDown1.Location = new System.Drawing.Point(179, 174);
+            this.NumericUpDown1.Location = new System.Drawing.Point(179, 176);
+            this.NumericUpDown1.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.NumericUpDown1.Name = "NumericUpDown1";
             this.NumericUpDown1.ShadowDecoration.Parent = this.NumericUpDown1;
             this.NumericUpDown1.Size = new System.Drawing.Size(100, 26);

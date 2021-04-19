@@ -94,6 +94,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
@@ -804,6 +805,7 @@
             // guna2Panel4
             // 
             this.guna2Panel4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Panel4.Controls.Add(this.guna2Button2);
             this.guna2Panel4.Controls.Add(this.guna2Button1);
             this.guna2Panel4.Controls.Add(this.guna2TextBox2);
             this.guna2Panel4.Controls.Add(this.guna2Button52);
@@ -817,6 +819,23 @@
             this.guna2Panel4.Size = new System.Drawing.Size(1037, 66);
             this.guna2Panel4.TabIndex = 5;
             this.guna2Panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel4_Paint);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Image = global::sample.Properties.Resources.notification;
+            this.guna2Button2.Location = new System.Drawing.Point(981, 10);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(40, 40);
+            this.guna2Button2.TabIndex = 11;
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1
             // 
@@ -877,6 +896,7 @@
             this.guna2Button52.ShadowDecoration.Parent = this.guna2Button52;
             this.guna2Button52.Size = new System.Drawing.Size(41, 40);
             this.guna2Button52.TabIndex = 3;
+            this.guna2Button52.Click += new System.EventHandler(this.guna2Button52_Click);
             // 
             // guna2Button51
             // 
@@ -911,6 +931,7 @@
             this.panel3.TabIndex = 6;
             this.panel3.Visible = false;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
+            this.panel3.MouseHover += new System.EventHandler(this.panel3_MouseHover);
             // 
             // Dashboard
             // 
@@ -1016,6 +1037,7 @@
         private System.Windows.Forms.ToolStripMenuItem barcodePrintToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem companyBankAccountToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
 

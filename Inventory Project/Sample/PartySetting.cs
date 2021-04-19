@@ -67,15 +67,17 @@ namespace sample
                 {
                 chkCustomerEnablePayment.Checked = true;
             }
-
+            NumericUpDown.Value = notifyday;
+            panel2.Visible = false;
+            textBox1.Text = remindermessage;
 
         }
-
+        public string remindermessage;
         private void ToggleSwitch3_CheckedChanged(object sender, EventArgs e)
         {
 
         }
-        public int Partygroup, REMINDER,dayreminder;
+        public int Partygroup, REMINDER,dayreminder, notifyday;
         public void cheekpass1()
         {
             try
@@ -103,7 +105,8 @@ namespace sample
                     Partygroup = Convert.ToInt32(dr["Partygroup"]);
                     REMINDER= Convert.ToInt32(dr["REMINDER"]);
                     dayreminder = Convert.ToInt32(dr["dayreminder"]);
-
+                    notifyday = Convert.ToInt32(dr["notifyday"]);
+                    remindermessage = (dr["remindermessage"]).ToString();
                 }
                 dr.Close();
 
@@ -141,6 +144,44 @@ namespace sample
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set PrintShippingAddress = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd = new SqlCommand("update Setting_Table Set remindermessage ='" + textBox1.Text + "' where  Company_ID=" + NewCompany.company_id + " ", con);
+            cmd.ExecuteNonQuery();
+        }
+
+        private void NumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+           
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set notifyday ="+NumericUpDown.Value+" where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            
         }
 
         private void chkPartyGrouping_CheckedChanged(object sender, EventArgs e)

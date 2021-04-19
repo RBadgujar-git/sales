@@ -31,6 +31,7 @@ namespace sample
 
         public int NameMrp, batchno, Serealno, MFd, exd, size;
         public int hsnid, Cess, Category;
+        public int itemwisetax;
         public void chekpoint()
         {
             if (con.State == ConnectionState.Closed)
@@ -50,6 +51,8 @@ namespace sample
                 exd = Convert.ToInt32(dr["ExpDate"]);
                 size = Convert.ToInt32(dr["Size"]);
                 Category = Convert.ToInt32(dr["ItemCategory"]);
+                itemwisetax = Convert.ToInt32(dr["itemwisetax"]);
+
             }
             dr.Close();
 
@@ -130,6 +133,15 @@ namespace sample
             {
                 cmbCategry.Visible = true;
                 label6.Visible = true;
+            }
+
+            if (itemwisetax == 1)
+            {
+                cmbPurchasetax.Visible = false;
+                cmbSaleTax.Visible = false;
+                txtTaxAmountPurchase.Visible = false;
+                txtTaxAmountSale.Visible = false;
+
             }
         }
 
