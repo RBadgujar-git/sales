@@ -157,7 +157,7 @@ namespace sample
                 gst = float.Parse(txtTax1.Text.ToString());
 
                 sub_total = (qty + freeqty) * rate;
-                //txtsub_total.Text = sub_total.ToString();
+                guna2TextBox5.Text = sub_total.ToString();
 
                 dis_amt = sub_total * dis / 100;
                 txtDisAmt.Text = dis_amt.ToString();
@@ -270,7 +270,7 @@ namespace sample
                     else
                     {
 
-                        float TA = 0, TD = 0, TGST = 0;
+                        float TA = 0, TD = 0, TGST = 0, dis1 = 0, tax = 0, itotal = 0;
                         dgvInnerDebiteNote.Rows.Add();
                         row = dgvInnerDebiteNote.Rows.Count - 2;
                         dgvInnerDebiteNote.Rows[row].Cells["sr_no"].Value = row + 1;
@@ -287,6 +287,10 @@ namespace sample
                         string dis = txtDis.Text;
                         string dis_amt = txtDisAmt.Text;
                         string Total = txtItemTotal.Text;
+                        string caltotal = guna2TextBox5.Text;
+                        string cgst = guna2TextBox2.Text;
+                        string sgst = guna2TextBox3.Text;
+                        string igst = guna2TextBox4.Text;
 
                         dgvInnerDebiteNote.Rows[row].Cells[1].Value = txtItem;
                         dgvInnerDebiteNote.Rows[row].Cells[2].Value = Item_code;
@@ -299,11 +303,21 @@ namespace sample
                         dgvInnerDebiteNote.Rows[row].Cells[6].Value = dis;
                         dgvInnerDebiteNote.Rows[row].Cells[10].Value = dis_amt;
                         dgvInnerDebiteNote.Rows[row].Cells[11].Value = Total;
+                        dgvInnerDebiteNote.Rows[row].Cells[12].Value = cgst;
+                        dgvInnerDebiteNote.Rows[row].Cells[13].Value = sgst;
+                        dgvInnerDebiteNote.Rows[row].Cells[14].Value = igst;
+                        dgvInnerDebiteNote.Rows[row].Cells[15].Value = caltotal;
                         //           txtItemName.Focus();
                         clear_text_data();
                         txtItemName.Focus();
                         for (int i = 0; i < dgvInnerDebiteNote.Rows.Count; i++)
                         {
+                            dis1 += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                            textBox4.Text = dis1.ToString();
+                            tax += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                            textBox3.Text = tax.ToString();
+                            itotal += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value?.ToString());
+                            textBox6.Text = itotal.ToString();
                             TA += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value?.ToString());
                             //   // TD += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value?.ToString());
                             //   // TGST += float.Parse(dgvInnerDebiteNote.Rows[i].Cells["Tax_Amount"].Value?.ToString());
@@ -379,6 +393,9 @@ namespace sample
             dgvInnerDebiteNote.Rows.Clear();
             txtrefNo.Visible = false;
             cmbpartyname.Focus();
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
         }
 
         private void get_id()
@@ -507,6 +524,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Sale.Text);
+                cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
+                cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+
                 //cmd.Parameters.AddWithValue("@ItemCategory", comboBox1.Text);
                 if (cmbpartyname.Visible == true)
                 {
@@ -525,7 +546,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+               // MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -563,13 +584,18 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@CGST", dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SGST", dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@IGST", dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemTotal", dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value.ToString());
+
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
                 }
                 catch (Exception e1)
                 {
-                    //MessageBox.Show(e1.Message);
+                   // MessageBox.Show(e1.Message);
                 }
                 finally
                 {
@@ -714,6 +740,9 @@ namespace sample
                         comboBox3.Text = dr["ItemCategory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
                         txtIGST.Text = dr["IGST"].ToString();
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
                         id = dr["OrderNo"].ToString();
                     }
                 }
@@ -722,7 +751,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleOrderInner where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_SaleOrderInner where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
@@ -744,7 +773,10 @@ namespace sample
                         dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["freeQty"].Value = dr1["FreeQty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
-
+                        dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
 
                         i++;
                     }
@@ -1279,8 +1311,47 @@ namespace sample
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
            cal_ItemTotal();
+            gst_devide1();
         }
+        private void gst_devide1()
+        {
 
+            try
+            {
+
+                //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                //string State1 = cd.ExecuteScalar().ToString();
+                //con.Close();
+                //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (cmbStatesupply.SelectedItem == "Maharashtra")
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    guna2TextBox2.Text = sgst.ToString();
+                    guna2TextBox3.Text = cgst.ToString();
+                    guna2TextBox4.Text = 0.ToString();
+
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    guna2TextBox4.Text = gst.ToString();
+                    guna2TextBox2.Text = 0.ToString();
+                    guna2TextBox3.Text = 0.ToString();
+                }
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+
+        }
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             gst_devide();
@@ -1667,6 +1738,11 @@ namespace sample
             {
                 e.Handled = true;
             }
+        }
+
+        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
+        {
+            cal_ItemTotal();
         }
 
         private void chkRoundOff_CheckedChanged(object sender, EventArgs e)

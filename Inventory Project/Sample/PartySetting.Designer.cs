@@ -125,6 +125,7 @@
             this.chkPartyGrouping.UncheckedState.BorderRadius = 0;
             this.chkPartyGrouping.UncheckedState.BorderThickness = 0;
             this.chkPartyGrouping.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkPartyGrouping.CheckedChanged += new System.EventHandler(this.chkPartyGrouping_CheckedChanged);
             // 
             // chkPrintShipping
             // 
@@ -160,6 +161,7 @@
             this.chkCustomerEnablePayment.UncheckedState.BorderRadius = 0;
             this.chkCustomerEnablePayment.UncheckedState.BorderThickness = 0;
             this.chkCustomerEnablePayment.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkCustomerEnablePayment.CheckedChanged += new System.EventHandler(this.chkCustomerEnablePayment_CheckedChanged);
             // 
             // guna2Panel2
             // 

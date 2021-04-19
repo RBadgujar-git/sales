@@ -114,19 +114,19 @@ namespace sample
 
         private void txtSearch2_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName='"+lblBankAccount+"' and LendarBank like '%{0}%' and DeleteData='1'", txtSearch2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvLoanAccount.DataSource = ds;
-                dgvLoanAccount.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    string Query = string.Format("select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName='"+lblBankAccount+"' and LendarBank like '%{0}%' and DeleteData='1'", txtSearch2.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvLoanAccount.DataSource = ds;
+            //    dgvLoanAccount.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void dgvbankAccount_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -159,6 +159,33 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+            string Query = string.Format("(select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where BalAsOf between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvLoanAccount.DataSource = ds;
+            dgvLoanAccount.DataMember = "temp";
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("(select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvLoanAccount.DataSource = ds;
+                dgvLoanAccount.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }

@@ -831,7 +831,9 @@ namespace sample
             comboBox1.Text = "";
             guna2TextBox1.Text = "0";
             txtTax1.Text = "0";
-           
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
             guna2DataGridView2.Rows.Clear();
         }
         private void insertdata()
@@ -1007,6 +1009,9 @@ namespace sample
                         cmbbarcode.Text = dr["Barcode"].ToString();
                         txtTotal.Text = dr["Total"].ToString();
                         txtTaxAMount1.Text = dr["TaxAmount1"].ToString();
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
                         id = dr["BillNo"].ToString();
                        
                     }
@@ -1027,7 +1032,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseBillInner where BillNo='{0}' and  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_PurchaseBillInner where BillNo='{0}' and  Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 
                 dr.Close(); 
@@ -1052,7 +1057,10 @@ namespace sample
                         guna2DataGridView2.Rows[i].Cells["FreeQty1"].Value = dr1["freeQty"].ToString();
                         guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value = dr1["ItemAmount"].ToString();
                         guna2DataGridView2.Rows[i].Cells["ItemID11"].Value = dr1["ItemID"].ToString();
-                        
+                        guna2DataGridView2.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        guna2DataGridView2.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
                         i++;
                     }
                     dr1.Close();

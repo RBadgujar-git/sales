@@ -471,5 +471,11 @@ namespace sample
         {
 
         }
+
+        private void txtaccountname_Leave(object sender, EventArgs e)
+        {
+           
+
+        }
     }
 }

@@ -493,6 +493,9 @@ namespace sample
             dgvInnerDebiteNote.Rows.Clear();
             txtsubtotal.Text = "";
             txtrefNo.Text = "";
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
         }
         private void get_id()
         {
@@ -750,7 +753,9 @@ namespace sample
                       //  textBarcode.Text = dr["Barcode"].ToString();
                         txtIGST.Text = dr["IGST"].ToString();
                         txtsubtotal.Text = dr["Feild4"].ToString();
-
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
                         id = dr["OrderNo"].ToString();
 
                     }
@@ -759,7 +764,7 @@ namespace sample
               
                 dr.Close();
              
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_PurchaseOrderInner where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",id);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_PurchaseOrderInner where OrderNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",id);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows) {
@@ -778,6 +783,10 @@ namespace sample
                         dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
                         i++;
                     }
                  

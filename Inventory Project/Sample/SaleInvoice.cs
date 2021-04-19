@@ -864,11 +864,14 @@ namespace sample
                         comboBox2.Text = dr["ItemCategory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
                         TxtIGST.Text = dr["IGST"].ToString();
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
                         id = dr["InvoiceID"].ToString();
                     }
                 }
                 dr.Close();
-                string str1 = string.Format("SELECT ID,ItemID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_SaleInvoiceInner where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_SaleInvoiceInner where InvoiceID='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' ", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 //r.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -892,8 +895,12 @@ namespace sample
                         dgvInnerDebiteNote.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
                         dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
-                       
-                        
+                        dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+
+
+                        dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
 
 
                         i++;
@@ -923,7 +930,12 @@ namespace sample
             txtFreeQty.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["FreeQty"].Value.ToString();
             txtDis.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
             txtDisAmt.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
-            txtItemTotal.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();           
+            txtItemTotal.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString(); 
+            guna2TextBox2.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["CGST"].Value.ToString();
+
+            guna2TextBox3.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["SGST"].Value.ToString();
+            guna2TextBox4.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["IGST"].Value.ToString();
+            textBox5.Text = dgvInnerDebiteNote.Rows[e.RowIndex].Cells["CalTotal"].Value.ToString();
             int row = dgvInnerDebiteNote.CurrentCell.RowIndex;
             dgvInnerDebiteNote.Rows.RemoveAt(row);
         }

@@ -27,17 +27,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryChallan));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryChallan));
             this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnlinkPayment = new System.Windows.Forms.Button();
             this.txtadditional2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtrefNo = new Guna.UI2.WinForms.Guna2TextBox();
             this.chkRoundOff = new Guna.UI2.WinForms.Guna2CheckBox();
             this.txtBallaance = new Guna.UI2.WinForms.Guna2TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtRoundup = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtReceived = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
@@ -50,7 +49,6 @@
             this.txtTaxAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtsubtotal = new Guna.UI2.WinForms.Guna2TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
@@ -94,7 +92,6 @@
             this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvInnerDeliveryChallanNote = new Guna.UI2.WinForms.Guna2DataGridView();
             this.label20 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -142,9 +139,30 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnminimize = new System.Windows.Forms.Button();
             this.Delivery = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
+            this.btnminimize = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.guna2TextBox5 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.guna2TextBox4 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDeliveryChallanNote)).BeginInit();
             this.panel1.SuspendLayout();
@@ -272,22 +290,6 @@
             this.txtBallaance.Size = new System.Drawing.Size(95, 24);
             this.txtBallaance.TabIndex = 92;
             this.txtBallaance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBallaance_KeyPress);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(1026, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(25, 25);
-            this.button2.TabIndex = 345;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // txtRoundup
             // 
@@ -578,22 +580,6 @@
             this.txtsubtotal.Size = new System.Drawing.Size(95, 24);
             this.txtsubtotal.TabIndex = 546565;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(989, 1);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 34);
-            this.button4.TabIndex = 456;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // label26
             // 
             this.label26.AutoSize = true;
@@ -809,6 +795,14 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox5);
+            this.guna2ShadowPanel1.Controls.Add(this.label44);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox4);
+            this.guna2ShadowPanel1.Controls.Add(this.label43);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox3);
+            this.guna2ShadowPanel1.Controls.Add(this.label42);
+            this.guna2ShadowPanel1.Controls.Add(this.guna2TextBox2);
+            this.guna2ShadowPanel1.Controls.Add(this.label41);
             this.guna2ShadowPanel1.Controls.Add(this.txtItemName);
             this.guna2ShadowPanel1.Controls.Add(this.txtItemTotal);
             this.guna2ShadowPanel1.Controls.Add(this.label34);
@@ -845,7 +839,7 @@
             this.txtItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtItemName.FormattingEnabled = true;
-            this.txtItemName.Location = new System.Drawing.Point(10, 49);
+            this.txtItemName.Location = new System.Drawing.Point(3, 50);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(95, 22);
             this.txtItemName.TabIndex = 1;
@@ -868,7 +862,7 @@
             this.txtItemTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemTotal.HoverState.Parent = this.txtItemTotal;
-            this.txtItemTotal.Location = new System.Drawing.Point(973, 47);
+            this.txtItemTotal.Location = new System.Drawing.Point(985, 44);
             this.txtItemTotal.Name = "txtItemTotal";
             this.txtItemTotal.PasswordChar = '\0';
             this.txtItemTotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -885,7 +879,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(979, 24);
+            this.label34.Location = new System.Drawing.Point(997, 21);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(46, 14);
             this.label34.TabIndex = 98;
@@ -907,7 +901,7 @@
             this.txtDisAmt.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDisAmt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDisAmt.HoverState.Parent = this.txtDisAmt;
-            this.txtDisAmt.Location = new System.Drawing.Point(783, 47);
+            this.txtDisAmt.Location = new System.Drawing.Point(824, 44);
             this.txtDisAmt.Name = "txtDisAmt";
             this.txtDisAmt.PasswordChar = '\0';
             this.txtDisAmt.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -916,7 +910,7 @@
             this.txtDisAmt.SelectedText = "";
             this.txtDisAmt.SelectionStart = 1;
             this.txtDisAmt.ShadowDecoration.Parent = this.txtDisAmt;
-            this.txtDisAmt.Size = new System.Drawing.Size(90, 28);
+            this.txtDisAmt.Size = new System.Drawing.Size(74, 28);
             this.txtDisAmt.TabIndex = 9;
             this.txtDisAmt.TextChanged += new System.EventHandler(this.txtDisAmt_TextChanged);
             this.txtDisAmt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDisAmt_KeyPress);
@@ -937,7 +931,7 @@
             this.txtDis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDis.HoverState.Parent = this.txtDis;
-            this.txtDis.Location = new System.Drawing.Point(404, 46);
+            this.txtDis.Location = new System.Drawing.Point(336, 44);
             this.txtDis.Name = "txtDis";
             this.txtDis.PasswordChar = '\0';
             this.txtDis.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -945,7 +939,7 @@
             this.txtDis.SelectedText = "";
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
-            this.txtDis.Size = new System.Drawing.Size(90, 28);
+            this.txtDis.Size = new System.Drawing.Size(73, 28);
             this.txtDis.TabIndex = 5;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
@@ -953,7 +947,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(411, 22);
+            this.label32.Location = new System.Drawing.Point(333, 21);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(66, 14);
             this.label32.TabIndex = 94;
@@ -962,7 +956,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(784, 22);
+            this.label33.Location = new System.Drawing.Point(816, 21);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(87, 14);
             this.label33.TabIndex = 96;
@@ -984,7 +978,7 @@
             this.txtTaxAMount1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTaxAMount1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxAMount1.HoverState.Parent = this.txtTaxAMount1;
-            this.txtTaxAMount1.Location = new System.Drawing.Point(878, 47);
+            this.txtTaxAMount1.Location = new System.Drawing.Point(904, 44);
             this.txtTaxAMount1.Name = "txtTaxAMount1";
             this.txtTaxAMount1.PasswordChar = '\0';
             this.txtTaxAMount1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -993,14 +987,14 @@
             this.txtTaxAMount1.SelectedText = "";
             this.txtTaxAMount1.SelectionStart = 1;
             this.txtTaxAMount1.ShadowDecoration.Parent = this.txtTaxAMount1;
-            this.txtTaxAMount1.Size = new System.Drawing.Size(90, 28);
+            this.txtTaxAMount1.Size = new System.Drawing.Size(75, 28);
             this.txtTaxAMount1.TabIndex = 10;
             this.txtTaxAMount1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaxAMount1_KeyPress);
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(881, 23);
+            this.label31.Location = new System.Drawing.Point(901, 21);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(85, 14);
             this.label31.TabIndex = 92;
@@ -1022,7 +1016,7 @@
             this.txtTax1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTax1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax1.HoverState.Parent = this.txtTax1;
-            this.txtTax1.Location = new System.Drawing.Point(498, 46);
+            this.txtTax1.Location = new System.Drawing.Point(415, 44);
             this.txtTax1.Name = "txtTax1";
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1030,7 +1024,7 @@
             this.txtTax1.SelectedText = "";
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
-            this.txtTax1.Size = new System.Drawing.Size(90, 28);
+            this.txtTax1.Size = new System.Drawing.Size(42, 28);
             this.txtTax1.TabIndex = 6;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
@@ -1038,7 +1032,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(505, 24);
+            this.label30.Location = new System.Drawing.Point(412, 21);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 14);
             this.label30.TabIndex = 90;
@@ -1060,14 +1054,14 @@
             this.txtMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMRP.HoverState.Parent = this.txtMRP;
-            this.txtMRP.Location = new System.Drawing.Point(309, 46);
+            this.txtMRP.Location = new System.Drawing.Point(269, 44);
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.PasswordChar = '\0';
             this.txtMRP.PlaceholderText = "";
             this.txtMRP.SelectedText = "";
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
-            this.txtMRP.Size = new System.Drawing.Size(90, 28);
+            this.txtMRP.Size = new System.Drawing.Size(61, 28);
             this.txtMRP.TabIndex = 4;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
@@ -1075,7 +1069,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(318, 23);
+            this.label29.Location = new System.Drawing.Point(269, 21);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(42, 14);
             this.label29.TabIndex = 88;
@@ -1097,20 +1091,20 @@
             this.txtUnit.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtUnit.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtUnit.HoverState.Parent = this.txtUnit;
-            this.txtUnit.Location = new System.Drawing.Point(215, 45);
+            this.txtUnit.Location = new System.Drawing.Point(187, 44);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.PasswordChar = '\0';
             this.txtUnit.PlaceholderText = "";
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
-            this.txtUnit.Size = new System.Drawing.Size(90, 28);
+            this.txtUnit.Size = new System.Drawing.Size(76, 28);
             this.txtUnit.TabIndex = 3;
             this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(222, 22);
+            this.label28.Location = new System.Drawing.Point(191, 21);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -1132,7 +1126,7 @@
             this.txtFreeQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFreeQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFreeQty.HoverState.Parent = this.txtFreeQty;
-            this.txtFreeQty.Location = new System.Drawing.Point(688, 47);
+            this.txtFreeQty.Location = new System.Drawing.Point(750, 44);
             this.txtFreeQty.Name = "txtFreeQty";
             this.txtFreeQty.PasswordChar = '\0';
             this.txtFreeQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1140,7 +1134,7 @@
             this.txtFreeQty.SelectedText = "";
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
-            this.txtFreeQty.Size = new System.Drawing.Size(90, 28);
+            this.txtFreeQty.Size = new System.Drawing.Size(68, 28);
             this.txtFreeQty.TabIndex = 8;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
@@ -1148,7 +1142,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(693, 23);
+            this.label27.Location = new System.Drawing.Point(747, 21);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(70, 14);
             this.label27.TabIndex = 84;
@@ -1170,19 +1164,19 @@
             this.txtItemCode.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtItemCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemCode.HoverState.Parent = this.txtItemCode;
-            this.txtItemCode.Location = new System.Drawing.Point(118, 44);
+            this.txtItemCode.Location = new System.Drawing.Point(104, 44);
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.PasswordChar = '\0';
             this.txtItemCode.PlaceholderText = "";
             this.txtItemCode.SelectedText = "";
             this.txtItemCode.ShadowDecoration.Parent = this.txtItemCode;
-            this.txtItemCode.Size = new System.Drawing.Size(90, 28);
+            this.txtItemCode.Size = new System.Drawing.Size(77, 28);
             this.txtItemCode.TabIndex = 2;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(124, 20);
+            this.label21.Location = new System.Drawing.Point(103, 21);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(82, 14);
             this.label21.TabIndex = 80;
@@ -1213,7 +1207,7 @@
             this.txtOty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(593, 46);
+            this.txtOty.Location = new System.Drawing.Point(699, 44);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1221,7 +1215,7 @@
             this.txtOty.SelectedText = "";
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
-            this.txtOty.Size = new System.Drawing.Size(90, 28);
+            this.txtOty.Size = new System.Drawing.Size(47, 28);
             this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
@@ -1229,7 +1223,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(600, 23);
+            this.label23.Location = new System.Drawing.Point(703, 21);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(38, 14);
             this.label23.TabIndex = 82;
@@ -1271,7 +1265,11 @@
             this.FreeQty,
             this.Tax_Amount,
             this.Discount_Amount,
-            this.Amount});
+            this.Amount,
+            this.CGST,
+            this.SGST,
+            this.IGST,
+            this.CalTotal});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1323,31 +1321,21 @@
             this.label20.TabIndex = 41;
             this.label20.Text = "Challan No :";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(1057, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(26, 27);
-            this.button3.TabIndex = 256;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label48);
             this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.label47);
             this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.label46);
             this.panel1.Controls.Add(this.cmbtax);
+            this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.TxtIGST);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textBox1);
@@ -2026,22 +2014,6 @@
             this.panel3.Size = new System.Drawing.Size(1094, 38);
             this.panel3.TabIndex = 0;
             // 
-            // btnminimize
-            // 
-            this.btnminimize.BackColor = System.Drawing.Color.White;
-            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
-            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnminimize.FlatAppearance.BorderSize = 0;
-            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(957, 3);
-            this.btnminimize.Name = "btnminimize";
-            this.btnminimize.Size = new System.Drawing.Size(26, 27);
-            this.btnminimize.TabIndex = 791;
-            this.btnminimize.UseVisualStyleBackColor = false;
-            this.btnminimize.Visible = false;
-            // 
             // Delivery
             // 
             this.Delivery.Location = new System.Drawing.Point(113, 9);
@@ -2061,6 +2033,286 @@
             this.label39.TabIndex = 74;
             this.label39.Text = "Delivery challan :";
             this.label39.Visible = false;
+            // 
+            // btnminimize
+            // 
+            this.btnminimize.BackColor = System.Drawing.Color.White;
+            this.btnminimize.BackgroundImage = global::sample.Properties.Resources.MinimizeNew;
+            this.btnminimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnminimize.FlatAppearance.BorderSize = 0;
+            this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnminimize.Location = new System.Drawing.Point(957, 3);
+            this.btnminimize.Name = "btnminimize";
+            this.btnminimize.Size = new System.Drawing.Size(26, 27);
+            this.btnminimize.TabIndex = 791;
+            this.btnminimize.UseVisualStyleBackColor = false;
+            this.btnminimize.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.White;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Location = new System.Drawing.Point(989, 1);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(31, 34);
+            this.button4.TabIndex = 456;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(1026, 5);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(25, 25);
+            this.button2.TabIndex = 345;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button3.Location = new System.Drawing.Point(1057, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(26, 27);
+            this.button3.TabIndex = 256;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // guna2TextBox5
+            // 
+            this.guna2TextBox5.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox5.DefaultText = "0";
+            this.guna2TextBox5.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox5.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox5.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.DisabledState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox5.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.FocusedState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Location = new System.Drawing.Point(643, 44);
+            this.guna2TextBox5.Name = "guna2TextBox5";
+            this.guna2TextBox5.PasswordChar = '\0';
+            this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox5.PlaceholderText = "";
+            this.guna2TextBox5.SelectedText = "";
+            this.guna2TextBox5.SelectionStart = 1;
+            this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
+            this.guna2TextBox5.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox5.TabIndex = 124;
+            this.guna2TextBox5.TextChanged += new System.EventHandler(this.guna2TextBox5_TextChanged);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(632, 21);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(73, 14);
+            this.label44.TabIndex = 125;
+            this.label44.Text = "Item Amt :";
+            // 
+            // guna2TextBox4
+            // 
+            this.guna2TextBox4.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox4.DefaultText = "0";
+            this.guna2TextBox4.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.DisabledState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Location = new System.Drawing.Point(584, 44);
+            this.guna2TextBox4.Name = "guna2TextBox4";
+            this.guna2TextBox4.PasswordChar = '\0';
+            this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox4.PlaceholderText = "";
+            this.guna2TextBox4.SelectedText = "";
+            this.guna2TextBox4.SelectionStart = 1;
+            this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
+            this.guna2TextBox4.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox4.TabIndex = 122;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(581, 21);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(45, 14);
+            this.label43.TabIndex = 123;
+            this.label43.Text = "IGST :";
+            // 
+            // guna2TextBox3
+            // 
+            this.guna2TextBox3.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox3.DefaultText = "0";
+            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Location = new System.Drawing.Point(524, 45);
+            this.guna2TextBox3.Name = "guna2TextBox3";
+            this.guna2TextBox3.PasswordChar = '\0';
+            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox3.PlaceholderText = "";
+            this.guna2TextBox3.SelectedText = "";
+            this.guna2TextBox3.SelectionStart = 1;
+            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
+            this.guna2TextBox3.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox3.TabIndex = 120;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(527, 20);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(48, 14);
+            this.label42.TabIndex = 121;
+            this.label42.Text = "SGST :";
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gray;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "0";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Location = new System.Drawing.Point(464, 45);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.SelectionStart = 1;
+            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
+            this.guna2TextBox2.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox2.TabIndex = 118;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(461, 21);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(49, 14);
+            this.label41.TabIndex = 119;
+            this.label41.Text = "CGST :";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(606, 409);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(87, 16);
+            this.label48.TabIndex = 274485;
+            this.label48.Text = "Item Total :";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(550, 409);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(38, 16);
+            this.label47.TabIndex = 274484;
+            this.label47.Text = "Dis :";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(493, 409);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(41, 16);
+            this.label46.TabIndex = 274482;
+            this.label46.Text = "Tax :";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(609, 434);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(53, 23);
+            this.textBox6.TabIndex = 274483;
+            this.textBox6.Text = "0";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(551, 434);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(53, 23);
+            this.textBox4.TabIndex = 274481;
+            this.textBox4.Text = "0";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(492, 434);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(53, 23);
+            this.textBox3.TabIndex = 274480;
+            this.textBox3.Text = "0";
+            // 
+            // CGST
+            // 
+            this.CGST.HeaderText = "Item CGST";
+            this.CGST.Name = "CGST";
+            // 
+            // SGST
+            // 
+            this.SGST.HeaderText = "Item SGST";
+            this.SGST.Name = "SGST";
+            // 
+            // IGST
+            // 
+            this.IGST.HeaderText = "Item IGST";
+            this.IGST.Name = "IGST";
+            // 
+            // CalTotal
+            // 
+            this.CalTotal.HeaderText = "Item Amount";
+            this.CalTotal.Name = "CalTotal";
             // 
             // DeliveryChallan
             // 
@@ -2202,5 +2454,23 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox5;
+        private System.Windows.Forms.Label label44;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private System.Windows.Forms.Label label43;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private System.Windows.Forms.Label label42;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CGST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SGST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IGST;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CalTotal;
     }
 }

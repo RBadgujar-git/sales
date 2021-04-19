@@ -40,7 +40,7 @@ namespace sample
         {
             this.Visible = false;
         }
-        public int password, gstint, Enablelunch, Estiment,Purchess ,dilivary,Autobackup;
+        public int password, gstint, Enablelunch, Estiment,Purchess ,dilivary,Autobackup,otherincome;
         public int loadvariable=0;
 
         public void cheekpass()
@@ -68,6 +68,9 @@ namespace sample
                     Purchess= Convert.ToInt32(dr["Sale_purches"]);
                     dilivary= Convert.ToInt32(dr["Delliverychallen"]);
                     Autobackup= Convert.ToInt32(dr["Autobackup"]);
+                    otherincome = Convert.ToInt32(dr["OtheIncome"]);
+
+
                 }
                 dr.Close();
 
@@ -187,7 +190,10 @@ namespace sample
                 chkAutoBackup.Checked = true;
                 //panel1.Show();
             }
-
+            if(otherincome==1)
+            {
+                chkOtherincome.Checked = true;
+            }
             guna2Button1.Hide();
             fetchcustomername();
 
@@ -242,6 +248,10 @@ namespace sample
         }
         private void chkSaleOrder_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkSaleOrder.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set Sale_purches = '1' where  Company_ID=" + NewCompany.company_id + "", con);
@@ -256,6 +266,10 @@ namespace sample
 
         private void chkOtherincome_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkOtherincome.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set OtheIncome = '1' where  Company_ID=" + NewCompany.company_id + "", con);
@@ -439,7 +453,10 @@ namespace sample
         }
         private void chkDeliveryChalln_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkDeliveryChalln.Checked == true)
             {
                 panel1.Show();
@@ -465,6 +482,10 @@ namespace sample
 
         private void chkEstimate_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkEstimate.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set Estiment = '1' where   Company_ID=" + NewCompany.company_id + "", con);
@@ -495,6 +516,10 @@ namespace sample
 
         private void ChkGSTin_CheckedChanged(object sender, EventArgs e)
         {
+            if(con.State==ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (ChkGSTin.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set Gst_In = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
