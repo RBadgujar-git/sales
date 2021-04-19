@@ -226,8 +226,47 @@ namespace sample
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+            gst_devide1();
         }
+        private void gst_devide1()
+        {
 
+            try
+            {
+
+                //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                //string State1 = cd.ExecuteScalar().ToString();
+                //con.Close();
+                //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+
+                if (cmbStatesupply.SelectedItem == "Maharashtra")
+                {
+
+                    float gst = 0, cgst = 0, sgst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    cgst = gst / 2;
+                    sgst = gst / 2;
+                    guna2TextBox2.Text = sgst.ToString();
+                    guna2TextBox3.Text = cgst.ToString();
+                    guna2TextBox4.Text = 0.ToString();
+
+                }
+                else
+                {
+                    float gst = 0;
+                    gst = float.Parse(txtTax1.Text);
+                    guna2TextBox4.Text = gst.ToString();
+                    guna2TextBox2.Text = 0.ToString();
+                    guna2TextBox3.Text = 0.ToString();
+                }
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+
+        }
         private void txtOty_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
@@ -398,6 +437,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
+                cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
+                cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
 
 
                 //if (cmbpartyname.Visible == true)
@@ -418,7 +460,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                //MessageBox.Show(e1.Message);
+                MessageBox.Show(e1.Message);
             }
             finally
             {
@@ -451,6 +493,11 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerQuotation.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerQuotation.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerQuotation.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@CGST", dgvInnerQuotation.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@SGST", dgvInnerQuotation.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@IGST", dgvInnerQuotation.Rows[i].Cells["IGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@CalTotal", dgvInnerQuotation.Rows[i].Cells["CalTotal"].Value.ToString());
+
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
                 }
@@ -809,6 +856,10 @@ namespace sample
                         Quatation.Text = dr["TableName"].ToString();
                         comboBox2.Text = dr["Itemcatgory"].ToString();
                         textBox1.Text = dr["Barcode"].ToString();
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
+
                         id = dr["RefNo"].ToString();
                         //if (ds.Tables[0].Rows.Count > 0) {
                         //    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["Image"]);
@@ -823,7 +874,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT RefNo,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_QuotationInner where RefNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT RefNo,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_QuotationInner where RefNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
@@ -844,6 +895,11 @@ namespace sample
                         dgvInnerQuotation.Rows[i].Cells["Discount"].Value = dr1["Discount"].ToString();
                         dgvInnerQuotation.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();
                         dgvInnerQuotation.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
+                        dgvInnerQuotation.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+                        dgvInnerQuotation.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        dgvInnerQuotation.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        dgvInnerQuotation.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
+
                         i++;
                     }
                     dr1.Close();
