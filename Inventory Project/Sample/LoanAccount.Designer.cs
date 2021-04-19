@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanAccount));
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
@@ -72,7 +72,7 @@
             this.txtLenderBank = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbAccount = new System.Windows.Forms.ComboBox();
+            this.cmbAccount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescription)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -146,30 +146,30 @@
             // 
             // dgvDescription
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvDescription.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvDescription.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvDescription.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDescription.BackgroundColor = System.Drawing.Color.White;
             this.dgvDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDescription.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDescription.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDescription.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDescription.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDescription.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDescription.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDescription.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDescription.EnableHeadersVisualStyles = false;
             this.dgvDescription.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgvDescription.Location = new System.Drawing.Point(3, 332);
@@ -202,6 +202,7 @@
             this.dgvDescription.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvDescription.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDescription_CellContentClick);
             this.dgvDescription.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDescription_CellDoubleClick);
+            this.dgvDescription.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dgvDescription_RowPrePaint);
             // 
             // guna2Panel1
             // 
@@ -264,6 +265,7 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.cmbAccount);
             this.guna2Panel2.Controls.Add(this.button1);
             this.guna2Panel2.Controls.Add(this.textBox2);
             this.guna2Panel2.Controls.Add(this.txtcompanyname);
@@ -271,7 +273,6 @@
             this.guna2Panel2.Controls.Add(this.label16);
             this.guna2Panel2.Controls.Add(this.txtTotal);
             this.guna2Panel2.Controls.Add(this.label12);
-            this.guna2Panel2.Controls.Add(this.cmbAccount);
             this.guna2Panel2.Controls.Add(this.btnclear);
             this.guna2Panel2.Controls.Add(this.btnupdate);
             this.guna2Panel2.Controls.Add(this.btndelete);
@@ -387,6 +388,8 @@
             this.txtLoanAmount.ShadowDecoration.Parent = this.txtLoanAmount;
             this.txtLoanAmount.Size = new System.Drawing.Size(200, 25);
             this.txtLoanAmount.TabIndex = 4;
+            this.txtLoanAmount.TextChanged += new System.EventHandler(this.txtLoanAmount_TextChanged);
+            this.txtLoanAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLoanAmount_KeyPress);
             // 
             // label16
             // 
@@ -672,11 +675,10 @@
             this.txtCurrentBal.Name = "txtCurrentBal";
             this.txtCurrentBal.PasswordChar = '\0';
             this.txtCurrentBal.PlaceholderText = "";
-            this.txtCurrentBal.ReadOnly = true;
             this.txtCurrentBal.SelectedText = "";
             this.txtCurrentBal.ShadowDecoration.Parent = this.txtCurrentBal;
             this.txtCurrentBal.Size = new System.Drawing.Size(200, 25);
-            this.txtCurrentBal.TabIndex = 11;
+            this.txtCurrentBal.TabIndex = 9;
             this.txtCurrentBal.TextChanged += new System.EventHandler(this.txtCurrentBal_TextChanged);
             this.txtCurrentBal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCurrentBal_KeyPress);
             // 
@@ -773,23 +775,19 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 50);
+            this.label4.Location = new System.Drawing.Point(42, 50);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 16);
+            this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Bank Name :";
+            this.label4.Text = "Account Name :";
             // 
             // cmbAccount
             // 
-            this.cmbAccount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmbAccount.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbAccount.FormattingEnabled = true;
-            this.cmbAccount.Location = new System.Drawing.Point(160, 45);
+            this.cmbAccount.Location = new System.Drawing.Point(160, 46);
             this.cmbAccount.Name = "cmbAccount";
-            this.cmbAccount.Size = new System.Drawing.Size(200, 24);
+            this.cmbAccount.Size = new System.Drawing.Size(200, 23);
             this.cmbAccount.TabIndex = 1;
-            this.cmbAccount.SelectedIndexChanged += new System.EventHandler(this.cmbAccount_SelectedIndexChanged);
-            this.cmbAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbAccount_KeyPress);
+            this.cmbAccount.TextChanged += new System.EventHandler(this.cmbAccount_TextChanged);
             // 
             // LoanAccount
             // 
@@ -853,7 +851,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtcompanyname;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cmbAccount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox cmbAccount;
     }
 }

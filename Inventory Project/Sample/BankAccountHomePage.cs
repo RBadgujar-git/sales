@@ -104,7 +104,7 @@ namespace sample
             dgvBankAccount.DataSource = dt;
         }
         private void btnCancel_Click(object sender, EventArgs e)
-        {
+       {
             this.Visible = false;
         }
 
@@ -136,7 +136,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select AccountNo,AccountName,BankName,Date,OpeningBal from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AccountName like '%{0}%'", txtSearch1.Text);
+                string Query = string.Format("select AccountName,OpeningBal from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and AccountName like '%{0}%'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -152,19 +152,7 @@ namespace sample
 
         private void txtSearch2_TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch2.Text == "")
-            {
-                fetchdetails();
-            }
-            else
-            {
-                string Query = string.Format("select AccountNo,AccountName,BankName,Date,OpeningBal from tbl_BankAccount where Company_ID='" + NewCompany.company_id + "' and DeleteData ='1' and AccountName like '%{0}%'", txtSearch2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvBankAcc.DataSource = ds;
-                dgvBankAcc.DataMember = "temp";
-            }
+            
         }
 
         private void dgvBankAcc_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -185,6 +173,34 @@ namespace sample
         private void btnminimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+            string Query = string.Format("(select AccountNo,BankName,Date,OpeningBal from tbl_BankAccount  where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvBankAcc.DataSource = ds;
+            dgvBankAcc.DataMember = "temp";
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                string SelectQuery = string.Format("(select AccountNo,BankName,Date,OpeningBal from tbl_BankAccount  where AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvBankAcc.DataSource = ds;
+                dgvBankAcc.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }
