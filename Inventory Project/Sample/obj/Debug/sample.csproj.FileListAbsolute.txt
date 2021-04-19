@@ -1905,21 +1905,17 @@ C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
@@ -2306,8 +2302,8 @@ C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\s
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
-C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
-C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
-C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
-C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
-C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
