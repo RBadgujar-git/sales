@@ -196,7 +196,7 @@ namespace sample
                 gst = float.Parse(txtTax1.Text.ToString());
 
                 sub_total = (qty + freeqty) * rate;
-                //txtsub_total.Text = sub_total.ToString();
+                guna2TextBox5.Text = sub_total.ToString();
 
                 dis_amt = sub_total * dis / 100;
                 txtDisAmt.Text = dis_amt.ToString();
@@ -514,7 +514,7 @@ namespace sample
                 insertitem();
                 if (e.KeyCode == Keys.Enter)
                 {
-                    float TA = 0, TD = 0, TGST = 0;
+                    float TA = 0, TD = 0, TGST = 0, dis1 = 0, tax = 0, itotal = 0;
                     dgvInnerQuotation.Rows.Add();
                     row = dgvInnerQuotation.Rows.Count - 1;
                     dgvInnerQuotation.Rows[row].Cells["sr_no"].Value = row + 1;
@@ -533,6 +533,10 @@ namespace sample
                     string dis = txtDis.Text;
                     string dis_amt = txtDisAmt.Text;
                     string Total = txtItemTotal.Text;
+                    string caltotal = guna2TextBox5.Text;
+                    string cgst = guna2TextBox2.Text;
+                    string sgst = guna2TextBox3.Text;
+                    string igst = guna2TextBox4.Text;
 
                     dgvInnerQuotation.Rows[row].Cells[1].Value = txtItem;
                     dgvInnerQuotation.Rows[row].Cells[2].Value = Item_code;
@@ -546,11 +550,21 @@ namespace sample
                     dgvInnerQuotation.Rows[row].Cells[6].Value = dis;
                     dgvInnerQuotation.Rows[row].Cells[10].Value = dis_amt;
                     dgvInnerQuotation.Rows[row].Cells[11].Value = Total;
+                    dgvInnerQuotation.Rows[row].Cells[12].Value = cgst;
+                    dgvInnerQuotation.Rows[row].Cells[13].Value = sgst;
+                    dgvInnerQuotation.Rows[row].Cells[14].Value = igst;
+                    dgvInnerQuotation.Rows[row].Cells[15].Value = caltotal;
 
                     txtItemName.Focus();
                    // int count=Convert.ToInt32(dgvInnerQuotation.RowCount.ToString())-1;
                     for (int i = 0; i < dgvInnerQuotation.RowCount; i++)
                     {
+                        dis1 += float.Parse(dgvInnerQuotation.Rows[i].Cells["Discount_Amount"].Value?.ToString());
+                        textBox4.Text = dis1.ToString();
+                        tax += float.Parse(dgvInnerQuotation.Rows[i].Cells["Tax_Amount"].Value?.ToString());
+                        textBox3.Text = tax.ToString();
+                        itotal += float.Parse(dgvInnerQuotation.Rows[i].Cells["CalTotal"].Value?.ToString());
+                        textBox6.Text = itotal.ToString();
                         TA += float.Parse(dgvInnerQuotation.Rows[i].Cells["Amount"].Value?.ToString());
 
                         txtsubtotal.Text = TA.ToString();
@@ -611,6 +625,9 @@ namespace sample
             comboBox2.Text = "0";
             txtTaxAmount.Text = "0";
             dgvInnerQuotation.Rows.Clear();
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
         }
 
         private void update_record_inner(string id)
@@ -1571,6 +1588,11 @@ namespace sample
         private void ComboBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void guna2TextBox5_TextChanged(object sender, EventArgs e)
+        {
+            cal_ItemTotal();
         }
     }
     

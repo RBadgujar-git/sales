@@ -595,9 +595,12 @@ namespace sample
                         txtadditional2.Text = dr["Feild3"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
                         Delivery.Text=dr["TableName"].ToString();
-                     //   comboBox2.Text= dr["ItemCategory"].ToString();
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
+                        //   comboBox2.Text= dr["ItemCategory"].ToString();
                         //textBox1.Text = dr["Barcode"].ToString();
-                       
+
                         // lblsgst.Text = dr["ContactNo"].ToString();
 
                         id = dr["ChallanNo"].ToString();
@@ -619,7 +622,7 @@ namespace sample
                 //,TaxForSale ,SaleTaxAmount ,Qty,freeQty ,BatchNo,SerialNo,MFgdate,Expdate,Size,Discount,DiscountAmount,ItemAmount
 
 
-                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_DeliveryChallanInner where ChallanNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_DeliveryChallanInner where ChallanNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr1 = cmd1.ExecuteReader();
                 if (dr1.HasRows)
@@ -640,7 +643,10 @@ namespace sample
                         dgvInnerDeliveryChallanNote.Rows[i].Cells["Qty"].Value = dr1["Qty"].ToString();
                         dgvInnerDeliveryChallanNote.Rows[i].Cells["FreeQty"].Value = dr1["freeQty"].ToString();
                         dgvInnerDeliveryChallanNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
-
+                        dgvInnerDeliveryChallanNote.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+                        dgvInnerDeliveryChallanNote.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        dgvInnerDeliveryChallanNote.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        dgvInnerDeliveryChallanNote.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
                         i++;
                     }
                     dr1.Close();
@@ -785,6 +791,9 @@ namespace sample
             cmbpartyname.Focus();
             txtrefNo.Visible = false;
             cmbtax.Text = "";
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
         }
         private void update_record_inner(string id)
         {

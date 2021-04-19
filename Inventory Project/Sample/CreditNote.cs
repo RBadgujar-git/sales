@@ -448,7 +448,9 @@ namespace sample
             Credit.Text = "";
             ComboBox.Text = "";
             textBox1.Text = "";
-           
+            textBox3.Text = "0";
+            textBox4.Text = "0";
+            textBox6.Text = "0";
             cmbCategory.Text = "";
             dgvInnerCreditNote.Rows.Clear();
             txtrefNo.Visible = false; ;
@@ -503,14 +505,18 @@ namespace sample
                         txtadditional2.Text = dr["Feild3"].ToString();
                         Credit.Text = dr["TableName"].ToString();
                         ComboBox.Text = dr["Status"].ToString();
-                      //  comboBox3.Text = dr["ItemCategory"].ToString();
-                    //    textBox1.Text = dr["Barcode"].ToString();                                           
+                        textBox6.Text = dr["CalTotal"].ToString();
+                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox4.Text = dr["Discount"].ToString();
+
+                        //  comboBox3.Text = dr["ItemCategory"].ToString();
+                        //    textBox1.Text = dr["Barcode"].ToString();                                           
                         id = dr["ReturnNo"].ToString();
                     }
                 }
                 dr.Close();
                 
-                string str1 = string.Format("SELECT ItemID,ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount FROM tbl_CreditNoteInner where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
+                string str1 = string.Format("SELECT ItemID,ID,ItemName,ItemCode,BasicUnit,SalePrice,TaxForSale,SaleTaxAmount,Qty,freeQty,Discount,DiscountAmount,ItemAmount,CGST,SGST,IGST,CalTotal FROM tbl_CreditNoteInner where ReturnNo='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtReturnNo.Text);
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                // dr.Close();
                 SqlDataReader dr1 = cmd1.ExecuteReader();
@@ -533,6 +539,10 @@ namespace sample
                         dgvInnerCreditNote.Rows[i].Cells["Discount_Amount"].Value = dr1["DiscountAmount"].ToString();                      
                         dgvInnerCreditNote.Rows[i].Cells["Amount"].Value = dr1["ItemAmount"].ToString();
                         dgvInnerCreditNote.Rows[i].Cells["IdItem"].Value = dr1["ItemID"].ToString();
+                        dgvInnerCreditNote.Rows[i].Cells["CGST"].Value = dr1["CGST"].ToString();
+                        dgvInnerCreditNote.Rows[i].Cells["SGST"].Value = dr1["SGST"].ToString();
+                        dgvInnerCreditNote.Rows[i].Cells["IGST"].Value = dr1["IGST"].ToString();
+                        dgvInnerCreditNote.Rows[i].Cells["CalTotal"].Value = dr1["CalTotal"].ToString();
 
                         i++;
                     }
@@ -1669,6 +1679,11 @@ namespace sample
             txtDis.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["Discount"].Value.ToString();
             txtDisAmount.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["Discount_Amount"].Value.ToString();
             txtItemTotal.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["Amount"].Value.ToString();
+            guna2TextBox2.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["CGST"].Value.ToString();
+            guna2TextBox3.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["SGST"].Value.ToString();
+            guna2TextBox4.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["IGST"].Value.ToString();
+            guna2TextBox5.Text = dgvInnerCreditNote.Rows[e.RowIndex].Cells["CalTotal"].Value.ToString();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1912,6 +1927,16 @@ namespace sample
         private void guna2TextBox5_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvInnerCreditNote_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

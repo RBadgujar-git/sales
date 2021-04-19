@@ -2307,3 +2307,4 @@ C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR1
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
