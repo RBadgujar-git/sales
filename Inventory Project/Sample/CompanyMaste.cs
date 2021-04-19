@@ -229,7 +229,7 @@ namespace sample
             SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values("+id+")", con);
             cmd.ExecuteNonQuery();
 
-            SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSeeting(Company_ID)values(" + id + ")", con);
+            SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSetting(Company_ID)values(" + id + ")", con);
             cmd1.ExecuteNonQuery();
 
         }
@@ -727,7 +727,7 @@ namespace sample
 
         private void txtcampanyName_TextChanged(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -821,26 +821,33 @@ namespace sample
 
         private void btnsave_Leave(object sender, EventArgs e)
         {
-            //string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
-            //DataSet ds = new DataSet();
-            //SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            //SDA.Fill(ds, "Temp");
-            //DataTable DT = new DataTable();
-            //SDA.Fill(ds);
-            //for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-            //{
+           
+            
+        }
 
-            //    string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+        private void txtcampanyName_Leave(object sender, EventArgs e)
+        {
+            
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string Query = String.Format("select CompanyName from tbl_CompanyMaster where DeleteData ='1'");
+            DataSet ds = new DataSet();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.Fill(ds, "Temp");
+            DataTable DT = new DataTable();
+            SDA.Fill(ds);
+            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            {
+                string companyname = ds.Tables["Temp"].Rows[i]["CompanyName"].ToString();
+                if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
+                {
+                    MessageBox.Show("This Company Name Already Exist");
+                    txtcampanyName.Focus();
+                }
 
-            //    if (companyname.ToLower().ToString() == txtcampanyName.Text.ToLower().ToString())
-            //    {
-            //        //chekpoint = 1;
-            //       // MessageBox.Show("This Company Name is already Exist ");
-            //        //txtcampanyName.Clear();
-            //        txtcampanyName.Focus();
-            //    }
-
-            //}
+            }
         }
     }
 }
