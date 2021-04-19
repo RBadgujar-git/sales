@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using Tulpep.NotificationWindow;
 using System.Threading;
+using kp.Toaster;
+
 
 namespace sample
 {
@@ -200,35 +202,44 @@ namespace sample
 
             //
             reinder();
+            
+
         }
+        //public void alert(string msg)
+        //{
+        //    Notification na = new Notification();
+        //    na.showalert(msg,"type");
+        //}
 
         public void reinder()
         {
 
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            string result = DateTime.Today.AddDays(-10).ToString("yyyy-MM-dd");
-
-            string SelectQuery = string.Format("select PartyName from tbl_SaleInvoice where RemainingBal!=0 and InvoiceDate='" + DateTime.Today.AddDays(-11).ToString("yyyy-MM-dd") + "' ");
-            DataSet ds = new DataSet();
-            SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-            SDA.Fill(ds, "Temp");
-            DataTable DT = new DataTable();
-            SDA.Fill(ds);
-            for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-            {
             
-                // cmballparties.Items.Add();
-                PopupNotifier po= new PopupNotifier();
-                po.TitleText = "Payment Reminder ";
-                po.ContentText ="YOU NEED COOLECT PAYMENT FROM  "+ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
-                //  po.ContentText = "he baburav";
-             //   po.ContentFont = "Verdana, 13p";
-                po.Popup();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string result = DateTime.Today.AddDays(-10).ToString("yyyy-MM-dd");
 
-             }
+                string SelectQuery = string.Format("select PartyName from tbl_SaleInvoice where RemainingBal!=0 and InvoiceDate='" + DateTime.Today.AddDays(-reminderdata).ToString("yyyy-MM-dd") + "' ");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+
+                    // cmballparties.Items.Add();
+                    PopupNotifier po = new PopupNotifier();
+                    po.TitleText = "Payment Reminder ";
+                    po.ContentText = remess + ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+                    //  po.ContentText = "he baburav";
+                    //   po.ContentFont = "Verdana, 13p";
+                    po.Popup();
+
+                
+            }
         }                   
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -786,7 +797,8 @@ namespace sample
             PB.BringToFront();
             // PB.Show();
         }
-        public int Estiment1,deleverychallan,otherincome;
+        public int Estiment1,deleverychallan,otherincome, reminderdata;
+        public string remess;
         public void setting()
         {
             if (con.State == ConnectionState.Closed)
@@ -808,6 +820,8 @@ namespace sample
                 Estiment1 = Convert.ToInt32(dr["Sale_purches"]);
                 deleverychallan = Convert.ToInt32(dr["Delliverychallen"]);
                 otherincome = Convert.ToInt32(dr["OtheIncome"]);
+                remess = dr["remindermessage"].ToString();
+                reminderdata =Convert.ToInt32(dr["notifyday"]);
             }
             dr.Close();
             //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);
@@ -905,8 +919,7 @@ namespace sample
 
         private void salesReturnAndCreditNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreditNothomePage CN = new CreditNothomePage();
-           // ex.TopLevel = false;
+            CreditNothomePage CN = new CreditNothomePage();           // ex.TopLevel = false;
          //   CN.AutoScroll = true;
             this.Controls.Add(CN);
            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -1580,6 +1593,25 @@ namespace sample
             n.Visible = true;
             n.BringToFront();
            
+        }
+
+        private void guna2Button52_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void panel3_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            //   this.alert("the data is");
+           
+                 Toast.show(this, "hii IDEl tech", "grjerejjreret payment for", ToastType.INFO, ToastDuration.SHORT);
+                 Toast.show(this, "hii IDEl tech", "grjerejjreret payment for", ToastType.INFO, ToastDuration.SHORT);
+
         }
 
         private void companyBankAccountToolStripMenuItem_Click_1(object sender, EventArgs e)

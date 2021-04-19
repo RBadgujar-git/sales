@@ -30,7 +30,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartySetting));
             this.chkShippingAdd = new Guna.UI2.WinForms.Guna2CheckBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.NumericUpDown = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.chkPartyGrouping = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkPrintShipping = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkCustomerEnablePayment = new Guna.UI2.WinForms.Guna2CheckBox();
@@ -38,9 +37,6 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.chkAdditional1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkAdditional2 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.ToggleSwitch1 = new Guna.UI2.WinForms.Guna2ToggleSwitch();
@@ -58,6 +54,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.NumericUpDown = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,26 +91,6 @@
             this.label11.Size = new System.Drawing.Size(141, 18);
             this.label11.TabIndex = 314;
             this.label11.Text = "Additional Fields";
-            // 
-            // NumericUpDown
-            // 
-            this.NumericUpDown.BackColor = System.Drawing.Color.Transparent;
-            this.NumericUpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.NumericUpDown.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.NumericUpDown.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.NumericUpDown.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.NumericUpDown.DisabledState.Parent = this.NumericUpDown;
-            this.NumericUpDown.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.NumericUpDown.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.NumericUpDown.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.NumericUpDown.FocusedState.Parent = this.NumericUpDown;
-            this.NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.NumericUpDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.NumericUpDown.Location = new System.Drawing.Point(260, 246);
-            this.NumericUpDown.Name = "NumericUpDown";
-            this.NumericUpDown.ShadowDecoration.Parent = this.NumericUpDown;
-            this.NumericUpDown.Size = new System.Drawing.Size(71, 26);
-            this.NumericUpDown.TabIndex = 313;
             // 
             // chkPartyGrouping
             // 
@@ -206,40 +189,6 @@
             this.btnCancel.TabIndex = 303;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 248);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(209, 16);
-            this.label3.TabIndex = 324;
-            this.label3.Text = "Remind me for Payment Due in";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(337, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 16);
-            this.label4.TabIndex = 325;
-            this.label4.Text = "Days";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Blue;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(39, 281);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 327;
-            this.guna2Button2.Text = "Reminder Message>>";
             // 
             // chkAdditional1
             // 
@@ -529,12 +478,93 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Location = new System.Drawing.Point(39, 338);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(318, 99);
+            this.panel2.TabIndex = 448;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // NumericUpDown
+            // 
+            this.NumericUpDown.BackColor = System.Drawing.Color.Transparent;
+            this.NumericUpDown.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.NumericUpDown.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.NumericUpDown.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.NumericUpDown.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.NumericUpDown.DisabledState.Parent = this.NumericUpDown;
+            this.NumericUpDown.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.NumericUpDown.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.NumericUpDown.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.NumericUpDown.FocusedState.Parent = this.NumericUpDown;
+            this.NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.NumericUpDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.NumericUpDown.Location = new System.Drawing.Point(260, 246);
+            this.NumericUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.NumericUpDown.Name = "NumericUpDown";
+            this.NumericUpDown.ShadowDecoration.Parent = this.NumericUpDown;
+            this.NumericUpDown.Size = new System.Drawing.Size(71, 26);
+            this.NumericUpDown.TabIndex = 313;
+            this.NumericUpDown.ValueChanged += new System.EventHandler(this.NumericUpDown_ValueChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 252);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(209, 16);
+            this.label3.TabIndex = 324;
+            this.label3.Text = "Remind me for Payment Due in";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(337, 250);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 16);
+            this.label4.TabIndex = 325;
+            this.label4.Text = "Days";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(318, 99);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.guna2Button2.FillColor = System.Drawing.Color.White;
+            this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.Blue;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(39, 281);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button2.TabIndex = 327;
+            this.guna2Button2.Text = "Reminder Message>>";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
             // PartySetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -570,6 +600,8 @@
             this.Name = "PartySetting";
             this.Size = new System.Drawing.Size(1034, 544);
             this.Load += new System.EventHandler(this.PartySetting_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -579,7 +611,6 @@
         #endregion
         private Guna.UI2.WinForms.Guna2CheckBox chkShippingAdd;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2NumericUpDown NumericUpDown;
         private Guna.UI2.WinForms.Guna2CheckBox chkPartyGrouping;
         private Guna.UI2.WinForms.Guna2CheckBox chkPrintShipping;
         private Guna.UI2.WinForms.Guna2CheckBox chkCustomerEnablePayment;
@@ -587,9 +618,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2CheckBox chkAdditional1;
         private Guna.UI2.WinForms.Guna2CheckBox chkAdditional2;
         private Guna.UI2.WinForms.Guna2ToggleSwitch ToggleSwitch1;
@@ -607,5 +635,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox1;
+        private Guna.UI2.WinForms.Guna2NumericUpDown NumericUpDown;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }

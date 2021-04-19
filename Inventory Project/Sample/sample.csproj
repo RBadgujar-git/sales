@@ -209,6 +209,10 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Toaster.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toaster.NET.1.0.0\lib\net40\Toaster.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Tulpep.NotificationWindow, Version=1.1.38.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Tulpep.NotificationWindow.1.1.38\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
       <Private>True</Private>
@@ -642,6 +646,12 @@
     </Compile>
     <Compile Include="NewCompany.Designer.cs">
       <DependentUpon>NewCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
     </Compile>
     <Compile Include="OnlineStore.cs">
       <SubType>UserControl</SubType>
@@ -1178,6 +1188,9 @@
     <EmbeddedResource Include="NewCompany.resx">
       <DependentUpon>NewCompany.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OnlineStore.resx">
       <DependentUpon>OnlineStore.cs</DependentUpon>
     </EmbeddedResource>
@@ -1444,6 +1457,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notification.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

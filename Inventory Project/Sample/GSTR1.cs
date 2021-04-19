@@ -75,7 +75,9 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("Select InvoiceID,InvoiceDate,CalTotal,TaxAmountShow,PartyName,Total from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id+"' and DeleteData='1'");
+                    string Query = string.Format("select a.CompanyName,a.PhoneNo,a.Address,a.EmailID,a.GSTNumber,a.AddLogo,b.InvoiceID,b.InvoiceDate,b.CalTotal,b.TaxAmountShow,b.PartyName,b.Total from tbl_companymaster as a,tbl_saleinvoice as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1'");
+
+                    //string Query = string.Format("Select InvoiceID,InvoiceDate,CalTotal,TaxAmountShow,PartyName,Total from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id+"' and DeleteData='1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
 namespace sample
 {
     public partial class GSTR2 : UserControl
@@ -48,6 +50,37 @@ namespace sample
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query = string.Format("select a.CompanyName,a.PhoneNo,a.Address,a.EmailID,a.GSTNumber,a.AddLogo,b.BillNo,b.BillDate,b.CalTotal,b.TaxShow,b.PartyName,b.Total from tbl_companymaster as a,tbl_PurchaseBill as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1'");
+
+                    //string Query = string.Format("Select InvoiceID,InvoiceDate,CalTotal,TaxAmountShow,PartyName,Total from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id+"' and DeleteData='1'");
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
+
+                    StiReport report = new StiReport();
+                    report.Load(@"GSTR2DataReport.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("GSTR2Data", "GSTR2Data", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }
