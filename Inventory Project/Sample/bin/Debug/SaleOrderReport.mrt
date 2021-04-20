@@ -284,7 +284,7 @@
               <Parent isRef="16" />
               <Text>{SaleOrder.EmailID}</Text>
               <TextBrush>Black</TextBrush>
-              <VertAlignment>Bottom</VertAlignment>
+              <VertAlignment>Center</VertAlignment>
             </Text5>
             <Text6 Ref="22" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -460,7 +460,7 @@
               <Name>Text26</Name>
               <Page isRef="3" />
               <Parent isRef="16" />
-              <Text>Mob No              :</Text>
+              <Text>Mob No             :</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text26>
@@ -707,6 +707,7 @@
               <Parent isRef="16" />
               <Text>{SaleOrder.PhoneNo}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
             </Text30>
             <Text61 Ref="51" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -731,8 +732,9 @@
               <Name>Text65</Name>
               <Page isRef="3" />
               <Parent isRef="16" />
-              <Text>Email      :</Text>
+              <Text>Email     :</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
             </Text65>
             <Text86 Ref="53" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
@@ -2157,10 +2159,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/19/2021 5:56:45 PM</ReportChanged>
+  <ReportChanged>4/20/2021 10:46:25 AM</ReportChanged>
   <ReportCreated>3/18/2021 4:25:09 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\SaleOrderReport.mrt</ReportFile>
-  <ReportGuid>1fc09ceb56884488940acef3c83fd067</ReportGuid>
+  <ReportGuid>6cde4df3ff9f49fb9c891b14abfcc75c</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
