@@ -43,9 +43,6 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -362,9 +359,6 @@
             this.panel1.Controls.Add(this.textBox9);
             this.panel1.Controls.Add(this.textBox8);
             this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.label48);
-            this.panel1.Controls.Add(this.label47);
-            this.panel1.Controls.Add(this.label46);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
@@ -457,6 +451,7 @@
             this.textBox9.Size = new System.Drawing.Size(53, 23);
             this.textBox9.TabIndex = 104369;
             this.textBox9.Text = "0";
+            this.textBox9.Visible = false;
             this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
             // 
             // textBox8
@@ -466,6 +461,7 @@
             this.textBox8.Size = new System.Drawing.Size(53, 23);
             this.textBox8.TabIndex = 104368;
             this.textBox8.Text = "0";
+            this.textBox8.Visible = false;
             // 
             // textBox7
             // 
@@ -474,33 +470,7 @@
             this.textBox7.Size = new System.Drawing.Size(53, 23);
             this.textBox7.TabIndex = 104367;
             this.textBox7.Text = "0";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(588, 385);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(87, 16);
-            this.label48.TabIndex = 104366;
-            this.label48.Text = "Item Total :";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(532, 385);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(38, 16);
-            this.label47.TabIndex = 104365;
-            this.label47.Text = "Dis :";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(475, 385);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(41, 16);
-            this.label46.TabIndex = 104364;
-            this.label46.Text = "Tax :";
+            this.textBox7.Visible = false;
             // 
             // textBox6
             // 
@@ -509,6 +479,7 @@
             this.textBox6.Size = new System.Drawing.Size(53, 23);
             this.textBox6.TabIndex = 104364;
             this.textBox6.Text = "0";
+            this.textBox6.Visible = false;
             // 
             // textBox4
             // 
@@ -517,6 +488,7 @@
             this.textBox4.Size = new System.Drawing.Size(53, 23);
             this.textBox4.TabIndex = 104362;
             this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
             // 
             // textBox3
             // 
@@ -525,6 +497,7 @@
             this.textBox3.Size = new System.Drawing.Size(53, 23);
             this.textBox3.TabIndex = 104361;
             this.textBox3.Text = "0";
+            this.textBox3.Visible = false;
             // 
             // label45
             // 
@@ -2592,9 +2565,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalTotal;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label42;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;

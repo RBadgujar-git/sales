@@ -16,9 +16,9 @@ namespace sample
     {
         public string date1;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-        string sumsale1;
-        string sumother;
-         string total;
+        float sumsale1;
+        float sumother;
+         float total=0;
 
         public FormWindowState WindowState { get; private set; }
 
@@ -107,7 +107,7 @@ namespace sample
             SqlDataReader dr1 = cd1.ExecuteReader();
             while (dr1.Read())
             {
-                sumsale1 = dr1.GetValue(0).ToString();
+                sumsale1 = float.Parse(dr1.GetValue(0).ToString());
             }
             dr1.Close();
             con.Close();
@@ -116,11 +116,11 @@ namespace sample
             SqlDataReader dr = cd.ExecuteReader();
             while (dr.Read())
             {
-                sumother = dr.GetValue(0).ToString();
+                sumother = float.Parse(dr.GetValue(0).ToString());
             }
             dr.Close();
             con.Close();
-            total = sumsale1 + sumother;
+            total = sumother + sumsale1;
             txtmoneyin.Text = total.ToString();
         }
         private void BindPurchase_TotalAmount()
