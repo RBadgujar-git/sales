@@ -172,9 +172,9 @@ namespace sample
                     size = Convert.ToInt32(dr["Size"]);
                     ItemwisTax=Convert.ToInt32(dr["ItemwisTax"]);
                     barcode= Convert.ToInt32(dr["barcode"]);
-                    Stockmantance= Convert.ToInt32(dr["Stockmantance"]);
+                    Stockmantance = Convert.ToInt32(dr["Stockmantance"]);
                     ItemCategory = Convert.ToInt32(dr["ItemCategory"]);
-                    itemwisetax = Convert.ToInt32(dr["itemwisetax"]);
+                  //  itemwisetax = Convert.ToInt32(dr["itemwisetax"]);
                 }
                 dr.Close();
             
@@ -443,12 +443,12 @@ namespace sample
             }
             if (chkItemWiseTax.Checked == true)
             {
-                SqlCommand cmd = new SqlCommand("update Setting_Table Set itemwisetax = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
             else if (chkItemWiseTax.Checked == false)
             {
-                SqlCommand cmd = new SqlCommand("update Setting_Table Set itemwisetax = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
 
