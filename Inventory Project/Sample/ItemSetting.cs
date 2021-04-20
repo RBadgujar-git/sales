@@ -90,6 +90,9 @@ namespace sample
             chkDescription.Checked = true;
 
 
+           
+
+
             label6.Visible = false;
 
         }
