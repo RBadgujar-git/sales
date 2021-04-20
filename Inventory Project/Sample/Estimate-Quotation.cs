@@ -592,9 +592,9 @@ namespace sample
                     dgvInnerQuotation.Rows[row].Cells[4].Value = MRP;
                     dgvInnerQuotation.Rows[row].Cells[7].Value = qty;
                     dgvInnerQuotation.Rows[row].Cells[8].Value = freeqty;
-                    dgvInnerQuotation.Rows[row].Cells[5].Value = gst;
+                    dgvInnerQuotation.Rows[row].Cells[6].Value = gst;
                     dgvInnerQuotation.Rows[row].Cells[9].Value = gst_amt;
-                    dgvInnerQuotation.Rows[row].Cells[6].Value = dis;
+                    dgvInnerQuotation.Rows[row].Cells[5].Value = dis;
                     dgvInnerQuotation.Rows[row].Cells[10].Value = dis_amt;
                     dgvInnerQuotation.Rows[row].Cells[11].Value = Total;
                     dgvInnerQuotation.Rows[row].Cells[12].Value = cgst;
@@ -1215,7 +1215,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AdditinalFeild1,a.AdditinalFeild2,a.AdditinalFeild3,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.CGST, b.SGST, b.TaxAmount1,b.TotalDiscount,b.BillingAddress,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.BasicUnit,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.TaxForSale,c.SaleTaxAmount FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AdditinalFeild1,a.AdditinalFeild2,a.AdditinalFeild3,a.AddLogo,b.PartyName,b.BillingAddress,b.ContactNo, b.RefNo, b.Date, b.Tax1, b.TaxAmount1,b.TotalDiscount,b.BillingAddress,b.DiscountAmount1,b.Total,c.ID,c.ItemName,c.ItemCode,c.BasicUnit,c.SalePrice,c.Qty,c.freeQty,c.ItemAmount,c.TaxForSale,c.SaleTaxAmount,c.CGST,c.IGST,c.SGST FROM tbl_CompanyMaster  as a, tblQuotation as b,tbl_QuotationInner as c where b.RefNo='{0}' and c.RefNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' ", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
