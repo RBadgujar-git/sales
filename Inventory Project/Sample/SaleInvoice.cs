@@ -70,8 +70,8 @@ namespace sample
             txtFreeQty.Enabled = false;
             cmbStatesupply.Enabled = false;
             //guna2TextBox2.Enabled = false;
-            textBox2.Hide();
-            label45.Hide();
+            textBox2.Visible=false;
+            label45.Visible=false;
             con.Open();
             SqlCommand cmd1 = new SqlCommand("Select [CashSaleByDefault] from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             gstint = Convert.ToInt32(cmd1.ExecuteScalar());
@@ -226,8 +226,8 @@ namespace sample
             con.Close();
             if (eway == 1)
             {
-                textBox2.Show();
-                label45.Show();
+                textBox2.Visible=true;
+                label45.Visible=true;
             }
             cmbpartyname.Focus();
             fetchcustomername();
@@ -443,9 +443,10 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Deliverydate", DtpdeliveryDate.Text);
                 cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
                 //  cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
+                cmd.Parameters.AddWithValue("@E_Way_Bill",textBox2.Text);
 
 
-
+                
                 cmd.Parameters.AddWithValue("@Tax1", cmbtax.Text);
                 cmd.Parameters.AddWithValue("@CGST", txtcgst.Text);
                 cmd.Parameters.AddWithValue("@SGST", txtsgst.Text);
@@ -2265,6 +2266,16 @@ namespace sample
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnlinkPayment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }

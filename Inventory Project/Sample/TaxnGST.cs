@@ -62,6 +62,12 @@ namespace sample
                 chkAdditionalCases.Checked = true;
                 chkEnablleGSt.Checked = true;
             }
+
+            seeting();
+            if(reverschecharges==1)
+            {
+                chkRevesreCharges.Checked = true;
+            }
         }
         public int Cess;
         public void cheekpass1()
@@ -82,6 +88,7 @@ namespace sample
                     eway = Convert.ToInt32(dr1["EwayBill"]);
                     Cess = Convert.ToInt32(dr1["Cess"]);
                     enablegst = Convert.ToInt32(dr1["EnableGst"]);
+
                 }
                 dr1.Close();
             }
@@ -92,6 +99,32 @@ namespace sample
             }
             finally {  }
         }
+        public int reverschecharges;
+        public void seeting()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd2 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+                SqlDataReader dr1 = cmd2.ExecuteReader();
+
+                while (dr1.Read())
+                {
+                    reverschecharges=Convert.ToInt32(dr1["reverschecharges"]);
+                }
+                dr1.Close();
+            }
+
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+            finally { }
+        
+    }
         private void chkEnableHSn_CheckedChanged(object sender, EventArgs e)
         {
             if (chkEnableHSn.Checked == true)
@@ -142,6 +175,20 @@ namespace sample
 
         private void chkRevesreCharges_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (chkRevesreCharges.Checked == true)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set reverschecharges = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
+            else if (chkRevesreCharges.Checked == false)
+            {
+                SqlCommand cmd = new SqlCommand("update Setting_Table Set reverschecharges = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
+                cmd.ExecuteNonQuery();
+            }
 
         }
 
@@ -158,6 +205,16 @@ namespace sample
                 cmd.ExecuteNonQuery();
 
             }
+        }
+
+        private void chkGenerateEWay_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkComposite_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
