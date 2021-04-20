@@ -2313,3 +2313,5 @@ D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Toaster.NET.dll
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Notification.resources
