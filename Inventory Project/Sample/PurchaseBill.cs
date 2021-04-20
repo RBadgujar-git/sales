@@ -68,12 +68,16 @@ namespace sample
             txtDisAmount.Enabled = false;
             cmbtax.Enabled = false;
             guna2TextBox1.Enabled = false;
+            label50.Visible = false;
+            guna2TextBox7.Visible = false ;
             txtsgst.Enabled = false;
             txtcgst.Enabled = false;
             txtTaxAmount.Enabled = false;
             txtFreeQty.Enabled = false;
             cmbStatesupply.Enabled = false;
             guna2TextBox2.Enabled = false;
+            ToggleSwitch1.Visible = false;
+            label49.Visible = false;
             con.Open();
             SqlCommand cmd3 = new SqlCommand("Select DisplayPurchasePriseOnItem from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             dispurchase = Convert.ToInt32(cmd3.ExecuteScalar());
@@ -150,6 +154,19 @@ namespace sample
             {
                 txtbillingadd.Enabled = true;
             }
+            textBox2.Visible = false;
+            label51.Visible = false;
+
+
+            con.Open();
+            SqlCommand cmd16 = new SqlCommand("Select EwayBill from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
+            eway = Convert.ToInt32(cmd16.ExecuteScalar());
+            con.Close();
+            if (eway == 1)
+            {
+                textBox2.Visible = true;
+                label51.Visible = true;
+            }
             // fetchitem();
             fetchcustomername();
           //  bind_sale_details();
@@ -169,6 +186,13 @@ namespace sample
                 cmbbarcode.Visible = false;
 
             }
+
+            if(reverschecharges==1)
+            {
+                ToggleSwitch1.Visible = true;
+                label49.Visible = true;
+            }
+
         }
         private void fetchitem()
         {
@@ -481,6 +505,7 @@ namespace sample
                                 textBox4.Text = dis1.ToString();
                                 tax += float.Parse(guna2DataGridView2.Rows[i].Cells["SaleTaxAmount"].Value?.ToString());
                                 textBox3.Text = tax.ToString();
+                                guna2TextBox7.Text = tax.ToString();
                                 itotal += float.Parse(guna2DataGridView2.Rows[i].Cells["CalTotal"].Value?.ToString());
                                 textBox6.Text = itotal.ToString();
                                 TA += float.Parse(guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value?.ToString());                              
@@ -557,7 +582,7 @@ namespace sample
                        }
          
         }
-        public int investment,barcode, reminder; 
+        public int investment,barcode, reminder, reverschecharges; 
        public  void seeting()
         {
 
@@ -574,9 +599,10 @@ namespace sample
                 investment= Convert.ToInt32(dr["InvoiceNo"]);
                 barcode= Convert.ToInt32(dr["barcode"]);
                 reminder = Convert.ToInt32(dr["cashremoinder"]);
-
+                reverschecharges = Convert.ToInt32(dr["reverschecharges"]);
             }
             dr.Close();
+
         }
 
     
@@ -848,7 +874,7 @@ namespace sample
                 }
                 seeting();
 
-                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID,Discount,TaxShow,CalTotal) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid,@Discount,@TaxShow,@CalTotal); SELECT SCOPE_IDENTITY();");
+                string query = string.Format("insert into tbl_PurchaseBill(PartyName,PONo,BillingName, PODate, BillDate,  DueDate, StateofSupply, PaymentType, TransportName, DeliveryLocation, VehicleNumber, Deliverydate, Description, Tax1,CGST, SGST, TaxAmount1, TotalDiscount, DiscountAmount1, RoundFigure, Total,Paid, RemainingBal, PaymentTerms,ContactNo,  Feild1, Feild2, Feild3, Status, TableName, Barcode, ItemCategory,IGST,Company_ID,Discount,TaxShow,CalTotal,reverschecharges,E_WayBillno) Values (@PartyName, @PONo, @BillingName, @PoDate,@BillDate, @DueDate,  @StateofSupply, @PaymentType, @TransportName, @DeliveryLocation, @VehicleNumber, @Deliverydate, @Description,@Tax1, @CGST, @SGST,@TaxAmount1, @TotalDiscount, @DiscountAmount1, @RoundFigure, @Total, @Paid, @RemainingBal, @PaymentTerms, @ContactNo, @Feild1, @Feild2, @Feild3, @Status, @TableName, @Barcode, @ItemCategory,@IGST,@compid,@Discount,@TaxShow,@CalTotal,@reverschecharges,@E_WayBillno); SELECT SCOPE_IDENTITY();");
                 SqlCommand cmd = new SqlCommand(query, con);
                 //DataTable dtable = new DataTable();
                 //cmd = new SqlCommand("tbl_PurchaseBillselect", con);
@@ -866,7 +892,9 @@ namespace sample
                     cmd.Parameters.AddWithValue("@PartyName", comboBox2.Text);
                 }
                 cmd.Parameters.AddWithValue("@PONo", txtPONo.Text);
-               // cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                // cmd.Parameters.AddWithValue("@PartyName", cmbpartyname.Text);
+                
+                cmd.Parameters.AddWithValue("@E_WayBillno", textBox2.Text);
                 cmd.Parameters.AddWithValue("@BillingName", txtbillingadd.Text);
                 cmd.Parameters.AddWithValue("@PODate", dtpPODate.Text);
                 cmd.Parameters.AddWithValue("@BillDate", dtpInvoice.Text);
@@ -892,8 +920,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@Paid", txtReceived.Text);
                 cmd.Parameters.AddWithValue("@RemainingBal", txtBallaance.Text);
                 cmd.Parameters.AddWithValue("@PaymentTerms", cmbPaymentTrems.Text);
-
+                
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
+                cmd.Parameters.AddWithValue("@reverschecharges",guna2TextBox7.Text);
                 cmd.Parameters.AddWithValue("@Feild1", txtrefNo.Text);
                 cmd.Parameters.AddWithValue("@Feild2", txtadditional1.Text);
                 cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
@@ -2167,6 +2196,25 @@ namespace sample
         private void guna2TextBox6_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+        }
+
+        private void ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ToggleSwitch1_CheckedChanged_1(object sender, EventArgs e)
+        {
+           if(ToggleSwitch1.Checked==true)
+            {
+                             label50.Visible = true;
+                            guna2TextBox7.Visible = true;
+            }
+           if(ToggleSwitch1.Checked==false)
+            {
+                label50.Visible = false;
+                guna2TextBox7.Visible = false;
+            }
         }
 
         private void txtTaxAMount1_TextChanged(object sender, EventArgs e)

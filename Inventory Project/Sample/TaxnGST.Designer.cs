@@ -60,6 +60,7 @@
             this.chkComposite.UncheckedState.BorderRadius = 0;
             this.chkComposite.UncheckedState.BorderThickness = 0;
             this.chkComposite.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkComposite.CheckedChanged += new System.EventHandler(this.chkComposite_CheckedChanged);
             // 
             // chkEnableHSn
             // 
@@ -185,6 +186,7 @@
             this.chkGenerateEWay.UncheckedState.BorderRadius = 0;
             this.chkGenerateEWay.UncheckedState.BorderThickness = 0;
             this.chkGenerateEWay.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkGenerateEWay.CheckedChanged += new System.EventHandler(this.chkGenerateEWay_CheckedChanged);
             // 
             // guna2Panel1
             // 
