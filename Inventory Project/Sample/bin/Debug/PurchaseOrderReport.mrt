@@ -194,7 +194,7 @@
         </PageFooterBand1>
         <Text83 Ref="14" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>4.8,27.8,8.4,0.8</ClientRectangle>
+          <ClientRectangle>5.6,27.8,6.8,0.8</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Font>Arial,10,Bold</Font>
           <Guid>4d1fc437c78143d3afdea47d11413f73</Guid>
@@ -2219,10 +2219,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/20/2021 4:47:44 PM</ReportChanged>
+  <ReportChanged>4/20/2021 6:30:39 PM</ReportChanged>
   <ReportCreated>3/18/2021 10:59:29 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PurchaseOrderReport.mrt</ReportFile>
-  <ReportGuid>ab0b7261967245eea00e67ef687d98e9</ReportGuid>
+  <ReportGuid>d43ea448c3db44cea620e27a457053f7</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
