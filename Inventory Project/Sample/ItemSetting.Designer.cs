@@ -566,6 +566,7 @@
             this.chkItemWiseTax.UncheckedState.BorderRadius = 0;
             this.chkItemWiseTax.UncheckedState.BorderThickness = 0;
             this.chkItemWiseTax.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkItemWiseTax.CheckedChanged += new System.EventHandler(this.chkItemWiseTax_CheckedChanged_1);
             // 
             // guna2CheckBox16
             // 
