@@ -122,7 +122,7 @@ namespace sample
 
 
         }
-       public int barcode;
+       public int barcode, remind;
         public void seeting()
         {
 
@@ -138,7 +138,7 @@ namespace sample
             {
              
                 barcode = Convert.ToInt32(dr["barcode"]);
-
+                remind = Convert.ToInt32(dr["cashremoinder"]);
             }
             dr.Close();
         }
@@ -902,7 +902,10 @@ namespace sample
                     gst_amt = TA * gst / 100;
                     txtTaxAmount.Text = gst_amt.ToString();
                     total = (TA + gst_amt) - dis_amt;
-                    txtTotal.Text = total.ToString();
+                    txtTotal.Text =Math.Round(total,remind).ToString();
+
+                  //  txtTotal.Text = Math.Round(total).ToString();
+                  //  math.Round(dx1, 4)
                 }
             }
             catch (Exception e1)

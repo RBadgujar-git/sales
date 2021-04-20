@@ -99,7 +99,8 @@ namespace sample
 
 
         public void demo()
-        {
+
+        { 
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();

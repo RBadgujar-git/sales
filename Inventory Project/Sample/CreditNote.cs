@@ -1071,7 +1071,7 @@ namespace sample
                     gst_amt = TA * gst / 100;
                     txtTaxAmount.Text = gst_amt.ToString();
                     total = (TA + gst_amt) - dis_amt;
-                    txtTotal.Text = total.ToString();
+                    txtTotal.Text =Math.Round( total, reminde).ToString();
                 }
             }
             catch (Exception e1) {
@@ -1377,7 +1377,7 @@ namespace sample
         {
 
         }
-        public int barcode;
+        public int barcode, reminde;
         public void seeting()
         {
 
@@ -1393,7 +1393,7 @@ namespace sample
             {
 
                 barcode = Convert.ToInt32(dr["barcode"]);
-
+                reminde = Convert.ToInt32(dr["cashremoinder"]);
             }
             dr.Close();
         }
