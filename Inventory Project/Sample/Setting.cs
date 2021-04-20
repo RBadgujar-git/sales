@@ -41,7 +41,7 @@ namespace sample
             this.Visible = false;
         }
         public int password, gstint, Enablelunch, Estiment,Purchess ,dilivary,Autobackup,otherincome;
-        public int loadvariable=0;
+        public int loadvariable=0, cashremoinder;
 
         public void cheekpass()
         {
@@ -69,7 +69,7 @@ namespace sample
                     dilivary= Convert.ToInt32(dr["Delliverychallen"]);
                     Autobackup= Convert.ToInt32(dr["Autobackup"]);
                     otherincome = Convert.ToInt32(dr["OtheIncome"]);
-
+                    cashremoinder = Convert.ToInt32(dr["cashremoinder"]);
 
                 }
                 dr.Close();
@@ -143,6 +143,37 @@ namespace sample
 
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+            if (NumericUpDown1.Value == 0)
+            {
+                label11.Text = "";
+            }
+          if (NumericUpDown1.Value==1)
+            {
+                label11.Text = 0.ToString();
+            }
+            if (NumericUpDown1.Value == 2)
+            {
+                label11.Text = "00";
+            }
+             if (NumericUpDown1.Value == 3)
+            {
+                label11.Text = "000";
+            }
+            if (NumericUpDown1.Value == 4)
+            {
+                label11.Text = "0000";
+            }
+            if (NumericUpDown1.Value == 5)
+            {
+                label11.Text = "00000";
+            }
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("update Setting_Table Set cashremoinder ="+NumericUpDown1.Value+" where  Company_ID=" + NewCompany.company_id + " ", con);
+            cmd.ExecuteNonQuery();
+
 
         }
         public static string gstin ;
@@ -154,10 +185,12 @@ namespace sample
         {
             cheekpass();
             panel1.Hide();
+            guna2Button3.Visible = false;
             if (password !=0)
             {
                 loadvariable = 1;
-                chkEnablePassword.Checked = true;               
+                chkEnablePassword.Checked = true;
+                guna2Button3.Visible = true;             
             }
             if(gstint==1)
             {
@@ -190,13 +223,16 @@ namespace sample
                 chkAutoBackup.Checked = true;
                 //panel1.Show();
             }
-            if(otherincome==1)
+            NumericUpDown1.Value = cashremoinder;
+
+            if (otherincome==1)
             {
                 chkOtherincome.Checked = true;
             }
             guna2Button1.Hide();
             fetchcustomername();
 
+            
            panel2.Hide();
             fetchCampanyame();
             defualt();

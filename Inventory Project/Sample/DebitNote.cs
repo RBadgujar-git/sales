@@ -1210,7 +1210,7 @@ cmbpartyname1.Visible = false;
                 txtTaxAmount.Text = gst_amt.ToString();
 
                 total = (TA + gst_amt) - dis_amt;
-                txtTotal.Text = total.ToString();
+                txtTotal.Text = Math.Round(total,Dashboard.riminder).ToString();
                // txtsubtotal.Text = total.ToString();
             }
             catch(Exception ee)

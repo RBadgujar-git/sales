@@ -557,7 +557,7 @@ namespace sample
                        }
          
         }
-        public int investment,barcode; 
+        public int investment,barcode, reminder; 
        public  void seeting()
         {
 
@@ -573,6 +573,8 @@ namespace sample
             {
                 investment= Convert.ToInt32(dr["InvoiceNo"]);
                 barcode= Convert.ToInt32(dr["barcode"]);
+                reminder = Convert.ToInt32(dr["cashremoinder"]);
+
             }
             dr.Close();
         }
@@ -580,8 +582,6 @@ namespace sample
     
     private void get_id()
         {
-
-
             seeting();
 
             if (investment == 0) {
@@ -1326,7 +1326,11 @@ namespace sample
                 gst_amt = TA * gst / 100;
                 txtTaxAmount.Text = gst_amt.ToString();
                 total = (TA + gst_amt) - dis_amt;
-                txtTotal.Text = total.ToString();
+                //txtTotal.Text = total.ToString();
+                txtTotal.Text = Math.Round(total,reminder).ToString();               
+                // txtTotal.Text = total.ToString();
+
+
             }
 
         }
