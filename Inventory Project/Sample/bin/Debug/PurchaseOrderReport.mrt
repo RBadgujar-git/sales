@@ -1078,7 +1078,6 @@ GST</Text>
               <VertAlignment>Center</VertAlignment>
             </Text12>
             <Text13 Ref="86" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>9.8,0,1.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -1094,7 +1093,6 @@ GST</Text>
               <VertAlignment>Center</VertAlignment>
             </Text13>
             <Text14 Ref="87" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>11.6,0,1,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -1110,7 +1108,6 @@ GST</Text>
               <VertAlignment>Center</VertAlignment>
             </Text14>
             <Text15 Ref="88" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>13,0,1,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -1126,7 +1123,6 @@ GST</Text>
               <VertAlignment>Center</VertAlignment>
             </Text15>
             <Text16 Ref="89" type="Text" isKey="true">
-              <Border>None;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.4,0,1,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
@@ -2223,10 +2219,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/20/2021 3:31:03 PM</ReportChanged>
+  <ReportChanged>4/20/2021 4:47:44 PM</ReportChanged>
   <ReportCreated>3/18/2021 10:59:29 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PurchaseOrderReport.mrt</ReportFile>
-  <ReportGuid>3c7073c2b4e4452bb4c844beba77687b</ReportGuid>
+  <ReportGuid>ab0b7261967245eea00e67ef687d98e9</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
