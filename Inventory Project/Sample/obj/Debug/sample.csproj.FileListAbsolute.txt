@@ -2319,3 +2319,5 @@ C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.R
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Toaster.NET.dll
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Notification.resources

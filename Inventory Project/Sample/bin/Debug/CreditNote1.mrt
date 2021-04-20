@@ -2041,10 +2041,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/20/2021 11:42:28 AM</ReportChanged>
+  <ReportChanged>4/20/2021 2:07:34 PM</ReportChanged>
   <ReportCreated>3/18/2021 1:59:46 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\CreditNote1.mrt</ReportFile>
-  <ReportGuid>9be41a5b61d54b99af8b3e0cc95ace7b</ReportGuid>
+  <ReportGuid>552bb3964a1c4ffe9455559f1f338adc</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
