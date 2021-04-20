@@ -36,6 +36,25 @@ namespace sample
         private void TaxReport_Load(object sender, EventArgs e)
         {
             fetchCompany();
+            //  totaltaxsale();
+            con.Open();
+            SqlCommand cd = new SqlCommand("select sum(TaxAmountShow) as total from tbl_saleinvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",con);
+            SqlDataReader dr = cd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtAmountSale.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+            con.Close();
+            con.Open();
+            SqlCommand cd1 = new SqlCommand("select sum(TaxShow) as total from tbl_purchasebill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr1 = cd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                txtAmountPurchase.Text = dr1.GetValue(0).ToString();
+            }
+            dr1.Close();
+            con.Close();
             try
             {
                 con.Open();
@@ -55,6 +74,23 @@ namespace sample
             {
                 con.Close();
             }
+        }
+        public void totaltaxsale()
+        {
+            con.Open();
+            DataSet ds = new DataSet();
+            SqlDataAdapter sda = new SqlDataAdapter();
+           string qery=string.Format("select sum(TaxAmountShow) as total from tbl_saleinvoice where CompanyID='" + NewCompany.company_id + "' and DeleteData='1' ");
+            SqlCommand cmd = new SqlCommand(qery,con);
+            sda.SelectCommand = cmd;
+            sda.Fill(ds);
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                txtAmountSale.Text = rd["total"].ToString();
+            }
+            rd.Close();
+            con.Close();
         }
         private void fetchCompany()
         {

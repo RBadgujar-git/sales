@@ -201,8 +201,10 @@ namespace sample
             //{
 
             //
-            reinder();
-            
+            if (REMINDER == 1)
+            {
+                reinder();
+            }
 
         }
         //public void alert(string msg)
@@ -797,7 +799,8 @@ namespace sample
             PB.BringToFront();
             // PB.Show();
         }
-        public int Estiment1,deleverychallan,otherincome, reminderdata;
+        public static int riminder;
+        public int Estiment1,REMINDER,deleverychallan, otherincome, reminderdata;
         public string remess;
         public void setting()
         {
@@ -822,6 +825,9 @@ namespace sample
                 otherincome = Convert.ToInt32(dr["OtheIncome"]);
                 remess = dr["remindermessage"].ToString();
                 reminderdata =Convert.ToInt32(dr["notifyday"]);
+                riminder = Convert.ToInt32(dr["cashremoinder"]);
+                REMINDER = Convert.ToInt32(dr["REMINDER"]);
+
             }
             dr.Close();
             //  SqlCommand cmd4 = new SqlCommand("Select Sale_purches  from Setting_Table  where  Company_ID=" + NewCompany.company_id + "", con);

@@ -41,6 +41,18 @@ namespace sample
             fetchCategory();
             bindbankdata();
             fetchCompany();
+            int sum = 0;
+            for (int i = 0; i < dgvexpense.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dgvexpense.Rows[i].Cells[1].Value);
+            }
+            txtTotalQty.Text = sum.ToString();
+            int sum1 = 0;
+            for (int i = 0; i < dgvexpense.Rows.Count; ++i)
+            {
+                sum1 += Convert.ToInt32(dgvexpense.Rows[i].Cells[2].Value);
+            }
+            txttotal.Text = sum1.ToString();
         }
         private void fetchCompany()
         {

@@ -83,7 +83,8 @@ namespace sample
             //fetchitem();
             txtReturnNo.Enabled = false;
             fetchCategory();
-       //     bind_sale_details();
+            //     bind_sale_details();
+            seeting();
             get_id();
             fetchitem1();
            // fetchBarcode();
@@ -198,8 +199,8 @@ namespace sample
                     txtTaxAMount1.Text = gst_amt.ToString();
 
                     total = (sub_total + gst_amt) - dis_amt;
-                    txtItemTotal.Text = total.ToString();
-                //    txtsubtotal.Text = total.ToString();
+                    txtItemTotal.Text =Math.Round(total ,reminder1).ToString();
+          //    txtsubtotal.Text = total.ToString();
                 }
                 catch(Exception ew )
                 {
@@ -532,6 +533,27 @@ namespace sample
                // MessageBox.Show("Error"+ex);
             }
           
+        }
+        public int investment, barcode, reminder1;
+        public void seeting()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from Setting_Table where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+                //investment = Convert.ToInt32(dr["InvoiceNo"]);
+                //barcode = Convert.ToInt32(dr["barcode"]);
+                reminder1 = Convert.ToInt32(dr["cashremoinder"]);
+
+            }
+            dr.Close();
         }
 
         private void gst_devide()
@@ -1014,7 +1036,9 @@ namespace sample
                 txtTaxAmount.Text = gst_amt.ToString();
 
                 total = (TA + gst_amt) - dis_amt;
-                txtTotal.Text = total.ToString();
+                txtTotal.Text =Math.Round(total,reminder1).ToString();
+
+
             }
             catch(Exception ew)
             {

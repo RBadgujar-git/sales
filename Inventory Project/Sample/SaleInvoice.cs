@@ -737,7 +737,8 @@ namespace sample
                // ItemSetting.checkbarcode();
             }
         }
-        public int investment,discountcheck, ItemwisTax,barcode;
+        public int investment,discountcheck, ItemwisTax,barcode,reming;
+        public int remind;
         public void seeting()
         {
 
@@ -755,7 +756,7 @@ namespace sample
                 discountcheck= Convert.ToInt32(dr["ItemWiseDiscount"]);
                 ItemwisTax= Convert.ToInt32(dr["ItemwisTax"]);
                 barcode=Convert.ToInt32(dr["barcode"]);
-
+                remind = Convert.ToInt32(dr["cashremoinder"]);    
             }
             dr.Close();
         }
@@ -870,7 +871,7 @@ namespace sample
                         textBox1.Text = dr["Barcode"].ToString();
                         TxtIGST.Text = dr["IGST"].ToString();
                         textBox6.Text = dr["CalTotal"].ToString();
-                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox3.Text = dr["TaxAmountShow"].ToString();
                         textBox4.Text = dr["Discount"].ToString();
                         id = dr["InvoiceID"].ToString();
                     }
@@ -1130,6 +1131,8 @@ namespace sample
                 comboBox2.Visible = false;
                 //cmbtax.Visible = false;
                 //  comboBox3.Visible = true;
+
+
                 bind_sale_details();
             }
         }
@@ -1245,11 +1248,11 @@ namespace sample
                 txtTaxAmount.Text = gst_amt.ToString();
 
                 total = (TA + gst_amt) - dis_amt;
-                txtTotal.Text = total.ToString();
+                txtTotal.Text =Math.Round(total, remind).ToString();
             }
 
         }
-
+       
         private void txtDiscount_TextChanged(object sender, EventArgs e)
         {
 
@@ -2264,6 +2267,11 @@ namespace sample
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTaxAmount_TextChanged(object sender, EventArgs e)
         {
 
         }
