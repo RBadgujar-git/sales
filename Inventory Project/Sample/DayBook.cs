@@ -16,7 +16,9 @@ namespace sample
     {
         public string date1;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-
+        string sumsale1;
+        string sumother;
+         string total;
 
         public FormWindowState WindowState { get; private set; }
 
@@ -43,6 +45,7 @@ namespace sample
 
         private void DayBook_Load(object sender, EventArgs e)
         {
+          
             //if (radioButton1.Checked = true)
             //{
             //    bind_sale();
@@ -64,10 +67,11 @@ namespace sample
             //Purchase1();
             //PurchaseOrder1();
             //Expenses1();
-           // caltotalmoneyout();
-           // TotalMoneyInOut();
+            // caltotalmoneyout();
+            // TotalMoneyInOut();
             bind_sale();
-           // caltotalmoneyin();
+            calm();
+          // caltotalmoneyin();
 
         }
         private void bind_sale()
@@ -93,10 +97,32 @@ namespace sample
             }
             finally
             {
-                Bind_sale_TotalAmount();
+                //Bind_sale_TotalAmount();
             }
         }
-
+        public void calm()
+        {
+            con.Open();
+            SqlCommand cd1 = new SqlCommand("select sum(Received) from tbl_SaleInvoice where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr1 = cd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                sumsale1 = dr1.GetValue(0).ToString();
+            }
+            dr1.Close();
+            con.Close();
+            con.Open();
+            SqlCommand cd = new SqlCommand("select sum(Received) from tbl_OtherIncome where Date='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr = cd.ExecuteReader();
+            while (dr.Read())
+            {
+                sumother = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+            con.Close();
+            total = sumsale1 + sumother;
+            txtmoneyin.Text = total.ToString();
+        }
         private void BindPurchase_TotalAmount()
         {
             try
@@ -480,6 +506,8 @@ namespace sample
         private void dtpdate_ValueChanged(object sender, EventArgs e)
         {
             bind_sale();
+
+            calm();
         }
     }
 }

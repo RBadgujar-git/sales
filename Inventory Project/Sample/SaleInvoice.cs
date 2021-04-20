@@ -870,7 +870,7 @@ namespace sample
                         textBox1.Text = dr["Barcode"].ToString();
                         TxtIGST.Text = dr["IGST"].ToString();
                         textBox6.Text = dr["CalTotal"].ToString();
-                        textBox3.Text = dr["TaxShow"].ToString();
+                        textBox3.Text = dr["TaxAmountShow"].ToString();
                         textBox4.Text = dr["Discount"].ToString();
                         id = dr["InvoiceID"].ToString();
                     }
@@ -1130,6 +1130,8 @@ namespace sample
                 comboBox2.Visible = false;
                 //cmbtax.Visible = false;
                 //  comboBox3.Visible = true;
+
+
                 bind_sale_details();
             }
         }
