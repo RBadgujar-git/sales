@@ -33,6 +33,12 @@ namespace sample
         {
             fetchCompany();
             Bindadata();
+            int sum = 0;
+            for (int i = 0; i < dgvSaleorder.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dgvSaleorder.Rows[i].Cells[4].Value);
+            }
+            txtTotalAmount.Text = sum.ToString();
         }
         private void Bindadata()
         {

@@ -239,6 +239,7 @@
               <Parent isRef="15" />
               <Text>{DebitNote.Address}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
             </Text2>
             <Text3 Ref="18" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -252,6 +253,7 @@
               <Parent isRef="15" />
               <Text>{DebitNote.GSTNumber}</Text>
               <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
             </Text3>
             <Text4 Ref="19" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -1083,7 +1085,7 @@ GST</Text>
               <Name>Text13</Name>
               <Page isRef="3" />
               <Parent isRef="86" />
-              <Text>{DebitNote.TaxForSale}</Text>
+              <Text>{DebitNote.SaleTaxAmount}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text13>
@@ -2085,10 +2087,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/19/2021 12:41:48 PM</ReportChanged>
+  <ReportChanged>4/20/2021 3:58:24 PM</ReportChanged>
   <ReportCreated>3/18/2021 10:36:35 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\DebitNoteReport.mrt</ReportFile>
-  <ReportGuid>cb3b9224150146b798a5ac564cc0e14e</ReportGuid>
+  <ReportGuid>8c0940fa13534bebab0e3b0eaab90372</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

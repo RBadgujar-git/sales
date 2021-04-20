@@ -25,6 +25,25 @@ namespace sample
 
         private void DiscountReport_Load(object sender, EventArgs e)
         {
+            con.Open();
+            SqlCommand cd = new SqlCommand("select sum(Discount) as total from tbl_saleinvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr = cd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtdiscountAmountSale.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+            con.Close();
+            con.Open();
+            SqlCommand cd1 = new SqlCommand("select sum(Discount) as total from tbl_purchasebill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr1 = cd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                txtDiscountAmountPurchase.Text = dr1.GetValue(0).ToString();
+            }
+            dr1.Close();
+            con.Close();
+               
             try
             {
                 con.Open();
