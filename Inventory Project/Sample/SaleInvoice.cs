@@ -702,7 +702,6 @@ namespace sample
                 validdata();
                 if (veryfi == 1)
                 {
-
                     insertdata();
                     sms1 = "thank tou for purches totalamount:" + txtTotal.Text + " Revicebalance="+txtReceived.Text+" Remaning amoutn ="+txtBallaance.Text+"";
                     sms(txtcon.Text,sms1);
