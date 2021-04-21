@@ -2003,11 +2003,11 @@ namespace sample
            
             if (report4 == 1)
             {
-                report();
+                report1();
             }
             else
             {
-                report1();
+                report();
             }
             con.Close();
             cmbpartyname.Visible = true;
