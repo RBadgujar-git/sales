@@ -2306,3 +2306,5 @@ C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\T
 C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Notification.resources
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Toaster.NET.dll
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Notification.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
