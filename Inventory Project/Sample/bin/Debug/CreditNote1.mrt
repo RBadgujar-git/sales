@@ -193,7 +193,7 @@
         </PageFooterBand1>
         <Text25 Ref="14" type="Text" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>6,27.8,6.2,0.6</ClientRectangle>
+          <ClientRectangle>5.6,28,6.2,0.6</ClientRectangle>
           <Conditions isList="true" count="0" />
           <Font>Arial,10,Bold</Font>
           <Guid>2197adc452014ab88b96c9db772afa04</Guid>
@@ -204,7 +204,7 @@
           <Parent isRef="3" />
           <Text>This is Computer Generated Invoice</Text>
           <TextBrush>Black</TextBrush>
-          <VertAlignment>Bottom</VertAlignment>
+          <VertAlignment>Center</VertAlignment>
         </Text25>
         <ReportTitleBand1 Ref="15" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
@@ -2041,10 +2041,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/20/2021 2:07:34 PM</ReportChanged>
+  <ReportChanged>4/20/2021 5:32:27 PM</ReportChanged>
   <ReportCreated>3/18/2021 1:59:46 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\CreditNote1.mrt</ReportFile>
-  <ReportGuid>552bb3964a1c4ffe9455559f1f338adc</ReportGuid>
+  <ReportGuid>931f1b78739e426eb015840d726c0d40</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
