@@ -15,9 +15,10 @@ namespace sample
     public partial class DayBook : UserControl
     {
         public string date1;
+        public static int compid;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-        float sumsale1;
-        float sumother;
+        float sumsale1=0;
+        float sumother=0;
          float total=0;
 
         public FormWindowState WindowState { get; private set; }
@@ -45,7 +46,7 @@ namespace sample
 
         private void DayBook_Load(object sender, EventArgs e)
         {
-          
+            fetchCompany();
             //if (radioButton1.Checked = true)
             //{
             //    bind_sale();
@@ -71,8 +72,33 @@ namespace sample
             // TotalMoneyInOut();
             bind_sale();
             calm();
+          //  BindExpenses_TotalAmount();
           // caltotalmoneyin();
 
+        }
+        private void fetchCompany()
+        {
+            if (cmbAllfirms.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    string SelectQuery = string.Format("select CompanyName,CompanyID from tbl_CompanyMaster where DeleteData='1' group by CompanyName,CompanyID");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        compid = Convert.ToInt32(ds.Tables["temp"].Rows[i]["CompanyID"].ToString());
+                        cmbAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
         private void bind_sale()
         {
@@ -107,7 +133,7 @@ namespace sample
             SqlDataReader dr1 = cd1.ExecuteReader();
             while (dr1.Read())
             {
-                sumsale1 = float.Parse(dr1.GetValue(0).ToString());
+                label6.Text = dr1.GetValue(0).ToString();
             }
             dr1.Close();
             con.Close();
@@ -116,52 +142,41 @@ namespace sample
             SqlDataReader dr = cd.ExecuteReader();
             while (dr.Read())
             {
-                sumother = float.Parse(dr.GetValue(0).ToString());
+                label7.Text = dr.GetValue(0).ToString();
             }
             dr.Close();
             con.Close();
-            total = sumother + sumsale1;
-            txtmoneyin.Text = total.ToString();
+           
         }
-        private void BindPurchase_TotalAmount()
-        {
-            try
-            {
-                float Sum = 0;
-                string SelectQuery=string.Format("select Received from tbl_SaleInvoice where InvoiceDate='" + date + "'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "Temp");
-                DataTable DT = new DataTable();
-                SDA.Fill(ds);
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                {
-                    Sum = Sum + float.Parse(ds.Tables["Temp"].Rows[i]["Received"].ToString());
-                    sumpurchase = Sum;
-                }
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
-        }
+        //private void BindPurchase_TotalAmount()
+        //{
+        //    try
+        //    {
+        //        float Sum = 0;
+        //        string SelectQuery=string.Format("select Received from tbl_SaleInvoice where InvoiceDate='" + date + "'");
+        //        DataSet ds = new DataSet();
+        //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+        //        SDA.Fill(ds, "Temp");
+        //        DataTable DT = new DataTable();
+        //        SDA.Fill(ds);
+        //        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+        //        {
+        //            Sum = Sum + float.Parse(ds.Tables["Temp"].Rows[i]["Received"].ToString());
+        //            sumpurchase = Sum;
+        //        }
+        //    }
+        //    catch (Exception e1)
+        //    {
+        //        MessageBox.Show(e1.Message);
+        //    }
+        //}
 
         private void BindExpenses_TotalAmount()
         {
-            try
-            {
-                int Sum = 0;
-
-                for (int i = 1; i < dataGridView1.Rows.Count; i++)
-                {
-                    Sum = Sum + Int32.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
-                    sumexpenses = Sum;
-                }
-            }
-            catch (Exception e1)
-            {
-                MessageBox.Show(e1.Message);
-            }
+            sumsale1 = Convert.ToInt32(label6.Text);
+            sumother = Convert.ToInt32(label7.Text);
+             total = sumsale1 + sumother;
+            txtmoneyin.Text = total.ToString();
         }
 
         //private void bind_purchase()
@@ -508,6 +523,26 @@ namespace sample
             bind_sale();
 
             calm();
+        }
+
+        private void cmbAllfirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')union (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1') union  (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1' )union(select TableName,PartyName,BillDate  as InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')union(select TableName,PartyName,OrderDate As InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseOrder where OrderDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')union(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')union(select TableName,PartyName,OrderDate as InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where OrderDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')union(select TableName,IncomeCategory as PartyName,Date as InvoiceDate,Total,Received,Balance,Status from tbl_OtherIncome where Date='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')union(select TableName,ExpenseCategory as PartyName,Date as InvoiceDate,Total,Paid,Balance,Status from tbl_Expenses where Date='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + compid + "' and DeleteData='1')", cmbAllfirms.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "temp";
+
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
         }
     }
 }
