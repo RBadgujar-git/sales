@@ -47,6 +47,7 @@ namespace sample
             {
                 chkInvoiceBill.Checked = true;
             }
+            panel1.Visible = false;
             if (cashbydefault == 1)
             {
                 chkCashSale.Checked = true;
@@ -431,6 +432,34 @@ namespace sample
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set DeliveryDate = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void chkSendSMStoparty_CheckedChanged(object sender, EventArgs e)
+        {
+            smsfrom fm = new smsfrom();
+            if (chkSendSMStoparty.Checked == true)
+            {
+                fm.Show();
+            }
+            if (chkSendSMStoparty.Checked == false)
+            {
+                fm.Hide();
+            }
+
+
+        }
+
+        private void chkSendSMStoSelf_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSendSMStoSelf.Checked == true)
+            {
+                panel1.Visible = true;
+            }
+            if (chkSendSMStoSelf.Checked == false)
+            {
+                panel1.Visible = false;
+                textBox2.Focus();
             }
         }
     }

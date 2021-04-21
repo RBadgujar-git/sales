@@ -50,7 +50,11 @@ namespace sample
         {
 
             // con = new SqlConnection("Data Source=" + (comboBox1.Text) + ";Database=Master;data source=.; uid=; pwd=;");
-            con = new SqlConnection("Data Source=" + (cmbserver.Text) + ";Initial Catalog=CustomerDB;Integrated Security=True ");
+            //con = new SqlConnection("Data Source=" + (cmbserver.Text) + ";Initial Catalog=CustomerDB;Integrated Security=True ");
+            
+
+               con = new SqlConnection("Data Source=103.83.81.80;Initial Catalog=idealtec_inventory;User ID=idealtec_inventory;Password=Mpiti@123");
+            
             con.Open();
             cmbdb.Items.Clear();
             cmd = new SqlCommand("SELECT DB_NAME() AS[Current Database]", con);

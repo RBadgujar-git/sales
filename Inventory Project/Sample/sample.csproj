@@ -497,6 +497,12 @@
     <Compile Include="ExportToExcel.Designer.cs">
       <DependentUpon>ExportToExcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="E_Waybillgenrate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="E_Waybillgenrate.Designer.cs">
+      <DependentUpon>E_Waybillgenrate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -926,6 +932,12 @@
     <Compile Include="Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="smsfrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="smsfrom.Designer.cs">
+      <DependentUpon>smsfrom.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1115,6 +1127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExportToExcel.resx">
       <DependentUpon>ExportToExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="E_Waybillgenrate.resx">
+      <DependentUpon>E_Waybillgenrate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Feedback.resx">
       <DependentUpon>Feedback.cs</DependentUpon>
@@ -1336,6 +1351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="smsfrom.resx">
+      <DependentUpon>smsfrom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockDetails.resx">
       <DependentUpon>StockDetails.cs</DependentUpon>

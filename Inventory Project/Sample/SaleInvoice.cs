@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using Stimulsoft.Report;
 
 using Stimulsoft.Report.Components;
+using System.Net;
+using System.Collections.Specialized;
 
 namespace sample
 {
@@ -677,6 +679,8 @@ namespace sample
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
+        public string sms1;
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed)
@@ -700,6 +704,8 @@ namespace sample
                 {
 
                     insertdata();
+                    sms1 = "thank tou for purches totalamount:" + txtTotal.Text + " Revicebalance="+txtReceived.Text+" Remaning amoutn ="+txtBallaance.Text+"";
+                    sms(txtcon.Text,sms1);
                     insrtparty();
                     clear_text_data();
                     cleardata();
@@ -2183,7 +2189,34 @@ namespace sample
         {
 
         }
+        public void sms(String MOBILE ,String SMS)
+        {
+            try
+            {
+                //WebClient client = new WebClient();
+                //Stream s = client.OpenRead("");
+                //StreamReader reder = new StreamReader(s);
+                //string resulte = reder.ReadToEnd();
+                //MessageBox.Show("THE ID IS" + resulte);
+                //https://www.itexmo.com/php_api/api.php
+                WebClient client = new WebClient();
+                NameValueCollection nam = new NameValueCollection();
+                nam.Add("1",MOBILE);
+                nam.Add("2",SMS);
+                nam.Add("3","TR-VITHO405857_SJAHL");
+                nam.Add("passwd", "1{iu6)@1qb");
+                byte[] send = client.UploadValues("https://www.itexmo.com/php_api/api.php", "POST", nam);
+                System.Text.UTF8Encoding.UTF8.GetString(send);
 
+                MessageBox.Show("Message are send to client");
+            }
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+
+
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -2274,7 +2307,8 @@ namespace sample
 
         private void btnlinkPayment_Click(object sender, EventArgs e)
         {
-
+            E_Waybillgenrate ew = new E_Waybillgenrate();
+            ew.Show();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

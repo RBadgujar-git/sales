@@ -38,10 +38,8 @@
             this.chkGenerateEWay = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btncancel = new System.Windows.Forms.Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtRemainder = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.btncancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chkComposite
@@ -207,60 +205,6 @@
             this.label1.TabIndex = 387;
             this.label1.Text = "GST Setting";
             // 
-            // btncancel
-            // 
-            this.btncancel.BackColor = System.Drawing.Color.White;
-            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
-            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btncancel.FlatAppearance.BorderSize = 0;
-            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(992, 4);
-            this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(28, 26);
-            this.btncancel.TabIndex = 386;
-            this.btncancel.UseVisualStyleBackColor = false;
-            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
-            // 
-            // guna2Button2
-            // 
-            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
-            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
-            this.guna2Button2.FillColor = System.Drawing.Color.White;
-            this.guna2Button2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button2.ForeColor = System.Drawing.Color.Blue;
-            this.guna2Button2.HoverState.Parent = this.guna2Button2;
-            this.guna2Button2.Location = new System.Drawing.Point(93, 405);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button2.TabIndex = 402;
-            this.guna2Button2.Text = "Reminder Message>>";
-            // 
-            // txtRemainder
-            // 
-            this.txtRemainder.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRemainder.DefaultText = "";
-            this.txtRemainder.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRemainder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRemainder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRemainder.DisabledState.Parent = this.txtRemainder;
-            this.txtRemainder.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRemainder.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRemainder.FocusedState.Parent = this.txtRemainder;
-            this.txtRemainder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtRemainder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRemainder.HoverState.Parent = this.txtRemainder;
-            this.txtRemainder.Location = new System.Drawing.Point(269, 414);
-            this.txtRemainder.Name = "txtRemainder";
-            this.txtRemainder.PasswordChar = '\0';
-            this.txtRemainder.PlaceholderText = "";
-            this.txtRemainder.SelectedText = "";
-            this.txtRemainder.ShadowDecoration.Parent = this.txtRemainder;
-            this.txtRemainder.Size = new System.Drawing.Size(302, 90);
-            this.txtRemainder.TabIndex = 403;
-            // 
             // btnminimize
             // 
             this.btnminimize.BackColor = System.Drawing.Color.White;
@@ -278,6 +222,22 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // btncancel
+            // 
+            this.btncancel.BackColor = System.Drawing.Color.White;
+            this.btncancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btncancel.BackgroundImage")));
+            this.btncancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btncancel.FlatAppearance.BorderSize = 0;
+            this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btncancel.Location = new System.Drawing.Point(992, 4);
+            this.btncancel.Name = "btncancel";
+            this.btncancel.Size = new System.Drawing.Size(28, 26);
+            this.btncancel.TabIndex = 386;
+            this.btncancel.UseVisualStyleBackColor = false;
+            this.btncancel.Click += new System.EventHandler(this.btncancel_Click);
+            // 
             // TaxnGST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -285,8 +245,6 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.txtRemainder);
-            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.chkComposite);
             this.Controls.Add(this.chkEnableHSn);
             this.Controls.Add(this.chkAdditionalCases);
@@ -321,8 +279,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btncancel;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2TextBox txtRemainder;
         private System.Windows.Forms.Button btnminimize;
     }
 }

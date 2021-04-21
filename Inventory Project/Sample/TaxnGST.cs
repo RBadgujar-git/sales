@@ -40,7 +40,7 @@ namespace sample
 
         private void TaxnGST_Load(object sender, EventArgs e)
         {
-           
+
             cheekpass1();
             if (Hsn == 1)
             {
@@ -57,18 +57,20 @@ namespace sample
                 chkEWayBilling.Checked = true;
                 chkEnablleGSt.Checked = true;
             }
-            if(Cess==1)
+            if (Cess == 1)
             {
                 chkAdditionalCases.Checked = true;
                 chkEnablleGSt.Checked = true;
             }
 
             seeting();
-            if(reverschecharges==1)
+            if (reverschecharges == 1)
             {
                 chkRevesreCharges.Checked = true;
             }
+            chkGenerateEWay.Visible = false;
         }
+
         public int Cess;
         public void cheekpass1()
         {
@@ -160,11 +162,13 @@ namespace sample
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set EwayBill = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+                chkGenerateEWay.Visible = true;
             }
             else if (chkEWayBilling.Checked == false)
             {
                 SqlCommand cmd = new SqlCommand("update TransactionTableSetting Set EwayBill = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
+                chkGenerateEWay.Visible = false;
             }
         }
 
