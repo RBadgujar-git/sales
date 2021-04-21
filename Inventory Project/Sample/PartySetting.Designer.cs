@@ -55,10 +55,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.NumericUpDown = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown)).BeginInit();
@@ -488,6 +488,15 @@
             this.panel2.TabIndex = 448;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(318, 99);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            // 
             // NumericUpDown
             // 
             this.NumericUpDown.BackColor = System.Drawing.Color.Transparent;
@@ -502,7 +511,7 @@
             this.NumericUpDown.FocusedState.Parent = this.NumericUpDown;
             this.NumericUpDown.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.NumericUpDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(126)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.NumericUpDown.Location = new System.Drawing.Point(260, 246);
+            this.NumericUpDown.Location = new System.Drawing.Point(259, 246);
             this.NumericUpDown.Maximum = new decimal(new int[] {
             30,
             0,
@@ -532,15 +541,6 @@
             this.label4.TabIndex = 325;
             this.label4.Text = "Days";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 99);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // guna2Button2
             // 

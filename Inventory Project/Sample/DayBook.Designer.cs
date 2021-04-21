@@ -45,6 +45,8 @@
             this.btnimport = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +72,7 @@
             this.cmbAllfirms.Size = new System.Drawing.Size(140, 36);
             this.cmbAllfirms.StartIndex = 0;
             this.cmbAllfirms.TabIndex = 0;
+            this.cmbAllfirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllfirms_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -253,11 +256,31 @@
             this.dataGridView1.Size = new System.Drawing.Size(753, 396);
             this.dataGridView1.TabIndex = 438;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(309, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(16, 16);
+            this.label6.TabIndex = 439;
+            this.label6.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(374, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(16, 16);
+            this.label7.TabIndex = 440;
+            this.label7.Text = "0";
+            // 
             // DayBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpdate);
@@ -305,5 +328,7 @@
         private System.Windows.Forms.Button PrintPurchase;
         private System.Windows.Forms.Button Print;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
