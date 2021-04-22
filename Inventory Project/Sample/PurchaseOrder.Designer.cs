@@ -2281,11 +2281,11 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(879, 524);
+            this.label22.Location = new System.Drawing.Point(902, 526);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(78, 16);
+            this.label22.Size = new System.Drawing.Size(46, 16);
             this.label22.TabIndex = 62;
-            this.label22.Text = "Received :";
+            this.label22.Text = "Paid :";
             // 
             // label12
             // 

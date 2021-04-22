@@ -13,7 +13,9 @@ using System.Diagnostics;
 using Tulpep.NotificationWindow;
 using System.Threading;
 using kp.Toaster;
-
+using System.Net;
+using System.IO;
+using System.Collections.Specialized;
 
 namespace sample
 {
@@ -1601,9 +1603,35 @@ namespace sample
            
         }
 
+        public void sms()
+        {
+            try
+            {
+                //WebClient client = new WebClient();
+                //Stream s = client.OpenRead("");
+                //StreamReader reder = new StreamReader(s);
+                //string resulte = reder.ReadToEnd();
+                //MessageBox.Show("THE ID IS" + resulte);
+                //https://www.itexmo.com/php_api/api.php
+                WebClient client = new WebClient();
+                NameValueCollection nam = new NameValueCollection();
+                nam.Add("1", "09766930263");
+                nam.Add("2", "");
+                nam.Add("3", "TR-VITHO405857_SJAHL");
+                nam.Add("passwd", "1{iu6)@1qb");
+                byte[] send = client.UploadValues("https://www.itexmo.com/php_api/api.php","POST",nam);
+                System.Text.UTF8Encoding.UTF8.GetString(send);
+            }
+            catch ( Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+             
+
+        }
         private void guna2Button52_Click(object sender, EventArgs e)
         {
-           
+            //sms();
         }
 
         private void panel3_MouseHover(object sender, EventArgs e)

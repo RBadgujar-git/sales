@@ -57,6 +57,9 @@
             this.chkTransactionWiseDiscount = new Guna.UI2.WinForms.Guna2CheckBox();
             this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.cmbFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.guna2ComboBox9 = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -85,6 +88,7 @@
             this.guna2CheckBox4 = new Guna.UI2.WinForms.Guna2CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -536,6 +540,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firm";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Location = new System.Drawing.Point(833, 414);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(177, 96);
+            this.panel1.TabIndex = 301;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(49, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 308;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(16, 14);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(145, 33);
+            this.textBox2.TabIndex = 321;
+            // 
             // cmbFirms
             // 
             this.cmbFirms.BackColor = System.Drawing.Color.Transparent;
@@ -804,6 +835,7 @@
             this.chkSendSMStoparty.UncheckedState.BorderRadius = 0;
             this.chkSendSMStoparty.UncheckedState.BorderThickness = 0;
             this.chkSendSMStoparty.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSendSMStoparty.CheckedChanged += new System.EventHandler(this.chkSendSMStoparty_CheckedChanged);
             // 
             // chkSendSMStoSelf
             // 
@@ -821,6 +853,7 @@
             this.chkSendSMStoSelf.UncheckedState.BorderRadius = 0;
             this.chkSendSMStoSelf.UncheckedState.BorderThickness = 0;
             this.chkSendSMStoSelf.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkSendSMStoSelf.CheckedChanged += new System.EventHandler(this.chkSendSMStoSelf_CheckedChanged);
             // 
             // guna2Panel5
             // 
@@ -966,6 +999,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2CheckBox1);
             this.Controls.Add(this.guna2CheckBox2);
             this.Controls.Add(this.guna2CheckBox3);
@@ -1020,6 +1054,8 @@
             this.Load += new System.EventHandler(this.TransactionSetting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1083,5 +1119,8 @@
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox2;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox3;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox4;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

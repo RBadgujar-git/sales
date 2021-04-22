@@ -245,6 +245,11 @@ namespace sample
             //    groupBox1.Controls.Add(rdo);
 
             //}
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
         }
 
         public void defualt()
@@ -281,6 +286,10 @@ namespace sample
                     MessageBox.Show(e1.Message);
                 }
             }
+
+
+
+           
         }
         private void chkSaleOrder_CheckedChanged(object sender, EventArgs e)
         {

@@ -2306,3 +2306,24 @@ C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\T
 C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Notification.resources
 D:\Git project\sales\Inventory Project\sample\bin\Debug\Toaster.NET.dll
 D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Notification.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
