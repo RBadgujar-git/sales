@@ -1158,6 +1158,10 @@ namespace sample
                     cmd.Parameters.AddWithValue("@DiscountAmount", guna2DataGridView2.Rows[i].Cells["DiscountAmount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", guna2DataGridView2.Rows[i].Cells["ItemAmount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemID", guna2DataGridView2.Rows[i].Cells["ItemID11"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemTotal", guna2DataGridView2.Rows[i].Cells["CalTotal"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@cgst", guna2DataGridView2.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@sgst", guna2DataGridView2.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@igst", guna2DataGridView2.Rows[i].Cells["IGST"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.Parameters.AddWithValue("@BillNo", txtReturnNo.Text);
 
@@ -1300,7 +1304,9 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Feild3", txtadditional2.Text);
                         cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                         cmd.Parameters.AddWithValue("@TableName", Purchase.Text);
-
+                        cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
+                        cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                        cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
                         cmd.Parameters.AddWithValue("@Action", "Update");
 
                         id1 = cmd.ExecuteScalar();

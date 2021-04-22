@@ -779,7 +779,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                 cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                 cmd.Parameters.AddWithValue("@TableName", Quatation.Text);
-
+                cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
+                cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
 
                 //if (cmbpartyname.Visible == true)
                 //{

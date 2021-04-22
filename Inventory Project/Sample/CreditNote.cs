@@ -1240,6 +1240,9 @@ namespace sample
                     cmd.Parameters.AddWithValue("@ContactNo", txtcon.Text);
                     cmd.Parameters.AddWithValue("@TableName", Credit.Text);
                     cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
+                    cmd.Parameters.AddWithValue("@CalTotal", textBox6.Text);
+                    cmd.Parameters.AddWithValue("@TaxShow", textBox3.Text);
+                    cmd.Parameters.AddWithValue("@Discount", textBox4.Text);
                     // cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                     if (cmbpartyname.Visible == true)
                     {
@@ -1311,6 +1314,10 @@ namespace sample
                     cmd.Parameters.AddWithValue("@Discount", dgvInnerCreditNote.Rows[i].Cells["Discount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerCreditNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerCreditNote.Rows[i].Cells["Amount"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemTotal", dgvInnerCreditNote.Rows[i].Cells["CalTotal"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@cgst", dgvInnerCreditNote.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@sgst", dgvInnerCreditNote.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@igst", dgvInnerCreditNote.Rows[i].Cells["IGST"].Value.ToString());
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
 
                     cmd.ExecuteNonQuery();
