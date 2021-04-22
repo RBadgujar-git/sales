@@ -41,24 +41,24 @@ namespace sample
         private void TaxRateReport_Load(object sender, EventArgs e)
         {
             fetchCompany();
-            //con.Open();
-            //SqlCommand cd = new SqlCommand("select sum(SaleTaxAmount) as total from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-            //SqlDataReader dr = cd.ExecuteReader();
-            //while (dr.Read())
-            //{
-            //    txtTotalTaxIn.Text = dr.GetValue(0).ToString();
-            //}
-            //dr.Close();
-            //con.Close();
-            //con.Open();
-            //SqlCommand cd1 = new SqlCommand("select sum(PurchaseTaxAmount) from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-            //SqlDataReader dr1 = cd1.ExecuteReader();
-            //while (dr1.Read())
-            //{
-            //    txtTaxOut.Text = dr1.GetValue(0).ToString();
-            //}
-            //dr1.Close();
-            //con.Close();
+            con.Open();
+            SqlCommand cd = new SqlCommand("select sum(SaleTaxAmount) as total from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr = cd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtTotalTaxIn.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+            con.Close();
+            con.Open();
+            SqlCommand cd1 = new SqlCommand("select sum(PurchaseTaxAmount) from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlDataReader dr1 = cd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                txtTaxOut.Text = dr1.GetValue(0).ToString();
+            }
+            dr1.Close();
+            con.Close();
             try
             {
                 con.Open();
