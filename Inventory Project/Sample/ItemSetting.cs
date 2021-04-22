@@ -529,9 +529,13 @@ namespace sample
                 //  txtMRP.Visible = false;
             }
         }
-
+ 
         private void chkSize_CheckedChanged(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
             if (chkSize.Checked == true)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set Size = '0' where  Company_ID=" + NewCompany.company_id + "", con);
