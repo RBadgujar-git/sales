@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
-
-using Stimulsoft.Report.Components;
 using System.Net;
 using System.Collections.Specialized;
+
+using Stimulsoft.Report.Components;
+using System.IO;
 
 namespace sample
 {
@@ -702,7 +703,6 @@ namespace sample
                 validdata();
                 if (veryfi == 1)
                 {
-
                     insertdata();
                     sms1 = "thank tou for purches totalamount:" + txtTotal.Text + " Revicebalance="+txtReceived.Text+" Remaning amoutn ="+txtBallaance.Text+"";
                     sms(txtcon.Text,sms1);
@@ -743,6 +743,47 @@ namespace sample
                 printdata2();
                // ItemSetting.checkbarcode();
             }
+        }
+
+        public void sendSMS()
+        {
+            String result;
+            string apiKey = "OGU5M2I5YjgyOGNlNGM2M2JmOTE0NWIzMjFlMTRlNmY=";
+            string numbers = "+91 8390317435"; // in a comma seperated list
+            string message = "This is your message";
+            string sender = "Ideal tech Info ";
+
+            String url = "https://api.txtlocal.com/send/?apikey=" + apiKey + "&numbers=" + numbers + "&message=" + message + "&sender=" + sender;
+            //refer to parameters to complete correct url string
+
+            StreamWriter myWriter = null;
+            HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(url);
+
+            objRequest.Method = "POST";
+            objRequest.ContentLength = Encoding.UTF8.GetByteCount(url);
+            objRequest.ContentType = "application/x-www-form-urlencoded";
+            try
+            {
+                myWriter = new StreamWriter(objRequest.GetRequestStream());
+                myWriter.Write(url);
+            }
+            catch (Exception eq)
+            {
+                MessageBox.Show("the mess"+eq);
+            }
+            finally
+            {
+                myWriter.Close();
+            }
+
+            HttpWebResponse objResponse = (HttpWebResponse)objRequest.GetResponse();
+            using (StreamReader sr = new StreamReader(objResponse.GetResponseStream()))
+            {
+                result = sr.ReadToEnd();
+                // Close and clean up the StreamReader
+                sr.Close();
+            }
+            MessageBox.Show("messege is send" + result);
         }
         public int investment,discountcheck, ItemwisTax,barcode,reming;
         public int remind;
@@ -2097,6 +2138,9 @@ namespace sample
             }
         }
         public int cp = 0;
+
+        public object HttpUtility { get; private set; }
+
         public void insrtparty()
         {
             try
@@ -2307,8 +2351,9 @@ namespace sample
 
         private void btnlinkPayment_Click(object sender, EventArgs e)
         {
-            E_Waybillgenrate ew = new E_Waybillgenrate();
-            ew.Show();
+            sendSMS();
+            //E_Waybillgenrate ew = new E_Waybillgenrate();
+            //ew.Show();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
