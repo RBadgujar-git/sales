@@ -749,15 +749,17 @@ namespace sample
         {
             String result;
             string apiKey = "OGU5M2I5YjgyOGNlNGM2M2JmOTE0NWIzMjFlMTRlNmY=";
-            string numbers = "+91 8390317435"; // in a comma seperated list
+            string numbers = "+8390317435"; // in a comma seperated list
             string message = "This is your message";
             string sender = "Ideal tech Info ";
 
             String url = "https://api.txtlocal.com/send/?apikey=" + apiKey + "&numbers=" + numbers + "&message=" + message + "&sender=" + sender;
             //refer to parameters to complete correct url string
 
+
             StreamWriter myWriter = null;
             HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(url);
+
 
             objRequest.Method = "POST";
             objRequest.ContentLength = Encoding.UTF8.GetByteCount(url);
@@ -784,6 +786,9 @@ namespace sample
                 sr.Close();
             }
             MessageBox.Show("messege is send" + result);
+
+
+
         }
         public int investment,discountcheck, ItemwisTax,barcode,reming;
         public int remind;

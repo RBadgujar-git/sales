@@ -21,81 +21,6 @@ namespace sample
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-        private void ItemSetting_Load(object sender, EventArgs e)
-        {
-            chkDirectBarcodescan.Visible = false;
-            demo();
-            cheekpass();
-            fatchname();
-            panel1.Visible = false;
-            chkItemsUnit.Checked = true;
-            guna2Button3.Visible = true;
-            if (NameMrp == 0)
-            {
-                chkMRP.Checked = true;
-                txtMRP.Text = MRPtext;
-            }
-            if (batchno == 0)
-            {
-                chkBatchNo.Checked = true;
-                txtBatchNo.Text = batchNotext;
-            }
-                if (Serealno == 0)
-            {
-                chkSerialNo.Checked = true;
-                txtSerialNo.Text = SeriealText;
-
-            }
-            if (MFd == 0)
-            {
-                chkmfgDate.Checked = true;
-                txtmfgdate.Text = Mfddatetext;
-            }
-              if (exd == 0)
-            {
-                chkExpdate.Checked = true;
-                txtexpdate.Text = Expdatetext;
-            }
-             if (size == 0)
-            {
-                chkSize.Checked = true;
-                txtSize.Text = Sizename;
-
-            }
-            if(itemwise==1)
-            {
-                guna2CheckBox16.Checked = true;
-            }
-            if (ItemwisTax == 1)
-            {
-                chkItemWiseTax.Checked = true;
-            }
-            if (barcode == 1)
-            {
-                chkBarcodeScan.Checked = true;
-            }
-            if(Stockmantance==0)
-            {
-                chkStockMaintance.Checked = true;
-            }
-            if(ItemCategory==1)
-            {
-                chkItemsCategory.Checked = true;
-            }
-            if(itemwisetax==1)
-            {
-                chkItemWiseTax.Checked = true;
-            }
-            chkDescription.Text = description;
-            chkDescription.Checked = true;
-
-
-           
-
-
-            label6.Visible = false;
-
-        }
 
 
         public void demo()
@@ -434,11 +359,6 @@ namespace sample
            
         }
 
-        private void s(object sender, EventArgs e)
-        {
-
-        }
-
         private void chkItemWiseTax_CheckedChanged_1(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed)
@@ -554,7 +474,7 @@ namespace sample
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set MRPDate = '1' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
                 txtMRP.Text = "MRP";
-              //  txtMRP.Visible = false;
+                //  txtMRP.Visible = false;
             }
 
         }
