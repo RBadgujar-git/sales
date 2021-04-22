@@ -643,5 +643,10 @@ namespace sample
         {
 
         }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
