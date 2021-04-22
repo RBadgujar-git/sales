@@ -33,9 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DebitNote));
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -189,9 +186,6 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label48);
-            this.panel1.Controls.Add(this.label47);
-            this.panel1.Controls.Add(this.label46);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
@@ -274,33 +268,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(607, 416);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(87, 16);
-            this.label48.TabIndex = 274473;
-            this.label48.Text = "Item Total :";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(551, 416);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(38, 16);
-            this.label47.TabIndex = 274472;
-            this.label47.Text = "Dis :";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(494, 416);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(41, 16);
-            this.label46.TabIndex = 274470;
-            this.label46.Text = "Tax :";
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(610, 441);
@@ -308,6 +275,7 @@
             this.textBox6.Size = new System.Drawing.Size(53, 23);
             this.textBox6.TabIndex = 274471;
             this.textBox6.Text = "0";
+            this.textBox6.Visible = false;
             // 
             // textBox4
             // 
@@ -316,6 +284,7 @@
             this.textBox4.Size = new System.Drawing.Size(53, 23);
             this.textBox4.TabIndex = 274469;
             this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
             // 
             // textBox3
             // 
@@ -324,6 +293,7 @@
             this.textBox3.Size = new System.Drawing.Size(53, 23);
             this.textBox3.TabIndex = 274468;
             this.textBox3.Text = "0";
+            this.textBox3.Visible = false;
             // 
             // label38
             // 
@@ -2488,9 +2458,6 @@
         private System.Windows.Forms.Label label41;
         private Guna.UI2.WinForms.Guna2TextBox txtTax1;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;

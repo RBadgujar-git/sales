@@ -17,7 +17,7 @@ namespace sample
     {
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-
+        public static int compid;
         public FormWindowState WindowState { get; private set; }
 
         public AllTransactionReport()
@@ -110,7 +110,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName,CompanyID from tbl_CompanyMaster where DeleteData='1' group by CompanyName,CompanyID");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -118,6 +118,7 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
+                        compid = Convert.ToInt32(ds.Tables["temp"].Rows[i]["CompanyID"].ToString());
                         cmballfrims.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
                     }
                 }
@@ -130,7 +131,6 @@ namespace sample
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -157,22 +157,38 @@ namespace sample
         {
             try
             {
-
-                string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrder)union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice )union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder ) Where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmballfrims.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvalltransactions.DataSource = ds;
-                dgvalltransactions.DataMember = "temp";
-
+                con.Open();
+                string Query = String.Format("select CompanyID from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID", cmballfrims.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    compid = Convert.ToInt32(dr["CompanyID"].ToString());
+                    MessageBox.Show("Test" + compid);
+                }
+                dr.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                //throw;
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                companyinfo();
             }
         }
+        public void companyinfo()
+        {
+            //string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrderWhere CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice Where CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder Where CompanyID='" + compid + "' and DeleteData='1') ", cmballfrims.Text);
+            string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where Company_ID='" + compid + "' and DeleteData='1')union (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + compid + "' and DeleteData='1') union  (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where Company_ID='" + compid + "' and DeleteData='1' )union(select TableName,PartyName,BillDate  as InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + compid + "' and DeleteData='1')union(select TableName,PartyName,OrderDate As InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseOrder where Company_ID='" + compid + "' and DeleteData='1')union(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + compid + "' and DeleteData='1')union(select TableName,PartyName,OrderDate as InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + compid + "' and DeleteData='1')", cmballfrims.Text);
 
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvalltransactions.DataSource = ds;
+            dgvalltransactions.DataMember = "temp";
+        }
         private void dtpdate_ValueChanged(object sender, EventArgs e)
         {
 

@@ -84,6 +84,24 @@ namespace sample
            // binddata();
             fetchcustomername();
             fetchGroupname();
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                string Query = String.Format("select TableName,PartyName, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' union all select TableName,PartyName,  ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' union all select TableName,PartyName,  ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' union all select TableName,PartyName, ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where Company_ID='" + NewCompany.company_id + "'");
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvAllparties.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public void binddata()
         {
