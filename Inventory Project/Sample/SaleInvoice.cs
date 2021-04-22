@@ -748,8 +748,8 @@ namespace sample
         public void sendSMS()
         {
             String result;
-            string apiKey = "OGU5M2I5YjgyOGNlNGM2M2JmOTE0NWIzMjFlMTRlNmY=";
-            string numbers = "+8390317435"; // in a comma seperated list
+            string apiKey ="OGU5M2I5YjgyOGNlNGM2M2JmOTE0NWIzMjFlMTRlNmY=";
+            string numbers = "+91 8390317435"; // in a comma seperated list
             string message = "This is your message";
             string sender = "Ideal tech Info ";
 
@@ -786,7 +786,6 @@ namespace sample
                 sr.Close();
             }
             MessageBox.Show("messege is send" + result);
-
 
 
         }
