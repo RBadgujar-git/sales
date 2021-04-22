@@ -16,6 +16,7 @@ namespace sample
 {
     public partial class SaleInvoiceReport : UserControl
     {
+        public static int compid;
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         public SaleInvoiceReport()
         {
@@ -32,7 +33,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName,CompanyID from tbl_CompanyMaster where DeleteData='1' group by CompanyName,CompanyID");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -40,13 +41,13 @@ namespace sample
                     SDA.Fill(ds);
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
+                        compid = Convert.ToInt32(ds.Tables["temp"].Rows[i]["CompanyID"].ToString());
                         cmbFirm.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
                     }
-
                 }
-                catch (Exception e1)
+                catch (Exception ex)
                 {
-                 //   MessageBox.Show(e1.Message);
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -254,8 +255,7 @@ namespace sample
             
             fetchCampanyame();
             Bindadata();
-            label14.Visible = false;
-            cmbFirm.Visible = false;
+            
             //con.Open();
             //SqlCommand cmd = new SqlCommand("SELECT InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status FROM tbl_SaleInvoice", con);
             //DataSet ds = new DataSet();
@@ -352,8 +352,42 @@ namespace sample
 
         private void cmbFirm_SelectedIndexChanged(object sender, EventArgs e)
         {
+       
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            //DataTable dt = new DataTable();
+            //SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice where Company_ID='" + compid + "' and DeleteData='1'",cmbFirm.Text);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd,con);
+            //da.Fill(dt);
+            DataSet ds = new DataSet();
+           string Query=string.Format("select InvoiceID,InvoiceDate,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + compid + "' and DeleteData='1'",cmbFirm.Text);
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
 
-        }
+            dgvsaleInvoice.AutoGenerateColumns = false;
+            dgvsaleInvoice.ColumnCount = 8;
+            dgvsaleInvoice.Columns[0].HeaderText = "Date";
+            dgvsaleInvoice.Columns[0].DataPropertyName = "InvoiceDate";
+            dgvsaleInvoice.Columns[1].HeaderText = " Invoice No";
+            dgvsaleInvoice.Columns[1].DataPropertyName = "InvoiceID";
+            dgvsaleInvoice.Columns[2].HeaderText = "Party Name";
+            dgvsaleInvoice.Columns[2].DataPropertyName = "PartyName";
+            dgvsaleInvoice.Columns[3].HeaderText = " PaymentType";
+            dgvsaleInvoice.Columns[3].DataPropertyName = "PaymentType";
+            dgvsaleInvoice.Columns[4].HeaderText = "Total";
+            dgvsaleInvoice.Columns[4].DataPropertyName = "Total";
+            dgvsaleInvoice.Columns[5].HeaderText = " Received";
+            dgvsaleInvoice.Columns[5].DataPropertyName = "Received";
+            dgvsaleInvoice.Columns[6].HeaderText = "Remaining Bal";
+            dgvsaleInvoice.Columns[6].DataPropertyName = "RemainingBal";
+            dgvsaleInvoice.Columns[7].HeaderText = " Status";
+            dgvsaleInvoice.Columns[7].DataPropertyName = "Status";
+            dgvsaleInvoice.DataSource = ds;
+            dgvsaleInvoice.AllowUserToAddRows = false;
+        }//BillDate,BillNo,PartyName,PaymentType,Total,Paid,Rema
+    
 
         private void dgvsaleInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

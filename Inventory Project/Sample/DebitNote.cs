@@ -785,6 +785,10 @@ namespace sample
                     cmd.Parameters.AddWithValue("@DiscountAmount", dgvInnerDebiteNote.Rows[i].Cells["Discount_Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemAmount", dgvInnerDebiteNote.Rows[i].Cells["Amount"].Value.ToString());
                     cmd.Parameters.AddWithValue("@ItemID", dgvInnerDebiteNote.Rows[i].Cells["ItemIDDD"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@ItemTotal", dgvInnerDebiteNote.Rows[i].Cells["CalTotal"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@cgst", dgvInnerDebiteNote.Rows[i].Cells["CGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@sgst", dgvInnerDebiteNote.Rows[i].Cells["SGST"].Value.ToString());
+                    cmd.Parameters.AddWithValue("@igst", dgvInnerDebiteNote.Rows[i].Cells["IGST"].Value.ToString());
                     cmd.Parameters.AddWithValue("@Deletedata",1);
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id); 
 
@@ -910,6 +914,9 @@ namespace sample
                         cmd.Parameters.AddWithValue("@Status", ComboBox.Text);
                         cmd.Parameters.AddWithValue("@TableName", Debit.Text);
                         cmd.Parameters.AddWithValue("@Barcode", cmbbarcode.Text);
+                        cmd.Parameters.AddWithValue("@caltotal", textBox6.Text);
+                        cmd.Parameters.AddWithValue("@taxshow", textBox3.Text);
+                        cmd.Parameters.AddWithValue("@discount", textBox4.Text);
                         //cmd.Parameters.AddWithValue("@ItemCategory", cmbCategory.Text);
                         cmd.Parameters.AddWithValue("@Action", "Update");
                         dr.Close();

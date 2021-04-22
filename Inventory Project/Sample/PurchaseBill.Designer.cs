@@ -120,9 +120,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.guna2TextBox7 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -1717,9 +1714,6 @@
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.guna2TextBox7);
             this.panel1.Controls.Add(this.label50);
-            this.panel1.Controls.Add(this.label48);
-            this.panel1.Controls.Add(this.label47);
-            this.panel1.Controls.Add(this.label46);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
@@ -1856,33 +1850,6 @@
             this.label50.TabIndex = 274462;
             this.label50.Text = "Tax Under Revers Charges";
             // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(602, 390);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(87, 16);
-            this.label48.TabIndex = 274461;
-            this.label48.Text = "Item Total :";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(546, 390);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(38, 16);
-            this.label47.TabIndex = 274460;
-            this.label47.Text = "Dis :";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(489, 390);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(41, 16);
-            this.label46.TabIndex = 274458;
-            this.label46.Text = "Tax :";
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(605, 415);
@@ -1890,6 +1857,7 @@
             this.textBox6.Size = new System.Drawing.Size(53, 23);
             this.textBox6.TabIndex = 274459;
             this.textBox6.Text = "0";
+            this.textBox6.Visible = false;
             // 
             // textBox4
             // 
@@ -1898,6 +1866,7 @@
             this.textBox4.Size = new System.Drawing.Size(53, 23);
             this.textBox4.TabIndex = 274457;
             this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
             // 
             // textBox3
             // 
@@ -1906,6 +1875,7 @@
             this.textBox3.Size = new System.Drawing.Size(53, 23);
             this.textBox3.TabIndex = 274456;
             this.textBox3.Text = "0";
+            this.textBox3.Visible = false;
             // 
             // guna2DataGridView2
             // 
@@ -2790,9 +2760,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemID11;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;

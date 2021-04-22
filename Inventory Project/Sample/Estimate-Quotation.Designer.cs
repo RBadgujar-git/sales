@@ -46,6 +46,22 @@
             this.label17 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvInnerQuotation = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,9 +77,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -124,22 +137,6 @@
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerQuotation)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -472,6 +469,107 @@
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvInnerQuotation.DoubleClick += new System.EventHandler(this.dgvInnerQuotation_DoubleClick);
             // 
+            // sr_no
+            // 
+            this.sr_no.HeaderText = "sr_no";
+            this.sr_no.Name = "sr_no";
+            // 
+            // txtItem
+            // 
+            this.txtItem.DataPropertyName = "ItemName";
+            this.txtItem.HeaderText = "Item";
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Item_Code
+            // 
+            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Item_Code.DataPropertyName = "ItemCode";
+            this.Item_Code.HeaderText = "Item Code";
+            this.Item_Code.MinimumWidth = 50;
+            this.Item_Code.Name = "Item_Code";
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "BasicUnit";
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // MRP
+            // 
+            this.MRP.DataPropertyName = "SalePrice";
+            this.MRP.HeaderText = "MRP";
+            this.MRP.Name = "MRP";
+            // 
+            // Discount
+            // 
+            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "Discount";
+            this.Discount.Name = "Discount";
+            this.Discount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Tax
+            // 
+            this.Tax.DataPropertyName = "TaxforSale";
+            this.Tax.HeaderText = "Tax%";
+            this.Tax.Name = "Tax";
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // FreeQty
+            // 
+            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FreeQty.DataPropertyName = "FreeQty";
+            this.FreeQty.HeaderText = "Free Qty";
+            this.FreeQty.Name = "FreeQty";
+            // 
+            // Tax_Amount
+            // 
+            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
+            this.Tax_Amount.HeaderText = "Tax Amount";
+            this.Tax_Amount.Name = "Tax_Amount";
+            // 
+            // Discount_Amount
+            // 
+            this.Discount_Amount.DataPropertyName = "DiscountAmount";
+            this.Discount_Amount.HeaderText = "Discount Amount";
+            this.Discount_Amount.Name = "Discount_Amount";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "ItemAmount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            // 
+            // CGST
+            // 
+            this.CGST.HeaderText = "Item CGST";
+            this.CGST.Name = "CGST";
+            // 
+            // SGST
+            // 
+            this.SGST.HeaderText = "Item SGST";
+            this.SGST.Name = "SGST";
+            // 
+            // IGST
+            // 
+            this.IGST.HeaderText = "Item IGST";
+            this.IGST.Name = "IGST";
+            // 
+            // CalTotal
+            // 
+            this.CalTotal.HeaderText = "Item Amount";
+            this.CalTotal.Name = "CalTotal";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -634,9 +732,6 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.label48);
-            this.panel1.Controls.Add(this.label47);
-            this.panel1.Controls.Add(this.label46);
             this.panel1.Controls.Add(this.textBox6);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
@@ -696,33 +791,6 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(475, 425);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(87, 16);
-            this.label48.TabIndex = 274479;
-            this.label48.Text = "Item Total :";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(419, 425);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(38, 16);
-            this.label47.TabIndex = 274478;
-            this.label47.Text = "Dis :";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(362, 425);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(41, 16);
-            this.label46.TabIndex = 274476;
-            this.label46.Text = "Tax :";
-            // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(478, 450);
@@ -730,6 +798,7 @@
             this.textBox6.Size = new System.Drawing.Size(53, 23);
             this.textBox6.TabIndex = 274477;
             this.textBox6.Text = "0";
+            this.textBox6.Visible = false;
             // 
             // textBox4
             // 
@@ -738,6 +807,7 @@
             this.textBox4.Size = new System.Drawing.Size(53, 23);
             this.textBox4.TabIndex = 274475;
             this.textBox4.Text = "0";
+            this.textBox4.Visible = false;
             // 
             // textBox3
             // 
@@ -746,6 +816,7 @@
             this.textBox3.Size = new System.Drawing.Size(53, 23);
             this.textBox3.TabIndex = 274474;
             this.textBox3.Text = "0";
+            this.textBox3.Visible = false;
             // 
             // comboBox3
             // 
@@ -1786,107 +1857,6 @@
             this.txtDescription.Size = new System.Drawing.Size(163, 46);
             this.txtDescription.TabIndex = 8;
             // 
-            // sr_no
-            // 
-            this.sr_no.HeaderText = "sr_no";
-            this.sr_no.Name = "sr_no";
-            // 
-            // txtItem
-            // 
-            this.txtItem.DataPropertyName = "ItemName";
-            this.txtItem.HeaderText = "Item";
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Item_Code
-            // 
-            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Item_Code.DataPropertyName = "ItemCode";
-            this.Item_Code.HeaderText = "Item Code";
-            this.Item_Code.MinimumWidth = 50;
-            this.Item_Code.Name = "Item_Code";
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "BasicUnit";
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // MRP
-            // 
-            this.MRP.DataPropertyName = "SalePrice";
-            this.MRP.HeaderText = "MRP";
-            this.MRP.Name = "MRP";
-            // 
-            // Discount
-            // 
-            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Discount.DataPropertyName = "Discount";
-            this.Discount.HeaderText = "Discount";
-            this.Discount.Name = "Discount";
-            this.Discount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Tax
-            // 
-            this.Tax.DataPropertyName = "TaxforSale";
-            this.Tax.HeaderText = "Tax%";
-            this.Tax.Name = "Tax";
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Qty.DataPropertyName = "Qty";
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // FreeQty
-            // 
-            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FreeQty.DataPropertyName = "FreeQty";
-            this.FreeQty.HeaderText = "Free Qty";
-            this.FreeQty.Name = "FreeQty";
-            // 
-            // Tax_Amount
-            // 
-            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
-            this.Tax_Amount.HeaderText = "Tax Amount";
-            this.Tax_Amount.Name = "Tax_Amount";
-            // 
-            // Discount_Amount
-            // 
-            this.Discount_Amount.DataPropertyName = "DiscountAmount";
-            this.Discount_Amount.HeaderText = "Discount Amount";
-            this.Discount_Amount.Name = "Discount_Amount";
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "ItemAmount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            // 
-            // CGST
-            // 
-            this.CGST.HeaderText = "Item CGST";
-            this.CGST.Name = "CGST";
-            // 
-            // SGST
-            // 
-            this.SGST.HeaderText = "Item SGST";
-            this.SGST.Name = "SGST";
-            // 
-            // IGST
-            // 
-            this.IGST.HeaderText = "Item IGST";
-            this.IGST.Name = "IGST";
-            // 
-            // CalTotal
-            // 
-            this.CalTotal.HeaderText = "Item Amount";
-            this.CalTotal.Name = "CalTotal";
-            // 
             // Estimate_Quotation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2001,9 +1971,6 @@
         private System.Windows.Forms.Label label42;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label46;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
