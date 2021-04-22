@@ -150,7 +150,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>2.2,0,5.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>d5c867c4bda64dd79f0a19cbb71ca737</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
@@ -167,7 +167,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>13.2,0,5.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>31f9380d59ce451d881262369725f5dd</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -186,7 +186,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>8,0,5.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>bf150d08701e4ad09ffec12ea43fa2d1</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
@@ -203,7 +203,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,2.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>5862631f93e7489fa45c8ee2d4a47df2</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text1</Name>
@@ -424,10 +424,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/16/2021 5:16:26 PM</ReportChanged>
+  <ReportChanged>4/22/2021 7:32:58 PM</ReportChanged>
   <ReportCreated>4/7/2021 4:17:24 PM</ReportCreated>
-  <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\TaxReport.mrt</ReportFile>
-  <ReportGuid>a8e04a62ae7f46ee837dc3847c90cbf8</ReportGuid>
+  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\TaxReport.mrt</ReportFile>
+  <ReportGuid>5dca0200a77348eb9153dd23d05317cf</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

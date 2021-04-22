@@ -1727,6 +1727,7 @@ namespace sample
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+
             }
         }
 

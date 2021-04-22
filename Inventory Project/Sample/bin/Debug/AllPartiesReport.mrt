@@ -146,7 +146,7 @@ Balance</Text>
               <Name>Text38</Name>
               <Page isRef="3" />
               <Parent isRef="5" />
-              <Text>Description</Text>
+              <Text>Table Name</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text38>
@@ -464,10 +464,10 @@ Balance</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 3:59:47 PM</ReportChanged>
+  <ReportChanged>4/22/2021 2:58:54 PM</ReportChanged>
   <ReportCreated>3/20/2021 12:28:28 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\AllPartiesReport.mrt</ReportFile>
-  <ReportGuid>27cc43f8e0de4d34ab4754592be7f347</ReportGuid>
+  <ReportGuid>c71440c6869344fd91533f981ba3f318</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
