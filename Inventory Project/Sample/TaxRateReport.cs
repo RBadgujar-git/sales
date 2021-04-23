@@ -86,7 +86,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'group by CompanyName");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -128,7 +128,7 @@ namespace sample
                 con.Close();
                 companyinfo();
             }
-        
+
             Data();
         }
         public void companyinfo()
@@ -201,7 +201,7 @@ namespace sample
             dgvTaxRate.Columns[3].DataPropertyName = "TaxForPurchase";
             dgvTaxRate.Columns[4].HeaderText = "Purchase Tax Amount";
             dgvTaxRate.Columns[4].DataPropertyName = "PurchaseTaxAmount";
-            
+
             dgvTaxRate.DataSource = dt;
         }//BillDate,BillNo,PartyName,PaymentType,Total,Paid,Rema
 
@@ -260,3 +260,4 @@ namespace sample
         }
     }
 }
+

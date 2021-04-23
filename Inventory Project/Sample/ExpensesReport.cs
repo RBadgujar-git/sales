@@ -241,6 +241,7 @@ namespace sample
             {
                 con.Close();
                 companyinfo();
+                Data();
             }
         }
         public void companyinfo()
