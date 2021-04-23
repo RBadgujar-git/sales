@@ -201,7 +201,20 @@ namespace sample
             {
                 con.Close();
                 companyinfo();
+                data();
             }
+        }
+        public void data()
+        {
+            con.Open();
+            SqlCommand cd = new SqlCommand("select sum(Received) as total from tbl_OtherIncome where Company_ID='" + compid + "' and DeleteData='1'", con);
+            SqlDataReader dr = cd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtTotalAmount.Text = dr.GetValue(0).ToString();
+            }
+            dr.Close();
+            con.Close();
         }
         public void companyinfo()
         {

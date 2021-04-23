@@ -156,7 +156,17 @@ namespace sample
             {
                 con.Close();
                 companyinfo();
+                data();
             }
+        }
+        public void data()
+        {
+            int sum = 0;
+            for (int i = 0; i < dgvExpensecategory.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dgvExpensecategory.Rows[i].Cells[1].Value);
+            }
+            txtTotalExpenses.Text = sum.ToString();
         }
         public void companyinfo()
         {
