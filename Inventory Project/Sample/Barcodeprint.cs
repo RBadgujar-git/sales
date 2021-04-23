@@ -61,6 +61,21 @@ namespace sample
             //PV.crystalReportViewer1.BringToFront();
             //PV.crystalReportViewer1.Visible = true;
             //PV.ShowDialog();
+            string barcode = txtsearch.Text;
+            try
+            {
+                Zen.Barcode.Code128BarcodeDraw bar = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                pictureBox1.Image = bar.Draw(barcode,60);
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void Barcodeprint_Load(object sender, EventArgs e)
+        {
+
+           // this.reportViewer1.RefreshReport();
         }
     }
 }

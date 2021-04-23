@@ -1563,11 +1563,11 @@ namespace sample
 
         private void barcodePrintToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Barcodeprint br = new Barcodeprint();
-            //br.Show();
-            PasswordAsign as1=new  PasswordAsign();
+            Barcodeprint br = new Barcodeprint();
+            br.Show();
+            //PasswordAsign as1=new  PasswordAsign();
 
-            as1.Show();
+            //as1.Show();
         }
 
         private void guna2Panel4_Paint(object sender, PaintEventArgs e)

@@ -89,6 +89,7 @@ namespace sample
                 }
             }
         }
+       
         private void fetchCompany()
         {
             if (cmbAllFirms.Text != "System.Data.DataRowView")
@@ -205,6 +206,31 @@ namespace sample
                 con.Close();
                 companyinfo();
                 data();
+                fetch();
+            }
+        }
+        private void fetch()
+        {
+            if (cmbExpensecategory.Text != "System.Data.DataRowView")
+            {
+                try
+                {
+                    cmbExpensecategory.Items.Clear();
+                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where  Company_ID='" + compid + "' and DeleteData='1' group by OtherIncome ");
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                    SDA.Fill(ds, "Temp");
+                    DataTable DT = new DataTable();
+                    SDA.Fill(ds);
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
+                        cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString());
+                    }
+                }
+                catch (Exception e1)
+                {
+                    MessageBox.Show(e1.Message);
+                }
             }
         }
         public void data()
@@ -269,7 +295,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where IncomeCategory like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where IncomeCategory like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
                 //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);

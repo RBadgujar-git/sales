@@ -2511,3 +2511,16 @@ C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Zen.Barcode.Core.dll
