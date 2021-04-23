@@ -178,6 +178,7 @@ namespace sample
             da.Fill(ds, "temp");
             dgvExpensecategory.DataSource = ds;
             dgvExpensecategory.DataMember = "temp";
+            dgvExpensecategory.AllowUserToAddRows = false;
         }
 
         private void dtptodate_ValueChanged(object sender, EventArgs e)
@@ -263,6 +264,29 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("select ExpenseCategory,Paid from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID = '" + compid + "' and DeleteData = '1'",txtfilter.Text);
+                //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvExpensecategory.DataSource = ds;
+                dgvExpensecategory.DataMember = "temp";
+                dgvExpensecategory.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+            finally
+            {
+                data();
             }
         }
     }

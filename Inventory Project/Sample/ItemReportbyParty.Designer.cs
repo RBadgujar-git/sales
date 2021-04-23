@@ -122,6 +122,7 @@
             this.label2.Size = new System.Drawing.Size(24, 16);
             this.label2.TabIndex = 98;
             this.label2.Text = "To";
+            this.label2.Visible = false;
             // 
             // btnCancel
             // 
@@ -177,6 +178,7 @@
             this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 93;
             this.label1.Text = "From";
+            this.label1.Visible = false;
             // 
             // cmbAllFirms
             // 
@@ -209,6 +211,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(172, 23);
             this.dateTimePicker1.TabIndex = 104;
+            this.dateTimePicker1.Visible = false;
             // 
             // dateTimePicker2
             // 
@@ -218,6 +221,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(167, 23);
             this.dateTimePicker2.TabIndex = 105;
+            this.dateTimePicker2.Visible = false;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // guna2TextBox1
