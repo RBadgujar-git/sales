@@ -18,6 +18,7 @@ namespace sample
 
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
         SqlCommand cmd;
+        public static int compid;
         public TaxRateReport()
         {
             InitializeComponent();
@@ -107,35 +108,75 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("(select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount from tbl_ItemMaster where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1')", cmbAllFirms.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvTaxRate.DataSource = ds;
-                dgvTaxRate.DataMember = "temp";
+                con.Open();
+                string Query = String.Format("select CompanyID from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID", cmbAllFirms.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    compid = Convert.ToInt32(dr["CompanyID"].ToString());
+                    //MessageBox.Show("Test" + compid);
+                }
+                dr.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                con.Close();
+                companyinfo();
+            }
+        
             Data();
         }
+        public void companyinfo()
+        {
+            //string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrderWhere CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice Where CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder Where CompanyID='" + compid + "' and DeleteData='1') ", cmballfrims.Text);
+            string Query = string.Format("Select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount from tbl_ItemMaster where Company_ID='" + compid + "' and DeleteData='1'", cmbAllFirms.Text);
+
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvTaxRate.DataSource = ds;
+            dgvTaxRate.DataMember = "temp";
+        }
+
         private void Data()
         {
-            float TA = 0, TD = 0, total = 0, TG = 0, qty = 0, rate = 0;
-           
-            for (int i = 0; i < dgvTaxRate.Rows.Count; i++)
-            {
-                TA += float.Parse(dgvTaxRate.Rows[i].Cells["Column2"].Value?.ToString());
-                txtTotalTaxIn.Text = TA.ToString();
-                TD += float.Parse(dgvTaxRate.Rows[i].Cells["Column3"].Value?.ToString());
-                txtTaxOut.Text = TD.ToString();
+            //float TA = 0, TD = 0, total = 0, TG = 0, qty = 0, rate = 0;
 
-                //qty = float.Parse(txtPaid.Text.ToString());
-                //rate = float.Parse(txtUnpaid.Text.ToString());
-                //total = qty + rate;
-                //txtTotal.Text = total.ToString();
+            //for (int i = 0; i < dgvTaxRate.Rows.Count; i++)
+            //{
+            //    TA += float.Parse(dgvTaxRate.Rows[i].Cells["Column2"].Value?.ToString());
+            //    txtTotalTaxIn.Text = TA.ToString();
+            //    TD += float.Parse(dgvTaxRate.Rows[i].Cells["Column3"].Value?.ToString());
+            //    txtTaxOut.Text = TD.ToString();
+
+            //    //qty = float.Parse(txtPaid.Text.ToString());
+            //    //rate = float.Parse(txtUnpaid.Text.ToString());
+            //    //total = qty + rate;
+            //    //txtTotal.Text = total.ToString();
+            //}
+            con.Open();
+            SqlCommand cd = new SqlCommand("select sum(SaleTaxAmount) as total from tbl_ItemMaster where Company_ID='" + compid + "' and DeleteData='1'", con);
+            SqlDataReader dr = cd.ExecuteReader();
+            while (dr.Read())
+            {
+                txtTotalTaxIn.Text = dr.GetValue(0).ToString();
             }
+            dr.Close();
+            con.Close();
+            con.Open();
+            SqlCommand cd1 = new SqlCommand("select sum(PurchaseTaxAmount) from tbl_ItemMaster where Company_ID='" + compid + "' and DeleteData='1'", con);
+            SqlDataReader dr1 = cd1.ExecuteReader();
+            while (dr1.Read())
+            {
+                txtTaxOut.Text = dr1.GetValue(0).ToString();
+            }
+            dr1.Close();
+            con.Close();
         }
         private void Bindadata()
         {
