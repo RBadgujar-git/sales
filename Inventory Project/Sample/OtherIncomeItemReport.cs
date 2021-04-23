@@ -73,6 +73,7 @@ namespace sample
             dgvOtherIncome.Columns[2].HeaderText = " Item Amount";
             dgvOtherIncome.Columns[2].DataPropertyName = "ItemAmount";
             dgvOtherIncome.DataSource = dt;
+            dgvOtherIncome.AllowUserToAddRows = false;
         }
         private void fetchCompany()
         {
@@ -107,18 +108,22 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_OtherIncomeInner  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
                 dgvOtherIncome.DataSource = ds;
                 dgvOtherIncome.DataMember = "temp";
+                dgvOtherIncome.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Data not" + ex);
             }
-
+            finally
+            {
+               // data();
+            }
         }
         private void Data()
         {
@@ -201,6 +206,7 @@ namespace sample
             da.Fill(ds, "temp");
             dgvOtherIncome.DataSource = ds;
             dgvOtherIncome.DataMember = "temp";
+            dgvOtherIncome.AllowUserToAddRows = false;
         }
         private void btnminimize_Click(object sender, EventArgs e)
         {
@@ -234,6 +240,6 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
+        } 
     }
 }
