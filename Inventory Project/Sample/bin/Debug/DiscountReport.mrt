@@ -150,7 +150,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>1.8,0,4.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>a6dd4c07a3f84412ae1ff806dd56c23d</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
@@ -167,7 +167,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12,0,7,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>0c5c4feed77042edad49f85e5e2d5959</Guid>
               <HorAlignment>Right</HorAlignment>
               <Margins>0,0,0,0</Margins>
@@ -186,7 +186,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>6.6,0,5.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>9a3ed31a7f144db0acffe0e0498e887c</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
@@ -203,7 +203,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0,0,1.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10,Bold</Font>
+              <Font>Arial,10</Font>
               <Guid>cca25b09be894692a4dc583b749ea498</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text3</Name>
@@ -429,10 +429,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/16/2021 5:28:32 PM</ReportChanged>
+  <ReportChanged>4/22/2021 7:31:56 PM</ReportChanged>
   <ReportCreated>4/7/2021 3:27:23 PM</ReportCreated>
-  <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\DiscountReport.mrt</ReportFile>
-  <ReportGuid>3373a33f74324deaaa05158f1fec9797</ReportGuid>
+  <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\DiscountReport.mrt</ReportFile>
+  <ReportGuid>fa5ffcd9a2d348c9a2dbcee06e828853</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
