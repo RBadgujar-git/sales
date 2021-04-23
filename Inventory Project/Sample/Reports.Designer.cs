@@ -28,6 +28,9 @@
         private void InitializeComponent()
         {
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button42 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button41 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button40 = new Guna.UI2.WinForms.Guna2Button();
@@ -66,9 +69,6 @@
             this.guna2Button12 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button8 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button9 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button17 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,8 +76,8 @@
             // 
             this.guna2Panel2.AutoScroll = true;
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2Panel2.Controls.Add(this.guna2Button17);
             this.guna2Panel2.Controls.Add(this.guna2Button9);
+            this.guna2Panel2.Controls.Add(this.guna2Button17);
             this.guna2Panel2.Controls.Add(this.guna2Button8);
             this.guna2Panel2.Controls.Add(this.guna2Button42);
             this.guna2Panel2.Controls.Add(this.guna2Button41);
@@ -125,6 +125,52 @@
             this.guna2Panel2.TabIndex = 0;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
+            // guna2Button17
+            // 
+            this.guna2Button17.CheckedState.Parent = this.guna2Button17;
+            this.guna2Button17.CustomImages.Parent = this.guna2Button17;
+            this.guna2Button17.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.guna2Button17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button17.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2Button17.HoverState.Parent = this.guna2Button17;
+            this.guna2Button17.Location = new System.Drawing.Point(0, 1272);
+            this.guna2Button17.Name = "guna2Button17";
+            this.guna2Button17.ShadowDecoration.Parent = this.guna2Button17;
+            this.guna2Button17.Size = new System.Drawing.Size(196, 33);
+            this.guna2Button17.TabIndex = 36;
+            this.guna2Button17.Text = "GSTR 9";
+            this.guna2Button17.Click += new System.EventHandler(this.guna2Button17_Click);
+            // 
+            // guna2Button9
+            // 
+            this.guna2Button9.CheckedState.Parent = this.guna2Button9;
+            this.guna2Button9.CustomImages.Parent = this.guna2Button9;
+            this.guna2Button9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2Button9.HoverState.Parent = this.guna2Button9;
+            this.guna2Button9.Location = new System.Drawing.Point(0, 1239);
+            this.guna2Button9.Name = "guna2Button9";
+            this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
+            this.guna2Button9.Size = new System.Drawing.Size(193, 33);
+            this.guna2Button9.TabIndex = 35;
+            this.guna2Button9.Text = "GSTR 3B";
+            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
+            // 
+            // guna2Button8
+            // 
+            this.guna2Button8.CheckedState.Parent = this.guna2Button8;
+            this.guna2Button8.CustomImages.Parent = this.guna2Button8;
+            this.guna2Button8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.guna2Button8.HoverState.Parent = this.guna2Button8;
+            this.guna2Button8.Location = new System.Drawing.Point(-1, 1207);
+            this.guna2Button8.Name = "guna2Button8";
+            this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
+            this.guna2Button8.Size = new System.Drawing.Size(193, 32);
+            this.guna2Button8.TabIndex = 34;
+            this.guna2Button8.Text = "GSTR 2";
+            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click_1);
+            // 
             // guna2Button42
             // 
             this.guna2Button42.CheckedState.Parent = this.guna2Button42;
@@ -132,7 +178,7 @@
             this.guna2Button42.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button42.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button42.HoverState.Parent = this.guna2Button42;
-            this.guna2Button42.Location = new System.Drawing.Point(2, 1163);
+            this.guna2Button42.Location = new System.Drawing.Point(1, 1097);
             this.guna2Button42.Name = "guna2Button42";
             this.guna2Button42.ShadowDecoration.Parent = this.guna2Button42;
             this.guna2Button42.Size = new System.Drawing.Size(193, 32);
@@ -147,7 +193,7 @@
             this.guna2Button41.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button41.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button41.HoverState.Parent = this.guna2Button41;
-            this.guna2Button41.Location = new System.Drawing.Point(1, 1086);
+            this.guna2Button41.Location = new System.Drawing.Point(0, 1021);
             this.guna2Button41.Name = "guna2Button41";
             this.guna2Button41.ShadowDecoration.Parent = this.guna2Button41;
             this.guna2Button41.Size = new System.Drawing.Size(193, 29);
@@ -162,7 +208,7 @@
             this.guna2Button40.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button40.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button40.HoverState.Parent = this.guna2Button40;
-            this.guna2Button40.Location = new System.Drawing.Point(1, 1053);
+            this.guna2Button40.Location = new System.Drawing.Point(0, 988);
             this.guna2Button40.Name = "guna2Button40";
             this.guna2Button40.ShadowDecoration.Parent = this.guna2Button40;
             this.guna2Button40.Size = new System.Drawing.Size(193, 32);
@@ -177,7 +223,7 @@
             this.guna2Button34.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button34.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button34.HoverState.Parent = this.guna2Button34;
-            this.guna2Button34.Location = new System.Drawing.Point(1, 976);
+            this.guna2Button34.Location = new System.Drawing.Point(0, 913);
             this.guna2Button34.Name = "guna2Button34";
             this.guna2Button34.ShadowDecoration.Parent = this.guna2Button34;
             this.guna2Button34.Size = new System.Drawing.Size(193, 29);
@@ -192,7 +238,7 @@
             this.guna2Button33.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button33.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button33.HoverState.Parent = this.guna2Button33;
-            this.guna2Button33.Location = new System.Drawing.Point(1, 942);
+            this.guna2Button33.Location = new System.Drawing.Point(0, 879);
             this.guna2Button33.Name = "guna2Button33";
             this.guna2Button33.ShadowDecoration.Parent = this.guna2Button33;
             this.guna2Button33.Size = new System.Drawing.Size(193, 34);
@@ -207,7 +253,7 @@
             this.guna2Button38.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button38.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button38.HoverState.Parent = this.guna2Button38;
-            this.guna2Button38.Location = new System.Drawing.Point(0, 871);
+            this.guna2Button38.Location = new System.Drawing.Point(-1, 808);
             this.guna2Button38.Name = "guna2Button38";
             this.guna2Button38.ShadowDecoration.Parent = this.guna2Button38;
             this.guna2Button38.Size = new System.Drawing.Size(193, 28);
@@ -222,7 +268,7 @@
             this.guna2Button37.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button37.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button37.HoverState.Parent = this.guna2Button37;
-            this.guna2Button37.Location = new System.Drawing.Point(3, 841);
+            this.guna2Button37.Location = new System.Drawing.Point(2, 778);
             this.guna2Button37.Name = "guna2Button37";
             this.guna2Button37.ShadowDecoration.Parent = this.guna2Button37;
             this.guna2Button37.Size = new System.Drawing.Size(193, 29);
@@ -237,7 +283,7 @@
             this.guna2Button36.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button36.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button36.HoverState.Parent = this.guna2Button36;
-            this.guna2Button36.Location = new System.Drawing.Point(2, 809);
+            this.guna2Button36.Location = new System.Drawing.Point(1, 746);
             this.guna2Button36.Name = "guna2Button36";
             this.guna2Button36.ShadowDecoration.Parent = this.guna2Button36;
             this.guna2Button36.Size = new System.Drawing.Size(193, 32);
@@ -252,7 +298,7 @@
             this.guna2Button31.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button31.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button31.HoverState.Parent = this.guna2Button31;
-            this.guna2Button31.Location = new System.Drawing.Point(-1, 736);
+            this.guna2Button31.Location = new System.Drawing.Point(1, 684);
             this.guna2Button31.Name = "guna2Button31";
             this.guna2Button31.ShadowDecoration.Parent = this.guna2Button31;
             this.guna2Button31.Size = new System.Drawing.Size(193, 30);
@@ -267,7 +313,7 @@
             this.guna2Button30.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button30.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button30.HoverState.Parent = this.guna2Button30;
-            this.guna2Button30.Location = new System.Drawing.Point(2, 709);
+            this.guna2Button30.Location = new System.Drawing.Point(0, 658);
             this.guna2Button30.Name = "guna2Button30";
             this.guna2Button30.ShadowDecoration.Parent = this.guna2Button30;
             this.guna2Button30.Size = new System.Drawing.Size(193, 28);
@@ -282,7 +328,7 @@
             this.guna2Button20.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button20.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button20.HoverState.Parent = this.guna2Button20;
-            this.guna2Button20.Location = new System.Drawing.Point(0, 680);
+            this.guna2Button20.Location = new System.Drawing.Point(-2, 629);
             this.guna2Button20.Name = "guna2Button20";
             this.guna2Button20.ShadowDecoration.Parent = this.guna2Button20;
             this.guna2Button20.Size = new System.Drawing.Size(193, 29);
@@ -297,7 +343,7 @@
             this.guna2Button19.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button19.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button19.HoverState.Parent = this.guna2Button19;
-            this.guna2Button19.Location = new System.Drawing.Point(1, 651);
+            this.guna2Button19.Location = new System.Drawing.Point(-1, 600);
             this.guna2Button19.Name = "guna2Button19";
             this.guna2Button19.ShadowDecoration.Parent = this.guna2Button19;
             this.guna2Button19.Size = new System.Drawing.Size(193, 32);
@@ -312,7 +358,7 @@
             this.guna2Button28.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button28.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button28.HoverState.Parent = this.guna2Button28;
-            this.guna2Button28.Location = new System.Drawing.Point(2, 583);
+            this.guna2Button28.Location = new System.Drawing.Point(0, 532);
             this.guna2Button28.Name = "guna2Button28";
             this.guna2Button28.ShadowDecoration.Parent = this.guna2Button28;
             this.guna2Button28.Size = new System.Drawing.Size(193, 30);
@@ -327,7 +373,7 @@
             this.guna2Button25.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button25.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button25.HoverState.Parent = this.guna2Button25;
-            this.guna2Button25.Location = new System.Drawing.Point(2, 552);
+            this.guna2Button25.Location = new System.Drawing.Point(3, 504);
             this.guna2Button25.Name = "guna2Button25";
             this.guna2Button25.ShadowDecoration.Parent = this.guna2Button25;
             this.guna2Button25.Size = new System.Drawing.Size(193, 30);
@@ -342,7 +388,7 @@
             this.guna2Button24.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button24.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button24.HoverState.Parent = this.guna2Button24;
-            this.guna2Button24.Location = new System.Drawing.Point(2, 524);
+            this.guna2Button24.Location = new System.Drawing.Point(3, 476);
             this.guna2Button24.Name = "guna2Button24";
             this.guna2Button24.ShadowDecoration.Parent = this.guna2Button24;
             this.guna2Button24.Size = new System.Drawing.Size(193, 28);
@@ -357,7 +403,7 @@
             this.guna2Button23.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button23.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button23.HoverState.Parent = this.guna2Button23;
-            this.guna2Button23.Location = new System.Drawing.Point(1, 495);
+            this.guna2Button23.Location = new System.Drawing.Point(2, 447);
             this.guna2Button23.Name = "guna2Button23";
             this.guna2Button23.ShadowDecoration.Parent = this.guna2Button23;
             this.guna2Button23.Size = new System.Drawing.Size(193, 29);
@@ -372,7 +418,7 @@
             this.guna2Button16.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button16.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button16.HoverState.Parent = this.guna2Button16;
-            this.guna2Button16.Location = new System.Drawing.Point(4, 416);
+            this.guna2Button16.Location = new System.Drawing.Point(2, 371);
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.ShadowDecoration.Parent = this.guna2Button16;
             this.guna2Button16.Size = new System.Drawing.Size(193, 30);
@@ -387,7 +433,7 @@
             this.guna2Button15.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button15.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button15.HoverState.Parent = this.guna2Button15;
-            this.guna2Button15.Location = new System.Drawing.Point(3, 388);
+            this.guna2Button15.Location = new System.Drawing.Point(1, 343);
             this.guna2Button15.Name = "guna2Button15";
             this.guna2Button15.ShadowDecoration.Parent = this.guna2Button15;
             this.guna2Button15.Size = new System.Drawing.Size(193, 28);
@@ -402,7 +448,7 @@
             this.guna2Button14.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button14.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button14.HoverState.Parent = this.guna2Button14;
-            this.guna2Button14.Location = new System.Drawing.Point(4, 358);
+            this.guna2Button14.Location = new System.Drawing.Point(2, 313);
             this.guna2Button14.Name = "guna2Button14";
             this.guna2Button14.ShadowDecoration.Parent = this.guna2Button14;
             this.guna2Button14.Size = new System.Drawing.Size(193, 29);
@@ -417,7 +463,7 @@
             this.guna2Button13.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button13.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button13.HoverState.Parent = this.guna2Button13;
-            this.guna2Button13.Location = new System.Drawing.Point(2, 328);
+            this.guna2Button13.Location = new System.Drawing.Point(2, 281);
             this.guna2Button13.Name = "guna2Button13";
             this.guna2Button13.ShadowDecoration.Parent = this.guna2Button13;
             this.guna2Button13.Size = new System.Drawing.Size(193, 32);
@@ -432,7 +478,7 @@
             this.guna2Button11.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button11.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button11.HoverState.Parent = this.guna2Button11;
-            this.guna2Button11.Location = new System.Drawing.Point(2, 220);
+            this.guna2Button11.Location = new System.Drawing.Point(3, 210);
             this.guna2Button11.Name = "guna2Button11";
             this.guna2Button11.ShadowDecoration.Parent = this.guna2Button11;
             this.guna2Button11.Size = new System.Drawing.Size(193, 34);
@@ -537,7 +583,7 @@
             this.guna2Button44.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button44.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button44.HoverState.Parent = this.guna2Button44;
-            this.guna2Button44.Location = new System.Drawing.Point(3, 1243);
+            this.guna2Button44.Location = new System.Drawing.Point(2, 1175);
             this.guna2Button44.Name = "guna2Button44";
             this.guna2Button44.ShadowDecoration.Parent = this.guna2Button44;
             this.guna2Button44.Size = new System.Drawing.Size(193, 32);
@@ -554,7 +600,7 @@
             this.guna2Button35.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button35.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button35.HoverState.Parent = this.guna2Button35;
-            this.guna2Button35.Location = new System.Drawing.Point(1, 1116);
+            this.guna2Button35.Location = new System.Drawing.Point(0, 1051);
             this.guna2Button35.Name = "guna2Button35";
             this.guna2Button35.ShadowDecoration.Parent = this.guna2Button35;
             this.guna2Button35.Size = new System.Drawing.Size(193, 45);
@@ -571,7 +617,7 @@
             this.guna2Button43.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button43.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button43.HoverState.Parent = this.guna2Button43;
-            this.guna2Button43.Location = new System.Drawing.Point(3, 1197);
+            this.guna2Button43.Location = new System.Drawing.Point(2, 1131);
             this.guna2Button43.Name = "guna2Button43";
             this.guna2Button43.ShadowDecoration.Parent = this.guna2Button43;
             this.guna2Button43.Size = new System.Drawing.Size(193, 45);
@@ -588,7 +634,7 @@
             this.guna2Button39.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button39.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button39.HoverState.Parent = this.guna2Button39;
-            this.guna2Button39.Location = new System.Drawing.Point(2, 1007);
+            this.guna2Button39.Location = new System.Drawing.Point(1, 942);
             this.guna2Button39.Name = "guna2Button39";
             this.guna2Button39.ShadowDecoration.Parent = this.guna2Button39;
             this.guna2Button39.Size = new System.Drawing.Size(193, 45);
@@ -605,7 +651,7 @@
             this.guna2Button32.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button32.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button32.HoverState.Parent = this.guna2Button32;
-            this.guna2Button32.Location = new System.Drawing.Point(2, 897);
+            this.guna2Button32.Location = new System.Drawing.Point(1, 834);
             this.guna2Button32.Name = "guna2Button32";
             this.guna2Button32.ShadowDecoration.Parent = this.guna2Button32;
             this.guna2Button32.Size = new System.Drawing.Size(193, 45);
@@ -622,10 +668,10 @@
             this.guna2Button29.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button29.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button29.HoverState.Parent = this.guna2Button29;
-            this.guna2Button29.Location = new System.Drawing.Point(3, 767);
+            this.guna2Button29.Location = new System.Drawing.Point(1, 712);
             this.guna2Button29.Name = "guna2Button29";
             this.guna2Button29.ShadowDecoration.Parent = this.guna2Button29;
-            this.guna2Button29.Size = new System.Drawing.Size(193, 45);
+            this.guna2Button29.Size = new System.Drawing.Size(193, 37);
             this.guna2Button29.TabIndex = 0;
             this.guna2Button29.Text = "Expense Report";
             this.guna2Button29.Click += new System.EventHandler(this.guna2Button21_Click);
@@ -639,7 +685,7 @@
             this.guna2Button18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button18.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button18.HoverState.Parent = this.guna2Button18;
-            this.guna2Button18.Location = new System.Drawing.Point(2, 612);
+            this.guna2Button18.Location = new System.Drawing.Point(0, 561);
             this.guna2Button18.Name = "guna2Button18";
             this.guna2Button18.ShadowDecoration.Parent = this.guna2Button18;
             this.guna2Button18.Size = new System.Drawing.Size(193, 43);
@@ -656,7 +702,7 @@
             this.guna2Button21.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button21.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button21.HoverState.Parent = this.guna2Button21;
-            this.guna2Button21.Location = new System.Drawing.Point(2, 448);
+            this.guna2Button21.Location = new System.Drawing.Point(3, 402);
             this.guna2Button21.Name = "guna2Button21";
             this.guna2Button21.ShadowDecoration.Parent = this.guna2Button21;
             this.guna2Button21.Size = new System.Drawing.Size(193, 45);
@@ -673,7 +719,7 @@
             this.guna2Button12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button12.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button12.HoverState.Parent = this.guna2Button12;
-            this.guna2Button12.Location = new System.Drawing.Point(2, 270);
+            this.guna2Button12.Location = new System.Drawing.Point(1, 241);
             this.guna2Button12.Name = "guna2Button12";
             this.guna2Button12.ShadowDecoration.Parent = this.guna2Button12;
             this.guna2Button12.Size = new System.Drawing.Size(193, 45);
@@ -709,52 +755,6 @@
             this.guna2Panel3.Size = new System.Drawing.Size(857, 570);
             this.guna2Panel3.TabIndex = 1;
             this.guna2Panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel3_Paint);
-            // 
-            // guna2Button8
-            // 
-            this.guna2Button8.CheckedState.Parent = this.guna2Button8;
-            this.guna2Button8.CustomImages.Parent = this.guna2Button8;
-            this.guna2Button8.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2Button8.HoverState.Parent = this.guna2Button8;
-            this.guna2Button8.Location = new System.Drawing.Point(0, 1273);
-            this.guna2Button8.Name = "guna2Button8";
-            this.guna2Button8.ShadowDecoration.Parent = this.guna2Button8;
-            this.guna2Button8.Size = new System.Drawing.Size(193, 32);
-            this.guna2Button8.TabIndex = 34;
-            this.guna2Button8.Text = "GSTR 2";
-            this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click_1);
-            // 
-            // guna2Button9
-            // 
-            this.guna2Button9.CheckedState.Parent = this.guna2Button9;
-            this.guna2Button9.CustomImages.Parent = this.guna2Button9;
-            this.guna2Button9.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2Button9.HoverState.Parent = this.guna2Button9;
-            this.guna2Button9.Location = new System.Drawing.Point(0, 1305);
-            this.guna2Button9.Name = "guna2Button9";
-            this.guna2Button9.ShadowDecoration.Parent = this.guna2Button9;
-            this.guna2Button9.Size = new System.Drawing.Size(193, 33);
-            this.guna2Button9.TabIndex = 35;
-            this.guna2Button9.Text = "GSTR 3B";
-            this.guna2Button9.Click += new System.EventHandler(this.guna2Button9_Click);
-            // 
-            // guna2Button17
-            // 
-            this.guna2Button17.CheckedState.Parent = this.guna2Button17;
-            this.guna2Button17.CustomImages.Parent = this.guna2Button17;
-            this.guna2Button17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Button17.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.guna2Button17.HoverState.Parent = this.guna2Button17;
-            this.guna2Button17.Location = new System.Drawing.Point(0, 1338);
-            this.guna2Button17.Name = "guna2Button17";
-            this.guna2Button17.ShadowDecoration.Parent = this.guna2Button17;
-            this.guna2Button17.Size = new System.Drawing.Size(197, 33);
-            this.guna2Button17.TabIndex = 36;
-            this.guna2Button17.Text = "GSTR 9";
-            this.guna2Button17.Click += new System.EventHandler(this.guna2Button17_Click);
             // 
             // Reports
             // 

@@ -28,14 +28,55 @@ namespace sample
             bankname();
             try
             {
+                //con.Open();
+                //DataTable dt = new DataTable();
+                //string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
+                ////union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
+                //SqlCommand cmd = new SqlCommand(Query, con);
+                //SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                //sqlSda.Fill(dt);
+                //dgvbankStatement.DataSource = dt;
+                //dgvbankStatement.AllowUserToAddRows = false;
+
                 con.Open();
                 DataTable dt = new DataTable();
-                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' And a.DeleteData='1' and b.DeleteData='1'");
-                //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
+                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
                 sqlSda.Fill(dt);
+                dgvbankStatement.AutoGenerateColumns = false;
+                dgvbankStatement.ColumnCount = 6;
+                dgvbankStatement.Columns[0].HeaderText = "Date";
+                dgvbankStatement.Columns[0].DataPropertyName = "Date";
+                dgvbankStatement.Columns[1].HeaderText = "ToBank";
+                dgvbankStatement.Columns[1].DataPropertyName = "ToBank";
+                dgvbankStatement.Columns[2].HeaderText = "Description";
+                dgvbankStatement.Columns[2].DataPropertyName = "Descripition";
+                dgvbankStatement.Columns[3].HeaderText = "Amount";
+                dgvbankStatement.Columns[3].DataPropertyName = "Amount";
+                dgvbankStatement.Columns[4].HeaderText = "BankName";
+                dgvbankStatement.Columns[4].DataPropertyName = "BankName";
+                dgvbankStatement.Columns[5].HeaderText = "OpeningBal";
+                dgvbankStatement.Columns[5].DataPropertyName = "OpeningBal";
                 dgvbankStatement.DataSource = dt;
+                dgvbankStatement.AllowUserToAddRows = false;
+
+                //con.Open();
+                //DataTable dt = new DataTable();
+                //SqlCommand cmd = new SqlCommand("select * from tbl_Expenses where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+                //SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //da.Fill(dt);
+                //con.Close();
+                //dgvexpenses.AutoGenerateColumns = false;
+                //dgvexpenses.ColumnCount = 3;
+                //dgvexpenses.Columns[0].HeaderText = "Date";
+                //dgvexpenses.Columns[0].DataPropertyName = "Date";
+                //dgvexpenses.Columns[1].HeaderText = "Category";
+                //dgvexpenses.Columns[1].DataPropertyName = "ExpenseCategory";
+                //dgvexpenses.Columns[2].HeaderText = "Total";
+                //dgvexpenses.Columns[2].DataPropertyName = "Total";
+
+                //dgvexpenses.DataSource = dt;
             }
             catch (Exception ex)
             {
@@ -45,6 +86,7 @@ namespace sample
             {
                 con.Close();
             }
+            Data();
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -105,33 +147,53 @@ namespace sample
 
         }
 
+        private void Data()
+        {
+            try
+            {
+                float TA = 0;
+
+                for (int i = 0; i < dgvbankStatement.Rows.Count; i++)
+                {
+                    TA += float.Parse(dgvbankStatement.Rows[i].Cells["OpeningBal"].Value?.ToString());
+                    txtbalance.Text = TA.ToString();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnprint_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //{
-            //    try
-            //    {
-            //        DataSet ds = new DataSet();
-            //        string Query = string.Format("select Company_ID,BillDate, BillNo, PartyName, PaymentType, Total, Paid, RemainingBal, Status from tbl_PurchaseBill where Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'");
-            //        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            //        SDA.Fill(ds);
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DataSet ds = new DataSet();
+                    string Query=string.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID = '" + NewCompany.company_id + "' and b.Company_ID = '" + NewCompany.company_id + "' and a.DeleteData = '1' and b.DeleteData = '1'");
+                    //string Query = string.Format("select Company_ID,BillDate, BillNo, PartyName, PaymentType, Total, Paid, RemainingBal, Status from tbl_PurchaseBill where Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'");
+                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                    SDA.Fill(ds);
 
-            //        StiReport report = new StiReport();
-            //        report.Load(@"PurchaseBillData.mrt");
+                    StiReport report = new StiReport();
+                    report.Load(@"BankStatementReport.mrt");
 
-            //        report.Compile();
-            //        StiPage page = report.Pages[0];
-            //        report.RegData("PurchaseBillData", "PurchaseBillData", ds.Tables[0]);
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("BankStatement", "BankStatement", ds.Tables[0]);
 
-            //        report.Dictionary.Synchronize();
-            //        report.Render();
-            //        report.Show(false);
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message);
-            //    }
-            //}
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
 
         private void dgvbankStatement_CellContentClick(object sender, DataGridViewCellEventArgs e)

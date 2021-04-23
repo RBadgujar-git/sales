@@ -62,7 +62,7 @@
             this.txtAmountPurchase.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAmountPurchase.FocusedState.Parent = this.txtAmountPurchase;
             this.txtAmountPurchase.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtAmountPurchase.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtAmountPurchase.ForeColor = System.Drawing.Color.Black;
             this.txtAmountPurchase.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAmountPurchase.HoverState.Parent = this.txtAmountPurchase;
             this.txtAmountPurchase.Location = new System.Drawing.Point(753, 3);
@@ -88,9 +88,10 @@
             this.txtAmountSale.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAmountSale.FocusedState.Parent = this.txtAmountSale;
             this.txtAmountSale.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtAmountSale.ForeColor = System.Drawing.Color.Black;
             this.txtAmountSale.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtAmountSale.HoverState.Parent = this.txtAmountSale;
-            this.txtAmountSale.Location = new System.Drawing.Point(286, 3);
+            this.txtAmountSale.Location = new System.Drawing.Point(251, 3);
             this.txtAmountSale.Name = "txtAmountSale";
             this.txtAmountSale.PasswordChar = '\0';
             this.txtAmountSale.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -117,7 +118,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(518, 12);
+            this.label2.Location = new System.Drawing.Point(563, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(184, 16);
             this.label2.TabIndex = 135;

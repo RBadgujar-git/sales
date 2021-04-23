@@ -261,5 +261,10 @@ namespace sample
                 }
             }
         }
+
+        private void dgvexpense_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
   }

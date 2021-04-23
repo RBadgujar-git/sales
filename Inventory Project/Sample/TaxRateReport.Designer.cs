@@ -61,7 +61,7 @@
             this.txtTaxOut.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxOut.FocusedState.Parent = this.txtTaxOut;
             this.txtTaxOut.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTaxOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtTaxOut.ForeColor = System.Drawing.Color.Black;
             this.txtTaxOut.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaxOut.HoverState.Parent = this.txtTaxOut;
             this.txtTaxOut.Location = new System.Drawing.Point(783, 3);
@@ -87,6 +87,7 @@
             this.txtTotalTaxIn.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalTaxIn.FocusedState.Parent = this.txtTotalTaxIn;
             this.txtTotalTaxIn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTotalTaxIn.ForeColor = System.Drawing.Color.Black;
             this.txtTotalTaxIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalTaxIn.HoverState.Parent = this.txtTotalTaxIn;
             this.txtTotalTaxIn.Location = new System.Drawing.Point(316, 3);
