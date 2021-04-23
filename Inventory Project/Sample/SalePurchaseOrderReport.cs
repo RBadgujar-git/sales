@@ -108,11 +108,6 @@ namespace sample
 
         private void dtpToDaate_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dtpToDaate_Enter(object sender, EventArgs e)
-        {
             try
             {
                 //TableName
@@ -128,7 +123,7 @@ namespace sample
                 MessageBox.Show("Data not" + ex);
             }
         }
-
+    
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //string Tablename = cmbAlllFirms.SelectedItem.ToString();
@@ -241,7 +236,7 @@ namespace sample
         }
         public void data()
         {
-            int sum = 0;
+            float sum = 0;
             for (int i = 0; i < dgvSaleorder.Rows.Count; ++i)
             {
                 sum += Convert.ToInt32(dgvSaleorder.Rows[i].Cells[4].Value);
@@ -258,14 +253,15 @@ namespace sample
             da.Fill(ds, "temp");
             dgvSaleorder.DataSource = ds;
             dgvSaleorder.DataMember = "temp";
+            dgvSaleorder.AllowUserToAddRows = false;
         }
 
         private void txtfilter_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
-                string SelectQuery = string.Format("");
+                //SqlCommand cmd = new SqlCommand("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
+                string SelectQuery = string.Format("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where PartyName like '%{0}%' and Company_ID='" + compid + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where PartyName like '%{0}%' and Company_ID='" + compid + "' and DeleteData='1') ",txtfilter.Text);
                 //string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where IncomeCategory like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);

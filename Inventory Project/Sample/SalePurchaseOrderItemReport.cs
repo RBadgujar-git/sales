@@ -16,7 +16,7 @@ namespace sample
     public partial class SalePurchaseOrderItemReport : UserControl
     {
         SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
-
+        public static int compid;
         public FormWindowState WindowState { get; private set; }
 
         public SalePurchaseOrderItemReport()
@@ -36,9 +36,7 @@ namespace sample
 
         private void SalePurchaseOrderItemReport_Load(object sender, EventArgs e)
         {
-            fetchCompany();
-
-          
+                fetchCompany();
                 con.Open();
                 SqlCommand cmd = new SqlCommand("select  ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                 DataSet ds = new DataSet();
@@ -46,6 +44,7 @@ namespace sample
                 SDA.Fill(ds, "temp");
                 dgvSalepurchhase.DataSource = ds;
                 dgvSalepurchhase.DataMember = "temp";
+                dgvSalepurchhase.AllowUserToAddRows = false;
                 con.Close();
           
         }
@@ -85,12 +84,13 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
+                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner where ItemName like '%{0}%'  union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where ItemName like '%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtFilterBy.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
                 dgvSalepurchhase.DataSource = ds;
                 dgvSalepurchhase.DataMember = "temp";
+                dgvSalepurchhase.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -131,6 +131,47 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        public void companyinfo()
+        {
+
+            //string Query = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where Company_ID='" + compid + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Company_ID='" + compid + "' and DeleteData='1'", cmbAllFirms.Text);
+            string Query = string.Format("select  ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + compid + "' and DeleteData='1'",cmbAllFirms);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            da.Fill(ds, "temp");
+            dgvSalepurchhase.DataSource = ds;
+            dgvSalepurchhase.DataMember = "temp";
+            dgvSalepurchhase.AllowUserToAddRows = false;
+        }
+
+        private void cmbAllFirms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                string Query = String.Format("select CompanyID from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID", cmbAllFirms.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    compid = Convert.ToInt32(dr["CompanyID"].ToString());
+                    //MessageBox.Show("Test" + compid);
+                }
+                dr.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+                companyinfo();
+               // data();
+            }
+
         }
     }
 }
