@@ -887,7 +887,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ItemSetting";
             this.Size = new System.Drawing.Size(1066, 689);
-            this.Load += new System.EventHandler(this.s);
+            this.Load += new System.EventHandler(this.chkSize_CheckedChanged);
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
