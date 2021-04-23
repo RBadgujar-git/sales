@@ -35,6 +35,8 @@
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvincomeCategory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +48,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvincomeCategory)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // txtTotalAmount
             // 
+            this.txtTotalAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalAmount.DefaultText = "";
             this.txtTotalAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -75,7 +77,7 @@
             this.txtTotalAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.FocusedState.Parent = this.txtTotalAmount;
             this.txtTotalAmount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTotalAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtTotalAmount.ForeColor = System.Drawing.Color.Black;
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.HoverState.Parent = this.txtTotalAmount;
             this.txtTotalAmount.Location = new System.Drawing.Point(790, 8);
@@ -159,6 +161,16 @@
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvincomeCategory.TabIndexChanged += new System.EventHandler(this.dgvincomeCategory_TabIndexChanged);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = " Income Category";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Received";
+            this.Column2.Name = "Column2";
+            // 
             // cmbAllFirms
             // 
             this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
@@ -217,6 +229,7 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(146, 23);
             this.dtpToDate.TabIndex = 233;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
             // 
             // cmbExpensecategory
@@ -232,11 +245,12 @@
             this.cmbExpensecategory.HoverState.Parent = this.cmbExpensecategory;
             this.cmbExpensecategory.ItemHeight = 30;
             this.cmbExpensecategory.ItemsAppearance.Parent = this.cmbExpensecategory;
-            this.cmbExpensecategory.Location = new System.Drawing.Point(185, 73);
+            this.cmbExpensecategory.Location = new System.Drawing.Point(526, 64);
             this.cmbExpensecategory.Name = "cmbExpensecategory";
             this.cmbExpensecategory.ShadowDecoration.Parent = this.cmbExpensecategory;
             this.cmbExpensecategory.Size = new System.Drawing.Size(236, 36);
             this.cmbExpensecategory.TabIndex = 235;
+            this.cmbExpensecategory.Visible = false;
             this.cmbExpensecategory.SelectedIndexChanged += new System.EventHandler(this.cmbExpensecategory_SelectedIndexChanged);
             // 
             // label3
@@ -244,9 +258,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(100, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(73, 16);
             this.label3.TabIndex = 234;
-            this.label3.Text = "Category :";
+            this.label3.Text = "Filter By :";
             // 
             // btnminimize
             // 
@@ -308,21 +322,38 @@
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // Column1
+            // txtfilter
             // 
-            this.Column1.HeaderText = " Income Category";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Received";
-            this.Column2.Name = "Column2";
+            this.txtfilter.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfilter.DefaultText = "";
+            this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.DisabledState.Parent = this.txtfilter;
+            this.txtfilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.FocusedState.Parent = this.txtfilter;
+            this.txtfilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.HoverState.Parent = this.txtfilter;
+            this.txtfilter.Location = new System.Drawing.Point(180, 80);
+            this.txtfilter.Name = "txtfilter";
+            this.txtfilter.PasswordChar = '\0';
+            this.txtfilter.PlaceholderText = "";
+            this.txtfilter.SelectedText = "";
+            this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
+            this.txtfilter.Size = new System.Drawing.Size(252, 27);
+            this.txtfilter.TabIndex = 443;
+            this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
             // 
             // OtherIncomeCategoryReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.cmbExpensecategory);
             this.Controls.Add(this.label3);
@@ -368,5 +399,6 @@
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private Guna.UI2.WinForms.Guna2TextBox txtfilter;
     }
 }

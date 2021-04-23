@@ -64,8 +64,8 @@ namespace sample
             dgvSaleorder.Columns[5].DataPropertyName = "Status";
             dgvSaleorder.Columns[6].HeaderText = " TableName";
             dgvSaleorder.Columns[6].DataPropertyName = "TableName";
-
             dgvSaleorder.DataSource = dt;
+            dgvSaleorder.AllowUserToAddRows = false;
         }//BillDate,BillNo,PartyName,Pay
         private void Data()
         {
@@ -237,7 +237,7 @@ namespace sample
                 companyinfo();
                 data();
             }
-            
+
         }
         public void data()
         {
@@ -260,9 +260,28 @@ namespace sample
             dgvSaleorder.DataMember = "temp";
         }
 
-        private void dgvSaleorder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtfilter_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
+                string SelectQuery = string.Format("");
+                //string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where IncomeCategory like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvSaleorder.DataSource = ds;
+                dgvSaleorder.DataMember = "temp";
+                dgvSaleorder.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+            finally
+            {
 
+            }
         }
     }
 }
