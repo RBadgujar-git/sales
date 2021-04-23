@@ -42,7 +42,7 @@ namespace sample
         {
             if (cmballparties.Text != "System.Data.DataRowView") {
                 try {
-                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' group by PartyName");
+                    string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by PartyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -81,18 +81,24 @@ namespace sample
 
         private void AllParties_Load(object sender, EventArgs e)
         {
-           // binddata();
+            dtpdate.Enabled = false;
+            binddata();
             fetchcustomername();
             fetchGroupname();
+           
+        }
+        public void binddata()
+        {
             try
             {
                 con.Open();
                 DataTable dt = new DataTable();
-                string Query = String.Format("select TableName,PartyName, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' union all select TableName,PartyName,  ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' union all select TableName,PartyName,  ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' union all select TableName,PartyName, ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where Company_ID='" + NewCompany.company_id + "'");
+                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
                 sqlSda.Fill(dt);
                 dgvAllparties.DataSource = dt;
+                dgvAllparties.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -102,22 +108,6 @@ namespace sample
             {
                 con.Close();
             }
-        }
-        public void binddata()
-        {
-            con.Open();
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_PartyMaster where  DeleteData='1' and Company_ID='"+NewCompany.company_id+"'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            con.Close();
-           //
-            //dgvAllparties.Columns[1].HeaderText = "Received";
-            //dgvAllparties.Columns[1].DataPropertyName = "productname";
-            //dgvAllparties.Columns[0].HeaderText = "Payable";
-            //dgvAllparties.Columns[0].DataPropertyName = "productid";
-            
-            //dgvAllparties.DataSource = dt;
         }
 
         private void btnimport_Click(object sender, EventArgs e)
@@ -139,21 +129,22 @@ namespace sample
 
         private void cmballparties_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try {
+            if (cmballparties.SelectedItem == "All Parties")
+            {
+                binddata();
+            }
+            else
+            {
                 con.Open();
                 DataTable dt = new DataTable();
-                string Query = String.Format("select TableName,PartyName, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}'union all select TableName,PartyName,  ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}'union all select TableName,PartyName, ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName = '{0}'  AND Company_ID='" + NewCompany.company_id + "'", cmballparties.Text);
+                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date,ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}'union all select TableName,PartyName, OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName = '{0}'  AND Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmballparties.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
                 sqlSda.Fill(dt);
                 dgvAllparties.DataSource = dt;
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-            finally {
                 con.Close();
             }
+          
         }
 
         private void dgvAllparties_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -194,6 +185,41 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void chkdate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkdate.Checked == true)
+            {
+                dtpdate.Enabled = true;
+            }
+            else
+            {
+                dtpdate.Enabled = false;
+            }
+        }
+
+        private void dtpdate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where OrderDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where BillDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where OrderDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvAllparties.DataSource = dt;
+                dgvAllparties.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
             }
         }
     }

@@ -45,6 +45,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllparties)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,19 +53,20 @@
             // cmballparties
             // 
             this.cmballparties.BackColor = System.Drawing.Color.Transparent;
+            this.cmballparties.BorderColor = System.Drawing.Color.Gray;
             this.cmballparties.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmballparties.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmballparties.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmballparties.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmballparties.FocusedState.Parent = this.cmballparties;
-            this.cmballparties.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmballparties.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmballparties.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmballparties.ForeColor = System.Drawing.Color.Blue;
             this.cmballparties.HoverState.Parent = this.cmballparties;
             this.cmballparties.ItemHeight = 30;
             this.cmballparties.Items.AddRange(new object[] {
             "All Parties"});
             this.cmballparties.ItemsAppearance.Parent = this.cmballparties;
-            this.cmballparties.Location = new System.Drawing.Point(75, 40);
+            this.cmballparties.Location = new System.Drawing.Point(79, 40);
             this.cmballparties.Name = "cmballparties";
             this.cmballparties.ShadowDecoration.Parent = this.cmballparties;
             this.cmballparties.Size = new System.Drawing.Size(140, 36);
@@ -75,9 +77,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 84;
             this.label1.Text = "FILTER";
             // 
@@ -88,7 +91,7 @@
             this.chkdate.CheckedState.BorderRadius = 0;
             this.chkdate.CheckedState.BorderThickness = 0;
             this.chkdate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkdate.Location = new System.Drawing.Point(377, 48);
+            this.chkdate.Location = new System.Drawing.Point(326, 48);
             this.chkdate.Name = "chkdate";
             this.chkdate.Size = new System.Drawing.Size(96, 20);
             this.chkdate.TabIndex = 85;
@@ -97,6 +100,7 @@
             this.chkdate.UncheckedState.BorderRadius = 0;
             this.chkdate.UncheckedState.BorderThickness = 0;
             this.chkdate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkdate.CheckedChanged += new System.EventHandler(this.chkdate_CheckedChanged);
             // 
             // cmbbalparty
             // 
@@ -105,7 +109,7 @@
             this.cmbbalparty.CheckedState.BorderRadius = 0;
             this.cmbbalparty.CheckedState.BorderThickness = 0;
             this.cmbbalparty.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbbalparty.Location = new System.Drawing.Point(667, 47);
+            this.cmbbalparty.Location = new System.Drawing.Point(616, 47);
             this.cmbbalparty.Name = "cmbbalparty";
             this.cmbbalparty.Size = new System.Drawing.Size(99, 20);
             this.cmbbalparty.TabIndex = 86;
@@ -143,11 +147,11 @@
             this.dgvAllparties.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAllparties.EnableHeadersVisualStyles = false;
             this.dgvAllparties.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvAllparties.Location = new System.Drawing.Point(4, 101);
+            this.dgvAllparties.Location = new System.Drawing.Point(4, 123);
             this.dgvAllparties.Name = "dgvAllparties";
             this.dgvAllparties.RowHeadersVisible = false;
             this.dgvAllparties.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAllparties.Size = new System.Drawing.Size(989, 362);
+            this.dgvAllparties.Size = new System.Drawing.Size(989, 428);
             this.dgvAllparties.TabIndex = 87;
             this.dgvAllparties.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvAllparties.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -182,13 +186,14 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 493);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(999, 75);
+            this.guna2Panel1.Size = new System.Drawing.Size(1105, 75);
             this.guna2Panel1.TabIndex = 88;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // txttotalRecieve
             // 
             this.txttotalRecieve.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotalRecieve.BorderColor = System.Drawing.Color.Gray;
             this.txttotalRecieve.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotalRecieve.DefaultText = "";
             this.txttotalRecieve.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -202,7 +207,7 @@
             this.txttotalRecieve.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotalRecieve.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotalRecieve.HoverState.Parent = this.txttotalRecieve;
-            this.txttotalRecieve.Location = new System.Drawing.Point(593, 11);
+            this.txttotalRecieve.Location = new System.Drawing.Point(699, 11);
             this.txttotalRecieve.Name = "txttotalRecieve";
             this.txttotalRecieve.PasswordChar = '\0';
             this.txttotalRecieve.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -216,6 +221,7 @@
             // txttotalPayable
             // 
             this.txttotalPayable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotalPayable.BorderColor = System.Drawing.Color.Gray;
             this.txttotalPayable.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotalPayable.DefaultText = "";
             this.txttotalPayable.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -229,7 +235,7 @@
             this.txttotalPayable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotalPayable.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotalPayable.HoverState.Parent = this.txttotalPayable;
-            this.txttotalPayable.Location = new System.Drawing.Point(812, 13);
+            this.txttotalPayable.Location = new System.Drawing.Point(918, 13);
             this.txttotalPayable.Name = "txttotalPayable";
             this.txttotalPayable.PasswordChar = '\0';
             this.txttotalPayable.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -253,10 +259,11 @@
             // 
             this.dtpdate.CustomFormat = "MM/dd/yyyy";
             this.dtpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpdate.Location = new System.Drawing.Point(479, 45);
+            this.dtpdate.Location = new System.Drawing.Point(428, 45);
             this.dtpdate.Name = "dtpdate";
             this.dtpdate.Size = new System.Drawing.Size(161, 23);
             this.dtpdate.TabIndex = 2;
+            this.dtpdate.ValueChanged += new System.EventHandler(this.dtpdate_ValueChanged);
             // 
             // btncancel
             // 
@@ -268,7 +275,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(950, 3);
+            this.btncancel.Location = new System.Drawing.Point(937, 19);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 80;
@@ -283,9 +290,9 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(918, 40);
+            this.btnPrint.Location = new System.Drawing.Point(940, 51);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(22, 28);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 79;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -298,11 +305,12 @@
             this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnimport.FlatAppearance.BorderSize = 0;
             this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimport.Location = new System.Drawing.Point(878, 45);
+            this.btnimport.Location = new System.Drawing.Point(984, 50);
             this.btnimport.Name = "btnimport";
             this.btnimport.Size = new System.Drawing.Size(20, 20);
             this.btnimport.TabIndex = 78;
             this.btnimport.UseVisualStyleBackColor = false;
+            this.btnimport.Visible = false;
             this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
             // 
             // btnminimize
@@ -314,7 +322,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(918, 3);
+            this.btnminimize.Location = new System.Drawing.Point(886, 10);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 437;
@@ -322,11 +330,22 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(981, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 438;
+            this.label3.Text = "Print";
+            // 
             // AllParties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpdate);
             this.Controls.Add(this.guna2Panel1);
@@ -341,7 +360,7 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AllParties";
-            this.Size = new System.Drawing.Size(999, 568);
+            this.Size = new System.Drawing.Size(1105, 568);
             this.Load += new System.EventHandler(this.AllParties_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllparties)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
@@ -367,5 +386,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txttotalPayable;
         private System.Windows.Forms.DateTimePicker dtpdate;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label3;
     }
 }

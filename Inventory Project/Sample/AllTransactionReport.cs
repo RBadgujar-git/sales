@@ -335,5 +335,10 @@ namespace sample
                 MessageBox.Show("Data not" + ex);
             }
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            binddata();
+        }
     }
 }
