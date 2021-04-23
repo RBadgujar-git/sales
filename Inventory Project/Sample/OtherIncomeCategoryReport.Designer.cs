@@ -35,6 +35,8 @@
             this.txtTotalAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvincomeCategory = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +48,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvincomeCategory)).BeginInit();
             this.SuspendLayout();
@@ -65,6 +65,7 @@
             // 
             // txtTotalAmount
             // 
+            this.txtTotalAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalAmount.DefaultText = "";
             this.txtTotalAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -75,7 +76,7 @@
             this.txtTotalAmount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.FocusedState.Parent = this.txtTotalAmount;
             this.txtTotalAmount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTotalAmount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtTotalAmount.ForeColor = System.Drawing.Color.Black;
             this.txtTotalAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalAmount.HoverState.Parent = this.txtTotalAmount;
             this.txtTotalAmount.Location = new System.Drawing.Point(790, 8);
@@ -158,6 +159,16 @@
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvincomeCategory.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvincomeCategory.TabIndexChanged += new System.EventHandler(this.dgvincomeCategory_TabIndexChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = " Income Category";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Received";
+            this.Column2.Name = "Column2";
             // 
             // cmbAllFirms
             // 
@@ -307,16 +318,6 @@
             this.btnPrint.TabIndex = 221;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = " Income Category";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Received";
-            this.Column2.Name = "Column2";
             // 
             // OtherIncomeCategoryReport
             // 

@@ -40,7 +40,7 @@ namespace sample
             fetchCategory();
             bindbankdata();
             con.Open();
-            SqlCommand cd = new SqlCommand("select sum(Received) as total from tbl_OtherIncome where Company_ID='" + compid + "' and DeleteData='1'", con);
+            SqlCommand cd = new SqlCommand("select sum(Received) as total from tbl_OtherIncome where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataReader dr = cd.ExecuteReader();
             while (dr.Read())
             {
@@ -64,6 +64,7 @@ namespace sample
             dgvincomeCategory.Columns[1].HeaderText = "Received";
             dgvincomeCategory.Columns[1].DataPropertyName = "Received";
             dgvincomeCategory.DataSource = dt;
+            dgvincomeCategory.AllowUserToAddRows = false;
         }
         private void fetchCategory()
         {
@@ -245,7 +246,7 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
+        }     
     }
     
 }

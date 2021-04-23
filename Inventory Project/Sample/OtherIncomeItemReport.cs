@@ -35,7 +35,7 @@ namespace sample
         private void OtherIncomeItemReport_Load(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cd1 = new SqlCommand("select sum(ItemAmount) as received from tbl_OtherIncomeInner3 where Company_ID='" + compid + "' and DeleteData='1'", con);
+            SqlCommand cd1 = new SqlCommand("select sum(ItemAmount) as received from tbl_OtherIncomeInner3 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataReader dr1 = cd1.ExecuteReader();
             while (dr1.Read())
             {
@@ -46,7 +46,7 @@ namespace sample
             fetchCompany();
             fetchdata();
             con.Open();
-            SqlCommand cd = new SqlCommand("select sum(Qty) as total from tbl_OtherIncomeInner3 where Company_ID='" + compid + "' and DeleteData='1'", con);
+            SqlCommand cd = new SqlCommand("select sum(Qty) as total from tbl_OtherIncomeInner3 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataReader dr = cd.ExecuteReader();
             while (dr.Read())
             {
@@ -73,6 +73,7 @@ namespace sample
             dgvOtherIncome.Columns[2].HeaderText = " Item Amount";
             dgvOtherIncome.Columns[2].DataPropertyName = "ItemAmount";
             dgvOtherIncome.DataSource = dt;
+            dgvOtherIncome.AllowUserToAddRows = false;
         }
         private void fetchCompany()
         {
@@ -107,7 +108,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_OtherIncomeInner  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
+                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
