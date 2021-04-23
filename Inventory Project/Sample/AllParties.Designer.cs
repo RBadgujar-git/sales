@@ -59,7 +59,7 @@
             this.cmballparties.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmballparties.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmballparties.FocusedState.Parent = this.cmballparties;
-            this.cmballparties.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmballparties.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmballparties.ForeColor = System.Drawing.Color.Blue;
             this.cmballparties.HoverState.Parent = this.cmballparties;
             this.cmballparties.ItemHeight = 30;
