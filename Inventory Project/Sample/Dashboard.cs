@@ -133,7 +133,7 @@ namespace sample
             SqlCommand cmd = new SqlCommand("insert into Setting_Table(Company_ID)values(" + id + ")", con);
             cmd.ExecuteNonQuery();
 
-            SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSeeting(Company_ID)values(" + id + ")", con);
+            SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSetting(Company_ID)values(" + id + ")", con);
             cmd1.ExecuteNonQuery();
 
         }
