@@ -88,6 +88,7 @@ namespace sample
             dgvItemTracking.Columns[5].DataPropertyName = "Expdate";
            
             dgvItemTracking.DataSource = dt;
+            dgvItemTracking.AllowUserToAddRows = false;
         }
 
         private void txtItemname_TextChanged(object sender, EventArgs e)
@@ -100,6 +101,8 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+
+                dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -118,6 +121,9 @@ namespace sample
                 SDA.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+
+                dgvItemTracking.AllowUserToAddRows = false;
+
             }
             catch (Exception ex)
             {
@@ -141,6 +147,7 @@ namespace sample
                     SDA.Fill(ds, "temp");
                     dgvItemTracking.DataSource = ds;
                     dgvItemTracking.DataMember = "temp";
+                    dgvItemTracking.AllowUserToAddRows = false;
                 }
                 catch (Exception ex)
                 {
@@ -159,6 +166,7 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -177,6 +185,7 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -216,6 +225,11 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void chkShowOnly_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
