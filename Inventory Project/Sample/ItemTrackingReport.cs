@@ -58,7 +58,6 @@ namespace sample
         {
 
         }
-
         private void ItemTrackingReport_Load(object sender, EventArgs e)
         {
             bindbankdata();

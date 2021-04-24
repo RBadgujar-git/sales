@@ -50,39 +50,46 @@ namespace sample
         }
         private void fetchdetails()
         {
-            if (con.State == ConnectionState.Closed)
+            try
             {
-                con.Open();
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                DataTable dtable = new DataTable();
+                cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Action", "Select");
+                cmd.Parameters.AddWithValue("@CompanyID", 0);
+                cmd.Parameters.AddWithValue("@CompanyName", txtcampanyName.Text);
+                cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+                cmd.Parameters.AddWithValue("@PhoneNo", txtContactNo.Text);
+                cmd.Parameters.AddWithValue("@EmailID", txtemail.Text);
+                cmd.Parameters.AddWithValue("@ReferaleCode", txtreferralcode.Text);
+                cmd.Parameters.AddWithValue("@BusinessType", txtbusinesstype.Text);
+                cmd.Parameters.AddWithValue("@OwnerName", ownerName.Text);
+                cmd.Parameters.AddWithValue("@GSTNumber", txtGSTNo.Text);
+                cmd.Parameters.AddWithValue("@City", txtCity.Text);
+                cmd.Parameters.AddWithValue("@State", cmbState.Text);
+                SqlParameter sqlpara = new SqlParameter("@Signature", SqlDbType.Image);
+                sqlpara.Value = DBNull.Value;
+                cmd.Parameters.Add(sqlpara);
+                SqlParameter sqlpar = new SqlParameter("@AddLogo", SqlDbType.Image);
+                sqlpar.Value = DBNull.Value;
+                cmd.Parameters.Add(sqlpar);
+                cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
+                cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
+                cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dtable);
+                dgvComapnyMaster.DataSource = dtable;
+                dgvComapnyMaster.AllowUserToAddRows = false;
             }
-            DataTable dtable = new DataTable();
-            cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Action", "Select");
-            cmd.Parameters.AddWithValue("@CompanyID", 0);
-            cmd.Parameters.AddWithValue("@CompanyName", txtcampanyName.Text);
-            cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-            cmd.Parameters.AddWithValue("@PhoneNo", txtContactNo.Text);
-            cmd.Parameters.AddWithValue("@EmailID", txtemail.Text);
-            cmd.Parameters.AddWithValue("@ReferaleCode", txtreferralcode.Text);
-            cmd.Parameters.AddWithValue("@BusinessType", txtbusinesstype.Text);
-            cmd.Parameters.AddWithValue("@OwnerName", ownerName.Text);
-            cmd.Parameters.AddWithValue("@GSTNumber", txtGSTNo.Text);
-            cmd.Parameters.AddWithValue("@City", txtCity.Text);
-            cmd.Parameters.AddWithValue("@State", cmbState.Text);          
-            SqlParameter sqlpara = new SqlParameter("@Signature", SqlDbType.Image);
-            sqlpara.Value = DBNull.Value;
-            cmd.Parameters.Add(sqlpara);
-            SqlParameter sqlpar = new SqlParameter("@AddLogo", SqlDbType.Image);
-            sqlpar.Value = DBNull.Value;
-            cmd.Parameters.Add(sqlpar);
-            cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
-            cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
-            cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            sda.Fill(dtable);
-            dgvComapnyMaster.DataSource = dtable;
-            dgvComapnyMaster.AllowUserToAddRows = false;
-        }
+            catch(Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+            }
         public int verify = 0;
 
         public void validfild()

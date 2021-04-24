@@ -213,7 +213,7 @@ namespace sample
             con.Close();
             if (showadd == 1)
             {
-                txtbillingadd.Enabled = true;
+                txtbillingadd.Visible = false;
             }
             con.Open();
             SqlCommand cmd15 = new SqlCommand("Select PlaceOfSupply from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
@@ -269,7 +269,7 @@ namespace sample
                 label41.Visible = false;
             }
 
-
+            clear_text_data();
         }
 
         private void fetchBarcode()
@@ -1234,14 +1234,17 @@ namespace sample
 
             try
             {
-                
-                    //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
-                    //string State1 = cd.ExecuteScalar().ToString();
-                    //con.Close();
-                    //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
-                    if (cmbStatesupply.SelectedItem=="Maharashtra")
-                    {
+                if (cmbStatesupply.Text==State1)
+                {
 
                         float gst = 0, cgst = 0, sgst = 0;
                         gst = float.Parse(txtTax1.Text);
@@ -1264,7 +1267,7 @@ namespace sample
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message);
+            //    MessageBox.Show(e1.Message);
             }
         }
         private void btnSetting_Click(object sender, EventArgs e)
@@ -1380,7 +1383,7 @@ namespace sample
             }
             catch(Exception es)
             {
-                MessageBox.Show(es.Message);
+         //       MessageBox.Show(es.Message);
             }
         }
        // public void itemtotal()
@@ -1778,7 +1781,7 @@ namespace sample
         private void txtReturnNo_TextChanged(object sender, EventArgs e)
         {
            // cal_Total();
-            //gst_devide();
+            gst_devide();
         }
 
        

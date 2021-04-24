@@ -1304,13 +1304,16 @@ namespace sample
 
             try
             {
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
+                // MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
-                //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
-                //string State1 = cd.ExecuteScalar().ToString();
-                //con.Close();
-                //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
-
-                if (cmbStatesupply.SelectedItem == "Maharashtra")
+                if (cmbStatesupply.Text ==State1)
                 {
 
                     float gst = 0, cgst = 0, sgst = 0;
@@ -1582,6 +1585,21 @@ namespace sample
         private void guna2TextBox5_TextChanged(object sender, EventArgs e)
         {
             cal_ItemTotal();
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox4_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }

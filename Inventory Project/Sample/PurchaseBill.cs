@@ -1897,7 +1897,7 @@ namespace sample
         private void txtTax1_TextChanged(object sender, EventArgs e)
         {
            
-                cal_ItemTotal();
+           cal_ItemTotal();
             gst_devide1();
         }
         private void gst_devide1()
@@ -1905,13 +1905,16 @@ namespace sample
 
             try
             {
-
-                //SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
-                //string State1 = cd.ExecuteScalar().ToString();
-                //con.Close();
+                if(con.State==ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cd = new SqlCommand("Select State from tbl_CompanyMaster where CompanyID='" + NewCompany.company_id + "'", con);
+                string State1 = cd.ExecuteScalar().ToString();
+                con.Close();
                 //// MessageBox.Show("Date is" + State1 + "sate" + cmbStatesupply.Text);
 
-                if (cmbStatesupply.SelectedItem == "Maharashtra")
+                if (cmbStatesupply.Text == State1)
                 {
 
                     float gst = 0, cgst = 0, sgst = 0;
@@ -2205,6 +2208,16 @@ namespace sample
         }
 
         private void ToggleSwitch1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label45_Click(object sender, EventArgs e)
         {
 
         }
