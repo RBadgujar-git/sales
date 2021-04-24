@@ -2365,9 +2365,9 @@ namespace sample
 
         private void btnlinkPayment_Click(object sender, EventArgs e)
         {
-            sendSMS();
-            //E_Waybillgenrate ew = new E_Waybillgenrate();
-            //ew.Show();
+            //sendSMS();
+           E_Waybillgenrate ew = new E_Waybillgenrate();
+           ew.Show();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

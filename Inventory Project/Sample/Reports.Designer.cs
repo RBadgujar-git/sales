@@ -283,7 +283,7 @@
             this.guna2Button36.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button36.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button36.HoverState.Parent = this.guna2Button36;
-            this.guna2Button36.Location = new System.Drawing.Point(1, 746);
+            this.guna2Button36.Location = new System.Drawing.Point(0, 746);
             this.guna2Button36.Name = "guna2Button36";
             this.guna2Button36.ShadowDecoration.Parent = this.guna2Button36;
             this.guna2Button36.Size = new System.Drawing.Size(193, 32);

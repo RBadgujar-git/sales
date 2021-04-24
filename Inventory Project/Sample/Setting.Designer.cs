@@ -72,11 +72,35 @@
             this.cmbCompanyName = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnlogin = new Guna.UI2.WinForms.Guna2Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.old4 = new System.Windows.Forms.TextBox();
+            this.old3 = new System.Windows.Forms.TextBox();
+            this.old2 = new System.Windows.Forms.TextBox();
+            this.old1 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Con4 = new System.Windows.Forms.TextBox();
+            this.Con3 = new System.Windows.Forms.TextBox();
+            this.Con2 = new System.Windows.Forms.TextBox();
+            this.Con1 = new System.Windows.Forms.TextBox();
+            this.New4 = new System.Windows.Forms.TextBox();
+            this.New3 = new System.Windows.Forms.TextBox();
+            this.New2 = new System.Windows.Forms.TextBox();
+            this.New1 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown3)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
@@ -194,7 +218,6 @@
             this.chkDeliveryChalln.UncheckedState.BorderRadius = 0;
             this.chkDeliveryChalln.UncheckedState.BorderThickness = 0;
             this.chkDeliveryChalln.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.chkDeliveryChalln.CheckedChanged += new System.EventHandler(this.chkDeliveryChalln_CheckedChanged);
             // 
             // chkOtherincome
             // 
@@ -687,11 +710,283 @@
             this.btnlogin.Text = "Set Defualt";
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.old4);
+            this.panel3.Controls.Add(this.old3);
+            this.panel3.Controls.Add(this.old2);
+            this.panel3.Controls.Add(this.old1);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.Con4);
+            this.panel3.Controls.Add(this.Con3);
+            this.panel3.Controls.Add(this.Con2);
+            this.panel3.Controls.Add(this.Con1);
+            this.panel3.Controls.Add(this.New4);
+            this.panel3.Controls.Add(this.New3);
+            this.panel3.Controls.Add(this.New2);
+            this.panel3.Controls.Add(this.New1);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.button2);
+            this.panel3.Location = new System.Drawing.Point(300, 188);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(279, 322);
+            this.panel3.TabIndex = 457;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(15, 42);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(86, 15);
+            this.label17.TabIndex = 1010;
+            this.label17.Text = "Old  Passcode";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // old4
+            // 
+            this.old4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.old4.Location = new System.Drawing.Point(203, 64);
+            this.old4.MaxLength = 1;
+            this.old4.Multiline = true;
+            this.old4.Name = "old4";
+            this.old4.Size = new System.Drawing.Size(56, 45);
+            this.old4.TabIndex = 703;
+            this.old4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.old4.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // old3
+            // 
+            this.old3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.old3.Location = new System.Drawing.Point(138, 64);
+            this.old3.MaxLength = 1;
+            this.old3.Multiline = true;
+            this.old3.Name = "old3";
+            this.old3.Size = new System.Drawing.Size(56, 45);
+            this.old3.TabIndex = 702;
+            this.old3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.old3.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // old2
+            // 
+            this.old2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.old2.Location = new System.Drawing.Point(77, 64);
+            this.old2.MaxLength = 1;
+            this.old2.Multiline = true;
+            this.old2.Name = "old2";
+            this.old2.Size = new System.Drawing.Size(56, 45);
+            this.old2.TabIndex = 701;
+            this.old2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.old2.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // old1
+            // 
+            this.old1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.old1.Location = new System.Drawing.Point(15, 64);
+            this.old1.MaxLength = 1;
+            this.old1.Multiline = true;
+            this.old1.Name = "old1";
+            this.old1.Size = new System.Drawing.Size(56, 45);
+            this.old1.TabIndex = 700;
+            this.old1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.old1.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel4.Controls.Add(this.btnCancel);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(277, 36);
+            this.panel4.TabIndex = 1003;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.Location = new System.Drawing.Point(243, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(28, 30);
+            this.btnCancel.TabIndex = 70;
+            this.btnCancel.Text = "X";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(12, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(135, 16);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "Change Passcode";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(13, 193);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(107, 15);
+            this.label14.TabIndex = 1002;
+            this.label14.Text = "Confirm Passcode";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(15, 118);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(89, 15);
+            this.label15.TabIndex = 1001;
+            this.label15.Text = "New Passcode";
+            // 
+            // Con4
+            // 
+            this.Con4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Con4.Location = new System.Drawing.Point(201, 216);
+            this.Con4.MaxLength = 1;
+            this.Con4.Multiline = true;
+            this.Con4.Name = "Con4";
+            this.Con4.Size = new System.Drawing.Size(56, 45);
+            this.Con4.TabIndex = 713;
+            this.Con4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Con4.TextChanged += new System.EventHandler(this.Con4_TextChanged);
+            // 
+            // Con3
+            // 
+            this.Con3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Con3.Location = new System.Drawing.Point(138, 216);
+            this.Con3.MaxLength = 1;
+            this.Con3.Multiline = true;
+            this.Con3.Name = "Con3";
+            this.Con3.Size = new System.Drawing.Size(56, 45);
+            this.Con3.TabIndex = 711;
+            this.Con3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Con2
+            // 
+            this.Con2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Con2.Location = new System.Drawing.Point(77, 216);
+            this.Con2.MaxLength = 1;
+            this.Con2.Multiline = true;
+            this.Con2.Name = "Con2";
+            this.Con2.Size = new System.Drawing.Size(56, 45);
+            this.Con2.TabIndex = 710;
+            this.Con2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Con1
+            // 
+            this.Con1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Con1.Location = new System.Drawing.Point(15, 216);
+            this.Con1.MaxLength = 1;
+            this.Con1.Multiline = true;
+            this.Con1.Name = "Con1";
+            this.Con1.Size = new System.Drawing.Size(56, 45);
+            this.Con1.TabIndex = 709;
+            this.Con1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // New4
+            // 
+            this.New4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.New4.Location = new System.Drawing.Point(203, 140);
+            this.New4.MaxLength = 1;
+            this.New4.Multiline = true;
+            this.New4.Name = "New4";
+            this.New4.Size = new System.Drawing.Size(56, 45);
+            this.New4.TabIndex = 708;
+            this.New4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.New4.TextChanged += new System.EventHandler(this.New4_TextChanged);
+            // 
+            // New3
+            // 
+            this.New3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.New3.Location = new System.Drawing.Point(138, 140);
+            this.New3.MaxLength = 1;
+            this.New3.Multiline = true;
+            this.New3.Name = "New3";
+            this.New3.Size = new System.Drawing.Size(56, 45);
+            this.New3.TabIndex = 706;
+            this.New3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // New2
+            // 
+            this.New2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.New2.Location = new System.Drawing.Point(77, 140);
+            this.New2.MaxLength = 1;
+            this.New2.Multiline = true;
+            this.New2.Name = "New2";
+            this.New2.Size = new System.Drawing.Size(56, 45);
+            this.New2.TabIndex = 705;
+            this.New2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // New1
+            // 
+            this.New1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.New1.Location = new System.Drawing.Point(15, 140);
+            this.New1.MaxLength = 1;
+            this.New1.Multiline = true;
+            this.New1.Name = "New1";
+            this.New1.Size = new System.Drawing.Size(56, 45);
+            this.New1.TabIndex = 704;
+            this.New1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(18, 269);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 16);
+            this.label16.TabIndex = 1005;
+            this.label16.Text = "label4";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.NavajoWhite;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(174, 283);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(84, 28);
+            this.button3.TabIndex = 714;
+            this.button3.Text = "Save";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(231, -2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(33, 31);
+            this.button2.TabIndex = 209;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cmbCompanyName);
@@ -744,6 +1039,10 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,5 +1094,27 @@
         private System.Windows.Forms.ComboBox cmbCompanyName;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2Button btnlogin;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox old4;
+        private System.Windows.Forms.TextBox old3;
+        private System.Windows.Forms.TextBox old2;
+        private System.Windows.Forms.TextBox old1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox Con4;
+        private System.Windows.Forms.TextBox Con3;
+        private System.Windows.Forms.TextBox Con2;
+        private System.Windows.Forms.TextBox Con1;
+        private System.Windows.Forms.TextBox New4;
+        private System.Windows.Forms.TextBox New3;
+        private System.Windows.Forms.TextBox New2;
+        private System.Windows.Forms.TextBox New1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button3;
     }
 }

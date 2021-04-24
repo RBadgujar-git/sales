@@ -1812,7 +1812,7 @@
             this.btnlinkPayment.Name = "btnlinkPayment";
             this.btnlinkPayment.Size = new System.Drawing.Size(117, 41);
             this.btnlinkPayment.TabIndex = 28;
-            this.btnlinkPayment.Text = "Link Payment";
+            this.btnlinkPayment.Text = "Genrate_Eway Bii,,";
             this.btnlinkPayment.UseVisualStyleBackColor = false;
             this.btnlinkPayment.Click += new System.EventHandler(this.btnlinkPayment_Click);
             // 

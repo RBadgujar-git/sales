@@ -46,6 +46,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxReport)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +113,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 515);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(989, 53);
+            this.guna2Panel1.Size = new System.Drawing.Size(1052, 53);
             this.guna2Panel1.TabIndex = 155;
             // 
             // label2
@@ -161,11 +162,11 @@
             this.dgvTaxReport.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTaxReport.EnableHeadersVisualStyles = false;
             this.dgvTaxReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTaxReport.Location = new System.Drawing.Point(4, 88);
+            this.dgvTaxReport.Location = new System.Drawing.Point(6, 104);
             this.dgvTaxReport.Name = "dgvTaxReport";
             this.dgvTaxReport.RowHeadersVisible = false;
             this.dgvTaxReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaxReport.Size = new System.Drawing.Size(983, 421);
+            this.dgvTaxReport.Size = new System.Drawing.Size(1013, 407);
             this.dgvTaxReport.TabIndex = 154;
             this.dgvTaxReport.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvTaxReport.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -194,6 +195,7 @@
             // cmbAllFirms
             // 
             this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllFirms.BorderColor = System.Drawing.Color.Gray;
             this.cmbAllFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbAllFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAllFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -222,6 +224,7 @@
             this.label5.Size = new System.Drawing.Size(24, 16);
             this.label5.TabIndex = 152;
             this.label5.Text = "To";
+            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -231,6 +234,7 @@
             this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 150;
             this.label6.Text = "From";
+            this.label6.Visible = false;
             // 
             // dtpDateFrom
             // 
@@ -240,6 +244,7 @@
             this.dtpDateFrom.Name = "dtpDateFrom";
             this.dtpDateFrom.Size = new System.Drawing.Size(140, 23);
             this.dtpDateFrom.TabIndex = 156;
+            this.dtpDateFrom.Visible = false;
             // 
             // dtpTodate
             // 
@@ -249,6 +254,7 @@
             this.dtpTodate.Name = "dtpTodate";
             this.dtpTodate.Size = new System.Drawing.Size(145, 23);
             this.dtpTodate.TabIndex = 157;
+            this.dtpTodate.Visible = false;
             // 
             // btnminimize
             // 
@@ -276,7 +282,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(955, 3);
+            this.btnCancel.Location = new System.Drawing.Point(996, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 26);
             this.btnCancel.TabIndex = 148;
@@ -290,9 +296,9 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(890, 34);
+            this.btnPrint.Location = new System.Drawing.Point(994, 41);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 147;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -309,12 +315,23 @@
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 146;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(993, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 447;
+            this.label3.Text = "Print";
             // 
             // TaxReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTodate);
             this.Controls.Add(this.dtpDateFrom);
@@ -329,7 +346,7 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TaxReport";
-            this.Size = new System.Drawing.Size(989, 568);
+            this.Size = new System.Drawing.Size(1052, 568);
             this.Load += new System.EventHandler(this.TaxReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -356,5 +373,6 @@
         private System.Windows.Forms.DateTimePicker dtpDateFrom;
         private System.Windows.Forms.DateTimePicker dtpTodate;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label3;
     }
 }

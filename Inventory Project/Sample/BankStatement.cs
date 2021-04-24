@@ -26,69 +26,32 @@ namespace sample
         private void BankStatement_Load(object sender, EventArgs e)
         {
             bankname();
-            try
-            {
-                //con.Open();
-                //DataTable dt = new DataTable();
-                //string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
-                ////union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
-                //SqlCommand cmd = new SqlCommand(Query, con);
-                //SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
-                //sqlSda.Fill(dt);
-                //dgvbankStatement.DataSource = dt;
-                //dgvbankStatement.AllowUserToAddRows = false;
-
-                con.Open();
-                DataTable dt = new DataTable();
-                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
-                sqlSda.Fill(dt);
-                dgvbankStatement.AutoGenerateColumns = false;
-                dgvbankStatement.ColumnCount = 6;
-                dgvbankStatement.Columns[0].HeaderText = "Date";
-                dgvbankStatement.Columns[0].DataPropertyName = "Date";
-                dgvbankStatement.Columns[1].HeaderText = "ToBank";
-                dgvbankStatement.Columns[1].DataPropertyName = "ToBank";
-                dgvbankStatement.Columns[2].HeaderText = "Description";
-                dgvbankStatement.Columns[2].DataPropertyName = "Descripition";
-                dgvbankStatement.Columns[3].HeaderText = "Amount";
-                dgvbankStatement.Columns[3].DataPropertyName = "Amount";
-                dgvbankStatement.Columns[4].HeaderText = "BankName";
-                dgvbankStatement.Columns[4].DataPropertyName = "BankName";
-                dgvbankStatement.Columns[5].HeaderText = "OpeningBal";
-                dgvbankStatement.Columns[5].DataPropertyName = "OpeningBal";
-                dgvbankStatement.DataSource = dt;
-                dgvbankStatement.AllowUserToAddRows = false;
-
-                //con.Open();
-                //DataTable dt = new DataTable();
-                //SqlCommand cmd = new SqlCommand("select * from tbl_Expenses where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
-                //SqlDataAdapter da = new SqlDataAdapter(cmd);
-                //da.Fill(dt);
-                //con.Close();
-                //dgvexpenses.AutoGenerateColumns = false;
-                //dgvexpenses.ColumnCount = 3;
-                //dgvexpenses.Columns[0].HeaderText = "Date";
-                //dgvexpenses.Columns[0].DataPropertyName = "Date";
-                //dgvexpenses.Columns[1].HeaderText = "Category";
-                //dgvexpenses.Columns[1].DataPropertyName = "ExpenseCategory";
-                //dgvexpenses.Columns[2].HeaderText = "Total";
-                //dgvexpenses.Columns[2].DataPropertyName = "Total";
-
-                //dgvexpenses.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+            bind();
+            dgvbankStatement.AllowUserToAddRows = false;
             Data();
         }
+        private void bind()
+        {        
+                try
+                {
+                    con.Open();
+                    DataTable dt = new DataTable();
+                    string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
+                    SqlCommand cmd = new SqlCommand(Query, con);
+                    SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                    sqlSda.Fill(dt);
+                    dgvbankStatement.DataSource = dt;
+                    dgvbankStatement.AllowUserToAddRows = false;
+                con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
+            }
+          
+        
         private void btncancel_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -101,9 +64,13 @@ namespace sample
 
         private void cmbbankname_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if (cmbbankname.SelectedItem == "Bank Name")
             {
-                con.Open();
+                bind();
+            }
+            else { 
+
+            con.Open();
                 DataTable dt = new DataTable();
                 string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where b.BankName='{0}' and a.Company_ID='" + NewCompany.company_id + "'and b.Company_ID='" + NewCompany.company_id + "' And a.DeleteData='1' and b.DeleteData='1'", cmbbankname.Text);
                     //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
@@ -111,15 +78,9 @@ namespace sample
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
                 sqlSda.Fill(dt);
                 dgvbankStatement.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
                 con.Close();
             }
+         
         }
         public void bankname()
         {
@@ -197,6 +158,29 @@ namespace sample
         }
 
         private void dgvbankStatement_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dtpdateform_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpdateform.Value.ToString() + "' and a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
+            
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvbankStatement.DataSource = ds;
+                dgvbankStatement.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
