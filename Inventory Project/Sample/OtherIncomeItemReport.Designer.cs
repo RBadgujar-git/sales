@@ -75,6 +75,7 @@
             // txtTotalQty
             // 
             this.txtTotalQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalQty.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalQty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalQty.DefaultText = "";
             this.txtTotalQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -85,9 +86,10 @@
             this.txtTotalQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalQty.FocusedState.Parent = this.txtTotalQty;
             this.txtTotalQty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTotalQty.ForeColor = System.Drawing.Color.Black;
             this.txtTotalQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalQty.HoverState.Parent = this.txtTotalQty;
-            this.txtTotalQty.Location = new System.Drawing.Point(576, 6);
+            this.txtTotalQty.Location = new System.Drawing.Point(554, 10);
             this.txtTotalQty.Name = "txtTotalQty";
             this.txtTotalQty.PasswordChar = '\0';
             this.txtTotalQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -101,7 +103,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(478, 15);
+            this.label5.Location = new System.Drawing.Point(601, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 16);
             this.label5.TabIndex = 149;
@@ -110,6 +112,7 @@
             // txtfreeqty
             // 
             this.txtfreeqty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtfreeqty.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtfreeqty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfreeqty.DefaultText = "";
             this.txtfreeqty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -120,6 +123,7 @@
             this.txtfreeqty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfreeqty.FocusedState.Parent = this.txtfreeqty;
             this.txtfreeqty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfreeqty.ForeColor = System.Drawing.Color.Black;
             this.txtfreeqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfreeqty.HoverState.Parent = this.txtfreeqty;
             this.txtfreeqty.Location = new System.Drawing.Point(111, 10);
@@ -147,6 +151,7 @@
             // txttotal
             // 
             this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txttotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotal.DefaultText = "";
             this.txttotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -157,10 +162,10 @@
             this.txttotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotal.FocusedState.Parent = this.txttotal;
             this.txttotal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txttotal.ForeColor = System.Drawing.Color.Black;
             this.txttotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotal.HoverState.Parent = this.txttotal;
-            this.txttotal.Location = new System.Drawing.Point(818, 6);
+            this.txttotal.Location = new System.Drawing.Point(813, 10);
             this.txttotal.Name = "txttotal";
             this.txttotal.PasswordChar = '\0';
             this.txttotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -174,7 +179,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(705, 16);
+            this.label1.Location = new System.Drawing.Point(833, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 145;
@@ -183,6 +188,7 @@
             // txtqty
             // 
             this.txtqty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtqty.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtqty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtqty.DefaultText = "";
             this.txtqty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -193,9 +199,10 @@
             this.txtqty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtqty.FocusedState.Parent = this.txtqty;
             this.txtqty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtqty.ForeColor = System.Drawing.Color.Black;
             this.txtqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtqty.HoverState.Parent = this.txtqty;
-            this.txtqty.Location = new System.Drawing.Point(295, 10);
+            this.txtqty.Location = new System.Drawing.Point(356, 10);
             this.txtqty.Name = "txtqty";
             this.txtqty.PasswordChar = '\0';
             this.txtqty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -205,15 +212,17 @@
             this.txtqty.Size = new System.Drawing.Size(123, 36);
             this.txtqty.TabIndex = 144;
             this.txtqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtqty.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 15);
+            this.label2.Location = new System.Drawing.Point(302, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 143;
             this.label2.Text = " Qty :";
+            this.label2.Visible = false;
             // 
             // dgvOtherIncome
             // 
@@ -247,7 +256,7 @@
             this.dgvOtherIncome.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOtherIncome.EnableHeadersVisualStyles = false;
             this.dgvOtherIncome.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvOtherIncome.Location = new System.Drawing.Point(6, 80);
+            this.dgvOtherIncome.Location = new System.Drawing.Point(5, 69);
             this.dgvOtherIncome.Name = "dgvOtherIncome";
             this.dgvOtherIncome.RowHeadersVisible = false;
             this.dgvOtherIncome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -294,6 +303,7 @@
             // cmbAlllFirms
             // 
             this.cmbAlllFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAlllFirms.BorderColor = System.Drawing.Color.DarkGray;
             this.cmbAlllFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbAlllFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAlllFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -306,10 +316,10 @@
             this.cmbAlllFirms.Items.AddRange(new object[] {
             "All Firms"});
             this.cmbAlllFirms.ItemsAppearance.Parent = this.cmbAlllFirms;
-            this.cmbAlllFirms.Location = new System.Drawing.Point(59, 21);
+            this.cmbAlllFirms.Location = new System.Drawing.Point(31, 21);
             this.cmbAlllFirms.Name = "cmbAlllFirms";
             this.cmbAlllFirms.ShadowDecoration.Parent = this.cmbAlllFirms;
-            this.cmbAlllFirms.Size = new System.Drawing.Size(140, 36);
+            this.cmbAlllFirms.Size = new System.Drawing.Size(181, 36);
             this.cmbAlllFirms.StartIndex = 0;
             this.cmbAlllFirms.TabIndex = 239;
             this.cmbAlllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAlllFirms_SelectedIndexChanged);
@@ -359,6 +369,7 @@
             // 
             // txtfilter
             // 
+            this.txtfilter.BorderColor = System.Drawing.Color.DarkGray;
             this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfilter.DefaultText = "";
             this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -372,21 +383,20 @@
             this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfilter.HoverState.Parent = this.txtfilter;
-            this.txtfilter.Location = new System.Drawing.Point(295, 21);
+            this.txtfilter.Location = new System.Drawing.Point(318, 25);
             this.txtfilter.Name = "txtfilter";
             this.txtfilter.PasswordChar = '\0';
             this.txtfilter.PlaceholderText = "";
             this.txtfilter.SelectedText = "";
             this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
-            this.txtfilter.Size = new System.Drawing.Size(227, 27);
+            this.txtfilter.Size = new System.Drawing.Size(255, 27);
             this.txtfilter.TabIndex = 243;
-            this.txtfilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(211, 27);
+            this.label3.Location = new System.Drawing.Point(234, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 242;

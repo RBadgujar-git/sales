@@ -43,10 +43,7 @@ namespace sample
         {
             try
             {
-                //string Query = string.Format("(select a.TableName,a.PartyName,b.Qty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1') union ( select a.TableName,a.PartyName,b.Qty,b.ItemAmount from tbl_SaleInvoiceInner as b,tbl_saleinvoice as a where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1')");
                 string Query = string.Format("(select a.TableName,a.PartyName,b.ItemName,b.Qty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1') union ( select a.TableName,a.PartyName,b.ItemName,b.Qty,b.ItemAmount from tbl_SaleInvoiceInner as b,tbl_saleinvoice as a where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1')");
-                //string Query = string.Format("select a.TableName,a.PartyName,b.Qty,b.ItemAmount from tbl_SaleInvoiceInner as b,tbl_SaleInvoice as a where a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' union (select a.Tablename,a.PartyName,b.Qty,b.ItemAmount from tbl_PurchaseBill as a, tbl_PurchaseBillInner as b where b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and a.Company_ID='" + NewCompany.company_id + "'  and a.DeleteData='1')");
-                //string Query = string.Format("(select P.TableName, PI.ItemName, P.BillNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_PurchaseBill as P inner join tbl_PurchaseBillInner as PI on P.ID = PI.ID where  TableName like '%{0}%' union all select P.TableName, PI.ItemName, P.OrderNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_PurchaseOrder as P inner join tbl_PurchaseOrderInner as PI on P.ID = PI.ID where  TableName like '%{0}%') union all (select P.TableName, PI.ItemName, P.OrderNo as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_SaleOrder as P inner join tbl_SaleOrderInner as PI on P.ID = PI.ID where  TableName like '%{0}%' union all select P.TableName, PI.ItemName, P.InvoiceID as Number, PI.Qty, PI.freeQty, PI.ItemAmount from tbl_SaleInvoice as P inner join tbl_SaleInvoiceInner as PI on P.ID = PI.ID where  TableName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -64,7 +61,7 @@ namespace sample
             {
                 try
                 {
-                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName ");
+                    string SelectQuery = string.Format("select CompanyName from tbl_CompanyMaster where DeleteData='1' group by CompanyName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -87,7 +84,8 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
+                string Query = string.Format("(select a.TableName,a.PartyName,b.ItemName,b.Qty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where PartyName like '%{0}%' and b.Company_ID = '" + compid + "' and b.DeleteData = '1' and a.Company_ID = '" + compid + "' and a.DeleteData = '1') union(select a.TableName, a.PartyName, b.ItemName, b.Qty, b.ItemAmount from tbl_SaleInvoiceInner as b, tbl_saleinvoice as a where PartyName like '%{0}%' and b.Company_ID = '" + compid + "' and b.DeleteData = '1' and a.Company_ID = '" + compid + "' and a.DeleteData = '1')", guna2TextBox1.Text);
+                //string Query = string.Format("select ItemName from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -111,7 +109,7 @@ namespace sample
                 if (dr.Read())
                 {
                     compid = Convert.ToInt32(dr["CompanyID"].ToString());
-                    //MessageBox.Show("Test" + compid);
+                    // MessageBox.Show("Test" + compid);
                 }
                 dr.Close();
             }
@@ -123,6 +121,7 @@ namespace sample
             {
                 con.Close();
                 companyinfo();
+                //data();
             }
         }
         public void companyinfo()
@@ -135,6 +134,7 @@ namespace sample
             da.Fill(ds, "temp");
             dgvitemReport.DataSource = ds;
             dgvitemReport.DataMember = "temp";
+            dgvitemReport.AllowUserToAddRows = false;
         }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {

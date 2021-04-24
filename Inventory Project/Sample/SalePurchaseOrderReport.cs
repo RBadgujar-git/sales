@@ -64,8 +64,8 @@ namespace sample
             dgvSaleorder.Columns[5].DataPropertyName = "Status";
             dgvSaleorder.Columns[6].HeaderText = " TableName";
             dgvSaleorder.Columns[6].DataPropertyName = "TableName";
-
             dgvSaleorder.DataSource = dt;
+            dgvSaleorder.AllowUserToAddRows = false;
         }//BillDate,BillNo,PartyName,Pay
         private void Data()
         {
@@ -108,11 +108,6 @@ namespace sample
 
         private void dtpToDaate_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dtpToDaate_Enter(object sender, EventArgs e)
-        {
             try
             {
                 //TableName
@@ -128,7 +123,7 @@ namespace sample
                 MessageBox.Show("Data not" + ex);
             }
         }
-
+    
         private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //string Tablename = cmbAlllFirms.SelectedItem.ToString();
@@ -235,7 +230,18 @@ namespace sample
             {
                 con.Close();
                 companyinfo();
+                data();
             }
+
+        }
+        public void data()
+        {
+            float sum = 0;
+            for (int i = 0; i < dgvSaleorder.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dgvSaleorder.Rows[i].Cells[4].Value);
+            }
+            txtTotalAmount.Text = sum.ToString();
         }
         public void companyinfo()
         {
@@ -247,11 +253,31 @@ namespace sample
             da.Fill(ds, "temp");
             dgvSaleorder.DataSource = ds;
             dgvSaleorder.DataMember = "temp";
+            dgvSaleorder.AllowUserToAddRows = false;
         }
 
-        private void dgvSaleorder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtfilter_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                //SqlCommand cmd = new SqlCommand("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') ", con);
+                string SelectQuery = string.Format("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where PartyName like '%{0}%' and Company_ID='" + compid + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where PartyName like '%{0}%' and Company_ID='" + compid + "' and DeleteData='1') ",txtfilter.Text);
+                //string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where IncomeCategory like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvSaleorder.DataSource = ds;
+                dgvSaleorder.DataMember = "temp";
+                dgvSaleorder.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+            finally
+            {
 
+            }
         }
     }
 }

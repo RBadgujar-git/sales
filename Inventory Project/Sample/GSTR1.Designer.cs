@@ -28,17 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GSTR1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.dgvsaleInvoice = new Guna.UI2.WinForms.Guna2DataGridView();
             this.BillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +42,12 @@
             this.Paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RemainingBal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvsaleInvoice)).BeginInit();
             this.SuspendLayout();
@@ -69,88 +69,22 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dtpToDate
-            // 
-            this.dtpToDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(434, 36);
-            this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(127, 20);
-            this.dtpToDate.TabIndex = 163;
-            // 
-            // dtpFromdate
-            // 
-            this.dtpFromdate.CustomFormat = "MM/dd/yyyy";
-            this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFromdate.Location = new System.Drawing.Point(247, 36);
-            this.dtpFromdate.Name = "dtpFromdate";
-            this.dtpFromdate.Size = new System.Drawing.Size(133, 20);
-            this.dtpFromdate.TabIndex = 162;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(398, 39);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(20, 13);
-            this.label5.TabIndex = 160;
-            this.label5.Text = "To";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(201, 39);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
-            this.label6.TabIndex = 159;
-            this.label6.Text = "From";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPrint.FlatAppearance.BorderSize = 0;
-            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(907, 46);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
-            this.btnPrint.TabIndex = 158;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(977, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(28, 26);
-            this.btnCancel.TabIndex = 164;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
             // dgvsaleInvoice
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvsaleInvoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvsaleInvoice.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvsaleInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvsaleInvoice.BackgroundColor = System.Drawing.Color.White;
             this.dgvsaleInvoice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvsaleInvoice.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvsaleInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvsaleInvoice.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvsaleInvoice.ColumnHeadersHeight = 37;
             this.dgvsaleInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BillDate,
@@ -161,14 +95,14 @@
             this.Paid,
             this.RemainingBal,
             this.Status});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvsaleInvoice.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvsaleInvoice.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvsaleInvoice.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvsaleInvoice.EnableHeadersVisualStyles = false;
             this.dgvsaleInvoice.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -241,6 +175,73 @@
             // 
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancel.Location = new System.Drawing.Point(977, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(28, 26);
+            this.btnCancel.TabIndex = 164;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(434, 36);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(127, 20);
+            this.dtpToDate.TabIndex = 163;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
+            // 
+            // dtpFromdate
+            // 
+            this.dtpFromdate.CustomFormat = "MM/dd/yyyy";
+            this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromdate.Location = new System.Drawing.Point(247, 36);
+            this.dtpFromdate.Name = "dtpFromdate";
+            this.dtpFromdate.Size = new System.Drawing.Size(133, 20);
+            this.dtpFromdate.TabIndex = 162;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(398, 39);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(20, 13);
+            this.label5.TabIndex = 160;
+            this.label5.Text = "To";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(201, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 159;
+            this.label6.Text = "From";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Location = new System.Drawing.Point(907, 46);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.TabIndex = 158;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // GSTR1
             // 

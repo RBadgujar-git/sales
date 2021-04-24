@@ -134,27 +134,30 @@ namespace sample
 
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void dtpTodate_Enter(object sender, EventArgs e)
-        {
             try
             {
-                DateTime date1 = Convert.ToDateTime(dtpFromDate.Text);
-                DateTime date2 = Convert.ToDateTime(dtpTodate.Text);
-                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + date1.ToString("yyyy-MM-dd") + "' and '" + date2.ToString("yyyy-MM-dd") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                //string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '{0}' and '{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", date1.ToString("yyyy-MM-dd"), date2.ToString("yyyy-MM-dd"));
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID = '" + compid + "' and DeleteData = '1'", txtfilter.Text);
+                //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
                 dgvexpenses.DataSource = ds;
                 dgvexpenses.DataMember = "temp";
+                dgvexpenses.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data not Available" + ex);
+                MessageBox.Show("Data not" + ex);
             }
+            finally
+            {
+                Data();
+            }
+        }
+
+        private void dtpTodate_Enter(object sender, EventArgs e)
+        {
+          
         }
 
         private void dgvexpenses_TabIndexChanged(object sender, EventArgs e)
@@ -229,7 +232,7 @@ namespace sample
                 if (dr.Read())
                 {
                     compid = Convert.ToInt32(dr["CompanyID"].ToString());
-                    //MessageBox.Show("Test" + compid);
+                    // MessageBox.Show("Test" + compid);
                 }
                 dr.Close();
             }
@@ -241,6 +244,7 @@ namespace sample
             {
                 con.Close();
                 companyinfo();
+                // party();
             }
         }
         public void companyinfo()
@@ -253,6 +257,30 @@ namespace sample
             da.Fill(ds, "temp");
             dgvexpenses.DataSource = ds;
             dgvexpenses.DataMember = "temp";
+            dgvexpenses.AllowUserToAddRows = false;
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID = '" + compid + "' and DeleteData = '1'", txtfilter.Text);
+                //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvexpenses.DataSource = ds;
+                dgvexpenses.DataMember = "temp";
+                dgvexpenses.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+            finally
+            {
+                Data();
+            }
         }
     }
 }

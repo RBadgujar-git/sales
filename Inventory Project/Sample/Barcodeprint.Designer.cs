@@ -66,11 +66,13 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -81,11 +83,12 @@
             this.tabControl1.Location = new System.Drawing.Point(1, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(596, 434);
+            this.tabControl1.Size = new System.Drawing.Size(687, 483);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.btnminimize);
             this.tabPage1.Controls.Add(this.button1);
@@ -104,7 +107,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(588, 405);
+            this.tabPage1.Size = new System.Drawing.Size(679, 454);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Barcode Print";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -115,7 +118,7 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Location = new System.Drawing.Point(424, 282);
+            this.button2.Location = new System.Drawing.Point(507, 379);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 441;
@@ -496,6 +499,14 @@
             this.checkBox1.Text = "checkBox1";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(383, 224);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 50);
+            this.pictureBox1.TabIndex = 442;
+            this.pictureBox1.TabStop = false;
+            // 
             // Barcodeprint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +516,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Barcodeprint";
             this.Text = "Barcodeprint";
+            this.Load += new System.EventHandler(this.Barcodeprint_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -514,6 +526,7 @@
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -557,5 +570,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

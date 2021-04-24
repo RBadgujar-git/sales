@@ -39,7 +39,12 @@
             this.btnprint = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
-            this.txtpartyfilter = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.txtpartyfilter = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvalltransactions)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +53,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvalltransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvalltransactions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvalltransactions.BackgroundColor = System.Drawing.Color.LightGray;
+            this.dgvalltransactions.BackgroundColor = System.Drawing.Color.White;
             this.dgvalltransactions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvalltransactions.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvalltransactions.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -75,7 +80,7 @@
             this.dgvalltransactions.Name = "dgvalltransactions";
             this.dgvalltransactions.RowHeadersVisible = false;
             this.dgvalltransactions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvalltransactions.Size = new System.Drawing.Size(995, 410);
+            this.dgvalltransactions.Size = new System.Drawing.Size(995, 486);
             this.dgvalltransactions.TabIndex = 39;
             this.dgvalltransactions.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvalltransactions.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -83,7 +88,7 @@
             this.dgvalltransactions.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgvalltransactions.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvalltransactions.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvalltransactions.ThemeStyle.BackColor = System.Drawing.Color.LightGray;
+            this.dgvalltransactions.ThemeStyle.BackColor = System.Drawing.Color.White;
             this.dgvalltransactions.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvalltransactions.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dgvalltransactions.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -104,6 +109,7 @@
             // cmballfrims
             // 
             this.cmballfrims.BackColor = System.Drawing.Color.Transparent;
+            this.cmballfrims.BorderColor = System.Drawing.Color.Gray;
             this.cmballfrims.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmballfrims.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmballfrims.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -130,16 +136,18 @@
             this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(65, 83);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(93, 16);
+            this.label13.Size = new System.Drawing.Size(115, 16);
             this.label13.TabIndex = 45;
-            this.label13.Text = "Transaction";
+            this.label13.Text = "All Transaction";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(65, 119);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 49;
             this.label1.Text = "FILTER";
             // 
@@ -153,7 +161,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(981, 5);
+            this.btncancel.Location = new System.Drawing.Point(1039, 12);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(29, 26);
             this.btncancel.TabIndex = 44;
@@ -168,9 +176,9 @@
             this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnprint.FlatAppearance.BorderSize = 0;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Location = new System.Drawing.Point(927, 57);
+            this.btnprint.Location = new System.Drawing.Point(985, 57);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(25, 22);
+            this.btnprint.Size = new System.Drawing.Size(25, 25);
             this.btnprint.TabIndex = 41;
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
@@ -183,11 +191,12 @@
             this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnimport.FlatAppearance.BorderSize = 0;
             this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimport.Location = new System.Drawing.Point(882, 60);
+            this.btnimport.Location = new System.Drawing.Point(940, 60);
             this.btnimport.Name = "btnimport";
             this.btnimport.Size = new System.Drawing.Size(26, 19);
             this.btnimport.TabIndex = 40;
             this.btnimport.UseVisualStyleBackColor = false;
+            this.btnimport.Visible = false;
             // 
             // btnminimize
             // 
@@ -208,29 +217,69 @@
             // 
             // txtpartyfilter
             // 
-            this.txtpartyfilter.BackColor = System.Drawing.Color.Transparent;
-            this.txtpartyfilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtpartyfilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtpartyfilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtpartyfilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtpartyfilter.FocusedState.Parent = this.txtpartyfilter;
-            this.txtpartyfilter.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtpartyfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtpartyfilter.HoverState.Parent = this.txtpartyfilter;
-            this.txtpartyfilter.ItemHeight = 30;
-            this.txtpartyfilter.ItemsAppearance.Parent = this.txtpartyfilter;
-            this.txtpartyfilter.Location = new System.Drawing.Point(123, 110);
+            this.txtpartyfilter.Location = new System.Drawing.Point(127, 117);
             this.txtpartyfilter.Name = "txtpartyfilter";
-            this.txtpartyfilter.ShadowDecoration.Parent = this.txtpartyfilter;
-            this.txtpartyfilter.Size = new System.Drawing.Size(206, 36);
-            this.txtpartyfilter.TabIndex = 438;
-            this.txtpartyfilter.SelectedIndexChanged += new System.EventHandler(this.txtpartyfilter_SelectedIndexChanged);
+            this.txtpartyfilter.Size = new System.Drawing.Size(146, 23);
+            this.txtpartyfilter.TabIndex = 439;
+            this.txtpartyfilter.TextChanged += new System.EventHandler(this.txtpartyfilter_TextChanged_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(990, 88);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 440;
+            this.label2.Text = "Print";
+            // 
+            // dtpToDate
+            // 
+            this.dtpToDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpToDate.Location = new System.Drawing.Point(616, 40);
+            this.dtpToDate.Name = "dtpToDate";
+            this.dtpToDate.Size = new System.Drawing.Size(146, 23);
+            this.dtpToDate.TabIndex = 444;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
+            // 
+            // dtpFromDate
+            // 
+            this.dtpFromDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpFromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFromDate.Location = new System.Drawing.Point(417, 40);
+            this.dtpFromDate.Name = "dtpFromDate";
+            this.dtpFromDate.Size = new System.Drawing.Size(145, 23);
+            this.dtpFromDate.TabIndex = 443;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(371, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 16);
+            this.label6.TabIndex = 441;
+            this.label6.Text = "From";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(575, 43);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 16);
+            this.label5.TabIndex = 442;
+            this.label5.Text = "To";
             // 
             // AllTransactionReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.dtpToDate);
+            this.Controls.Add(this.dtpFromDate);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtpartyfilter);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.label1);
@@ -243,7 +292,7 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AllTransactionReport";
-            this.Size = new System.Drawing.Size(1019, 569);
+            this.Size = new System.Drawing.Size(1137, 569);
             this.Load += new System.EventHandler(this.AllTransactionReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvalltransactions)).EndInit();
             this.ResumeLayout(false);
@@ -261,6 +310,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnminimize;
-        private Guna.UI2.WinForms.Guna2ComboBox txtpartyfilter;
+        private System.Windows.Forms.TextBox txtpartyfilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dtpToDate;
+        private System.Windows.Forms.DateTimePicker dtpFromDate;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

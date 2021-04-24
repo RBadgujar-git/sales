@@ -35,16 +35,16 @@
             this.btncancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvPartyReport = new Guna.UI2.WinForms.Guna2DataGridView();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartyReport)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbparty
             // 
             this.cmbparty.BackColor = System.Drawing.Color.Transparent;
+            this.cmbparty.BorderColor = System.Drawing.Color.Gray;
             this.cmbparty.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbparty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbparty.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -57,7 +57,7 @@
             this.cmbparty.Items.AddRange(new object[] {
             "Party Name"});
             this.cmbparty.ItemsAppearance.Parent = this.cmbparty;
-            this.cmbparty.Location = new System.Drawing.Point(78, 39);
+            this.cmbparty.Location = new System.Drawing.Point(60, 34);
             this.cmbparty.Name = "cmbparty";
             this.cmbparty.ShadowDecoration.Parent = this.cmbparty;
             this.cmbparty.Size = new System.Drawing.Size(140, 36);
@@ -74,7 +74,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(966, 7);
+            this.btncancel.Location = new System.Drawing.Point(891, 2);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 85;
@@ -88,9 +88,9 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(890, 38);
+            this.btnPrint.Location = new System.Drawing.Point(890, 36);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(23, 24);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 84;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.button3_Click);
@@ -107,41 +107,7 @@
             this.btnImport.Size = new System.Drawing.Size(26, 19);
             this.btnImport.TabIndex = 83;
             this.btnImport.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(231, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
-            this.label3.TabIndex = 90;
-            this.label3.Text = "FILTER";
-            // 
-            // txtSearch1
-            // 
-            this.txtSearch1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSearch1.DefaultText = "";
-            this.txtSearch1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtSearch1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtSearch1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch1.DisabledState.Parent = this.txtSearch1;
-            this.txtSearch1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtSearch1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch1.FocusedState.Parent = this.txtSearch1;
-            this.txtSearch1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSearch1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch1.HoverState.Parent = this.txtSearch1;
-            this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
-            this.txtSearch1.Location = new System.Drawing.Point(289, 43);
-            this.txtSearch1.Name = "txtSearch1";
-            this.txtSearch1.PasswordChar = '\0';
-            this.txtSearch1.PlaceholderText = "";
-            this.txtSearch1.SelectedText = "";
-            this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
-            this.txtSearch1.Size = new System.Drawing.Size(246, 25);
-            this.txtSearch1.TabIndex = 94;
-            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
+            this.btnImport.Visible = false;
             // 
             // dgvPartyReport
             // 
@@ -210,7 +176,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(934, 7);
+            this.btnminimize.Location = new System.Drawing.Point(859, 2);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 446;
@@ -218,15 +184,23 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(883, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 447;
+            this.label1.Text = "Print";
+            // 
             // PartyReportByItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dgvPartyReport);
-            this.Controls.Add(this.txtSearch1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbparty);
             this.Controls.Add(this.btncancel);
             this.Controls.Add(this.btnPrint);
@@ -248,9 +222,8 @@
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.Label label3;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPartyReport;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label1;
     }
 }

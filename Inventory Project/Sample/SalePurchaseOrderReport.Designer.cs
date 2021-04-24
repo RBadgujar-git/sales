@@ -46,6 +46,7 @@
             this.dtpToDaate = new System.Windows.Forms.DateTimePicker();
             this.cmbtable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleorder)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,7 @@
             // 
             // txtTotalAmount
             // 
+            this.txtTotalAmount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalAmount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalAmount.DefaultText = "";
             this.txtTotalAmount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -152,7 +154,6 @@
             this.dgvSaleorder.ThemeStyle.RowsStyle.Height = 22;
             this.dgvSaleorder.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvSaleorder.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvSaleorder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleorder_CellContentClick);
             // 
             // cmbAlllFirms
             // 
@@ -241,12 +242,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 98);
+            this.label3.Location = new System.Drawing.Point(58, 91);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.Size = new System.Drawing.Size(73, 16);
             this.label3.TabIndex = 191;
-            this.label3.Text = "FILTER";
-            this.label3.Visible = false;
+            this.label3.Text = "Filter By :";
             // 
             // dtpFromDate
             // 
@@ -266,7 +266,6 @@
             this.dtpToDaate.Size = new System.Drawing.Size(140, 23);
             this.dtpToDaate.TabIndex = 193;
             this.dtpToDaate.ValueChanged += new System.EventHandler(this.dtpToDaate_ValueChanged);
-            this.dtpToDaate.Enter += new System.EventHandler(this.dtpToDaate_Enter);
             // 
             // cmbtable
             // 
@@ -284,7 +283,7 @@
             "Sale Order",
             "Purchase Order"});
             this.cmbtable.ItemsAppearance.Parent = this.cmbtable;
-            this.cmbtable.Location = new System.Drawing.Point(95, 87);
+            this.cmbtable.Location = new System.Drawing.Point(487, 78);
             this.cmbtable.Name = "cmbtable";
             this.cmbtable.ShadowDecoration.Parent = this.cmbtable;
             this.cmbtable.Size = new System.Drawing.Size(193, 36);
@@ -310,11 +309,38 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // txtfilter
+            // 
+            this.txtfilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfilter.DefaultText = "";
+            this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.DisabledState.Parent = this.txtfilter;
+            this.txtfilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.FocusedState.Parent = this.txtfilter;
+            this.txtfilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.HoverState.Parent = this.txtfilter;
+            this.txtfilter.Location = new System.Drawing.Point(147, 87);
+            this.txtfilter.Name = "txtfilter";
+            this.txtfilter.PasswordChar = '\0';
+            this.txtfilter.PlaceholderText = "";
+            this.txtfilter.SelectedText = "";
+            this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
+            this.txtfilter.Size = new System.Drawing.Size(297, 27);
+            this.txtfilter.TabIndex = 455;
+            this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
+            // 
             // SalePurchaseOrderReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.cmbtable);
             this.Controls.Add(this.dtpToDaate);
@@ -358,5 +384,6 @@
         private System.Windows.Forms.DateTimePicker dtpToDaate;
         private Guna.UI2.WinForms.Guna2ComboBox cmbtable;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2TextBox txtfilter;
     }
 }

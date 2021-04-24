@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfitLossReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
@@ -39,6 +39,7 @@
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.dgvProfitnlossReport = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProfitnlossReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,13 +49,15 @@
             this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(64, 100);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(167, 16);
+            this.label13.Size = new System.Drawing.Size(189, 16);
             this.label13.TabIndex = 51;
-            this.label13.Text = "Profit and Loss Report";
+            this.label13.Text = "All Profit and Loss Report";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // cmbAllFirms
             // 
             this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllFirms.BorderColor = System.Drawing.Color.Gray;
             this.cmbAllFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbAllFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAllFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -83,6 +86,7 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(159, 23);
             this.dtpDate.TabIndex = 53;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // btnminimize
             // 
@@ -127,7 +131,7 @@
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrint.Location = new System.Drawing.Point(936, 39);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(28, 22);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 49;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -144,33 +148,34 @@
             this.btnImport.Size = new System.Drawing.Size(23, 19);
             this.btnImport.TabIndex = 48;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // dgvProfitnlossReport
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvProfitnlossReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvProfitnlossReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProfitnlossReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProfitnlossReport.BackgroundColor = System.Drawing.Color.White;
             this.dgvProfitnlossReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProfitnlossReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvProfitnlossReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProfitnlossReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProfitnlossReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProfitnlossReport.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProfitnlossReport.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProfitnlossReport.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProfitnlossReport.EnableHeadersVisualStyles = false;
             this.dgvProfitnlossReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProfitnlossReport.Location = new System.Drawing.Point(29, 130);
@@ -202,11 +207,22 @@
             this.dgvProfitnlossReport.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProfitnlossReport.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(931, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 462;
+            this.label1.Text = "Print";
+            // 
             // ProfitLossReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvProfitnlossReport);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpDate);
@@ -236,5 +252,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Button btnminimize;
         private Guna.UI2.WinForms.Guna2DataGridView dgvProfitnlossReport;
+        private System.Windows.Forms.Label label1;
     }
 }
