@@ -38,7 +38,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='"+NewCompany.company_id+"'", con);
+            SqlCommand cmd = new SqlCommand("select ItemName,OpeningQty,MinimumStock,atPrice from tbl_ItemMaster where OpeningQty >= MinimumStock and Company_ID='" + NewCompany.company_id+ "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -53,22 +53,25 @@ namespace sample
             dgvLowstocksummary.Columns[3].HeaderText = " atPrice";
             dgvLowstocksummary.Columns[3].DataPropertyName = "atPrice";
             
-            dgvLowstocksummary.DataSource = dt; 
+            dgvLowstocksummary.DataSource = dt;
+            dgvLowstocksummary.AllowUserToAddRows = false;
 
         }
         private void fetchcategory()
         {
-            if (cmbAllCategory.Text != "System.Data.DataRowView") {
-                try {
+            if (cmbAllCategory.Text != "System.Data.DataRowView")
+            {
+                try
+                {
                     string SelectQuery = string.Format("select CategoryName from tbl_CategoryMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
                     DataTable DT = new DataTable();
                     SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
+                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                    {
                         cmbAllCategory.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
-
                     }
                 }
                 catch (Exception e1) {
@@ -92,19 +95,12 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvLowstocksummary.DataSource = ds;
                 dgvLowstocksummary.DataMember = "temp";
-
-
-
+                dgvLowstocksummary.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void dgvLowstocksummary_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -119,7 +115,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("select a.ItemName,a.SalePrice,a.PurchasePrice,a.OpeningQty,a.MinimumStock,a.atPrice,a.DeleteData,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber  from tbl_ItemMaster as a,tbl_CompanyMaster as c where CompanyID='"+NewCompany.company_id+"' and a.DeleteData='1'");
+                    string Query = string.Format("select a.ItemName,a.OpeningQty,a.MinimumStock,a.atPrice,c.CompanyName,c.CompanyID,c.Address,c.PhoneNo,c.EmailID,c.AddLogo,c.GSTNumber from tbl_ItemMaster as a,tbl_CompanyMaster as c where a.OpeningQty >= a.MinimumStock and a.Company_ID='" + NewCompany.company_id+"' and a.DeleteData='1'");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -163,6 +159,25 @@ namespace sample
             BA.Dock = DockStyle.Fill;
             BA.Visible = true;
             BA.BringToFront();
+        }
+
+        private void txtItemname_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select ItemName,OpeningQty,MinimumStock,atPrice from tbl_ItemMaster where OpeningQty >= MinimumStock and ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvLowstocksummary.DataSource = ds;
+                dgvLowstocksummary.DataMember = "temp";
+
+                dgvLowstocksummary.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
