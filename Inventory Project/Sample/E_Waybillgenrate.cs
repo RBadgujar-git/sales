@@ -34,7 +34,10 @@ namespace sample
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://ewaybill.nic.in/");
-        }
+              System.Diagnostics.Process.Start("https://ewaybill.nic.in/");
+            //}
+           // System.Diagnostics.Process.Start("C:\\Users\\abc\\Source\\Repos\\sales2\\Inventory Project\\Sample\\HTMLPage1.html");
+        
+    }
     }
 }
