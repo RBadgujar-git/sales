@@ -46,22 +46,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvInnerQuotation = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label20 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -137,6 +121,22 @@
             this.txtDisAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerQuotation)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -217,7 +217,7 @@
             this.txtDis.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtDis.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDis.HoverState.Parent = this.txtDis;
-            this.txtDis.Location = new System.Drawing.Point(311, 48);
+            this.txtDis.Location = new System.Drawing.Point(361, 48);
             this.txtDis.Name = "txtDis";
             this.txtDis.PasswordChar = '\0';
             this.txtDis.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -225,7 +225,7 @@
             this.txtDis.SelectedText = "";
             this.txtDis.SelectionStart = 1;
             this.txtDis.ShadowDecoration.Parent = this.txtDis;
-            this.txtDis.Size = new System.Drawing.Size(52, 24);
+            this.txtDis.Size = new System.Drawing.Size(72, 24);
             this.txtDis.TabIndex = 5;
             this.txtDis.TextChanged += new System.EventHandler(this.txtDis_TextChanged);
             this.txtDis.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDis_KeyPress);
@@ -233,7 +233,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(300, 25);
+            this.label32.Location = new System.Drawing.Point(363, 25);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(70, 14);
             this.label32.TabIndex = 94;
@@ -468,107 +468,6 @@
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvInnerQuotation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvInnerQuotation.DoubleClick += new System.EventHandler(this.dgvInnerQuotation_DoubleClick);
-            // 
-            // sr_no
-            // 
-            this.sr_no.HeaderText = "sr_no";
-            this.sr_no.Name = "sr_no";
-            // 
-            // txtItem
-            // 
-            this.txtItem.DataPropertyName = "ItemName";
-            this.txtItem.HeaderText = "Item";
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Item_Code
-            // 
-            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Item_Code.DataPropertyName = "ItemCode";
-            this.Item_Code.HeaderText = "Item Code";
-            this.Item_Code.MinimumWidth = 50;
-            this.Item_Code.Name = "Item_Code";
-            // 
-            // Unit
-            // 
-            this.Unit.DataPropertyName = "BasicUnit";
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // MRP
-            // 
-            this.MRP.DataPropertyName = "SalePrice";
-            this.MRP.HeaderText = "MRP";
-            this.MRP.Name = "MRP";
-            // 
-            // Discount
-            // 
-            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Discount.DataPropertyName = "Discount";
-            this.Discount.HeaderText = "Discount";
-            this.Discount.Name = "Discount";
-            this.Discount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Tax
-            // 
-            this.Tax.DataPropertyName = "TaxforSale";
-            this.Tax.HeaderText = "Tax%";
-            this.Tax.Name = "Tax";
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Qty.DataPropertyName = "Qty";
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // FreeQty
-            // 
-            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.FreeQty.DataPropertyName = "FreeQty";
-            this.FreeQty.HeaderText = "Free Qty";
-            this.FreeQty.Name = "FreeQty";
-            // 
-            // Tax_Amount
-            // 
-            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
-            this.Tax_Amount.HeaderText = "Tax Amount";
-            this.Tax_Amount.Name = "Tax_Amount";
-            // 
-            // Discount_Amount
-            // 
-            this.Discount_Amount.DataPropertyName = "DiscountAmount";
-            this.Discount_Amount.HeaderText = "Discount Amount";
-            this.Discount_Amount.Name = "Discount_Amount";
-            // 
-            // Amount
-            // 
-            this.Amount.DataPropertyName = "ItemAmount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            // 
-            // CGST
-            // 
-            this.CGST.HeaderText = "Item CGST";
-            this.CGST.Name = "CGST";
-            // 
-            // SGST
-            // 
-            this.SGST.HeaderText = "Item SGST";
-            this.SGST.Name = "SGST";
-            // 
-            // IGST
-            // 
-            this.IGST.HeaderText = "Item IGST";
-            this.IGST.Name = "IGST";
-            // 
-            // CalTotal
-            // 
-            this.CalTotal.HeaderText = "Item Amount";
-            this.CalTotal.Name = "CalTotal";
             // 
             // label20
             // 
@@ -1299,7 +1198,7 @@
             this.guna2TextBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2TextBox5.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox5.HoverState.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Location = new System.Drawing.Point(593, 46);
+            this.guna2TextBox5.Location = new System.Drawing.Point(533, 48);
             this.guna2TextBox5.Name = "guna2TextBox5";
             this.guna2TextBox5.PasswordChar = '\0';
             this.guna2TextBox5.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1307,14 +1206,14 @@
             this.guna2TextBox5.SelectedText = "";
             this.guna2TextBox5.SelectionStart = 1;
             this.guna2TextBox5.ShadowDecoration.Parent = this.guna2TextBox5;
-            this.guna2TextBox5.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox5.Size = new System.Drawing.Size(80, 24);
             this.guna2TextBox5.TabIndex = 116;
             this.guna2TextBox5.TextChanged += new System.EventHandler(this.guna2TextBox5_TextChanged);
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(582, 23);
+            this.label44.Location = new System.Drawing.Point(538, 25);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(73, 14);
             this.label44.TabIndex = 117;
@@ -1332,11 +1231,11 @@
             this.guna2TextBox4.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox4.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.FocusedState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Location = new System.Drawing.Point(534, 46);
+            this.guna2TextBox4.Location = new System.Drawing.Point(511, 3);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
             this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1344,17 +1243,20 @@
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.SelectionStart = 1;
             this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox4.Size = new System.Drawing.Size(54, 17);
             this.guna2TextBox4.TabIndex = 114;
+            this.guna2TextBox4.Visible = false;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(531, 24);
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(532, 13);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(45, 14);
+            this.label43.Size = new System.Drawing.Size(14, 5);
             this.label43.TabIndex = 115;
             this.label43.Text = "IGST :";
+            this.label43.Visible = false;
             // 
             // guna2TextBox3
             // 
@@ -1368,11 +1270,11 @@
             this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(474, 47);
+            this.guna2TextBox3.Location = new System.Drawing.Point(455, 6);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1380,17 +1282,20 @@
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.SelectionStart = 1;
             this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox3.Size = new System.Drawing.Size(54, 12);
             this.guna2TextBox3.TabIndex = 112;
+            this.guna2TextBox3.Visible = false;
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(471, 25);
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(472, 15);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(48, 14);
+            this.label42.Size = new System.Drawing.Size(16, 5);
             this.label42.TabIndex = 113;
             this.label42.Text = "SGST :";
+            this.label42.Visible = false;
             // 
             // guna2TextBox2
             // 
@@ -1404,11 +1309,11 @@
             this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(414, 47);
+            this.guna2TextBox2.Location = new System.Drawing.Point(412, 3);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1416,17 +1321,21 @@
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.SelectionStart = 1;
             this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(54, 24);
+            this.guna2TextBox2.Size = new System.Drawing.Size(54, 15);
             this.guna2TextBox2.TabIndex = 110;
+            this.guna2TextBox2.Visible = false;
+            this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(419, 25);
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 3F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(420, 14);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(49, 14);
+            this.label41.Size = new System.Drawing.Size(16, 5);
             this.label41.TabIndex = 111;
             this.label41.Text = "CGST :";
+            this.label41.Visible = false;
             // 
             // txtItemName
             // 
@@ -1456,7 +1365,7 @@
             this.txtTax1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTax1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTax1.HoverState.Parent = this.txtTax1;
-            this.txtTax1.Location = new System.Drawing.Point(369, 48);
+            this.txtTax1.Location = new System.Drawing.Point(442, 48);
             this.txtTax1.Name = "txtTax1";
             this.txtTax1.PasswordChar = '\0';
             this.txtTax1.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1464,7 +1373,7 @@
             this.txtTax1.SelectedText = "";
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
-            this.txtTax1.Size = new System.Drawing.Size(41, 24);
+            this.txtTax1.Size = new System.Drawing.Size(85, 24);
             this.txtTax1.TabIndex = 6;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
@@ -1472,7 +1381,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(366, 25);
+            this.label30.Location = new System.Drawing.Point(459, 25);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 14);
             this.label30.TabIndex = 90;
@@ -1494,14 +1403,14 @@
             this.txtMRP.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtMRP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMRP.HoverState.Parent = this.txtMRP;
-            this.txtMRP.Location = new System.Drawing.Point(257, 48);
+            this.txtMRP.Location = new System.Drawing.Point(277, 48);
             this.txtMRP.Name = "txtMRP";
             this.txtMRP.PasswordChar = '\0';
             this.txtMRP.PlaceholderText = "";
             this.txtMRP.SelectedText = "";
             this.txtMRP.SelectionStart = 1;
             this.txtMRP.ShadowDecoration.Parent = this.txtMRP;
-            this.txtMRP.Size = new System.Drawing.Size(48, 24);
+            this.txtMRP.Size = new System.Drawing.Size(74, 24);
             this.txtMRP.TabIndex = 4;
             this.txtMRP.TextChanged += new System.EventHandler(this.txtMRP_TextChanged);
             this.txtMRP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMRP_KeyPress);
@@ -1509,7 +1418,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(254, 25);
+            this.label29.Location = new System.Drawing.Point(284, 25);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(42, 14);
             this.label29.TabIndex = 88;
@@ -1537,14 +1446,14 @@
             this.txtUnit.PlaceholderText = "";
             this.txtUnit.SelectedText = "";
             this.txtUnit.ShadowDecoration.Parent = this.txtUnit;
-            this.txtUnit.Size = new System.Drawing.Size(59, 24);
+            this.txtUnit.Size = new System.Drawing.Size(79, 24);
             this.txtUnit.TabIndex = 3;
             this.txtUnit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnit_KeyPress);
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(200, 25);
+            this.label28.Location = new System.Drawing.Point(206, 25);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -1566,7 +1475,7 @@
             this.txtFreeQty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFreeQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFreeQty.HoverState.Parent = this.txtFreeQty;
-            this.txtFreeQty.Location = new System.Drawing.Point(706, 45);
+            this.txtFreeQty.Location = new System.Drawing.Point(706, 46);
             this.txtFreeQty.Name = "txtFreeQty";
             this.txtFreeQty.PasswordChar = '\0';
             this.txtFreeQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1648,7 +1557,7 @@
             this.txtOty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(653, 46);
+            this.txtOty.Location = new System.Drawing.Point(619, 46);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1656,7 +1565,7 @@
             this.txtOty.SelectedText = "";
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
-            this.txtOty.Size = new System.Drawing.Size(47, 24);
+            this.txtOty.Size = new System.Drawing.Size(81, 24);
             this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
@@ -1664,7 +1573,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(658, 23);
+            this.label23.Location = new System.Drawing.Point(634, 24);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(38, 14);
             this.label23.TabIndex = 82;
@@ -1856,6 +1765,110 @@
             this.txtDescription.ShadowDecoration.Parent = this.txtDescription;
             this.txtDescription.Size = new System.Drawing.Size(163, 46);
             this.txtDescription.TabIndex = 8;
+            // 
+            // sr_no
+            // 
+            this.sr_no.HeaderText = "sr_no";
+            this.sr_no.Name = "sr_no";
+            // 
+            // txtItem
+            // 
+            this.txtItem.DataPropertyName = "ItemName";
+            this.txtItem.HeaderText = "Item";
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Item_Code
+            // 
+            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Item_Code.DataPropertyName = "ItemCode";
+            this.Item_Code.HeaderText = "Item Code";
+            this.Item_Code.MinimumWidth = 50;
+            this.Item_Code.Name = "Item_Code";
+            // 
+            // Unit
+            // 
+            this.Unit.DataPropertyName = "BasicUnit";
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // MRP
+            // 
+            this.MRP.DataPropertyName = "SalePrice";
+            this.MRP.HeaderText = "MRP";
+            this.MRP.Name = "MRP";
+            // 
+            // Discount
+            // 
+            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "Discount";
+            this.Discount.Name = "Discount";
+            this.Discount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // Tax
+            // 
+            this.Tax.DataPropertyName = "TaxforSale";
+            this.Tax.HeaderText = "Tax%";
+            this.Tax.Name = "Tax";
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // FreeQty
+            // 
+            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.FreeQty.DataPropertyName = "FreeQty";
+            this.FreeQty.HeaderText = "Free Qty";
+            this.FreeQty.Name = "FreeQty";
+            // 
+            // Tax_Amount
+            // 
+            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
+            this.Tax_Amount.HeaderText = "Tax Amount";
+            this.Tax_Amount.Name = "Tax_Amount";
+            // 
+            // Discount_Amount
+            // 
+            this.Discount_Amount.DataPropertyName = "DiscountAmount";
+            this.Discount_Amount.HeaderText = "Discount Amount";
+            this.Discount_Amount.Name = "Discount_Amount";
+            // 
+            // Amount
+            // 
+            this.Amount.DataPropertyName = "ItemAmount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            // 
+            // CGST
+            // 
+            this.CGST.HeaderText = "Item CGST";
+            this.CGST.Name = "CGST";
+            this.CGST.Visible = false;
+            // 
+            // SGST
+            // 
+            this.SGST.HeaderText = "Item SGST";
+            this.SGST.Name = "SGST";
+            this.SGST.Visible = false;
+            // 
+            // IGST
+            // 
+            this.IGST.HeaderText = "Item IGST";
+            this.IGST.Name = "IGST";
+            this.IGST.Visible = false;
+            // 
+            // CalTotal
+            // 
+            this.CalTotal.HeaderText = "Item Amount";
+            this.CalTotal.Name = "CalTotal";
             // 
             // Estimate_Quotation
             // 

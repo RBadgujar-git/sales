@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleInvoice));
             this.label26 = new System.Windows.Forms.Label();
             this.txtVehicleNo = new Guna.UI2.WinForms.Guna2TextBox();
@@ -109,23 +109,6 @@
             this.txtOty = new Guna.UI2.WinForms.Guna2TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.dgvInnerDebiteNote = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtsubtotal = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label37 = new System.Windows.Forms.Label();
@@ -171,6 +154,23 @@
             this.btnCalculator = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.sr_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Item_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MRP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FreeQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tax_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CalTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IGST = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInnerDebiteNote)).BeginInit();
@@ -325,7 +325,6 @@
             this.txtbillingadd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtbillingadd.DisabledState.Parent = this.txtbillingadd;
             this.txtbillingadd.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtbillingadd.Enabled = false;
             this.txtbillingadd.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbillingadd.FocusedState.Parent = this.txtbillingadd;
             this.txtbillingadd.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -923,29 +922,32 @@
             // label51
             // 
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(594, 18);
+            this.label51.Location = new System.Drawing.Point(622, 6);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(36, 14);
             this.label51.TabIndex = 104373;
             this.label51.Text = "IGST";
+            this.label51.Visible = false;
             // 
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(549, 20);
+            this.label50.Location = new System.Drawing.Point(574, 8);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(39, 14);
             this.label50.TabIndex = 104372;
             this.label50.Text = "SGST";
+            this.label50.Visible = false;
             // 
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(506, 20);
+            this.label49.Location = new System.Drawing.Point(505, 4);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(40, 14);
             this.label49.TabIndex = 104371;
             this.label49.Text = "CGST";
+            this.label49.Visible = false;
             this.label49.Click += new System.EventHandler(this.label49_Click);
             // 
             // guna2TextBox4
@@ -964,7 +966,7 @@
             this.guna2TextBox4.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox4.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox4.HoverState.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Location = new System.Drawing.Point(597, 41);
+            this.guna2TextBox4.Location = new System.Drawing.Point(577, 12);
             this.guna2TextBox4.Name = "guna2TextBox4";
             this.guna2TextBox4.PasswordChar = '\0';
             this.guna2TextBox4.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -972,8 +974,9 @@
             this.guna2TextBox4.SelectedText = "";
             this.guna2TextBox4.SelectionStart = 1;
             this.guna2TextBox4.ShadowDecoration.Parent = this.guna2TextBox4;
-            this.guna2TextBox4.Size = new System.Drawing.Size(39, 28);
+            this.guna2TextBox4.Size = new System.Drawing.Size(39, 10);
             this.guna2TextBox4.TabIndex = 104370;
+            this.guna2TextBox4.Visible = false;
             // 
             // guna2TextBox3
             // 
@@ -991,7 +994,7 @@
             this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(552, 41);
+            this.guna2TextBox3.Location = new System.Drawing.Point(551, 3);
             this.guna2TextBox3.Name = "guna2TextBox3";
             this.guna2TextBox3.PasswordChar = '\0';
             this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -999,8 +1002,9 @@
             this.guna2TextBox3.SelectedText = "";
             this.guna2TextBox3.SelectionStart = 1;
             this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(39, 28);
+            this.guna2TextBox3.Size = new System.Drawing.Size(39, 10);
             this.guna2TextBox3.TabIndex = 104369;
+            this.guna2TextBox3.Visible = false;
             this.guna2TextBox3.TextChanged += new System.EventHandler(this.guna2TextBox3_TextChanged);
             // 
             // guna2TextBox2
@@ -1019,7 +1023,7 @@
             this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(508, 41);
+            this.guna2TextBox2.Location = new System.Drawing.Point(513, 11);
             this.guna2TextBox2.Name = "guna2TextBox2";
             this.guna2TextBox2.PasswordChar = '\0';
             this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1027,14 +1031,15 @@
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.SelectionStart = 1;
             this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(38, 28);
+            this.guna2TextBox2.Size = new System.Drawing.Size(38, 10);
             this.guna2TextBox2.TabIndex = 104368;
+            this.guna2TextBox2.Visible = false;
             this.guna2TextBox2.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged_1);
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(683, 18);
+            this.label42.Location = new System.Drawing.Point(660, 22);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(79, 14);
             this.label42.TabIndex = 104367;
@@ -1043,10 +1048,10 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(694, 41);
+            this.textBox5.Location = new System.Drawing.Point(649, 42);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(58, 28);
+            this.textBox5.Size = new System.Drawing.Size(92, 28);
             this.textBox5.TabIndex = 104363;
             this.textBox5.Text = "0";
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
@@ -1067,7 +1072,7 @@
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(126, 47);
+            this.guna2TextBox1.Location = new System.Drawing.Point(126, 44);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
@@ -1075,6 +1080,7 @@
             this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
             this.guna2TextBox1.Size = new System.Drawing.Size(10, 22);
             this.guna2TextBox1.TabIndex = 104355;
+            this.guna2TextBox1.Visible = false;
             // 
             // comboBox1
             // 
@@ -1091,7 +1097,7 @@
             this.txtItemName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.txtItemName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.txtItemName.FormattingEnabled = true;
-            this.txtItemName.Location = new System.Drawing.Point(8, 41);
+            this.txtItemName.Location = new System.Drawing.Point(8, 42);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(115, 22);
             this.txtItemName.TabIndex = 1;
@@ -1211,7 +1217,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(371, 18);
+            this.label32.Location = new System.Drawing.Point(376, 18);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(66, 14);
             this.label32.TabIndex = 94;
@@ -1287,7 +1293,7 @@
             this.txtTax1.SelectedText = "";
             this.txtTax1.SelectionStart = 1;
             this.txtTax1.ShadowDecoration.Parent = this.txtTax1;
-            this.txtTax1.Size = new System.Drawing.Size(41, 28);
+            this.txtTax1.Size = new System.Drawing.Size(81, 28);
             this.txtTax1.TabIndex = 6;
             this.txtTax1.TextChanged += new System.EventHandler(this.txtTax1_TextChanged);
             this.txtTax1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTax1_KeyPress);
@@ -1295,7 +1301,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(457, 17);
+            this.label30.Location = new System.Drawing.Point(478, 18);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(50, 14);
             this.label30.TabIndex = 90;
@@ -1366,7 +1372,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(218, 16);
+            this.label28.Location = new System.Drawing.Point(227, 18);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(41, 14);
             this.label28.TabIndex = 86;
@@ -1388,7 +1394,7 @@
             this.txtFreeQty.ForeColor = System.Drawing.Color.Black;
             this.txtFreeQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFreeQty.HoverState.Parent = this.txtFreeQty;
-            this.txtFreeQty.Location = new System.Drawing.Point(758, 42);
+            this.txtFreeQty.Location = new System.Drawing.Point(747, 42);
             this.txtFreeQty.Name = "txtFreeQty";
             this.txtFreeQty.PasswordChar = '\0';
             this.txtFreeQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1396,7 +1402,7 @@
             this.txtFreeQty.SelectedText = "";
             this.txtFreeQty.SelectionStart = 1;
             this.txtFreeQty.ShadowDecoration.Parent = this.txtFreeQty;
-            this.txtFreeQty.Size = new System.Drawing.Size(54, 28);
+            this.txtFreeQty.Size = new System.Drawing.Size(65, 28);
             this.txtFreeQty.TabIndex = 8;
             this.txtFreeQty.TextChanged += new System.EventHandler(this.txtFreeQty_TextChanged);
             this.txtFreeQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFreeQty_KeyPress);
@@ -1470,7 +1476,7 @@
             this.txtOty.ForeColor = System.Drawing.Color.Black;
             this.txtOty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOty.HoverState.Parent = this.txtOty;
-            this.txtOty.Location = new System.Drawing.Point(642, 39);
+            this.txtOty.Location = new System.Drawing.Point(551, 42);
             this.txtOty.Name = "txtOty";
             this.txtOty.PasswordChar = '\0';
             this.txtOty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -1478,7 +1484,7 @@
             this.txtOty.SelectedText = "";
             this.txtOty.SelectionStart = 1;
             this.txtOty.ShadowDecoration.Parent = this.txtOty;
-            this.txtOty.Size = new System.Drawing.Size(46, 28);
+            this.txtOty.Size = new System.Drawing.Size(92, 28);
             this.txtOty.TabIndex = 7;
             this.txtOty.TextChanged += new System.EventHandler(this.txtOty_TextChanged);
             this.txtOty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOty_KeyPress);
@@ -1486,7 +1492,7 @@
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(639, 20);
+            this.label39.Location = new System.Drawing.Point(574, 22);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(38, 14);
             this.label39.TabIndex = 82;
@@ -1494,20 +1500,20 @@
             // 
             // dgvInnerDebiteNote
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvInnerDebiteNote.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvInnerDebiteNote.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInnerDebiteNote.BackgroundColor = System.Drawing.Color.White;
             this.dgvInnerDebiteNote.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInnerDebiteNote.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInnerDebiteNote.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvInnerDebiteNote.ColumnHeadersHeight = 37;
             this.dgvInnerDebiteNote.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sr_no,
@@ -1527,18 +1533,18 @@
             this.CGST,
             this.SGST,
             this.IGST});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInnerDebiteNote.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvInnerDebiteNote.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvInnerDebiteNote.EnableHeadersVisualStyles = false;
             this.dgvInnerDebiteNote.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvInnerDebiteNote.Location = new System.Drawing.Point(14, 253);
+            this.dgvInnerDebiteNote.Location = new System.Drawing.Point(22, 248);
             this.dgvInnerDebiteNote.Name = "dgvInnerDebiteNote";
             this.dgvInnerDebiteNote.RowHeadersVisible = false;
             this.dgvInnerDebiteNote.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -1568,124 +1574,6 @@
             this.dgvInnerDebiteNote.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvInnerDebiteNote.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDebiteNote_CellContentClick);
             this.dgvInnerDebiteNote.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInnerDebiteNote_CellContentDoubleClick);
-            // 
-            // sr_no
-            // 
-            this.sr_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sr_no.HeaderText = "sr_no";
-            this.sr_no.Name = "sr_no";
-            this.sr_no.Width = 65;
-            // 
-            // txtItem
-            // 
-            this.txtItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.txtItem.DataPropertyName = "ItemName";
-            this.txtItem.HeaderText = "Item";
-            this.txtItem.Name = "txtItem";
-            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Item_Code
-            // 
-            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Item_Code.DataPropertyName = "ItemCode";
-            this.Item_Code.HeaderText = "Item Code";
-            this.Item_Code.MinimumWidth = 50;
-            this.Item_Code.Name = "Item_Code";
-            // 
-            // Unit
-            // 
-            this.Unit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Unit.DataPropertyName = "BasicUnit";
-            this.Unit.HeaderText = "Unit";
-            this.Unit.Name = "Unit";
-            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // MRP
-            // 
-            this.MRP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.MRP.DataPropertyName = "SalePrice";
-            this.MRP.HeaderText = "MRP";
-            this.MRP.Name = "MRP";
-            // 
-            // Tax
-            // 
-            this.Tax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tax.DataPropertyName = "TaxforSale";
-            this.Tax.HeaderText = "Tax% ";
-            this.Tax.Name = "Tax";
-            this.Tax.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Tax.Width = 80;
-            // 
-            // Discount
-            // 
-            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Discount.DataPropertyName = "Discount";
-            this.Discount.HeaderText = "Discount";
-            this.Discount.Name = "Discount";
-            this.Discount.Width = 80;
-            // 
-            // Qty
-            // 
-            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Qty.DataPropertyName = "Qty";
-            this.Qty.HeaderText = "Qty";
-            this.Qty.Name = "Qty";
-            // 
-            // FreeQty
-            // 
-            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FreeQty.DataPropertyName = "FreeQty";
-            this.FreeQty.HeaderText = "Free Qty";
-            this.FreeQty.Name = "FreeQty";
-            // 
-            // Tax_Amount
-            // 
-            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
-            this.Tax_Amount.HeaderText = "Tax Amount";
-            this.Tax_Amount.Name = "Tax_Amount";
-            this.Tax_Amount.Width = 70;
-            // 
-            // Discount_Amount
-            // 
-            this.Discount_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Discount_Amount.DataPropertyName = "DiscountAmount";
-            this.Discount_Amount.HeaderText = "Discount Amount";
-            this.Discount_Amount.Name = "Discount_Amount";
-            this.Discount_Amount.Width = 80;
-            // 
-            // Amount
-            // 
-            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Amount.DataPropertyName = "ItemAmount";
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            // 
-            // IDItem
-            // 
-            this.IDItem.HeaderText = "itemID";
-            this.IDItem.Name = "IDItem";
-            // 
-            // CalTotal
-            // 
-            this.CalTotal.HeaderText = "ItemAmount";
-            this.CalTotal.Name = "CalTotal";
-            // 
-            // CGST
-            // 
-            this.CGST.HeaderText = "Item CGST";
-            this.CGST.Name = "CGST";
-            // 
-            // SGST
-            // 
-            this.SGST.HeaderText = "Item SGST";
-            this.SGST.Name = "SGST";
-            // 
-            // IGST
-            // 
-            this.IGST.HeaderText = "Item IGST";
-            this.IGST.Name = "IGST";
             // 
             // txtsubtotal
             // 
@@ -2412,6 +2300,127 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // sr_no
+            // 
+            this.sr_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.sr_no.HeaderText = "sr_no";
+            this.sr_no.Name = "sr_no";
+            this.sr_no.Width = 65;
+            // 
+            // txtItem
+            // 
+            this.txtItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.txtItem.DataPropertyName = "ItemName";
+            this.txtItem.HeaderText = "Item";
+            this.txtItem.Name = "txtItem";
+            this.txtItem.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txtItem.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Item_Code
+            // 
+            this.Item_Code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Item_Code.DataPropertyName = "ItemCode";
+            this.Item_Code.HeaderText = "Item Code";
+            this.Item_Code.MinimumWidth = 50;
+            this.Item_Code.Name = "Item_Code";
+            // 
+            // Unit
+            // 
+            this.Unit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Unit.DataPropertyName = "BasicUnit";
+            this.Unit.HeaderText = "Unit";
+            this.Unit.Name = "Unit";
+            this.Unit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // MRP
+            // 
+            this.MRP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.MRP.DataPropertyName = "SalePrice";
+            this.MRP.HeaderText = "MRP";
+            this.MRP.Name = "MRP";
+            // 
+            // Tax
+            // 
+            this.Tax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tax.DataPropertyName = "TaxforSale";
+            this.Tax.HeaderText = "Tax% ";
+            this.Tax.Name = "Tax";
+            this.Tax.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Tax.Width = 80;
+            // 
+            // Discount
+            // 
+            this.Discount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Discount.DataPropertyName = "Discount";
+            this.Discount.HeaderText = "Discount";
+            this.Discount.Name = "Discount";
+            this.Discount.Width = 80;
+            // 
+            // Qty
+            // 
+            this.Qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Qty.DataPropertyName = "Qty";
+            this.Qty.HeaderText = "Qty";
+            this.Qty.Name = "Qty";
+            // 
+            // FreeQty
+            // 
+            this.FreeQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FreeQty.DataPropertyName = "FreeQty";
+            this.FreeQty.HeaderText = "Free Qty";
+            this.FreeQty.Name = "FreeQty";
+            // 
+            // Tax_Amount
+            // 
+            this.Tax_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tax_Amount.DataPropertyName = "SaleTaxAmount";
+            this.Tax_Amount.HeaderText = "Tax Amount";
+            this.Tax_Amount.Name = "Tax_Amount";
+            this.Tax_Amount.Width = 70;
+            // 
+            // Discount_Amount
+            // 
+            this.Discount_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Discount_Amount.DataPropertyName = "DiscountAmount";
+            this.Discount_Amount.HeaderText = "Discount Amount";
+            this.Discount_Amount.Name = "Discount_Amount";
+            this.Discount_Amount.Width = 80;
+            // 
+            // Amount
+            // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Amount.DataPropertyName = "ItemAmount";
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            // 
+            // IDItem
+            // 
+            this.IDItem.HeaderText = "itemID";
+            this.IDItem.Name = "IDItem";
+            // 
+            // CalTotal
+            // 
+            this.CalTotal.HeaderText = "ItemAmount";
+            this.CalTotal.Name = "CalTotal";
+            // 
+            // CGST
+            // 
+            this.CGST.HeaderText = "Item CGST";
+            this.CGST.Name = "CGST";
+            this.CGST.Visible = false;
+            // 
+            // SGST
+            // 
+            this.SGST.HeaderText = "Item SGST";
+            this.SGST.Name = "SGST";
+            this.SGST.Visible = false;
+            // 
+            // IGST
+            // 
+            this.IGST.HeaderText = "Item IGST";
+            this.IGST.Name = "IGST";
+            this.IGST.Visible = false;
+            // 
             // SaleInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2550,6 +2559,19 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label42;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn sr_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item_Code;
@@ -2564,21 +2586,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn CalTotal;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label42;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox4;
         private System.Windows.Forms.DataGridViewTextBoxColumn CGST;
         private System.Windows.Forms.DataGridViewTextBoxColumn SGST;
         private System.Windows.Forms.DataGridViewTextBoxColumn IGST;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

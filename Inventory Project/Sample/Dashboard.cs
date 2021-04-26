@@ -164,7 +164,7 @@ namespace sample
                 else
                 {
                     companyID();
-                    toolStripMenuItem5.Text = compnAMAE.ToString();
+                  toolStripMenuItem5.Text = compnAMAE.ToString();
                 }
             }
             else

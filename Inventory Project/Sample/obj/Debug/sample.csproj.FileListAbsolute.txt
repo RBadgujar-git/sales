@@ -2524,3 +2524,20 @@ C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\r
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
