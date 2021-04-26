@@ -45,6 +45,7 @@
             this.btnnImport = new System.Windows.Forms.Button();
             this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxRate)).BeginInit();
             this.SuspendLayout();
@@ -225,6 +226,7 @@
             this.label5.Size = new System.Drawing.Size(24, 16);
             this.label5.TabIndex = 152;
             this.label5.Text = "To";
+            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -234,6 +236,7 @@
             this.label6.Size = new System.Drawing.Size(40, 16);
             this.label6.TabIndex = 150;
             this.label6.Text = "From";
+            this.label6.Visible = false;
             // 
             // btnCancel
             // 
@@ -258,9 +261,9 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(906, 34);
+            this.btnPrint.Location = new System.Drawing.Point(958, 34);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 147;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -277,6 +280,7 @@
             this.btnnImport.Size = new System.Drawing.Size(22, 23);
             this.btnnImport.TabIndex = 146;
             this.btnnImport.UseVisualStyleBackColor = false;
+            this.btnnImport.Visible = false;
             // 
             // dtpFromdate
             // 
@@ -286,6 +290,7 @@
             this.dtpFromdate.Name = "dtpFromdate";
             this.dtpFromdate.Size = new System.Drawing.Size(133, 23);
             this.dtpFromdate.TabIndex = 156;
+            this.dtpFromdate.Visible = false;
             // 
             // dtpToDate
             // 
@@ -295,14 +300,25 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(127, 23);
             this.dtpToDate.TabIndex = 157;
+            this.dtpToDate.Visible = false;
             this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(954, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 16);
+            this.label3.TabIndex = 158;
+            this.label3.Text = "Print";
             // 
             // TaxRateReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpToDate);
             this.Controls.Add(this.dtpFromdate);
             this.Controls.Add(this.guna2Panel1);
@@ -342,5 +358,6 @@
         private System.Windows.Forms.Button btnnImport;
         private System.Windows.Forms.DateTimePicker dtpFromdate;
         private System.Windows.Forms.DateTimePicker dtpToDate;
+        private System.Windows.Forms.Label label3;
     }
 }

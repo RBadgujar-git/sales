@@ -133,7 +133,8 @@ namespace sample
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-
+            panel3.Visible = true;
+            clerar();
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -185,14 +186,19 @@ namespace sample
         {
             cheekpass();
             panel1.Hide();
+            button3.Hide();
             guna2Button3.Visible = false;
+            panel3.Visible = false;
+            label16.Visible = false;
             if (password !=0)
             {
                 loadvariable = 1;
                 chkEnablePassword.Checked = true;
-                guna2Button3.Visible = true;             
+                guna2Button3.Visible = true;
+               
+
             }
-            if(gstint==1)
+            if (gstint==1)
             {
                 ChkGSTin.Checked = true;
                 
@@ -357,6 +363,162 @@ namespace sample
 
         private void radiobtnFirmName_CheckedChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (old1.Text == "" && old2.Text == "" & old3.Text == "" && old4.Text == "")
+            {
+                label16.Visible = true;
+                label16.Text = "Password is in complite  !";
+                old1.Clear();
+                old2.Clear();
+                old3.Clear();
+                old4.Clear();
+                old1.Focus();
+            }
+            else
+            {
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string a1 = old1.Text.ToString() + old2.Text.ToString() + old3.Text.ToString() + old4.Text.ToString();
+
+                SqlCommand cmd = new SqlCommand("Select Password from PasswordCheek", con);
+                string Password = cmd.ExecuteScalar().ToString();
+
+                //   MessageBox.Show("Data"+a1+ "get"+ Password);
+                if (a1 == Password)
+                {
+                    New1.Focus();
+                    label16.Visible = false;
+                }
+                else
+                {
+                    label16.Visible = true;
+                    label16.Text = "Password is in complite  !";
+                    old1.Clear();
+                    old2.Clear();
+                    old3.Clear();
+                    old4.Clear();
+                    old1.Focus();
+
+                }
+            }
+
+        
+    }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            clerar();
+        }
+
+         public void clerar()
+        {
+            old1.Clear();old2.Clear();old3.Clear();old4.Clear();
+            New1.Clear();New2.Clear();New3.Clear();New4.Clear();
+            Con1.Clear();Con2.Clear();Con3.Clear();Con4.Clear();
+            button3.Hide();
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            insert();
+        }
+
+        private void New4_TextChanged(object sender, EventArgs e)
+        {
+            if (old1.Text == "" && old2.Text == "" & old3.Text == "" && old4.Text == "")
+            {
+                label16.Visible = true;
+                label16.Text = "Fill all text  !";
+                New1.Clear();
+                New2.Clear();
+                New3.Clear();
+                New4.Clear();
+                New1.Focus();
+            }
+            else
+            {
+                label16.Visible = false;
+                Con1.Focus();
+            }
+        }
+        public void insert()
+        {
+
+            try
+            {
+                if (NewCompany.company_id == null)
+                {
+                    MessageBox.Show("Please Select Company !");
+                }
+                else
+                {
+                    if (con.State == ConnectionState.Closed)
+                    {
+                        con.Open();
+                    }
+                    string a1 = New1.Text.ToString() + New2.Text.ToString() + New3.Text.ToString() + New4.Text.ToString();
+                    //  MessageBox.Show("Data is " + a1);
+
+                    SqlCommand cmd = new SqlCommand("Sp_loginpassword", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@password", a1);
+                    cmd.Parameters.AddWithValue("@Action", "Update");
+                    cmd.Parameters.AddWithValue("@ComId", NewCompany.company_id);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Passcode Update !");
+
+                   
+                }
+            }
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+        }
+
+        private void Con4_TextChanged(object sender, EventArgs e)
+        {
+            if ((New1.Text == Con1.Text) && (New2.Text == Con2.Text) && (New3.Text == Con3.Text) && (New4.Text == Con4.Text))
+            {
+                button3.Show();
+                label16.Hide();
+
+            }
+            else
+            {
+                label16.Show();
+                button3.Hide();
+                label16.Text = "Passcode Not  Match !";
+            }
 
         }
 

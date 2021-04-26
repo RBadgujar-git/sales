@@ -75,6 +75,7 @@
             // txtTotalQty
             // 
             this.txtTotalQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalQty.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalQty.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalQty.DefaultText = "";
             this.txtTotalQty.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -85,9 +86,10 @@
             this.txtTotalQty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalQty.FocusedState.Parent = this.txtTotalQty;
             this.txtTotalQty.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTotalQty.ForeColor = System.Drawing.Color.Black;
             this.txtTotalQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalQty.HoverState.Parent = this.txtTotalQty;
-            this.txtTotalQty.Location = new System.Drawing.Point(577, 8);
+            this.txtTotalQty.Location = new System.Drawing.Point(464, 12);
             this.txtTotalQty.Name = "txtTotalQty";
             this.txtTotalQty.PasswordChar = '\0';
             this.txtTotalQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -148,6 +150,7 @@
             // txttotal
             // 
             this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txttotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotal.DefaultText = "";
             this.txttotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -158,10 +161,10 @@
             this.txttotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotal.FocusedState.Parent = this.txttotal;
             this.txttotal.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txttotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txttotal.ForeColor = System.Drawing.Color.Black;
             this.txttotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotal.HoverState.Parent = this.txttotal;
-            this.txttotal.Location = new System.Drawing.Point(819, 8);
+            this.txttotal.Location = new System.Drawing.Point(677, 12);
             this.txttotal.Name = "txttotal";
             this.txttotal.PasswordChar = '\0';
             this.txttotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -207,6 +210,7 @@
             this.txtqty.Size = new System.Drawing.Size(123, 36);
             this.txtqty.TabIndex = 136;
             this.txtqty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtqty.Visible = false;
             // 
             // label2
             // 
@@ -216,6 +220,7 @@
             this.label2.Size = new System.Drawing.Size(48, 16);
             this.label2.TabIndex = 135;
             this.label2.Text = " Qty :";
+            this.label2.Visible = false;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dgvexpense
@@ -399,7 +404,6 @@
             this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
             this.txtfilter.Size = new System.Drawing.Size(227, 27);
             this.txtfilter.TabIndex = 209;
-            this.txtfilter.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
             // 
             // btnminimize

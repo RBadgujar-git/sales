@@ -81,7 +81,7 @@
             // Pass4
             // 
             this.Pass4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.Pass4.Location = new System.Drawing.Point(231, 73);
+            this.Pass4.Location = new System.Drawing.Point(231, 80);
             this.Pass4.MaxLength = 1;
             this.Pass4.Multiline = true;
             this.Pass4.Name = "Pass4";

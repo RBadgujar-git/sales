@@ -58,7 +58,6 @@ namespace sample
         {
 
         }
-
         private void ItemTrackingReport_Load(object sender, EventArgs e)
         {
             bindbankdata();
@@ -68,7 +67,7 @@ namespace sample
         {
             con.Open();
             DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand("select * from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            SqlCommand cmd = new SqlCommand("select  ItemName, BatchNo, SerialNo, Size, MFgdate, Expdate from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -88,6 +87,7 @@ namespace sample
             dgvItemTracking.Columns[5].DataPropertyName = "Expdate";
            
             dgvItemTracking.DataSource = dt;
+            dgvItemTracking.AllowUserToAddRows = false;
         }
 
         private void txtItemname_TextChanged(object sender, EventArgs e)
@@ -100,6 +100,8 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+
+                dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -118,6 +120,9 @@ namespace sample
                 SDA.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+
+                dgvItemTracking.AllowUserToAddRows = false;
+
             }
             catch (Exception ex)
             {
@@ -127,26 +132,27 @@ namespace sample
 
         private void dtpToexp_ValueChanged(object sender, EventArgs e)
         {
-                
-        }
-
-        private void dtpToexp_Enter(object sender, EventArgs e)
-        {
             {
                 try
                 {
-                    string SelectQuery = string.Format("select ItemName,BatchNo,SerialNo,Size ,MFgdate,Expdate from tbl_ItemMaster  where Expdate between '" + dtpFromexp.Value.ToString() + "' and '" + dtpToexp.Value.ToString() + "'");
+                    string SelectQuery = string.Format("select ItemName,BatchNo,SerialNo,Size ,MFgdate,Expdate from tbl_ItemMaster  where Expdate between '" + dtpFromexp.Value.ToString() + "' and '" + dtpToexp.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "temp");
                     dgvItemTracking.DataSource = ds;
                     dgvItemTracking.DataMember = "temp";
+                    dgvItemTracking.AllowUserToAddRows = false;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Data not" + ex);
                 }
             }
+        }
+
+        private void dtpToexp_Enter(object sender, EventArgs e)
+        {
+           
         }
 
         private void txtSerialNo_TextChanged(object sender, EventArgs e)
@@ -159,6 +165,7 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -177,6 +184,7 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -216,6 +224,11 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

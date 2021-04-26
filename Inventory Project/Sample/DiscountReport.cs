@@ -64,6 +64,7 @@ namespace sample
             {
                 con.Close();
             }
+            dgvDiscountReport.AllowUserToAddRows = false;
         }
         private void fetchCompany()
         {

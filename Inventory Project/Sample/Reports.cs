@@ -45,7 +45,7 @@ namespace sample
 
         private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)

@@ -1942,6 +1942,11 @@ namespace sample
 
         }
 
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dgvInnerCreditNote_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 

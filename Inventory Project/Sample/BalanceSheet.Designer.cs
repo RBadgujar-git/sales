@@ -97,6 +97,7 @@
             this.dtpdateto.Name = "dtpdateto";
             this.dtpdateto.Size = new System.Drawing.Size(156, 23);
             this.dtpdateto.TabIndex = 76;
+            this.dtpdateto.ValueChanged += new System.EventHandler(this.dtpdateto_ValueChanged);
             // 
             // btncancel
             // 

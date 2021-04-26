@@ -136,12 +136,13 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%' and Company_ID='" + compid+ "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
                 dgvexpense.DataSource = ds;
                 dgvexpense.DataMember = "temp";
+                dgvexpense.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -236,12 +237,12 @@ namespace sample
         {
             //string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrderWhere CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice Where CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder Where CompanyID='" + compid + "' and DeleteData='1') ", cmballfrims.Text);
             string Query = string.Format("select ItemName,Qty,ItemAmount from tbl_ExpensesInner  where Company_ID='" + compid + "' and DeleteData='1'", cmbAllfirms.Text);
-
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
             dgvexpense.DataSource = ds;
             dgvexpense.DataMember = "temp";
+            dgvexpense.AllowUserToAddRows = false;
         }
 
         private void btnminimize_Click(object sender, EventArgs e)

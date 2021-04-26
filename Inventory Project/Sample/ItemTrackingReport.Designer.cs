@@ -28,9 +28,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemTrackingReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtItemname = new Guna.UI2.WinForms.Guna2TextBox();
@@ -84,6 +84,7 @@
             // 
             // txtItemname
             // 
+            this.txtItemname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtItemname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtItemname.DefaultText = "";
             this.txtItemname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -94,7 +95,7 @@
             this.txtItemname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemname.FocusedState.Parent = this.txtItemname;
             this.txtItemname.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtItemname.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtItemname.ForeColor = System.Drawing.Color.Black;
             this.txtItemname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtItemname.HoverState.Parent = this.txtItemname;
             this.txtItemname.Location = new System.Drawing.Point(116, 82);
@@ -152,6 +153,7 @@
             // 
             // txtSerialNo
             // 
+            this.txtSerialNo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtSerialNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSerialNo.DefaultText = "";
             this.txtSerialNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -162,7 +164,7 @@
             this.txtSerialNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSerialNo.FocusedState.Parent = this.txtSerialNo;
             this.txtSerialNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtSerialNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSerialNo.ForeColor = System.Drawing.Color.Black;
             this.txtSerialNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSerialNo.HoverState.Parent = this.txtSerialNo;
             this.txtSerialNo.Location = new System.Drawing.Point(368, 82);
@@ -186,6 +188,7 @@
             // 
             // txtbatchNo
             // 
+            this.txtbatchNo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtbatchNo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtbatchNo.DefaultText = "";
             this.txtbatchNo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -196,7 +199,7 @@
             this.txtbatchNo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbatchNo.FocusedState.Parent = this.txtbatchNo;
             this.txtbatchNo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtbatchNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtbatchNo.ForeColor = System.Drawing.Color.Black;
             this.txtbatchNo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbatchNo.HoverState.Parent = this.txtbatchNo;
             this.txtbatchNo.Location = new System.Drawing.Point(609, 82);
@@ -259,7 +262,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(604, 127);
+            this.label9.Location = new System.Drawing.Point(581, 127);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(78, 16);
             this.label9.TabIndex = 132;
@@ -268,7 +271,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(72, 125);
+            this.label10.Location = new System.Drawing.Point(53, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 16);
             this.label10.TabIndex = 133;
@@ -276,21 +279,21 @@
             // 
             // dgvItemTracking
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvItemTracking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.dgvItemTracking.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvItemTracking.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvItemTracking.BackgroundColor = System.Drawing.Color.White;
             this.dgvItemTracking.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItemTracking.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvItemTracking.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItemTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItemTracking.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvItemTracking.ColumnHeadersHeight = 34;
             this.dgvItemTracking.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -299,14 +302,14 @@
             this.Column8,
             this.Column4,
             this.Column6});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItemTracking.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItemTracking.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvItemTracking.EnableHeadersVisualStyles = false;
             this.dgvItemTracking.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvItemTracking.Location = new System.Drawing.Point(15, 197);
@@ -385,10 +388,11 @@
             this.chkShowOnly.UncheckedState.BorderRadius = 0;
             this.chkShowOnly.UncheckedState.BorderThickness = 0;
             this.chkShowOnly.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkShowOnly.Visible = false;
             // 
             // dtpfrom
             // 
-            this.dtpfrom.CustomFormat = "MM/dd/yyyy";
+            this.dtpfrom.CustomFormat = "yyyy/MM/dd";
             this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfrom.Location = new System.Drawing.Point(92, 147);
             this.dtpfrom.Name = "dtpfrom";
@@ -397,7 +401,7 @@
             // 
             // dtpFromexp
             // 
-            this.dtpFromexp.CustomFormat = "MM/dd/yyyy";
+            this.dtpFromexp.CustomFormat = "yyyy/MM/dd";
             this.dtpFromexp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFromexp.Location = new System.Drawing.Point(621, 149);
             this.dtpFromexp.Name = "dtpFromexp";
@@ -406,17 +410,18 @@
             // 
             // dtpToDate
             // 
-            this.dtpToDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpToDate.CustomFormat = "yyyy/MM/dd";
             this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(273, 148);
+            this.dtpToDate.Location = new System.Drawing.Point(273, 147);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(156, 23);
             this.dtpToDate.TabIndex = 139;
+            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             this.dtpToDate.Enter += new System.EventHandler(this.dtpToDate_Enter);
             // 
             // dtpToexp
             // 
-            this.dtpToexp.CustomFormat = "MM/dd/yyyy";
+            this.dtpToexp.CustomFormat = "yyyy/MM/dd";
             this.dtpToexp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpToexp.Location = new System.Drawing.Point(803, 147);
             this.dtpToexp.Name = "dtpToexp";

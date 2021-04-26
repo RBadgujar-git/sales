@@ -45,10 +45,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbexpenses = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpTodate = new System.Windows.Forms.DateTimePicker();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbexpenses = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvexpenses)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +69,7 @@
             // txtTotalexpenes
             // 
             this.txtTotalexpenes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotalexpenes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txtTotalexpenes.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTotalexpenes.DefaultText = "";
             this.txtTotalexpenes.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -80,7 +83,7 @@
             this.txtTotalexpenes.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotalexpenes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalexpenes.HoverState.Parent = this.txtTotalexpenes;
-            this.txtTotalexpenes.Location = new System.Drawing.Point(798, 3);
+            this.txtTotalexpenes.Location = new System.Drawing.Point(686, 9);
             this.txtTotalexpenes.Name = "txtTotalexpenes";
             this.txtTotalexpenes.PasswordChar = '\0';
             this.txtTotalexpenes.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -94,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(683, 12);
+            this.label2.Location = new System.Drawing.Point(683, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 16);
             this.label2.TabIndex = 135;
@@ -180,6 +183,7 @@
             // cmballfirms
             // 
             this.cmballfirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmballfirms.BorderColor = System.Drawing.Color.Gray;
             this.cmballfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmballfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmballfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -225,9 +229,9 @@
             this.btnprint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnprint.FlatAppearance.BorderSize = 0;
             this.btnprint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnprint.Location = new System.Drawing.Point(908, 32);
+            this.btnprint.Location = new System.Drawing.Point(883, 32);
             this.btnprint.Name = "btnprint";
-            this.btnprint.Size = new System.Drawing.Size(24, 23);
+            this.btnprint.Size = new System.Drawing.Size(25, 25);
             this.btnprint.TabIndex = 157;
             this.btnprint.UseVisualStyleBackColor = false;
             this.btnprint.Click += new System.EventHandler(this.btnprint_Click);
@@ -245,6 +249,7 @@
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 156;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // label5
             // 
@@ -272,26 +277,6 @@
             this.label3.Size = new System.Drawing.Size(138, 16);
             this.label3.TabIndex = 137;
             this.label3.Text = "Expense Category :";
-            // 
-            // cmbexpenses
-            // 
-            this.cmbexpenses.BackColor = System.Drawing.Color.Transparent;
-            this.cmbexpenses.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbexpenses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbexpenses.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbexpenses.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbexpenses.FocusedState.Parent = this.cmbexpenses;
-            this.cmbexpenses.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbexpenses.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbexpenses.HoverState.Parent = this.cmbexpenses;
-            this.cmbexpenses.ItemHeight = 30;
-            this.cmbexpenses.ItemsAppearance.Parent = this.cmbexpenses;
-            this.cmbexpenses.Location = new System.Drawing.Point(196, 84);
-            this.cmbexpenses.Name = "cmbexpenses";
-            this.cmbexpenses.ShadowDecoration.Parent = this.cmbexpenses;
-            this.cmbexpenses.Size = new System.Drawing.Size(236, 36);
-            this.cmbexpenses.TabIndex = 166;
-            this.cmbexpenses.SelectedIndexChanged += new System.EventHandler(this.cmbexpenses_SelectedIndexChanged);
             // 
             // dtpFromDate
             // 
@@ -330,11 +315,69 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // txtfilter
+            // 
+            this.txtfilter.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfilter.DefaultText = "";
+            this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.DisabledState.Parent = this.txtfilter;
+            this.txtfilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.FocusedState.Parent = this.txtfilter;
+            this.txtfilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.HoverState.Parent = this.txtfilter;
+            this.txtfilter.Location = new System.Drawing.Point(193, 89);
+            this.txtfilter.Name = "txtfilter";
+            this.txtfilter.PasswordChar = '\0';
+            this.txtfilter.PlaceholderText = "";
+            this.txtfilter.SelectedText = "";
+            this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
+            this.txtfilter.Size = new System.Drawing.Size(215, 26);
+            this.txtfilter.TabIndex = 447;
+            this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(992, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 448;
+            this.label1.Text = "Print";
+            // 
+            // cmbexpenses
+            // 
+            this.cmbexpenses.BackColor = System.Drawing.Color.Transparent;
+            this.cmbexpenses.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbexpenses.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbexpenses.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbexpenses.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbexpenses.FocusedState.Parent = this.cmbexpenses;
+            this.cmbexpenses.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbexpenses.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbexpenses.HoverState.Parent = this.cmbexpenses;
+            this.cmbexpenses.ItemHeight = 30;
+            this.cmbexpenses.ItemsAppearance.Parent = this.cmbexpenses;
+            this.cmbexpenses.Location = new System.Drawing.Point(473, 61);
+            this.cmbexpenses.Name = "cmbexpenses";
+            this.cmbexpenses.ShadowDecoration.Parent = this.cmbexpenses;
+            this.cmbexpenses.Size = new System.Drawing.Size(236, 36);
+            this.cmbexpenses.TabIndex = 166;
+            this.cmbexpenses.Visible = false;
+            this.cmbexpenses.SelectedIndexChanged += new System.EventHandler(this.cmbexpenses_SelectedIndexChanged);
+            // 
             // ExpensesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpTodate);
             this.Controls.Add(this.dtpFromDate);
@@ -376,9 +419,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbexpenses;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.DateTimePicker dtpTodate;
         private System.Windows.Forms.Button btnminimize;
+        private Guna.UI2.WinForms.Guna2TextBox txtfilter;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbexpenses;
     }
 }

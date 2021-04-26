@@ -52,9 +52,29 @@ namespace sample
             finally
             {
                 con.Close();
+                string idd = compid.ToString();
+                fetchPartyGroup(idd);
                 companyinfo();
+
             }
         }
+        //public void companyinfo1()
+        //{
+        //    //string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrderWhere CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice Where CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder Where CompanyID='" + compid + "' and DeleteData='1') ", cmballfrims.Text);
+        //    string Query = string.Format("select a.TableName,b.ItemName,b.Qty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where b.Company_ID='" + compid + "' and b.DeleteData='1'union ( select a.TableName,b.ItemName,b.Qty,b.ItemAmount from tbl_SaleInvoiceInner as b,tbl_saleinvoice as a where b.Company_ID='" + compid + "' and b.DeleteData='1' and a.AddPartyGroup='"+cmbGroup.Text+"')", cmbAAllfirms.Text);
+
+        //    DataSet ds = new DataSet();
+        //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+        //    da.Fill(ds, "temp");
+        //    dgvSalepurchaseReport.DataSource = ds;
+        //    dgvSalepurchaseReport.DataMember = "temp";
+        //}
+        //private void SalePurchasebyPartyGroup_Load(object sender, EventArgs e)
+        //{
+        //    fetchPartyGroup(NewCompany.company_id);
+        //    fetchCompany();
+        //    data();
+        //}
         public void companyinfo()
         {
             //string Query = string.Format("(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_CreditNote1  )union all(select TableName,PartyName,Date,Total,Received as Receievd'/'Paid,RemainingBal,Status from tbl_DebitNote )Union all(select TableName,PartyName,Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_DeliveryChallan )union all(select TableName,PartyName,BillDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from  tbl_PurchaseBill ')Union all(select TableName,PartyName,OrderDate as Date,Total,Paid as ReceievdPaid,RemainingBal,Status from tbl_PurchaseOrderWhere CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,InvoiceDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from tbl_SaleInvoice Where CompanyID='" + compid + "' and DeleteData='1')union all(select TableName,PartyName,OrderDate as Date,Total,Received as ReceievdPaid,RemainingBal,Status from  tbl_SaleOrder Where CompanyID='" + compid + "' and DeleteData='1') ", cmballfrims.Text);
@@ -68,8 +88,10 @@ namespace sample
         }
         private void SalePurchasebyPartyGroup_Load(object sender, EventArgs e)
         {
+            fetchPartyGroup(NewCompany.company_id);
             fetchCompany();
             data();
+            dgvSalepurchaseReport.AllowUserToAddRows = false;
         }
 
         private void data()
@@ -109,21 +131,26 @@ namespace sample
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
                         cmbAAllfirms.Items.Add(ds.Tables["Temp"].Rows[i]["CompanyName"].ToString());
+                     
                     }
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+            
         }
-        private void fetchPartyGroup()
+     
+        private void fetchPartyGroup(String m)
         {
             if (cmbGroup.Text != "System.Data.DataRowView")
             {
                 try
                 {
-                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroupSelect where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CompanyName");
+                    cmbGroup.Items.Clear();
+                    string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup where Company_ID="+m +" and DeleteData='1' group by AddPartyGroup");
                     DataSet ds = new DataSet();
                     SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                     SDA.Fill(ds, "Temp");
@@ -143,20 +170,20 @@ namespace sample
 
         private void txtFilterBy_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 
-                string Query = string.Format("select TableName,PartyName, OrderDate as Date,Total from tbl_SaleOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, OrderDate as Date,Total from tbl_PurchaseOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, BillDate as Date,Total from tbl_PurchaseBill where  PartyName Like '%{0}%' union all  select TableName,PartyName, InvoiceDate as Date,Total from tbl_SaleInvoice where  PartyName Like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvSalepurchaseReport.DataSource = ds;
-                dgvSalepurchaseReport.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    string Query = string.Format("select TableName,PartyName, OrderDate as Date,Total from tbl_SaleOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, OrderDate as Date,Total from tbl_PurchaseOrder where  PartyName Like '%{0}%' union all select TableName,PartyName, BillDate as Date,Total from tbl_PurchaseBill where  PartyName Like '%{0}%' union all  select TableName,PartyName, InvoiceDate as Date,Total from tbl_SaleInvoice where  PartyName Like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilterBy);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvSalepurchaseReport.DataSource = ds;
+            //    dgvSalepurchaseReport.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
            
         }
 
@@ -195,6 +222,11 @@ namespace sample
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void cmbGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
     }
