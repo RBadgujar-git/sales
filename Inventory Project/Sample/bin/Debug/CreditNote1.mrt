@@ -1275,7 +1275,7 @@ GST</Text>
             <Text72 Ref="109" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,3.6,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,3.6,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>adf6c575239d4cad9dbc3f67cc9e758d</Guid>
@@ -1291,7 +1291,7 @@ GST</Text>
             <Text73 Ref="110" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,4.2,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,4.2,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>08bf921bc036413ab8ed179ec11b5943</Guid>
@@ -1306,7 +1306,7 @@ GST</Text>
             <Text74 Ref="111" type="Text" isKey="true">
               <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,3.6,3.2,0.6</ClientRectangle>
+              <ClientRectangle>15.4,3.6,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>77e3dfb4393542b9b835cc9ac4b36051</Guid>
@@ -1323,7 +1323,7 @@ GST</Text>
             <Text75 Ref="112" type="Text" isKey="true">
               <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,4.2,3.2,0.6</ClientRectangle>
+              <ClientRectangle>15.4,4.2,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>76261b682e584b8c89c2591379859675</Guid>
@@ -1340,7 +1340,7 @@ GST</Text>
             <Text58 Ref="113" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,1.2,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,1.2,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>da62a29635384314a4734a6610b7a382</Guid>
@@ -1355,7 +1355,7 @@ GST</Text>
             <Text59 Ref="114" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,1.8,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,1.8,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>6b0e40b1ce924c848059dd2993b69b28</Guid>
@@ -1371,7 +1371,7 @@ GST</Text>
             <Text60 Ref="115" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,3,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,3,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>c92101ceb7e8480288be4c84d81cf780</Guid>
@@ -1385,7 +1385,7 @@ GST</Text>
             </Text60>
             <Text63 Ref="116" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,1.2,2.8,0.6</ClientRectangle>
+              <ClientRectangle>15.4,1.2,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>ab45a13b6cf54b2d83541468134ec5da</Guid>
@@ -1401,7 +1401,7 @@ GST</Text>
             </Text63>
             <Text64 Ref="117" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,1.8,2.8,0.6</ClientRectangle>
+              <ClientRectangle>15.4,1.8,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>8e2f6ee05e014a7da1d1ff150d6c1083</Guid>
@@ -1418,7 +1418,7 @@ GST</Text>
             <Text65 Ref="118" type="Text" isKey="true">
               <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,3,3.2,0.6</ClientRectangle>
+              <ClientRectangle>15.4,3,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>1682577299264426a478165cf444a363</Guid>
@@ -1435,7 +1435,7 @@ GST</Text>
             <Text61 Ref="119" type="Text" isKey="true">
               <Border>Left;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,0,3.2,0.6</ClientRectangle>
+              <ClientRectangle>15.4,0,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>4344a990bf1c48f198f76e5e33d79a79</Guid>
@@ -1530,7 +1530,7 @@ GST</Text>
             <Text45 Ref="126" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,2.4,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,2.4,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>025d1e0fe89e4ed283eaaec608b8e2c7</Guid>
@@ -1545,7 +1545,7 @@ GST</Text>
             </Text45>
             <Text76 Ref="127" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,2.4,2.8,0.6</ClientRectangle>
+              <ClientRectangle>15.4,2.4,3.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>fd9aa7bb68c449588158ac8c074412d6</Guid>
@@ -1562,7 +1562,7 @@ GST</Text>
             <Text77 Ref="128" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>13,0.6,2.8,0.6</ClientRectangle>
+              <ClientRectangle>13,0.6,2.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>12635460c34c4362a0d14de1642b451e</Guid>
@@ -1577,7 +1577,7 @@ GST</Text>
             <Text79 Ref="129" type="Text" isKey="true">
               <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.8,0.6,3.2,0.6</ClientRectangle>
+              <ClientRectangle>15.4,0.6,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>8dc9863ab9eb4f288e7014c15467297d</Guid>
@@ -1719,7 +1719,7 @@ GST</Text>
               </StartCap>
             </HorizontalLinePrimitive3>
             <HorizontalLinePrimitive15 Ref="151" type="HorizontalLinePrimitive" isKey="true">
-              <ClientRectangle>15.8,1.8,3.2,0.0254</ClientRectangle>
+              <ClientRectangle>15.4,1.8,3.6,0.0254</ClientRectangle>
               <Color>Black</Color>
               <EndCap Ref="152" type="Cap" isKey="true">
                 <Color>Black</Color>
@@ -1732,7 +1732,7 @@ GST</Text>
               </StartCap>
             </HorizontalLinePrimitive15>
             <HorizontalLinePrimitive16 Ref="154" type="HorizontalLinePrimitive" isKey="true">
-              <ClientRectangle>15.8,2.4,3.2,0.0254</ClientRectangle>
+              <ClientRectangle>15.4,2.4,3.6,0.0254</ClientRectangle>
               <Color>Black</Color>
               <EndCap Ref="155" type="Cap" isKey="true">
                 <Color>Black</Color>
@@ -1746,14 +1746,14 @@ GST</Text>
               </StartCap>
             </HorizontalLinePrimitive16>
             <StartPointPrimitive23 Ref="157" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
-              <ClientRectangle>15.8,0.6,0,0</ClientRectangle>
+              <ClientRectangle>15.4,0.6,0,0</ClientRectangle>
               <Name>StartPointPrimitive23</Name>
               <Page isRef="3" />
               <Parent isRef="108" />
               <ReferenceToGuid>8aaa3f06d50b4a628a2c22dda2a36048</ReferenceToGuid>
             </StartPointPrimitive23>
             <EndPointPrimitive24 Ref="158" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
-              <ClientRectangle>15.83,4.8,0,0</ClientRectangle>
+              <ClientRectangle>15.43,4.8,0,0</ClientRectangle>
               <Name>EndPointPrimitive24</Name>
               <Page isRef="3" />
               <Parent isRef="108" />
@@ -2167,7 +2167,7 @@ GST</Text>
           <ReferenceToGuid>357f73311086410c8dfccef27bcb61d2</ReferenceToGuid>
         </EndPointPrimitive8>
         <VerticalLinePrimitive17 Ref="234" type="VerticalLinePrimitive" isKey="true">
-          <ClientRectangle>15.8,10.6,0.0254,4.2</ClientRectangle>
+          <ClientRectangle>15.4,10.6,0.0254,4.2</ClientRectangle>
           <Color>Black</Color>
           <EndCap Ref="235" type="Cap" isKey="true">
             <Color>Black</Color>
@@ -2206,10 +2206,10 @@ GST</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/21/2021 4:14:26 PM</ReportChanged>
+  <ReportChanged>4/27/2021 2:05:06 PM</ReportChanged>
   <ReportCreated>3/18/2021 1:59:46 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\CreditNote1.mrt</ReportFile>
-  <ReportGuid>74cf0465e9524bb791add7948dc03e58</ReportGuid>
+  <ReportGuid>1e2ae1a0f0a0495da06d208e02d6e587</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

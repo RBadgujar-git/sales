@@ -16,7 +16,7 @@
           <value>ChallanNo,System.String</value>
           <value>PartyName,System.String</value>
           <value>BillingName,System.String</value>
-          <value>InvoiceDate,System.String</value>
+          <value>InvoiceDate,System.Nullable`1[System.DateTime]</value>
           <value>Total,System.String</value>
           <value>Received,System.String</value>
           <value>RemainingBal,System.String</value>
@@ -37,7 +37,7 @@
     <Page1 Ref="3" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="15">
+      <Components isList="true" count="14">
         <Text83 Ref="4" type="Text" isKey="true">
           <Brush>Transparent</Brush>
           <ClientRectangle>5.2,27.8,7.8,0.6</ClientRectangle>
@@ -116,7 +116,7 @@ No</Text>
             </Image2>
             <Text17 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4,1,7.4,0.6</ClientRectangle>
+              <ClientRectangle>3.8,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,9</Font>
               <Guid>6556d90d6a554467bb4cc09855f63d5d</Guid>
@@ -129,7 +129,7 @@ No</Text>
             </Text17>
             <Text20 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4,1.6,7.4,0.6</ClientRectangle>
+              <ClientRectangle>3.8,1.6,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,9,Bold</Font>
               <Guid>5aa35e3485a84f079ca14c8872ff897b</Guid>
@@ -173,7 +173,7 @@ No</Text>
             <Text28 Ref="14" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>9,3.4,3.6,1</ClientRectangle>
+              <ClientRectangle>9.6,3.4,3,1</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>a8cda7900aa74d1a803f3e943b6d53f7</Guid>
@@ -189,7 +189,7 @@ No</Text>
             <Text29 Ref="15" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>6,3.4,3,1</ClientRectangle>
+              <ClientRectangle>6,3.4,3.6,1</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>993854c369c343d6a494e4e4be3bccb4</Guid>
@@ -236,7 +236,7 @@ No</Text>
             </Text31>
             <Text33 Ref="18" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.6,0,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.6,0,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>59852819829f4a949d25ada25f03ba98</Guid>
@@ -250,7 +250,7 @@ No</Text>
             </Text33>
             <Text34 Ref="19" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.6,0.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.6,0.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>0e8fb0b8a91743bdb803619817d32c21</Guid>
@@ -264,7 +264,7 @@ No</Text>
             </Text34>
             <Text80 Ref="20" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,1,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.2,1,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>32bb5cb82074490caf975527d4af2d75</Guid>
@@ -277,7 +277,7 @@ No</Text>
             </Text80>
             <Text81 Ref="21" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.2,1.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.2,1.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>0b1de6b50e1042a79bb63c53c90b7774</Guid>
@@ -411,7 +411,7 @@ Bal</Text>
             <Text21 Ref="32" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>6,0,3,0.6</ClientRectangle>
+              <ClientRectangle>6,0,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>9967079ac2c44d21be823b5897ab5e6f</Guid>
@@ -480,7 +480,7 @@ Bal</Text>
             <Text3 Ref="36" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>9,0,3.6,0.6</ClientRectangle>
+              <ClientRectangle>9.6,0,3,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>7b2c9a0b9b204bfaab7c8b95c26a4eb2</Guid>
@@ -490,12 +490,15 @@ Bal</Text>
               <Page isRef="3" />
               <Parent isRef="29" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
-              <Text>Date: {Format("{0:dd/MM/yyyy}", DeliveryChallan.InvoiceDate)}</Text>
+              <Text>{DeliveryChallan.InvoiceDate}</Text>
               <TextBrush>Black</TextBrush>
+              <TextFormat Ref="37" type="DateFormat" isKey="true">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text3>
-            <EndPointPrimitive1 Ref="37" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive1 Ref="38" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>6.4,0,0,0</ClientRectangle>
               <Guid>857b1956db5347f5969caf0e0824e02d</Guid>
               <Name>EndPointPrimitive1</Name>
@@ -503,7 +506,7 @@ Bal</Text>
               <Parent isRef="29" />
               <ReferenceToGuid>de0f8a896c4b47d3b25631449e4bd398</ReferenceToGuid>
             </EndPointPrimitive1>
-            <EndPointPrimitive2 Ref="38" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive2 Ref="39" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>13,0,0,0</ClientRectangle>
               <Guid>c8728a0d977244ca9a1ae1a0d27cdaf9</Guid>
               <Name>EndPointPrimitive2</Name>
@@ -522,15 +525,6 @@ Bal</Text>
           <Parent isRef="3" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <FooterBand1 Ref="39" type="FooterBand" isKey="true">
-          <Brush>Transparent</Brush>
-          <ClientRectangle>0,7,19,0.6</ClientRectangle>
-          <Components isList="true" count="0" />
-          <Conditions isList="true" count="0" />
-          <Name>FooterBand1</Name>
-          <Page isRef="3" />
-          <Parent isRef="3" />
-        </FooterBand1>
         <HorizontalLinePrimitive1 Ref="40" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,19,0.0254</ClientRectangle>
           <Color>Black</Color>
@@ -667,10 +661,10 @@ Bal</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 5:28:26 PM</ReportChanged>
+  <ReportChanged>4/27/2021 2:47:29 PM</ReportChanged>
   <ReportCreated>3/25/2021 7:01:22 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\DeliveryChallanDataReport.mrt</ReportFile>
-  <ReportGuid>2d70f9056b2541649cd81fba5d2c7c4b</ReportGuid>
+  <ReportGuid>437041affe7344299b304d83094af7ef</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

@@ -49,7 +49,7 @@
           <Parent isRef="3" />
           <Text>This is Computer Generated Invoice</Text>
           <TextBrush>Black</TextBrush>
-          <VertAlignment>Center</VertAlignment>
+          <VertAlignment>Bottom</VertAlignment>
         </Text83>
         <ReportTitleBand1 Ref="5" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
@@ -162,7 +162,7 @@
             </Image1>
             <Text2 Ref="13" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.2,1,7.4,0.6</ClientRectangle>
+              <ClientRectangle>4,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>fe54ec23dbc74d158d54be4cc4e1bb24</Guid>
@@ -175,7 +175,7 @@
             </Text2>
             <Text3 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.2,1.6,7.4,0.6</ClientRectangle>
+              <ClientRectangle>4,1.6,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,9,Bold</Font>
               <Guid>8d7ee6cf80bf478ea506fc5ffda72acd</Guid>
@@ -218,7 +218,7 @@
             </Text13>
             <Text77 Ref="17" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>14,0,1.8,0.6</ClientRectangle>
+              <ClientRectangle>14,0,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>fb5bc42eaf71411e8608558e6433122e</Guid>
@@ -232,7 +232,7 @@
             </Text77>
             <Text80 Ref="18" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>498243866868416d807d870285ea4cfc</Guid>
@@ -245,7 +245,7 @@
             </Text80>
             <Text81 Ref="19" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>7874b664ceb14e7ea9ff3e238eb3eabc</Guid>
@@ -253,12 +253,12 @@
               <Name>Text81</Name>
               <Page isRef="3" />
               <Parent isRef="5" />
-              <Text>GSTIN      :</Text>
+              <Text>GSTIN    :</Text>
               <TextBrush>Black</TextBrush>
             </Text81>
             <Text90 Ref="20" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>14,0.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>14,0.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>592cff7fcdd942f98c5986411241b059</Guid>
@@ -266,7 +266,7 @@
               <Name>Text90</Name>
               <Page isRef="3" />
               <Parent isRef="5" />
-              <Text>Email      :</Text>
+              <Text>Email     :</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Bottom</VertAlignment>
             </Text90>
@@ -567,10 +567,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 6:45:34 PM</ReportChanged>
+  <ReportChanged>4/27/2021 3:04:32 PM</ReportChanged>
   <ReportCreated>3/22/2021 11:36:05 AM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpensesItemData.mrt</ReportFile>
-  <ReportGuid>9a56a84b5f03452f9031ecd3dcc71aaf</ReportGuid>
+  <ReportGuid>8533145361f04145941a1c3224b4021d</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

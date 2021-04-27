@@ -202,6 +202,7 @@
               <Name>Text17</Name>
               <Page isRef="3" />
               <Parent isRef="12" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{SalePurchaseOrderItem.ItemAmount}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -218,6 +219,7 @@
               <Name>Text12</Name>
               <Page isRef="3" />
               <Parent isRef="12" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{SalePurchaseOrderItem.freeQty}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -333,10 +335,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 6:40:18 PM</ReportChanged>
+  <ReportChanged>4/27/2021 4:22:40 PM</ReportChanged>
   <ReportCreated>3/27/2021 4:23:33 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\SalePurchaseOrderItemReport.mrt</ReportFile>
-  <ReportGuid>ebb83001663c46aa89d8e70c37217c21</ReportGuid>
+  <ReportGuid>52e1d66c1d664ba6afc73c8b23378cd8</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

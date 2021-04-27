@@ -15,8 +15,8 @@
           <value>EmailID,System.String</value>
           <value>OrderNo,System.String</value>
           <value>PartyName,System.String</value>
-          <value>OrderDate,System.String</value>
-          <value>DueDate,System.String</value>
+          <value>OrderDate,System.Nullable`1[System.DateTime]</value>
+          <value>DueDate,System.Nullable`1[System.DateTime]</value>
           <value>Total,System.String</value>
           <value>Received,System.String</value>
           <value>RemainingBal,System.String</value>
@@ -56,7 +56,7 @@
         </Text83>
         <ReportTitleBand1 Ref="5" type="ReportTitleBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,0.4,19,4</ClientRectangle>
+          <ClientRectangle>0,0.4,19,4.4</ClientRectangle>
           <Components isList="true" count="25">
             <Text6 Ref="6" type="Text" isKey="true">
               <Brush>Transparent</Brush>
@@ -176,7 +176,7 @@ No.</Text>
             <Text11 Ref="14" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>7.8,3.2,2.6,1.2</ClientRectangle>
+              <ClientRectangle>8.2,3.2,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>693b557c06e3421ab41e08a0793c6a01</Guid>
@@ -192,7 +192,7 @@ No.</Text>
             <Text7 Ref="15" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>1.8,3.2,3.6,1.2</ClientRectangle>
+              <ClientRectangle>1.8,3.2,4.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>8e1ef4d3237f4c608efe81b97965632a</Guid>
@@ -241,7 +241,7 @@ Bal</Text>
             <Text4 Ref="18" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>5.4,3.2,2.4,1.2</ClientRectangle>
+              <ClientRectangle>6,3.2,2.2,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,12,Bold</Font>
               <Guid>6ab130c1b2a847d8ac09f99983c4b19e</Guid>
@@ -406,12 +406,12 @@ Bal</Text>
         <DataBand1 Ref="33" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,5.2,19,0.4</ClientRectangle>
+          <ClientRectangle>0,5.6,19,0.4</ClientRectangle>
           <Components isList="true" count="10">
             <Text8 Ref="34" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>1.8,0,3.6,0.6</ClientRectangle>
+              <ClientRectangle>1.8,0,4.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>6d2a962461df4fd1b0ed531961c49e87</Guid>
@@ -462,7 +462,7 @@ Bal</Text>
             <Text21 Ref="37" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>5.4,0,2.4,0.6</ClientRectangle>
+              <ClientRectangle>6,0,2.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>a546e60718c94406ab489a0a7351510c</Guid>
@@ -474,13 +474,16 @@ Bal</Text>
               <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{SaleOrder.OrderDate}</Text>
               <TextBrush>Black</TextBrush>
+              <TextFormat Ref="38" type="DateFormat" isKey="true">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text21>
-            <Text22 Ref="38" type="Text" isKey="true">
+            <Text22 Ref="39" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>7.8,0,2.6,0.6</ClientRectangle>
+              <ClientRectangle>8.2,0,2.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>c39d51bb0c514441841c00128bec3a4f</Guid>
@@ -492,10 +495,13 @@ Bal</Text>
               <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{SaleOrder.DueDate}</Text>
               <TextBrush>Black</TextBrush>
+              <TextFormat Ref="40" type="DateFormat" isKey="true">
+                <StringFormat>dd/MM/yyyy</StringFormat>
+              </TextFormat>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text22>
-            <Text23 Ref="39" type="Text" isKey="true">
+            <Text23 Ref="41" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.6,0,2.2,0.6</ClientRectangle>
@@ -511,7 +517,7 @@ Bal</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text23>
-            <Text24 Ref="40" type="Text" isKey="true">
+            <Text24 Ref="42" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>10.4,0,2,0.6</ClientRectangle>
@@ -527,7 +533,7 @@ Bal</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text24>
-            <Text18 Ref="41" type="Text" isKey="true">
+            <Text18 Ref="43" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>16.8,0,2.2,0.6</ClientRectangle>
@@ -545,7 +551,7 @@ Bal</Text>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text18>
-            <EndPointPrimitive1 Ref="42" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive1 Ref="44" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>6.4,0,0,0</ClientRectangle>
               <Guid>d63ddc75c7424c618af216d6db6e318f</Guid>
               <Name>EndPointPrimitive1</Name>
@@ -553,7 +559,7 @@ Bal</Text>
               <Parent isRef="33" />
               <ReferenceToGuid>de0f8a896c4b47d3b25631449e4bd398</ReferenceToGuid>
             </EndPointPrimitive1>
-            <EndPointPrimitive2 Ref="43" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+            <EndPointPrimitive2 Ref="45" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>13,0,0,0</ClientRectangle>
               <Guid>77188512ff81451aac550378912c7b78</Guid>
               <Name>EndPointPrimitive2</Name>
@@ -572,12 +578,12 @@ Bal</Text>
           <Parent isRef="3" />
           <Sort isList="true" count="0" />
         </DataBand1>
-        <FooterBand1 Ref="44" type="FooterBand" isKey="true">
+        <FooterBand1 Ref="46" type="FooterBand" isKey="true">
           <Border>Left;Black;1;Solid;False;4;Black</Border>
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,6.4,19,0.8</ClientRectangle>
+          <ClientRectangle>0,6.8,19,0.8</ClientRectangle>
           <Components isList="true" count="3">
-            <Text10 Ref="45" type="Text" isKey="true">
+            <Text10 Ref="47" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>14.6,0,2.2,0.8</ClientRectangle>
@@ -588,12 +594,12 @@ Bal</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text10</Name>
               <Page isRef="3" />
-              <Parent isRef="44" />
+              <Parent isRef="46" />
               <Text>Total</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text10>
-            <Text14 Ref="46" type="Text" isKey="true">
+            <Text14 Ref="48" type="Text" isKey="true">
               <Border>All;Black;1;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
               <ClientRectangle>16.8,0,2.2,0.8</ClientRectangle>
@@ -604,23 +610,23 @@ Bal</Text>
               <Margins>0,0,0,0</Margins>
               <Name>Text14</Name>
               <Page isRef="3" />
-              <Parent isRef="44" />
+              <Parent isRef="46" />
               <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{Sum(SaleOrder.Total)}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
               <VertAlignment>Center</VertAlignment>
             </Text14>
-            <HorizontalLinePrimitive4 Ref="47" type="HorizontalLinePrimitive" isKey="true">
+            <HorizontalLinePrimitive4 Ref="49" type="HorizontalLinePrimitive" isKey="true">
               <ClientRectangle>0,0.8,19,0.0254</ClientRectangle>
               <Color>Black</Color>
-              <EndCap Ref="48" type="Cap" isKey="true">
+              <EndCap Ref="50" type="Cap" isKey="true">
                 <Color>Black</Color>
               </EndCap>
               <Name>HorizontalLinePrimitive4</Name>
               <Page isRef="3" />
-              <Parent isRef="44" />
-              <StartCap Ref="49" type="Cap" isKey="true">
+              <Parent isRef="46" />
+              <StartCap Ref="51" type="Cap" isKey="true">
                 <Color>Black</Color>
               </StartCap>
             </HorizontalLinePrimitive4>
@@ -630,82 +636,82 @@ Bal</Text>
           <Page isRef="3" />
           <Parent isRef="3" />
         </FooterBand1>
-        <HorizontalLinePrimitive3 Ref="50" type="HorizontalLinePrimitive" isKey="true">
+        <HorizontalLinePrimitive3 Ref="52" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,27.8,19,0.0254</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="51" type="Cap" isKey="true">
+          <EndCap Ref="53" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Name>HorizontalLinePrimitive3</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="52" type="Cap" isKey="true">
+          <StartCap Ref="54" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </HorizontalLinePrimitive3>
-        <VerticalLinePrimitive1 Ref="53" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive1 Ref="55" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>19,0,0.0254,27.8</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="54" type="Cap" isKey="true">
+          <EndCap Ref="56" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>9697df11d91e49febbea753928f1d2d9</Guid>
           <Name>VerticalLinePrimitive1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="55" type="Cap" isKey="true">
+          <StartCap Ref="57" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive1>
-        <EndPointPrimitive4 Ref="56" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive4 Ref="58" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>19.03,27.8,0,0</ClientRectangle>
           <Name>EndPointPrimitive4</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>9697df11d91e49febbea753928f1d2d9</ReferenceToGuid>
         </EndPointPrimitive4>
-        <VerticalLinePrimitive2 Ref="57" type="VerticalLinePrimitive" isKey="true">
+        <VerticalLinePrimitive2 Ref="59" type="VerticalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,0.0254,27.8</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="58" type="Cap" isKey="true">
+          <EndCap Ref="60" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Guid>06ae2a1fe9a44527a43c1e0bf10efcd6</Guid>
           <Name>VerticalLinePrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="59" type="Cap" isKey="true">
+          <StartCap Ref="61" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </VerticalLinePrimitive2>
-        <EndPointPrimitive5 Ref="60" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
+        <EndPointPrimitive5 Ref="62" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
           <ClientRectangle>0.03,27.8,0,0</ClientRectangle>
           <Name>EndPointPrimitive5</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>06ae2a1fe9a44527a43c1e0bf10efcd6</ReferenceToGuid>
         </EndPointPrimitive5>
-        <HorizontalLinePrimitive1 Ref="61" type="HorizontalLinePrimitive" isKey="true">
+        <HorizontalLinePrimitive1 Ref="63" type="HorizontalLinePrimitive" isKey="true">
           <ClientRectangle>0,0,19,0.0254</ClientRectangle>
           <Color>Black</Color>
-          <EndCap Ref="62" type="Cap" isKey="true">
+          <EndCap Ref="64" type="Cap" isKey="true">
             <Color>Black</Color>
           </EndCap>
           <Name>HorizontalLinePrimitive1</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
-          <StartCap Ref="63" type="Cap" isKey="true">
+          <StartCap Ref="65" type="Cap" isKey="true">
             <Color>Black</Color>
           </StartCap>
         </HorizontalLinePrimitive1>
-        <StartPointPrimitive2 Ref="64" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive2 Ref="66" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>19,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive2</Name>
           <Page isRef="3" />
           <Parent isRef="3" />
           <ReferenceToGuid>9697df11d91e49febbea753928f1d2d9</ReferenceToGuid>
         </StartPointPrimitive2>
-        <StartPointPrimitive6 Ref="65" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
+        <StartPointPrimitive6 Ref="67" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
           <ClientRectangle>0,0,0,0</ClientRectangle>
           <Name>StartPointPrimitive6</Name>
           <Page isRef="3" />
@@ -720,13 +726,13 @@ Bal</Text>
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="66" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="68" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="67" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="69" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -738,10 +744,10 @@ Bal</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 4:50:54 PM</ReportChanged>
+  <ReportChanged>4/27/2021 4:21:47 PM</ReportChanged>
   <ReportCreated>3/23/2021 6:25:16 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\SaleOrderData.mrt</ReportFile>
-  <ReportGuid>982a551a852747c4987640c2291641e6</ReportGuid>
+  <ReportGuid>8c8f3a7b179b45698968d8b8b904ff41</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
