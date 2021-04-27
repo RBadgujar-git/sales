@@ -68,6 +68,7 @@ namespace sample
             con.Open();
             DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand("select  ItemName, BatchNo, SerialNo, Size, MFgdate, Expdate from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             con.Close();
@@ -132,21 +133,19 @@ namespace sample
 
         private void dtpToexp_ValueChanged(object sender, EventArgs e)
         {
+            try
             {
-                try
-                {
-                    string SelectQuery = string.Format("select ItemName,BatchNo,SerialNo,Size ,MFgdate,Expdate from tbl_ItemMaster  where Expdate between '" + dtpFromexp.Value.ToString() + "' and '" + dtpToexp.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "temp");
-                    dgvItemTracking.DataSource = ds;
-                    dgvItemTracking.DataMember = "temp";
-                    dgvItemTracking.AllowUserToAddRows = false;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Data not" + ex);
-                }
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where Expdate between '" + dtpFromexp.Value.ToString() + "' and '" + dtpToexp.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemTracking.DataSource = ds;
+                dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -228,7 +227,45 @@ namespace sample
 
         private void dtpToDate_ValueChanged(object sender, EventArgs e)
         {
+            try
+            {
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where MFgdate between '" + dtpfrom.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemTracking.DataSource = ds;
+                dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void chkShowOnly_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select  ItemName, BatchNo, SerialNo, Size, MFgdate, Expdate from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query,con);
+                da.Fill(ds, "temp");
+                dgvItemTracking.DataSource = ds;
+                dgvItemTracking.DataMember = "temp";
+
+                dgvItemTracking.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

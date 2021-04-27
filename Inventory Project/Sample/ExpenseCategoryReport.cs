@@ -36,22 +36,22 @@ namespace sample
 
         private void cmbExpensecategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select ExpenseCategory,Paid from tbl_Expenses where ExpenseCategory='{0}' and Company_ID='" + compid + "' and DeleteData='1'", cmbExpensecategory.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvExpensecategory.DataSource = ds;
-                dgvExpensecategory.DataMember = "temp";
+            //try
+            //{
+            //    string Query = string.Format("select ExpenseCategory,Paid from tbl_Expenses where ExpenseCategory='{0}' and Company_ID='" + compid + "' and DeleteData='1'", cmbExpensecategory.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvExpensecategory.DataSource = ds;
+            //    dgvExpensecategory.DataMember = "temp";
 
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
         private void bindbankdata()
         {
@@ -110,22 +110,22 @@ namespace sample
         }
         private void fetchCategory()
         {
-            if (cmbExpensecategory.Text != "System.Data.DataRowView") {
-                try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
-                        cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
-                    }
-                }
-                catch (Exception e1) {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //if (cmbExpensecategory.Text != "System.Data.DataRowView") {
+            //    try {
+            //        string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
+            //            cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
+            //        }
+            //    }
+            //    catch (Exception e1) {
+            //        MessageBox.Show(e1.Message);
+            //    }
+            //}
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -188,22 +188,22 @@ namespace sample
 
         private void dtptodate_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                DateTime date1 = Convert.ToDateTime(dtpFromdate.Text);
-                DateTime date2 = Convert.ToDateTime(dtptodate.Text);
-                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + date1.ToString("yyyy-MM-dd") + "' and '" + date2.ToString("yyyy-MM-dd") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                //string SelectQuery = string.Format("select CategoryName,Paid from tbl_Expenses  where Date between '" + dtpFromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvExpensecategory.DataSource = ds;
-                dgvExpensecategory.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
+            //try
+            //{
+            //    DateTime date1 = Convert.ToDateTime(dtpFromdate.Text);
+            //    DateTime date2 = Convert.ToDateTime(dtptodate.Text);
+            //    string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + date1.ToString("yyyy-MM-dd") + "' and '" + date2.ToString("yyyy-MM-dd") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+            //    //string SelectQuery = string.Format("select CategoryName,Paid from tbl_Expenses  where Date between '" + dtpFromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //    SDA.Fill(ds, "temp");
+            //    dgvExpensecategory.DataSource = ds;
+            //    dgvExpensecategory.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Data not" + ex);
+            //}
         }
 
         private void dgvExpensecategory_TabIndexChanged(object sender, EventArgs e)

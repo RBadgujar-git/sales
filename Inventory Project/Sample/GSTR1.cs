@@ -103,7 +103,59 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("(select InvoiceDate as Date,InvoiceID as InvoiceNo,PartyName,PaymentType,Total,Received,RemainingBal from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                //string SelectQuery = string.Format("(select InvoiceDate,InvoiceID as InvoiceNo,PartyName,PaymentType,Total,Received,RemainingBal from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                string SelectQuery = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+
+                // string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvsaleInvoice.DataSource = ds;
+                dgvsaleInvoice.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+
+            //if (con.State == ConnectionState.Closed)
+            //{
+            //    con.Open();
+            //}
+            //DataTable dt = new DataTable();
+            //SqlCommand cmd = new SqlCommand("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+            
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //da.Fill(dt);
+
+            ////dgvsaleInvoice.AutoGenerateColumns = false;
+            ////dgvsaleInvoice.ColumnCount = 8;
+            ////dgvsaleInvoice.Columns[0].HeaderText = "Date";
+            ////dgvsaleInvoice.Columns[0].DataPropertyName = "InvoiceDate";
+            ////dgvsaleInvoice.Columns[1].HeaderText = " Invoice No";
+            ////dgvsaleInvoice.Columns[1].DataPropertyName = "InvoiceID";
+            ////dgvsaleInvoice.Columns[2].HeaderText = "Party Name";
+            ////dgvsaleInvoice.Columns[2].DataPropertyName = "PartyName";
+            ////dgvsaleInvoice.Columns[3].HeaderText = " PaymentType";
+            ////dgvsaleInvoice.Columns[3].DataPropertyName = "PaymentType";
+            ////dgvsaleInvoice.Columns[4].HeaderText = "Total";
+            ////dgvsaleInvoice.Columns[4].DataPropertyName = "Total";
+            ////dgvsaleInvoice.Columns[5].HeaderText = " Received";
+            ////dgvsaleInvoice.Columns[5].DataPropertyName = "Received";
+            ////dgvsaleInvoice.Columns[6].HeaderText = "Remaining Bal";
+            ////dgvsaleInvoice.Columns[6].DataPropertyName = "RemainingBal";
+            ////dgvsaleInvoice.Columns[7].HeaderText = " Status";
+            ////dgvsaleInvoice.Columns[7].DataPropertyName = "Status";
+            ////dgvsaleInvoice.DataSource = dt;
+            ////dgvsaleInvoice.AllowUserToAddRows = false;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //string SelectQuery = string.Format("(select InvoiceDate,InvoiceID as InvoiceNo,PartyName,PaymentType,Total,Received,RemainingBal from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                string SelectQuery = string.Format("select * from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
 
                 // string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();

@@ -38,7 +38,7 @@ namespace sample
         {
                 fetchCompany();
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select  ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
+                SqlCommand cmd = new SqlCommand("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", con);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(cmd);
                 SDA.Fill(ds, "temp");
@@ -135,9 +135,12 @@ namespace sample
 
         public void companyinfo()
         {
+            // string Query = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where Company_ID='" + compid + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Company_ID='" + compid + "' and DeleteData='1'", cmbAlllFirms.Text);
 
-            //string Query = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where Company_ID='" + compid + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Company_ID='" + compid + "' and DeleteData='1'", cmbAllFirms.Text);
-            string Query = string.Format("select  ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + compid + "' and DeleteData='1'",cmbAllFirms);
+
+            string Query = string.Format("select ItemName,Qty,freeQty,ItemAmount from tbl_PurchaseOrderInner where Company_ID='" + compid + "' and DeleteData='1' union all select ItemName,Qty,freeQty,ItemAmount from tbl_SaleOrderInner where Company_ID='" + compid + "' and DeleteData='1'", cmbAllFirms.Text);
+          //  string Query = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where Company_ID='" + compid + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where Company_ID='" + compid + "' and DeleteData='1'", cmbAlllFirms.Text);
+
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(Query, con);
             da.Fill(ds, "temp");
@@ -171,6 +174,7 @@ namespace sample
                 companyinfo();
                // data();
             }
+
 
         }
     }

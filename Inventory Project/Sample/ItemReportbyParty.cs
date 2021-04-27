@@ -37,6 +37,7 @@ namespace sample
         {
             BindData();
             fetchCompany();
+            dgvitemReport.AllowUserToAddRows = false;
 
         }
         private void BindData()
@@ -82,20 +83,7 @@ namespace sample
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("(select a.TableName,a.PartyName,b.ItemName,b.Qty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where PartyName like '%{0}%' and b.Company_ID = '" + compid + "' and b.DeleteData = '1' and a.Company_ID = '" + compid + "' and a.DeleteData = '1') union(select a.TableName, a.PartyName, b.ItemName, b.Qty, b.ItemAmount from tbl_SaleInvoiceInner as b, tbl_saleinvoice as a where PartyName like '%{0}%' and b.Company_ID = '" + compid + "' and b.DeleteData = '1' and a.Company_ID = '" + compid + "' and a.DeleteData = '1')", guna2TextBox1.Text);
-                //string Query = string.Format("select ItemName from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvitemReport.DataSource = ds;
-                dgvitemReport.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
 
         private void cmbAllFirms_SelectedIndexChanged(object sender, EventArgs e)
@@ -175,6 +163,24 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("(select a.TableName,a.PartyName,b.ItemName,b.Qty,b.ItemAmount from tbl_PurchaseBillInner as b,tbl_PurchaseBill as a where PartyName like '%{0}%' and b.Company_ID = '" + NewCompany.company_id + "' and b.DeleteData = '1' and a.Company_ID = '" + NewCompany.company_id + "' and a.DeleteData = '1') union(select a.TableName, a.PartyName, b.ItemName, b.Qty, b.ItemAmount from tbl_SaleInvoiceInner as b, tbl_saleinvoice as a where PartyName like '%{0}%' and b.Company_ID = '" + NewCompany.company_id + "' and b.DeleteData = '1' and a.Company_ID = '" + NewCompany.company_id + "' and a.DeleteData = '1')", txtfilter.Text);
+                //string Query = string.Format("select ItemName from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", guna2TextBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvitemReport.DataSource = ds;
+                dgvitemReport.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

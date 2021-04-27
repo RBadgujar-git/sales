@@ -193,10 +193,10 @@
             this.guna2Button41.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button41.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button41.HoverState.Parent = this.guna2Button41;
-            this.guna2Button41.Location = new System.Drawing.Point(0, 1021);
+            this.guna2Button41.Location = new System.Drawing.Point(0, 1020);
             this.guna2Button41.Name = "guna2Button41";
             this.guna2Button41.ShadowDecoration.Parent = this.guna2Button41;
-            this.guna2Button41.Size = new System.Drawing.Size(193, 29);
+            this.guna2Button41.Size = new System.Drawing.Size(193, 36);
             this.guna2Button41.TabIndex = 32;
             this.guna2Button41.Text = "Other Income Item Report";
             this.guna2Button41.Click += new System.EventHandler(this.guna2Button41_Click);
@@ -418,10 +418,10 @@
             this.guna2Button16.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button16.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button16.HoverState.Parent = this.guna2Button16;
-            this.guna2Button16.Location = new System.Drawing.Point(2, 370);
+            this.guna2Button16.Location = new System.Drawing.Point(2, 363);
             this.guna2Button16.Name = "guna2Button16";
             this.guna2Button16.ShadowDecoration.Parent = this.guna2Button16;
-            this.guna2Button16.Size = new System.Drawing.Size(193, 30);
+            this.guna2Button16.Size = new System.Drawing.Size(193, 38);
             this.guna2Button16.TabIndex = 14;
             this.guna2Button16.Text = "Sale Purchase by Party Group";
             this.guna2Button16.Click += new System.EventHandler(this.guna2Button16_Click);
@@ -538,7 +538,7 @@
             this.guna2Button5.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button5.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2Button5.HoverState.Parent = this.guna2Button5;
-            this.guna2Button5.Location = new System.Drawing.Point(3, 104);
+            this.guna2Button5.Location = new System.Drawing.Point(3, 103);
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.ShadowDecoration.Parent = this.guna2Button5;
             this.guna2Button5.Size = new System.Drawing.Size(193, 32);

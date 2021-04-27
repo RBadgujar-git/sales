@@ -164,25 +164,65 @@ namespace sample
 
         private void dtpdateform_ValueChanged(object sender, EventArgs e)
         {
-            try
+            //try
+            //{
+            //    string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpdateform.Value.ToString() + "' and a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
+
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            //    SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+            //    dgvbankStatement.DataSource = ds;
+            //    dgvbankStatement.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Data not" + ex);
+            //}
+
+
+            if (cmbbankname.SelectedItem == "Bank Name")
             {
-                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where a.Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpdateform.Value.ToString() + "' and a.Company_ID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.DeleteData='1'");
-            
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
-                dgvbankStatement.DataSource = ds;
-                dgvbankStatement.DataMember = "temp";
+                bind();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Data not" + ex);
+
+                con.Open();
+                DataTable dt = new DataTable();
+                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where b.BankName='{0}' and  a.Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpdateform.Value.ToString() + "' and a.Company_ID='" + NewCompany.company_id + "'and b.Company_ID='" + NewCompany.company_id + "' And a.DeleteData='1' and b.DeleteData='1'", cmbbankname.Text);
+                //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvbankStatement.DataSource = dt;
+                con.Close();
             }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            if (cmbbankname.SelectedItem == "Bank Name")
+            {
+                bind();
+            }
+            else
+            {
+
+                con.Open();
+                DataTable dt = new DataTable();
+                string Query = String.Format("select a.Date,a.ToBank, a.Descripition,a.Amount,b.BankName,b.OpeningBal from tbl_BankToBankTransfer as a,tbl_BankAccount as b where b.BankName='{0}' and a.Company_ID='" + NewCompany.company_id + "'and b.Company_ID='" + NewCompany.company_id + "' And a.DeleteData='1' and b.DeleteData='1'", cmbbankname.Text);
+                //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
+                SqlCommand cmd = new SqlCommand(Query, con);
+                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
+                sqlSda.Fill(dt);
+                dgvbankStatement.DataSource = dt;
+                con.Close();
+            }
         }
     }
 }

@@ -106,7 +106,7 @@ namespace sample
 
         private void dtpToDate_ValueChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnminimize_Click(object sender, EventArgs e)
@@ -205,6 +205,33 @@ namespace sample
             }
             dr1.Close();
             con.Close();
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+           
+               
+            try
+            {
+                string Query = String.Format("select TableName as Type,PartyName,Discount as 'SaleDiscount/PurchaseDiscount' from tbl_SaleInvoice where PartyName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName as Type,PartyName,Discount as 'SaleDiscount/PurchaseDiscount' from tbl_PurchaseBill where PartyName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "temp");
+                dgvDiscountReport.DataSource = ds;
+                dgvDiscountReport.DataMember = "temp";
+                dgvDiscountReport.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+
+        }
+
+        private void txtDiscountAmountPurchase_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

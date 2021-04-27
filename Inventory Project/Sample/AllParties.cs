@@ -60,20 +60,24 @@ namespace sample
         }
         private void fetchGroupname()
         {
-            //if (cmballgroup.Text != "System.Data.DataRowView") {
-            //    try {
+            //if (cmballgroup.Text != "System.Data.DataRowView")
+            //{
+            //    try
+            //    {
             //        string SelectQuery = string.Format("select AddPartyGroup from tbl_PartyGroup group by AddPartyGroup");
             //        DataSet ds = new DataSet();
             //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
             //        SDA.Fill(ds, "Temp");
             //        DataTable DT = new DataTable();
             //        SDA.Fill(ds);
-            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++) {
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
             //            cmballgroup.Items.Add(ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString());
 
             //        }
             //    }
-            //    catch (Exception e1) {
+            //    catch (Exception e1)
+            //    {
             //        MessageBox.Show(e1.Message);
             //    }
             //}
@@ -81,7 +85,7 @@ namespace sample
 
         private void AllParties_Load(object sender, EventArgs e)
         {
-            dtpdate.Enabled = false;
+           
             binddata();
             fetchcustomername();
             fetchGroupname();
@@ -193,6 +197,7 @@ namespace sample
             if (chkdate.Checked == true)
             {
                 dtpdate.Enabled = true;
+              
             }
             else
             {
@@ -202,17 +207,22 @@ namespace sample
 
         private void dtpdate_ValueChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
             try
             {
-                con.Open();
-                DataTable dt = new DataTable();
-                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where InvoiceDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where OrderDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where BillDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where OrderDate='" + dtpdate.Value.ToString("MM/dd/yyyy") + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                SqlCommand cmd = new SqlCommand(Query, con);
-                SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
-                sqlSda.Fill(dt);
-                dgvAllparties.DataSource = dt;
-                dgvAllparties.AllowUserToAddRows = false;
+               
+                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}' and InvoiceDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}' and BillDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",cmballparties.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvAllparties.DataSource = ds;
+                dgvAllparties.DataMember = "temp";
             }
+            
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -221,6 +231,16 @@ namespace sample
             {
                 con.Close();
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            binddata();
+        }
+
+        private void txttotalRecieve_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

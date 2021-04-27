@@ -51,6 +51,7 @@
             this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOtherIncome)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +70,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 510);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(1017, 53);
+            this.guna2Panel1.Size = new System.Drawing.Size(1067, 53);
             this.guna2Panel1.TabIndex = 241;
             // 
             // txtTotalQty
@@ -89,7 +90,7 @@
             this.txtTotalQty.ForeColor = System.Drawing.Color.Black;
             this.txtTotalQty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalQty.HoverState.Parent = this.txtTotalQty;
-            this.txtTotalQty.Location = new System.Drawing.Point(554, 10);
+            this.txtTotalQty.Location = new System.Drawing.Point(604, 10);
             this.txtTotalQty.Name = "txtTotalQty";
             this.txtTotalQty.PasswordChar = '\0';
             this.txtTotalQty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -126,7 +127,7 @@
             this.txtfreeqty.ForeColor = System.Drawing.Color.Black;
             this.txtfreeqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfreeqty.HoverState.Parent = this.txtfreeqty;
-            this.txtfreeqty.Location = new System.Drawing.Point(111, 10);
+            this.txtfreeqty.Location = new System.Drawing.Point(161, 10);
             this.txtfreeqty.Name = "txtfreeqty";
             this.txtfreeqty.PasswordChar = '\0';
             this.txtfreeqty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -165,7 +166,7 @@
             this.txttotal.ForeColor = System.Drawing.Color.Black;
             this.txttotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotal.HoverState.Parent = this.txttotal;
-            this.txttotal.Location = new System.Drawing.Point(813, 10);
+            this.txttotal.Location = new System.Drawing.Point(863, 10);
             this.txttotal.Name = "txttotal";
             this.txttotal.PasswordChar = '\0';
             this.txttotal.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -202,7 +203,7 @@
             this.txtqty.ForeColor = System.Drawing.Color.Black;
             this.txtqty.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtqty.HoverState.Parent = this.txtqty;
-            this.txtqty.Location = new System.Drawing.Point(356, 10);
+            this.txtqty.Location = new System.Drawing.Point(406, 10);
             this.txtqty.Name = "txtqty";
             this.txtqty.PasswordChar = '\0';
             this.txtqty.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -256,11 +257,11 @@
             this.dgvOtherIncome.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvOtherIncome.EnableHeadersVisualStyles = false;
             this.dgvOtherIncome.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvOtherIncome.Location = new System.Drawing.Point(5, 69);
+            this.dgvOtherIncome.Location = new System.Drawing.Point(5, 89);
             this.dgvOtherIncome.Name = "dgvOtherIncome";
             this.dgvOtherIncome.RowHeadersVisible = false;
             this.dgvOtherIncome.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOtherIncome.Size = new System.Drawing.Size(1007, 424);
+            this.dgvOtherIncome.Size = new System.Drawing.Size(1059, 491);
             this.dgvOtherIncome.TabIndex = 240;
             this.dgvOtherIncome.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvOtherIncome.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -333,7 +334,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(981, 3);
+            this.btnCancel.Location = new System.Drawing.Point(1015, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 26);
             this.btnCancel.TabIndex = 234;
@@ -347,11 +348,12 @@
             this.btnImport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Location = new System.Drawing.Point(872, 34);
+            this.btnImport.Location = new System.Drawing.Point(757, 0);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 232;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // btnPrint
             // 
@@ -360,16 +362,16 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(916, 34);
+            this.btnPrint.Location = new System.Drawing.Point(1019, 35);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.Size = new System.Drawing.Size(22, 22);
             this.btnPrint.TabIndex = 233;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // txtfilter
             // 
-            this.txtfilter.BorderColor = System.Drawing.Color.DarkGray;
+            this.txtfilter.BorderColor = System.Drawing.Color.DimGray;
             this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtfilter.DefaultText = "";
             this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -386,19 +388,21 @@
             this.txtfilter.Location = new System.Drawing.Point(318, 25);
             this.txtfilter.Name = "txtfilter";
             this.txtfilter.PasswordChar = '\0';
-            this.txtfilter.PlaceholderText = "";
+            this.txtfilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtfilter.PlaceholderText = "Item Name";
             this.txtfilter.SelectedText = "";
             this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
-            this.txtfilter.Size = new System.Drawing.Size(255, 27);
+            this.txtfilter.Size = new System.Drawing.Size(173, 27);
             this.txtfilter.TabIndex = 243;
             this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(234, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 242;
             this.label3.Text = " Filter by :";
             // 
@@ -411,7 +415,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(949, 2);
+            this.btnminimize.Location = new System.Drawing.Point(785, -4);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 444;
@@ -419,11 +423,22 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(1011, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 16);
+            this.label6.TabIndex = 445;
+            this.label6.Text = "Print";
+            // 
             // OtherIncomeItemReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.label3);
@@ -436,7 +451,7 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OtherIncomeItemReport";
-            this.Size = new System.Drawing.Size(1017, 563);
+            this.Size = new System.Drawing.Size(1067, 563);
             this.Load += new System.EventHandler(this.OtherIncomeItemReport_Load);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
@@ -468,5 +483,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Label label6;
     }
 }

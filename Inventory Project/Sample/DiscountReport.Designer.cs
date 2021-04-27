@@ -28,14 +28,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DiscountReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnprint = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.cmballfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvDiscountReport = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -43,10 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtdiscountAmountSale = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
-            this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.btnminimize = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiscountReport)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,26 +96,6 @@
             this.btnimport.UseVisualStyleBackColor = false;
             this.btnimport.Visible = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(384, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 16);
-            this.label5.TabIndex = 142;
-            this.label5.Text = "To";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(187, 30);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
-            this.label6.TabIndex = 140;
-            this.label6.Text = "From";
-            this.label6.Visible = false;
-            // 
             // cmballfirms
             // 
             this.cmballfirms.BackColor = System.Drawing.Color.Transparent;
@@ -144,8 +122,8 @@
             // 
             // dgvDiscountReport
             // 
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.dgvDiscountReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvDiscountReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDiscountReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDiscountReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -153,30 +131,30 @@
             this.dgvDiscountReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDiscountReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDiscountReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDiscountReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiscountReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDiscountReport.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDiscountReport.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDiscountReport.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDiscountReport.EnableHeadersVisualStyles = false;
             this.dgvDiscountReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDiscountReport.Location = new System.Drawing.Point(3, 111);
+            this.dgvDiscountReport.Location = new System.Drawing.Point(3, 106);
             this.dgvDiscountReport.Name = "dgvDiscountReport";
             this.dgvDiscountReport.RowHeadersVisible = false;
             this.dgvDiscountReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDiscountReport.Size = new System.Drawing.Size(932, 421);
+            this.dgvDiscountReport.Size = new System.Drawing.Size(932, 426);
             this.dgvDiscountReport.TabIndex = 144;
             this.dgvDiscountReport.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvDiscountReport.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -217,6 +195,7 @@
             // txtDiscountAmountPurchase
             // 
             this.txtDiscountAmountPurchase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDiscountAmountPurchase.BorderColor = System.Drawing.Color.Gray;
             this.txtDiscountAmountPurchase.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDiscountAmountPurchase.DefaultText = "";
             this.txtDiscountAmountPurchase.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -230,16 +209,17 @@
             this.txtDiscountAmountPurchase.ForeColor = System.Drawing.Color.Black;
             this.txtDiscountAmountPurchase.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiscountAmountPurchase.HoverState.Parent = this.txtDiscountAmountPurchase;
-            this.txtDiscountAmountPurchase.Location = new System.Drawing.Point(753, 3);
+            this.txtDiscountAmountPurchase.Location = new System.Drawing.Point(615, 3);
             this.txtDiscountAmountPurchase.Name = "txtDiscountAmountPurchase";
             this.txtDiscountAmountPurchase.PasswordChar = '\0';
             this.txtDiscountAmountPurchase.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtDiscountAmountPurchase.PlaceholderText = "0";
             this.txtDiscountAmountPurchase.SelectedText = "";
             this.txtDiscountAmountPurchase.ShadowDecoration.Parent = this.txtDiscountAmountPurchase;
-            this.txtDiscountAmountPurchase.Size = new System.Drawing.Size(200, 36);
+            this.txtDiscountAmountPurchase.Size = new System.Drawing.Size(166, 36);
             this.txtDiscountAmountPurchase.TabIndex = 136;
             this.txtDiscountAmountPurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDiscountAmountPurchase.TextChanged += new System.EventHandler(this.txtDiscountAmountPurchase_TextChanged);
             // 
             // label2
             // 
@@ -253,6 +233,7 @@
             // 
             // txtdiscountAmountSale
             // 
+            this.txtdiscountAmountSale.BorderColor = System.Drawing.Color.Gray;
             this.txtdiscountAmountSale.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtdiscountAmountSale.DefaultText = "";
             this.txtdiscountAmountSale.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -273,7 +254,7 @@
             this.txtdiscountAmountSale.PlaceholderText = "0";
             this.txtdiscountAmountSale.SelectedText = "";
             this.txtdiscountAmountSale.ShadowDecoration.Parent = this.txtdiscountAmountSale;
-            this.txtdiscountAmountSale.Size = new System.Drawing.Size(200, 36);
+            this.txtdiscountAmountSale.Size = new System.Drawing.Size(157, 36);
             this.txtdiscountAmountSale.TabIndex = 134;
             this.txtdiscountAmountSale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -285,27 +266,6 @@
             this.label1.Size = new System.Drawing.Size(187, 16);
             this.label1.TabIndex = 133;
             this.label1.Text = "Discount Amount for Sale :";
-            // 
-            // dtpFromdate
-            // 
-            this.dtpFromdate.CustomFormat = "MM/dd/yyyy";
-            this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFromdate.Location = new System.Drawing.Point(233, 28);
-            this.dtpFromdate.Name = "dtpFromdate";
-            this.dtpFromdate.Size = new System.Drawing.Size(138, 23);
-            this.dtpFromdate.TabIndex = 146;
-            this.dtpFromdate.Visible = false;
-            // 
-            // dtpToDate
-            // 
-            this.dtpToDate.CustomFormat = "MM/dd/yyyy";
-            this.dtpToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpToDate.Location = new System.Drawing.Point(418, 29);
-            this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(140, 23);
-            this.dtpToDate.TabIndex = 147;
-            this.dtpToDate.Visible = false;
-            this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpToDate_ValueChanged);
             // 
             // btnminimize
             // 
@@ -333,20 +293,55 @@
             this.label3.TabIndex = 446;
             this.label3.Text = "Print";
             // 
+            // txtfilter
+            // 
+            this.txtfilter.BorderColor = System.Drawing.Color.Gray;
+            this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfilter.DefaultText = "";
+            this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.DisabledState.Parent = this.txtfilter;
+            this.txtfilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.FocusedState.Parent = this.txtfilter;
+            this.txtfilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.HoverState.Parent = this.txtfilter;
+            this.txtfilter.Location = new System.Drawing.Point(317, 28);
+            this.txtfilter.Name = "txtfilter";
+            this.txtfilter.PasswordChar = '\0';
+            this.txtfilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtfilter.PlaceholderText = "Party Name";
+            this.txtfilter.SelectedText = "";
+            this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
+            this.txtfilter.Size = new System.Drawing.Size(146, 27);
+            this.txtfilter.TabIndex = 447;
+            this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(236, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.TabIndex = 448;
+            this.label4.Text = "Filter By :";
+            // 
             // DiscountReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.dtpToDate);
-            this.Controls.Add(this.dtpFromdate);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgvDiscountReport);
             this.Controls.Add(this.cmballfirms);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnprint);
             this.Controls.Add(this.btnimport);
@@ -368,8 +363,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnprint;
         private System.Windows.Forms.Button btnimport;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox cmballfirms;
         private Guna.UI2.WinForms.Guna2DataGridView dgvDiscountReport;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -377,9 +370,9 @@
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2TextBox txtdiscountAmountSale;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpFromdate;
-        private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtfilter;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -60,6 +60,7 @@ namespace sample
                 con.Open();
                 DataTable dt = new DataTable();
                 string Query = String.Format("select TableName as Type,PartyName,TaxAmountShow as 'SaleTax/PurchaseTax' from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName as Type,PartyName,TaxShow as 'SaleTax/PurchaseTax' from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+               
                 //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
@@ -74,6 +75,7 @@ namespace sample
             {
                 con.Close();
             }
+            dgvTaxReport.AllowUserToAddRows = false;
         }
         public void totaltaxsale()
         {
@@ -210,6 +212,25 @@ namespace sample
             }
             dr1.Close();
             con.Close();
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = String.Format("select TableName as Type,PartyName,TaxAmountShow as 'SaleTax/PurchaseTax' from tbl_SaleInvoice where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union select TableName as Type,PartyName,TaxShow as 'SaleTax/PurchaseTax' from tbl_PurchaseBill where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",txtfilter.Text);
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "temp");
+                dgvTaxReport.DataSource = ds;
+                dgvTaxReport.DataMember = "temp";
+                dgvTaxReport.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }
