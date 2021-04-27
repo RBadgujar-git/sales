@@ -80,7 +80,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
+                cmd.CommandTimeout = 50;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
                 sda.Fill(dtable);
                 dgvComapnyMaster.DataSource = dtable;
                 dgvComapnyMaster.AllowUserToAddRows = false;
@@ -380,9 +382,10 @@ namespace sample
 
         private void CompanyMaste_Load(object sender, EventArgs e)
         {
-            txtcampanyName.Focus();
             fetchdetails();
-            hidedata();
+
+            txtcampanyName.Focus();
+            // hidedata();
         }
 
 
@@ -797,7 +800,9 @@ namespace sample
 
 
             SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
+            
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+
             DataSet ds = new DataSet();
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
