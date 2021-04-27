@@ -119,15 +119,15 @@ namespace sample
                 MessageBox.Show("Bussness Type Is Required ");
                 txtbusinesstype.Focus();
             }
-            else if (txtGSTNo.Text == "")
-            {
-                MessageBox.Show("GST NO. Is Required ");
-                txtGSTNo.Focus();
-            }
+            //else if (txtGSTNo.Text == "")
+            //{
+            //    MessageBox.Show("GST NO. Is Required ");
+            //    txtGSTNo.Focus();
+            //}
             else if (txtCity.Text == "")
             {
                 MessageBox.Show("City Is Required ");
-                txtGSTNo.Focus();
+                txtCity.Focus();
             }
             else if (ownerName.Text == "")
             {
@@ -139,21 +139,21 @@ namespace sample
                 MessageBox.Show(" Please Select State ");
                 //txtCity.Focus();
             }
-            else if (txtBankName.Text == "")
-            {
-                MessageBox.Show("Bank Name Is Required ");
-                //txtCity.Focus();
-            }
-            else if (txtAccountNo.Text == "")
-            {
-                MessageBox.Show("Account No Is Requried");
-                txtAccountNo.Focus();
-            }
-            else if (txtIFSCcode.Text == "")
-            {
-                MessageBox.Show("IFSC Code Is Required ");
-                txtIFSCcode.Focus();
-            }
+            //else if (txtBankName.Text == "")
+            //{
+            //    MessageBox.Show("Bank Name Is Required ");
+            //    //txtCity.Focus();
+            //}
+            //else if (txtAccountNo.Text == "")
+            //{
+            //    MessageBox.Show("Account No Is Requried");
+            //    txtAccountNo.Focus();
+            //}
+            //else if (txtIFSCcode.Text == "")
+            //{
+            //    MessageBox.Show("IFSC Code Is Required ");
+            //    txtIFSCcode.Focus();
+            //}
 
             else
             {
