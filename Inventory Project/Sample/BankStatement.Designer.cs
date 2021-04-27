@@ -45,6 +45,7 @@
             this.btnimport = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.stiReport1 = new Stimulsoft.Report.StiReport();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbankStatement)).BeginInit();
             this.SuspendLayout();
@@ -291,6 +292,26 @@
             this.label2.Text = "Print";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // stiReport1
+            // 
+            this.stiReport1.EngineVersion = Stimulsoft.Report.Engine.StiEngineVersion.EngineV2;
+            this.stiReport1.ReferencedAssemblies = new string[] {
+        "System.Dll",
+        "System.Drawing.Dll",
+        "System.Windows.Forms.Dll",
+        "System.Data.Dll",
+        "System.Xml.Dll",
+        "Stimulsoft.Controls.Dll",
+        "Stimulsoft.Base.Dll",
+        "Stimulsoft.Report.Dll"};
+            this.stiReport1.ReportAlias = "Report";
+            this.stiReport1.ReportGuid = "eb2a153a1b64456c974c429eb03dfe90";
+            this.stiReport1.ReportName = "Report";
+            this.stiReport1.ReportSource = null;
+            this.stiReport1.ReportUnit = Stimulsoft.Report.StiReportUnitType.Centimeters;
+            this.stiReport1.ScriptLanguage = Stimulsoft.Report.StiReportLanguageType.CSharp;
+            this.stiReport1.UseProgressInThread = false;
+            // 
             // BankStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -337,5 +358,6 @@
         private System.Windows.Forms.DateTimePicker dtpdateform;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Label label2;
+        private Stimulsoft.Report.StiReport stiReport1;
     }
 }

@@ -140,7 +140,7 @@ namespace sample
                     SDA.Fill(ds);
 
                     StiReport report = new StiReport();
-                    report.Load(@"BankStatementReport.mrt");
+                    report.Load(@"BankStatementData.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
