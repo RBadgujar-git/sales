@@ -58,5 +58,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void cmbPartyName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashFlowReport));
             this.cmballfirm = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -81,11 +81,13 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 120);
+            this.label13.Location = new System.Drawing.Point(252, 86);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(271, 16);
             this.label13.TabIndex = 59;
             this.label13.Text = "Unused Payment and Open Cr Note :";
+            this.label13.Visible = false;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // txtcrnote
             // 
@@ -103,7 +105,7 @@
             this.txtcrnote.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtcrnote.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtcrnote.HoverState.Parent = this.txtcrnote;
-            this.txtcrnote.Location = new System.Drawing.Point(290, 115);
+            this.txtcrnote.Location = new System.Drawing.Point(526, 81);
             this.txtcrnote.Name = "txtcrnote";
             this.txtcrnote.PasswordChar = '\0';
             this.txtcrnote.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -113,6 +115,8 @@
             this.txtcrnote.Size = new System.Drawing.Size(91, 28);
             this.txtcrnote.TabIndex = 65;
             this.txtcrnote.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtcrnote.Visible = false;
+            this.txtcrnote.TextChanged += new System.EventHandler(this.txtcrnote_TextChanged);
             // 
             // chkamounttransaction
             // 
@@ -131,40 +135,42 @@
             this.chkamounttransaction.UncheckedState.BorderRadius = 0;
             this.chkamounttransaction.UncheckedState.BorderThickness = 0;
             this.chkamounttransaction.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkamounttransaction.Visible = false;
+            this.chkamounttransaction.CheckedChanged += new System.EventHandler(this.chkamounttransaction_CheckedChanged);
             // 
             // dgvCashflow
             // 
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dgvCashflow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvCashflow.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCashflow.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCashflow.BackgroundColor = System.Drawing.Color.White;
             this.dgvCashflow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCashflow.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvCashflow.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCashflow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCashflow.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCashflow.ColumnHeadersHeight = 34;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCashflow.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCashflow.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCashflow.EnableHeadersVisualStyles = false;
             this.dgvCashflow.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCashflow.Location = new System.Drawing.Point(4, 162);
+            this.dgvCashflow.Location = new System.Drawing.Point(4, 131);
             this.dgvCashflow.Name = "dgvCashflow";
             this.dgvCashflow.RowHeadersVisible = false;
             this.dgvCashflow.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCashflow.Size = new System.Drawing.Size(968, 399);
+            this.dgvCashflow.Size = new System.Drawing.Size(1004, 430);
             this.dgvCashflow.TabIndex = 71;
             this.dgvCashflow.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvCashflow.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -201,7 +207,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 482);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
-            this.guna2Panel1.Size = new System.Drawing.Size(977, 58);
+            this.guna2Panel1.Size = new System.Drawing.Size(1011, 58);
             this.guna2Panel1.TabIndex = 72;
             // 
             // txtclosing
@@ -219,7 +225,7 @@
             this.txtclosing.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtclosing.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtclosing.HoverState.Parent = this.txtclosing;
-            this.txtclosing.Location = new System.Drawing.Point(816, 11);
+            this.txtclosing.Location = new System.Drawing.Point(840, 11);
             this.txtclosing.Name = "txtclosing";
             this.txtclosing.PasswordChar = '\0';
             this.txtclosing.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -271,7 +277,7 @@
             this.txtTotalCashout.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTotalCashout.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTotalCashout.HoverState.Parent = this.txtTotalCashout;
-            this.txtTotalCashout.Location = new System.Drawing.Point(507, 11);
+            this.txtTotalCashout.Location = new System.Drawing.Point(534, 11);
             this.txtTotalCashout.Name = "txtTotalCashout";
             this.txtTotalCashout.PasswordChar = '\0';
             this.txtTotalCashout.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -286,7 +292,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(653, 18);
+            this.label3.Location = new System.Drawing.Point(677, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 16);
             this.label3.TabIndex = 2;
@@ -297,7 +303,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(326, 21);
+            this.label2.Location = new System.Drawing.Point(353, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(187, 16);
             this.label2.TabIndex = 1;
@@ -333,7 +339,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(897, 12);
+            this.btnCancel.Location = new System.Drawing.Point(939, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 26);
             this.btnCancel.TabIndex = 69;
@@ -347,7 +353,7 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(896, 49);
+            this.btnPrint.Location = new System.Drawing.Point(938, 49);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 68;
@@ -372,7 +378,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 88);
+            this.label4.Location = new System.Drawing.Point(98, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 74;
@@ -383,7 +389,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(888, 81);
+            this.label5.Location = new System.Drawing.Point(930, 81);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 16);
             this.label5.TabIndex = 75;
@@ -409,7 +415,7 @@
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CashFlowReport";
-            this.Size = new System.Drawing.Size(977, 540);
+            this.Size = new System.Drawing.Size(1011, 540);
             this.Load += new System.EventHandler(this.CashFlowReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCashflow)).EndInit();
             this.guna2Panel1.ResumeLayout(false);

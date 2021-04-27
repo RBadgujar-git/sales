@@ -288,22 +288,7 @@ namespace sample
 
 
 
-            if (txtpartyfilter.Text == "")
-            {
-                binddata();
-            }
-            else
-            {
-                //string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and  DeleteData='1' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and  TableName like '%{0}%' and PaymentType='Cheque' and DeleteData = '1')", textBox1.Text);
-                string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1')union all (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,BillDate  as InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,OrderDate As InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,OrderDate as InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1')", txtpartyfilter.Text);
-
-                //  string Query = string.Format("select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvalltransactions.DataSource = ds;
-                dgvalltransactions.DataMember = "temp";
-            }
+           
         }
 
         private void dtpToDate_ValueChanged(object sender, EventArgs e)
@@ -328,6 +313,26 @@ namespace sample
         private void label13_Click(object sender, EventArgs e)
         {
             binddata();
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+            if (txtpartyfilter.Text == "")
+            {
+                binddata();
+            }
+            else
+            {
+                //string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and  DeleteData='1' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and  TableName like '%{0}%' and PaymentType='Cheque' and DeleteData = '1')", textBox1.Text);
+                string Query = string.Format("(select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1')union all (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_DeliveryChallan where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,BillDate  as InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,OrderDate As InvoiceDate,Total,Paid,RemainingBal,Status from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1') union all (select TableName,PartyName,OrderDate as InvoiceDate,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1')", txtpartyfilter.Text);
+
+                //  string Query = string.Format("select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvalltransactions.DataSource = ds;
+                dgvalltransactions.DataMember = "temp";
+            }
         }
     }
 }

@@ -165,6 +165,7 @@
             this.cmbPartyName.Size = new System.Drawing.Size(140, 36);
             this.cmbPartyName.StartIndex = 0;
             this.cmbPartyName.TabIndex = 80;
+            this.cmbPartyName.SelectedIndexChanged += new System.EventHandler(this.cmbPartyName_SelectedIndexChanged);
             // 
             // label13
             // 

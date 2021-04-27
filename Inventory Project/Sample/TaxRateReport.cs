@@ -65,6 +65,7 @@ namespace sample
                 con.Open();
                 DataTable dt = new DataTable();
                 string Query = String.Format("Select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+               
                 //union all select a.Company_ID,a.EntryType,a.Amount,a.Date,a.Description,b.BankName,b.OpeningBal  from tbl_BankAdjustment as a,tbl_BankAccount as b where b.BankName='{0}' AND a.Company_ID='" + NewCompany.company_id + "'", cmbbankname.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
                 SqlDataAdapter sqlSda = new SqlDataAdapter(cmd);
@@ -213,19 +214,19 @@ namespace sample
 
         private void dtpToDate_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                string SelectQuery = string.Format("select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount  from tbl_ItemMaster where Date between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvTaxRate.DataSource = ds;
-                dgvTaxRate.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
+            //try
+            //{
+            //    string SelectQuery = string.Format("select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount  from tbl_ItemMaster where Date between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //    SDA.Fill(ds, "temp");
+            //    dgvTaxRate.DataSource = ds;
+            //    dgvTaxRate.DataMember = "temp";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Data not" + ex);
+            //}
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -256,6 +257,30 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+        }
+
+        private void txtfilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtfilter_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = String.Format("Select ItemName,TaxForSale,SaleTaxAmount,TaxForPurchase,PurchaseTaxAmount from tbl_ItemMaster where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",txtfilter.Text);
+
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "temp");
+                dgvTaxRate.DataSource = ds;
+                dgvTaxRate.DataMember = "temp";
+                dgvTaxRate.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
             }
         }
     }

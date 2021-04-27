@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpenseCategoryReport));
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -41,14 +41,10 @@
             this.cmbAllfirms = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnimport = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.cmbExpensecategory = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.dtpFromdate = new System.Windows.Forms.DateTimePicker();
-            this.dtptodate = new System.Windows.Forms.DateTimePicker();
             this.btnminimize = new System.Windows.Forms.Button();
             this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExpensecategory)).BeginInit();
             this.SuspendLayout();
@@ -56,9 +52,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(101, 94);
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(256, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 166;
             this.label3.Text = "Filter By :";
             // 
@@ -112,8 +109,8 @@
             // 
             // dgvExpensecategory
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dgvExpensecategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvExpensecategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvExpensecategory.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvExpensecategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -121,33 +118,33 @@
             this.dgvExpensecategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvExpensecategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvExpensecategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExpensecategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExpensecategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvExpensecategory.ColumnHeadersHeight = 18;
             this.dgvExpensecategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvExpensecategory.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvExpensecategory.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvExpensecategory.EnableHeadersVisualStyles = false;
             this.dgvExpensecategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvExpensecategory.Location = new System.Drawing.Point(5, 133);
+            this.dgvExpensecategory.Location = new System.Drawing.Point(5, 106);
             this.dgvExpensecategory.Name = "dgvExpensecategory";
             this.dgvExpensecategory.RowHeadersVisible = false;
             this.dgvExpensecategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExpensecategory.Size = new System.Drawing.Size(996, 373);
+            this.dgvExpensecategory.Size = new System.Drawing.Size(996, 400);
             this.dgvExpensecategory.TabIndex = 176;
             this.dgvExpensecategory.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvExpensecategory.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -186,6 +183,7 @@
             // cmbAllfirms
             // 
             this.cmbAllfirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllfirms.BorderColor = System.Drawing.Color.Gray;
             this.cmbAllfirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbAllfirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAllfirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -216,7 +214,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(973, 0);
+            this.btnCancel.Location = new System.Drawing.Point(949, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 26);
             this.btnCancel.TabIndex = 170;
@@ -236,26 +234,7 @@
             this.btnimport.Size = new System.Drawing.Size(22, 23);
             this.btnimport.TabIndex = 168;
             this.btnimport.UseVisualStyleBackColor = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(402, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 16);
-            this.label5.TabIndex = 174;
-            this.label5.Text = "To";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(202, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
-            this.label6.TabIndex = 172;
-            this.label6.Text = "From";
-            this.label6.Visible = false;
+            this.btnimport.Visible = false;
             // 
             // btnPrint
             // 
@@ -265,55 +244,12 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(908, 31);
+            this.btnPrint.Location = new System.Drawing.Point(867, 40);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(24, 23);
+            this.btnPrint.Size = new System.Drawing.Size(23, 23);
             this.btnPrint.TabIndex = 169;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
-            // cmbExpensecategory
-            // 
-            this.cmbExpensecategory.BackColor = System.Drawing.Color.Transparent;
-            this.cmbExpensecategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbExpensecategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbExpensecategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbExpensecategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbExpensecategory.FocusedState.Parent = this.cmbExpensecategory;
-            this.cmbExpensecategory.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbExpensecategory.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.cmbExpensecategory.HoverState.Parent = this.cmbExpensecategory;
-            this.cmbExpensecategory.ItemHeight = 30;
-            this.cmbExpensecategory.ItemsAppearance.Parent = this.cmbExpensecategory;
-            this.cmbExpensecategory.Location = new System.Drawing.Point(535, 70);
-            this.cmbExpensecategory.Name = "cmbExpensecategory";
-            this.cmbExpensecategory.ShadowDecoration.Parent = this.cmbExpensecategory;
-            this.cmbExpensecategory.Size = new System.Drawing.Size(236, 36);
-            this.cmbExpensecategory.TabIndex = 178;
-            this.cmbExpensecategory.Visible = false;
-            this.cmbExpensecategory.SelectedIndexChanged += new System.EventHandler(this.cmbExpensecategory_SelectedIndexChanged);
-            // 
-            // dtpFromdate
-            // 
-            this.dtpFromdate.CustomFormat = "MM/dd/yyyy";
-            this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFromdate.Location = new System.Drawing.Point(248, 22);
-            this.dtpFromdate.Name = "dtpFromdate";
-            this.dtpFromdate.Size = new System.Drawing.Size(145, 23);
-            this.dtpFromdate.TabIndex = 179;
-            this.dtpFromdate.Visible = false;
-            // 
-            // dtptodate
-            // 
-            this.dtptodate.CustomFormat = "MM/dd/yyyy";
-            this.dtptodate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtptodate.Location = new System.Drawing.Point(434, 22);
-            this.dtptodate.Name = "dtptodate";
-            this.dtptodate.Size = new System.Drawing.Size(150, 23);
-            this.dtptodate.TabIndex = 180;
-            this.dtptodate.Visible = false;
-            this.dtptodate.ValueChanged += new System.EventHandler(this.dtptodate_ValueChanged);
-            this.dtptodate.Enter += new System.EventHandler(this.dtptodate_Enter);
             // 
             // btnminimize
             // 
@@ -324,7 +260,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(941, 0);
+            this.btnminimize.Location = new System.Drawing.Point(860, 3);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 440;
@@ -348,34 +284,41 @@
             this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtfilter.HoverState.Parent = this.txtfilter;
-            this.txtfilter.Location = new System.Drawing.Point(180, 91);
+            this.txtfilter.Location = new System.Drawing.Point(341, 23);
             this.txtfilter.Name = "txtfilter";
             this.txtfilter.PasswordChar = '\0';
-            this.txtfilter.PlaceholderText = "";
+            this.txtfilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtfilter.PlaceholderText = "Expense Category";
             this.txtfilter.SelectedText = "";
             this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
-            this.txtfilter.Size = new System.Drawing.Size(283, 27);
+            this.txtfilter.Size = new System.Drawing.Size(182, 27);
             this.txtfilter.TabIndex = 441;
             this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1002, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 442;
+            this.label1.Text = "Print";
             // 
             // ExpenseCategoryReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.dtptodate);
-            this.Controls.Add(this.dtpFromdate);
-            this.Controls.Add(this.cmbExpensecategory);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgvExpensecategory);
             this.Controls.Add(this.cmbAllfirms);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnimport);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnPrint);
             this.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -399,15 +342,11 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbAllfirms;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnimport;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private Guna.UI2.WinForms.Guna2ComboBox cmbExpensecategory;
-        private System.Windows.Forms.DateTimePicker dtpFromdate;
-        private System.Windows.Forms.DateTimePicker dtptodate;
         private System.Windows.Forms.Button btnminimize;
         private Guna.UI2.WinForms.Guna2TextBox txtfilter;
+        private System.Windows.Forms.Label label1;
     }
 }

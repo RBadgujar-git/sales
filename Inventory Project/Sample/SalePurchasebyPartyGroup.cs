@@ -156,9 +156,11 @@ namespace sample
                     SDA.Fill(ds, "Temp");
                     DataTable DT = new DataTable();
                     SDA.Fill(ds);
+                   // cmbGroup.Items.Add("Party Group".ToString());
                     for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                     {
                         cmbGroup.Items.Add(ds.Tables["Temp"].Rows[i]["AddPartyGroup"].ToString());
+                        
                     }
                 }
                 catch (Exception ex)

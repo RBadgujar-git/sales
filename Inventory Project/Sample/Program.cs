@@ -21,7 +21,7 @@ namespace sample
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString); 
+            SqlConnection con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("Select count(*)  from PasswordCheek ", con);
            int  password = Convert.ToInt32(cmd.ExecuteScalar());          

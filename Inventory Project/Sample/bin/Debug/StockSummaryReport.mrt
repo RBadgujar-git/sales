@@ -83,7 +83,7 @@
             </Image1>
             <Text2 Ref="8" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.4,1,7.4,0.6</ClientRectangle>
+              <ClientRectangle>4.2,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>efbd258c60ec49e5a4110fa650b89ac0</Guid>
@@ -96,7 +96,7 @@
             </Text2>
             <Text3 Ref="9" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.4,1.6,7.4,0.6</ClientRectangle>
+              <ClientRectangle>4.2,1.6,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,9,Bold</Font>
               <Guid>67e21fbb9b6741d7815529ef61eaa2a9</Guid>
@@ -234,7 +234,7 @@
             </Text30>
             <Text77 Ref="18" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.4,0,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.4,0,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>ed27192324444d64a3ccdab11684ca3b</Guid>
@@ -248,7 +248,7 @@
             </Text77>
             <Text80 Ref="19" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.6,1,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.6,1,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>8071a61bb96b44c5beb191428c36bef2</Guid>
@@ -261,7 +261,7 @@
             </Text80>
             <Text81 Ref="20" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.6,1.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.6,1.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>6552574a6ae64e5fa1466109030fdf36</Guid>
@@ -274,7 +274,7 @@
             </Text81>
             <Text90 Ref="21" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.4,0.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.4,0.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>1336a96de479487d91167776274a7130</Guid>
@@ -578,10 +578,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/24/2021 4:24:09 PM</ReportChanged>
+  <ReportChanged>4/27/2021 1:29:40 PM</ReportChanged>
   <ReportCreated>3/19/2021 5:19:05 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\StockSummaryReport.mrt</ReportFile>
-  <ReportGuid>3b279091368f45d2ac0e91722ab78d52</ReportGuid>
+  <ReportGuid>70e127428de144958ca288f36247f259</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

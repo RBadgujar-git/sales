@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalePurchaseOrderItemReport));
             this.dgvSalepurchhase = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -39,42 +39,43 @@
             this.txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnminimize = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalepurchhase)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvSalepurchhase
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvSalepurchhase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvSalepurchhase.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSalepurchhase.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSalepurchhase.BackgroundColor = System.Drawing.Color.White;
             this.dgvSalepurchhase.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSalepurchhase.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSalepurchhase.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSalepurchhase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSalepurchhase.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSalepurchhase.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSalepurchhase.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSalepurchhase.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSalepurchhase.EnableHeadersVisualStyles = false;
             this.dgvSalepurchhase.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvSalepurchhase.Location = new System.Drawing.Point(7, 130);
+            this.dgvSalepurchhase.Location = new System.Drawing.Point(7, 96);
             this.dgvSalepurchhase.Name = "dgvSalepurchhase";
             this.dgvSalepurchhase.RowHeadersVisible = false;
             this.dgvSalepurchhase.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSalepurchhase.Size = new System.Drawing.Size(996, 418);
+            this.dgvSalepurchhase.Size = new System.Drawing.Size(996, 454);
             this.dgvSalepurchhase.TabIndex = 200;
             this.dgvSalepurchhase.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvSalepurchhase.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -103,6 +104,7 @@
             // cmbAllFirms
             // 
             this.cmbAllFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmbAllFirms.BorderColor = System.Drawing.Color.Gray;
             this.cmbAllFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmbAllFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbAllFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -132,7 +134,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(975, 3);
+            this.btnCancel.Location = new System.Drawing.Point(946, 5);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(28, 26);
             this.btnCancel.TabIndex = 194;
@@ -151,6 +153,7 @@
             this.btnImport.Size = new System.Drawing.Size(22, 23);
             this.btnImport.TabIndex = 192;
             this.btnImport.UseVisualStyleBackColor = false;
+            this.btnImport.Visible = false;
             // 
             // btPrint
             // 
@@ -159,15 +162,16 @@
             this.btPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btPrint.FlatAppearance.BorderSize = 0;
             this.btPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPrint.Location = new System.Drawing.Point(919, 34);
+            this.btPrint.Location = new System.Drawing.Point(948, 39);
             this.btPrint.Name = "btPrint";
-            this.btPrint.Size = new System.Drawing.Size(24, 23);
+            this.btPrint.Size = new System.Drawing.Size(23, 23);
             this.btPrint.TabIndex = 193;
             this.btPrint.UseVisualStyleBackColor = false;
             this.btPrint.Click += new System.EventHandler(this.btPrint_Click);
             // 
             // txtFilterBy
             // 
+            this.txtFilterBy.BorderColor = System.Drawing.Color.Gray;
             this.txtFilterBy.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFilterBy.DefaultText = "";
             this.txtFilterBy.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -181,22 +185,24 @@
             this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
-            this.txtFilterBy.Location = new System.Drawing.Point(106, 81);
+            this.txtFilterBy.Location = new System.Drawing.Point(323, 26);
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.PasswordChar = '\0';
-            this.txtFilterBy.PlaceholderText = "";
+            this.txtFilterBy.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtFilterBy.PlaceholderText = "Item Name";
             this.txtFilterBy.SelectedText = "";
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
-            this.txtFilterBy.Size = new System.Drawing.Size(328, 32);
+            this.txtFilterBy.Size = new System.Drawing.Size(188, 32);
             this.txtFilterBy.TabIndex = 207;
             this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 86);
+            this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(239, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(81, 16);
             this.label3.TabIndex = 206;
             this.label3.Text = " Filter by :";
             // 
@@ -209,7 +215,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(943, 3);
+            this.btnminimize.Location = new System.Drawing.Point(887, 3);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 453;
@@ -217,11 +223,22 @@
             this.btnminimize.Visible = false;
             this.btnminimize.Click += new System.EventHandler(this.btnminimize_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(939, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 16);
+            this.label1.TabIndex = 454;
+            this.label1.Text = "Print";
+            // 
             // SalePurchaseOrderItemReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.txtFilterBy);
             this.Controls.Add(this.label3);
@@ -250,5 +267,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label1;
     }
 }

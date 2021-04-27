@@ -85,25 +85,25 @@ namespace sample
         }
         private void fetchexpenses()
         {
-            if (cmbexpenses.Text != "System.Data.DataRowView") {
-                try {
-                    string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbexpenses.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
+            //if (cmbexpenses.Text != "System.Data.DataRowView") {
+            //    try {
+            //        string SelectQuery = string.Format("select CategoryName from tbl_ExpenseCategory where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by CategoryName");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
+            //            cmbexpenses.Items.Add(ds.Tables["Temp"].Rows[i]["CategoryName"].ToString());
 
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //        }
+            //    }
+            //    catch (Exception e1)
+            //    {
+            //        MessageBox.Show(e1.Message);
+            //    }
+           // }
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -113,30 +113,30 @@ namespace sample
 
         private void cmbexpenses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                //string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
-                string Query = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where ExpenseCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvexpenses.DataSource = ds;
-                dgvexpenses.DataMember = "temp";
+            //try
+            //{
+            //    //string Query = string.Format("select CategoryName from tbl_ExpenseCategory where CategoryName='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
+            //    string Query = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where ExpenseCategory='{0}' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmbexpenses.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvexpenses.DataSource = ds;
+            //    dgvexpenses.DataMember = "temp";
 
 
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void dtpTodate_ValueChanged(object sender, EventArgs e)
         {
             try
             {
-                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID = '" + compid + "' and DeleteData = '1'", txtfilter.Text);
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'", txtfilter.Text);
                 //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -264,7 +264,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where ExpenseCategory like '%{0}%' and Company_ID = '" + compid + "' and DeleteData = '1'", txtfilter.Text);
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where ExpenseCategory like '%{0}%' and DeleteData = '1' and Company_ID = '" + NewCompany.company_id + "'", txtfilter.Text);
                 //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -280,6 +280,25 @@ namespace sample
             finally
             {
                 Data();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string SelectQuery = string.Format("select * from tbl_Expenses where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvexpenses.DataSource = ds;
+                dgvexpenses.DataMember = "temp";
+                dgvexpenses.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
             }
         }
     }

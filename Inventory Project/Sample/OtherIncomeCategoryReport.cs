@@ -68,26 +68,26 @@ namespace sample
         }
         private void fetchCategory()
         {
-            if (cmbExpensecategory.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by OtherIncome ");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //if (cmbExpensecategory.Text != "System.Data.DataRowView")
+            //{
+            //    try
+            //    {
+            //        string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where  Company_ID='" + NewCompany.company_id + "' and DeleteData='1' group by OtherIncome ");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
+            //            cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString());
+            //        }
+            //    }
+            //    catch (Exception e1)
+            //    {
+            //        MessageBox.Show(e1.Message);
+            //    }
+            //}
         }
        
         private void fetchCompany()
@@ -138,20 +138,20 @@ namespace sample
 
         private void cmbExpensecategory_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select IncomeCategory,Received  from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + compid + "' and DeleteData='1'", cmbExpensecategory.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvincomeCategory.DataSource = ds;
-                dgvincomeCategory.DataMember = "temp";
-                dgvincomeCategory.AllowUserToAddRows = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    string Query = string.Format("select IncomeCategory,Received  from tbl_OtherIncome where IncomeCategory='{0}' and Company_ID='" + compid + "' and DeleteData='1'", cmbExpensecategory.Text);
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter da = new SqlDataAdapter(Query, con);
+            //    da.Fill(ds, "temp");
+            //    dgvincomeCategory.DataSource = ds;
+            //    dgvincomeCategory.DataMember = "temp";
+            //    dgvincomeCategory.AllowUserToAddRows = false;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
         }
 
@@ -211,27 +211,27 @@ namespace sample
         }
         private void fetch()
         {
-            if (cmbExpensecategory.Text != "System.Data.DataRowView")
-            {
-                try
-                {
-                    cmbExpensecategory.Items.Clear();
-                    string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where  Company_ID='" + compid + "' and DeleteData='1' group by OtherIncome ");
-                    DataSet ds = new DataSet();
-                    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                    SDA.Fill(ds, "Temp");
-                    DataTable DT = new DataTable();
-                    SDA.Fill(ds);
-                    for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
-                    {
-                        cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString());
-                    }
-                }
-                catch (Exception e1)
-                {
-                    MessageBox.Show(e1.Message);
-                }
-            }
+            //if (cmbExpensecategory.Text != "System.Data.DataRowView")
+            //{
+            //    try
+            //    {
+            //        cmbExpensecategory.Items.Clear();
+            //        string SelectQuery = string.Format("select OtherIncome from tbl_otherIncomeCaategory where  Company_ID='" + compid + "' and DeleteData='1' group by OtherIncome ");
+            //        DataSet ds = new DataSet();
+            //        SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //        SDA.Fill(ds, "Temp");
+            //        DataTable DT = new DataTable();
+            //        SDA.Fill(ds);
+            //        for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+            //        {
+            //            cmbExpensecategory.Items.Add(ds.Tables["Temp"].Rows[i]["OtherIncome"].ToString());
+            //        }
+            //    }
+            //    catch (Exception e1)
+            //    {
+            //        MessageBox.Show(e1.Message);
+            //    }
+            //}
         }
         public void data()
         {
@@ -295,45 +295,45 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where IncomeCategory like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
-                //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select IncomeCategory,Received  from tbl_OtherIncome where IncomeCategory like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
                 dgvincomeCategory.DataSource = ds;
                 dgvincomeCategory.DataMember = "temp";
-                dgvincomeCategory.AllowUserToAddRows = false;
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Data not" + ex);
-            }
-            finally
-            {
-             
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void dtpToDate_ValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");
-                dgvincomeCategory.DataSource = ds;
-                dgvincomeCategory.DataMember = "temp";
-                dgvincomeCategory.AllowUserToAddRows = false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
-            finally
-            {
+            //try
+            //{
+            //    string SelectQuery = string.Format("select IncomeCategory,Received from tbl_OtherIncome  where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+            //    DataSet ds = new DataSet();
+            //    SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+            //    SDA.Fill(ds, "temp");
+            //    dgvincomeCategory.DataSource = ds;
+            //    dgvincomeCategory.DataMember = "temp";
+            //    dgvincomeCategory.AllowUserToAddRows = false;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Data not" + ex);
+            //}
+            //finally
+            //{
 
-            }
+            //}
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
     

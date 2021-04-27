@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaxReport));
             this.txtAmountPurchase = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtAmountSale = new Guna.UI2.WinForms.Guna2TextBox();
@@ -38,21 +38,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvTaxReport = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cmbAllFirms = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtpTodate = new System.Windows.Forms.DateTimePicker();
             this.btnminimize = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtfilter = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaxReport)).BeginInit();
             this.SuspendLayout();
             // 
             // txtAmountPurchase
             // 
+            this.txtAmountPurchase.BorderColor = System.Drawing.Color.Gray;
             this.txtAmountPurchase.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAmountPurchase.DefaultText = "";
             this.txtAmountPurchase.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -73,12 +72,13 @@
             this.txtAmountPurchase.PlaceholderText = "0";
             this.txtAmountPurchase.SelectedText = "";
             this.txtAmountPurchase.ShadowDecoration.Parent = this.txtAmountPurchase;
-            this.txtAmountPurchase.Size = new System.Drawing.Size(200, 36);
+            this.txtAmountPurchase.Size = new System.Drawing.Size(159, 36);
             this.txtAmountPurchase.TabIndex = 136;
             this.txtAmountPurchase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtAmountSale
             // 
+            this.txtAmountSale.BorderColor = System.Drawing.Color.Gray;
             this.txtAmountSale.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtAmountSale.DefaultText = "";
             this.txtAmountSale.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -99,7 +99,7 @@
             this.txtAmountSale.PlaceholderText = "0";
             this.txtAmountSale.SelectedText = "";
             this.txtAmountSale.ShadowDecoration.Parent = this.txtAmountSale;
-            this.txtAmountSale.Size = new System.Drawing.Size(200, 36);
+            this.txtAmountSale.Size = new System.Drawing.Size(159, 36);
             this.txtAmountSale.TabIndex = 134;
             this.txtAmountSale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -136,30 +136,30 @@
             // 
             // dgvTaxReport
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvTaxReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dgvTaxReport.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvTaxReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTaxReport.BackgroundColor = System.Drawing.Color.White;
             this.dgvTaxReport.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTaxReport.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvTaxReport.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTaxReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTaxReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvTaxReport.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTaxReport.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTaxReport.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvTaxReport.EnableHeadersVisualStyles = false;
             this.dgvTaxReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvTaxReport.Location = new System.Drawing.Point(6, 104);
@@ -215,46 +215,6 @@
             this.cmbAllFirms.StartIndex = 0;
             this.cmbAllFirms.TabIndex = 153;
             this.cmbAllFirms.SelectedIndexChanged += new System.EventHandler(this.cmbAllFirms_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(382, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(24, 16);
-            this.label5.TabIndex = 152;
-            this.label5.Text = "To";
-            this.label5.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(184, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 16);
-            this.label6.TabIndex = 150;
-            this.label6.Text = "From";
-            this.label6.Visible = false;
-            // 
-            // dtpDateFrom
-            // 
-            this.dtpDateFrom.CustomFormat = "MM/dd/yyyy";
-            this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateFrom.Location = new System.Drawing.Point(230, 26);
-            this.dtpDateFrom.Name = "dtpDateFrom";
-            this.dtpDateFrom.Size = new System.Drawing.Size(140, 23);
-            this.dtpDateFrom.TabIndex = 156;
-            this.dtpDateFrom.Visible = false;
-            // 
-            // dtpTodate
-            // 
-            this.dtpTodate.CustomFormat = "MM/dd/yyyy";
-            this.dtpTodate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTodate.Location = new System.Drawing.Point(416, 27);
-            this.dtpTodate.Name = "dtpTodate";
-            this.dtpTodate.Size = new System.Drawing.Size(145, 23);
-            this.dtpTodate.TabIndex = 157;
-            this.dtpTodate.Visible = false;
             // 
             // btnminimize
             // 
@@ -326,20 +286,54 @@
             this.label3.TabIndex = 447;
             this.label3.Text = "Print";
             // 
+            // txtfilter
+            // 
+            this.txtfilter.BorderColor = System.Drawing.Color.Gray;
+            this.txtfilter.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtfilter.DefaultText = "";
+            this.txtfilter.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtfilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtfilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.DisabledState.Parent = this.txtfilter;
+            this.txtfilter.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtfilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.FocusedState.Parent = this.txtfilter;
+            this.txtfilter.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtfilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtfilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtfilter.HoverState.Parent = this.txtfilter;
+            this.txtfilter.Location = new System.Drawing.Point(320, 28);
+            this.txtfilter.Name = "txtfilter";
+            this.txtfilter.PasswordChar = '\0';
+            this.txtfilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtfilter.PlaceholderText = "Party Name";
+            this.txtfilter.SelectedText = "";
+            this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
+            this.txtfilter.Size = new System.Drawing.Size(163, 27);
+            this.txtfilter.TabIndex = 448;
+            this.txtfilter.TextChanged += new System.EventHandler(this.txtfilter_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(235, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 16);
+            this.label4.TabIndex = 449;
+            this.label4.Text = " Filter by :";
+            // 
             // TaxReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtfilter);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnminimize);
-            this.Controls.Add(this.dtpTodate);
-            this.Controls.Add(this.dtpDateFrom);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.dgvTaxReport);
             this.Controls.Add(this.cmbAllFirms);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnImport);
@@ -365,14 +359,12 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2DataGridView dgvTaxReport;
         private Guna.UI2.WinForms.Guna2ComboBox cmbAllFirms;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnImport;
-        private System.Windows.Forms.DateTimePicker dtpDateFrom;
-        private System.Windows.Forms.DateTimePicker dtpTodate;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtfilter;
+        private System.Windows.Forms.Label label4;
     }
 }

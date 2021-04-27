@@ -83,5 +83,33 @@ namespace sample
                 }
             }
         }
+
+        private void dtpToDate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                string Query = string.Format("select BillDate,BillNo,PartyName,PaymentType,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvsaleInvoice.DataSource = ds;
+                dgvsaleInvoice.DataMember = "temp";
+                dgvsaleInvoice.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Bindadata();
+        }
     }
 }
