@@ -32,6 +32,10 @@ namespace sample
             txtAddUnit.Focus();
             fetchdetails();
         }
+         private void place()
+        {
+            textBox1.Text = "Unit Name...";
+        }
 
         private void cleardata()
         {
@@ -320,6 +324,22 @@ namespace sample
         private void panel3_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Unit Name")
+            {
+                textBox1.Text = "";
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if(textBox1.Text=="")
+            {
+                textBox1.Text = "Unit Name";
+            }
         }
     }
 
