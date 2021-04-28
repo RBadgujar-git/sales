@@ -154,7 +154,7 @@ No.</Text>
             </Text3>
             <Text5 Ref="13" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.4,0.6,3.6,0.6</ClientRectangle>
+              <ClientRectangle>15.2,0.6,3.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>30e8182edbee4595b6c296b679557d32</Guid>
@@ -169,7 +169,7 @@ No.</Text>
             </Text5>
             <Text13 Ref="14" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>15.4,0,3.6,0.6</ClientRectangle>
+              <ClientRectangle>15.2,0,3.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10</Font>
               <Guid>181fae1ba1af4ad7b82f5818ac6bf14d</Guid>
@@ -217,7 +217,7 @@ No.</Text>
             </Text14>
             <Text77 Ref="17" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.6,0,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.6,0,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>c89d918ef9754e5daa486bd63828d558</Guid>
@@ -231,11 +231,10 @@ No.</Text>
             </Text77>
             <Text80 Ref="18" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>896184401ca44c4f98be0347ea228df5</Guid>
-              <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text80</Name>
               <Page isRef="3" />
@@ -245,7 +244,7 @@ No.</Text>
             </Text80>
             <Text81 Ref="19" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>4fbd92da699f49e6a547845cc14688b3</Guid>
@@ -258,7 +257,7 @@ No.</Text>
             </Text81>
             <Text90 Ref="20" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.6,0.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.6,0.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>e32eaea97d9f407da1e89f7491f9a041</Guid>
@@ -569,10 +568,10 @@ No.</Text>
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 4:11:07 PM</ReportChanged>
+  <ReportChanged>4/27/2021 3:31:51 PM</ReportChanged>
   <ReportCreated>3/22/2021 4:02:04 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\OtherIncomeItemData.mrt</ReportFile>
-  <ReportGuid>cde7459e47a8404d9714d68c22c8ddbf</ReportGuid>
+  <ReportGuid>2459638897db418c944943815eede469</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

@@ -205,6 +205,7 @@ No.</Text>
               <Name>Text9</Name>
               <Page isRef="3" />
               <Parent isRef="15" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{TaxRateReport.SaleTaxAmount}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -221,6 +222,7 @@ No.</Text>
               <Name>Text35</Name>
               <Page isRef="3" />
               <Parent isRef="15" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{TaxRateReport.PurchaseTaxAmount}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -255,6 +257,7 @@ No.</Text>
               <Name>Text23</Name>
               <Page isRef="3" />
               <Parent isRef="15" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{TaxRateReport.TaxForPurchase}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -271,6 +274,7 @@ No.</Text>
               <Name>Text25</Name>
               <Page isRef="3" />
               <Parent isRef="15" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{TaxRateReport.TaxForSale}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -524,7 +528,7 @@ No.</Text>
   <ReportChanged>4/22/2021 7:59:40 PM</ReportChanged>
   <ReportCreated>4/15/2021 12:37:47 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\TaxRateReport1.mrt</ReportFile>
-  <ReportGuid>80b6471f2d1341308065013f07b3bd7e</ReportGuid>
+  <ReportGuid>3d10d48ae010434494761f4e6c84d85a</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

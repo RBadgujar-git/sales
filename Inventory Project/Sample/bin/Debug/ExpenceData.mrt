@@ -14,7 +14,7 @@
           <value>PhoneNo,System.String</value>
           <value>EmailID,System.String</value>
           <value>ExpenseCategory,System.String</value>
-          <value>Date,System.String</value>
+          <value>Date,System.Nullable`1[System.DateTime]</value>
           <value>Total,System.String</value>
           <value>Address,System.String</value>
         </Columns>
@@ -353,6 +353,7 @@
               <Name>Text9</Name>
               <Page isRef="3" />
               <Parent isRef="26" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{ExpencesData.ExpenseCategory}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -369,6 +370,7 @@
               <Name>Text12</Name>
               <Page isRef="3" />
               <Parent isRef="26" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{ExpencesData.Total}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -434,6 +436,7 @@
               <Name>Text4</Name>
               <Page isRef="3" />
               <Parent isRef="34" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{Sum(ExpencesData.Total)}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -569,10 +572,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 3:56:26 PM</ReportChanged>
+  <ReportChanged>4/27/2021 3:02:18 PM</ReportChanged>
   <ReportCreated>3/22/2021 10:49:09 AM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\ExpenceData.mrt</ReportFile>
-  <ReportGuid>f4626b4f15724f62a4aa70e7c94b98ac</ReportGuid>
+  <ReportGuid>5b5dc9ccfa294eaba7f0d1544ae892ee</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
