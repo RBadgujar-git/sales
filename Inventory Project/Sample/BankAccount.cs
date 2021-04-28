@@ -451,6 +451,22 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtaccountname_Leave(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox2.Text == "")
             {
                 fetchdetails();
@@ -465,17 +481,6 @@ namespace sample
                 dgvbankaccount.DataSource = ds;
                 dgvbankaccount.DataMember = "temp";
             }
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtaccountname_Leave(object sender, EventArgs e)
-        {
-           
-
         }
     }
 }

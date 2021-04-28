@@ -330,6 +330,22 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnclick_Click(object sender, EventArgs e)
+        {
+            id = "";
+            clearData();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox2.Text == "")
             {
                 fetchdetails();
@@ -344,17 +360,6 @@ namespace sample
                 dgvbankaccount.DataSource = ds;
                 dgvbankaccount.DataMember = "temp";
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnclick_Click(object sender, EventArgs e)
-        {
-            id = "";
-            clearData();
         }
     }
 }

@@ -361,6 +361,16 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
             if (textBox1.Text == "")
             {
                 fetchdetails();
@@ -374,11 +384,6 @@ namespace sample
                 dgvItemAdjustment.DataSource = ds;
                 dgvItemAdjustment.DataMember = "temp";
             }
-        }
-
-        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

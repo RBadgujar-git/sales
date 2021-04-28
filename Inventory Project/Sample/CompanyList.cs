@@ -49,19 +49,7 @@ namespace sample
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select CompanyName from tbl_CompanyMaster where CompanyName like'%{0}%' and DeleteData='1' ", txtSearch.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvCompanylist.DataSource = ds;
-              dgvCompanylist.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+          
         }
 
         public void Binddata()
@@ -98,6 +86,23 @@ namespace sample
                 BA.Location = new Point(200, 50);
                 BA.Visible = true;
                 BA.BringToFront();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select CompanyName from tbl_CompanyMaster where CompanyName like'%{0}%' and DeleteData='1' ", txtSearch.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvCompanylist.DataSource = ds;
+                dgvCompanylist.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -263,6 +263,11 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (textBox1.Text == "")
             {
                 fetchdetails();
@@ -278,7 +283,7 @@ namespace sample
             }
         }
 
-        private void dgvCategory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

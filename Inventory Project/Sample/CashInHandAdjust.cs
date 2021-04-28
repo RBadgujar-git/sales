@@ -450,6 +450,21 @@ namespace sample
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+            
+        }
+
+        private void cmbbankaccount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtCashadjustment_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox2.Text == "")
             {
                 fetchdetails();
@@ -464,16 +479,6 @@ namespace sample
                 dgvCashAdjustment.DataSource = ds;
                 dgvCashAdjustment.DataMember = "temp";
             }
-        }
-
-        private void cmbbankaccount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-        }
-
-        private void txtCashadjustment_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

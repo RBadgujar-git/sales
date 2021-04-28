@@ -488,10 +488,20 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox2.Text == "")
             {
                 fetchdetails();
-               // hidedata();
+                // hidedata();
             }
             else
             {
@@ -502,11 +512,6 @@ namespace sample
                 dgvAdjustaccount.DataSource = ds;
                 dgvAdjustaccount.DataMember = "temp";
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
