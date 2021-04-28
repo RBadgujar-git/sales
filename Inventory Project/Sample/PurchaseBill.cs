@@ -52,36 +52,18 @@ namespace sample
         {
             cleardata();
             fetchCategory();
-            cmbStatesupply.Hide();
-            label5.Hide();
-            chkRoundOff.Hide();
-            txtRoundup.Hide();          
-            txtVehicleNo.Hide();
-            txtTransportName.Hide();
-            DtpdeliveryDate.Hide();
-            txtDeliveryLoc.Hide();
-            label8.Hide();
-            label12.Hide();
-            label11.Hide();
-            label16.Hide();
-            txtDiscount.Enabled = false;
-            txtDisAmount.Enabled = false;
-            cmbtax.Enabled = false;
-            guna2TextBox1.Enabled = false;
-            label50.Visible = false;
-            guna2TextBox7.Visible = false ;
-            txtsgst.Enabled = false;
-            txtcgst.Enabled = false;
-            txtTaxAmount.Enabled = false;
-            txtFreeQty.Enabled = false;
-            cmbStatesupply.Enabled = false;
-            guna2TextBox2.Enabled = false;
-            ToggleSwitch1.Visible = false;
-            label49.Visible = false;
-            con.Open();
-            SqlCommand cmd3 = new SqlCommand("Select DisplayPurchasePriseOnItem from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            dispurchase = Convert.ToInt32(cmd3.ExecuteScalar());
-            con.Close();
+            DtpdeliveryDate.Visible = false;
+            TRANSACTION();
+
+            if (gstint == 1)
+            {
+                txtReceived.Visible = false;
+                txtBallaance.Visible = false;
+                ComboBox.Visible = false;
+                label39.Visible = false;
+                label22.Visible = false;
+                label25.Visible = false;
+            }
             if (dispurchase == 1)
             {
                 fetchitem();
@@ -90,75 +72,54 @@ namespace sample
             {
                 fetchitem1();
             }
-            con.Open();
-            SqlCommand cmd4 = new SqlCommand("Select PlaceOfSupply from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            supplace = Convert.ToInt32(cmd4.ExecuteScalar());
-            con.Close();
+           
             if (supplace == 1)
             {
-                cmbStatesupply.Enabled = true;
-                cmbStatesupply.Visible = true;
-                cmbStatesupply.Show();
-                label5.Show();
+                cmbStatesupply.Visible = false;
+               // cmbStatesupply.Visible = true;
+              //  cmbStatesupply.Show();
+                label5.Visible=false;
             }
-            con.Open();
-            SqlCommand cmd9 = new SqlCommand("Select RoundOff from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            round = Convert.ToInt32(cmd9.ExecuteScalar());
-            con.Close();
+           
             if (round == 1)
             {
-                chkRoundOff.Show();
-                txtRoundup.Show();
+                chkRoundOff.Visible = false; ;
+                txtRoundup.Visible=false;
             }
-            con.Open();
-            SqlCommand cmd10 = new SqlCommand("Select VehicleNo from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            vehicle = Convert.ToInt32(cmd10.ExecuteScalar());
-            con.Close();
+           
             if (vehicle == 1)
             {
-                txtVehicleNo.Show();
-                label12.Show();
+                txtVehicleNo.Visible=false;
+                label12.Visible=false;
             }
-            con.Open();
-            SqlCommand cmd11 = new SqlCommand("Select TransportName from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            transname = Convert.ToInt32(cmd11.ExecuteScalar());
-            con.Close();
+           
             if (transname == 1)
             {
-                txtTransportName.Show();
-                label8.Show();
+                txtTransportName.Visible = false;
+                label8.Visible = false;
             }
-            con.Open();
-            SqlCommand cmd12 = new SqlCommand("Select DeliveryDate from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            deldt = Convert.ToInt32(cmd12.ExecuteScalar());
-            con.Close();
+           
             if (deldt == 1)
             {
-                DtpdeliveryDate.Show();
-                label16.Show();
+                DtpdeliveryDate.Visible = false;
+                label16.Visible = false;
             }
-            con.Open();
-            SqlCommand cmd13 = new SqlCommand("Select DeliveryLocation from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            delloc = Convert.ToInt32(cmd13.ExecuteScalar());
-            con.Close();
+           
             if (delloc == 1)
             {
-                txtDeliveryLoc.Show();
-                label11.Show();
-            }
-            con.Open();
-            SqlCommand cmd14 = new SqlCommand("Select ShippingAddress from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
-            showadd = Convert.ToInt32(cmd14.ExecuteScalar());
-            con.Close();
+                txtDeliveryLoc.Visible = false;
+                label11.Visible = false;
+            }         
             if (showadd == 1)
             {
-                txtbillingadd.Enabled = true;
+                txtbillingadd.Visible = false;
             }
+
             textBox2.Visible = false;
             label51.Visible = false;
 
-
-            con.Open();
+            
+          //  con.Open();
             SqlCommand cmd16 = new SqlCommand("Select EwayBill from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             eway = Convert.ToInt32(cmd16.ExecuteScalar());
             con.Close();
@@ -605,8 +566,39 @@ namespace sample
 
         }
 
-    
-    private void get_id()
+
+
+        public void TRANSACTION()
+        {
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd1 = new SqlCommand("Select * from TransactionTableSetting where Company_ID='" + NewCompany.company_id + "'", con);
+            SqlDataReader dr = cmd1.ExecuteReader();
+
+            while (dr.Read())
+            {
+                dispurchase = Convert.ToInt32(dr["DisplayPurchasePriseOnItem"]);
+                gstint = Convert.ToInt32(dr["CashSaleByDefault"]);
+                supplace = Convert.ToInt32(dr["PlaceOfSupply"]);
+                round = Convert.ToInt32(dr["RoundOff"]);
+                 vehicle = Convert.ToInt32(dr["VehicleNo"]);
+                transname = Convert.ToInt32(dr["TransportName"]);
+                deldt = Convert.ToInt32(dr["DeliveryDate"]);
+                delloc = Convert.ToInt32(dr["DeliveryLocation"]);
+                showadd = Convert.ToInt32(dr["ShippingAddress"]);
+                vehicle = Convert.ToInt32(dr["VehicleNo"]);
+
+            }
+            dr.Close();
+
+        }
+
+
+        private void get_id()
         {
             seeting();
 
@@ -1460,6 +1452,8 @@ namespace sample
                 if (verify == 1)
                 {
                     insertdata();
+                    insrtparty();
+                    balance();
                     print();
                     //  bind_sale_details();
                     Clear_Text_data();
@@ -1470,6 +1464,75 @@ namespace sample
             else
             {
                 MessageBox.Show("No permission");
+            }
+        }
+        public void balance()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("Select OpeningBal from tbl_PartyMaster where PartyName='" + cmbpartyname.Text + "' and Company_ID=" + NewCompany.company_id + " ", con);
+                float prives = Convert.ToInt32(cmd.ExecuteScalar());
+                float remaning = float.Parse(txtBallaance.Text);
+                float total = prives + remaning;
+                SqlCommand cmd1 = new SqlCommand("UPDATE tbl_PartyMaster SET OpeningBal=" + total + " where PartyName='" + cmbpartyname.Text + "' and Company_ID=" + NewCompany.company_id + "", con);
+                cmd1.ExecuteNonQuery();
+
+            }
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
+            }
+        }
+
+        public int cp;
+        public void insrtparty()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' group by PartyName ");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    string itemname = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+                    if (itemname.ToString() == cmbpartyname.Text.ToString())
+                    {
+                        cp = 1;
+                    }
+                }
+
+                if (cp != 1)
+                {
+                    float opening;
+                    if (txtBallaance.Text == "")
+                    {
+                        opening = 0;
+                    }
+                    else
+                    {
+                        opening = float.Parse(txtBallaance.Text);
+                    }
+                    string query = string.Format("insert into tbl_PartyMaster(PartyName,BillingAddress,ContactNo,Company_ID,OpeningBal) Values ('" + cmbpartyname.Text + "', '" + txtbillingadd.Text + "'," + txtcon.Text + "," + NewCompany.company_id + ",0)");
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
             }
         }
 
@@ -1505,8 +1568,7 @@ namespace sample
         private void dtpDueDate_ValueChanged(object sender, EventArgs e)
         {
 
-        }
-
+        } 
         private void Clear_Click(object sender, EventArgs e)
         {
             id = "";
@@ -1790,7 +1852,6 @@ namespace sample
                     string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,a.AdditinalFeild1,a.AdditinalFeild2,a.AdditinalFeild3,b.PartyName,b.BillingName,b.ContactNo,b.Company_ID,b.BillNo,b.PONo,b.Deliverydate,b.DeliveryLocation,b.TransportName,b.BillingName   , b.PoDate, b.DueDate, b.Tax1,  b.TaxAmount1,b.TotalDiscount,b.DiscountAmount1,b.Total,b.Paid,b.RemainingBal,c.ID,c.ItemName,c.BasicUnit,c.SaleTaxAmount,c.TaxForSale,c.ItemCode,c.SalePrice,c.Qty,c.freeQty,c.CGST, c.SGST,c.IGST,c.ItemAmount FROM tbl_CompanyMaster as a, tbl_PurchaseBill as b,tbl_PurchaseBillInner as c where b.BillNo='{0}' and c.BillNo='{1}' and a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and c.Company_ID='" + NewCompany.company_id + "' and b.DeleteData='1' and c.DeleteData='1' ", txtReturnNo.Text, txtReturnNo.Text);
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
-
                     StiReport report = new StiReport();
                     report.Load(@"PurchaseBillReport.mrt");
 
@@ -2220,6 +2281,14 @@ namespace sample
         private void label45_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTotal_TextChanged_1(object sender, EventArgs e)
+        {
+            if (round != 1)
+            {
+                chkRoundOff.Checked = true;
+            }
         }
 
         private void ToggleSwitch1_CheckedChanged_1(object sender, EventArgs e)
