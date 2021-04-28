@@ -66,6 +66,10 @@ namespace sample
             {
                 size3();
             }
+            else if (radioButton4.Checked == true)
+            {
+                size4();
+            }
             //StiReport report1 = new StiReport();
             //        DataSet ds = new DataSet();
 
@@ -184,6 +188,42 @@ namespace sample
 
                     StiReport report = new StiReport();
                     report.Load(@"barcodesize3.mrt");
+
+                    report.Compile();
+                    StiPage page = report.Pages[0];
+                    report.RegData("demo", "demo", ds.Tables[0]);
+
+                    report.Dictionary.Synchronize();
+                    report.Render();
+                    report.Show(false);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        public void size4()
+        {
+            dd = Convert.ToInt32(textBox1.Text);
+            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DataSet ds = new DataSet();
+                try
+                {
+                    for (int i = 0; i < dd; i++)
+                    {
+                        string Query = string.Format("select a.ItemName,a.SalePrice,a.Barcode,b.CompanyName from tbl_ItemMaster as a,tbl_CompanyMaster as b where a.Company_ID='" + NewCompany.company_id + "' and a.DeleteData='1' and b.CompanyID='" + NewCompany.company_id + "' and ItemName='{0}'", txtsearch.Text);
+                        //string Query = string.Format("select Company_ID,BillDate, BillNo, PartyName, PaymentType, Total, Paid, RemainingBal, Status from tbl_PurchaseBill where Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'");
+
+                        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                        SDA.Fill(ds);
+                    }
+
+
+
+                    StiReport report = new StiReport();
+                    report.Load(@"barcodesize4.mrt");
 
                     report.Compile();
                     StiPage page = report.Pages[0];
