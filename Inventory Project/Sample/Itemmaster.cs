@@ -966,6 +966,24 @@ namespace sample
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+                hidedatagri();
+            }
+            else
+            {
+                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and  DeleteData = '1' and ItemName like '%{0}%'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemmaster.DataSource = ds;
+                dgvItemmaster.DataMember = "temp";
+            }
+        }
+
         private void txtItemName_Leave(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed)
@@ -1053,20 +1071,7 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                fetchdetails();
-                hidedatagri();
-            }
-            else
-            {
-                string Query = string.Format("select ItemID,ItemName,HSNCode ,ItemCode,SalePrice,PurchasePrice,OpeningQty,Date,Description ,MinimumStock from tbl_ItemMaster where Company_ID='" + NewCompany.company_id + "' and  DeleteData = '1' and ItemName like '%{0}%' or ItemID like '%{0}%'", textBox2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvItemmaster.DataSource = ds;
-                dgvItemmaster.DataMember = "temp";
-            }
+            
         }
 
         private void itemtracking_Paint(object sender, PaintEventArgs e)

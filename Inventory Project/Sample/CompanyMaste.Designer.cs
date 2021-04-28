@@ -73,11 +73,11 @@
             this.cmbState = new System.Windows.Forms.ComboBox();
             this.butnclear = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.dgvComapnyMaster = new Guna.UI2.WinForms.Guna2DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.picSignature = new Guna.UI2.WinForms.Guna2PictureBox();
             this.picCompanyLogo = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
@@ -843,6 +843,33 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderColor = System.Drawing.Color.Gray;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.DefaultText = "";
+            this.textBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox1.DisabledState.Parent = this.textBox1;
+            this.textBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox1.FocusedState.Parent = this.textBox1;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox1.HoverState.Parent = this.textBox1;
+            this.textBox1.Location = new System.Drawing.Point(66, 357);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '\0';
+            this.textBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox1.PlaceholderText = "Company Name";
+            this.textBox1.SelectedText = "";
+            this.textBox1.ShadowDecoration.Parent = this.textBox1;
+            this.textBox1.Size = new System.Drawing.Size(178, 23);
+            this.textBox1.TabIndex = 479;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // dgvComapnyMaster
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -944,33 +971,6 @@
             this.picCompanyLogo.TabIndex = 40;
             this.picCompanyLogo.TabStop = false;
             this.picCompanyLogo.Click += new System.EventHandler(this.picCompanyLogo_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderColor = System.Drawing.Color.Gray;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox1.DefaultText = "";
-            this.textBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox1.DisabledState.Parent = this.textBox1;
-            this.textBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox1.FocusedState.Parent = this.textBox1;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox1.HoverState.Parent = this.textBox1;
-            this.textBox1.Location = new System.Drawing.Point(66, 357);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '\0';
-            this.textBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBox1.PlaceholderText = "ID or Company Name";
-            this.textBox1.SelectedText = "";
-            this.textBox1.ShadowDecoration.Parent = this.textBox1;
-            this.textBox1.Size = new System.Drawing.Size(178, 23);
-            this.textBox1.TabIndex = 479;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // CompanyMaste
             // 

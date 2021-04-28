@@ -50,11 +50,12 @@ namespace sample
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Action", "Select");
             cmd.Parameters.AddWithValue("@ID", id);
+            cmd.Parameters.AddWithValue("@BankName", cmbbankaccount.Text);
             cmd.Parameters.AddWithValue("@CashAdjustment", txtCashadjustment.Text);
             cmd.Parameters.AddWithValue("@CashAmount", txtenterAmount.Text);
             cmd.Parameters.AddWithValue("@Date", dtpdate.Value);
             cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-            cmd.Parameters.AddWithValue("@BankName", cmbbankaccount.Text);
+         
 
             cmd.Parameters.AddWithValue("@compid",NewCompany.company_id);
 
@@ -213,11 +214,12 @@ namespace sample
         private void dgvCashAdjustment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
            id = dgvCashAdjustment.SelectedRows[0].Cells["ID"].Value.ToString();
+            cmbbankaccount.Text = dgvCashAdjustment.SelectedRows[0].Cells["BankName"].Value.ToString();
             txtCashadjustment.Text = dgvCashAdjustment.SelectedRows[0].Cells["CashAdjustment"].Value.ToString();
             txtenterAmount.Text = dgvCashAdjustment.SelectedRows[0].Cells["CashAmount"].Value.ToString();
             dtpdate.Text = dgvCashAdjustment.SelectedRows[0].Cells["Date"].Value.ToString();
             txtDescription.Text = dgvCashAdjustment.SelectedRows[0].Cells["Description"].Value.ToString();
-            cmbbankaccount.Text = dgvCashAdjustment.SelectedRows[0].Cells["BankName"].Value.ToString();
+          
 
             // txtDescription.Text = dgvbanktobank.SelectedRows[0].Cells["Description"].Value.ToString();
         }
@@ -472,7 +474,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,CashAdjustment,CashAmount,Date,Description,BankName from tbl_CashAdjustment where Company_ID='" + NewCompany.company_id + "' and DeleteData = '1' and CashAdjustment like '%{0}%' or ID like '%{0}%'", textBox2.Text);
+                string Query = string.Format("select ID,BankName,CashAdjustment,CashAmount,Date,Description from tbl_CashAdjustment where Company_ID='" + NewCompany.company_id + "' and DeleteData = '1' and BankName like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

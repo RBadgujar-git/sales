@@ -401,7 +401,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '\0';
             this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBox2.PlaceholderText = "ID or Bank Name";
+            this.textBox2.PlaceholderText = "Bank Name";
             this.textBox2.SelectedText = "";
             this.textBox2.ShadowDecoration.Parent = this.textBox2;
             this.textBox2.Size = new System.Drawing.Size(180, 26);

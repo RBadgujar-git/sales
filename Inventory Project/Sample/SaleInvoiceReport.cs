@@ -110,7 +110,7 @@ namespace sample
             {
                 try
                 {
-                    string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where PartyName like '%{0}%' or InvoiceID like '%{0}%'  or  InvoiceDate like '%{0}%'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
+                    string Query = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch.Text);
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(Query, con);
                     da.Fill(ds, "temp");
@@ -436,6 +436,11 @@ namespace sample
                  //   MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

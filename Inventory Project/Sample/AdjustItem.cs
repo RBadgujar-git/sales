@@ -377,7 +377,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,ItemName,AdjustmentType,AdjustmentDate,AtPrice,Quantity,Details from tbl_ItemAdjustement where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select ID,ItemName,AdjustmentType,AdjustmentDate,AtPrice,Quantity,Details from tbl_ItemAdjustement where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

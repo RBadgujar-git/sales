@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblBankAccount = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -64,6 +65,7 @@
             // guna2ShadowPanel3
             // 
             this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.label4);
             this.guna2ShadowPanel3.Controls.Add(this.lblBankAccount);
             this.guna2ShadowPanel3.Controls.Add(this.button1);
             this.guna2ShadowPanel3.Controls.Add(this.button4);
@@ -75,10 +77,20 @@
             this.guna2ShadowPanel3.TabIndex = 12;
             this.guna2ShadowPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel3_Paint);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 16);
+            this.label4.TabIndex = 484;
+            this.label4.Text = "Account Name";
+            // 
             // lblBankAccount
             // 
             this.lblBankAccount.AutoSize = true;
-            this.lblBankAccount.Location = new System.Drawing.Point(49, 37);
+            this.lblBankAccount.Location = new System.Drawing.Point(140, 72);
             this.lblBankAccount.Name = "lblBankAccount";
             this.lblBankAccount.Size = new System.Drawing.Size(0, 16);
             this.lblBankAccount.TabIndex = 15;
@@ -467,5 +479,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

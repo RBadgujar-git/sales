@@ -43,6 +43,7 @@
             this.btndelete = new Guna.UI2.WinForms.Guna2Button();
             this.dgvcategory = new Guna.UI2.WinForms.Guna2DataGridView();
             this.txtSearch1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvcategory)).BeginInit();
             this.SuspendLayout();
@@ -97,7 +98,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(275, 15);
+            this.label1.Location = new System.Drawing.Point(275, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 18);
             this.label1.TabIndex = 0;
@@ -151,7 +152,7 @@
             this.btnSave.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.HoverState.Parent = this.btnSave;
-            this.btnSave.Location = new System.Drawing.Point(315, 137);
+            this.btnSave.Location = new System.Drawing.Point(334, 137);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(80, 40);
@@ -170,7 +171,7 @@
             this.btnclear.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclear.ForeColor = System.Drawing.Color.White;
             this.btnclear.HoverState.Parent = this.btnclear;
-            this.btnclear.Location = new System.Drawing.Point(582, 138);
+            this.btnclear.Location = new System.Drawing.Point(601, 138);
             this.btnclear.Name = "btnclear";
             this.btnclear.ShadowDecoration.Parent = this.btnclear;
             this.btnclear.Size = new System.Drawing.Size(80, 40);
@@ -189,7 +190,7 @@
             this.btnupdate.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.Color.White;
             this.btnupdate.HoverState.Parent = this.btnupdate;
-            this.btnupdate.Location = new System.Drawing.Point(403, 137);
+            this.btnupdate.Location = new System.Drawing.Point(422, 137);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.ShadowDecoration.Parent = this.btnupdate;
             this.btnupdate.Size = new System.Drawing.Size(80, 40);
@@ -208,7 +209,7 @@
             this.btndelete.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.White;
             this.btndelete.HoverState.Parent = this.btndelete;
-            this.btndelete.Location = new System.Drawing.Point(493, 138);
+            this.btndelete.Location = new System.Drawing.Point(512, 138);
             this.btndelete.Name = "btndelete";
             this.btndelete.ShadowDecoration.Parent = this.btndelete;
             this.btndelete.Size = new System.Drawing.Size(80, 40);
@@ -244,7 +245,7 @@
             this.dgvcategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvcategory.EnableHeadersVisualStyles = false;
             this.dgvcategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvcategory.Location = new System.Drawing.Point(105, 222);
+            this.dgvcategory.Location = new System.Drawing.Point(105, 224);
             this.dgvcategory.Name = "dgvcategory";
             this.dgvcategory.RowHeadersVisible = false;
             this.dgvcategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -290,17 +291,32 @@
             this.txtSearch1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtSearch1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch1.HoverState.Parent = this.txtSearch1;
-            this.txtSearch1.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtSearch1.IconLeft")));
-            this.txtSearch1.Location = new System.Drawing.Point(105, 190);
+            this.txtSearch1.Location = new System.Drawing.Point(140, 183);
             this.txtSearch1.Name = "txtSearch1";
             this.txtSearch1.PasswordChar = '\0';
-            this.txtSearch1.PlaceholderText = "";
+            this.txtSearch1.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtSearch1.PlaceholderText = "Income Category";
             this.txtSearch1.SelectedText = "";
             this.txtSearch1.ShadowDecoration.Parent = this.txtSearch1;
-            this.txtSearch1.Size = new System.Drawing.Size(241, 27);
-            this.txtSearch1.TabIndex = 187;
-            this.txtSearch1.TextChanged += new System.EventHandler(this.txtSearch1_TextChanged);
-            this.txtSearch1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch1_KeyPress);
+            this.txtSearch1.Size = new System.Drawing.Size(180, 26);
+            this.txtSearch1.TabIndex = 454;
+            this.txtSearch1.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = global::sample.Properties.Resources.icons8_search_1001;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.button1.Location = new System.Drawing.Point(109, 186);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(22, 22);
+            this.button1.TabIndex = 453;
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // OtherIncomeCategory
             // 
@@ -308,6 +324,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.txtSearch1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvcategory);
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnupdate);
@@ -344,5 +361,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView dgvcategory;
         private System.Windows.Forms.Button btnminimize;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch1;
+        private System.Windows.Forms.Button button1;
     }
 }

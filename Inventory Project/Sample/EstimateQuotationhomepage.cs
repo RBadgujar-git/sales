@@ -56,7 +56,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select TableName,Date,PartyName,Total,Status from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select Date,PartyName,Total,Status from tblQuotation where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -102,7 +102,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select TableName,Date,PartyName,Total,Status from tblQuotation where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string Query = string.Format("select Date,PartyName,Total,Status from tblQuotation where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -120,7 +120,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,Date,PartyName,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select Date,PartyName,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -155,7 +155,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.TableName,b.Date,b.Total,b.Status FROM tbl_CompanyMaster as a, tblQuotation as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
+                    string Query = string.Format("SELECT a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.PartyName,b.Date,b.Total,b.Status FROM tbl_CompanyMaster as a, tblQuotation as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 

@@ -37,8 +37,8 @@
             this.txtReceived = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtFilterBy = new Guna.UI2.WinForms.Guna2TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -181,8 +181,8 @@
             // 
             this.guna2Panel1.AutoScroll = true;
             this.guna2Panel1.BackColor = System.Drawing.Color.White;
+            this.guna2Panel1.Controls.Add(this.txtFilterBy);
             this.guna2Panel1.Controls.Add(this.button1);
-            this.guna2Panel1.Controls.Add(this.textBox2);
             this.guna2Panel1.Controls.Add(this.textBox1);
             this.guna2Panel1.Controls.Add(this.comboBox1);
             this.guna2Panel1.Controls.Add(this.label12);
@@ -221,6 +221,33 @@
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
+            // txtFilterBy
+            // 
+            this.txtFilterBy.BorderColor = System.Drawing.Color.Gray;
+            this.txtFilterBy.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFilterBy.DefaultText = "";
+            this.txtFilterBy.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtFilterBy.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtFilterBy.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterBy.DisabledState.Parent = this.txtFilterBy;
+            this.txtFilterBy.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtFilterBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterBy.FocusedState.Parent = this.txtFilterBy;
+            this.txtFilterBy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtFilterBy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtFilterBy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtFilterBy.HoverState.Parent = this.txtFilterBy;
+            this.txtFilterBy.Location = new System.Drawing.Point(90, 275);
+            this.txtFilterBy.Name = "txtFilterBy";
+            this.txtFilterBy.PasswordChar = '\0';
+            this.txtFilterBy.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtFilterBy.PlaceholderText = "Customer Name";
+            this.txtFilterBy.SelectedText = "";
+            this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
+            this.txtFilterBy.Size = new System.Drawing.Size(174, 25);
+            this.txtFilterBy.TabIndex = 181;
+            this.txtFilterBy.TextChanged += new System.EventHandler(this.txtFilterBy_TextChanged);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -231,19 +258,11 @@
             this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(62, 266);
+            this.button1.Location = new System.Drawing.Point(62, 274);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(21, 21);
             this.button1.TabIndex = 74;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(90, 266);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 23);
-            this.textBox2.TabIndex = 73;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox1
             // 
@@ -291,7 +310,7 @@
             this.btnclear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnclear.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnclear.Location = new System.Drawing.Point(715, 246);
+            this.btnclear.Location = new System.Drawing.Point(715, 251);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(90, 42);
             this.btnclear.TabIndex = 15;
@@ -341,7 +360,7 @@
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnExit.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExit.Location = new System.Drawing.Point(619, 245);
+            this.btnExit.Location = new System.Drawing.Point(619, 250);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(90, 42);
             this.btnExit.TabIndex = 13;
@@ -377,12 +396,12 @@
             this.dgvPaymentIn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPaymentIn.EnableHeadersVisualStyles = false;
             this.dgvPaymentIn.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPaymentIn.Location = new System.Drawing.Point(32, 315);
+            this.dgvPaymentIn.Location = new System.Drawing.Point(13, 315);
             this.dgvPaymentIn.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPaymentIn.Name = "dgvPaymentIn";
             this.dgvPaymentIn.RowHeadersVisible = false;
             this.dgvPaymentIn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPaymentIn.Size = new System.Drawing.Size(938, 285);
+            this.dgvPaymentIn.Size = new System.Drawing.Size(974, 285);
             this.dgvPaymentIn.TabIndex = 16;
             this.dgvPaymentIn.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPaymentIn.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -414,7 +433,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnUpdate.Location = new System.Drawing.Point(523, 245);
+            this.btnUpdate.Location = new System.Drawing.Point(523, 250);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 42);
             this.btnUpdate.TabIndex = 12;
@@ -427,7 +446,7 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnSave.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSave.Location = new System.Drawing.Point(427, 246);
+            this.btnSave.Location = new System.Drawing.Point(427, 251);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 42);
             this.btnSave.TabIndex = 11;
@@ -704,6 +723,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private Guna.UI2.WinForms.Guna2TextBox txtFilterBy;
     }
 }

@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoanStatement));
             this.cmbAccount = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmballFirms = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -47,6 +47,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanStatement)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             this.cmbAccount.Items.AddRange(new object[] {
             "Account"});
             this.cmbAccount.ItemsAppearance.Parent = this.cmbAccount;
-            this.cmbAccount.Location = new System.Drawing.Point(205, 102);
+            this.cmbAccount.Location = new System.Drawing.Point(199, 44);
             this.cmbAccount.Name = "cmbAccount";
             this.cmbAccount.ShadowDecoration.Parent = this.cmbAccount;
             this.cmbAccount.Size = new System.Drawing.Size(189, 36);
@@ -77,6 +78,7 @@
             // cmballFirms
             // 
             this.cmballFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmballFirms.BorderColor = System.Drawing.Color.Gray;
             this.cmballFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmballFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmballFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -89,47 +91,48 @@
             this.cmballFirms.Items.AddRange(new object[] {
             "All Firms"});
             this.cmballFirms.ItemsAppearance.Parent = this.cmballFirms;
-            this.cmballFirms.Location = new System.Drawing.Point(41, 102);
+            this.cmballFirms.Location = new System.Drawing.Point(35, 44);
             this.cmballFirms.Name = "cmballFirms";
             this.cmballFirms.ShadowDecoration.Parent = this.cmballFirms;
             this.cmballFirms.Size = new System.Drawing.Size(140, 36);
             this.cmballFirms.StartIndex = 0;
             this.cmballFirms.TabIndex = 1;
+            this.cmballFirms.SelectedIndexChanged += new System.EventHandler(this.cmballFirms_SelectedIndexChanged);
             // 
             // dgvLoanStatement
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvLoanStatement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvLoanStatement.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLoanStatement.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dgvLoanStatement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvLoanStatement.BackgroundColor = System.Drawing.Color.White;
             this.dgvLoanStatement.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLoanStatement.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLoanStatement.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLoanStatement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLoanStatement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvLoanStatement.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLoanStatement.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLoanStatement.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvLoanStatement.EnableHeadersVisualStyles = false;
             this.dgvLoanStatement.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLoanStatement.Location = new System.Drawing.Point(3, 179);
+            this.dgvLoanStatement.Location = new System.Drawing.Point(3, 131);
             this.dgvLoanStatement.Name = "dgvLoanStatement";
             this.dgvLoanStatement.RowHeadersVisible = false;
             this.dgvLoanStatement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLoanStatement.Size = new System.Drawing.Size(871, 288);
+            this.dgvLoanStatement.Size = new System.Drawing.Size(871, 336);
             this.dgvLoanStatement.TabIndex = 211;
             this.dgvLoanStatement.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvLoanStatement.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -206,6 +209,7 @@
             // txttotalPrinciple
             // 
             this.txttotalPrinciple.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotalPrinciple.BorderColor = System.Drawing.Color.Gray;
             this.txttotalPrinciple.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotalPrinciple.DefaultText = "";
             this.txttotalPrinciple.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -233,6 +237,7 @@
             // 
             // txtOpeningBal
             // 
+            this.txtOpeningBal.BorderColor = System.Drawing.Color.Gray;
             this.txtOpeningBal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpeningBal.DefaultText = "";
             this.txtOpeningBal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -261,6 +266,7 @@
             // 
             // txttBalancedue
             // 
+            this.txttBalancedue.BorderColor = System.Drawing.Color.Gray;
             this.txttBalancedue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttBalancedue.DefaultText = "";
             this.txttBalancedue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -289,6 +295,7 @@
             // txttotalInterest
             // 
             this.txttotalInterest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotalInterest.BorderColor = System.Drawing.Color.Gray;
             this.txttotalInterest.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotalInterest.DefaultText = "";
             this.txttotalInterest.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -324,7 +331,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(761, 14);
+            this.btnminimize.Location = new System.Drawing.Point(706, 15);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 449;
@@ -372,18 +379,29 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(737, 60);
+            this.btnPrint.Location = new System.Drawing.Point(784, 55);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(19, 19);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 204;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(778, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 16);
+            this.label5.TabIndex = 485;
+            this.label5.Text = "Print";
             // 
             // LoanStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txttotalInterest);
@@ -429,5 +447,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txttBalancedue;
         private Guna.UI2.WinForms.Guna2TextBox txttotalInterest;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label5;
     }
 }

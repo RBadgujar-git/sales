@@ -522,19 +522,7 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                fetchdetails();
-            }
-            else
-            {
-                string Query = string.Format("select PartiesID,PartyName,ContactNo,BillingAddress,EmailID,GSTType as GSTNo,State,OpeningBal,AsOfDate,AddRemainder,PartyType,ShippingAddress,PartyGroup,PaidStatus,Type from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PartyName like '%{0}%' or PartiesID like '%{0}%'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvParty.DataSource = ds;
-                dgvParty.DataMember = "temp";
-            }
+            
         }
 
         private void txtPartyname_TextChanged(object sender, EventArgs e)
@@ -569,6 +557,23 @@ namespace sample
             //}
             //txtPartyname.Clear();
             //txtPartyname.Focus();
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select PartiesID,PartyName,ContactNo,BillingAddress,EmailID,GSTType as GSTNo,State,OpeningBal,AsOfDate,AddRemainder,PartyType,ShippingAddress,PartyGroup,PaidStatus,Type from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and PartyName like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvParty.DataSource = ds;
+                dgvParty.DataMember = "temp";
+            }
         }
 
         private void txtPartyname_Leave(object sender, EventArgs e)
