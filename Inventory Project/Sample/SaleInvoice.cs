@@ -49,13 +49,7 @@ namespace sample
         private void SaleInvoice_Load(object sender, EventArgs e)
         {
 
-           
-         
-           
-           
-          
-          
-            //guna2TextBox2.Enabled = false;
+          //guna2TextBox2.Enabled = false;
             textBox2.Visible=false;
             label45.Visible=false;
             transaction();
@@ -698,8 +692,7 @@ namespace sample
                     }
                     
                     //    bind_sale_details();
-
-                    get_id();
+                   get_id();
 
                 }
                 dr.Close();
@@ -708,7 +701,6 @@ namespace sample
 
         public void valid()
         {
-
             
             SqlCommand cmd1 = new SqlCommand("Select BillingNameByParties from TransactionTableSetting where Company_ID=" + NewCompany.company_id + " ", con);
             report4 = Convert.ToInt32(cmd1.ExecuteScalar());
@@ -2175,7 +2167,7 @@ namespace sample
                         for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
                         {
                             string itemname = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
-                            if (itemname.ToString() == txtItemName.Text.ToString())
+                            if (itemname.ToString() == cmbpartyname.Text.ToString())
                             {
                                 cp = 1;
                             }
