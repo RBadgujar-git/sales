@@ -27,9 +27,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllParties));
             this.cmballparties = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,6 +46,10 @@
             this.btnimport = new System.Windows.Forms.Button();
             this.btnminimize = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.dtpto = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllparties)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +70,7 @@
             this.cmballparties.Items.AddRange(new object[] {
             "All Parties"});
             this.cmballparties.ItemsAppearance.Parent = this.cmballparties;
-            this.cmballparties.Location = new System.Drawing.Point(79, 40);
+            this.cmballparties.Location = new System.Drawing.Point(79, 31);
             this.cmballparties.Name = "cmballparties";
             this.cmballparties.ShadowDecoration.Parent = this.cmballparties;
             this.cmballparties.Size = new System.Drawing.Size(140, 36);
@@ -78,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 47);
+            this.label1.Location = new System.Drawing.Point(18, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 16);
             this.label1.TabIndex = 84;
@@ -91,7 +95,7 @@
             this.chkdate.CheckedState.BorderRadius = 0;
             this.chkdate.CheckedState.BorderThickness = 0;
             this.chkdate.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.chkdate.Location = new System.Drawing.Point(326, 48);
+            this.chkdate.Location = new System.Drawing.Point(354, 91);
             this.chkdate.Name = "chkdate";
             this.chkdate.Size = new System.Drawing.Size(96, 20);
             this.chkdate.TabIndex = 85;
@@ -100,6 +104,7 @@
             this.chkdate.UncheckedState.BorderRadius = 0;
             this.chkdate.UncheckedState.BorderThickness = 0;
             this.chkdate.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.chkdate.Visible = false;
             this.chkdate.CheckedChanged += new System.EventHandler(this.chkdate_CheckedChanged);
             // 
             // cmbbalparty
@@ -109,7 +114,7 @@
             this.cmbbalparty.CheckedState.BorderRadius = 0;
             this.cmbbalparty.CheckedState.BorderThickness = 0;
             this.cmbbalparty.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbbalparty.Location = new System.Drawing.Point(616, 47);
+            this.cmbbalparty.Location = new System.Drawing.Point(835, 65);
             this.cmbbalparty.Name = "cmbbalparty";
             this.cmbbalparty.Size = new System.Drawing.Size(99, 20);
             this.cmbbalparty.TabIndex = 86;
@@ -118,33 +123,34 @@
             this.cmbbalparty.UncheckedState.BorderRadius = 0;
             this.cmbbalparty.UncheckedState.BorderThickness = 0;
             this.cmbbalparty.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.cmbbalparty.Visible = false;
             // 
             // dgvAllparties
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvAllparties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvAllparties.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvAllparties.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAllparties.BackgroundColor = System.Drawing.Color.White;
             this.dgvAllparties.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAllparties.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvAllparties.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAllparties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAllparties.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAllparties.ColumnHeadersHeight = 18;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAllparties.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAllparties.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvAllparties.EnableHeadersVisualStyles = false;
             this.dgvAllparties.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvAllparties.Location = new System.Drawing.Point(4, 123);
@@ -207,7 +213,7 @@
             this.txttotalRecieve.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotalRecieve.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotalRecieve.HoverState.Parent = this.txttotalRecieve;
-            this.txttotalRecieve.Location = new System.Drawing.Point(699, 11);
+            this.txttotalRecieve.Location = new System.Drawing.Point(790, 11);
             this.txttotalRecieve.Name = "txttotalRecieve";
             this.txttotalRecieve.PasswordChar = '\0';
             this.txttotalRecieve.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -217,6 +223,7 @@
             this.txttotalRecieve.Size = new System.Drawing.Size(91, 36);
             this.txttotalRecieve.TabIndex = 78;
             this.txttotalRecieve.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txttotalRecieve.TextChanged += new System.EventHandler(this.txttotalRecieve_TextChanged);
             // 
             // txttotalPayable
             // 
@@ -235,7 +242,7 @@
             this.txttotalPayable.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotalPayable.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotalPayable.HoverState.Parent = this.txttotalPayable;
-            this.txttotalPayable.Location = new System.Drawing.Point(918, 13);
+            this.txttotalPayable.Location = new System.Drawing.Point(902, 11);
             this.txttotalPayable.Name = "txttotalPayable";
             this.txttotalPayable.PasswordChar = '\0';
             this.txttotalPayable.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -245,11 +252,12 @@
             this.txttotalPayable.Size = new System.Drawing.Size(91, 36);
             this.txttotalPayable.TabIndex = 69;
             this.txttotalPayable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txttotalPayable.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(510, 20);
+            this.label2.Location = new System.Drawing.Point(732, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 0;
@@ -259,7 +267,7 @@
             // 
             this.dtpdate.CustomFormat = "MM/dd/yyyy";
             this.dtpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpdate.Location = new System.Drawing.Point(428, 45);
+            this.dtpdate.Location = new System.Drawing.Point(325, 39);
             this.dtpdate.Name = "dtpdate";
             this.dtpdate.Size = new System.Drawing.Size(161, 23);
             this.dtpdate.TabIndex = 2;
@@ -275,7 +283,7 @@
             this.btncancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btncancel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btncancel.Location = new System.Drawing.Point(937, 19);
+            this.btncancel.Location = new System.Drawing.Point(937, 8);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(28, 26);
             this.btncancel.TabIndex = 80;
@@ -290,7 +298,7 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(940, 51);
+            this.btnPrint.Location = new System.Drawing.Point(940, 40);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 79;
@@ -305,7 +313,7 @@
             this.btnimport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnimport.FlatAppearance.BorderSize = 0;
             this.btnimport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnimport.Location = new System.Drawing.Point(984, 50);
+            this.btnimport.Location = new System.Drawing.Point(984, 39);
             this.btnimport.Name = "btnimport";
             this.btnimport.Size = new System.Drawing.Size(20, 20);
             this.btnimport.TabIndex = 78;
@@ -322,7 +330,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(886, 10);
+            this.btnminimize.Location = new System.Drawing.Point(886, -1);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 437;
@@ -334,17 +342,62 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(981, 80);
+            this.label3.Location = new System.Drawing.Point(981, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 16);
             this.label3.TabIndex = 438;
             this.label3.Text = "Print";
+            // 
+            // dtpto
+            // 
+            this.dtpto.CustomFormat = "MM/dd/yyyy";
+            this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpto.Location = new System.Drawing.Point(526, 39);
+            this.dtpto.Name = "dtpto";
+            this.dtpto.Size = new System.Drawing.Size(161, 23);
+            this.dtpto.TabIndex = 439;
+            this.dtpto.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(279, 41);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.TabIndex = 440;
+            this.label4.Text = "From";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(492, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(25, 16);
+            this.label5.TabIndex = 441;
+            this.label5.Text = "To";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(72, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 16);
+            this.label6.TabIndex = 442;
+            this.label6.Text = "All Transaction";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // AllParties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.dtpto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.dtpdate);
@@ -387,5 +440,9 @@
         private System.Windows.Forms.DateTimePicker dtpdate;
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dtpto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

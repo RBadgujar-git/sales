@@ -307,6 +307,7 @@
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(136, 23);
             this.dtpTo.TabIndex = 111;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             // 
             // btnminimize
             // 

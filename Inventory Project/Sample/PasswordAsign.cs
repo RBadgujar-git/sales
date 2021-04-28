@@ -276,6 +276,7 @@ namespace sample
 
                     SqlCommand cmd = new SqlCommand("Sp_loginpassword", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Action", "Insert");
                     cmd.Parameters.AddWithValue("@password", a1);
                     cmd.Parameters.AddWithValue("@ComId", NewCompany.company_id);
                     cmd.ExecuteNonQuery();

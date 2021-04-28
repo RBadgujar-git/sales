@@ -51,13 +51,13 @@
             this.cmbparty.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cmbparty.FocusedState.Parent = this.cmbparty;
             this.cmbparty.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbparty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.cmbparty.ForeColor = System.Drawing.Color.Blue;
             this.cmbparty.HoverState.Parent = this.cmbparty;
             this.cmbparty.ItemHeight = 30;
             this.cmbparty.Items.AddRange(new object[] {
             "Party Name"});
             this.cmbparty.ItemsAppearance.Parent = this.cmbparty;
-            this.cmbparty.Location = new System.Drawing.Point(60, 34);
+            this.cmbparty.Location = new System.Drawing.Point(54, 27);
             this.cmbparty.Name = "cmbparty";
             this.cmbparty.ShadowDecoration.Parent = this.cmbparty;
             this.cmbparty.Size = new System.Drawing.Size(140, 36);
@@ -137,11 +137,11 @@
             this.dgvPartyReport.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPartyReport.EnableHeadersVisualStyles = false;
             this.dgvPartyReport.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPartyReport.Location = new System.Drawing.Point(3, 90);
+            this.dgvPartyReport.Location = new System.Drawing.Point(3, 86);
             this.dgvPartyReport.Name = "dgvPartyReport";
             this.dgvPartyReport.RowHeadersVisible = false;
             this.dgvPartyReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPartyReport.Size = new System.Drawing.Size(991, 480);
+            this.dgvPartyReport.Size = new System.Drawing.Size(991, 484);
             this.dgvPartyReport.TabIndex = 237;
             this.dgvPartyReport.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvPartyReport.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;

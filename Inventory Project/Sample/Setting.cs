@@ -351,6 +351,7 @@ namespace sample
         {
             if (guna2CheckBox1.Checked == true)
             {
+             
                 guna2Button1.Show();
             }
             else if (guna2CheckBox1.Checked == false)
@@ -445,13 +446,11 @@ namespace sample
             Con1.Clear();Con2.Clear();Con3.Clear();Con4.Clear();
             button3.Hide();
         }
-
-
         private void button3_Click(object sender, EventArgs e)
         {
             insert();
+            panel3.Visible = false;
         }
-
         private void New4_TextChanged(object sender, EventArgs e)
         {
             if (old1.Text == "" && old2.Text == "" & old3.Text == "" && old4.Text == "")

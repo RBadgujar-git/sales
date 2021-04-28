@@ -1556,353 +1556,6 @@ C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\Idealtechinfo-9\Source\Repos\sales4\Inventory Project\sample\obj\Debug\sample.pdb
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
-D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe.config
-D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe
-D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Guna.UI2.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ADODB.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AddMore.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AllParties.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.backup.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Category.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque1.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DayBook.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Expenses.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Feedback.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.login.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.POS.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Reports.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.restore.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Setting.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Settings.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AddMore.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AllParties.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.backup.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Calculator.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Category.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Cheque.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Cheque1.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DayBook.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Expenses.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Feedback.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.login.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.POS.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Reports.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.restore.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Setting.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Settings.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Guna.UI2.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ADODB.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\bin\Debug\sample.exe.config
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.exe
@@ -2093,24 +1746,207 @@ C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\s
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
 C:\Users\ideal Tech Info\Source\Repos\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Toaster.NET.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Notification.resources
-D:\Git project\sales\Inventory Project\sample\bin\Debug\Toaster.NET.dll
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Notification.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
-D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\sample.exe
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\sample.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Guna.UI2.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Base.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Database.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Toaster.NET.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\ADODB.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.AddMore.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.AllParties.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.backup.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Category.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Cheque.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Cheque1.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.DayBook.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Expenses.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Feedback.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.login.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Notification.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.POS.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Reports.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.restore.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Setting.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Settings.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.cache
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.compiled
+C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\sample\obj\Debug\sample.pdb
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
@@ -2310,238 +2146,8 @@ C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
 C:\Users\ideal Tech Info\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
-C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.AddMore.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.AllParties.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.backup.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Calculator.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Category.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Cheque.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Cheque1.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.DayBook.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Expenses.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Feedback.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.login.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Notification.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.POS.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Reports.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.restore.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Setting.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Settings.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.cache
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\RdlCompile.compiled
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\sample.exe.config
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\sample.exe
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\sample.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Guna.UI2.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Microsoft.ReportViewer.WinForms.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Base.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Database.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Toaster.NET.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Zen.Barcode.Core.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Microsoft.SqlServer.Types.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ADODB.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\stdole.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
@@ -2552,8 +2158,369 @@ C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\p
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.exe
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.pdb
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\BarcodePrintReport.rpt
-C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\BarcodePrintReport.cs
+C:\Users\Rahul Badgujar\Source\Repos\sales3\Inventory Project\sample\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe.config
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.exe
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\sample.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Guna.UI2.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Toaster.NET.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ADODB.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.ResolveComReference.cache
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AddMore.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AllParties.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.backup.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Category.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Cheque.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Cheque1.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DayBook.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Expenses.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Feedback.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.login.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Notification.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.POS.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Reports.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.restore.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Setting.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Settings.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
+D:\Git project\sales\Inventory Project\Sample\bin\Debug\sample.exe.config
+D:\Git project\sales\Inventory Project\Sample\obj\Debug\sample.csproj.ResolveComReference.cache
+D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.exe
+D:\Git project\sales\Inventory Project\sample\bin\Debug\sample.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\BouncyCastle.Crypto.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.PlatformServices.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Guna.UI2.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.BlackTheme.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Toaster.NET.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Tulpep.NotificationWindow.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\ADODB.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.dll
+D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\ExcelDataReader.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\GemBox.Spreadsheet.WinFormsUtilities.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Auth.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Core.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v2.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.pdb
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Google.Apis.Drive.v3.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Newtonsoft.Json.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Base.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Controls.Win.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Database.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Editor.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Design.WebViewer.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Helper.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Web.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebDesign.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WebFx.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Win.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
+D:\Git project\sales\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csprojResolveAssemblyReference.cache
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AddMore.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Add_Unit.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AdjustAccount.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AdjustItem.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AllParties.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.AllTransactionSearch.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.backup.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BackuptoDrive.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BalanceSheet.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccount.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankAccountHomePage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.BankStatement.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Banktobank.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Barcodeprint.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Calculator.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashFlowReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandAdjust.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CashInHandHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Category.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Cheque1.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccount.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyBankAccountHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyList.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CompanyMaste.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CreditNote.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.CreditNothomePage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Dashboard.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DayBook.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DebitNote.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DebitNotehomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallan.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DeliveryChallanHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.demoaddunit.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.DiscountReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Estimate_Quotation.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.EstimateQuotationhomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategory.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseCategoryReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseHomePage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpenseItemReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Expenses.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExpensesReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ExportToExcel.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.E_Waybillgenrate.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Feedback.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR1.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR2.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR3B.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.GSTR9.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ImportExcel.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ImportParties.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Itemmaster.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemReportbyParty.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemSetting.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemSevice.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemTrackingReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ItemWiseProfitLoss.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Item_Tracking.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanAccount.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanAccountHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanStatement.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoanStatementReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.login.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LoginForm.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.LowStockSummary.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Makepayment.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.NewCompany.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Notification.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OnlineStore.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncome.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategory.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeCategoryReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeHomepage1.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeItemReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.OtherIncomeReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyMaster1.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyReportByItem.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartySetting.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PartyStatement.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Party_Group.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PasswordAsign.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentIn.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentInHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentOut.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PaymentOutHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.POS.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PrintSetting.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ProfitLossReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Properties.Resources.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseBill.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrder.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseOrderHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.PurchaseReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ReferandEarn.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.ReferEarnPoints.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Referralcode.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Reports.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.RequestDemo.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.restore.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleAging.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoice.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleInvoiceReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SaleOrder.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Saleorderhomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchasebyPartyGroup.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderItemReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseOrderReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportByItem.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SalePurchaseReportbyItemCategory.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.SelectCountry.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Serviceshomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Setting.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Settings.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.smsfrom.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.StockDetails.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.StockSummary.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.StockSummaryreportbyItemCategory.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TaxnGST.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TaxRateReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TaxReport.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.TransactionSetting.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.unitHomepage.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.Unit_Conversion.resources
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.exe
+D:\Git project\sales\Inventory Project\sample\obj\Debug\sample.pdb

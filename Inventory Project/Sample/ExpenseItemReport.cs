@@ -136,7 +136,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_ExpensesInner  where ItemName like'%{0}%' and Company_ID='" + compid+ "' and DeleteData='1'", txtfilter.Text);
+                string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_ExpensesInner  where ItemName like '%{0}%' and Company_ID='" + NewCompany.company_id+ "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -280,6 +280,16 @@ namespace sample
         }
 
         private void dgvexpense_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtqty_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

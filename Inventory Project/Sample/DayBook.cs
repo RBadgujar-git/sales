@@ -562,5 +562,10 @@ namespace sample
             dataGridView1.DataSource = ds;
             dataGridView1.DataMember = "temp";
         }
+
+        private void txtmoneyin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

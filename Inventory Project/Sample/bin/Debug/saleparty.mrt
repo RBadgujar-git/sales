@@ -205,6 +205,7 @@ No.</Text>
               <Name>Text12</Name>
               <Page isRef="3" />
               <Parent isRef="12" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{saleparty.Qty}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -422,7 +423,7 @@ No.</Text>
   <ReportChanged>4/17/2021 5:01:06 PM</ReportChanged>
   <ReportCreated>4/5/2021 5:56:18 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\saleparty.mrt</ReportFile>
-  <ReportGuid>706a4d83c8f0449aa3b793d3d83cc0c7</ReportGuid>
+  <ReportGuid>a0c89538c9e5488ba8be89665d869691</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

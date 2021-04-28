@@ -114,7 +114,7 @@
             </Image1>
             <Text2 Ref="10" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.2,1,7.4,0.6</ClientRectangle>
+              <ClientRectangle>4,1,7.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,8</Font>
               <Guid>476abdbdf1d04303ad992d2cbf3a605b</Guid>
@@ -127,9 +127,9 @@
             </Text2>
             <Text3 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>4.2,1.6,6,0.6</ClientRectangle>
+              <ClientRectangle>4,1.6,6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,9</Font>
+              <Font>Arial,9,Bold</Font>
               <Guid>30f872d71bfe4778b33c43daa946c615</Guid>
               <Margins>0,0,0,0</Margins>
               <Name>Text3</Name>
@@ -250,7 +250,7 @@
             </Text4>
             <Text24 Ref="19" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.8,0,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.8,0,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>9eb202d3c5dc4a38ad6ea232a53a1e29</Guid>
@@ -264,7 +264,7 @@
             </Text24>
             <Text25 Ref="20" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>13.8,0.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>13.8,0.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>9555356ea4084b7d81118840baa8b8a1</Guid>
@@ -272,13 +272,13 @@
               <Name>Text25</Name>
               <Page isRef="3" />
               <Parent isRef="5" />
-              <Text>Email      :</Text>
+              <Text>Email     :</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
             </Text25>
             <Text9 Ref="21" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1.6,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1.6,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>b5ba930b47b44949af855d14af79b4a1</Guid>
@@ -291,7 +291,7 @@
             </Text9>
             <Text80 Ref="22" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.4,1,1.8,0.6</ClientRectangle>
+              <ClientRectangle>2.4,1,1.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>Arial,10,Bold</Font>
               <Guid>35fb67db458b43279fcc718910640cfd</Guid>
@@ -383,6 +383,7 @@
               <Name>Text12</Name>
               <Page isRef="3" />
               <Parent isRef="28" />
+              <ShrinkFontToFit>True</ShrinkFontToFit>
               <Text>{PaymentOut.Total}</Text>
               <TextBrush>Black</TextBrush>
               <VertAlignment>Center</VertAlignment>
@@ -654,10 +655,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/17/2021 4:14:14 PM</ReportChanged>
+  <ReportChanged>4/27/2021 3:42:29 PM</ReportChanged>
   <ReportCreated>3/25/2021 1:07:49 PM</ReportCreated>
   <ReportFile>D:\Git project\sales\Inventory Project\Sample\bin\Debug\PaymentOutDataReport.mrt</ReportFile>
-  <ReportGuid>451cd0514edd44fc9e477a8a7b83c0c0</ReportGuid>
+  <ReportGuid>1d7f3dae546c4ed3a69a3840057fcdbf</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>
