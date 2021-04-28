@@ -80,12 +80,13 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
-                cmd.CommandTimeout = 50;
+                cmd.CommandTimeout =-10;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                 sda.Fill(dtable);
                 dgvComapnyMaster.DataSource = dtable;
                 dgvComapnyMaster.AllowUserToAddRows = false;
+
             }
             catch(Exception ew)
             {
