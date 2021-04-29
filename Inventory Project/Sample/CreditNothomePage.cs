@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
 
 namespace sample
 {
@@ -199,7 +200,30 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvcreditNote.DataSource = ds;
+                dgvcreditNote.DataMember = "temp";
+                dgvcreditNote.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+
+        }
+
+        private void dtpfrom_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

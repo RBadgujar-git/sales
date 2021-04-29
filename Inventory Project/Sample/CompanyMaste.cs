@@ -80,68 +80,19 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
-                cmd.CommandTimeout = 50;
+                cmd.CommandTimeout =50;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                 sda.Fill(dtable);
                 dgvComapnyMaster.DataSource = dtable;
-                hidedata();
                 dgvComapnyMaster.AllowUserToAddRows = false;
 
-                //SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
-                //sdasql.Fill(dtable);
-                //dgvComapnyMaster.DataSource = dtable;
-                //// hidedatagri();
-                //dgvComapnyMaster.AllowUserToAddRows = false;
             }
-
-            catch (Exception ew)
+            catch(Exception ew)
             {
                 MessageBox.Show(ew.Message);
             }
-        }
-
-        //private void fetchdetails()
-        //{
-        //    if (con.State == ConnectionState.Closed)
-        //    {
-        //        con.Open();
-        //    }
-
-        //    DataTable dtable = new DataTable();
-        //    cmd = new SqlCommand("tbl_CompanyMasterSelect", con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.AddWithValue("@Action", "Select");
-        //    cmd.Parameters.AddWithValue("@CompanyID", 0);
-        //    cmd.Parameters.AddWithValue("@CompanyName", txtcampanyName.Text);
-        //    cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-        //    cmd.Parameters.AddWithValue("@PhoneNo", txtContactNo.Text);
-        //    cmd.Parameters.AddWithValue("@EmailID", txtemail.Text);
-        //    cmd.Parameters.AddWithValue("@ReferaleCode", txtreferralcode.Text);
-        //    cmd.Parameters.AddWithValue("@BusinessType", txtbusinesstype.Text);
-        //    cmd.Parameters.AddWithValue("@OwnerName", ownerName.Text);
-        //    cmd.Parameters.AddWithValue("@GSTNumber", txtGSTNo.Text);
-        //    cmd.Parameters.AddWithValue("@City", txtCity.Text);
-        //    cmd.Parameters.AddWithValue("@State", cmbState.Text);
-        //    SqlParameter sqlpara = new SqlParameter("@Signature", SqlDbType.Image);
-        //    sqlpara.Value = DBNull.Value;
-        //    cmd.Parameters.Add(sqlpara);
-        //    SqlParameter sqlpar = new SqlParameter("@AddLogo", SqlDbType.Image);
-        //    sqlpar.Value = DBNull.Value;
-        //    cmd.Parameters.Add(sqlpar);
-        //    cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
-        //    cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
-        //    cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
-
-        //    SqlDataAdapter sdasql = new SqlDataAdapter(cmd);
-        //    sdasql.Fill(dtable);
-        //    dgvComapnyMaster.DataSource = dtable;
-        //    hidedata();
-        //    dgvComapnyMaster.AllowUserToAddRows = false;
-        //}
-
-
-
+            }
         public int verify = 0;
 
         public void validfild()
@@ -816,57 +767,50 @@ namespace sample
 
         private void dgvComapnyMaster_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
+            txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
+            txtAddress.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["Address"].Value.ToString();
+            txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ContactNo"].Value.ToString();
+            txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
+            txtreferralcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ReferaleCode"].Value.ToString();
+            txtbusinesstype.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BusinessType"].Value.ToString();
+            ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
+            txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
+            txtCity.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["City"].Value.ToString();
+            cmbState.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["State"].Value.ToString();
+
+
+
+            SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
+            
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
             {
-                id = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyID"].Value.ToString();
-                txtcampanyName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["CompanyName"].Value.ToString();
-                txtAddress.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["Address"].Value.ToString();
-                txtContactNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ContactNo"].Value.ToString();
-                txtemail.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["EmailID"].Value.ToString();
-                txtreferralcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["ReferaleCode"].Value.ToString();
-                txtbusinesstype.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BusinessType"].Value.ToString();
-                ownerName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["OwnerName"].Value.ToString();
-                txtGSTNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["GSTNumber"].Value.ToString();
-                txtCity.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["City"].Value.ToString();
-                cmbState.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["State"].Value.ToString();
-
-
-
-                SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
-
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Signature"]);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    picSignature.Image = Image.FromStream(ms);
-                    picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-
-                SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData='1'", con);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd2);
-                DataSet dds = new DataSet();
-                sda.Fill(dds);
-                if (dds.Tables[0].Rows.Count > 0)
-                {
-                    MemoryStream ms = new MemoryStream((byte[])dds.Tables[0].Rows[e.RowIndex]["AddLogo"]);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    picCompanyLogo.Image = Image.FromStream(ms);
-                    picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
-                }
-
-                txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BankName"].Value.ToString();
-                txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AccountNo"].Value.ToString();
-                txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["IFSC_Code"].Value.ToString();
-
+                MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[e.RowIndex]["Signature"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                picSignature.Image = Image.FromStream(ms);
+                picSignature.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            catch (Exception ex)
+
+            SqlCommand cmd2 = new SqlCommand("select AddLogo from tbl_CompanyMaster where DeleteData='1'", con);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd2);
+            DataSet dds = new DataSet();
+            sda.Fill(dds);
+            if (dds.Tables[0].Rows.Count > 0)
             {
-                 MessageBox.Show("error" + ex.Message);
+                MemoryStream ms = new MemoryStream((byte[])dds.Tables[0].Rows[e.RowIndex]["AddLogo"]);
+                ms.Seek(0, SeekOrigin.Begin);
+                picCompanyLogo.Image = Image.FromStream(ms);
+                picCompanyLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+
+            txtBankName.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["BankName"].Value.ToString();
+            txtAccountNo.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["AccountNo"].Value.ToString();
+            txtIFSCcode.Text = dgvComapnyMaster.Rows[e.RowIndex].Cells["IFSC_Code"].Value.ToString();
+
         }
 
         private void btnsave_Leave(object sender, EventArgs e)

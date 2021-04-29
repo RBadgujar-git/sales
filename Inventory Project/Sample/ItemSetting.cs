@@ -370,7 +370,7 @@ namespace sample
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '1' where  Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
             }
-            else if (chkItemWiseTax.Checked == false)
+             if (chkItemWiseTax.Checked == false)
             {
                 SqlCommand cmd = new SqlCommand("update Setting_Table Set ItemwisTax = '0' where   Company_ID=" + NewCompany.company_id + " ", con);
                 cmd.ExecuteNonQuery();
