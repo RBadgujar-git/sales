@@ -879,14 +879,22 @@ namespace sample
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Settings BA = new Settings();
-            BA.TopLevel = false;
-            BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            TransactionSetting PB = new TransactionSetting();
+            // ex.TopLevel = false;
+            PB.AutoScroll = true;
+            this.Controls.Add(PB);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            PB.Dock = DockStyle.Fill;
+            // PB.Show();
+            PB.BringToFront();
+            //Settings BA = new Settings();
+            //BA.TopLevel = false;
+            //BA.AutoScroll = true;
+            //this.Controls.Add(BA);
+            //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //BA.Dock = DockStyle.Fill;
+            //BA.Visible = true;
+            //BA.BringToFront();
         }
 
         private void button3_Click(object sender, EventArgs e)
