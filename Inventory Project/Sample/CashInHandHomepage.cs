@@ -92,6 +92,11 @@ namespace sample
         {
            
             
+            
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox1.Text == "")
             {
                 bindbankdata();

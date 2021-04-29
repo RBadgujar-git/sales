@@ -253,19 +253,7 @@ namespace sample
 
         private void txtSearch1_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                string Query = string.Format("select ID,OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvcategory.DataSource = ds;
-                dgvcategory.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void txtSearch1_KeyPress(object sender, KeyPressEventArgs e)
@@ -302,5 +290,21 @@ namespace sample
             txtOtherIncome.Focus();
         }
 
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string Query = string.Format("select ID,OtherIncome from tbl_otherIncomeCaategory where OtherIncome like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtSearch1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvcategory.DataSource = ds;
+                dgvcategory.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

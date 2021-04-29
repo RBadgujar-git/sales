@@ -532,19 +532,7 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           if (textBox1.Text == "")
-            {
-                fetchdetails();
-            }
-            else
-            {
-                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ServiceID like '%{0}%'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvItemServices.DataSource = ds;
-                dgvItemServices.DataMember = "temp";
-            }
+           
         }
 
         private void cmbTaxType_SelectedIndexChanged(object sender, EventArgs e)
@@ -568,6 +556,23 @@ namespace sample
         private void cmbItemCategory_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select ServiceID,ItemName,ItemHSNCOde,Unit,Subunit,ItemCode,Category,SalePrice,TaxType,TaxRate,Description,Image from tbl_ItemServicemaster where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemServices.DataSource = ds;
+                dgvItemServices.DataMember = "temp";
+            }
         }
     }
 }

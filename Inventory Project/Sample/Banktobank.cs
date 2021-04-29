@@ -521,6 +521,11 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+           
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox2.Text == "")
             {
                 fetchdetails();
@@ -528,7 +533,7 @@ namespace sample
             }
             else
             {
-                string Query = string.Format("select ID,FromBank,ToBank,Amount,	Date,Descripition from tbl_BanktoBankTransfer where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' and FromBank like '%{0}%' or ID like '%{0}%'", textBox2.Text);
+                string Query = string.Format("select ID,FromBank,ToBank,Amount,	Date,Descripition from tbl_BanktoBankTransfer where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' and FromBank like '%{0}%'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

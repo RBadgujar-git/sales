@@ -248,13 +248,18 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
             if (textBox1.Text == "")
             {
                 fetchdtails();
             }
             else
             {
-                string Query = string.Format("select ID,ReferralCode from ReferralCode1 where Company_ID ='" + NewCompany.company_id + "' and ID like '%{0}%' and  DeleteData='1'", textBox1.Text);
+                string Query = string.Format("select ID,ReferralCode from ReferralCode1 where Company_ID ='" + NewCompany.company_id + "' and ReferralCode like '%{0}%' and  DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

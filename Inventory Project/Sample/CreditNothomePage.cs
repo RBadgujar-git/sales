@@ -34,7 +34,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string Query = string.Format("select InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -111,7 +111,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string Query = string.Format("select InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -131,7 +131,7 @@ namespace sample
            
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1'", txtfilter.Text);
+                string Query = string.Format("select InvoiceDate,ReturnNo,PartyName,Total,Received,Status,DueDate from tbl_CreditNote1 where Company_ID='" + NewCompany.company_id + "' and PartyName like '%{0}%' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -162,7 +162,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,a.GSTNumber,b.InvoiceDate,b.PartyName,b.ReturnNo,b.TableName,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,a.GSTNumber,b.InvoiceDate,b.PartyName,b.ReturnNo,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -199,7 +199,7 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_CreditNote1 where InvoiceDate between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

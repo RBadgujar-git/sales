@@ -581,20 +581,7 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                fetchdetails();
-                hidedata();
-            }
-            else
-            {
-                string Query = string.Format("select ID,AccountName,AccountNo,LendarBank,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,LoanAmount,Total,BalAsOf from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvDescription.DataSource = ds;
-                dgvDescription.DataMember = "temp";
-            }
+            
         }
 
         private void cmbLoanReceive_KeyPress(object sender, KeyPressEventArgs e)
@@ -647,6 +634,24 @@ namespace sample
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+                hidedata();
+            }
+            else
+            {
+                string Query = string.Format("select ID,AccountName,AccountNo,LendarBank,CurrentBal,LoanReceive,Interest,Duration,ProcessingFees,LoanAmount,Total,BalAsOf from tbl_LoanBank where Company_ID='" + NewCompany.company_id + "' and AccountName like '%{0}%' and DeleteData = '1'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvDescription.DataSource = ds;
+                dgvDescription.DataMember = "temp";
+            }
         }
     }
 }

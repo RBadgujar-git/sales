@@ -282,6 +282,11 @@ namespace sample
         {
 
         }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+        }
     }
 }
 

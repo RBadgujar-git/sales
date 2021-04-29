@@ -80,7 +80,9 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
+                cmd.CommandTimeout = 50;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
                 sda.Fill(dtable);
                 dgvComapnyMaster.DataSource = dtable;
                 dgvComapnyMaster.AllowUserToAddRows = false;
@@ -380,9 +382,10 @@ namespace sample
 
         private void CompanyMaste_Load(object sender, EventArgs e)
         {
-            txtcampanyName.Focus();
             fetchdetails();
-            hidedata();
+
+            txtcampanyName.Focus();
+            // hidedata();
         }
 
 
@@ -747,32 +750,13 @@ namespace sample
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void txtSearch1_TextChanged(object sender, EventArgs e)
         {
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                fetchdetails();
-                hidedata();
-            }
-            else
-            {
-                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%' or CompanyID like '%{0}%'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvComapnyMaster.DataSource = ds;
-                dgvComapnyMaster.DataMember = "temp";
-            }
+           
         }
 
         private void txtBankName_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -797,7 +781,9 @@ namespace sample
 
 
             SqlCommand cmd = new SqlCommand("select Signature from tbl_CompanyMaster where DeleteData='1'", con);
+            
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+
             DataSet ds = new DataSet();
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
@@ -854,6 +840,24 @@ namespace sample
                     txtcampanyName.Focus();
                 }
 
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+                hidedata();
+            }
+            else
+            {
+                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvComapnyMaster.DataSource = ds;
+                dgvComapnyMaster.DataMember = "temp";
             }
         }
     }

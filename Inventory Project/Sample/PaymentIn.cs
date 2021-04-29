@@ -139,7 +139,10 @@ namespace sample
                         if (num > 0)
                         {
                             MessageBox.Show("Data Save Successfully");
-                            Cleardata();
+                    insrtparty();
+                    balance();
+                    Cleardata();
+
                         }
                         else
                         {
@@ -317,6 +320,46 @@ namespace sample
 
             }
         }
+        public int cp;
+        public void insrtparty()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                string SelectQuery = string.Format("select PartyName from tbl_PartyMaster where Company_ID='" + NewCompany.company_id + "'  and DeleteData='1' group by PartyName ");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "Temp");
+                DataTable DT = new DataTable();
+                SDA.Fill(ds);
+                for (int i = 0; i < ds.Tables["Temp"].Rows.Count; i++)
+                {
+                    string itemname = ds.Tables["Temp"].Rows[i]["PartyName"].ToString();
+                    if (itemname.ToString() == cmbPartyName.Text.ToString())
+                    {
+                        cp = 1;
+                    }
+                }
+
+                if (cp != 1)
+                {
+                  
+                    string query = string.Format("insert into tbl_PartyMaster(PartyName,Company_ID,OpeningBal) Values ('" + cmbPartyName.Text + "'," + NewCompany.company_id + ",0)");
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (id == "")
@@ -325,12 +368,35 @@ namespace sample
                 if (verify == 1)
                 {
                     InsertData();
+                    //insrtparty();
+                    //balance();
                     fetchdetails();
                 }
             }
             else
             {
                 MessageBox.Show("Same Record Not Insert");
+            }
+        }
+        public void balance()
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                SqlCommand cmd = new SqlCommand("Select OpeningBal from tbl_PartyMaster where PartyName='" + cmbPartyName.Text + "' and Company_ID=" + NewCompany.company_id + " ", con);
+                float prives = Convert.ToInt32(cmd.ExecuteScalar());
+                float remaning = float.Parse(txtTotal.Text);
+                float total = prives + remaning;
+                SqlCommand cmd1 = new SqlCommand("UPDATE tbl_PartyMaster SET OpeningBal=" + total + " where PartyName='" + cmbPartyName.Text + "' and Company_ID=" + NewCompany.company_id + "", con);
+                cmd1.ExecuteNonQuery();
+
+            }
+            catch (Exception ew)
+            {
+                MessageBox.Show(ew.Message);
             }
         }
 
@@ -522,20 +588,7 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                fetchdetails();
-              
-            }
-            else
-            {
-                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and CustomerName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvPaymentIn.DataSource = ds;
-                dgvPaymentIn.DataMember = "temp";
-            }
+            
         }
 
         private void dgvPaymentIn_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -561,6 +614,24 @@ namespace sample
                 ms.Seek(0, SeekOrigin.Begin);
                 PictureBox1.Image = Image.FromStream(ms);
                 PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+
+            }
+            else
+            {
+                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and CustomerName like '%{0}%' and DeleteData = '1'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPaymentIn.DataSource = ds;
+                dgvPaymentIn.DataMember = "temp";
             }
         }
     }
