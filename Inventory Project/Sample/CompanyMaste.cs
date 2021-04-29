@@ -80,7 +80,7 @@ namespace sample
                 cmd.Parameters.AddWithValue("@AdditinalFeild1", txtBankName.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild2", txtAccountNo.Text);
                 cmd.Parameters.AddWithValue("@AdditinalFeild3", txtIFSCcode.Text);
-                cmd.CommandTimeout =-10;
+                cmd.CommandTimeout =50;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
                 sda.Fill(dtable);
