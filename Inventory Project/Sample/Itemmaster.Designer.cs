@@ -84,7 +84,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.txtHSNcode = new Guna.UI2.WinForms.Guna2TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.picturebox = new System.Windows.Forms.PictureBox();
             this.dgvItemmaster = new Guna.UI2.WinForms.Guna2DataGridView();
             this.itemtracking = new Guna.UI2.WinForms.Guna2Panel();
@@ -103,6 +102,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
+            this.textBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -854,11 +854,11 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.Cesstxt);
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.txtHSNcode);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.picturebox);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.dgvItemmaster);
@@ -986,19 +986,11 @@
             this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(36, 401);
+            this.button3.Location = new System.Drawing.Point(36, 402);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(17, 20);
+            this.button3.Size = new System.Drawing.Size(19, 19);
             this.button3.TabIndex = 70;
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(61, 401);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 23);
-            this.textBox2.TabIndex = 69;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // picturebox
             // 
@@ -1314,6 +1306,33 @@
             this.label25.TabIndex = 0;
             this.label25.Text = "Item Tracking ";
             // 
+            // textBox2
+            // 
+            this.textBox2.BorderColor = System.Drawing.Color.Gray;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox2.DefaultText = "";
+            this.textBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.DisabledState.Parent = this.textBox2;
+            this.textBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.FocusedState.Parent = this.textBox2;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.HoverState.Parent = this.textBox2;
+            this.textBox2.Location = new System.Drawing.Point(63, 396);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '\0';
+            this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox2.PlaceholderText = "Item Name";
+            this.textBox2.SelectedText = "";
+            this.textBox2.ShadowDecoration.Parent = this.textBox2;
+            this.textBox2.Size = new System.Drawing.Size(192, 26);
+            this.textBox2.TabIndex = 453;
+            this.textBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
             // Itemmaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1412,9 +1431,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
         private Guna.UI2.WinForms.Guna2TextBox txtHSNcode;
         private Guna.UI2.WinForms.Guna2TextBox Cesstxt;
         private System.Windows.Forms.Label label26;
+        private Guna.UI2.WinForms.Guna2TextBox textBox2;
     }
 }

@@ -30,8 +30,10 @@ namespace sample
         private void Add_Unit_Load(object sender, EventArgs e)
         {
             txtAddUnit.Focus();
+            
             fetchdetails();
         }
+        
 
         private void cleardata()
         {
@@ -297,19 +299,7 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                fetchdetails();
-            }
-            else
-            {
-                string Query = string.Format("select UnitID,UnitName,SubUnitName from tbl_UnitMaster where Company_ID ='" + NewCompany.company_id + "' and UnitName like '%{0}%' or UnitID like '%{0}%' and  DeleteData='1'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvAddunit.DataSource = ds;
-                dgvAddunit.DataMember = "temp";
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -320,6 +310,23 @@ namespace sample
         private void panel3_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtpartyfilter_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+            }
+            else
+            {
+                string Query = string.Format("select UnitID,UnitName,SubUnitName from tbl_UnitMaster where Company_ID ='" + NewCompany.company_id + "' and  UnitName like '%{0}%' and  DeleteData='1'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvAddunit.DataSource = ds;
+                dgvAddunit.DataMember = "temp";
+            }
         }
     }
 

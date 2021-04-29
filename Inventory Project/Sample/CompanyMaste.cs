@@ -751,32 +751,13 @@ namespace sample
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void txtSearch1_TextChanged(object sender, EventArgs e)
         {
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                fetchdetails();
-                hidedata();
-            }
-            else
-            {
-                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%' or CompanyID like '%{0}%'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvComapnyMaster.DataSource = ds;
-                dgvComapnyMaster.DataMember = "temp";
-            }
+           
         }
 
         private void txtBankName_KeyPress_1(object sender, KeyPressEventArgs e)
@@ -860,6 +841,24 @@ namespace sample
                     txtcampanyName.Focus();
                 }
 
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                fetchdetails();
+                hidedata();
+            }
+            else
+            {
+                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvComapnyMaster.DataSource = ds;
+                dgvComapnyMaster.DataMember = "temp";
             }
         }
     }

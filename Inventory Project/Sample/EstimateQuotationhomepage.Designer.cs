@@ -135,7 +135,8 @@
             this.txtfilter.Location = new System.Drawing.Point(139, 128);
             this.txtfilter.Name = "txtfilter";
             this.txtfilter.PasswordChar = '\0';
-            this.txtfilter.PlaceholderText = "";
+            this.txtfilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtfilter.PlaceholderText = "Party Name";
             this.txtfilter.SelectedText = "";
             this.txtfilter.ShadowDecoration.Parent = this.txtfilter;
             this.txtfilter.Size = new System.Drawing.Size(200, 27);

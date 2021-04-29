@@ -63,13 +63,14 @@
             this.txtFilter.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtFilter.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFilter.HoverState.Parent = this.txtFilter;
-            this.txtFilter.Location = new System.Drawing.Point(94, 129);
+            this.txtFilter.Location = new System.Drawing.Point(94, 137);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.PasswordChar = '\0';
-            this.txtFilter.PlaceholderText = "";
+            this.txtFilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtFilter.PlaceholderText = "Party Name";
             this.txtFilter.SelectedText = "";
             this.txtFilter.ShadowDecoration.Parent = this.txtFilter;
-            this.txtFilter.Size = new System.Drawing.Size(200, 36);
+            this.txtFilter.Size = new System.Drawing.Size(200, 27);
             this.txtFilter.TabIndex = 221;
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
@@ -164,6 +165,7 @@
             this.btnimport.Size = new System.Drawing.Size(22, 23);
             this.btnimport.TabIndex = 210;
             this.btnimport.UseVisualStyleBackColor = false;
+            this.btnimport.Visible = false;
             this.btnimport.Click += new System.EventHandler(this.btnimport_Click);
             // 
             // label6

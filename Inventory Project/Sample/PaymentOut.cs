@@ -598,13 +598,18 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            
+        }
+
+        private void txtFilterBy_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFilterBy.Text == "")
             {
                 fetchdetails();
             }
             else
             {
-                string Query = string.Format("select ID,CustomerName,PaymentType,ReceiptNo,Date,Description,Paid,Discount,Total,image,Status from tbl_Paymentout where Company_ID ='" + NewCompany.company_id + "' and CustomerName like '%{0}%' or ID like '%{0}%' and  DeleteData='1'", textBox2.Text);
+                string Query = string.Format("select ID,CustomerName,PaymentType,ReceiptNo,Date,Description,Paid,Discount,Total,image,Status from tbl_Paymentout where Company_ID ='" + NewCompany.company_id + "' and CustomerName like '%{0}%' and  DeleteData='1'", txtFilterBy.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

@@ -58,8 +58,8 @@
             this.btnSetting = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.Clear = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -358,8 +358,8 @@
             // Clear
             // 
             this.Clear.BackColor = System.Drawing.Color.White;
-            this.Clear.Controls.Add(this.button3);
             this.Clear.Controls.Add(this.textBox2);
+            this.Clear.Controls.Add(this.button3);
             this.Clear.Controls.Add(this.PictureBox1);
             this.Clear.Controls.Add(this.textBox1);
             this.Clear.Controls.Add(this.label12);
@@ -393,6 +393,30 @@
             this.Clear.ShadowDecoration.Parent = this.Clear;
             this.Clear.Paint += new System.Windows.Forms.PaintEventHandler(this.Clear_Paint);
             // 
+            // textBox2
+            // 
+            this.textBox2.BorderColor = System.Drawing.Color.Gray;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox2.DefaultText = "";
+            this.textBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.DisabledState.Parent = this.textBox2;
+            this.textBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.FocusedState.Parent = this.textBox2;
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.HoverState.Parent = this.textBox2;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '\0';
+            this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox2.PlaceholderText = "Party  Name";
+            this.textBox2.SelectedText = "";
+            this.textBox2.ShadowDecoration.Parent = this.textBox2;
+            this.textBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_1);
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
@@ -402,12 +426,6 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // PictureBox1
             // 
@@ -559,6 +577,6 @@
         private System.Windows.Forms.Button btnminimize;
         private System.Windows.Forms.PictureBox PictureBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
+        private Guna.UI2.WinForms.Guna2TextBox textBox2;
     }
 }

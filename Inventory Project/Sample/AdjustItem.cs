@@ -361,24 +361,29 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
             if (textBox1.Text == "")
             {
                 fetchdetails();
             }
             else
             {
-                string Query = string.Format("select ID,ItemName,AdjustmentType,AdjustmentDate,AtPrice,Quantity,Details from tbl_ItemAdjustement where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%' or ID like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select ID,ItemName,AdjustmentType,AdjustmentDate,AtPrice,Quantity,Details from tbl_ItemAdjustement where Company_ID='" + NewCompany.company_id + "' and DeleteData='1' and ItemName like '%{0}%'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvItemAdjustment.DataSource = ds;
                 dgvItemAdjustment.DataMember = "temp";
             }
-        }
-
-        private void txtName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

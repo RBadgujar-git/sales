@@ -452,7 +452,7 @@
             this.btnAddSale.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSale.ForeColor = System.Drawing.Color.White;
             this.btnAddSale.HoverState.Parent = this.btnAddSale;
-            this.btnAddSale.Location = new System.Drawing.Point(872, 12);
+            this.btnAddSale.Location = new System.Drawing.Point(872, 15);
             this.btnAddSale.Name = "btnAddSale";
             this.btnAddSale.ShadowDecoration.Parent = this.btnAddSale;
             this.btnAddSale.Size = new System.Drawing.Size(139, 45);
@@ -479,7 +479,8 @@
             this.txtSearch.Location = new System.Drawing.Point(91, 33);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtSearch.PlaceholderText = "Party Name";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(200, 24);
@@ -495,6 +496,7 @@
             this.label13.Size = new System.Drawing.Size(93, 16);
             this.label13.TabIndex = 0;
             this.label13.Text = "Transaction";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // btnCancel
             // 

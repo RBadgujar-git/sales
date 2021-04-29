@@ -588,20 +588,7 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
-            {
-                fetchdetails();
-              
-            }
-            else
-            {
-                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and CustomerName like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvPaymentIn.DataSource = ds;
-                dgvPaymentIn.DataMember = "temp";
-            }
+            
         }
 
         private void dgvPaymentIn_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -627,6 +614,24 @@ namespace sample
                 ms.Seek(0, SeekOrigin.Begin);
                 PictureBox1.Image = Image.FromStream(ms);
                 PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                fetchdetails();
+
+            }
+            else
+            {
+                string Query = string.Format("select ID,CustomerName as PartyName,PaymentType,ReceiptNo,Date,Description,ReceivedAmount,UnusedAmount,Total,Status,image from tbl_PaymentIn where Company_ID='" + NewCompany.company_id + "' and CustomerName like '%{0}%' and DeleteData = '1'", textBox2.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvPaymentIn.DataSource = ds;
+                dgvPaymentIn.DataMember = "temp";
             }
         }
     }
