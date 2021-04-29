@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
-
+using System.Globalization;
 
 namespace sample
 {
@@ -332,7 +332,9 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFromDate.Value + "' and '" + dtpTodate.Value + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string SelectQuery = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpTodate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -441,6 +443,25 @@ namespace sample
         private void label13_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtpFromDate_ValueChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string SelectQuery = string.Format("select InvoiceDate,InvoiceID,PartyName,PaymentType,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpTodate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvsaleInvoice.DataSource = ds;
+                dgvsaleInvoice.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }

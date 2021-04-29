@@ -230,6 +230,7 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(152, 23);
             this.dtpFrom.TabIndex = 179;
+            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // dtpTo
             // 

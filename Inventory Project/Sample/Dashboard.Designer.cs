@@ -835,6 +835,7 @@
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
             this.guna2Button2.Size = new System.Drawing.Size(40, 40);
             this.guna2Button2.TabIndex = 11;
+            this.guna2Button2.Visible = false;
             this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button1

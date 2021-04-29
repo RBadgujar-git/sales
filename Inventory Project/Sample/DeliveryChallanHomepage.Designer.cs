@@ -186,6 +186,7 @@
             this.dtpfromdate.Name = "dtpfromdate";
             this.dtpfromdate.Size = new System.Drawing.Size(136, 23);
             this.dtpfromdate.TabIndex = 232;
+            this.dtpfromdate.ValueChanged += new System.EventHandler(this.dtpfromdate_ValueChanged);
             // 
             // txtFilter
             // 
