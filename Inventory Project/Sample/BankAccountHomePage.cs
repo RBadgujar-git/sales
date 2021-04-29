@@ -177,12 +177,20 @@ namespace sample
 
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-            string Query = string.Format("(select AccountNo,BankName,Date,OpeningBal from tbl_BankAccount  where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(Query, con);
-            da.Fill(ds, "temp");
-            dgvBankAcc.DataSource = ds;
-            dgvBankAcc.DataMember = "temp";
+            try
+            {
+                string Query = string.Format("(select AccountNo,BankName,Date,OpeningBal from tbl_BankAccount  where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvBankAcc.DataSource = ds;
+                dgvBankAcc.DataMember = "temp";
+                dgvBankAcc.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error "+ ex.Message);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
