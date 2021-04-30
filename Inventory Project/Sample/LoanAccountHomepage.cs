@@ -163,12 +163,21 @@ namespace sample
 
         private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
-            string Query = string.Format("(select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where BalAsOf between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(Query, con);
-            da.Fill(ds, "temp");
-            dgvLoanAccount.DataSource = ds;
-            dgvLoanAccount.DataMember = "temp";
+            try
+            {
+
+                string Query = string.Format("(select AccountNo,BalAsOf,LendarBank,CurrentBal,Interest,Duration from tbl_LoanBank where BalAsOf between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and AccountName='" + lblBankAccount.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvLoanAccount.DataSource = ds;
+                dgvLoanAccount.DataMember = "temp";
+                dgvbankAccount.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
