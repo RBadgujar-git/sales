@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +101,7 @@
             this.guna2Button52 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -934,6 +936,14 @@
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_2);
             this.panel3.MouseHover += new System.EventHandler(this.panel3_MouseHover);
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -1039,6 +1049,7 @@
         private System.Windows.Forms.ToolStripMenuItem companyBankAccountToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
