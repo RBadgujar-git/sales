@@ -5,16 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //using System.Data.SqlClient;
-
-
-
 namespace sample
 {
     class ConnectionString
     {
         public static SqlConnection con = null;
-
-         
+   
         public void createConeection()
         {
             con = new SqlConnection(Properties.Settings.Default.InventoryMgntConnectionString);
