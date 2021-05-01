@@ -132,6 +132,7 @@ namespace sample
                    cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
              //       cmd.Parameters.AddWithValue("@del",1);
                     cmd.ExecuteNonQuery();
+                    dgvinnerexpenses.AllowUserToAddRows = false;
                 }
                 catch (Exception e1) {
                  // MessageBox.Show(e1.Message);
@@ -271,6 +272,10 @@ namespace sample
             finally
             {
                 //clear_text_data();
+                txtItem.Text = "";
+                txtMRP.Text = "";
+                txtOty.Text = "";
+                txtitemamount.Text = "";
             }
         }
         private void clear_text_data()
@@ -410,6 +415,7 @@ namespace sample
 
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
                     cmd.ExecuteNonQuery();
+                    dgvinnerexpenses.AllowUserToAddRows = false;
                 }
                 catch (Exception e1) {
                     //MessageBox.Show(e1.Message);
@@ -472,7 +478,7 @@ namespace sample
         {
             if (cmbexpenses.Text == "")
             {
-                MessageBox.Show("Expenses Category is Required");
+                MessageBox.Show("Income Category is Required");
                 cmbexpenses.Focus();
 
             }
@@ -511,7 +517,7 @@ namespace sample
                 {
                     con.Open();
                 }
-               // validdata();
+                validdata();
                 if (veryfi == 1)
                 {
                     string str = string.Format("SELECT * FROM tbl_OtherIncome where Id =" + txtReturnNo.Text + " and  Company_ID='" + NewCompany.company_id + "'");
@@ -725,7 +731,7 @@ namespace sample
             txtReceived.Text = "0";
             txtBalance.Text = "0";
             ComboBox.Text = "";
-
+            dgvinnerexpenses.AllowUserToAddRows = false;
             
         }
 
