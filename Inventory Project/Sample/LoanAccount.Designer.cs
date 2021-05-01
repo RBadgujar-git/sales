@@ -42,6 +42,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.textBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbAccount = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtcompanyname = new Guna.UI2.WinForms.Guna2TextBox();
@@ -72,7 +73,6 @@
             this.txtLenderBank = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescription)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -311,6 +311,33 @@
             this.guna2Panel2.TabIndex = 3;
             this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
+            // textBox2
+            // 
+            this.textBox2.BorderColor = System.Drawing.Color.Gray;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox2.DefaultText = "";
+            this.textBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.DisabledState.Parent = this.textBox2;
+            this.textBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.FocusedState.Parent = this.textBox2;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.HoverState.Parent = this.textBox2;
+            this.textBox2.Location = new System.Drawing.Point(73, 296);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '\0';
+            this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox2.PlaceholderText = "Account Name";
+            this.textBox2.SelectedText = "";
+            this.textBox2.ShadowDecoration.Parent = this.textBox2;
+            this.textBox2.Size = new System.Drawing.Size(180, 26);
+            this.textBox2.TabIndex = 454;
+            this.textBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
             // cmbAccount
             // 
             this.cmbAccount.Location = new System.Drawing.Point(160, 46);
@@ -519,7 +546,7 @@
             // 
             // dtpdate
             // 
-            this.dtpdate.CustomFormat = "MM/dd/yyyy";
+            this.dtpdate.CustomFormat = "dd-MM-yyyy";
             this.dtpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpdate.Location = new System.Drawing.Point(538, 134);
             this.dtpdate.Name = "dtpdate";
@@ -781,33 +808,6 @@
             this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "Account Name :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderColor = System.Drawing.Color.Gray;
-            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox2.DefaultText = "";
-            this.textBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox2.DisabledState.Parent = this.textBox2;
-            this.textBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox2.FocusedState.Parent = this.textBox2;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox2.HoverState.Parent = this.textBox2;
-            this.textBox2.Location = new System.Drawing.Point(73, 296);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '\0';
-            this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBox2.PlaceholderText = "Account Name";
-            this.textBox2.SelectedText = "";
-            this.textBox2.ShadowDecoration.Parent = this.textBox2;
-            this.textBox2.Size = new System.Drawing.Size(180, 26);
-            this.textBox2.TabIndex = 454;
-            this.textBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // LoanAccount
             // 

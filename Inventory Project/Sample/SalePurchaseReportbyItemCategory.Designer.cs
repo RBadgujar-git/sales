@@ -254,7 +254,7 @@
             // 
             // dtpFromdate
             // 
-            this.dtpFromdate.CustomFormat = "MM/dd/yyyy";
+            this.dtpFromdate.CustomFormat = "dd-MM-yyyy";
             this.dtpFromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFromdate.Location = new System.Drawing.Point(294, 33);
             this.dtpFromdate.Name = "dtpFromdate";
@@ -263,12 +263,13 @@
             // 
             // dtpTodate
             // 
-            this.dtpTodate.CustomFormat = "MM/dd/yyyy";
+            this.dtpTodate.CustomFormat = "dd-MM-yyyy";
             this.dtpTodate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTodate.Location = new System.Drawing.Point(515, 32);
             this.dtpTodate.Name = "dtpTodate";
             this.dtpTodate.Size = new System.Drawing.Size(174, 23);
             this.dtpTodate.TabIndex = 115;
+            this.dtpTodate.ValueChanged += new System.EventHandler(this.dtpTodate_ValueChanged);
             // 
             // btnminimize
             // 

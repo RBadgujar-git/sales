@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
 
 namespace sample
 {
@@ -111,8 +112,9 @@ namespace sample
 
            try
             {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
                 //TableName
-                string SelectQuery = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where OrderDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where OrderDate between '" + dtpFromDate.Value.ToString() + "' and '" + dtpToDaate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where OrderDate between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpToDaate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where OrderDate between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpToDaate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -288,6 +290,25 @@ namespace sample
                 //TableName
                 string SelectQuery = string.Format("(select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select OrderDate,OrderNo,PartyName,PaymentType,Total,Status,TableName from tbl_PurchaseOrder where Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
 
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvSaleorder.DataSource = ds;
+                dgvSaleorder.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+        }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                //TableName
+                string SelectQuery = string.Format("select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_SaleOrder where OrderDate between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpToDaate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Total,DueDate,Status from tbl_PurchaseOrder where OrderDate between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpToDaate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");

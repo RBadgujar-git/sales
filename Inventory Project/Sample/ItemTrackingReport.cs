@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
 
 namespace sample
 {
@@ -135,7 +136,8 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where Expdate between '" + dtpFromexp.Value.ToString() + "' and '" + dtpToexp.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where Expdate between '" + dtpFromexp.Value.ToString(sysUIFormat) + "' and '" + dtpToexp.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -229,7 +231,8 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where MFgdate between '" + dtpfrom.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where MFgdate between '" + dtpfrom.Value.ToString(sysUIFormat) + "' and '" + dtpToDate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -260,6 +263,44 @@ namespace sample
                 dgvItemTracking.DataSource = ds;
                 dgvItemTracking.DataMember = "temp";
 
+                dgvItemTracking.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtpfrom_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where MFgdate between '" + dtpfrom.Value.ToString(sysUIFormat) + "' and '" + dtpToDate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemTracking.DataSource = ds;
+                dgvItemTracking.DataMember = "temp";
+                dgvItemTracking.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dtpFromexp_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = string.Format("select ItemName,BatchNo,SerialNo,Size,MFgdate,Expdate from tbl_ItemMaster where Expdate between '" + dtpFromexp.Value.ToString(sysUIFormat) + "' and '" + dtpToexp.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtItemname.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvItemTracking.DataSource = ds;
+                dgvItemTracking.DataMember = "temp";
                 dgvItemTracking.AllowUserToAddRows = false;
             }
             catch (Exception ex)

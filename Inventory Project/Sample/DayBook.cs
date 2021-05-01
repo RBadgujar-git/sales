@@ -529,6 +529,7 @@ namespace sample
         {
             try
             {
+
                 con.Open();
                 string Query = String.Format("select CompanyID from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID", cmbAllfirms.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);

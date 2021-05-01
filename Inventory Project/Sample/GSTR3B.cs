@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
+
 namespace sample
 {
     public partial class GSTR3B : UserControl
@@ -127,8 +129,31 @@ namespace sample
                 {
                     con.Open();
                 }
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString(sysUIFormat) + "' and '" + dtpToDate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvsaleInvoice.DataSource = ds;
+                dgvsaleInvoice.DataMember = "temp";
+                dgvsaleInvoice.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-                string Query = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+        private void dtpFromdate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString(sysUIFormat) + "' and '" + dtpToDate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");

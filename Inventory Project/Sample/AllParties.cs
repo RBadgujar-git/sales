@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
+
 namespace sample
 {
     public partial class AllParties : UserControl
@@ -207,15 +209,33 @@ namespace sample
 
         private void dtpdate_ValueChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}' and InvoiceDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}' and BillDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", cmballparties.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvAllparties.DataSource = ds;
+                dgvAllparties.DataMember = "temp";
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             try
             {
-               
-                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}' and InvoiceDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}' and BillDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",cmballparties.Text);
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string Query = String.Format("select TableName,PartyName,InvoiceDate as Date, ContactNo,Received as 'Recived/Paid' from tbl_SaleInvoice where PartyName='{0}' and InvoiceDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, OrderDate as Date, ContactNo,Received as 'Recived/Paid'  from tbl_SaleOrder where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName, BillDate as Date, ContactNo,Paid as 'Recived/Paid' from tbl_PurchaseBill where PartyName='{0}' and BillDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1' union all select TableName,PartyName,  OrderDate as Date ,ContactNo,Paid as 'Recived/Paid'  from tbl_PurchaseOrder  where PartyName='{0}' and OrderDate between '" + dtpdate.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'",cmballparties.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
