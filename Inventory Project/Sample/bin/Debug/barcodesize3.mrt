@@ -32,7 +32,7 @@
         <LabelsDataBand Ref="4" type="DataBand" isKey="true">
           <Brush>Transparent</Brush>
           <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,0.4,18.5,3</ClientRectangle>
+          <ClientRectangle>0,0.4,18.5,3.2</ClientRectangle>
           <ColumnGaps>1</ColumnGaps>
           <Columns>3</Columns>
           <ColumnWidth>5.5</ColumnWidth>
@@ -44,10 +44,10 @@
               <Components isList="true" count="7">
                 <Text1 Ref="6" type="Text" isKey="true">
                   <Brush>Transparent</Brush>
-                  <ClientRectangle>2.8,0.6,2.2,0.6</ClientRectangle>
+                  <ClientRectangle>2.8,1.2,2.2,0.6</ClientRectangle>
                   <Conditions isList="true" count="0" />
                   <Font>Arial,10,Bold</Font>
-                  <Guid>7d00976cacc14d62ab4e86c1b1149ce4</Guid>
+                  <Guid>bc8bfa2b1747436d843bf11428679f0e</Guid>
                   <Margins>0,0,0,0</Margins>
                   <Name>Text1</Name>
                   <Page isRef="3" />
@@ -63,7 +63,7 @@
                   <ClientRectangle>2.8,1.8,2.2,0.6</ClientRectangle>
                   <Conditions isList="true" count="0" />
                   <Font>Arial,10,Bold</Font>
-                  <Guid>118df4208b46427f9111a1b2f5d4d2a4</Guid>
+                  <Guid>1a775cb6055a424887d2bf502a16d2fb</Guid>
                   <Margins>0,0,0,0</Margins>
                   <Name>Text3</Name>
                   <Page isRef="3" />
@@ -72,27 +72,12 @@
                   <TextBrush>Black</TextBrush>
                   <VertAlignment>Center</VertAlignment>
                 </Text3>
-                <Text5 Ref="8" type="Text" isKey="true">
+                <Text2 Ref="8" type="Text" isKey="true">
                   <Brush>Transparent</Brush>
-                  <ClientRectangle>2.6,1.2,2,0.6</ClientRectangle>
-                  <Conditions isList="true" count="0" />
-                  <Font>PF Barcode 128,20,Bold</Font>
-                  <Guid>68131bdc10cb44dfaed4fd2684b70660</Guid>
-                  <HorAlignment>Center</HorAlignment>
-                  <Margins>0,0,0,0</Margins>
-                  <Name>Text5</Name>
-                  <Page isRef="3" />
-                  <Parent isRef="5" />
-                  <Text>{demo.Barcode}</Text>
-                  <TextBrush>Black</TextBrush>
-                  <VertAlignment>Center</VertAlignment>
-                </Text5>
-                <Text2 Ref="9" type="Text" isKey="true">
-                  <Brush>Transparent</Brush>
-                  <ClientRectangle>0.4,0.6,2.2,0.6</ClientRectangle>
+                  <ClientRectangle>0.4,1.2,2.2,0.6</ClientRectangle>
                   <Conditions isList="true" count="0" />
                   <Font>Arial,10,Bold</Font>
-                  <Guid>c8e9ef203ae841719a8c478f1a5f8700</Guid>
+                  <Guid>b2ed1e2213fd4ecdad9ba5dcaa3d852a</Guid>
                   <HorAlignment>Right</HorAlignment>
                   <Margins>0,0,0,0</Margins>
                   <Name>Text2</Name>
@@ -102,12 +87,12 @@
                   <TextBrush>Black</TextBrush>
                   <VertAlignment>Center</VertAlignment>
                 </Text2>
-                <Text4 Ref="10" type="Text" isKey="true">
+                <Text4 Ref="9" type="Text" isKey="true">
                   <Brush>Transparent</Brush>
                   <ClientRectangle>0.4,1.8,2.2,0.6</ClientRectangle>
                   <Conditions isList="true" count="0" />
                   <Font>Arial,10,Bold</Font>
-                  <Guid>80aa2450499f46738e12732ee8179bcb</Guid>
+                  <Guid>4394259c88d545bfb584a4bfa19ea3d2</Guid>
                   <HorAlignment>Right</HorAlignment>
                   <Margins>0,0,0,0</Margins>
                   <Name>Text4</Name>
@@ -117,12 +102,12 @@
                   <TextBrush>Black</TextBrush>
                   <VertAlignment>Center</VertAlignment>
                 </Text4>
-                <Text6 Ref="11" type="Text" isKey="true">
+                <Text6 Ref="10" type="Text" isKey="true">
                   <Brush>Transparent</Brush>
                   <ClientRectangle>0.8,0,4,0.6</ClientRectangle>
                   <Conditions isList="true" count="0" />
                   <Font>Arial,10,Bold</Font>
-                  <Guid>4b61d0ab3669477b92b448fb76dc18f3</Guid>
+                  <Guid>03ebd99553ff43cf88d11caded7e0e65</Guid>
                   <HorAlignment>Center</HorAlignment>
                   <Margins>0,0,0,0</Margins>
                   <Name>Text6</Name>
@@ -132,12 +117,27 @@
                   <TextBrush>Black</TextBrush>
                   <VertAlignment>Center</VertAlignment>
                 </Text6>
+                <Text5 Ref="11" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.8,0.6,2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>PF Barcode 128,20,Bold</Font>
+                  <Guid>7968b12843344db197bd85ebeae7883c</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text5</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>{demo.Barcode}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Center</VertAlignment>
+                </Text5>
                 <Text8 Ref="12" type="Text" isKey="true">
                   <Brush>Transparent</Brush>
-                  <ClientRectangle>0.4,1.2,2.2,0.6</ClientRectangle>
+                  <ClientRectangle>0.6,0.6,2.2,0.6</ClientRectangle>
                   <Conditions isList="true" count="0" />
                   <Font>Arial,10,Bold</Font>
-                  <Guid>42fbd56a5bbe477f8e679da7c1e21b73</Guid>
+                  <Guid>5b27b728a5fe4a2c9a33877fa052aa91</Guid>
                   <HorAlignment>Right</HorAlignment>
                   <Margins>0,0,0,0</Margins>
                   <Name>Text8</Name>
@@ -145,7 +145,7 @@
                   <Parent isRef="5" />
                   <Text>Barcode -</Text>
                   <TextBrush>Black</TextBrush>
-                  <VertAlignment>Center</VertAlignment>
+                  <VertAlignment>Bottom</VertAlignment>
                 </Text8>
               </Components>
               <Conditions isList="true" count="0" />
@@ -164,7 +164,7 @@
         </LabelsDataBand>
         <LabelsChildBand Ref="13" type="ChildBand" isKey="true">
           <Brush>Transparent</Brush>
-          <ClientRectangle>0,4.2,18.5,1</ClientRectangle>
+          <ClientRectangle>0,4.4,18.5,1</ClientRectangle>
           <Components isList="true" count="0" />
           <Conditions isList="true" count="0" />
           <Name>LabelsChildBand</Name>
@@ -197,10 +197,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/27/2021 7:28:00 PM</ReportChanged>
+  <ReportChanged>4/28/2021 7:35:54 PM</ReportChanged>
   <ReportCreated>4/27/2021 7:26:48 PM</ReportCreated>
   <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\barcodesize3.mrt</ReportFile>
-  <ReportGuid>bd9aa9846a0745a8b67d855be1630eef</ReportGuid>
+  <ReportGuid>f6f7e0521cce4824bbf0d1f7337f0b47</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2010.1.700</ReportVersion>

@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <demo Ref="2" type="DataTableSource" isKey="true">
+        <Alias>demo</Alias>
+        <Columns isList="true" count="4">
+          <value>ItemName,System.String</value>
+          <value>SalePrice,System.String</value>
+          <value>Barcode,System.String</value>
+          <value>CompanyName,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>demo</Name>
+        <NameInSource>demo</NameInSource>
+      </demo>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <LabelsDataBand Ref="4" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,10,2.5</ClientRectangle>
+          <ColumnGaps>1</ColumnGaps>
+          <Columns>2</Columns>
+          <ColumnWidth>5</ColumnWidth>
+          <Components isList="true" count="1">
+            <Label_Area Ref="5" type="Container" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,5,2.5</ClientRectangle>
+              <Components isList="true" count="7">
+                <Text1 Ref="6" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.6,0.6,2.2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>ba0d7d1080714647bdcc08ccdc32939b</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text1</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <ShrinkFontToFit>True</ShrinkFontToFit>
+                  <Text>{demo.ItemName}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+                  <VertAlignment>Center</VertAlignment>
+                </Text1>
+                <Text2 Ref="7" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.2,0.6,2.2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>f37c45bb050d4a7cb38dd2a6188a37de</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text2</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>Item Name -</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Center</VertAlignment>
+                </Text2>
+                <Text4 Ref="8" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.2,1.2,2.2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>7ca2c28cef9b46e19690b700ff543182</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text4</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>Sale Price -</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Center</VertAlignment>
+                </Text4>
+                <Text6 Ref="9" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.6,0,4,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>9a0fdcfc7a6d471ebb50b36bb19f8823</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text6</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>{demo.CompanyName}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Center</VertAlignment>
+                </Text6>
+                <Text5 Ref="10" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.4,1.8,2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>PF Barcode 128,20,Bold</Font>
+                  <Guid>26d1ab42b83944568e162cbd886a85fd</Guid>
+                  <HorAlignment>Center</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text5</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>{demo.Barcode}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Center</VertAlignment>
+                </Text5>
+                <Text8 Ref="11" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>0.2,1.8,2.2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>7327d171cf5f41bcbb05ec85baabc1c2</Guid>
+                  <HorAlignment>Right</HorAlignment>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text8</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>Barcode -</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Bottom</VertAlignment>
+                </Text8>
+                <Text3 Ref="12" type="Text" isKey="true">
+                  <Brush>Transparent</Brush>
+                  <ClientRectangle>2.6,1.2,2.2,0.6</ClientRectangle>
+                  <Conditions isList="true" count="0" />
+                  <Font>Arial,10,Bold</Font>
+                  <Guid>f7150c249dd74770a0dd2301ffa88cbe</Guid>
+                  <Margins>0,0,0,0</Margins>
+                  <Name>Text3</Name>
+                  <Page isRef="3" />
+                  <Parent isRef="5" />
+                  <Text>{demo.SalePrice}</Text>
+                  <TextBrush>Black</TextBrush>
+                  <VertAlignment>Center</VertAlignment>
+                </Text3>
+              </Components>
+              <Conditions isList="true" count="0" />
+              <Name>Label_Area</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+            </Label_Area>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>demo</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>LabelsDataBand</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </LabelsDataBand>
+        <LabelsChildBand Ref="13" type="ChildBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.7,10,1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Name>LabelsChildBand</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </LabelsChildBand>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>9e1acf56b12947cc92db11c3d38ae178</Guid>
+      <Margins>5.5,5.5,1.3,0.102999999999999</Margins>
+      <Name>Page1</Name>
+      <PageHeight>29.7</PageHeight>
+      <PageWidth>21</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="14" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="15" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/28/2021 7:06:02 PM</ReportChanged>
+  <ReportCreated>4/28/2021 7:05:22 PM</ReportCreated>
+  <ReportFile>C:\Users\Rahul Badgujar\source\repos\sales3\Inventory Project\Sample\bin\Debug\Barcodebottom2.mrt</ReportFile>
+  <ReportGuid>03e7720931ab436685c230798cae3f46</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2010.1.700</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>
