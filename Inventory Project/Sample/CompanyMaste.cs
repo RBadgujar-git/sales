@@ -463,15 +463,15 @@ namespace sample
 
         private void txtcampanyName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-            //if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
-            //{
-            //    e.Handled = true;
-            //}
-            //else
-            //{
-            //    e.Handled = false;
-            //}
+            //  e.Handled = !(char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+            if (Char.IsControl(e.KeyChar) != true && Char.IsNumber(e.KeyChar) == true)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void txtContactNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -849,11 +849,11 @@ namespace sample
             if (textBox1.Text == "")
             {
                 fetchdetails();
-                hidedata();
+               // hidedata();
             }
             else
             {
-                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%'", textBox1.Text);
+                string Query = string.Format("select CompanyID,CompanyName ,Address,PhoneNo as ContactNo,EmailID ,ReferaleCode ,BusinessType ,OwnerName  ,GSTNumber ,City ,State,AddLogo ,Signature ,AdditinalFeild1 as BankName,AdditinalFeild2 as AccountNo ,AdditinalFeild3 as IFSC_Code from tbl_CompanyMaster where DeleteData = '1' and CompanyName like '%{0}%'", textBox1.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
