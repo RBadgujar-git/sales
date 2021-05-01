@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace sample
 {
@@ -198,7 +199,8 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString(sysUIFormat) + "' and '" + dtpTo.Value.ToString(sysUIFormat) + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
@@ -216,6 +218,24 @@ namespace sample
             try
             {
                 string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                dgvExxpenses.DataSource = ds;
+                dgvExxpenses.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString(sysUIFormat) + "' and '" + dtpTo.Value.ToString(sysUIFormat) + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");    //Feild1 IS NOT Null

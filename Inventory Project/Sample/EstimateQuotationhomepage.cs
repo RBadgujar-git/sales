@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
-
-
+using System.Globalization;
 
 namespace sample
 {
@@ -120,12 +113,15 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select Date,PartyName,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString() + "' and '" + dtpto.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("select Date,PartyName,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
                 dgvEstimate.DataSource = ds;
                 dgvEstimate.DataMember = "temp";
+                dgvEstimate.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -174,6 +170,27 @@ namespace sample
                 {
                     MessageBox.Show(ex.Message);
                 }
+            }
+
+        }
+
+        private void dtpfrom_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("select Date,PartyName,Total,Status from tblQuotation where Date between '" + dtpfrom.Value.ToString(sysUIFormat) + "' and '" + dtpto.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvEstimate.DataSource = ds;
+                dgvEstimate.DataMember = "temp";
+                dgvEstimate.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
             }
 
         }

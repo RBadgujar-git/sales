@@ -267,7 +267,7 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpDate.CustomFormat = "dd-MM-yyyy";
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDate.Location = new System.Drawing.Point(269, 150);
             this.dtpDate.Name = "dtpDate";

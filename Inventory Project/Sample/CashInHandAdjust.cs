@@ -482,5 +482,10 @@ namespace sample
                 dgvCashAdjustment.DataMember = "temp";
             }
         }
+
+        private void dtpdate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
