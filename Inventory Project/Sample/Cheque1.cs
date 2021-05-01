@@ -77,17 +77,22 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("(select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1 as CheckNo,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1') union all (select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
+
+                string Query = string.Format("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Received,RemainingBal,Status from tbl_SaleInvoice where InvoiceDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and PaymentType='Cheque' and DeleteData = '1' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where BillDate between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and PaymentType='Cheque' and DeleteData = '1')", textBox1.Text);
+
+                //  string Query = string.Format("select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1'", textBox1.Text);
                 DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
                 dgvSaleOrder.DataSource = ds;
                 dgvSaleOrder.DataMember = "temp";
+                dgvSaleOrder.AllowUserToAddRows = false;
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show("Data not" + ex);
+                MessageBox.Show("Error "+ex.ToString());
             }
+            
         }
 
         private void dtpTo_KeyDown(object sender, KeyEventArgs e)
@@ -102,21 +107,7 @@ namespace sample
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
-            {
-                Bindadata();
-            }
-            else
-            {
-                string Query = string.Format("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Received,RemainingBal,Status from tbl_SaleInvoice where  Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' and PaymentType='Cheque' and DeleteData = '1' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and  TableName like '%{0}%' and PaymentType='Cheque' and DeleteData = '1')", textBox1.Text);
-               
-              //  string Query = string.Format("select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1'", textBox1.Text);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(Query, con);
-                da.Fill(ds, "temp");
-                dgvSaleOrder.DataSource = ds;
-                dgvSaleOrder.DataMember = "temp";
-            }
+           
            
            
         }
@@ -139,6 +130,25 @@ namespace sample
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                Bindadata();
+            }
+            else
+            {
+                string Query = string.Format("(select TableName, InvoiceDate as Date,InvoiceID as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Received,RemainingBal,Status from tbl_SaleInvoice where  Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' and PaymentType='Cheque' and DeleteData = '1' union all select TableName,BillDate as Date,BillNo as Number,PartyName,PaymentType,Feild1 as CheckNo,Total,Paid,RemainingBal,Status from tbl_PurchaseBill where Company_ID='" + NewCompany.company_id + "' and  TableName like '%{0}%' and PaymentType='Cheque' and DeleteData = '1')", textBox1.Text);
+
+                //  string Query = string.Format("select TableName,InvoiceDate,InvoiceID,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1' union all select TableName,OrderDate,OrderNo,PartyName,PaymentType,Feild1,Total,Received,RemainingBal,Status from tbl_SaleOrder where Company_ID='" + NewCompany.company_id + "' and TableName like '%{0}%' or PartyName like '%{0}%' and DeleteData='1'", textBox1.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(Query, con);
+                da.Fill(ds, "temp");
+                dgvSaleOrder.DataSource = ds;
+                dgvSaleOrder.DataMember = "temp";
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
 
 namespace sample
 {
@@ -73,7 +74,9 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("SELECT ReceiptNo,Date,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("SELECT ReceiptNo,Date,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Date between '" + dtpFrom.Value.ToString(sysUIFormat) + "' and '" + dtpTo.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -154,6 +157,25 @@ namespace sample
         private void label4_Click(object sender, EventArgs e)
         {
             binddata();
+        }
+
+        private void dtpFrom_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("SELECT ReceiptNo,Date,CustomerName,PaymentType,Total,ReceivedAmount,UnusedAmount FROM tbl_PaymentIn where Date between '" + dtpFrom.Value.ToString(sysUIFormat) + "' and '" + dtpTo.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvPaymentIn.DataSource = ds;
+                dgvPaymentIn.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
         }
     }
 }

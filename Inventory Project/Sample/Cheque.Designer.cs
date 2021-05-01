@@ -72,6 +72,7 @@
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(147, 20);
             this.dtpTo.TabIndex = 463;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             this.dtpTo.Enter += new System.EventHandler(this.dtpTo_Enter);
             // 
             // dtpFrom

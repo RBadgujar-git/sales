@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
 
 namespace sample
 {
@@ -45,7 +46,7 @@ namespace sample
 
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + m + "' and DeleteData='1'");
+                string Query = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + m + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -88,7 +89,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string Query = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -113,7 +114,7 @@ namespace sample
         {
             try
             {
-                string Query = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
+                string Query = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where PartyName like '%{0}%' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'", txtFilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
@@ -131,7 +132,9 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select TableName,InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString() + "' and '" + dtptodate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString(sysUIFormat) + "' and '" + dtptodate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
                 SDA.Fill(ds, "temp");
@@ -180,7 +183,7 @@ namespace sample
                 try
                 {
                     DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.TableName,b.PartyName,b.DueDate,b.InvoiceDate,b.Total,b.ReturnNo,b.Received,b.RemainingBal,b.Status,b.DeleteData FROM tbl_CompanyMaster as a, tbl_DebitNote as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
+                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.PartyName,b.DueDate,b.InvoiceDate,b.Total,b.ReturnNo,b.Received,b.RemainingBal,b.Status,b.DeleteData FROM tbl_CompanyMaster as a, tbl_DebitNote as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
                     SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                     SDA.Fill(ds);
 
@@ -211,6 +214,26 @@ namespace sample
         private void label6_Click(object sender, EventArgs e)
         {
             bindbankdata();
+        }
+
+        private void dtpfromdate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+
+                string SelectQuery = string.Format("select InvoiceDate,PartyName,ReturnNo,Total,Received,RemainingBal,Status from tbl_DebitNote where InvoiceDate between '" + dtpfromdate.Value.ToString(sysUIFormat) + "' and '" + dtptodate.Value.ToString(sysUIFormat) + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvdebitNote.DataSource = ds;
+                dgvdebitNote.DataMember = "temp";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+
         }
     }
 }

@@ -488,25 +488,30 @@ namespace sample
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
             if (textBox2.Text == "")
             {
                 fetchdetails();
-               // hidedata();
+                // hidedata();
             }
             else
             {
-                string Query = string.Format("select ID,BankAccount,EntryType,Amount,Date,Description from tbl_BankAdjustment where Company_ID='" + NewCompany.company_id + "' and BankAccount like '%{0}%' or ID like '%{0}%' and DeleteData = '1'", textBox2.Text);
+                string Query = string.Format("select ID,BankAccount,EntryType,Amount,Date,Description from tbl_BankAdjustment where Company_ID='" + NewCompany.company_id + "' and BankAccount like '%{0}%' and DeleteData = '1'", textBox2.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(Query, con);
                 da.Fill(ds, "temp");
                 dgvAdjustaccount.DataSource = ds;
                 dgvAdjustaccount.DataMember = "temp";
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

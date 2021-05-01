@@ -136,6 +136,7 @@ namespace sample
             SqlCommand cmd1 = new SqlCommand("insert into TransactionTableSetting(Company_ID)values(" + id + ")", con);
             cmd1.ExecuteNonQuery();
 
+
         }
 
         public string compnAMAE;
@@ -143,8 +144,7 @@ namespace sample
         {
 
 
-           
-
+          
             panel1.Focus();
             if (con.State == ConnectionState.Closed)
             {
@@ -1138,6 +1138,7 @@ namespace sample
            // PB.Show();
         }
 
+        
         private void button8_Click_1(object sender, EventArgs e)
         {
             
@@ -1632,6 +1633,25 @@ namespace sample
         private void guna2Button52_Click(object sender, EventArgs e)
         {
             //sms();
+
+            //   notifyIcon1.ShowBalloonTip(1000, "Impotent Notice","votfjdsjgdgfdgfd",ToolTipIcon.Info);
+            notifyIcon1.ShowBalloonTip(1000, "Text", "Title", ToolTipIcon.Warning);
+            //  notifyIcon1.ShowBalloonTip(5000);
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            //this.Show();
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            this.Show();
         }
 
         private void panel3_MouseHover(object sender, EventArgs e)

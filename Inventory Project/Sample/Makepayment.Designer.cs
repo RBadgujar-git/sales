@@ -54,7 +54,7 @@
             this.txtcurrentbal = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMakePayment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -451,19 +451,38 @@
             // 
             // textBox2
             // 
+            this.textBox2.BorderColor = System.Drawing.Color.Gray;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox2.DefaultText = "";
+            this.textBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.DisabledState.Parent = this.textBox2;
+            this.textBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.FocusedState.Parent = this.textBox2;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.HoverState.Parent = this.textBox2;
             this.textBox2.Location = new System.Drawing.Point(112, 215);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 23);
-            this.textBox2.TabIndex = 443;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.PasswordChar = '\0';
+            this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox2.PlaceholderText = "Account Name";
+            this.textBox2.SelectedText = "";
+            this.textBox2.ShadowDecoration.Parent = this.textBox2;
+            this.textBox2.Size = new System.Drawing.Size(180, 26);
+            this.textBox2.TabIndex = 453;
+            this.textBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged_1);
             // 
             // Makepayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtcurrentbal);
             this.Controls.Add(this.btnminimize);
@@ -523,6 +542,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtcurrentbal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private Guna.UI2.WinForms.Guna2TextBox textBox2;
     }
 }

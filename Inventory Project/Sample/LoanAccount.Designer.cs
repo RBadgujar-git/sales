@@ -44,7 +44,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.cmbAccount = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.txtcompanyname = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtLoanAmount = new Guna.UI2.WinForms.Guna2TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -73,6 +72,7 @@
             this.txtLenderBank = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDescription)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
@@ -265,9 +265,9 @@
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.White;
+            this.guna2Panel2.Controls.Add(this.textBox2);
             this.guna2Panel2.Controls.Add(this.cmbAccount);
             this.guna2Panel2.Controls.Add(this.button1);
-            this.guna2Panel2.Controls.Add(this.textBox2);
             this.guna2Panel2.Controls.Add(this.txtcompanyname);
             this.guna2Panel2.Controls.Add(this.txtLoanAmount);
             this.guna2Panel2.Controls.Add(this.label16);
@@ -334,14 +334,6 @@
             this.button1.Size = new System.Drawing.Size(22, 22);
             this.button1.TabIndex = 443;
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(72, 295);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 23);
-            this.textBox2.TabIndex = 442;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtcompanyname
             // 
@@ -790,6 +782,33 @@
             this.label4.TabIndex = 1;
             this.label4.Text = "Account Name :";
             // 
+            // textBox2
+            // 
+            this.textBox2.BorderColor = System.Drawing.Color.Gray;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox2.DefaultText = "";
+            this.textBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.DisabledState.Parent = this.textBox2;
+            this.textBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.FocusedState.Parent = this.textBox2;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox2.HoverState.Parent = this.textBox2;
+            this.textBox2.Location = new System.Drawing.Point(73, 296);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '\0';
+            this.textBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox2.PlaceholderText = "Account Name";
+            this.textBox2.SelectedText = "";
+            this.textBox2.ShadowDecoration.Parent = this.textBox2;
+            this.textBox2.Size = new System.Drawing.Size(180, 26);
+            this.textBox2.TabIndex = 454;
+            this.textBox2.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
             // LoanAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -851,8 +870,8 @@
         private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2TextBox txtcompanyname;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox cmbAccount;
+        private Guna.UI2.WinForms.Guna2TextBox textBox2;
     }
 }

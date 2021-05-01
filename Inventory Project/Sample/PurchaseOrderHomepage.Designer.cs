@@ -212,7 +212,8 @@
             this.txtFilterBy.Location = new System.Drawing.Point(113, 123);
             this.txtFilterBy.Name = "txtFilterBy";
             this.txtFilterBy.PasswordChar = '\0';
-            this.txtFilterBy.PlaceholderText = "";
+            this.txtFilterBy.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtFilterBy.PlaceholderText = "Party Name";
             this.txtFilterBy.SelectedText = "";
             this.txtFilterBy.ShadowDecoration.Parent = this.txtFilterBy;
             this.txtFilterBy.Size = new System.Drawing.Size(215, 32);
@@ -267,6 +268,7 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(115, 23);
             this.dtpFrom.TabIndex = 444;
+            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // label4
             // 

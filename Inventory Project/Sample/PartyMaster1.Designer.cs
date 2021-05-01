@@ -74,9 +74,9 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
@@ -344,11 +344,11 @@
             this.dgvParty.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvParty.EnableHeadersVisualStyles = false;
             this.dgvParty.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvParty.Location = new System.Drawing.Point(14, 360);
+            this.dgvParty.Location = new System.Drawing.Point(14, 350);
             this.dgvParty.Name = "dgvParty";
             this.dgvParty.RowHeadersVisible = false;
             this.dgvParty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvParty.Size = new System.Drawing.Size(793, 187);
+            this.dgvParty.Size = new System.Drawing.Size(793, 190);
             this.dgvParty.TabIndex = 24;
             this.dgvParty.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvParty.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -776,14 +776,6 @@
             this.comboBox2.Size = new System.Drawing.Size(199, 24);
             this.comboBox2.TabIndex = 10;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(104, 313);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 23);
-            this.textBox1.TabIndex = 77;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.White;
@@ -804,8 +796,8 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.comboBox1);
@@ -849,6 +841,33 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.BorderColor = System.Drawing.Color.Gray;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox1.DefaultText = "";
+            this.textBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox1.DisabledState.Parent = this.textBox1;
+            this.textBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox1.FocusedState.Parent = this.textBox1;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox1.HoverState.Parent = this.textBox1;
+            this.textBox1.Location = new System.Drawing.Point(104, 313);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '\0';
+            this.textBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBox1.PlaceholderText = "Party Name";
+            this.textBox1.SelectedText = "";
+            this.textBox1.ShadowDecoration.Parent = this.textBox1;
+            this.textBox1.Size = new System.Drawing.Size(128, 23);
+            this.textBox1.TabIndex = 454;
+            this.textBox1.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
+            // 
             // PartyMaster1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -877,7 +896,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -916,5 +934,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSetting;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2TextBox textBox1;
     }
 }

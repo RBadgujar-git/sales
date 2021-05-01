@@ -186,6 +186,7 @@
             this.dtpfromdate.Name = "dtpfromdate";
             this.dtpfromdate.Size = new System.Drawing.Size(136, 23);
             this.dtpfromdate.TabIndex = 232;
+            this.dtpfromdate.ValueChanged += new System.EventHandler(this.dtpfromdate_ValueChanged);
             // 
             // txtFilter
             // 
@@ -206,7 +207,8 @@
             this.txtFilter.Location = new System.Drawing.Point(106, 108);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.PasswordChar = '\0';
-            this.txtFilter.PlaceholderText = "";
+            this.txtFilter.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.txtFilter.PlaceholderText = "Party Name";
             this.txtFilter.SelectedText = "";
             this.txtFilter.ShadowDecoration.Parent = this.txtFilter;
             this.txtFilter.Size = new System.Drawing.Size(200, 36);

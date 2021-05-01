@@ -47,6 +47,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoanStatement)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             this.cmbAccount.Items.AddRange(new object[] {
             "Account"});
             this.cmbAccount.ItemsAppearance.Parent = this.cmbAccount;
-            this.cmbAccount.Location = new System.Drawing.Point(205, 102);
+            this.cmbAccount.Location = new System.Drawing.Point(199, 44);
             this.cmbAccount.Name = "cmbAccount";
             this.cmbAccount.ShadowDecoration.Parent = this.cmbAccount;
             this.cmbAccount.Size = new System.Drawing.Size(189, 36);
@@ -77,6 +78,7 @@
             // cmballFirms
             // 
             this.cmballFirms.BackColor = System.Drawing.Color.Transparent;
+            this.cmballFirms.BorderColor = System.Drawing.Color.Gray;
             this.cmballFirms.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cmballFirms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmballFirms.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -89,12 +91,13 @@
             this.cmballFirms.Items.AddRange(new object[] {
             "All Firms"});
             this.cmballFirms.ItemsAppearance.Parent = this.cmballFirms;
-            this.cmballFirms.Location = new System.Drawing.Point(41, 102);
+            this.cmballFirms.Location = new System.Drawing.Point(35, 44);
             this.cmballFirms.Name = "cmballFirms";
             this.cmballFirms.ShadowDecoration.Parent = this.cmballFirms;
             this.cmballFirms.Size = new System.Drawing.Size(140, 36);
             this.cmballFirms.StartIndex = 0;
             this.cmballFirms.TabIndex = 1;
+            this.cmballFirms.SelectedIndexChanged += new System.EventHandler(this.cmballFirms_SelectedIndexChanged);
             // 
             // dgvLoanStatement
             // 
@@ -125,11 +128,11 @@
             this.dgvLoanStatement.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvLoanStatement.EnableHeadersVisualStyles = false;
             this.dgvLoanStatement.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvLoanStatement.Location = new System.Drawing.Point(3, 179);
+            this.dgvLoanStatement.Location = new System.Drawing.Point(3, 110);
             this.dgvLoanStatement.Name = "dgvLoanStatement";
             this.dgvLoanStatement.RowHeadersVisible = false;
             this.dgvLoanStatement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLoanStatement.Size = new System.Drawing.Size(871, 288);
+            this.dgvLoanStatement.Size = new System.Drawing.Size(871, 303);
             this.dgvLoanStatement.TabIndex = 211;
             this.dgvLoanStatement.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dgvLoanStatement.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -159,7 +162,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(42, 503);
+            this.label1.Location = new System.Drawing.Point(17, 447);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 18);
             this.label1.TabIndex = 0;
@@ -168,7 +171,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 534);
+            this.label2.Location = new System.Drawing.Point(20, 478);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 1;
@@ -177,7 +180,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 565);
+            this.label3.Location = new System.Drawing.Point(48, 509);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 16);
             this.label3.TabIndex = 2;
@@ -187,7 +190,7 @@
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(538, 533);
+            this.label7.Location = new System.Drawing.Point(513, 477);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(143, 16);
             this.label7.TabIndex = 3;
@@ -197,7 +200,7 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(539, 565);
+            this.label4.Location = new System.Drawing.Point(514, 509);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 16);
             this.label4.TabIndex = 4;
@@ -206,6 +209,7 @@
             // txttotalPrinciple
             // 
             this.txttotalPrinciple.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotalPrinciple.BorderColor = System.Drawing.Color.Gray;
             this.txttotalPrinciple.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotalPrinciple.DefaultText = "";
             this.txttotalPrinciple.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -219,7 +223,7 @@
             this.txttotalPrinciple.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotalPrinciple.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotalPrinciple.HoverState.Parent = this.txttotalPrinciple;
-            this.txttotalPrinciple.Location = new System.Drawing.Point(687, 529);
+            this.txttotalPrinciple.Location = new System.Drawing.Point(662, 473);
             this.txttotalPrinciple.Name = "txttotalPrinciple";
             this.txttotalPrinciple.PasswordChar = '\0';
             this.txttotalPrinciple.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -233,6 +237,7 @@
             // 
             // txtOpeningBal
             // 
+            this.txtOpeningBal.BorderColor = System.Drawing.Color.Gray;
             this.txtOpeningBal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOpeningBal.DefaultText = "";
             this.txtOpeningBal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -246,7 +251,7 @@
             this.txtOpeningBal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtOpeningBal.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOpeningBal.HoverState.Parent = this.txtOpeningBal;
-            this.txtOpeningBal.Location = new System.Drawing.Point(176, 530);
+            this.txtOpeningBal.Location = new System.Drawing.Point(151, 474);
             this.txtOpeningBal.MaxLength = 1000;
             this.txtOpeningBal.Name = "txtOpeningBal";
             this.txtOpeningBal.PasswordChar = '\0';
@@ -261,6 +266,7 @@
             // 
             // txttBalancedue
             // 
+            this.txttBalancedue.BorderColor = System.Drawing.Color.Gray;
             this.txttBalancedue.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttBalancedue.DefaultText = "";
             this.txttBalancedue.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -274,7 +280,7 @@
             this.txttBalancedue.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttBalancedue.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttBalancedue.HoverState.Parent = this.txttBalancedue;
-            this.txttBalancedue.Location = new System.Drawing.Point(176, 561);
+            this.txttBalancedue.Location = new System.Drawing.Point(151, 505);
             this.txttBalancedue.Name = "txttBalancedue";
             this.txttBalancedue.PasswordChar = '\0';
             this.txttBalancedue.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -289,6 +295,7 @@
             // txttotalInterest
             // 
             this.txttotalInterest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txttotalInterest.BorderColor = System.Drawing.Color.Gray;
             this.txttotalInterest.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txttotalInterest.DefaultText = "";
             this.txttotalInterest.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -302,7 +309,7 @@
             this.txttotalInterest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txttotalInterest.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txttotalInterest.HoverState.Parent = this.txttotalInterest;
-            this.txttotalInterest.Location = new System.Drawing.Point(687, 560);
+            this.txttotalInterest.Location = new System.Drawing.Point(662, 504);
             this.txttotalInterest.Name = "txttotalInterest";
             this.txttotalInterest.PasswordChar = '\0';
             this.txttotalInterest.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -324,7 +331,7 @@
             this.btnminimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnminimize.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnminimize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnminimize.Location = new System.Drawing.Point(761, 14);
+            this.btnminimize.Location = new System.Drawing.Point(706, 15);
             this.btnminimize.Name = "btnminimize";
             this.btnminimize.Size = new System.Drawing.Size(26, 27);
             this.btnminimize.TabIndex = 449;
@@ -372,18 +379,29 @@
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.FlatAppearance.BorderSize = 0;
             this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrint.Location = new System.Drawing.Point(737, 60);
+            this.btnPrint.Location = new System.Drawing.Point(784, 55);
             this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(19, 19);
+            this.btnPrint.Size = new System.Drawing.Size(25, 25);
             this.btnPrint.TabIndex = 204;
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(778, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 16);
+            this.label5.TabIndex = 485;
+            this.label5.Text = "Print";
             // 
             // LoanStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnminimize);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txttotalInterest);
@@ -429,5 +447,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txttBalancedue;
         private Guna.UI2.WinForms.Guna2TextBox txttotalInterest;
         private System.Windows.Forms.Button btnminimize;
+        private System.Windows.Forms.Label label5;
     }
 }
