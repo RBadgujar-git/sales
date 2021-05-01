@@ -305,7 +305,7 @@ namespace sample
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("DayBook", "DayBook", ds.Tables[0]);
+                    report.RegData("DayBookSale", "DayBookSale", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();

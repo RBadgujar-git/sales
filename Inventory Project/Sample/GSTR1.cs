@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
-using System.Globalization;
-
 namespace sample
 {
     public partial class GSTR1 : UserControl
@@ -105,9 +103,8 @@ namespace sample
         {
             try
             {
-                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
                 //string SelectQuery = string.Format("(select InvoiceDate,InvoiceID as InvoiceNo,PartyName,PaymentType,Total,Received,RemainingBal from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
-                string SelectQuery = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString(sysUIFormat) + "' and '" + dtpToDate.Value.ToString(sysUIFormat) + "'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
+                string SelectQuery = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
 
                 // string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
@@ -159,27 +156,6 @@ namespace sample
             {
                 //string SelectQuery = string.Format("(select InvoiceDate,InvoiceID as InvoiceNo,PartyName,PaymentType,Total,Received,RemainingBal from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 string SelectQuery = string.Format("select * from tbl_SaleInvoice where Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
-
-                // string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
-                DataSet ds = new DataSet();
-                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
-                SDA.Fill(ds, "temp");    //Feild1 IS NOT Null
-                dgvsaleInvoice.DataSource = ds;
-                dgvsaleInvoice.DataMember = "temp";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Data not" + ex);
-            }
-        }
-
-        private void dtpFromdate_ValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-                //string SelectQuery = string.Format("(select InvoiceDate,InvoiceID as InvoiceNo,PartyName,PaymentType,Total,Received,RemainingBal from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString() + "' and '" + dtpToDate.Value.ToString() + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
-                string SelectQuery = string.Format("select * from tbl_SaleInvoice where InvoiceDate between '" + dtpFromdate.Value.ToString(sysUIFormat) + "' and '" + dtpToDate.Value.ToString(sysUIFormat) + "'  and Company_ID='" + NewCompany.company_id + "' and DeleteData='1'");
 
                 // string SelectQuery = string.Format("(select Date, ExpenseCategory, Total,Paid,Balance from tbl_Expenses where Date between '" + dtpFrom.Value.ToString() + "' and '" + dtpTo.Value.ToString() + "' and ExpenseCategory='" + lblCategory.Text + "' and Company_ID='" + NewCompany.company_id + "' and DeleteData='1')");
                 DataSet ds = new DataSet();
