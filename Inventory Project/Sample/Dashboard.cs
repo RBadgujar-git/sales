@@ -698,7 +698,7 @@ namespace sample
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reports re = new Reports();
+     Reports re = new Reports();
             re.Show();
         }
 

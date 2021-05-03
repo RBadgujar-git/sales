@@ -189,18 +189,18 @@ namespace sample
                 label32.Hide();
                 label33.Hide();
              }
-            if (ItemwisTax == 1)
-            {
-                txtTax1.Hide();
-                label30.Hide();
-                //txtDis ds = new txtDis();
+            //if (ItemwisTax == 1)
+            //{
+            //    txtTax1.Hide();
+            //    label30.Hide();
+            //    //txtDis ds = new txtDis();
 
-                txtDis.Width = 130;
-                txtDis.Height = 28;
-                txtOty.Location = new Point(567, 42);
-                txtOty.Width = 119;
-                txtOty.Height = 28;
-            }
+            //    txtDis.Width = 130;
+            //    txtDis.Height = 28;
+            //    txtOty.Location = new Point(567, 42);
+            //    txtOty.Width = 119;
+            //    txtOty.Height = 28;
+            //}
             if (barcode == 1)
             {
                 textBox1.Visible = false;
@@ -536,14 +536,14 @@ namespace sample
                     //}
 
                     cmd.Parameters.AddWithValue("@compid", NewCompany.company_id);
-
+                    
 
 
                    String ItemName = dgvInnerDebiteNote.Rows[i].Cells["txtItem"].Value.ToString();
                     float cureentstock = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["Qty"].Value.ToString());
                     float freeqty = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["FreeQty"].Value.ToString());
                    float Itemid = Convert.ToInt32(dgvInnerDebiteNote.Rows[i].Cells["IDItem"].Value.ToString());
-
+                    //profit(, int qty, int mrp)
                     ////   MessageBox.Show("Data " + ItemCode + "Data2" + cureentstock);
 
                     SqlCommand cmd1 = new SqlCommand("tbl_PurchaseBillInnersp", con);
@@ -574,6 +574,20 @@ namespace sample
                   // MessageBox.Show(e1.Message);
                 }
             }
+        }
+        public void profit(string itemids, int qty, int mrp)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("Select purchasePrice from tbl_ItemMaster where ItemID ="+ itemids+"",con);
+            float pircespice =Convert.ToInt32(cmd.ExecuteScalar());
+
+
+
+
+
         }
         public int veryfi = 0;
 
@@ -2138,7 +2152,7 @@ namespace sample
                 }
                 if (chekpoint != 1)
                 {
-                    string query = string.Format("insert into tbl_ItemMaster(ItemName,ItemCode , BasicUnit, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtItemCode.Text + "','" + txtUnit.Text + "'," + txtMRP.Text + "," + txtTax1.Text + ",'" + textBox1.Text + "'," +txtOty.Text+ ",'"+ NewCompany.company_id + "')");
+                    string query = string.Format("insert into tbl_ItemMaster(ItemName,ItemCode , BasicUnit,purchasePrice, SalePrice, TaxForSale,Barcode,MinimumStock,Company_ID ) Values ('" + txtItemName.Text + "', '" + txtItemCode.Text + "','" + txtUnit.Text + "'," + txtMRP.Text + "," + txtMRP.Text + "," + txtTax1.Text + ",'" + textBox1.Text + "'," +txtOty.Text+ ",'"+ NewCompany.company_id + "')");
 
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.ExecuteNonQuery();

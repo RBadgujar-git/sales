@@ -126,7 +126,6 @@ namespace sample
                     txtPaid.Text = TA.ToString();
                     TD += float.Parse(dgvPurchaseBill.Rows[i].Cells["RemainingBal"].Value.ToString());
                     txtUnpaid.Text = TD.ToString();
-
                     qty = float.Parse(txtPaid.Text.ToString());
                     rate = float.Parse(txtUnpaid.Text.ToString());
                     total = qty + rate;
