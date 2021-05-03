@@ -108,6 +108,7 @@
             this.dtpdateto.Size = new System.Drawing.Size(133, 25);
             this.dtpdateto.TabIndex = 16;
             this.dtpdateto.Value = new System.DateTime(2020, 10, 19, 18, 54, 42, 36);
+            this.dtpdateto.ValueChanged += new System.EventHandler(this.dtpdateto_ValueChanged);
             // 
             // dgvalltransactionserach
             // 

@@ -385,5 +385,10 @@ namespace sample
                 dgvItemAdjustment.DataMember = "temp";
             }
         }
+
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1943,7 +1943,7 @@
             // 
             // DtpdeliveryDate
             // 
-            this.DtpdeliveryDate.CustomFormat = "MM/dd/yyyy";
+            this.DtpdeliveryDate.CustomFormat = "dd-MM-yyyy";
             this.DtpdeliveryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DtpdeliveryDate.Location = new System.Drawing.Point(143, 579);
             this.DtpdeliveryDate.Name = "DtpdeliveryDate";
@@ -1967,7 +1967,7 @@
             // 
             // dtpDueDate
             // 
-            this.dtpDueDate.CustomFormat = "MM/dd/yyyy";
+            this.dtpDueDate.CustomFormat = "dd-MM-yyyy";
             this.dtpDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDueDate.Location = new System.Drawing.Point(501, 52);
             this.dtpDueDate.Name = "dtpDueDate";
@@ -1976,7 +1976,7 @@
             // 
             // dtpInvoice
             // 
-            this.dtpInvoice.CustomFormat = "MM/dd/yyyy";
+            this.dtpInvoice.CustomFormat = "dd-MM-yyyy";
             this.dtpInvoice.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpInvoice.Location = new System.Drawing.Point(501, 85);
             this.dtpInvoice.Name = "dtpInvoice";

@@ -709,7 +709,7 @@
     <value>10</value>
   </data>
   <data name="dtpdate.CustomFormat" xml:space="preserve">
-    <value>MM/dd/yyyy</value>
+    <value>dd-MM-yyyy</value>
   </data>
   <data name="dtpdate.Location" type="System.Drawing.Point, System.Drawing">
     <value>581, 67</value>

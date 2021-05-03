@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace sample
@@ -481,6 +481,11 @@ namespace sample
                 dgvCashAdjustment.DataSource = ds;
                 dgvCashAdjustment.DataMember = "temp";
             }
+        }
+
+        private void dtpdate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

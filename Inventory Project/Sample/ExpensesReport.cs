@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.IO;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
+using System.Globalization;
+
 namespace sample
 {
     public partial class ExpensesReport : UserControl
@@ -136,7 +138,8 @@ namespace sample
         {
             try
             {
-                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + dtpFromDate.Value.ToString() + "' and '" + dtpTodate.Value.ToString() + "' and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'", txtfilter.Text);
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpTodate.Value.ToString(sysUIFormat) + "' and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'", txtfilter.Text);
                 //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
                 DataSet ds = new DataSet();
                 SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
@@ -299,6 +302,30 @@ namespace sample
             catch (Exception ex)
             {
                 MessageBox.Show("Data not" + ex);
+            }
+        }
+
+        private void dtpFromDate_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                String sysUIFormat = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+                string SelectQuery = string.Format("select Date,ExpenseCategory,Total from tbl_Expenses where Date between '" + dtpFromDate.Value.ToString(sysUIFormat) + "' and '" + dtpTodate.Value.ToString(sysUIFormat) + "' and Company_ID = '" + NewCompany.company_id + "' and DeleteData = '1'", txtfilter.Text);
+                //string SelectQuery = string.Format("select ItemName,Qty,ItemAmount from tbl_OtherIncomeInner3  where ItemName like'%{0}%' and Company_ID='" + compid + "' and DeleteData='1'", txtfilter.Text);
+                DataSet ds = new DataSet();
+                SqlDataAdapter SDA = new SqlDataAdapter(SelectQuery, con);
+                SDA.Fill(ds, "temp");
+                dgvexpenses.DataSource = ds;
+                dgvexpenses.DataMember = "temp";
+                dgvexpenses.AllowUserToAddRows = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data not" + ex);
+            }
+            finally
+            {
+                Data();
             }
         }
     }

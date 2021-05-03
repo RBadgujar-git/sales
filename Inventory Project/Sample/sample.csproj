@@ -316,6 +316,11 @@
     <Compile Include="Barcodeprint.Designer.cs">
       <DependentUpon>Barcodeprint.cs</DependentUpon>
     </Compile>
+    <Compile Include="bdataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bdataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Calculator.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1391,6 +1396,17 @@
     <None Include=".Designer.Partymastercs" />
     <None Include=".editorconfig" />
     <None Include="App.config" />
+    <None Include="bdataset.xsc">
+      <DependentUpon>bdataset.xsd</DependentUpon>
+    </None>
+    <None Include="bdataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bdataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bdataset.xss">
+      <DependentUpon>bdataset.xsd</DependentUpon>
+    </None>
     <None Include="InventoryMgntDataSet.xsc">
       <DependentUpon>InventoryMgntDataSet.xsd</DependentUpon>
     </None>

@@ -78,5 +78,10 @@ namespace sample
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void dtpTodate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

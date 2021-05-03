@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
 using System.Data.SqlClient;
 using Stimulsoft.Report;
 using Stimulsoft.Report.Components;
@@ -435,6 +434,7 @@ namespace sample
                 da.Fill(ds, "temp");
                 dgvPurchaseBill.DataSource = ds;
                 dgvPurchaseBill.DataMember = "temp";
+                dgvPurchaseBill.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {
@@ -454,6 +454,8 @@ namespace sample
                 SDA.Fill(ds, "temp");
                 dgvPurchaseBill.DataSource = ds;
                 dgvPurchaseBill.DataMember = "temp";
+                dgvPurchaseBill.AllowUserToAddRows = false;
+
             }
             catch (Exception ex)
             {
@@ -484,6 +486,7 @@ namespace sample
                 SDA.Fill(ds, "temp");
                 dgvPurchaseBill.DataSource = ds;
                 dgvPurchaseBill.DataMember = "temp";
+                dgvPurchaseBill.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {

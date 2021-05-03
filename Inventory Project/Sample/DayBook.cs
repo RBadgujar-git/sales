@@ -305,7 +305,7 @@ namespace sample
 
                     report.Compile();
                     StiPage page = report.Pages[0];
-                    report.RegData("DayBook", "DayBook", ds.Tables[0]);
+                    report.RegData("DayBookSale", "DayBookSale", ds.Tables[0]);
 
                     report.Dictionary.Synchronize();
                     report.Render();
@@ -529,6 +529,7 @@ namespace sample
         {
             try
             {
+
                 con.Open();
                 string Query = String.Format("select CompanyID from tbl_CompanyMaster where (CompanyName='{0}') and DeleteData='1'  GROUP BY CompanyID", cmbAllfirms.Text);
                 SqlCommand cmd = new SqlCommand(Query, con);
