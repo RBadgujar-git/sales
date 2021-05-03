@@ -11,9 +11,5 @@ namespace sample
         public string MobileNo { get; set; }
         public string MacAddress { get; set; }
         public string Key { get; set; }
-
-
-
-
     }
 }

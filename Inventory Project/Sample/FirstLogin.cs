@@ -39,6 +39,7 @@ namespace sample
             try
             {
                 guna2TextBox1.Visible = false;
+                guna2Button1.Visible = false;
                 client = new FireSharp.FirebaseClient(ifs);
 
             }
@@ -66,14 +67,23 @@ namespace sample
         }
         private void otp_Click(object sender, EventArgs e)
         {
-            var resu = client.Get("clientData/"+ txtpartyfilter.Text);
-            autontification fd = resu.ResultAs<autontification>();
-            string mac = fd.MacAddress;
-            MessageBox.Show(" mac address"+mac);
-            guna2TextBox1.Visible = true;
+            //  var result = client.Get("clientData/" + txtpartyfilter.Text);
+            // var seeter = client.Get("clientData/" + txtpartyfilter.Text);
 
-
-
+            //autontification fdd = seeter.ResultAs<autontification>();
+            //  guna2TextBox1.Text= fdd.MacAddress;
+            if (txtpartyfilter.Text != "")
+            {
+                guna2TextBox1.Visible = true;
+                guna2Button1.Visible = true;
+                txtpartyfilter.Visible = false;
+                otp.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Enter Mobile No !");
+            }
+            
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -89,8 +99,26 @@ namespace sample
                 MobileNo = txtpartyfilter.Text,
                 MacAddress = mca.ToString()
             };
-            var seeter = client.Set("clientData/" + txtpartyfilter.Text, fd);
-           
+            var seeter = client.Set("clientData/" + mca, fd);
+            //this.Close();
+           // Application.Run(new Dashboard());
+            Dashboard ds = new Dashboard();
+            ds.Show();
+            this.Hide();
+
+
+
+
+        }
+
+        private void btncancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtpartyfilter_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

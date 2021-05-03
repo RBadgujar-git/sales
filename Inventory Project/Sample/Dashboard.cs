@@ -673,15 +673,15 @@ namespace sample
         private void myOnlineStoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            //FirstLogin fm = new FirstLogin();
-            //fm.Show();
-            OnlineStore OS = new OnlineStore();
-            // ex.TopLevel = false;
-            OS.AutoScroll = true;
-            this.Controls.Add(OS);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            OS.Dock = DockStyle.Fill;
-            OS.BringToFront();
+            FirstLogin fm = new FirstLogin();
+            fm.Show();
+            //OnlineStore OS = new OnlineStore();
+            //// ex.TopLevel = false;
+            //OS.AutoScroll = true;
+            //this.Controls.Add(OS);
+            //// CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            //OS.Dock = DockStyle.Fill;
+            //OS.BringToFront();
 
         }
 
