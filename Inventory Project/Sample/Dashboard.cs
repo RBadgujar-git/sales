@@ -672,6 +672,9 @@ namespace sample
 
         private void myOnlineStoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            //FirstLogin fm = new FirstLogin();
+            //fm.Show();
             OnlineStore OS = new OnlineStore();
             // ex.TopLevel = false;
             OS.AutoScroll = true;
@@ -679,6 +682,7 @@ namespace sample
             // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             OS.Dock = DockStyle.Fill;
             OS.BringToFront();
+
         }
 
         private void restoreAndBackupToolStripMenuItem_Click(object sender, EventArgs e)
@@ -698,7 +702,7 @@ namespace sample
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-     Reports re = new Reports();
+              Reports re = new Reports();
             re.Show();
         }
 

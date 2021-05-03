@@ -234,7 +234,7 @@
             this.dtpFromdate.Name = "dtpFromdate";
             this.dtpFromdate.Size = new System.Drawing.Size(133, 20);
             this.dtpFromdate.TabIndex = 162;
-            this.dtpFromdate.ValueChanged += new System.EventHandler(this.dtpFromdate_ValueChanged);
+           // this.dtpFromdate.ValueChanged += new System.EventHandler(this.dtpFromdate_ValueChanged);
             // 
             // label5
             // 

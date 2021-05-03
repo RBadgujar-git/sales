@@ -2541,3 +2541,16 @@ C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.R
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Wpf.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.WpfDesign.xml
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Stimulsoft.Report.Check.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\FireSharp.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.App.config
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.FirstLogin.resources
