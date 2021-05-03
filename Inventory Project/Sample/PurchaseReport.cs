@@ -130,6 +130,7 @@ namespace sample
                     rate = float.Parse(txtUnpaid.Text.ToString());
                     total = qty + rate;
                     txtTotal.Text = total.ToString();
+
                 }
                 catch(Exception ew)
                 {
