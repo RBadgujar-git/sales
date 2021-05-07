@@ -32,26 +32,47 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            LoanAccount BA = new LoanAccount();
-            //BA.TopLevel = false;
-           // BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                LoanAccount BA = new LoanAccount();
+                //BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Makepayment BA = new Makepayment();
-            // BA.TopLevel = false;
-           // BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                Makepayment BA = new Makepayment();
+                // BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)

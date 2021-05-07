@@ -28,15 +28,25 @@ namespace sample
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CashInHandAdjust BA = new CashInHandAdjust();
-            //BA.TopLevel = false;
-            // BA.AutoScroll = true;
-            this.Controls.Add(BA);
+            if (DateTime.Now > Program.expdate)
+            {
 
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                CashInHandAdjust BA = new CashInHandAdjust();
+                //BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+
+                // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

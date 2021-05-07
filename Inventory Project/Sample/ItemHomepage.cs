@@ -43,14 +43,24 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            Itemmaster BA = new Itemmaster();
-            BA.TopLevel = false;
-            BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+               
+            }
+            else
+            {
+                Itemmaster BA = new Itemmaster();
+                BA.TopLevel = false;
+                BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void guna2Button4_Click(object sender, EventArgs e)
@@ -82,27 +92,47 @@ namespace sample
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            AdjustItem BA = new AdjustItem();
-            // BA.TopLevel = false;
-            //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                AdjustItem BA = new AdjustItem();
+                // BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-            Category BA = new Category();
-            // BA.TopLevel = false;
-            BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                Category BA = new Category();
+                // BA.TopLevel = false;
+                BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
 

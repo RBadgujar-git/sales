@@ -28,14 +28,24 @@ namespace sample
 
         private void btnpurchaseorder_Click(object sender, EventArgs e)
         {
-            PurchaseOrder BA = new PurchaseOrder();
-             BA.TopLevel = false;
-           // BA.AutoScroll = true;
-            this.Controls.Add(BA);
-             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                PurchaseOrder BA = new PurchaseOrder();
+                BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -85,29 +95,39 @@ namespace sample
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (DateTime.Now > Program.expdate)
             {
-                try
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.OrderNo,b.PartyName,b.ContactNo,b.OrderDate,b.Total,b.Paid,b.RemainingBal,b.Status,b.DeleteData FROM tbl_CompanyMaster as a, tbl_PurchaseOrder as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
-                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                    SDA.Fill(ds);
+                    try
+                    {
+                        DataSet ds = new DataSet();
+                        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.OrderNo,b.PartyName,b.ContactNo,b.OrderDate,b.Total,b.Paid,b.RemainingBal,b.Status,b.DeleteData FROM tbl_CompanyMaster as a, tbl_PurchaseOrder as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
+                        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                        SDA.Fill(ds);
 
-                    StiReport report = new StiReport();
-                    report.Load(@"PurchaseOrderDataReport.mrt");
+                        StiReport report = new StiReport();
+                        report.Load(@"PurchaseOrderDataReport.mrt");
 
-                    report.Compile();
-                    StiPage page = report.Pages[0];
-                    report.RegData("PurchaseOrder", "PurchaseOrder", ds.Tables[0]);
+                        report.Compile();
+                        StiPage page = report.Pages[0];
+                        report.RegData("PurchaseOrder", "PurchaseOrder", ds.Tables[0]);
 
-                    report.Dictionary.Synchronize();
-                    report.Render();
-                    report.Show(false);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                        report.Dictionary.Synchronize();
+                        report.Render();
+                        report.Show(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
 

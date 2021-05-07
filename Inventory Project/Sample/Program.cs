@@ -20,8 +20,8 @@ namespace sample
         /// The main entry point for the application.
         /// </summary>
 
-  public static string macaddress, macaddrss;
-
+  public static string macaddress, macaddrss,joingdate;
+        public static DateTime expdate, startDate;
         [STAThread]
        
        
@@ -31,8 +31,6 @@ namespace sample
         Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
-           
             //client = new FireSharp.FirebaseClient(ifs);
 
             System.Net.NetworkInformation.NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
@@ -68,6 +66,12 @@ namespace sample
             var seeter = client.Get("clientData/" + macaddress);
             autontification fdd = seeter.ResultAs<autontification>();
                  macaddrss = fdd.MacAddress;
+                joingdate = fdd.joingDate;
+                expdate = fdd.trialend;
+              //  startDate = DateTime.Parse(joingdate);
+                // expdate = startDate.AddDays(30);
+//MessageBox.Show("data " + expiryDate);
+
             }
             catch(Exception ew)
             {

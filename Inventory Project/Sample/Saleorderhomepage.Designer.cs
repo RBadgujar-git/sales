@@ -281,6 +281,7 @@
             this.label2.Size = new System.Drawing.Size(38, 16);
             this.label2.TabIndex = 452;
             this.label2.Text = "Print";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Saleorderhomepage
             // 

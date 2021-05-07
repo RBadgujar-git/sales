@@ -31,15 +31,24 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            if (DateTime.Now > Program.expdate)
+            {
 
-            DebitNote BA = new DebitNote();
-            BA.TopLevel = false;
-            // BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                DebitNote BA = new DebitNote();
+                BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
         private void Bindadata1(int m)
         {
@@ -178,32 +187,41 @@ namespace sample
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (DateTime.Now > Program.expdate)
             {
-                try
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.PartyName,b.DueDate,b.InvoiceDate,b.Total,b.ReturnNo,b.Received,b.RemainingBal,b.Status,b.DeleteData FROM tbl_CompanyMaster as a, tbl_DebitNote as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
-                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                    SDA.Fill(ds);
+                    try
+                    {
+                        DataSet ds = new DataSet();
+                        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.GSTNumber,a.AddLogo,b.Company_ID,b.PartyName,b.DueDate,b.InvoiceDate,b.Total,b.ReturnNo,b.Received,b.RemainingBal,b.Status,b.DeleteData FROM tbl_CompanyMaster as a, tbl_DebitNote as b where a.CompanyID='" + NewCompany.company_id + "' and b.Company_ID='" + NewCompany.company_id + "' and b.DeleteData = '1' ");
+                        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                        SDA.Fill(ds);
 
-                    StiReport report = new StiReport();
-                    report.Load(@"DebitNoteDataReport.mrt");
+                        StiReport report = new StiReport();
+                        report.Load(@"DebitNoteDataReport.mrt");
 
-                    report.Compile();
-                    StiPage page = report.Pages[0];
-                    report.RegData("DebitNote", "DebitNote", ds.Tables[0]);
+                        report.Compile();
+                        StiPage page = report.Pages[0];
+                        report.RegData("DebitNote", "DebitNote", ds.Tables[0]);
 
-                    report.Dictionary.Synchronize();
-                    report.Render();
-                    report.Show(false);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                        report.Dictionary.Synchronize();
+                        report.Render();
+                        report.Show(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
-
         }
 
         private void btnimport_Click(object sender, EventArgs e)

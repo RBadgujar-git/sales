@@ -59,26 +59,46 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            OtherIncomeCategory BA = new OtherIncomeCategory();
-            //BA.TopLevel = false;
-          //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                OtherIncomeCategory BA = new OtherIncomeCategory();
+                //BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                //BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OtherIncome BA = new OtherIncome();
-            BA.TopLevel = false;
-          //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.Show();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                OtherIncome BA = new OtherIncome();
+                BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.Show();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

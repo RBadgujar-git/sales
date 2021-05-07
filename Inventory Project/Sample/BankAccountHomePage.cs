@@ -31,38 +31,67 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            BankAccount BA = new BankAccount();
-            BA.TopLevel = false;
-            //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
-        }
+            if (DateTime.Now > Program.expdate)
+            {
 
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                BankAccount BA = new BankAccount();
+                BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-            AdjustAccount BA = new AdjustAccount();
-            // BA.TopLevel = false;
-            //   BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                AdjustAccount BA = new AdjustAccount();
+                // BA.TopLevel = false;
+                //   BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Banktobank BA = new Banktobank();
-            //  BA.TopLevel = false;
-            //BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                Banktobank BA = new Banktobank();
+                //  BA.TopLevel = false;
+                //BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void BankAccountHomePage_Load(object sender, EventArgs e)

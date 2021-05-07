@@ -20,14 +20,24 @@ namespace sample
 
         private void btnSaleorder_Click(object sender, EventArgs e)
         {
-            CompanyBankAccount BA = new CompanyBankAccount();
-            //BA.TopLevel = false;
-            //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                CompanyBankAccount BA = new CompanyBankAccount();
+                //BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
         private void fetchdetails()
         {

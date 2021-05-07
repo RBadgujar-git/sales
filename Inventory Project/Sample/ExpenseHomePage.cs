@@ -30,26 +30,46 @@ namespace sample
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            Expenses BA = new Expenses();
-            BA.TopLevel = false;
-          //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                Expenses BA = new Expenses();
+                BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            ExpenseCategory BA = new ExpenseCategory();
-           // BA.TopLevel = false;
-         //   BA.AutoScroll = true;
-            this.Controls.Add(BA);
-           // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                ExpenseCategory BA = new ExpenseCategory();
+                // BA.TopLevel = false;
+                //   BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void guna2ShadowPanel2_Paint(object sender, PaintEventArgs e)

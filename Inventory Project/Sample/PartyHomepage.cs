@@ -26,14 +26,25 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            PartyMaster1 BA = new PartyMaster1();
-            BA.TopLevel = false;
-           // BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-             BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                PartyMaster1 BA = new PartyMaster1();
+                BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void guna2ShadowPanel3_Paint(object sender, PaintEventArgs e)
@@ -103,16 +114,25 @@ namespace sample
 
         private void btnPartyGroup_Click(object sender, EventArgs e)
         {
-            Party_Group BA = new Party_Group();
-            //  BA.TopLevel = false;
-          //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-             BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
-            guna2ShadowPanel3.Visible = true;
+            if (DateTime.Now > Program.expdate)
+            {
 
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                Party_Group BA = new Party_Group();
+                //  BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                //  BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+                guna2ShadowPanel3.Visible = true;
+            }
          //   BA.Show();
         }
 

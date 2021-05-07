@@ -102,6 +102,8 @@
             this.guna2Button51 = new Guna.UI2.WinForms.Guna2Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -525,6 +527,8 @@
             this.panel1.AutoScroll = true;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.linkLabel1);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button48);
             this.panel1.Controls.Add(this.button22);
@@ -699,7 +703,7 @@
             this.button51.ForeColor = System.Drawing.Color.Black;
             this.button51.Image = ((System.Drawing.Image)(resources.GetObject("button51.Image")));
             this.button51.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button51.Location = new System.Drawing.Point(142, 551);
+            this.button51.Location = new System.Drawing.Point(144, 469);
             this.button51.Name = "button51";
             this.button51.Size = new System.Drawing.Size(114, 76);
             this.button51.TabIndex = 17;
@@ -715,13 +719,14 @@
             this.button49.ForeColor = System.Drawing.Color.Black;
             this.button49.Image = ((System.Drawing.Image)(resources.GetObject("button49.Image")));
             this.button49.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button49.Location = new System.Drawing.Point(142, 469);
+            this.button49.Location = new System.Drawing.Point(144, 558);
             this.button49.Name = "button49";
             this.button49.Size = new System.Drawing.Size(113, 73);
             this.button49.TabIndex = 15;
             this.button49.Text = "Refers and Earn";
             this.button49.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button49.UseVisualStyleBackColor = true;
+            this.button49.Visible = false;
             this.button49.Click += new System.EventHandler(this.button49_Click_1);
             // 
             // button28
@@ -731,13 +736,14 @@
             this.button28.ForeColor = System.Drawing.Color.Black;
             this.button28.Image = ((System.Drawing.Image)(resources.GetObject("button28.Image")));
             this.button28.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button28.Location = new System.Drawing.Point(17, 549);
+            this.button28.Location = new System.Drawing.Point(14, 556);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(119, 78);
             this.button28.TabIndex = 13;
             this.button28.Text = "Feedback";
             this.button28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button28.UseVisualStyleBackColor = true;
+            this.button28.Visible = false;
             this.button28.Click += new System.EventHandler(this.button28_Click_1);
             // 
             // button23
@@ -944,6 +950,36 @@
             this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button1.Location = new System.Drawing.Point(15, 558);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(241, 73);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Refers and Earn";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Black;
+            this.linkLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.ForeColor = System.Drawing.Color.White;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(74, 596);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(76, 19);
+            this.linkLabel1.TabIndex = 19;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "See Plan";
+            // 
             // Dashboard
             // 
             this.AccessibleDescription = "";
@@ -970,6 +1006,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1050,6 +1087,8 @@
         public System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

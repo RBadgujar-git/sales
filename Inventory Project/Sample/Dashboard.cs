@@ -143,8 +143,8 @@ namespace sample
         private void Form1_Load(object sender, EventArgs e)
         {
 
-
-          
+            string dimee = (Program.expdate - DateTime.Now.Date).Days.ToString();
+            button1.Text = "Your Trial Expires in \t" + dimee + "\t Days .";
             panel1.Focus();
             if (con.State == ConnectionState.Closed)
             {
@@ -673,15 +673,17 @@ namespace sample
         private void myOnlineStoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FirstLogin fm = new FirstLogin();
-            fm.Show();
-            //OnlineStore OS = new OnlineStore();
-            //// ex.TopLevel = false;
-            //OS.AutoScroll = true;
-            //this.Controls.Add(OS);
-            //// CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //OS.Dock = DockStyle.Fill;
-            //OS.BringToFront();
+            //Trialform fm = new Trialform();
+            //fm.Show();
+
+           string datetimee= (Program.expdate - DateTime.Now.Date).Days.ToString();
+            OnlineStore OS = new OnlineStore();
+            // ex.TopLevel = false;
+            OS.AutoScroll = true;
+            this.Controls.Add(OS);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            OS.Dock = DockStyle.Fill;
+            OS.BringToFront();
 
         }
 
@@ -702,7 +704,7 @@ namespace sample
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-              Reports re = new Reports();
+            Reports re = new Reports();
             re.Show();
         }
 
@@ -758,7 +760,7 @@ namespace sample
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void guna2Panel1_Paint_1(object sender, PaintEventArgs e)
@@ -1328,13 +1330,21 @@ namespace sample
 
         private void addNewCompanyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //NewCompany PB = new NewCompany();           
-            //this.Controls.Add(PB);       
-            //PB.BringToFront();
-            CompanyList PB = new CompanyList();
-            this.Controls.Add(PB);
-            PB.Dock = DockStyle.Fill;
-            PB.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+                Trialform tf = new Trialform();
+                tf.Show();
+            }
+            else
+            {
+                //NewCompany PB = new NewCompany();           
+                //this.Controls.Add(PB);       
+                //PB.BringToFront();
+                CompanyList PB = new CompanyList();
+                this.Controls.Add(PB);
+                PB.Dock = DockStyle.Fill;
+                PB.BringToFront();
+            }
         }
 
         private void changeCompanyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1401,19 +1411,50 @@ namespace sample
 
         private void backupToDriveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BackuptoDrive br = new BackuptoDrive();
-            br.Show();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                BackuptoDrive br = new BackuptoDrive();
+                br.Show();
+            }
         }
         private void backupToComputerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            backup bk = new backup();
-            bk.Show();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                backup bk = new backup();
+                bk.Show();
+
+            }
         }
 
         private void restoreBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            restore rt = new restore();
-            rt.Show();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                restore rt = new restore();
+                rt.Show();
+            }
         }
 
         private void verifyMyDataToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1556,14 +1597,22 @@ namespace sample
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
-            CompanyMaste BA = new CompanyMaste();
-            //BA.TopLevel = false;
-            //  BA.AutoScroll = true;
-            this.Controls.Add(BA);
-            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+                Trialform tf = new Trialform();
+                tf.Show();
+            }
+            else
+            {
+                CompanyMaste BA = new CompanyMaste();
+                //BA.TopLevel = false;
+                //  BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.BringToFront();
+            }
         }
 
         private void barcodePrintToolStripMenuItem_Click(object sender, EventArgs e)

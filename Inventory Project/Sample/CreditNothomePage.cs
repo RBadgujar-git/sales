@@ -82,14 +82,24 @@ namespace sample
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            CreditNote BA = new CreditNote();
-            BA.TopLevel = false;
-           // BA.AutoScroll = true;
-            this.Controls.Add(BA);
-             BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            BA.Dock = DockStyle.Fill;
-            BA.Visible = true;
-            BA.Show();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                CreditNote BA = new CreditNote();
+                BA.TopLevel = false;
+                // BA.AutoScroll = true;
+                this.Controls.Add(BA);
+                BA.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                BA.Dock = DockStyle.Fill;
+                BA.Visible = true;
+                BA.Show();
+            }
         }
 
         private void btncalcel_Click(object sender, EventArgs e)
@@ -157,31 +167,41 @@ namespace sample
 
         private void btnprint_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (DateTime.Now > Program.expdate)
             {
 
-                try
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DataSet ds = new DataSet();
-                    string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,a.GSTNumber,b.InvoiceDate,b.PartyName,b.ReturnNo,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
-                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                    SDA.Fill(ds);
 
-                    StiReport report = new StiReport();
+                    try
+                    {
+                        DataSet ds = new DataSet();
+                        string Query = string.Format("SELECT a.CompanyID,a.CompanyName, a.Address, a.PhoneNo, a.EmailID,a.AddLogo,a.GSTNumber,b.InvoiceDate,b.PartyName,b.ReturnNo,b.Total,b.Received ,b.Company_ID, b.RemainingBal ,b.Status,b.DueDate FROM tbl_CompanyMaster as a, tbl_CreditNote1 as b where a.CompanyID='" + NewCompany.company_id + "' and b.DeleteData='1' ");
+                        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                        SDA.Fill(ds);
 
-                    report.Load(@"CreditNoteData.mrt");
+                        StiReport report = new StiReport();
 
-                    report.Compile();
-                    StiPage page = report.Pages[0];
-                    report.RegData("CreditNoteData", "CreditNoteData", ds.Tables[0]);
+                        report.Load(@"CreditNoteData.mrt");
 
-                    report.Dictionary.Synchronize();
-                    report.Render();
-                    report.Show(false);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                        report.Compile();
+                        StiPage page = report.Pages[0];
+                        report.RegData("CreditNoteData", "CreditNoteData", ds.Tables[0]);
+
+                        report.Dictionary.Synchronize();
+                        report.Render();
+                        report.Show(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
         }

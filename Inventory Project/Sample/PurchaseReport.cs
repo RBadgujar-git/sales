@@ -52,6 +52,8 @@ namespace sample
 
         private void PurchaseReport_Load(object sender, EventArgs e)
         {
+            
+            
             //fetchCampanyame();
            
             Bindadata();
@@ -162,15 +164,25 @@ namespace sample
         }
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            //this.Controls.Clear();
-            PurchaseBill PB = new PurchaseBill();
-            PB.TopLevel = false;
-          // PB.AutoScroll = true;
-            this.Controls.Add(PB);
-            PB.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            PB.Dock = DockStyle.Fill;
-            PB.Show();
-           // PB.BringToFront();
+            if (DateTime.Now > Program.expdate)
+            {
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                //this.Controls.Clear();
+                PurchaseBill PB = new PurchaseBill();
+                PB.TopLevel = false;
+                // PB.AutoScroll = true;
+                this.Controls.Add(PB);
+                PB.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                PB.Dock = DockStyle.Fill;
+                PB.Show();
+                // PB.BringToFront();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -190,29 +202,41 @@ namespace sample
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (DateTime.Now > Program.expdate)
             {
-                try
+
+                Trialform tf = new Trialform();
+                tf.Show();
+
+            }
+            else
+            {
+                if (MessageBox.Show("DO YOU WANT PRINT??", "PRINT", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    DataSet ds = new DataSet();
-                    string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.BillDate,b.Company_ID, b.BillNo, b.PartyName, b.PaymentType, b.Total, b.Paid, b.RemainingBal,b.DeleteData, b.Status from tbl_PurchaseBill as b,tbl_CompanyMaster as c where c.CompanyID = '" + NewCompany.company_id + "' and b.Company_ID = '" + NewCompany.company_id + "' and b.DeleteData = '1'");
-                    SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-                    SDA.Fill(ds);
+                    try
+                    {
+                        DataSet ds = new DataSet();
+                        string Query = string.Format("select c.CompanyID,c.CompanyName,c.Address,c.AddLogo,c.PhoneNo,c.GSTNumber,c.EmailID,b.BillDate,b.Company_ID, b.BillNo, b.PartyName, b.PaymentType, b.Total, b.Paid, b.RemainingBal,b.DeleteData, b.Status from tbl_PurchaseBill as b,tbl_CompanyMaster as c where c.CompanyID = '" + NewCompany.company_id + "' and b.Company_ID = '" + NewCompany.company_id + "' and b.DeleteData = '1'");
+                        SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                        SDA.Fill(ds);
 
-                    StiReport report = new StiReport();
-                    report.Load(@"PurchaseBillData.mrt");
+                        StiReport report = new StiReport();
+                        report.Load(@"PurchaseBillData.mrt");
 
-                    report.Compile();
-                    StiPage page = report.Pages[0];
-                    report.RegData("PurchaseBillData", "PurchaseBillData", ds.Tables[0]);
+                        report.Compile();
+                        StiPage page = report.Pages[0];
+                        report.RegData("PurchaseBillData", "PurchaseBillData", ds.Tables[0]);
 
-                    report.Dictionary.Synchronize();
-                    report.Render();
-                    report.Show(false);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                        report.Dictionary.Synchronize();
+                        report.Render();
+                        report.Show(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
                 }
             }
         }

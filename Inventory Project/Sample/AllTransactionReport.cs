@@ -314,7 +314,7 @@ namespace sample
 
         private void label13_Click(object sender, EventArgs e)
         {
-            binddata();
+            binddata();         
         }
 
         private void txtfilter_TextChanged(object sender, EventArgs e)

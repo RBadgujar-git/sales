@@ -127,7 +127,7 @@
             this.dgvincomeCategory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvincomeCategory.EnableHeadersVisualStyles = false;
             this.dgvincomeCategory.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvincomeCategory.Location = new System.Drawing.Point(0, 100);
+            this.dgvincomeCategory.Location = new System.Drawing.Point(0, 101);
             this.dgvincomeCategory.Name = "dgvincomeCategory";
             this.dgvincomeCategory.RowHeadersVisible = false;
             this.dgvincomeCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

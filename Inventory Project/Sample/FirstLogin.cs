@@ -94,14 +94,24 @@ namespace sample
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             GetMACAddress();
+          DateTime startDate = DateTime.Parse(DateTime.Now.Date.ToString());
+          DateTime  expdate = startDate.AddDays(30);
             autontification fd = new autontification()
             {
                 MobileNo = txtpartyfilter.Text,
-                MacAddress = mca.ToString()
+                MacAddress = mca.ToString(),
+                joingDate = DateTime.Now.Date.ToString(),
+                trialend = expdate
             };
             var seeter = client.Set("clientData/" + mca, fd);
             //this.Close();
-           // Application.Run(new Dashboard());
+            // Application.Run(new Dashboard());
+
+
+            var seeter1 = client.Get("clientData/" + mca);
+            autontification fdd = seeter1.ResultAs<autontification>();
+            Program.expdate = fdd.trialend;
+            
             Dashboard ds = new Dashboard();
             ds.Show();
             this.Hide();
