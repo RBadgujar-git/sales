@@ -2579,3 +2579,4 @@ C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.Unit_
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.csproj.GenerateResource.Cache
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.exe
 C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.pdb
+C:\Users\abc\Source\Repos\sales2\Inventory Project\sample\obj\Debug\sample.SuscriptionPack.resources

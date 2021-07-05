@@ -1707,6 +1707,23 @@ namespace sample
             this.Show();
         }
 
+        private void button1_Click_5(object sender, EventArgs e)
+        {
+            SuscriptionPack PB = new SuscriptionPack();
+            // ex.TopLevel = false;
+             PB.AutoScroll = true;  
+            this.Controls.Add(PB);
+            // CN.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            PB.Dock = DockStyle.Fill;
+            PB.BringToFront();
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
         private void panel3_MouseHover(object sender, EventArgs e)
         {
            

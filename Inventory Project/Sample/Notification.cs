@@ -19,8 +19,8 @@ namespace sample
 
         private void btncancel_Click(object sender, EventArgs e)
         {
-            timer1.Interval = 1;
-            action = enumAction.close;
+          //  timer1.Interval = 1;
+            //action = enumAction.close;
 
         }
         public enum enumAction
@@ -38,11 +38,11 @@ namespace sample
             switch(this.action)
             {
                 case enumAction.wait:
-                    timer1.Interval = 5000;
+                    //timer1.Interval = 5000;
                     action = enumAction.close;
                     break;
                 case enumAction.start:
-                    timer1.Interval = 1;
+                    //timer1.Interval = 1;
                     this.Opacity += 0.1;
                     if (this.x < this.Location.X)
                     {
@@ -59,7 +59,7 @@ namespace sample
                     }
                     break;
                 case enumAction.close:
-                    timer1.Interval = 1;
+                    //timer1.Interval = 1;
                     this.Opacity -= 0.1;
                     this.Left -= 3;
                     if(base.Opacity==0.0)
@@ -127,8 +127,8 @@ namespace sample
             this.label1.Text = msg;
             this.Show();
             this.action = enumAction.start;
-            this.timer1.Interval = 1;
-            timer1.Start();
+            //this.timer1.Interval = 1;
+            //timer1.Start();
 
         }
     }

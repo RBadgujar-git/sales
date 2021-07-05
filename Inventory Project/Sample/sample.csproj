@@ -1000,6 +1000,12 @@
     <Compile Include="StockSummaryreportbyItemCategory.Designer.cs">
       <DependentUpon>StockSummaryreportbyItemCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuscriptionPack.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuscriptionPack.designer.cs">
+      <DependentUpon>SuscriptionPack.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaxnGST.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1416,6 +1422,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StockSummaryreportbyItemCategory.resx">
       <DependentUpon>StockSummaryreportbyItemCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuscriptionPack.resx">
+      <DependentUpon>SuscriptionPack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaxnGST.resx">
       <DependentUpon>TaxnGST.cs</DependentUpon>
